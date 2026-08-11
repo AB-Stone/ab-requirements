@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRJ-03 Giao khoán nhân công — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a class="on" href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Dự án — Thi công / <b>PRJ-03</b></div><div class="sp"></div>
+  <div class="pnav"><a href="PRJ-02.html">← PRJ-02</a><a href="index.html">Mục lục</a><a href="PRJ-04.html">PRJ-04 →</a></div>
+</div>
+<section class="sheet solo" id="PRJ-03">
+  <header class="tb">
+    <div class="tb-id">PRJ-03</div>
+    <div class="tb-main">
+      <h3>Hồ sơ giao khoán nhân công</h3>
+      <p>Luồng trình dài nhất trong toàn bảng yêu cầu — năm chặng: Dự án → TBP TQT → P. Đấu thầu → P. Kế toán → Lãnh đạo. Kèm ràng buộc riêng: “quá thời hạn thì cần phải giải trình được phê duyệt mới gửi được”.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Theo luồng trình — 5 chặng</dd></div>
+        <div><dt>Phê duyệt</dt><dd>TQT → Đấu thầu → Kế toán → Lãnh đạo</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Không giới hạn</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 11</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Đây là chứng từ trả tiền cho tổ đội, nên nó phải khớp ba nguồn độc lập: bảng đơn giá khoán đã duyệt (<a href="PRJ-01.html">PRJ-01</a>), sản lượng thi công đã chốt (<a href="PRJ-02.html">PRJ-02</a>), và bảng công nhật có xác nhận các bên. Bốn chặng thẩm định phía sau mỗi chặng kiểm một khía cạnh khác nhau — đặc tả nêu rõ từng chặng kiểm gì để tránh việc bốn người cùng kiểm một thứ.</p>
+
+    <h4>Lưu đồ — 5 chặng và cửa chặn quá hạn</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PRJ-03.1 Mỗi chặng có một tiêu chí kiểm riêng và một lối trả về chung. Cửa chặn quá hạn nằm trước cả chặng 1 — hồ sơ nộp muộn không vào được luồng nếu giải trình chưa được duyệt."
+ viewBox="0.00 0.00 639.00 794.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 781.28)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="613.18,-768.32 403.93,-768.32 403.93,-723.92 613.18,-723.92 613.18,-768.32"/>
+<text xml:space="preserve" text-anchor="middle" x="508.56" y="-749.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ban dự án lập hồ sơ giao khoán</text>
+<text xml:space="preserve" text-anchor="middle" x="508.56" y="-734.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">theo mốc thời gian quy định</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="420.56,-688.92 300.94,-656.04 420.56,-623.16 540.17,-656.04 420.56,-688.92"/>
+<text xml:space="preserve" text-anchor="middle" x="420.56" y="-659.79" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nộp trong</text>
+<text xml:space="preserve" text-anchor="middle" x="420.56" y="-644.79" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">thời hạn quy định?</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M487.25,-723.8C476.4,-712.94 463.01,-699.54 451.09,-687.6"/>
+<polygon fill="#55606b" stroke="#55606b" points="453,-686.29 446.79,-683.3 449.78,-689.51 453,-686.29"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="383.26,-575.96 169.85,-575.96 169.85,-546.56 383.26,-546.56 383.26,-575.96"/>
+<text xml:space="preserve" text-anchor="middle" x="276.56" y="-557.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Bắt buộc lập giải trình quá hạn</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M385.33,-632.34C360.62,-616.43 328.02,-595.42 304.97,-580.57"/>
+<polygon fill="#55606b" stroke="#55606b" points="306.41,-578.79 299.72,-577.18 303.95,-582.62 306.41,-578.79"/>
+<text xml:space="preserve" text-anchor="middle" x="366.86" y="-596.26" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Quá hạn</text>
+</g>
+<g id="node6" class="node">
+<title>F</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="550.98,-386.4 268.13,-386.4 268.13,-342 550.98,-342 550.98,-386.4"/>
+<text xml:space="preserve" text-anchor="middle" x="409.56" y="-367.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chặng 1 — TBP TQT</text>
+<text xml:space="preserve" text-anchor="middle" x="409.56" y="-352.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đối chiếu khối lượng với sản lượng đã chốt</text>
+</g>
+<g id="edge6" class="edge">
+<title>B&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M419.35,-623.19C417.2,-566.68 412.76,-449.67 410.68,-394.81"/>
+<polygon fill="#55606b" stroke="#55606b" points="412.95,-394.79 410.43,-388.38 408.41,-394.96 412.95,-394.79"/>
+<text xml:space="preserve" text-anchor="middle" x="442.29" y="-519.66" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Trong hạn</text>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="276.56,-499.36 198.64,-466.48 276.56,-433.6 354.47,-466.48 276.56,-499.36"/>
+<text xml:space="preserve" text-anchor="middle" x="276.56" y="-470.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Giải trình</text>
+<text xml:space="preserve" text-anchor="middle" x="276.56" y="-455.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">được duyệt?</text>
+</g>
+<g id="edge3" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M276.56,-546.17C276.56,-535.91 276.56,-521.48 276.56,-507.77"/>
+<polygon fill="#55606b" stroke="#55606b" points="278.83,-507.83 276.56,-501.33 274.28,-507.83 278.83,-507.83"/>
+</g>
+<g id="node5" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="243.73,-386.4 89.38,-386.4 89.38,-342 243.73,-342 243.73,-386.4"/>
+<text xml:space="preserve" text-anchor="middle" x="166.56" y="-367.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Không gửi được hồ sơ</text>
+<text xml:space="preserve" text-anchor="middle" x="166.56" y="-352.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chuyển kỳ sau</text>
+</g>
+<g id="edge4" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M252.42,-443.47C235.82,-428.35 213.69,-408.17 196.06,-392.09"/>
+<polygon fill="#55606b" stroke="#55606b" points="197.72,-390.53 191.38,-387.83 194.65,-393.89 197.72,-390.53"/>
+<text xml:space="preserve" text-anchor="middle" x="237.46" y="-406.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
+</g>
+<g id="edge5" class="edge">
+<title>D&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M304.11,-444.7C324.61,-429.25 352.73,-408.04 374.78,-391.42"/>
+<polygon fill="#55606b" stroke="#55606b" points="376.09,-393.28 379.91,-387.55 373.35,-389.65 376.09,-393.28"/>
+<text xml:space="preserve" text-anchor="middle" x="372.33" y="-406.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Được</text>
+</g>
+<g id="node7" class="node">
+<title>G</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="449.9,-307 155.21,-307 155.21,-262.6 449.9,-262.6 449.9,-307"/>
+<text xml:space="preserve" text-anchor="middle" x="302.56" y="-288.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chặng 2 — P. Đấu thầu</text>
+<text xml:space="preserve" text-anchor="middle" x="302.56" y="-273.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đối chiếu đơn giá với bảng giá khoán đã duyệt</text>
+</g>
+<g id="edge7" class="edge">
+<title>F&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M379.75,-341.64C367,-332.41 351.99,-321.56 338.62,-311.89"/>
+<polygon fill="#55606b" stroke="#55606b" points="340.03,-310.1 333.43,-308.13 337.36,-313.78 340.03,-310.1"/>
+</g>
+<g id="node11" class="node">
+<title>K</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="509.56,-123.8 363.55,-123.8 363.55,-79.4 509.56,-79.4 509.56,-123.8"/>
+<text xml:space="preserve" text-anchor="middle" x="436.56" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Trả về Ban dự án</text>
+<text xml:space="preserve" text-anchor="middle" x="436.56" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">giữ nguyên mã hồ sơ</text>
+</g>
+<g id="edge11" class="edge">
+<title>F&#45;&gt;K</title>
+<path fill="none" stroke="#7c8792" stroke-dasharray="5,2" d="M429.51,-341.63C444.18,-325.78 461.56,-307 461.56,-307 461.56,-307 461.56,-262.6 461.56,-262.6 461.56,-262.6 453.56,-171 453.56,-171 453.56,-171 448.47,-150.54 443.86,-132"/>
+<polygon fill="#7c8792" stroke="#7c8792" points="446.07,-131.47 442.3,-125.71 441.66,-132.57 446.07,-131.47"/>
+<text xml:space="preserve" text-anchor="middle" x="501.32" y="-235.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">lệch khối lượng</text>
+</g>
+<g id="node8" class="node">
+<title>H</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="339.11,-215.4 0,-215.4 0,-171 339.11,-171 339.11,-215.4"/>
+<text xml:space="preserve" text-anchor="middle" x="169.56" y="-196.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chặng 3 — P. Kế toán</text>
+<text xml:space="preserve" text-anchor="middle" x="169.56" y="-181.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">kiểm chứng từ phạt, tiện ích, VTTB, tạm ứng đã cấp</text>
+</g>
+<g id="edge8" class="edge">
+<title>G&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M270.36,-262.11C251.57,-249.45 227.76,-233.41 207.99,-220.09"/>
+<polygon fill="#55606b" stroke="#55606b" points="209.37,-218.28 202.71,-216.54 206.83,-222.05 209.37,-218.28"/>
+</g>
+<g id="edge12" class="edge">
+<title>G&#45;&gt;K</title>
+<path fill="none" stroke="#7c8792" stroke-dasharray="5,2" d="M318.45,-262.3C342.83,-229.34 389.44,-166.32 416.23,-130.08"/>
+<polygon fill="#7c8792" stroke="#7c8792" points="417.74,-131.87 419.78,-125.29 414.08,-129.16 417.74,-131.87"/>
+<text xml:space="preserve" text-anchor="middle" x="416.24" y="-189.9" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">lệch đơn giá</text>
+</g>
+<g id="node9" class="node">
+<title>I</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="253.69,-123.8 85.42,-123.8 85.42,-79.4 253.69,-79.4 253.69,-123.8"/>
+<text xml:space="preserve" text-anchor="middle" x="169.56" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chặng 4 — Ban lãnh đạo</text>
+<text xml:space="preserve" text-anchor="middle" x="169.56" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">duyệt chi</text>
+</g>
+<g id="edge9" class="edge">
+<title>H&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M169.56,-170.51C169.56,-158.95 169.56,-144.57 169.56,-132.02"/>
+<polygon fill="#55606b" stroke="#55606b" points="171.83,-132.1 169.56,-125.6 167.28,-132.1 171.83,-132.1"/>
+</g>
+<g id="edge13" class="edge">
+<title>H&#45;&gt;K</title>
+<path fill="none" stroke="#7c8792" stroke-dasharray="5,2" d="M220.41,-170.55C253.41,-156.5 290.29,-140.8 290.29,-140.8 290.29,-140.8 321.9,-132.55 355.72,-123.71"/>
+<polygon fill="#7c8792" stroke="#7c8792" points="356.25,-125.93 361.96,-122.08 355.1,-121.52 356.25,-125.93"/>
+<text xml:space="preserve" text-anchor="middle" x="329.42" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">thiếu chứng từ</text>
+</g>
+<g id="node10" class="node">
+<title>J</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="280.78,-44.4 58.33,-44.4 58.33,0 280.78,0 280.78,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="169.56" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hồ sơ được duyệt</text>
+<text xml:space="preserve" text-anchor="middle" x="169.56" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">sinh đề nghị thanh toán · ACC&#45;05</text>
+</g>
+<g id="edge10" class="edge">
+<title>I&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M169.56,-79.04C169.56,-70.82 169.56,-61.31 169.56,-52.49"/>
+<polygon fill="#55606b" stroke="#55606b" points="171.83,-52.66 169.56,-46.16 167.28,-52.66 171.83,-52.66"/>
+</g>
+<g id="edge14" class="edge">
+<title>K&#45;&gt;A</title>
+<path fill="none" stroke="#55606b" d="M473.11,-124.29C517.8,-150.81 587.56,-192.2 587.56,-192.2 587.56,-657.04 587.56,-657.04 587.56,-657.04 587.56,-657.04 556.01,-692.21 532.79,-718.1"/>
+<polygon fill="#55606b" stroke="#55606b" points="531.34,-716.31 528.69,-722.67 534.72,-719.35 531.34,-716.31"/>
+</g>
+</g>
+</svg></div><figcaption><b>Hình PRJ-03.1</b> Mỗi chặng có một tiêu chí kiểm riêng và một lối trả về chung. Cửa chặn quá hạn nằm trước cả chặng 1 — hồ sơ nộp muộn không vào được luồng nếu giải trình chưa được duyệt.</figcaption></figure>
+
+    <h4>Nội dung kiểm của từng chặng</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Chặng</th><th>Bộ phận</th><th>Kiểm nội dung gì</th><th>Đối chiếu với</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>TBP TQT</td><td>Khối lượng nghiệm thu của tổ đội có đúng với sản lượng đã chốt không</td><td class="k"><a href="PRJ-02.html">PRJ-02</a></td></tr>
+          <tr><td>2</td><td>P. Đấu thầu</td><td>Đơn giá áp có đúng bảng giá khoán đã duyệt không; đầu việc phát sinh có phụ lục chưa</td><td class="k"><a href="PRJ-01.html">PRJ-01</a></td></tr>
+          <tr><td>3</td><td>P. Kế toán</td><td>Chứng từ phạt, tiện ích, VTTB đã cấp, số dư tạm ứng cũ, thuế và bảo hiểm</td><td class="k"><a href="ACC-05.html">ACC-05</a>, <a href="PRJ-04.html">PRJ-04</a></td></tr>
+          <tr><td>4</td><td>Ban lãnh đạo</td><td>Duyệt chi trên tổng giá trị sau khấu trừ</td><td class="k"><a href="PF-03.html">PF-03</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã hồ sơ</td><td class="k">payroll_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>GKNC-&lt;project&gt;-YYYYMM</code>.</td></tr>
+          <tr><td>Tổ đội · kỳ</td><td class="k">crew_id, period</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một hồ sơ cho một tổ đội trong một kỳ.</td></tr>
+          <tr><td>Hạn nộp</td><td class="k">deadline</td><td>Ngày</td><td class="c req">✱</td><td>Cấu hình theo dự án; so với ngày nộp để xác định quá hạn.</td></tr>
+          <tr><td>Giải trình quá hạn</td><td class="k">late_justification</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi nộp muộn; phải được duyệt riêng trước khi vào luồng chính.</td></tr>
+          <tr><td>Khối lượng nghiệm thu</td><td class="k">work_lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: đầu việc, khối lượng, đơn giá khoán, thành tiền. Nạp từ sản lượng đã chốt.</td></tr>
+          <tr><td>Bảng công nhật</td><td class="k">timesheet[]</td><td>Bảng</td><td class="c">—</td><td>Bắt buộc với hình thức khoán công nhật: người, số công, đơn giá công, xác nhận của các bên.</td></tr>
+          <tr><td>Khoản phạt</td><td class="k">penalties[]</td><td>Bảng</td><td class="c">—</td><td>Lý do, giá trị, chứng từ kèm theo (biên bản vi phạm an toàn, chậm tiến độ, hư hỏng).</td></tr>
+          <tr><td>Tiện ích đã cấp</td><td class="k">utilities[]</td><td>Bảng</td><td class="c">—</td><td>Điện, nước, chỗ ở, ăn ca — khấu trừ vào tiền khoán.</td></tr>
+          <tr><td>VTTB đã cấp</td><td class="k">materials_issued[]</td><td>Bảng</td><td class="c">—</td><td>Vật tư, thiết bị đã xuất cho tổ đội; lấy từ phiếu xuất kho dự án (<a href="PRJ-04.html">PRJ-04</a>).</td></tr>
+          <tr><td>Tạm ứng đã cấp</td><td class="k">advances[]</td><td>Bảng</td><td class="c">—</td><td>Số dư tạm ứng của tổ đội; khấu trừ trước khi thanh toán.</td></tr>
+          <tr><td>Giá trị thực trả</td><td class="k">net_amount</td><td>Số tiền</td><td class="c">—</td><td>Tổng khoán trừ phạt, tiện ích, VTTB, tạm ứng — tính tự động.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Hồ sơ nộp quá hạn không vào được chặng 1 cho tới khi giải trình quá hạn được duyệt.</li>
+      <li>Khối lượng nghiệm thu nạp tự động từ sản lượng đã chốt; sửa tay bị đánh dấu và hiện cho chặng 1 kiểm.</li>
+      <li>Đơn giá lấy từ bảng giá khoán đã duyệt; đầu việc không có trong bảng giá bị chặn cho tới khi có phụ lục.</li>
+      <li>Bảng khấu trừ tự cộng đủ bốn nhóm: phạt, tiện ích, VTTB, tạm ứng; giá trị thực trả tính tự động.</li>
+      <li>Mỗi chặng trả về đều giữ nguyên mã hồ sơ và ghi rõ chặng nào trả, lý do gì.</li>
+      <li>Hồ sơ được lãnh đạo duyệt sinh ngay đề nghị thanh toán ở <a href="ACC-05.html">ACC-05</a>, không nhập lại.</li>
+      <li>Xuất được bộ hồ sơ đầy đủ: bảng khối lượng, bảng đơn giá được duyệt, bảng công nhật có xác nhận, chứng từ phạt / tiện ích / VTTB.</li>
+      <li>Báo cáo phân loại nhân công theo sản lượng, công nhật sản lượng và công nhật khác lấy dữ liệu trực tiếp từ đây (<a href="RPT-02.html">RPT-02</a>).</li>
+    </ol>
+
+    <h4>Mockup UI — Công trình › Giao khoán nhân công</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>GKNC-014-202607 · Tổ TD-004</b><span class="sp"></span><span class="tag t-crit"><span class="pin">1</span> Nộp muộn 4 ngày</span><span class="wf-btn"><span class="pin">6</span> Xuất bộ hồ sơ</span><span class="wf-btn pri">Trình duyệt</span></div>
+      <div class="wf-body">
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">2</span> Luồng trình 5 chặng</div>
+          <div class="wf-steps">
+            <div class="done"><b>Dự án lập</b>Ngô Đức Thịnh<br>04/08</div>
+            <div class="cur"><b>TBP TQT</b>đối chiếu khối lượng</div>
+            <div><b>P. Đấu thầu</b>đối chiếu đơn giá</div>
+            <div><b>P. Kế toán</b>kiểm khấu trừ</div>
+            <div><b>Lãnh đạo</b>duyệt chi</div>
+          </div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg">Giải trình quá hạn ✱ — đã được duyệt 04/08</div>
+          <div class="wf-f"><div class="in ro">Chậm do chờ CĐT ký biên bản nghiệm thu khối lượng đợt 4 (nhận ngày 03/08).</div></div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-c" style="flex:1.6 1 380px"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">3</span> Khối lượng nghiệm thu &amp; đơn giá khoán</div>
+            <table><thead><tr><th>Đầu việc</th><th>ĐVT</th><th class="num">KL</th><th class="num">ĐG khoán</th><th class="num">Thành tiền</th><th>Nguồn</th></tr></thead>
+            <tbody>
+              <tr><td>Ốp lát mặt đứng tháp A</td><td>m²</td><td class="num">1.680</td><td class="num">405.000</td><td class="num">680.400.000</td><td>PRJ-02 đợt 4</td></tr>
+              <tr><td>Gia công đá cong bo góc</td><td>công</td><td class="num">42</td><td class="num">520.000</td><td class="num">21.840.000</td><td>Công nhật</td></tr>
+            </tbody></table>
+          </div></div>
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">4</span> Khấu trừ</div>
+            <table><tbody>
+              <tr><td>Tổng giá trị khoán</td><td class="num">702.240.000</td></tr>
+              <tr><td>Phạt an toàn lao động</td><td class="num">−8.000.000</td></tr>
+              <tr><td>Tiện ích (điện, nước, ở)</td><td class="num">−14.600.000</td></tr>
+              <tr><td>VTTB đã cấp</td><td class="num">−23.400.000</td></tr>
+              <tr><td>Tạm ứng đã cấp</td><td class="num">−300.000.000</td></tr>
+              <tr><td><b>Thực trả</b></td><td class="num"><b>356.240.000</b></td></tr>
+            </tbody></table>
+          </div></div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">5</span> Chứng từ kèm theo</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="wf-btn">Bảng công nhật T7 (có xác nhận 3 bên)</span><span class="wf-btn">Bảng đơn giá GK-014-01</span><span class="wf-btn">BB vi phạm ATLĐ 18/07</span><span class="wf-btn">PX vật tư cho tổ TD-004</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Kiểm soát hạn nộp</td><td>Quá hạn thì khóa nút trình duyệt cho tới khi giải trình được duyệt riêng.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Theo dõi 5 chặng</td><td>Mỗi chặng hiện tiêu chí kiểm của chặng đó, tránh kiểm chồng chéo.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Nạp khối lượng &amp; đơn giá</td><td>Tự lấy từ sản lượng đã chốt và bảng giá đã duyệt; sửa tay bị gắn cờ.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Lập bảng khấu trừ</td><td>Bốn nhóm khấu trừ; VTTB và tạm ứng nạp từ chứng từ kho và công nợ.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Đính kèm chứng từ</td><td>Bảng công nhật có xác nhận các bên là bắt buộc với phần công nhật.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Xuất bộ hồ sơ</td><td>Gộp toàn bộ thành một tệp nén theo cấu trúc chuẩn để lưu và đối chiếu.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Cửa chặn quá hạn nằm trước chặng 1.</b> Hồ sơ nộp sau hạn quy định không vào được luồng cho tới khi giải trình quá hạn được duyệt riêng.<span class="then">Đúng câu “quá thời hạn thì cần phải giải trình được phê duyệt mới gửi được” của yêu cầu gốc.</span></li>
+      <li><b>Mỗi chặng một tiêu chí.</b> Bốn chặng thẩm định kiểm bốn nội dung khác nhau, hiển thị ngay trên màn hình của chặng đó.<span class="then">Tránh bốn người cùng kiểm một thứ và cùng bỏ sót một thứ.</span></li>
+      <li><b>Khối lượng nạp từ sản lượng đã chốt.</b> Bảng khối lượng nghiệm thu lấy từ <a href="PRJ-02.html">PRJ-02</a>, lọc theo tổ đội và kỳ.<span class="then">Sửa tay được nhưng dòng sửa bị gắn cờ và hiện nổi bật cho chặng 1 của TBP TQT kiểm.</span></li>
+      <li><b>Đơn giá lấy từ bảng giá đã duyệt.</b> Đầu việc không có trong bảng giá khoán hiệu lực thì không đưa vào hồ sơ được.<span class="then">Phải lập phụ lục bảng giá ở <a href="PRJ-01.html">PRJ-01</a> trước; hệ thống cung cấp liên kết thẳng.</span></li>
+      <li><b>Bốn nhóm khấu trừ.</b> Phạt, tiện ích, vật tư thiết bị đã cấp, và tạm ứng đã cấp đều tự cộng vào bảng khấu trừ.<span class="then">Vật tư lấy từ phiếu xuất kho dự án cho tổ đó; tạm ứng lấy từ số dư tạm ứng ở công nợ.</span></li>
+      <li><b>Không trả âm.</b> Giá trị thực trả không âm; khấu trừ vượt giá trị khoán thì phần dư chuyển sang kỳ sau.<span class="then">Hệ thống hiện rõ số chuyển kỳ sau để tổ đội đối chiếu.</span></li>
+      <li><b>Bảng công nhật cần xác nhận các bên.</b> Phần công nhật bắt buộc có bảng công nhật đính kèm với xác nhận của tổ đội, kỹ thuật và chỉ huy trưởng.<span class="then">Thiếu thì chặn ngay tại bước lập, không để tới chặng kế toán mới phát hiện.</span></li>
+      <li><b>Trả về giữ mã.</b> Bất kỳ chặng nào trả về đều đưa hồ sơ về người lập, giữ nguyên mã và ghi rõ chặng nào trả, lý do gì.<span class="then">Trình lại sẽ đi từ chặng 1, vì số liệu đã thay đổi.</span></li>
+      <li><b>Duyệt xong sinh đề nghị thanh toán.</b> Lãnh đạo duyệt thì tự tạo đề nghị thanh toán ở <a href="ACC-05.html">ACC-05</a> với đầy đủ dữ liệu.<span class="then">Kế toán chỉ kiểm và trình, không nhập lại từ đầu.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Nộp quá hạn</td><td><code>hôm nay &gt; deadline</code></td><td>“Hồ sơ nộp muộn {n} ngày so với hạn {ngày}. Lập giải trình quá hạn để được duyệt gửi.”</td></tr>
+          <tr><td>Đầu việc ngoài bảng giá</td><td>Không có đơn giá hiệu lực</td><td>“Đầu việc {tên} chưa có trong bảng giá khoán đã duyệt. Lập phụ lục bảng giá trước.”</td></tr>
+          <tr><td>Khối lượng vượt sản lượng đã chốt</td><td>&gt; sản lượng của tổ trong kỳ</td><td>“Khối lượng {số} vượt sản lượng đã chốt của tổ {mã} trong kỳ ({số}).”</td></tr>
+          <tr><td>Thiếu bảng công nhật</td><td>Có dòng công nhật, thiếu tệp</td><td>“Đính kèm bảng công nhật có xác nhận của tổ đội, kỹ thuật và chỉ huy trưởng.”</td></tr>
+          <tr><td>Khấu trừ vượt giá trị khoán</td><td><code>net_amount &lt; 0</code></td><td>“Khấu trừ vượt giá trị khoán {số}. Phần dư {số} sẽ chuyển sang kỳ sau.”</td></tr>
+          <tr><td>Phạt thiếu chứng từ</td><td>Có khoản phạt, thiếu biên bản</td><td>“Khoản phạt cần biên bản kèm theo để tổ đội đối chiếu.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-PRJ03-1</td><td>Hạn nộp 31/07, hôm nay 04/08</td><td>Bấm “Trình duyệt”</td><td>Bị chặn; hiện ô giải trình quá hạn và luồng duyệt riêng</td></tr>
+          <tr><td>UAT-PRJ03-2</td><td>Giải trình quá hạn được duyệt</td><td>Trình lại</td><td>Hồ sơ vào chặng 1 — TBP TQT</td></tr>
+          <tr><td>UAT-PRJ03-3</td><td>Sản lượng tổ TD-004 đợt 4 là 1.680 m²</td><td>Lập hồ sơ kỳ tháng 7</td><td>Bảng khối lượng nạp sẵn 1.680, nguồn ghi “PRJ-02 đợt 4”</td></tr>
+          <tr><td>UAT-PRJ03-4</td><td>Sửa tay khối lượng lên 1.800</td><td>Trình duyệt</td><td>Dòng gắn cờ; chặng 1 thấy cảnh báo lệch so với sản lượng đã chốt</td></tr>
+          <tr><td>UAT-PRJ03-5</td><td>Tổ đội còn dư tạm ứng 300 triệu, VTTB 23,4 triệu</td><td>Mở bảng khấu trừ</td><td>Hai khoản tự điền từ công nợ và phiếu xuất kho dự án</td></tr>
+          <tr><td>UAT-PRJ03-6</td><td>Hồ sơ ở chặng 3 — P. Kế toán</td><td>Kế toán bấm “Trả về” kèm lý do thiếu biên bản phạt</td><td>Hồ sơ về người lập, giữ mã, ghi rõ chặng 3 trả và lý do</td></tr>
+          <tr><td>UAT-PRJ03-7</td><td>Hồ sơ được lãnh đạo duyệt</td><td>Mở màn hình đề nghị thanh toán</td><td>Đã có đề nghị với đủ đối tượng, giá trị thực trả và dự án</td></tr>
+          <tr><td>UAT-PRJ03-8</td><td>Đã duyệt hồ sơ 3 tổ đội trong quý</td><td>Mở báo cáo phân loại nhân công</td><td>Chia đúng ba nhóm sản lượng / công nhật sản lượng / công nhật khác</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="PRJ-01.html">PRJ-01 bảng giá khoán</a><a href="PRJ-02.html">PRJ-02 sản lượng đã chốt</a><a href="PRJ-04.html">PRJ-04 VTTB đã cấp</a><a href="ACC-05.html">ACC-05 đề nghị thanh toán</a><a href="RPT-02.html">RPT-02 báo cáo phân loại nhân công</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 21 / 40</span><span><code>PRJ-03.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

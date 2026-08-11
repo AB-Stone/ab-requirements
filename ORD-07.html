@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORD-07 Cập nhật / hủy đơn — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a class="on" href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / P. TQT — Shopdrawing / <b>ORD-07</b></div><div class="sp"></div>
+  <div class="pnav"><a href="ORD-06.html">← ORD-06</a><a href="index.html">Mục lục</a><a href="ORD-08.html">ORD-08 →</a></div>
+</div>
+<section class="sheet solo" id="ORD-07">
+  <header class="tb">
+    <div class="tb-id">ORD-07</div>
+    <div class="tb-main">
+      <h3>Cập nhật &amp; hủy đơn hàng</h3>
+      <p>Dòng 7.5 là dòng yêu cầu chi tiết nhất trong cả bảng: ba kịch bản tăng khối lượng, giảm khối lượng và hủy, mỗi kịch bản lại rẽ nhánh theo việc hàng đã sản xuất hay chưa.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>P. TQT — Shopdrawing</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Theo luồng trình như đơn gốc</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Luồng trình + Ban lãnh đạo + P. Đấu thầu + dự án liên quan</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 7.5</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Xử lý đúng phần hàng đã sản xuất khi khối lượng bị cắt. Yêu cầu gốc đưa ra thứ tự ưu tiên rõ ràng: ưu tiên chuyển sang hạng mục hoặc dự án khác; không chuyển được thì nhập kho công trình để P. TQT làm hồ sơ nhập kho chủ đầu tư và thanh toán.</p>
+
+    <h4>Lưu đồ — ba kịch bản</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-07.1 Ba kịch bản nhưng chỉ hai điểm quyết định thật sự: hàng đã sản xuất chưa, và nếu rồi thì chuyển được đi đâu. Nhánh “hủy khi đã sản xuất một phần” quy về đúng nhánh xử lý của giảm khối lượng."
+ viewBox="0.00 0.00 827.00 602.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 589.44)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="432.51,-576.48 253.84,-576.48 253.84,-547.08 432.51,-547.08 432.51,-576.48"/>
+<text xml:space="preserve" text-anchor="middle" x="343.18" y="-558.03" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Yêu cầu thay đổi đơn hàng</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="343.18,-512.08 262.48,-494.2 343.18,-476.32 423.87,-494.2 343.18,-512.08"/>
+<text xml:space="preserve" text-anchor="middle" x="343.18" y="-490.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Loại thay đổi</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M343.18,-546.87C343.18,-539.16 343.18,-529.33 343.18,-520.32"/>
+<polygon fill="#55606b" stroke="#55606b" points="345.45,-520.37 343.18,-513.87 340.9,-520.37 345.45,-520.37"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="200.38,-418.44 27.97,-418.44 27.97,-374.04 200.38,-374.04 200.38,-418.44"/>
+<text xml:space="preserve" text-anchor="middle" x="114.18" y="-399.99" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cập nhật khối lượng đơn</text>
+<text xml:space="preserve" text-anchor="middle" x="114.18" y="-384.99" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">trình duyệt lại phần tăng</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M310.85,-483.13C278.81,-473.14 234.47,-459.32 234.47,-459.32 234.47,-459.32 196.28,-439.61 162.94,-422.4"/>
+<polygon fill="#55606b" stroke="#55606b" points="164.08,-420.43 157.26,-419.47 161.99,-424.48 164.08,-420.43"/>
+<text xml:space="preserve" text-anchor="middle" x="285.82" y="-449.42" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">1 · Tăng khối lượng</text>
+</g>
+<g id="node5" class="node">
+<title>D</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="343.18,-429.12 231.22,-396.24 343.18,-363.36 455.13,-396.24 343.18,-429.12"/>
+<text xml:space="preserve" text-anchor="middle" x="343.18" y="-399.99" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phần giảm</text>
+<text xml:space="preserve" text-anchor="middle" x="343.18" y="-384.99" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đã sản xuất chưa?</text>
+</g>
+<g id="edge4" class="edge">
+<title>B&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M343.18,-476.04C343.18,-465.23 343.18,-450.79 343.18,-437.23"/>
+<polygon fill="#55606b" stroke="#55606b" points="345.45,-437.39 343.18,-430.89 340.9,-437.39 345.45,-437.39"/>
+<text xml:space="preserve" text-anchor="middle" x="396.67" y="-449.42" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">2 · Giảm khối lượng</text>
+</g>
+<g id="node12" class="node">
+<title>K</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="556.18,-429.12 481.75,-396.24 556.18,-363.36 630.61,-396.24 556.18,-429.12"/>
+<text xml:space="preserve" text-anchor="middle" x="556.18" y="-399.99" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đã sản xuất</text>
+<text xml:space="preserve" text-anchor="middle" x="556.18" y="-384.99" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">một phần?</text>
+</g>
+<g id="edge11" class="edge">
+<title>B&#45;&gt;K</title>
+<path fill="none" stroke="#55606b" d="M376.47,-483.22C409.8,-473.22 456.18,-459.32 456.18,-459.32 456.18,-459.32 490.71,-437.88 519.19,-420.2"/>
+<polygon fill="#55606b" stroke="#55606b" points="520.29,-422.19 524.62,-416.83 517.89,-418.33 520.29,-422.19"/>
+<text xml:space="preserve" text-anchor="middle" x="506.48" y="-449.42" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">3 · Hủy đơn</text>
+</g>
+<g id="node4" class="node">
+<title>C2</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="220.35,-316.16 0,-316.16 0,-271.76 220.35,-271.76 220.35,-316.16"/>
+<text xml:space="preserve" text-anchor="middle" x="110.18" y="-297.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhà máy / CƯ nhận phần bổ sung</text>
+<text xml:space="preserve" text-anchor="middle" x="110.18" y="-282.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">lập kế hoạch cấp thêm</text>
+</g>
+<g id="edge3" class="edge">
+<title>C&#45;&gt;C2</title>
+<path fill="none" stroke="#55606b" d="M113.33,-373.97C112.75,-359.58 111.99,-340.37 111.36,-324.5"/>
+<polygon fill="#55606b" stroke="#55606b" points="113.63,-324.46 111.1,-318.05 109.08,-324.64 113.63,-324.46"/>
+</g>
+<g id="node6" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="436.11,-316.16 244.25,-316.16 244.25,-271.76 436.11,-271.76 436.11,-316.16"/>
+<text xml:space="preserve" text-anchor="middle" x="340.18" y="-297.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cập nhật lại khối lượng đơn</text>
+<text xml:space="preserve" text-anchor="middle" x="340.18" y="-282.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">giải phóng kế hoạch</text>
+</g>
+<g id="edge5" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M340.58,-363.73C339.8,-354.27 339.14,-346.36 339.14,-346.36 339.14,-346.36 339.14,-333.16 339.14,-333.16 339.14,-333.16 339.25,-329.32 339.39,-324.08"/>
+<polygon fill="#55606b" stroke="#55606b" points="341.66,-324.37 339.56,-317.81 337.11,-324.24 341.66,-324.37"/>
+<text xml:space="preserve" text-anchor="middle" x="377.66" y="-336.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Chưa sản xuất</text>
+</g>
+<g id="node7" class="node">
+<title>F</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="607.87,-316.16 460.48,-316.16 460.48,-271.76 607.87,-271.76 607.87,-316.16"/>
+<text xml:space="preserve" text-anchor="middle" x="534.18" y="-297.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">NM / CƯ thông báo lại</text>
+<text xml:space="preserve" text-anchor="middle" x="534.18" y="-282.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;04</text>
+</g>
+<g id="edge6" class="edge">
+<title>D&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M381.3,-374.05C413.66,-356.07 454.87,-333.16 454.87,-333.16 454.87,-333.16 467.33,-327.16 482.37,-319.92"/>
+<polygon fill="#55606b" stroke="#55606b" points="483.2,-322.04 488.06,-317.17 481.22,-317.94 483.2,-322.04"/>
+<text xml:space="preserve" text-anchor="middle" x="495.53" y="-336.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đã sản xuất đủ</text>
+</g>
+<g id="node8" class="node">
+<title>G</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="534.18,-236.76 387.49,-203.88 534.18,-171 680.87,-203.88 534.18,-236.76"/>
+<text xml:space="preserve" text-anchor="middle" x="534.18" y="-207.63" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chuyển được sang</text>
+<text xml:space="preserve" text-anchor="middle" x="534.18" y="-192.63" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">hạng mục / dự án khác?</text>
+</g>
+<g id="edge7" class="edge">
+<title>F&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M534.18,-271.64C534.18,-263.61 534.18,-254.18 534.18,-244.99"/>
+<polygon fill="#55606b" stroke="#55606b" points="536.45,-245.03 534.18,-238.53 531.9,-245.03 536.45,-245.03"/>
+</g>
+<g id="node9" class="node">
+<title>H</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="599.68,-123.8 412.68,-123.8 412.68,-79.4 599.68,-79.4 599.68,-123.8"/>
+<text xml:space="preserve" text-anchor="middle" x="506.18" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tạm lưu kho, gán sang</text>
+<text xml:space="preserve" text-anchor="middle" x="506.18" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">hạng mục hoặc dự án khác</text>
+</g>
+<g id="edge8" class="edge">
+<title>G&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M525.7,-172.52C522.1,-159.63 517.92,-144.66 514.36,-131.89"/>
+<polygon fill="#55606b" stroke="#55606b" points="516.57,-131.37 512.63,-125.72 512.19,-132.59 516.57,-131.37"/>
+<text xml:space="preserve" text-anchor="middle" x="533.62" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Được</text>
+</g>
+<g id="node10" class="node">
+<title>I</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="766.45,-116.3 623.9,-116.3 623.9,-86.9 766.45,-86.9 766.45,-116.3"/>
+<text xml:space="preserve" text-anchor="middle" x="695.18" y="-97.85" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhập kho công trình</text>
+</g>
+<g id="edge9" class="edge">
+<title>G&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M572.33,-179.12C601.01,-161.25 639.72,-137.14 665.96,-120.8"/>
+<polygon fill="#55606b" stroke="#55606b" points="667.09,-122.78 671.4,-117.41 664.68,-118.92 667.09,-122.78"/>
+<text xml:space="preserve" text-anchor="middle" x="649.73" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
+</g>
+<g id="node11" class="node">
+<title>J</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="800.12,-44.4 590.23,-44.4 590.23,0 800.12,0 800.12,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="695.18" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">P. TQT làm hồ sơ nhập kho CĐT</text>
+<text xml:space="preserve" text-anchor="middle" x="695.18" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">và thanh toán · ORD&#45;08</text>
+</g>
+<g id="edge10" class="edge">
+<title>I&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M695.18,-86.4C695.18,-76.9 695.18,-64.05 695.18,-52.42"/>
+<polygon fill="#55606b" stroke="#55606b" points="697.45,-52.63 695.18,-46.13 692.9,-52.63 697.45,-52.63"/>
+</g>
+<g id="edge13" class="edge">
+<title>K&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M549.7,-365.7C546.84,-352.68 543.49,-337.43 540.64,-324.42"/>
+<polygon fill="#55606b" stroke="#55606b" points="542.88,-324 539.26,-318.14 538.43,-324.97 542.88,-324"/>
+<text xml:space="preserve" text-anchor="middle" x="604.17" y="-336.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đã sản xuất một phần</text>
+</g>
+<g id="node13" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="800.64,-316.16 631.71,-316.16 631.71,-271.76 800.64,-271.76 800.64,-316.16"/>
+<text xml:space="preserve" text-anchor="middle" x="716.18" y="-297.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cập nhật trạng thái Hủy</text>
+<text xml:space="preserve" text-anchor="middle" x="716.18" y="-282.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đóng lệnh thực hiện</text>
+</g>
+<g id="edge12" class="edge">
+<title>K&#45;&gt;L</title>
+<path fill="none" stroke="#55606b" d="M593.18,-379.23C626.13,-364.98 669.18,-346.36 669.18,-346.36 669.18,-346.36 680.05,-334.47 691.34,-322.12"/>
+<polygon fill="#55606b" stroke="#55606b" points="692.79,-323.91 695.5,-317.58 689.43,-320.84 692.79,-323.91"/>
+<text xml:space="preserve" text-anchor="middle" x="693.68" y="-336.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Chưa</text>
+</g>
+</g>
+</svg></div><figcaption><b>Hình ORD-07.1</b> Ba kịch bản nhưng chỉ hai điểm quyết định thật sự: hàng đã sản xuất chưa, và nếu rồi thì chuyển được đi đâu. Nhánh “hủy khi đã sản xuất một phần” quy về đúng nhánh xử lý của giảm khối lượng.</figcaption></figure>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Đơn gốc</td><td class="k">order_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Giữ nguyên mã; bản cập nhật là phiên bản mới của đơn.</td></tr>
+          <tr><td>Loại thay đổi</td><td class="k">change_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>tăng</code> · <code>giảm</code> · <code>hủy</code>.</td></tr>
+          <tr><td>Khối lượng mới</td><td class="k">qty_new</td><td>Số</td><td class="c req">✱</td><td>Theo dòng. Không được nhỏ hơn khối lượng đã cấp và đã nhận.</td></tr>
+          <tr><td>Lý do thay đổi</td><td class="k">change_reason</td><td>Chuỗi</td><td class="c req">✱</td><td>Bắt buộc, hiện trên màn hình duyệt và trong thông báo.</td></tr>
+          <tr><td>Khối lượng đã sản xuất</td><td class="k">qty_produced</td><td>Số</td><td class="c">—</td><td>Do Nhà máy / Cung ứng khai báo; quyết định nhánh xử lý.</td></tr>
+          <tr><td>Hướng xử lý hàng dư</td><td class="k">surplus_action</td><td>Chọn 1</td><td class="c">—</td><td><code>chuyển hạng mục khác</code> · <code>chuyển dự án khác</code> · <code>lưu kho tạm</code> · <code>nhập kho công trình</code>.</td></tr>
+          <tr><td>Đích chuyển</td><td class="k">target_ref</td><td>Tham chiếu</td><td class="c">—</td><td>Bắt buộc khi chọn chuyển hạng mục hoặc dự án khác.</td></tr>
+          <tr><td>Bản vẽ cập nhật</td><td class="k">files[]</td><td>Tệp</td><td class="c">—</td><td>Theo cột chứng từ gốc: “Đơn hàng + BV cập nhật”.</td></tr>
+          <tr><td>Phiên bản đơn</td><td class="k">order_version</td><td>Số</td><td class="c req">✱</td><td>Tăng mỗi lần cập nhật; lịch sử giữ nguyên các bản trước.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Không cho giảm khối lượng xuống dưới mức đã cấp và đã được dự án xác nhận nhận.</li>
+      <li>Khi phần giảm đã sản xuất, hệ thống tự phát thông báo tới P. TQT, P. Cung ứng, Nhà máy và Giám đốc dự án để quyết định hướng xử lý.</li>
+      <li>Chọn “chuyển sang hạng mục / dự án khác” tạo bút toán điều chuyển nội bộ giữa hai mã dự án, không sinh doanh thu ảo.</li>
+      <li>Chọn “nhập kho công trình” tự tạo việc lập hồ sơ nhập kho chủ đầu tư ở <a href="ORD-08.html">ORD-08</a>.</li>
+      <li>Đơn hàng giữ nguyên mã qua mọi lần cập nhật; xem được lịch sử từng phiên bản và ai duyệt.</li>
+      <li>Hủy đơn chưa sản xuất thì lệnh thực hiện đóng ngay và kế hoạch cấp được giải phóng.</li>
+      <li>Mọi thay đổi khối lượng phản ánh lại vào lũy kế đối chiếu BOQ ở <a href="ORD-03.html">ORD-03</a> và vào bảng áp giá ở <a href="ORD-06.html">ORD-06</a>.</li>
+    </ol>
+
+    <h4>Mockup UI — Đơn hàng › Cập nhật / hủy</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">DH-2026-155 ›</span><b>Cập nhật đơn hàng · v2</b><span class="sp"></span><span class="wf-btn dgr"><span class="pin">5</span> Hủy đơn</span><span class="wf-btn pri">Trình duyệt cập nhật</span></div>
+      <div class="wf-body">
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">1</span> Điều chỉnh khối lượng</div>
+            <table><thead><tr><th>Sản phẩm</th><th class="num">KL cũ</th><th class="num">Đã cấp</th><th class="num">KL mới</th><th class="num">Chênh</th></tr></thead>
+            <tbody>
+              <tr><td>Đá granite đen 600×600×20</td><td class="num">1.100</td><td class="num">680</td><td class="num">920</td><td class="num">−180</td></tr>
+              <tr><td>Viên bo góc R120</td><td class="num">420</td><td class="num">420</td><td class="num">420</td><td class="num">0</td></tr>
+            </tbody></table>
+            <div class="wf-f" style="margin-top:8px"><label>Lý do thay đổi ✱</label><div class="in">CĐT cắt phạm vi trục 8–9, có văn bản 22/08.</div></div>
+          </div></div>
+          <div class="wf-c" style="flex:0 1 300px"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">2</span> Xử lý phần đã sản xuất</div>
+            <table><tbody>
+              <tr><td>Phần giảm</td><td class="num">180 m²</td></tr>
+              <tr><td>Đã sản xuất</td><td class="num">180 m²</td></tr>
+              <tr><td>Chưa sản xuất</td><td class="num">0 m²</td></tr>
+            </tbody></table>
+            <div class="wf-f" style="margin-top:8px"><label><span class="pin">3</span> Hướng xử lý ✱</label><div class="in">Chuyển sang hạng mục khác <em>▾</em></div></div>
+            <div class="wf-f"><label>Đích chuyển ✱</label><div class="in">DA-2026-011 · HM-03 lát sàn <em>▾</em></div></div>
+            <p style="margin:0;font-size:11.5px;color:var(--ink-3)">Không chuyển được → chọn “Nhập kho công trình”, hệ thống tạo việc lập hồ sơ nhập kho CĐT.</p>
+          </div></div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">4</span> Lịch sử phiên bản đơn hàng</div>
+          <table><tbody>
+            <tr><td>v1 · 24/07</td><td>Đơn gốc 1.100 m² + 420 viên</td><td>Duyệt 26/07 · Phạm Văn An</td></tr>
+            <tr><td>v2 · 22/08</td><td>Giảm 180 m² — CĐT cắt phạm vi trục 8–9</td><td><span class="tag t-warn">Đang trình</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Điều chỉnh khối lượng theo dòng</td><td>Chặn nhập nhỏ hơn khối lượng đã cấp và đã nhận; hiện cột chênh lệch.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Đối chiếu phần đã sản xuất</td><td>Số liệu do Nhà máy / Cung ứng cập nhật, chỉ đọc ở màn hình này.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Chọn hướng xử lý hàng dư</td><td>Bốn lựa chọn theo đúng yêu cầu gốc. Chọn “nhập kho công trình” sinh việc ở <a href="ORD-08.html">ORD-08</a>.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Xem lịch sử phiên bản</td><td>So sánh được hai phiên bản bất kỳ; mọi bản đều lưu người duyệt và thời điểm.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Hủy đơn</td><td>Chưa sản xuất: đóng ngay sau khi duyệt. Đã sản xuất một phần: chuyển sang nhánh xử lý hàng dư.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Sàn của khối lượng mới.</b> Khối lượng mới không nhỏ hơn khối lượng đã được dự án xác nhận nhận.<span class="then">Hàng đã giao và đã nhận là sự thật đã xảy ra, không điều chỉnh bằng cách sửa đơn.</span></li>
+      <li><b>Đã sản xuất quyết định nhánh.</b> Nhà máy hoặc P. Cung ứng khai báo khối lượng đã sản xuất; con số này chỉ đọc ở màn hình cập nhật đơn.<span class="then">Phần giảm chưa sản xuất thì chỉ cần cập nhật số; phần đã sản xuất mới phải chọn hướng xử lý.</span></li>
+      <li><b>Thứ tự ưu tiên xử lý hàng dư.</b> Ưu tiên chuyển sang hạng mục khác, rồi dự án khác, rồi lưu kho tạm, cuối cùng mới nhập kho công trình.<span class="then">Hệ thống trình bày bốn lựa chọn theo đúng thứ tự này để phản ánh chủ trương trong yêu cầu gốc.</span></li>
+      <li><b>Chuyển nội bộ không sinh doanh thu.</b> Chọn chuyển sang hạng mục hoặc dự án khác tạo bút toán điều chuyển nội bộ.<span class="then">Không ghi nhận doanh thu, không ghi nhận giá vốn hai lần.</span></li>
+      <li><b>Nhập kho công trình sinh việc.</b> Chọn “nhập kho công trình” tự tạo việc lập hồ sơ nhập kho chủ đầu tư ở <a href="ORD-08.html">ORD-08</a>.<span class="then">Việc xuất hiện trong hàng chờ của P. TQT kèm liên kết ngược về đơn hàng.</span></li>
+      <li><b>Mã đơn không đổi.</b> Mọi lần cập nhật đều sinh phiên bản mới của cùng đơn hàng.<span class="then">So sánh hai phiên bản bất kỳ và xem ai duyệt bản nào là thao tác một cú bấm.</span></li>
+      <li><b>Hủy khi chưa sản xuất thì gọn.</b> Đơn chưa sản xuất phần nào thì hủy sẽ đóng lệnh thực hiện và giải phóng kế hoạch cấp.<span class="then">Đã sản xuất một phần thì quy về nhánh xử lý hàng dư của kịch bản giảm khối lượng.</span></li>
+      <li><b>Lan tỏa số liệu.</b> Cập nhật khối lượng phản ánh ngay vào lũy kế đối chiếu BOQ ở <a href="ORD-03.html">ORD-03</a> và vào bảng áp giá ở <a href="ORD-06.html">ORD-06</a>.<span class="then">Bảng áp giá đã duyệt trước đó sẽ bị gắn cờ “cần áp giá lại” nếu khối lượng đổi.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Giảm dưới số đã nhận</td><td><code>qty_new &lt; qty_received</code></td><td>“Dự án đã nhận {số} {đvt}. Không giảm khối lượng xuống dưới mức này.”</td></tr>
+          <tr><td>Thiếu lý do thay đổi</td><td><code>change_reason</code> rỗng</td><td>“Nhập lý do thay đổi — nội dung hiện trên màn hình duyệt và trong thông báo gửi các bên.”</td></tr>
+          <tr><td>Chuyển hạng mục nhưng chưa chọn đích</td><td><code>target_ref</code> rỗng</td><td>“Chọn hạng mục hoặc dự án nhận phần hàng dư.”</td></tr>
+          <tr><td>Đích chuyển không dùng được vật tư</td><td>Quy cách không khớp BOQ đích</td><td>“Hạng mục {mã} dùng quy cách {a}, hàng dư là {b}. Kiểm tra lại hoặc chọn nhập kho công trình.”</td></tr>
+          <tr><td>Đơn đã hoàn thành</td><td>Trạng thái hoàn thành</td><td>“Đơn đã hoàn thành ngày {ngày}. Phát sinh mới nên lập đơn hàng riêng.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-ORD07-1</td><td>Đơn 1.100 m², đã nhận 660 m²</td><td>Sửa khối lượng xuống 600 m²</td><td>Bị chặn, nêu rõ đã nhận 660</td></tr>
+          <tr><td>UAT-ORD07-2</td><td>Giảm 180 m², nhà máy khai chưa sản xuất phần này</td><td>Trình duyệt cập nhật</td><td>Không hỏi hướng xử lý; duyệt xong kế hoạch cấp giảm tương ứng</td></tr>
+          <tr><td>UAT-ORD07-3</td><td>Giảm 180 m², đã sản xuất đủ 180</td><td>Trình duyệt cập nhật</td><td>Bắt buộc chọn hướng xử lý; các bên liên quan nhận thông báo</td></tr>
+          <tr><td>UAT-ORD07-4</td><td>Chọn “chuyển sang DA-2026-011 HM-03”</td><td>Duyệt cập nhật</td><td>Sinh bút toán điều chuyển nội bộ, không phát sinh doanh thu</td></tr>
+          <tr><td>UAT-ORD07-5</td><td>Chọn “nhập kho công trình”</td><td>Duyệt cập nhật</td><td>Hàng chờ của P. TQT có việc lập hồ sơ nhập kho CĐT, liên kết về đơn</td></tr>
+          <tr><td>UAT-ORD07-6</td><td>Đơn đã áp giá và duyệt giá</td><td>Cập nhật giảm khối lượng và duyệt</td><td>Bảng áp giá gắn cờ “cần áp giá lại”</td></tr>
+          <tr><td>UAT-ORD07-7</td><td>Đơn v1 và v2</td><td>Mở lịch sử phiên bản</td><td>So sánh được hai bản; mỗi bản có người duyệt và thời điểm</td></tr>
+          <tr><td>UAT-ORD07-8</td><td>Đơn chưa sản xuất phần nào</td><td>Bấm “Hủy đơn” và duyệt</td><td>Lệnh thực hiện đóng; kế hoạch cấp giải phóng; lũy kế BOQ trả lại</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="ORD-03.html">ORD-03 đơn hàng gốc</a><a href="ORD-05.html">ORD-05 cấp hàng</a><a href="ORD-08.html">ORD-08 hồ sơ nhập kho CĐT</a><a href="ACC-04.html">ACC-04 điều chuyển kho</a><a href="PF-04.html">PF-04 thông báo đa bên</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 17 / 40</span><span><code>ORD-07.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BID-05 Ký HĐ & khởi tạo dự án — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a class="on" href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Phòng Đấu thầu / <b>BID-05</b></div><div class="sp"></div>
+  <div class="pnav"><a href="BID-04.html">← BID-04</a><a href="index.html">Mục lục</a><a href="ORD-01.html">ORD-01 →</a></div>
+</div>
+<section class="sheet solo" id="BID-05">
+  <header class="tb">
+    <div class="tb-id">BID-05</div>
+    <div class="tb-main">
+      <h3>Ký hợp đồng &amp; khởi tạo dự án</h3>
+      <p>Bước bản lề của cả hệ thống. Ghi chú gốc nói rất rõ: “ở bước này có thể tương đương tạo 1 dự án mới… PĐT sẽ thêm Ban lãnh đạo cty, Giám đốc dự án, các phòng ban vào dự án này, Giám đốc dự án sẽ phân công chỉ huy trưởng, CBKT vào dự án, sẽ có thông báo đến từng ID được thêm vào dự án”.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu → Giám đốc dự án</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Ký số nhiều bước: TP ĐT → KT trưởng → Tổng GĐ → đối tác</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · trưởng các BP · dự án liên quan</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>ĐT · dòng 4.2</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Một thao tác duy nhất phải cho ra ba kết quả: hợp đồng được ký đủ chữ ký, dự án được khởi tạo với BOQ hợp đồng, và bộ máy nhân sự dự án được gán kèm thông báo tới từng người. Nếu tách rời ba việc này thì dữ liệu dự án sẽ khuyết ngay từ ngày đầu.</p>
+
+    <h4>Lưu đồ — ký số và khởi tạo</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-05.1 Chuỗi ký số nội bộ chạy tuần tự trước khi gửi đối tác; chỉ khi có đủ chữ ký hai bên thì dự án mới được khởi tạo. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện."
+ viewBox="0.00 0.00 510.00 1007.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 994.32)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="249.12,-981.36 113.55,-981.36 113.55,-951.96 249.12,-951.96 249.12,-981.36"/>
+<text xml:space="preserve" text-anchor="middle" x="181.34" y="-962.91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chốt giá tại BID&#45;03</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="338.39,-916.96 24.28,-916.96 24.28,-872.56 338.39,-872.56 338.39,-916.96"/>
+<text xml:space="preserve" text-anchor="middle" x="181.34" y="-898.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Soạn hợp đồng</text>
+<text xml:space="preserve" text-anchor="middle" x="181.34" y="-883.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">nạp sẵn giá trị, điều kiện thương mại, BOQ chốt</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M181.34,-951.51C181.34,-943.92 181.34,-934.28 181.34,-925.15"/>
+<polygon fill="#55606b" stroke="#55606b" points="183.61,-925.34 181.34,-918.84 179.06,-925.34 183.61,-925.34"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="210,-837.56 14.67,-837.56 14.67,-808.16 210,-808.16 210,-837.56"/>
+<text xml:space="preserve" text-anchor="middle" x="112.34" y="-819.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ký số bước 1 — TP Đấu thầu</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M160.26,-872.41C151.15,-863.19 140.57,-852.47 131.67,-843.45"/>
+<polygon fill="#55606b" stroke="#55606b" points="133.35,-841.91 127.16,-838.88 130.11,-845.11 133.35,-841.91"/>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="211.95,-773.16 2.72,-773.16 2.72,-743.76 211.95,-743.76 211.95,-773.16"/>
+<text xml:space="preserve" text-anchor="middle" x="107.34" y="-754.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ký số bước 2 — Kế toán trưởng</text>
+</g>
+<g id="edge3" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M111.2,-807.7C110.58,-799.96 109.8,-790.2 109.1,-781.49"/>
+<polygon fill="#55606b" stroke="#55606b" points="111.37,-781.37 108.59,-775.07 106.84,-781.73 111.37,-781.37"/>
+</g>
+<g id="node5" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="212.67,-696.56 0,-696.56 0,-667.16 212.67,-667.16 212.67,-696.56"/>
+<text xml:space="preserve" text-anchor="middle" x="106.34" y="-678.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ký số bước 3 — Tổng Giám đốc</text>
+</g>
+<g id="edge4" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M107.15,-743.43C107,-732.49 106.79,-717.1 106.63,-704.57"/>
+<polygon fill="#55606b" stroke="#55606b" points="108.9,-704.81 106.54,-698.34 104.36,-704.87 108.9,-704.81"/>
+</g>
+<g id="node6" class="node">
+<title>F</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="199.53,-632.16 93.14,-632.16 93.14,-602.76 199.53,-602.76 199.53,-632.16"/>
+<text xml:space="preserve" text-anchor="middle" x="146.34" y="-613.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Gửi đối tác ký</text>
+</g>
+<g id="edge5" class="edge">
+<title>E&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M115.41,-666.7C120.63,-658.56 127.27,-648.19 133.07,-639.16"/>
+<polygon fill="#55606b" stroke="#55606b" points="134.88,-640.54 136.48,-633.84 131.05,-638.08 134.88,-640.54"/>
+</g>
+<g id="node7" class="node">
+<title>G</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="197.34,-567.76 130.55,-549.88 197.34,-532 264.12,-549.88 197.34,-567.76"/>
+<text xml:space="preserve" text-anchor="middle" x="197.34" y="-546.13" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đối tác ký?</text>
+</g>
+<g id="edge6" class="edge">
+<title>F&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M157.15,-602.55C164.22,-593.46 173.58,-581.43 181.48,-571.27"/>
+<polygon fill="#55606b" stroke="#55606b" points="183.06,-572.94 185.25,-566.42 179.47,-570.15 183.06,-572.94"/>
+</g>
+<g id="edge7" class="edge">
+<title>G&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M208.62,-565.11C223.91,-584.4 249.34,-616.46 249.34,-616.46 249.34,-823.86 249.34,-823.86 249.34,-823.86 249.34,-823.86 226.78,-847.05 207.65,-866.71"/>
+<polygon fill="#55606b" stroke="#55606b" points="206.06,-865.08 203.16,-871.32 209.33,-868.25 206.06,-865.08"/>
+<text xml:space="preserve" text-anchor="middle" x="314.45" y="-716.86" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Yêu cầu sửa điều khoản</text>
+</g>
+<g id="node8" class="node">
+<title>H</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="273.46,-484.8 121.21,-484.8 121.21,-440.4 273.46,-440.4 273.46,-484.8"/>
+<text xml:space="preserve" text-anchor="middle" x="197.34" y="-466.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hợp đồng hoàn tất</text>
+<text xml:space="preserve" text-anchor="middle" x="197.34" y="-451.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">tải bản ký lên · PF&#45;05</text>
+</g>
+<g id="edge8" class="edge">
+<title>G&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M197.34,-531.62C197.34,-520.5 197.34,-505.75 197.34,-492.83"/>
+<polygon fill="#55606b" stroke="#55606b" points="199.61,-493.09 197.34,-486.59 195.06,-493.09 199.61,-493.09"/>
+<text xml:space="preserve" text-anchor="middle" x="219.95" y="-505.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đã ký đủ</text>
+</g>
+<g id="node9" class="node">
+<title>I</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="273.12,-405.4 121.55,-405.4 121.55,-361 273.12,-361 273.12,-405.4"/>
+<text xml:space="preserve" text-anchor="middle" x="197.34" y="-386.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Khởi tạo dự án</text>
+<text xml:space="preserve" text-anchor="middle" x="197.34" y="-371.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">sinh project_id · PF&#45;01</text>
+</g>
+<g id="edge9" class="edge">
+<title>H&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M197.34,-440.04C197.34,-431.82 197.34,-422.31 197.34,-413.49"/>
+<polygon fill="#55606b" stroke="#55606b" points="199.61,-413.66 197.34,-407.16 195.06,-413.66 199.61,-413.66"/>
+</g>
+<g id="node10" class="node">
+<title>J</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="322.31,-264.6 62.36,-264.6 62.36,-220.2 322.31,-220.2 322.31,-264.6"/>
+<text xml:space="preserve" text-anchor="middle" x="192.34" y="-246.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chuyển BOQ chốt thành BOQ hợp đồng</text>
+<text xml:space="preserve" text-anchor="middle" x="192.34" y="-231.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">khóa khối lượng và đơn giá</text>
+</g>
+<g id="edge10" class="edge">
+<title>I&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M196.55,-360.51C195.7,-336.88 194.34,-298.94 193.39,-272.68"/>
+<polygon fill="#55606b" stroke="#55606b" points="195.67,-272.86 193.17,-266.45 191.13,-273.03 195.67,-272.86"/>
+</g>
+<g id="node11" class="node">
+<title>K</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="483.75,-326 218.92,-326 218.92,-281.6 483.75,-281.6 483.75,-326"/>
+<text xml:space="preserve" text-anchor="middle" x="351.34" y="-307.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">P. Đấu thầu gán thành phần dự án</text>
+<text xml:space="preserve" text-anchor="middle" x="351.34" y="-292.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ban lãnh đạo · GĐ dự án · các phòng ban</text>
+</g>
+<g id="edge11" class="edge">
+<title>I&#45;&gt;K</title>
+<path fill="none" stroke="#55606b" d="M240.23,-360.64C259.18,-351.12 281.57,-339.86 301.28,-329.96"/>
+<polygon fill="#55606b" stroke="#55606b" points="302.26,-332.01 307.05,-327.06 300.22,-327.94 302.26,-332.01"/>
+</g>
+<g id="node14" class="node">
+<title>N</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="336.06,-44.4 88.61,-44.4 88.61,0 336.06,0 336.06,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="212.34" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Mở các luồng phụ thuộc:</text>
+<text xml:space="preserve" text-anchor="middle" x="212.34" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">tạm ứng HĐ · shopdrawing · giá khoán</text>
+</g>
+<g id="edge14" class="edge">
+<title>J&#45;&gt;N</title>
+<path fill="none" stroke="#55606b" d="M194.29,-220.08C197.89,-180.81 205.57,-97 209.65,-52.45"/>
+<polygon fill="#55606b" stroke="#55606b" points="211.91,-52.79 210.23,-46.11 207.38,-52.38 211.91,-52.79"/>
+</g>
+<g id="node12" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="459.55,-203.2 237.12,-203.2 237.12,-158.8 459.55,-158.8 459.55,-203.2"/>
+<text xml:space="preserve" text-anchor="middle" x="348.34" y="-184.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">GĐ dự án phân công</text>
+<text xml:space="preserve" text-anchor="middle" x="348.34" y="-169.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chỉ huy trưởng · cán bộ kỹ thuật</text>
+</g>
+<g id="edge12" class="edge">
+<title>K&#45;&gt;L</title>
+<path fill="none" stroke="#55606b" d="M350.8,-281.2C350.31,-261.71 349.6,-232.85 349.06,-211.29"/>
+<polygon fill="#55606b" stroke="#55606b" points="351.34,-211.36 348.9,-204.92 346.79,-211.48 351.34,-211.36"/>
+</g>
+<g id="node13" class="node">
+<title>M</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="451.07,-123.8 235.6,-123.8 235.6,-79.4 451.07,-79.4 451.07,-123.8"/>
+<text xml:space="preserve" text-anchor="middle" x="343.34" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Thông báo tới từng ID được thêm</text>
+<text xml:space="preserve" text-anchor="middle" x="343.34" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;04</text>
+</g>
+<g id="edge13" class="edge">
+<title>L&#45;&gt;M</title>
+<path fill="none" stroke="#55606b" d="M346.94,-158.44C346.41,-150.22 345.8,-140.71 345.23,-131.89"/>
+<polygon fill="#55606b" stroke="#55606b" points="347.51,-131.89 344.82,-125.55 342.97,-132.19 347.51,-131.89"/>
+</g>
+<g id="edge15" class="edge">
+<title>M&#45;&gt;N</title>
+<path fill="none" stroke="#55606b" d="M306.84,-79.04C290.8,-69.56 271.85,-58.37 255.15,-48.5"/>
+<polygon fill="#55606b" stroke="#55606b" points="256.69,-46.76 249.93,-45.41 254.37,-50.68 256.69,-46.76"/>
+</g>
+</g>
+</svg></div><figcaption><b>Hình BID-05.1</b> Chuỗi ký số nội bộ chạy tuần tự trước khi gửi đối tác; chỉ khi có đủ chữ ký hai bên thì dự án mới được khởi tạo. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện.</figcaption></figure>
+
+    <h4>Tham số — hợp đồng</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Số hợp đồng</td><td class="k">contract_no</td><td>Chuỗi</td><td class="c req">✱</td><td><code>HD-YYYY-NNN</code>.</td></tr>
+          <tr><td>Gói thầu nguồn</td><td class="k">tender_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc, dùng để truy vết BOQ.</td></tr>
+          <tr><td>Bên ký kết</td><td class="k">partner_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>—</td></tr>
+          <tr><td>Giá trị hợp đồng</td><td class="k">contract_value</td><td>Số tiền</td><td class="c req">✱</td><td>Trước và sau VAT, có ghi thuế suất.</td></tr>
+          <tr><td>Ngày ký · hiệu lực</td><td class="k">signed_at, effective_from, to</td><td>Ngày</td><td class="c req">✱</td><td>Ngày ký lấy theo thời điểm chữ ký cuối cùng.</td></tr>
+          <tr><td>Đợt thanh toán</td><td class="k">payment_terms[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi đợt: tên, điều kiện, tỷ lệ %, giá trị, ngày dự kiến — nguồn của tab Thanh toán ở màn hình công trình.</td></tr>
+          <tr><td>Bảo lãnh</td><td class="k">guarantees[]</td><td>Bảng</td><td class="c">—</td><td>Loại (tạm ứng / thực hiện / bảo hành), giá trị, ngân hàng, ngày hết hạn — sinh nhắc trước hạn 15 ngày.</td></tr>
+          <tr><td>Chuỗi ký</td><td class="k">sign_chain[]</td><td>Danh sách</td><td class="c req">✱</td><td>Thứ tự người ký, trạng thái từng bước, thời điểm, phương thức (<a href="PF-04.html">PF-04</a>).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — khởi tạo dự án</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã dự án</td><td class="k">project_id</td><td>Chuỗi</td><td class="c req">✱</td><td>Sinh tự động theo <a href="PF-01.html">PF-01</a>.</td></tr>
+          <tr><td>BOQ hợp đồng</td><td class="k">contract_boq[]</td><td>Bảng</td><td class="c req">✱</td><td>Sao từ BOQ báo giá đã chốt; khóa cột khối lượng và đơn giá. Là gốc so sánh của <a href="PRJ-02.html">PRJ-02</a> và <a href="RPT-03.html">RPT-03</a>.</td></tr>
+          <tr><td>Danh mục hạng mục</td><td class="k">wbs[]</td><td>Bảng</td><td class="c req">✱</td><td>Sinh từ mã hạng mục của BOQ hợp đồng.</td></tr>
+          <tr><td>Thành phần dự án</td><td class="k">members[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: người, vai trò trong dự án, phạm vi quyền. Vai trò tối thiểu: Ban lãnh đạo, Giám đốc dự án, đại diện các phòng ban.</td></tr>
+          <tr><td>Nhân sự hiện trường</td><td class="k">site_team[]</td><td>Bảng</td><td class="c req">✱</td><td>Do Giám đốc dự án phân công: chỉ huy trưởng, cán bộ kỹ thuật, thủ kho công trình.</td></tr>
+          <tr><td>Kho dự án</td><td class="k">project_wh</td><td>Tham chiếu</td><td class="c req">✱</td><td>Tự tạo một kho dự án khi khởi tạo (<a href="ACC-02.html">ACC-02</a>).</td></tr>
+          <tr><td>Vùng miền</td><td class="k">region_stat</td><td>Tham chiếu</td><td class="c req">✱</td><td>Suy ra từ địa điểm công trình; là chiều nhóm của báo cáo lãi lỗ.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Màn hình hợp đồng hiển thị tiến trình ký theo từng bước, biết ngay đang chờ ai ký.</li>
+      <li>Không thể khởi tạo dự án khi chuỗi ký chưa hoàn tất.</li>
+      <li>Khởi tạo dự án sinh đồng thời: mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án và bảng đợt thanh toán.</li>
+      <li>BOQ hợp đồng khóa khối lượng và đơn giá; muốn đổi phải qua phụ lục hợp đồng, sinh phiên bản mới.</li>
+      <li>Mỗi người được thêm vào dự án nhận đúng một thông báo nêu rõ dự án và vai trò của mình.</li>
+      <li>Người được gán tự động có quyền xem dữ liệu của dự án đó theo <a href="PF-02.html">PF-02</a>, không cần Admin cấp riêng.</li>
+      <li>Dự án mới xuất hiện ngay ở danh sách công trình với tiến độ 0% và đủ 4 tab của mockup.</li>
+      <li>Bảo lãnh sắp hết hạn sinh nhắc việc trước 15 ngày cho Kế toán trưởng.</li>
+    </ol>
+
+    <h4>Mockup UI — Hợp đồng &amp; khởi tạo dự án</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › GT-2026-018 ›</span><b>HD-2026-008</b><span class="sp"></span><span class="tag t-warn">Chờ đối tác ký</span><span class="wf-btn"><span class="pin">2</span> Gửi nhắc ký</span></div>
+      <div class="wf-body">
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">1</span> Tiến trình ký số</div>
+          <div class="wf-steps">
+            <div class="done"><b>✓ TP Đấu thầu</b>Ng. Thị Hạnh<br>28/12 09:10</div>
+            <div class="done"><b>✓ Kế toán trưởng</b>Trần Quốc Bảo<br>29/12 14:22</div>
+            <div class="done"><b>✓ Tổng giám đốc</b>Phạm Văn An<br>30/12 08:05</div>
+            <div class="cur"><b>Đối tác</b>Coteccons<br>đã gửi 30/12</div>
+          </div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">3</span> Thông tin hợp đồng</div>
+            <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Giá trị trước VAT ✱</label><div class="in">26.388.888.889</div></div></div>
+            <div class="wf-c"><div class="wf-f"><label>Sau VAT 8% ✱</label><div class="in ro">28.500.000.000</div></div></div></div>
+            <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Hiệu lực từ ✱</label><div class="in">05/01/2026</div></div></div>
+            <div class="wf-c"><div class="wf-f"><label>Đến ✱</label><div class="in">20/12/2026</div></div></div></div>
+          </div></div>
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">4</span> Đợt thanh toán theo hợp đồng</div>
+            <table><thead><tr><th>Đợt</th><th>Điều kiện</th><th class="num">Tỷ lệ</th><th>Dự kiến</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Tạm ứng sau ký</td><td class="num">10%</td><td>15/02/2026</td></tr>
+              <tr><td>2–4</td><td>Nghiệm thu khối lượng theo đợt</td><td class="num">75%</td><td>T3 · T5 · T7</td></tr>
+              <tr><td>5</td><td>Nghiệm thu tổng thể, giữ bảo hành 5%</td><td class="num">15%</td><td>30/09/2026</td></tr>
+            </tbody></table>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="wf" style="margin-top:10px">
+      <div class="wf-bar"><b>Khởi tạo dự án từ hợp đồng</b><span class="wf-crumb">bước 2/2 — gán nhân sự</span><span class="sp"></span><span class="wf-btn pri"><span class="pin">7</span> Khởi tạo &amp; thông báo</span></div>
+      <div class="wf-body">
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">5</span> Thành phần dự án — P. Đấu thầu gán</div>
+            <table><thead><tr><th>Vai trò</th><th>Người</th><th>Quyền</th></tr></thead>
+            <tbody>
+              <tr><td>Ban lãnh đạo</td><td>Phạm Văn An</td><td>Toàn quyền</td></tr>
+              <tr><td>Giám đốc dự án</td><td>Ngô Đức Thịnh</td><td>Toàn quyền dự án</td></tr>
+              <tr><td>P. TQT</td><td>Lê Minh Tú</td><td>Đơn hàng, hồ sơ</td></tr>
+              <tr><td>P. Kế toán</td><td>Trần Quốc Bảo</td><td>Chi phí, công nợ</td></tr>
+            </tbody></table>
+          </div></div>
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">6</span> Nhân sự hiện trường — GĐ dự án phân công</div>
+            <table><thead><tr><th>Chức danh</th><th>Người</th><th>Hạng mục phụ trách</th></tr></thead>
+            <tbody>
+              <tr><td>Chỉ huy trưởng</td><td>Đỗ Thái Sơn</td><td>Toàn công trình</td></tr>
+              <tr><td>Cán bộ kỹ thuật</td><td>Vũ Đình Nam</td><td>HM-01 mặt đứng tháp A</td></tr>
+              <tr><td>Thủ kho công trình</td><td>Võ Hoàng Long</td><td>Kho DA-2026-014</td></tr>
+            </tbody></table>
+            <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Khởi tạo xong: 7 người nhận thông báo, 1 kho dự án được tạo.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Theo dõi tiến trình ký</td><td>Từng bước ký hiện người, thời điểm, phương thức. Bước đang chờ được làm nổi.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Nhắc ký</td><td>Gửi nhắc tới người ký nội bộ hoặc email tới đối tác; ghi lại số lần nhắc.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Khai báo giá trị &amp; hiệu lực</td><td>Giá trị sau VAT tính tự động; hiệu lực dùng để cảnh báo trễ tiến độ hợp đồng.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Lập bảng đợt thanh toán</td><td>Tổng tỷ lệ phải bằng 100%. Bảng này sinh trực tiếp tab Thanh toán của màn hình công trình.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Gán thành phần dự án</td><td>Do P. Đấu thầu thực hiện. Mỗi dòng gán một vai trò và bộ quyền tương ứng.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Phân công nhân sự hiện trường</td><td>Do Giám đốc dự án thực hiện sau khi được gán. Gán được theo hạng mục.</td></tr>
+          <tr><td class="c"><span class="pin">7</span></td><td>Khởi tạo &amp; thông báo</td><td>Chạy đồng thời: sinh mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, bảng đợt thanh toán, và gửi thông báo tới từng ID.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Ký tuần tự trong, song song ngoài.</b> Ba bước ký nội bộ chạy tuần tự; chỉ khi đủ ba chữ ký mới gửi đối tác.<span class="then">Đối tác ký ngoài hệ thống, người phụ trách tải bản ký lên và xác nhận — hệ thống theo dõi trạng thái chứ không điều khiển bước này.</span></li>
+      <li><b>Không khởi tạo dự án khi chưa đủ chữ ký.</b> Nút “Khởi tạo &amp; thông báo” chỉ mở khi chuỗi ký hoàn tất.<span class="then">Tránh trường hợp dự án tồn tại trong hệ thống trong khi hợp đồng chưa có hiệu lực pháp lý.</span></li>
+      <li><b>Một thao tác, bảy kết quả.</b> Khởi tạo dự án sinh đồng thời: mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, bảng đợt thanh toán, danh sách thành phần và các thông báo.<span class="then">Chạy trong một giao dịch — lỗi ở bất kỳ bước nào thì hoàn tác toàn bộ, không để dự án sinh ra thiếu bộ phận.</span></li>
+      <li><b>BOQ hợp đồng bất biến.</b> Khối lượng và đơn giá của BOQ hợp đồng khóa vĩnh viễn.<span class="then">Thay đổi chỉ qua phụ lục hợp đồng, sinh phiên bản BOQ mới và giữ nguyên bản gốc để đối chiếu.</span></li>
+      <li><b>Đợt thanh toán phải đủ 100%.</b> Tổng tỷ lệ các đợt bằng đúng 100% giá trị hợp đồng.<span class="then">Bảng này sinh trực tiếp tab Thanh toán của màn hình công trình và là căn cứ lập hồ sơ ở <a href="ORD-01.html">ORD-01</a>.</span></li>
+      <li><b>Gán nhân sự hai tầng.</b> P. Đấu thầu gán thành phần dự án; Giám đốc dự án — sau khi được gán — mới phân công nhân sự hiện trường.<span class="then">Chưa gán Giám đốc dự án thì phần phân công hiện trường bị khóa.</span></li>
+      <li><b>Thông báo cá nhân hóa.</b> Mỗi người được thêm nhận đúng một thông báo nêu tên dự án và vai trò của chính họ.<span class="then">Không gửi một thông báo chung cho cả nhóm — người nhận cần biết mình được giao việc gì.</span></li>
+      <li><b>Bảo lãnh có nhắc hạn.</b> Mỗi bảo lãnh sinh nhắc việc trước ngày hết hạn 15 ngày cho Kế toán trưởng.<span class="then">Bảo lãnh hết hạn mà chưa gia hạn thì gắn cờ đỏ trên bảng kê hợp đồng ở <a href="RPT-02.html">RPT-02</a>.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Tổng tỷ lệ đợt khác 100%</td><td><code>sum(pct) ≠ 100</code></td><td>“Tổng tỷ lệ các đợt đang là {x}%. Điều chỉnh để đủ 100% giá trị hợp đồng.”</td></tr>
+          <tr><td>Khởi tạo khi chưa đủ chữ ký</td><td>Chuỗi ký chưa hoàn tất</td><td>“Còn chờ {người/đối tác} ký. Chỉ khởi tạo dự án khi hợp đồng đã ký đủ.”</td></tr>
+          <tr><td>Chưa gán Giám đốc dự án</td><td>Thiếu vai trò GĐ dự án</td><td>“Gán Giám đốc dự án trước — người này sẽ phân công nhân sự hiện trường.”</td></tr>
+          <tr><td>Điều khoản lệch báo giá</td><td>Khác điều kiện thương mại đã chốt</td><td>“Điều khoản thanh toán khác báo giá đã chốt ({nội dung cũ}). Xác nhận nếu đã thống nhất lại với đối tác.”</td></tr>
+          <tr><td>Ngày hiệu lực trước ngày ký</td><td><code>effective_from &lt; signed_at</code></td><td>“Ngày hiệu lực sớm hơn ngày ký. Xác nhận nếu hợp đồng có hiệu lực hồi tố.”</td></tr>
+          <tr><td>Giá trị lệch BOQ chốt</td><td>Chênh &gt; 1%</td><td>“Giá trị hợp đồng lệch {x}% so với BOQ báo giá đã chốt. Kiểm tra lại trước khi trình ký.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-BID05-1</td><td>Hợp đồng soạn xong từ gói thầu đã chốt giá</td><td>Trình ký nội bộ</td><td>Chỉ TP Đấu thầu ký được trước; KT trưởng chưa thấy trong hàng chờ</td></tr>
+          <tr><td>UAT-BID05-2</td><td>Đã đủ 3 chữ ký nội bộ, chưa có chữ ký đối tác</td><td>Bấm “Khởi tạo &amp; thông báo”</td><td>Bị chặn, nêu rõ đang chờ đối tác ký</td></tr>
+          <tr><td>UAT-BID05-3</td><td>Đã ký đủ hai bên, đã gán 7 người</td><td>Bấm “Khởi tạo &amp; thông báo”</td><td>Sinh mã dự án, BOQ hợp đồng, hạng mục, kho dự án, bảng đợt; 7 người nhận thông báo riêng</td></tr>
+          <tr><td>UAT-BID05-4</td><td>Dự án vừa khởi tạo</td><td>Mở BOQ hợp đồng và thử sửa khối lượng</td><td>Ô khối lượng và đơn giá chỉ đọc; gợi ý lập phụ lục hợp đồng</td></tr>
+          <tr><td>UAT-BID05-5</td><td>Vừa được gán vào dự án với vai trò CBKT</td><td>Người đó đăng nhập</td><td>Thấy dữ liệu dự án ngay, không cần Admin cấp quyền</td></tr>
+          <tr><td>UAT-BID05-6</td><td>Chưa gán Giám đốc dự án</td><td>Mở phần phân công nhân sự hiện trường</td><td>Phần này bị khóa kèm hướng dẫn gán GĐ dự án trước</td></tr>
+          <tr><td>UAT-BID05-7</td><td>Bảo lãnh thực hiện hết hạn sau 15 ngày</td><td>Chờ tới mốc nhắc</td><td>Kế toán trưởng nhận nhắc việc gia hạn bảo lãnh</td></tr>
+          <tr><td>UAT-BID05-8</td><td>Bảng đợt thanh toán đang tổng 95%</td><td>Bấm Lưu hợp đồng</td><td>Chặn lưu kèm thông điệp nêu con số hiện tại</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="BID-03.html">BID-03 chốt giá</a><a href="PF-01.html">PF-01 sinh mã dự án</a><a href="PF-02.html">PF-02 quyền theo dự án</a><a href="ORD-01.html">ORD-01 tạm ứng hợp đồng</a><a href="ORD-02.html">ORD-02 shopdrawing</a><a href="PRJ-01.html">PRJ-01 giá khoán tổ đội</a><a href="ACC-02.html">ACC-02 kho dự án</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 10 / 40</span><span><code>BID-05.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

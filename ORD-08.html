@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORD-08 Hồ sơ thanh toán vật tư — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a class="on" href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / P. TQT — Shopdrawing / <b>ORD-08</b></div><div class="sp"></div>
+  <div class="pnav"><a href="ORD-07.html">← ORD-07</a><a href="index.html">Mục lục</a><a href="PRJ-01.html">PRJ-01 →</a></div>
+</div>
+<section class="sheet solo" id="ORD-08">
+  <header class="tb">
+    <div class="tb-id">ORD-08</div>
+    <div class="tb-main">
+      <h3>Hồ sơ thanh toán vật tư</h3>
+      <p>Dòng 8 lặp lại nguyên văn yêu cầu của dòng 5: theo dõi hồ sơ đang đi đến đâu, đã nhận thanh toán chưa, vướng mắc, báo cáo tổng hợp và phối hợp liên phòng ban. Vì vậy đặc tả này <b>dùng lại khung theo dõi của <a href="ORD-01.html">ORD-01</a></b> và chỉ mô tả phần khác biệt.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>P. TQT — Shopdrawing</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Nội bộ 2 cấp trước khi nộp chủ đầu tư</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Không giới hạn</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 8 · dòng 7.5 (nhập kho CĐT)</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Khác biệt so với ORD-01</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:180px">Khía cạnh</th><th>ORD-01 · Tạm ứng hợp đồng</th><th>ORD-08 · Thanh toán vật tư</th></tr></thead>
+        <tbody>
+          <tr><td>Căn cứ giá trị</td><td>Tỷ lệ % theo đợt của hợp đồng</td><td>Khối lượng vật tư đã nhập kho chủ đầu tư, nhân đơn giá hợp đồng</td></tr>
+          <tr><td>Nguồn phát sinh</td><td>Hợp đồng có hiệu lực</td><td>Ba nguồn: cấp hàng đã nghiệm thu · hàng dư từ <a href="ORD-07.html">ORD-07</a> · vật tư tồn cuối dự án</td></tr>
+          <tr><td>Thành phần hồ sơ</td><td>Đề nghị · bảo lãnh · hóa đơn · biên bản khởi công</td><td>Bảng kê khối lượng · biên bản nhập kho CĐT có xác nhận · phiếu giao hàng · hóa đơn</td></tr>
+          <tr><td>Đối chiếu</td><td>Với bảng đợt thanh toán hợp đồng</td><td>Với lũy kế phiếu xuất kho và biên bản nghiệm thu khối lượng</td></tr>
+          <tr><td>Ghi nhận kế toán</td><td>Giảm công nợ phải thu tạm ứng</td><td>Ghi nhận doanh thu vật tư và giảm công nợ phải thu</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Lưu đồ — phần riêng của hồ sơ vật tư</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-08.1 Ba nguồn phát sinh cùng đổ về một bảng kê khối lượng. Từ điểm “ghép hồ sơ” trở đi, quy trình trùng khớp hoàn toàn với ORD-01 nên không mô tả lại."
+ viewBox="0.00 0.00 652.00 660.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 646.72)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A1</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="339.36,-554.36 172.5,-554.36 172.5,-509.96 339.36,-509.96 339.36,-554.36"/>
+<text xml:space="preserve" text-anchor="middle" x="255.93" y="-535.91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cấp hàng đã nghiệm thu</text>
+<text xml:space="preserve" text-anchor="middle" x="255.93" y="-520.91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ORD&#45;05</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="352.62,-474.96 189.23,-474.96 189.23,-430.56 352.62,-430.56 352.62,-474.96"/>
+<text xml:space="preserve" text-anchor="middle" x="270.93" y="-456.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tổng hợp khối lượng</text>
+<text xml:space="preserve" text-anchor="middle" x="270.93" y="-441.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đủ điều kiện thanh toán</text>
+</g>
+<g id="edge1" class="edge">
+<title>A1&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M260.11,-509.6C261.7,-501.38 263.54,-491.87 265.25,-483.05"/>
+<polygon fill="#55606b" stroke="#55606b" points="267.48,-483.5 266.49,-476.69 263.01,-482.64 267.48,-483.5"/>
+</g>
+<g id="node6" class="node">
+<title>D</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="364.43,-395.56 177.43,-395.56 177.43,-351.16 364.43,-351.16 364.43,-395.56"/>
+<text xml:space="preserve" text-anchor="middle" x="270.93" y="-377.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lập bảng kê khối lượng</text>
+<text xml:space="preserve" text-anchor="middle" x="270.93" y="-362.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đối chiếu đơn giá hợp đồng</text>
+</g>
+<g id="edge5" class="edge">
+<title>B&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M270.93,-430.2C270.93,-421.98 270.93,-412.47 270.93,-403.65"/>
+<polygon fill="#55606b" stroke="#55606b" points="273.2,-403.82 270.93,-397.32 268.65,-403.82 273.2,-403.82"/>
+</g>
+<g id="node3" class="node">
+<title>A2</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="449.96,-633.76 269.9,-633.76 269.9,-589.36 449.96,-589.36 449.96,-633.76"/>
+<text xml:space="preserve" text-anchor="middle" x="359.93" y="-615.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hàng dư do giảm / hủy đơn</text>
+<text xml:space="preserve" text-anchor="middle" x="359.93" y="-600.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ORD&#45;07</text>
+</g>
+<g id="node4" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="546.69,-554.36 363.17,-554.36 363.17,-509.96 546.69,-509.96 546.69,-554.36"/>
+<text xml:space="preserve" text-anchor="middle" x="454.93" y="-535.91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lập biên bản nhập kho</text>
+<text xml:space="preserve" text-anchor="middle" x="454.93" y="-520.91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">công trình có xác nhận CĐT</text>
+</g>
+<g id="edge2" class="edge">
+<title>A2&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M386.39,-589C397.61,-579.86 410.8,-569.12 422.59,-559.51"/>
+<polygon fill="#55606b" stroke="#55606b" points="423.83,-561.43 427.43,-555.56 420.96,-557.9 423.83,-561.43"/>
+</g>
+<g id="edge4" class="edge">
+<title>C&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M403.67,-509.6C380.64,-499.91 353.34,-488.43 329.5,-478.4"/>
+<polygon fill="#55606b" stroke="#55606b" points="330.5,-476.35 323.62,-475.93 328.73,-480.54 330.5,-476.35"/>
+</g>
+<g id="node5" class="node">
+<title>A3</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="625.71,-626.26 474.15,-626.26 474.15,-596.86 625.71,-596.86 625.71,-626.26"/>
+<text xml:space="preserve" text-anchor="middle" x="549.93" y="-607.81" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Vật tư tồn cuối dự án</text>
+</g>
+<g id="edge3" class="edge">
+<title>A3&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M532.5,-596.36C519.83,-586.04 502.31,-571.76 487.12,-559.39"/>
+<polygon fill="#55606b" stroke="#55606b" points="488.86,-557.87 482.38,-555.53 485.99,-561.4 488.86,-557.87"/>
+</g>
+<g id="node7" class="node">
+<title>E</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="195.93,-316.16 82.58,-283.28 195.93,-250.4 309.28,-283.28 195.93,-316.16"/>
+<text xml:space="preserve" text-anchor="middle" x="195.93" y="-287.03" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Khớp với biên bản</text>
+<text xml:space="preserve" text-anchor="middle" x="195.93" y="-272.03" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">nghiệm thu?</text>
+</g>
+<g id="edge6" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M252.77,-351.04C243.84,-340.55 232.89,-327.69 222.99,-316.06"/>
+<polygon fill="#55606b" stroke="#55606b" points="224.86,-314.74 218.91,-311.27 221.39,-317.69 224.86,-314.74"/>
+</g>
+<g id="node8" class="node">
+<title>F</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="423.11,-203.2 268.75,-203.2 268.75,-158.8 423.11,-158.8 423.11,-203.2"/>
+<text xml:space="preserve" text-anchor="middle" x="345.93" y="-184.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Mở vướng mắc</text>
+<text xml:space="preserve" text-anchor="middle" x="345.93" y="-169.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">khung theo dõi ORD&#45;01</text>
+</g>
+<g id="edge7" class="edge">
+<title>E&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M229.59,-259.78C252.57,-244.42 283.07,-224.02 307.08,-207.97"/>
+<polygon fill="#55606b" stroke="#55606b" points="308.27,-209.91 312.41,-204.41 305.74,-206.13 308.27,-209.91"/>
+<text xml:space="preserve" text-anchor="middle" x="302.23" y="-223.5" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Lệch</text>
+</g>
+<g id="node9" class="node">
+<title>G</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="244.85,-195.7 29.01,-195.7 29.01,-166.3 244.85,-166.3 244.85,-195.7"/>
+<text xml:space="preserve" text-anchor="middle" x="136.93" y="-177.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghép hồ sơ + trình duyệt nội bộ</text>
+</g>
+<g id="edge9" class="edge">
+<title>E&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M179.65,-254.61C170.04,-238.27 158.06,-217.91 149.24,-202.92"/>
+<polygon fill="#55606b" stroke="#55606b" points="151.21,-201.78 145.95,-197.33 147.28,-204.09 151.21,-201.78"/>
+<text xml:space="preserve" text-anchor="middle" x="180.8" y="-223.5" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Khớp</text>
+</g>
+<g id="edge8" class="edge">
+<title>F&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M341.91,-203.56C334.85,-241.48 320.93,-316.16 320.93,-316.16 320.93,-316.16 307.9,-330.8 295.15,-345.13"/>
+<polygon fill="#55606b" stroke="#55606b" points="293.74,-343.29 291.12,-349.66 297.14,-346.32 293.74,-343.29"/>
+</g>
+<g id="node10" class="node">
+<title>H</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="273.86,-123.8 0,-123.8 0,-79.4 273.86,-79.4 273.86,-123.8"/>
+<text xml:space="preserve" text-anchor="middle" x="136.93" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nộp CĐT → chờ thanh toán → đã thanh toán</text>
+<text xml:space="preserve" text-anchor="middle" x="136.93" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">theo đúng chuỗi trạng thái ORD&#45;01</text>
+</g>
+<g id="edge10" class="edge">
+<title>G&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M136.93,-165.8C136.93,-156.3 136.93,-143.45 136.93,-131.82"/>
+<polygon fill="#55606b" stroke="#55606b" points="139.2,-132.03 136.93,-125.53 134.65,-132.03 139.2,-132.03"/>
+</g>
+<g id="node11" class="node">
+<title>I</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="242.58,-44.4 31.28,-44.4 31.28,0 242.58,0 242.58,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="136.93" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi nhận doanh thu vật tư</text>
+<text xml:space="preserve" text-anchor="middle" x="136.93" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ACC&#45;04 · giảm công nợ ACC&#45;05</text>
+</g>
+<g id="edge11" class="edge">
+<title>H&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M136.93,-79.04C136.93,-70.82 136.93,-61.31 136.93,-52.49"/>
+<polygon fill="#55606b" stroke="#55606b" points="139.2,-52.66 136.93,-46.16 134.65,-52.66 139.2,-52.66"/>
+</g>
+</g>
+</svg></div><figcaption><b>Hình ORD-08.1</b> Ba nguồn phát sinh cùng đổ về một bảng kê khối lượng. Từ điểm “ghép hồ sơ” trở đi, quy trình trùng khớp hoàn toàn với <a href="ORD-01.html">ORD-01</a> nên không mô tả lại.</figcaption></figure>
+
+    <h4>Tham số bổ sung</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Nguồn phát sinh</td><td class="k">source_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>cấp hàng nghiệm thu</code> · <code>hàng dư giảm đơn</code> · <code>vật tư tồn cuối dự án</code>.</td></tr>
+          <tr><td>Bảng kê khối lượng</td><td class="k">qty_sheet[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: vật tư, quy cách, ĐVT, khối lượng, đơn giá hợp đồng, thành tiền, chứng từ gốc.</td></tr>
+          <tr><td>Biên bản nhập kho CĐT</td><td class="k">owner_receipt</td><td>Tệp</td><td class="c req">✱</td><td>Có chữ ký xác nhận của đại diện chủ đầu tư — bắt buộc với nguồn “hàng dư” và “tồn cuối dự án”.</td></tr>
+          <tr><td>Phiếu xuất gốc</td><td class="k">issue_refs[]</td><td>Danh sách</td><td class="c req">✱</td><td>Truy vết ngược về từng phiếu xuất kho, tránh kê trùng.</td></tr>
+          <tr><td>Đã kê ở hồ sơ khác</td><td class="k">already_claimed</td><td>Boolean</td><td class="c">—</td><td>Hệ thống tự kiểm tra và chặn kê trùng cùng một phiếu xuất.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Toàn bộ chuỗi trạng thái, sổ vướng mắc, phối hợp phòng ban và báo cáo tổng hợp hoạt động y hệt <a href="ORD-01.html">ORD-01</a>.</li>
+      <li>Bảng kê khối lượng nạp tự động từ các phiếu xuất đã được dự án xác nhận nhận hàng.</li>
+      <li>Một phiếu xuất đã kê ở hồ sơ khác không kê lại được — hệ thống chặn và chỉ ra hồ sơ đã kê.</li>
+      <li>Hàng dư từ cập nhật đơn hàng tự xuất hiện trong hàng chờ lập hồ sơ, không phải nhớ thủ công.</li>
+      <li>Thiếu biên bản nhập kho có xác nhận chủ đầu tư thì không trình duyệt được.</li>
+      <li>Hồ sơ thanh toán xong sinh bút toán ghi nhận doanh thu vật tư và giảm công nợ phải thu.</li>
+    </ol>
+
+    <h4>Mockup UI — Hồ sơ › Thanh toán vật tư</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Hồ sơ ›</span><b>HSVT-2026-021</b><span class="sp"></span><span class="tag t-warn">Đang lập</span><span class="wf-btn">Xuất báo cáo</span><span class="wf-btn pri">Trình duyệt</span></div>
+      <div class="wf-body">
+        <div class="wf-row">
+          <div class="wf-c" style="flex:0 1 250px"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">1</span> Nguồn phát sinh</div>
+            <div class="wf-f"><label>Loại nguồn ✱</label><div class="in">Hàng dư do giảm đơn <em>▾</em></div></div>
+            <div class="wf-f"><label>Dự án ✱</label><div class="in ro">DA-2026-014</div></div>
+            <div class="wf-f"><label>Đơn hàng liên quan</label><div class="in ro">DH-2026-155 v2</div></div>
+          </div></div>
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">2</span> Bảng kê khối lượng đề nghị thanh toán</div>
+            <table><thead><tr><th>Vật tư</th><th>Quy cách</th><th class="num">KL</th><th class="num">Đơn giá HĐ</th><th class="num">Thành tiền</th><th>Chứng từ gốc</th></tr></thead>
+            <tbody>
+              <tr><td>Đá granite đen Phú Yên</td><td>600×600×20</td><td class="num">180</td><td class="num">2.280.000</td><td class="num">410.400.000</td><td>PX-2026-329</td></tr>
+            </tbody></table>
+            <p style="margin:6px 0 0;font-size:11.5px;color:var(--ok)">Đã kiểm tra: phiếu xuất chưa được kê ở hồ sơ nào khác.</p>
+          </div></div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">3</span> Thành phần hồ sơ</div>
+          <table><tbody>
+            <tr><td>Bảng kê khối lượng</td><td><span class="tag t-ok">Đủ</span></td></tr>
+            <tr><td>Biên bản nhập kho công trình có xác nhận CĐT ✱</td><td><span class="tag t-warn">Thiếu chữ ký CĐT</span></td></tr>
+            <tr><td>Phiếu giao hàng PX-2026-329</td><td><span class="tag t-ok">Đủ</span></td></tr>
+            <tr><td>Hóa đơn GTGT</td><td><span class="tag t-neu">Chưa xuất</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Chọn nguồn phát sinh</td><td>Ba nguồn theo yêu cầu gốc; chọn xong hệ thống lọc sẵn các phiếu xuất đủ điều kiện.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Lập bảng kê khối lượng</td><td>Nạp từ phiếu xuất; đơn giá lấy theo BOQ hợp đồng; chặn kê trùng.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Quản lý thành phần hồ sơ</td><td>Giống <a href="ORD-01.html">ORD-01</a>; riêng biên bản nhập kho CĐT là bắt buộc cho hai nguồn hàng dư và tồn cuối dự án.</td></tr>
+          <tr><td class="c">—</td><td>Chuỗi trạng thái, vướng mắc, báo cáo</td><td>Dùng lại toàn bộ chức năng của <a href="ORD-01.html">ORD-01</a>, không mô tả lại.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Kế thừa toàn bộ khung ORD-01.</b> Chuỗi trạng thái, sổ vướng mắc, cơ chế phối hợp phòng ban, đối chiếu ngân hàng và bộ báo cáo dùng chung nguyên vẹn.<span class="then">Chỉ ba khối khác biệt: nguồn phát sinh, bảng kê khối lượng, và danh mục thành phần hồ sơ.</span></li>
+      <li><b>Chặn kê trùng.</b> Một phiếu xuất kho chỉ được kê trong đúng một hồ sơ thanh toán vật tư.<span class="then">Chọn phiếu đã kê ở hồ sơ khác sẽ bị chặn và hệ thống chỉ ra hồ sơ đã dùng nó.</span></li>
+      <li><b>Nguồn quyết định chứng từ bắt buộc.</b> Nguồn “hàng dư” và “tồn cuối dự án” bắt buộc có biên bản nhập kho công trình với xác nhận của chủ đầu tư.<span class="then">Nguồn “cấp hàng nghiệm thu” thì dùng biên bản nghiệm thu khối lượng thay thế.</span></li>
+      <li><b>Đơn giá theo hợp đồng.</b> Đơn giá trong bảng kê lấy từ BOQ hợp đồng, không lấy giá vốn.<span class="then">Sửa tay được nhưng bị gắn cờ và phải ghi lý do, vì đây là giá bán cho chủ đầu tư.</span></li>
+      <li><b>Chỉ kê phiếu đã xác nhận nhận.</b> Phiếu xuất chưa được dự án xác nhận nhận hàng thì chưa đủ điều kiện đưa vào bảng kê.<span class="then">Danh sách chọn tự lọc, tránh kê phần hàng còn đang tranh chấp về khối lượng.</span></li>
+      <li><b>Hàng dư tự vào hàng chờ.</b> Đơn hàng chọn “nhập kho công trình” ở <a href="ORD-07.html">ORD-07</a> sẽ sinh việc lập hồ sơ tại đây.<span class="then">Người phụ trách không phải nhớ thủ công; việc có liên kết ngược về đơn hàng gốc.</span></li>
+      <li><b>Thanh toán xong ghi doanh thu.</b> Hồ sơ đóng sinh bút toán ghi nhận doanh thu vật tư và giảm công nợ phải thu.<span class="then">Khác với hồ sơ tạm ứng ở <a href="ORD-01.html">ORD-01</a> chỉ giảm công nợ tạm ứng.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Kê phiếu đã dùng</td><td>Phiếu có trong hồ sơ khác</td><td>“Phiếu {mã} đã được kê ở hồ sơ {mã hồ sơ}. Mở hồ sơ đó để kiểm tra.”</td></tr>
+          <tr><td>Thiếu biên bản có xác nhận CĐT</td><td>Nguồn hàng dư / tồn cuối, thiếu tệp</td><td>“Nguồn ‘{tên nguồn}’ cần biên bản nhập kho công trình có xác nhận của chủ đầu tư.”</td></tr>
+          <tr><td>Kê phiếu chưa xác nhận nhận</td><td>Phiếu chưa được dự án xác nhận</td><td>“Phiếu {mã} chưa được dự án xác nhận nhận hàng, chưa đủ điều kiện kê thanh toán.”</td></tr>
+          <tr><td>Đơn giá lệch BOQ</td><td>Khác đơn giá hợp đồng</td><td>“Đơn giá lệch BOQ hợp đồng. Ghi lý do — chủ đầu tư sẽ đối chiếu con số này.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-ORD08-1</td><td>ORD-07 vừa chọn “nhập kho công trình” cho 180 m²</td><td>Mở hàng chờ việc của P. TQT</td><td>Có việc lập hồ sơ, liên kết về DH-2026-155</td></tr>
+          <tr><td>UAT-ORD08-2</td><td>Phiếu PX-2026-329 đã kê ở HSVT-2026-018</td><td>Chọn phiếu này cho hồ sơ mới</td><td>Bị chặn kèm mã hồ sơ đã dùng</td></tr>
+          <tr><td>UAT-ORD08-3</td><td>Nguồn “hàng dư”, chưa có biên bản CĐT</td><td>Bấm “Trình duyệt”</td><td>Bị chặn kèm yêu cầu biên bản có xác nhận chủ đầu tư</td></tr>
+          <tr><td>UAT-ORD08-4</td><td>Bảng kê nạp từ phiếu xuất</td><td>Kiểm tra đơn giá</td><td>Đơn giá bằng đơn giá BOQ hợp đồng của vật tư tương ứng</td></tr>
+          <tr><td>UAT-ORD08-5</td><td>Hồ sơ nhận đủ tiền</td><td>Ghi nhận thanh toán</td><td>Sinh bút toán doanh thu vật tư và giảm công nợ phải thu</td></tr>
+          <tr><td>UAT-ORD08-6</td><td>Hồ sơ đang có vướng mắc mở</td><td>Thử đóng hồ sơ</td><td>Bị chặn giống hệt cơ chế của ORD-01</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="ORD-01.html">ORD-01 khung theo dõi hồ sơ</a><a href="ORD-05.html">ORD-05 cấp hàng</a><a href="ORD-07.html">ORD-07 hàng dư</a><a href="ACC-04.html">ACC-04 doanh thu vật tư</a><a href="ACC-05.html">ACC-05 công nợ phải thu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 18 / 40</span><span><code>ORD-08.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

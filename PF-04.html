@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PF-04 Thông báo & ký duyệt — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a class="on" href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Nền tảng / <b>PF-04</b></div><div class="sp"></div>
+  <div class="pnav"><a href="PF-03.html">← PF-03</a><a href="index.html">Mục lục</a><a href="PF-05.html">PF-05 →</a></div>
+</div>
+<section class="sheet solo" id="PF-04">
+  <header class="tb">
+    <div class="tb-id">PF-04</div>
+    <div class="tb-main">
+      <h3>Thông báo &amp; ký duyệt điện tử</h3>
+      <p>Bảng yêu cầu nhấn hai lần: “khi trình đơn hàng sẽ thông báo trên app, đọc thông báo là sẽ biết được đơn hàng gì, của dự án nào, hạng mục nào”, và đặt câu hỏi mở về việc ký trên app thay cho ký giấy.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Hệ thống tự động</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Không</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Mỗi người chỉ thấy thông báo của mình</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>ĐT·4.2 · TQT·7.1 · TQT·7.5 · KT·3 ghi chú</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Thông báo phải <em>tự nó nói đủ nội dung</em> — người nhận không cần mở chứng từ mới biết việc gì. Kèm theo đó là cơ chế ký điện tử để thay thế biên bản ký tay ở các bước xác nhận giao nhận hàng và phê duyệt.</p>
+
+    <h4>Lưu đồ — từ sự kiện tới hành động</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PF-04.1 Thông báo là lối vào chứng từ, không phải bản tin rời rạc. Mỗi thông báo mang đủ ngữ cảnh để quyết định có mở hay không, và dẫn thẳng tới đúng vị trí cần xử lý."
+ viewBox="0.00 0.00 1989.00 182.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 168.86)">
+<title>G</title>
+<g id="node1" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="136.28,-89.9 0,-89.9 0,-45.5 136.28,-45.5 136.28,-89.9"/>
+<text xml:space="preserve" text-anchor="middle" x="68.14" y="-71.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sự kiện nghiệp vụ</text>
+<text xml:space="preserve" text-anchor="middle" x="68.14" y="-56.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">VD: trình đơn hàng</text>
+</g>
+<g id="node2" class="node">
+<title>M</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="387.48,-89.9 171.28,-89.9 171.28,-45.5 387.48,-45.5 387.48,-89.9"/>
+<text xml:space="preserve" text-anchor="middle" x="279.38" y="-71.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Xác định người nhận</text>
+<text xml:space="preserve" text-anchor="middle" x="279.38" y="-56.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">theo bước duyệt + vai trò + dự án</text>
+</g>
+<g id="edge1" class="edge">
+<title>E&#45;&gt;M</title>
+<path fill="none" stroke="#55606b" d="M136.5,-67.7C145.09,-67.7 154.07,-67.7 163.16,-67.7"/>
+<polygon fill="#55606b" stroke="#55606b" points="163.15,-69.98 169.65,-67.7 163.15,-65.43 163.15,-69.98"/>
+</g>
+<g id="node3" class="node">
+<title>T</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="659.46,-89.9 422.48,-89.9 422.48,-45.5 659.46,-45.5 659.46,-89.9"/>
+<text xml:space="preserve" text-anchor="middle" x="540.97" y="-71.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Dựng nội dung từ mẫu</text>
+<text xml:space="preserve" text-anchor="middle" x="540.97" y="-56.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">mã CT · dự án · hạng mục · giá trị</text>
+</g>
+<g id="edge2" class="edge">
+<title>M&#45;&gt;T</title>
+<path fill="none" stroke="#55606b" d="M387.84,-67.7C396.58,-67.7 405.45,-67.7 414.31,-67.7"/>
+<polygon fill="#55606b" stroke="#55606b" points="414.06,-69.98 420.56,-67.7 414.06,-65.43 414.06,-69.98"/>
+</g>
+<g id="node4" class="node">
+<title>C1</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="869.66,-135.4 708.33,-135.4 708.33,-106 869.66,-106 869.66,-135.4"/>
+<text xml:space="preserve" text-anchor="middle" x="788.99" y="-116.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chuông trong ứng dụng</text>
+</g>
+<g id="edge3" class="edge">
+<title>T&#45;&gt;C1</title>
+<path fill="none" stroke="#55606b" d="M647.02,-90.33C668.21,-94.9 690.13,-99.62 710.19,-103.94"/>
+<polygon fill="#55606b" stroke="#55606b" points="709.47,-106.11 716.3,-105.26 710.42,-101.66 709.47,-106.11"/>
+</g>
+<g id="node5" class="node">
+<title>C2</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="847.07,-82.4 730.92,-82.4 730.92,-53 847.07,-53 847.07,-82.4"/>
+<text xml:space="preserve" text-anchor="middle" x="788.99" y="-63.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Push điện thoại</text>
+</g>
+<g id="edge4" class="edge">
+<title>T&#45;&gt;C2</title>
+<path fill="none" stroke="#55606b" d="M659.94,-67.7C681.51,-67.7 703.28,-67.7 722.61,-67.7"/>
+<polygon fill="#55606b" stroke="#55606b" points="722.44,-69.98 728.94,-67.7 722.43,-65.43 722.44,-69.98"/>
+</g>
+<g id="node6" class="node">
+<title>C3</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="883.53,-29.4 694.46,-29.4 694.46,0 883.53,0 883.53,-29.4"/>
+<text xml:space="preserve" text-anchor="middle" x="788.99" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Email · chỉ mốc quan trọng</text>
+</g>
+<g id="edge5" class="edge">
+<title>T&#45;&gt;C3</title>
+<path fill="none" stroke="#55606b" d="M647.02,-45.07C668.21,-40.5 690.13,-35.78 710.19,-31.46"/>
+<polygon fill="#55606b" stroke="#55606b" points="710.42,-33.74 716.3,-30.14 709.47,-29.29 710.42,-33.74"/>
+</g>
+<g id="node7" class="node">
+<title>R</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="1095.81,-108.4 918.53,-108.4 918.53,-79 1095.81,-79 1095.81,-108.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1007.17" y="-89.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Người nhận mở thông báo</text>
+</g>
+<g id="edge6" class="edge">
+<title>C1&#45;&gt;R</title>
+<path fill="none" stroke="#55606b" d="M869.88,-110.72C883.05,-109.08 896.82,-107.36 910.33,-105.67"/>
+<polygon fill="#55606b" stroke="#55606b" points="910.58,-107.93 916.75,-104.87 910.02,-103.42 910.58,-107.93"/>
+</g>
+<g id="edge7" class="edge">
+<title>C2&#45;&gt;R</title>
+<path fill="none" stroke="#55606b" d="M847.36,-74.6C866.74,-76.93 888.94,-79.6 910.48,-82.19"/>
+<polygon fill="#55606b" stroke="#55606b" points="910.15,-84.44 916.87,-82.96 910.69,-79.92 910.15,-84.44"/>
+</g>
+<g id="node8" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="1306.7,-115.9 1130.81,-115.9 1130.81,-71.5 1306.7,-71.5 1306.7,-115.9"/>
+<text xml:space="preserve" text-anchor="middle" x="1218.76" y="-97.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhảy thẳng vào chứng từ</text>
+<text xml:space="preserve" text-anchor="middle" x="1218.76" y="-82.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đúng tab, đúng dòng</text>
+</g>
+<g id="edge8" class="edge">
+<title>R&#45;&gt;A</title>
+<path fill="none" stroke="#55606b" d="M1096.14,-93.7C1104.81,-93.7 1113.63,-93.7 1122.36,-93.7"/>
+<polygon fill="#55606b" stroke="#55606b" points="1122.33,-95.98 1128.83,-93.7 1122.33,-91.43 1122.33,-95.98"/>
+</g>
+<g id="node9" class="node">
+<title>S</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="1405.73,-126.58 1341.7,-93.7 1405.73,-60.82 1469.75,-93.7 1405.73,-126.58"/>
+<text xml:space="preserve" text-anchor="middle" x="1405.73" y="-97.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cần ký</text>
+<text xml:space="preserve" text-anchor="middle" x="1405.73" y="-82.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">xác nhận?</text>
+</g>
+<g id="edge9" class="edge">
+<title>A&#45;&gt;S</title>
+<path fill="none" stroke="#55606b" d="M1307.1,-93.7C1315.67,-93.7 1324.31,-93.7 1332.71,-93.7"/>
+<polygon fill="#55606b" stroke="#55606b" points="1332.67,-95.98 1339.17,-93.7 1332.67,-91.43 1332.67,-95.98"/>
+</g>
+<g id="node10" class="node">
+<title>K</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="1699.61,-155.9 1535.56,-155.9 1535.56,-111.5 1699.61,-111.5 1699.61,-155.9"/>
+<text xml:space="preserve" text-anchor="middle" x="1617.58" y="-137.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ký điện tử</text>
+<text xml:space="preserve" text-anchor="middle" x="1617.58" y="-122.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">OTP hoặc sinh trắc học</text>
+</g>
+<g id="edge10" class="edge">
+<title>S&#45;&gt;K</title>
+<path fill="none" stroke="#55606b" d="M1453.3,-102.58C1475.08,-106.73 1501.77,-111.82 1527.22,-116.67"/>
+<polygon fill="#55606b" stroke="#55606b" points="1526.77,-118.9 1533.58,-117.88 1527.62,-114.43 1526.77,-118.9"/>
+<text xml:space="preserve" text-anchor="middle" x="1502.65" y="-118.2" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Có</text>
+</g>
+<g id="node12" class="node">
+<title>Z</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="1679.12,-87.4 1556.04,-87.4 1556.04,-58 1679.12,-58 1679.12,-87.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1617.58" y="-68.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đánh dấu đã đọc</text>
+</g>
+<g id="edge12" class="edge">
+<title>S&#45;&gt;Z</title>
+<path fill="none" stroke="#55606b" d="M1455.13,-85.72C1471.98,-82.94 1486.75,-80.5 1486.75,-80.5 1486.75,-80.5 1516.76,-78.7 1547.92,-76.83"/>
+<polygon fill="#55606b" stroke="#55606b" points="1547.99,-79.1 1554.34,-76.44 1547.71,-74.56 1547.99,-79.1"/>
+<text xml:space="preserve" text-anchor="middle" x="1502.65" y="-83.8" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
+</g>
+<g id="node11" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="1963.29,-148.4 1734.61,-148.4 1734.61,-119 1963.29,-119 1963.29,-148.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1848.95" y="-129.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi dấu ký: người, giờ, IP, thiết bị</text>
+</g>
+<g id="edge11" class="edge">
+<title>K&#45;&gt;L</title>
+<path fill="none" stroke="#55606b" d="M1700.1,-133.7C1708.66,-133.7 1717.5,-133.7 1726.39,-133.7"/>
+<polygon fill="#55606b" stroke="#55606b" points="1726.19,-135.98 1732.69,-133.7 1726.19,-131.43 1726.19,-135.98"/>
+</g>
+</g>
+</svg></div><figcaption><b>Hình PF-04.1</b> Thông báo là lối vào chứng từ, không phải bản tin rời rạc. Mỗi thông báo mang đủ ngữ cảnh để quyết định có mở hay không, và dẫn thẳng tới đúng vị trí cần xử lý.</figcaption></figure>
+
+    <h4>Bộ sự kiện phát thông báo</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Sự kiện</th><th>Người nhận</th><th>Mẫu nội dung</th><th class="c">Đặc tả</th></tr></thead>
+        <tbody>
+          <tr><td>Trình chứng từ duyệt</td><td>Người duyệt bước hiện tại</td><td>“{loại} {mã} — {dự án} · {hạng mục} · {giá trị} chờ bạn duyệt (cấp {i}/{n})”</td><td class="k"><a href="PF-03.html">PF-03</a></td></tr>
+          <tr><td>Duyệt / từ chối xong</td><td>Người lập + các bên liên quan</td><td>“{mã} đã được {kết quả} bởi {người}. {lý do}”</td><td class="k"><a href="PF-03.html">PF-03</a></td></tr>
+          <tr><td>Được thêm vào dự án</td><td>Từng ID được gán</td><td>“Bạn được thêm vào {dự án} với vai trò {vai trò}”</td><td class="k"><a href="BID-05.html">BID-05</a></td></tr>
+          <tr><td>Đơn hàng giảm / hủy sau khi đã sản xuất</td><td>P. TQT, P. Cung ứng, Nhà máy, GĐ dự án</td><td>“{mã đơn} giảm {klg} — hàng đã sản xuất cần xử lý tồn”</td><td class="k"><a href="ORD-07.html">ORD-07</a></td></tr>
+          <tr><td>Có phiếu xuất hàng đi</td><td>GĐ dự án, chỉ huy trưởng</td><td>“Phiếu xuất {mã} đang trên đường về {dự án} — vui lòng kiểm nhận”</td><td class="k"><a href="ACC-04.html">ACC-04</a></td></tr>
+          <tr><td>Hồ sơ vướng mắc quá hạn</td><td>Người phụ trách hồ sơ + trưởng bộ phận</td><td>“Hồ sơ {mã} đứng ở bước {bước} quá {n} ngày”</td><td class="k"><a href="ORD-01.html">ORD-01</a>, <a href="ORD-08.html">ORD-08</a></td></tr>
+          <tr><td>Công nợ quá hạn</td><td>Kế toán công nợ, Ban lãnh đạo</td><td>“{đối tác} quá hạn {n} ngày, dư nợ {giá trị}”</td><td class="k"><a href="ACC-05.html">ACC-05</a></td></tr>
+          <tr><td>Tồn kho dưới định mức</td><td>Thủ kho, P. Cung ứng</td><td>“{vật tư} tại {kho} còn {klg}, dưới định mức {min}”</td><td class="k"><a href="ACC-02.html">ACC-02</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Loại sự kiện</td><td class="k">event_type</td><td>Chọn 1</td><td class="c req">✱</td><td>Theo bảng sự kiện trên.</td></tr>
+          <tr><td>Ngữ cảnh</td><td class="k">context</td><td>Đối tượng</td><td class="c req">✱</td><td>Bắt buộc có <code>doc_code</code>, <code>project_id</code>, <code>wbs_id</code>, <code>amount</code> — nếu thiếu thì không phát thông báo mà ghi lỗi cấu hình.</td></tr>
+          <tr><td>Kênh</td><td class="k">channels[]</td><td>Danh sách</td><td class="c req">✱</td><td><code>inapp</code> luôn bật · <code>push</code> · <code>email</code> cấu hình theo loại sự kiện.</td></tr>
+          <tr><td>Đích đến</td><td class="k">deep_link</td><td>Chuỗi</td><td class="c req">✱</td><td>Trỏ tới đúng màn hình + tab + bản ghi.</td></tr>
+          <tr><td>Phương thức ký</td><td class="k">sign_method</td><td>Chọn 1</td><td class="c">—</td><td><code>otp_sms</code> · <code>biometric</code> · <code>ca_usb</code> (chữ ký số dùng cho hợp đồng ở <a href="BID-05.html">BID-05</a>).</td></tr>
+          <tr><td>Dấu ký</td><td class="k">sign_record</td><td>Đối tượng</td><td class="c">—</td><td>Người, thời điểm, IP, mã thiết bị, mã băm nội dung chứng từ tại thời điểm ký.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Đọc dòng tiêu đề thông báo là biết ngay: chứng từ gì, thuộc dự án nào, hạng mục nào, giá trị bao nhiêu — không cần mở chi tiết.</li>
+      <li>Bấm thông báo mở đúng chứng từ ở đúng tab; nếu người dùng không đủ quyền xem thì hiện thông báo lịch sự thay vì lỗi kỹ thuật.</li>
+      <li>Số trên chuông thông báo bằng đúng số việc chưa đọc của riêng người đó, đồng bộ giữa web và điện thoại.</li>
+      <li>Chữ ký điện tử gắn được mã băm nội dung: sửa chứng từ sau khi ký thì dấu ký bị đánh dấu không còn hợp lệ.</li>
+      <li>Bản PDF xuất ra từ chứng từ đã ký hiển thị đủ chuỗi chữ ký thay cho chữ ký tay trên biên bản.</li>
+    </ol>
+
+    <h4>Mockup UI — Bảng thông báo &amp; hộp ký</h4>
+    <div class="wf">
+      <div class="wf-bar"><b>Thông báo</b><span class="wf-crumb">5 chưa đọc</span><span class="sp"></span><span class="wf-btn"><span class="pin">3</span> Cài đặt kênh nhận</span><span class="wf-btn">Đánh dấu đã đọc hết</span></div>
+      <div class="wf-body">
+        <div class="wf-chips"><span class="wf-chip on">Tất cả</span><span class="wf-chip"><span class="pin">1</span> Chờ tôi xử lý</span><span class="wf-chip">Kết quả duyệt</span><span class="wf-chip">Cảnh báo hệ thống</span></div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">2</span> Danh sách thông báo</div>
+          <table><tbody>
+            <tr><td style="width:104px"><span class="tag t-warn">Chờ duyệt</span></td><td><b>SO-2026-041</b> — DA-2026-014 · Ốp lát mặt đứng tháp A · 2,376 tỷ chờ bạn duyệt (cấp 2/3)<br><span style="color:var(--ink-3);font-size:11px">Lê Minh Tú trình · 8 phút trước</span></td></tr>
+            <tr><td><span class="tag t-crit">Cần xử lý</span></td><td><b>DH-2026-155</b> giảm 180 m² — hàng đã sản xuất, cần quyết định lưu kho hay nhập kho công trình<br><span style="color:var(--ink-3);font-size:11px">Nhà máy An Bình 2 · 1 giờ trước</span></td></tr>
+            <tr><td><span class="tag t-ok">Đã duyệt</span></td><td><b>PC-2026-231</b> đã được Trần Quốc Bảo phê duyệt<br><span style="color:var(--ink-3);font-size:11px">32 phút trước</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="wf-sec" style="max-width:360px">
+          <div class="wf-lg"><span class="pin">4</span> Hộp ký điện tử</div>
+          <div class="wf-f"><label>Chứng từ</label><div class="in ro">SO-2026-041 · 2.376.000.000 đ</div></div>
+          <div class="wf-f"><label>Phương thức</label><div class="in">Mã OTP gửi tới 09xx xxx 412 <em>▾</em></div></div>
+          <div class="wf-f"><label>Mã xác thực ✱</label><div class="in">■ ■ ■ ■ ■ ■</div></div>
+          <div class="wf-row"><span class="wf-btn pri">Ký &amp; phê duyệt</span><span class="wf-btn">Hủy</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Lọc theo tính chất</td><td>Tách việc phải làm khỏi tin báo kết quả — người dùng bận chỉ cần mở tab đầu tiên.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Mở chứng từ từ thông báo</td><td>Một chạm tới đúng bản ghi. Thông báo tự chuyển sang đã đọc.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Cài đặt kênh nhận</td><td>Bật / tắt push và email theo từng loại sự kiện; chuông trong ứng dụng luôn bật.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Ký điện tử</td><td>OTP hoặc sinh trắc học trên điện thoại. Ký xong sinh dấu ký kèm mã băm nội dung.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note q">
+      <b>Vấn đề cần chốt · Q-04</b>
+      <p style="margin:0">Yêu cầu gốc hỏi: “nếu người dùng xác nhận trên app dùng chữ ký hoặc phân quyền ký trên app thì không cần ký giấy được không?”. Đề xuất của đặc tả: <b>ký điện tử nội bộ</b> (OTP / sinh trắc học) đủ giá trị pháp lý cho chứng từ lưu hành nội bộ — biên bản giao hàng, phiếu xuất, phê duyệt. Riêng <b>hợp đồng với đối tác</b> vẫn dùng chữ ký số CA. Cần Ban lãnh đạo và Kế toán trưởng xác nhận ranh giới này trước khi lập trình. Xem <a href="PL-C.html">Phụ lục C</a>.</p>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Thiếu ngữ cảnh thì không gửi.</b> Mẫu thông báo bắt buộc có đủ mã chứng từ, dự án, hạng mục và giá trị.<span class="then">Thiếu trường nào thì hệ thống không gửi thông báo rỗng nghĩa mà ghi lỗi cấu hình vào nhật ký để quản trị xử lý.</span></li>
+      <li><b>Một sự kiện, một thông báo.</b> Cùng một sự kiện gửi tới cùng một người chỉ tạo một thông báo.<span class="then">Sự kiện lặp trong 5 phút được gộp thành một dòng có bộ đếm, tránh làm ngập chuông khi thao tác hàng loạt.</span></li>
+      <li><b>Chuông luôn bật.</b> Người dùng tắt được push và email nhưng không tắt được thông báo trong ứng dụng.<span class="then">Bảo đảm mọi việc cần xử lý đều còn dấu vết ở một nơi duy nhất.</span></li>
+      <li><b>Đích đến kiểm quyền.</b> Bấm thông báo sẽ mở chứng từ; nếu người nhận không còn quyền xem thì hiện thông báo lịch sự thay vì lỗi kỹ thuật.<span class="then">Trường hợp này thường xảy ra khi người dùng bị gỡ khỏi dự án sau khi thông báo đã gửi.</span></li>
+      <li><b>Ký cần kết nối.</b> Ký điện tử bắt buộc có mạng vì phải lấy mã băm nội dung tại thời điểm ký.<span class="then">Ngoại tuyến thì nút ký bị vô hiệu kèm giải thích, không cho lưu tạm chữ ký.</span></li>
+      <li><b>OTP dùng một lần.</b> Mã OTP có hiệu lực 5 phút, chỉ dùng cho đúng một chứng từ.<span class="then">Sai 5 lần liên tiếp thì khóa ký 15 phút và gửi cảnh báo cho quản trị hệ thống.</span></li>
+      <li><b>Dấu ký không xóa được.</b> Dấu ký là bản ghi vĩnh viễn kèm người, thời điểm, IP, thiết bị và mã băm.<span class="then">Kể cả khi chứng từ bị hủy, chuỗi dấu ký vẫn tra cứu và in ra được.</span></li>
+      <li><b>Thay ký giấy có điều kiện.</b> Ký điện tử nội bộ thay chữ ký tay cho chứng từ lưu hành nội bộ; hợp đồng với đối tác vẫn dùng chữ ký số CA.<span class="then">Ranh giới này cần Ban lãnh đạo xác nhận — xem <a href="PL-C.html">Q-04</a>.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Mở chứng từ đã mất quyền</td><td>Không còn trong phạm vi dữ liệu</td><td>“Bạn không còn quyền xem chứng từ này vì đã được chuyển khỏi dự án {tên}. Liên hệ {người phụ trách} nếu cần.”</td></tr>
+          <tr><td>Ký khi mất mạng</td><td>Không có kết nối</td><td>“Cần kết nối mạng để ký. Thao tác nhập liệu vẫn lưu tạm được, riêng chữ ký thì không.”</td></tr>
+          <tr><td>OTP hết hạn</td><td>Quá 5 phút</td><td>“Mã xác thực đã hết hạn. Bấm Gửi lại để nhận mã mới.”</td></tr>
+          <tr><td>OTP sai quá số lần</td><td>5 lần liên tiếp</td><td>“Đã nhập sai 5 lần. Chức năng ký tạm khóa 15 phút.”</td></tr>
+          <tr><td>Số điện thoại chưa khai</td><td><code>phone</code> rỗng</td><td>“Chưa có số điện thoại để nhận mã. Cập nhật tại hồ sơ cá nhân hoặc chọn ký bằng sinh trắc học.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-PF04-1</td><td>Đơn hàng DH-2026-155 vừa được trình</td><td>Người duyệt mở chuông thông báo</td><td>Dòng thông báo nêu đủ mã đơn, dự án, hạng mục, giá trị và cấp duyệt</td></tr>
+          <tr><td>UAT-PF04-2</td><td>Đang ở màn hình khác</td><td>Bấm thông báo đơn hàng</td><td>Mở đúng chứng từ, đúng tab; thông báo tự chuyển sang đã đọc</td></tr>
+          <tr><td>UAT-PF04-3</td><td>Duyệt 12 chứng từ liên tiếp trong 2 phút</td><td>Người lập mở chuông</td><td>Các thông báo cùng loại gộp thành một dòng có bộ đếm</td></tr>
+          <tr><td>UAT-PF04-4</td><td>Đang bật chế độ máy bay</td><td>Mở chứng từ và bấm Ký</td><td>Nút ký vô hiệu, hiện lý do cần kết nối</td></tr>
+          <tr><td>UAT-PF04-5</td><td>Chứng từ đã ký xong</td><td>Xuất PDF chứng từ</td><td>PDF hiển thị đủ chuỗi chữ ký với người, thời điểm và phương thức</td></tr>
+          <tr><td>UAT-PF04-6</td><td>Đăng nhập trên cả web và điện thoại</td><td>Đọc một thông báo trên điện thoại</td><td>Số trên chuông ở web giảm tương ứng trong vòng vài giây</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="PF-03.html">PF-03 phê duyệt</a><a href="BID-05.html">BID-05 ký số hợp đồng</a><a href="ACC-04.html">ACC-04 xác nhận nhận hàng</a><a href="MOB-01.html">MOB-01 ứng dụng di động</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 4 / 40</span><span><code>PF-04.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

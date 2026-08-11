@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PF-01 Danh mục nền & mã hóa — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a class="on" href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Nền tảng / <b>PF-01</b></div><div class="sp"></div>
+  <div class="pnav"><span class="dis">← đầu bộ</span><a href="index.html">Mục lục</a><a href="PF-02.html">PF-02 →</a></div>
+</div>
+<section class="sheet solo" id="PF-01">
+  <header class="tb">
+    <div class="tb-id">PF-01</div>
+    <div class="tb-main">
+      <h3>Danh mục nền &amp; quy tắc mã hóa dữ liệu</h3>
+      <p>Bộ danh mục gốc mà mọi chứng từ tham chiếu. Không có bộ mã thống nhất thì không thể lọc chi phí theo dự án — tức không tính được lãi lỗ, mục tiêu số 4 của giai đoạn 1.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Quản trị hệ thống · Kế toán trưởng</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Không (thao tác quản trị, có nhật ký)</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Đọc: không giới hạn · Sửa: Admin</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>KT·2 ghi chú, KT·7, KT·8</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Yêu cầu gốc nêu rõ form nhập liệu phải có “mã dự án, mã khoản mục chi phí, mã thống kê, tick chi phí hợp lý”. Đặc tả này định nghĩa các danh mục đó một lần, cùng quy tắc sinh mã, để mọi chứng từ ở 35 đặc tả còn lại chỉ việc chọn từ danh mục thay vì gõ tay.</p>
+
+    <h4>Lưu đồ — vòng đời một mã dự án</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PF-01.1 project_id sinh một lần tại bước ký hợp đồng rồi bám theo mọi chứng từ. Nhánh nét đứt là quy tắc chặn: chứng từ chi phí không gắn dự án không được ghi sổ, trừ khi đánh dấu “chi phí chung” để chờ phân bổ ở ACC-08."
+ viewBox="0.00 0.00 905.00 412.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 399.36)">
+<title>G</title>
+<g id="node1" class="node">
+<title>S</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="380.01,-386.4 279.15,-386.4 279.15,-342 380.01,-342 380.01,-386.4"/>
+<text xml:space="preserve" text-anchor="middle" x="329.58" y="-367.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ký hợp đồng</text>
+<text xml:space="preserve" text-anchor="middle" x="329.58" y="-352.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">BID&#45;05</text>
+</g>
+<g id="node2" class="node">
+<title>P</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="390.43,-294.8 268.73,-294.8 268.73,-250.4 390.43,-250.4 390.43,-294.8"/>
+<text xml:space="preserve" text-anchor="middle" x="329.58" y="-276.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">project_id</text>
+<text xml:space="preserve" text-anchor="middle" x="329.58" y="-261.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">VD: DA&#45;2026&#45;014</text>
+</g>
+<g id="edge1" class="edge">
+<title>S&#45;&gt;P</title>
+<path fill="none" stroke="#55606b" d="M329.58,-341.51C329.58,-329.95 329.58,-315.57 329.58,-303.02"/>
+<polygon fill="#55606b" stroke="#55606b" points="331.85,-303.1 329.58,-296.6 327.3,-303.1 331.85,-303.1"/>
+<text xml:space="preserve" text-anchor="middle" x="371.76" y="-315.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">sinh mã tự động</text>
+</g>
+<g id="node3" class="node">
+<title>Q1</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="75.16,-215.4 0,-215.4 0,-171 75.16,-171 75.16,-215.4"/>
+<text xml:space="preserve" text-anchor="middle" x="37.58" y="-196.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đơn hàng</text>
+<text xml:space="preserve" text-anchor="middle" x="37.58" y="-181.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ORD&#45;03</text>
+</g>
+<g id="edge2" class="edge">
+<title>P&#45;&gt;Q1</title>
+<path fill="none" stroke="#55606b" d="M268.26,-257.42C196.27,-240.77 86.58,-215.4 86.58,-215.4 86.58,-215.4 84.89,-214.67 82.14,-213.48"/>
+<polygon fill="#55606b" stroke="#55606b" points="83.47,-211.58 76.6,-211.08 81.67,-215.75 83.47,-211.58"/>
+</g>
+<g id="node4" class="node">
+<title>Q2</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="228.24,-215.4 98.92,-215.4 98.92,-171 228.24,-171 228.24,-215.4"/>
+<text xml:space="preserve" text-anchor="middle" x="163.58" y="-196.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đề xuất mua sắm</text>
+<text xml:space="preserve" text-anchor="middle" x="163.58" y="-181.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ACC&#45;01</text>
+</g>
+<g id="edge3" class="edge">
+<title>P&#45;&gt;Q2</title>
+<path fill="none" stroke="#55606b" d="M283.34,-250.04C262.74,-240.43 238.35,-229.06 216.98,-219.1"/>
+<polygon fill="#55606b" stroke="#55606b" points="218.08,-217.1 211.23,-216.42 216.16,-221.23 218.08,-217.1"/>
+</g>
+<g id="node5" class="node">
+<title>Q3</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="406.76,-215.4 252.4,-215.4 252.4,-171 406.76,-171 406.76,-215.4"/>
+<text xml:space="preserve" text-anchor="middle" x="329.58" y="-196.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phiếu nhập / xuất kho</text>
+<text xml:space="preserve" text-anchor="middle" x="329.58" y="-181.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ACC&#45;03 · ACC&#45;04</text>
+</g>
+<g id="edge4" class="edge">
+<title>P&#45;&gt;Q3</title>
+<path fill="none" stroke="#55606b" d="M329.58,-250.04C329.58,-241.82 329.58,-232.31 329.58,-223.49"/>
+<polygon fill="#55606b" stroke="#55606b" points="331.85,-223.66 329.58,-217.16 327.3,-223.66 331.85,-223.66"/>
+</g>
+<g id="node6" class="node">
+<title>Q4</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="552.07,-215.4 431.08,-215.4 431.08,-171 552.07,-171 552.07,-215.4"/>
+<text xml:space="preserve" text-anchor="middle" x="491.58" y="-196.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Giá khoán tổ đội</text>
+<text xml:space="preserve" text-anchor="middle" x="491.58" y="-181.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;01</text>
+</g>
+<g id="edge5" class="edge">
+<title>P&#45;&gt;Q4</title>
+<path fill="none" stroke="#55606b" d="M374.7,-250.04C394.72,-240.48 418.4,-229.16 439.19,-219.23"/>
+<polygon fill="#55606b" stroke="#55606b" points="440.16,-221.29 445.05,-216.43 438.2,-217.18 440.16,-221.29"/>
+</g>
+<g id="node7" class="node">
+<title>Q5</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="682.79,-215.4 576.37,-215.4 576.37,-171 682.79,-171 682.79,-215.4"/>
+<text xml:space="preserve" text-anchor="middle" x="629.58" y="-196.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phiếu kế toán</text>
+<text xml:space="preserve" text-anchor="middle" x="629.58" y="-181.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ACC&#45;08</text>
+</g>
+<g id="edge6" class="edge">
+<title>P&#45;&gt;Q5</title>
+<path fill="none" stroke="#55606b" d="M390.75,-256.91C460.09,-240.26 563.58,-215.4 563.58,-215.4 563.58,-215.4 565.56,-214.76 568.84,-213.71"/>
+<polygon fill="#55606b" stroke="#55606b" points="569.06,-216.03 574.55,-211.88 567.67,-211.7 569.06,-216.03"/>
+</g>
+<g id="node8" class="node">
+<title>R</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="475.63,-123.8 327.53,-123.8 327.53,-79.4 475.63,-79.4 475.63,-123.8"/>
+<text xml:space="preserve" text-anchor="middle" x="401.58" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sổ chi phí công trình</text>
+<text xml:space="preserve" text-anchor="middle" x="401.58" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">lọc theo project_id</text>
+</g>
+<g id="edge7" class="edge">
+<title>Q1&#45;&gt;R</title>
+<path fill="none" stroke="#55606b" d="M75.21,-175.92C81.79,-173.07 86.58,-171 86.58,-171 86.58,-171 226.24,-140.67 319.57,-120.41"/>
+<polygon fill="#55606b" stroke="#55606b" points="319.98,-122.65 325.85,-119.04 319.01,-118.2 319.98,-122.65"/>
+</g>
+<g id="edge8" class="edge">
+<title>Q2&#45;&gt;R</title>
+<path fill="none" stroke="#55606b" d="M221.19,-170.51C256.14,-157.35 300.83,-140.53 336.97,-126.92"/>
+<polygon fill="#55606b" stroke="#55606b" points="337.39,-129.2 342.67,-124.78 335.78,-124.94 337.39,-129.2"/>
+</g>
+<g id="edge9" class="edge">
+<title>Q3&#45;&gt;R</title>
+<path fill="none" stroke="#55606b" d="M347.01,-170.51C356.74,-158.4 368.96,-143.2 379.36,-130.24"/>
+<polygon fill="#55606b" stroke="#55606b" points="381.06,-131.76 383.36,-125.27 377.52,-128.91 381.06,-131.76"/>
+</g>
+<g id="edge10" class="edge">
+<title>Q4&#45;&gt;R</title>
+<path fill="none" stroke="#55606b" d="M469.79,-170.51C457.41,-158.18 441.8,-142.64 428.64,-129.54"/>
+<polygon fill="#55606b" stroke="#55606b" points="430.45,-128.13 424.24,-125.16 427.24,-131.36 430.45,-128.13"/>
+</g>
+<g id="edge11" class="edge">
+<title>Q5&#45;&gt;R</title>
+<path fill="none" stroke="#55606b" d="M576.12,-171.19C542.58,-158.01 499.18,-140.95 464.05,-127.15"/>
+<polygon fill="#55606b" stroke="#55606b" points="464.97,-125.07 458.09,-124.81 463.31,-129.3 464.97,-125.07"/>
+</g>
+<g id="node9" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="448.88,-44.4 354.28,-44.4 354.28,0 448.88,0 448.88,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="401.58" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lãi lỗ dự án</text>
+<text xml:space="preserve" text-anchor="middle" x="401.58" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">RPT&#45;03</text>
+</g>
+<g id="edge12" class="edge">
+<title>R&#45;&gt;L</title>
+<path fill="none" stroke="#55606b" d="M401.58,-79.04C401.58,-70.82 401.58,-61.31 401.58,-52.49"/>
+<polygon fill="#55606b" stroke="#55606b" points="403.85,-52.66 401.58,-46.16 399.3,-52.66 403.85,-52.66"/>
+</g>
+<g id="node10" class="node">
+<title>X</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="878.79,-207.9 706.37,-207.9 706.37,-178.5 878.79,-178.5 878.79,-207.9"/>
+<text xml:space="preserve" text-anchor="middle" x="792.58" y="-189.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chứng từ thiếu project_id</text>
+</g>
+<g id="edge13" class="edge">
+<title>X&#45;&gt;R</title>
+<path fill="none" stroke="#7c8792" stroke-dasharray="5,2" d="M730.62,-178C663.8,-162.69 557.09,-138.24 483.4,-121.35"/>
+<polygon fill="#7c8792" stroke="#7c8792" points="484.25,-119.21 477.41,-119.98 483.23,-123.65 484.25,-119.21"/>
+<text xml:space="preserve" text-anchor="middle" x="651.67" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">chặn ghi sổ</text>
+</g>
+</g>
+</svg></div><figcaption><b>Hình PF-01.1</b> <code>project_id</code> sinh một lần tại bước ký hợp đồng rồi bám theo mọi chứng từ. Nhánh nét đứt là quy tắc chặn: chứng từ chi phí không gắn dự án không được ghi sổ, trừ khi đánh dấu “chi phí chung” để chờ phân bổ ở <a href="ACC-08.html">ACC-08</a>.</figcaption></figure>
+
+    <h4>Danh mục cần khai báo</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Danh mục</th><th>Mã trường</th><th>Quy tắc mã</th><th>Thuộc tính bắt buộc</th></tr></thead>
+        <tbody>
+          <tr><td>Dự án / công trình</td><td class="k">project_id</td><td><code>DA-YYYY-NNN</code></td><td>Tên, chủ đầu tư, vùng miền, giá trị HĐ, GĐ dự án, ngày ký, trạng thái</td></tr>
+          <tr><td>Nhà máy / đơn vị</td><td class="k">unit_id</td><td><code>NM-NN</code>, <code>CN-NN</code></td><td>Tên, loại (nhà máy / chi nhánh / trụ sở), địa chỉ</td></tr>
+          <tr><td>Kho</td><td class="k">wh_id</td><td><code>K-&lt;loại&gt;-&lt;mã đơn vị&gt;</code></td><td>Loại kho, đơn vị chủ quản, thủ kho — chi tiết tại <a href="ACC-02.html">ACC-02</a></td></tr>
+          <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td><code>KM-NNN</code>, có cấp cha</td><td>Tên, nhóm (NVL / nhân công / máy / chung), TK hạch toán mặc định</td></tr>
+          <tr><td>Mã thống kê</td><td class="k">stat_id</td><td>Tự do, tối đa 20 ký tự</td><td>Tên, chiều phân tích (vùng miền / loại hình / khách hàng)</td></tr>
+          <tr><td>Hạng mục công trình</td><td class="k">wbs_id</td><td><code>&lt;project_id&gt;.NN</code></td><td>Tên hạng mục, khối lượng BOQ, đơn vị tính</td></tr>
+          <tr><td>Vật tư / sản phẩm</td><td class="k">item_id</td><td><code>VT-NNNNN</code></td><td>Tên, quy cách, ĐVT kế toán, ĐVT dự án, nhóm, theo dõi NXT (có/không)</td></tr>
+          <tr><td>Đối tác</td><td class="k">partner_id</td><td><code>KH-NNNN</code> / <code>NCC-NNNN</code></td><td>Tên, MST, loại, hạn mức công nợ, điều khoản thanh toán</td></tr>
+          <tr><td>Tổ đội thi công</td><td class="k">crew_id</td><td><code>TD-NNN</code></td><td>Tên tổ, đội trưởng, dự án đang thi công, hình thức khoán</td></tr>
+          <tr><td>Tài khoản kế toán</td><td class="k">acc_code</td><td>Theo TT200</td><td>Số hiệu, tên, cấp, tính chất dư</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số dùng chung trên mọi chứng từ</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc với mọi chứng từ chi phí. Cho phép giá trị đặc biệt <code>CHUNG</code> khi chi phí chưa xác định dự án → vào hàng chờ phân bổ.</td></tr>
+          <tr><td>Hạng mục</td><td class="k">wbs_id</td><td>Tham chiếu</td><td class="c">—</td><td>Bắt buộc với chứng từ gắn khối lượng thi công (<a href="PRJ-02.html">PRJ-02</a>) và đơn hàng (<a href="ORD-03.html">ORD-03</a>).</td></tr>
+          <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc với chứng từ ghi nhận chi phí; mặc định lấy theo nhóm vật tư, cho sửa.</td></tr>
+          <tr><td>Mã thống kê</td><td class="k">stat_id</td><td>Tham chiếu</td><td class="c">—</td><td>Nhiều giá trị. Là chiều lọc phụ của <a href="RPT-03.html">RPT-03</a> (nhóm vùng miền).</td></tr>
+          <tr><td>Chi phí hợp lý</td><td class="k">is_deductible</td><td>Boolean</td><td class="c req">✱</td><td>Mặc định <code>true</code>. Khi <code>false</code> phải nhập lý do; dồn vào báo cáo “TH chi phí không hợp lý theo dự án”.</td></tr>
+          <tr><td>Đơn vị chủ quản</td><td class="k">unit_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Xác định phạm vi dữ liệu người dùng được xem (<a href="PF-02.html">PF-02</a>).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Mọi form nhập liệu chứng từ đều hiển thị đủ 6 trường dùng chung ở bảng trên, trường bắt buộc không cho lưu nếu bỏ trống.</li>
+      <li>Xóa một mã đang được chứng từ tham chiếu bị chặn; hệ thống chỉ cho <em>ngừng sử dụng</em> để giữ toàn vẹn số liệu lịch sử.</li>
+      <li>Sửa tên danh mục không làm thay đổi báo cáo quá khứ vì báo cáo lưu theo mã, không theo tên.</li>
+      <li>Mỗi vật tư khai báo được đồng thời ĐVT kế toán và ĐVT dự án cùng hệ số quy đổi — đúng yêu cầu 2 cột ĐVT tại KT·2.</li>
+      <li>Mọi thay đổi danh mục ghi vào nhật ký hệ thống: ai, lúc nào, giá trị cũ → giá trị mới.</li>
+    </ol>
+
+    <h4>Mockup UI — Hệ thống › Danh mục nền</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Hệ thống ›</span><b>Danh mục nền</b><span class="sp"></span><span class="wf-btn"><span class="pin">4</span> Nhập từ Excel</span><span class="wf-btn pri"><span class="pin">3</span> + Thêm bản ghi</span></div>
+      <div class="wf-body">
+        <div class="wf-chips"><span class="wf-chip on">Dự án</span><span class="wf-chip">Kho</span><span class="wf-chip">Khoản mục CP</span><span class="wf-chip">Mã thống kê</span><span class="wf-chip">Vật tư</span><span class="wf-chip">Đối tác</span><span class="wf-chip">Tổ đội</span><span class="wf-chip">Tài khoản KT</span></div>
+        <div class="wf-row">
+          <div class="wf-c" style="flex:2 1 340px">
+            <div class="wf-sec">
+              <div class="wf-lg"><span class="pin">1</span> Danh sách mã dự án</div>
+              <table><thead><tr><th>Mã</th><th>Tên dự án</th><th>Vùng miền</th><th>GĐ dự án</th><th>Trạng thái</th></tr></thead>
+              <tbody>
+                <tr><td>DA-2026-014</td><td>Vinhomes Grand Park — GĐ 3</td><td>Miền Nam</td><td>Phạm Văn An</td><td><span class="tag t-ok">Đang thi công</span></td></tr>
+                <tr><td>DA-2026-011</td><td>Sun Grand City Hillside</td><td>Miền Trung</td><td>Ngô Đức Thịnh</td><td><span class="tag t-ok">Đang thi công</span></td></tr>
+                <tr><td>DA-2025-032</td><td>The Maris Vũng Tàu</td><td>Miền Nam</td><td>Đỗ Thái Sơn</td><td><span class="tag t-neu">Ngừng sử dụng</span></td></tr>
+              </tbody></table>
+            </div>
+          </div>
+          <div class="wf-c" style="flex:1 1 240px">
+            <div class="wf-sec">
+              <div class="wf-lg"><span class="pin">2</span> Chi tiết bản ghi</div>
+              <div class="wf-f"><label>Mã dự án</label><div class="in ro">DA-2026-014 <em>tự sinh</em></div></div>
+              <div class="wf-f"><label>Tên dự án ✱</label><div class="in">Vinhomes Grand Park — GĐ 3</div></div>
+              <div class="wf-f"><label>Chủ đầu tư ✱</label><div class="in">Vingroup <em>▾</em></div></div>
+              <div class="wf-f"><label>Vùng miền (mã thống kê)</label><div class="in">Miền Nam <em>▾</em></div></div>
+              <div class="wf-f"><label>Giá trị hợp đồng ✱</label><div class="in">28.500.000.000</div></div>
+              <div class="wf-f"><label>Trạng thái</label><div class="in">Đang thi công <em>▾</em></div></div>
+              <div class="wf-row"><span class="wf-btn pri">Lưu</span><span class="wf-btn"><span class="pin">5</span> Xem nhật ký</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Duyệt danh sách theo tab danh mục</td><td>Tìm kiếm theo mã/tên, lọc theo trạng thái, phân trang. Tab nào cũng dùng chung khung bảng, chỉ đổi cột.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Xem &amp; sửa bản ghi</td><td>Panel bên phải, sửa tại chỗ. Trường mã luôn chỉ đọc sau khi tạo.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Thêm bản ghi</td><td>Mã sinh tự động theo quy tắc của danh mục; kiểm tra trùng tên trong cùng đơn vị.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Nhập hàng loạt từ Excel</td><td>Tải mẫu, đối chiếu cột, báo lỗi theo dòng trước khi ghi. Dùng khi khởi tạo hệ thống và khi nhập kho thành phẩm (<a href="ACC-03.html">ACC-03</a>).</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Nhật ký thay đổi</td><td>Danh sách sửa đổi của bản ghi: người, thời điểm, trường, giá trị cũ → mới.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Sinh mã.</b> Mã của mọi danh mục do hệ thống sinh theo mẫu đã khai, người dùng không nhập tay.<span class="then">Số thứ tự chạy riêng theo từng năm và từng loại danh mục; mã đã cấp không tái sử dụng kể cả khi bản ghi bị ngừng sử dụng.</span></li>
+      <li><b>Không xóa, chỉ ngừng.</b> Bản ghi danh mục đã được ít nhất một chứng từ tham chiếu thì nút Xóa bị ẩn.<span class="then">Chỉ còn thao tác “Ngừng sử dụng”: bản ghi biến khỏi các ô chọn của chứng từ mới nhưng vẫn hiển thị đầy đủ trên chứng từ cũ và trên báo cáo lịch sử.</span></li>
+      <li><b>Báo cáo lưu theo mã.</b> Mọi truy vấn báo cáo tham chiếu tới mã, không tới tên.<span class="then">Đổi tên một dự án hay một khoản mục chi phí không làm thay đổi bất kỳ con số nào của báo cáo kỳ trước.</span></li>
+      <li><b>Hai hệ đơn vị tính.</b> Mỗi vật tư khai đồng thời ĐVT kế toán, ĐVT dự án và hệ số quy đổi.<span class="then">Nhập số lượng ở một hệ thì hệ còn lại tự tính. Sửa tay giá trị đã quy đổi vẫn được nhưng dòng đó bị gắn cờ để kế toán rà soát.</span></li>
+      <li><b>Chi phí chung.</b> Giá trị <code>CHUNG</code> của trường mã dự án là hợp lệ nhưng không phải mặc định.<span class="then">Chứng từ chọn <code>CHUNG</code> vào hàng chờ phân bổ của <a href="ACC-08.html">ACC-08</a> và bị đếm trong báo cáo “chi phí chưa phân bổ” cho tới khi được phân bổ hết.</span></li>
+      <li><b>Khoản mục có cấp cha.</b> Khoản mục chi phí tổ chức theo cây, chứng từ chỉ chọn được nút lá.<span class="then">Nút cha dùng để cộng gộp trên báo cáo; chọn nút cha trên chứng từ bị chặn kèm gợi ý các nút lá bên dưới.</span></li>
+      <li><b>Mã thống kê nhiều giá trị.</b> Một chứng từ gắn được nhiều mã thống kê thuộc các chiều phân tích khác nhau.<span class="then">Nhưng chỉ được một giá trị trên mỗi chiều — chọn giá trị thứ hai cùng chiều sẽ thay thế giá trị cũ.</span></li>
+      <li><b>Nhật ký danh mục.</b> Mọi thêm, sửa, ngừng sử dụng đều ghi nhật ký.<span class="then">Nhật ký lưu người thực hiện, thời điểm, tên trường, giá trị cũ và giá trị mới; không xóa được, kể cả bởi Admin.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Trùng tên trong cùng đơn vị</td><td>Tên danh mục đã tồn tại ở cùng <code>unit_id</code></td><td>“Đã có bản ghi cùng tên trong đơn vị này: {mã} — {tên}. Đặt tên khác hoặc mở bản ghi đã có.”</td></tr>
+          <tr><td>Xóa bản ghi đang dùng</td><td>Tồn tại chứng từ tham chiếu</td><td>“Không xóa được vì đang được {n} chứng từ sử dụng. Chọn Ngừng sử dụng để ẩn khỏi các chứng từ mới.”</td></tr>
+          <tr><td>Hệ số quy đổi bằng 0 hoặc âm</td><td><code>conversion_rate &gt; 0</code></td><td>“Hệ số quy đổi phải lớn hơn 0. Nhập số quy đổi từ ĐVT dự án sang ĐVT kế toán.”</td></tr>
+          <tr><td>Chọn khoản mục là nút cha</td><td>Khoản mục còn nút con</td><td>“{mã} là nhóm tổng hợp, không hạch toán trực tiếp. Chọn một trong các khoản mục con: {danh sách}.”</td></tr>
+          <tr><td>Tắt cờ chi phí hợp lý</td><td><code>is_deductible = false</code> mà thiếu lý do</td><td>“Nhập lý do không tính là chi phí hợp lý — nội dung này xuất hiện trên báo cáo chi phí không hợp lý theo dự án.”</td></tr>
+          <tr><td>Nhập Excel sai cột</td><td>Thiếu cột bắt buộc trong tệp</td><td>“Tệp thiếu cột bắt buộc: {danh sách}. Tải tệp mẫu để đối chiếu rồi nhập lại.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-PF01-1</td><td>Chưa có dự án nào trong năm 2026</td><td>Tạo dự án mới và lưu</td><td>Mã sinh ra là <code>DA-2026-001</code>; ô mã ở chế độ chỉ đọc</td></tr>
+          <tr><td>UAT-PF01-2</td><td>Dự án DA-2026-014 đã có 3 phiếu nhập kho</td><td>Bấm Xóa trên bản ghi dự án</td><td>Nút Xóa không hiển thị; chỉ có “Ngừng sử dụng”</td></tr>
+          <tr><td>UAT-PF01-3</td><td>Đã có báo cáo chi phí quý 2 của DA-2026-014</td><td>Đổi tên dự án rồi mở lại báo cáo quý 2</td><td>Toàn bộ con số không đổi; tên mới hiển thị ở tiêu đề</td></tr>
+          <tr><td>UAT-PF01-4</td><td>Vật tư “đá tấm 600×600” có hệ số 1 m² = 2,78 tấm</td><td>Nhập 100 m² ở ô ĐVT kế toán</td><td>Ô ĐVT dự án tự điền 278 tấm</td></tr>
+          <tr><td>UAT-PF01-5</td><td>Đang lập phiếu chi phí</td><td>Bỏ trống mã dự án rồi bấm Lưu</td><td>Chặn lưu, con trỏ nhảy về ô mã dự án kèm thông điệp bắt buộc</td></tr>
+          <tr><td>UAT-PF01-6</td><td>Người dùng là Kế toán viên</td><td>Mở màn hình Danh mục nền</td><td>Xem được toàn bộ; các nút Thêm / Sửa bị ẩn</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="BID-05.html">BID-05 sinh mã dự án</a><a href="ACC-02.html">ACC-02 hệ thống kho</a><a href="ACC-08.html">ACC-08 phân bổ chi phí chung</a><a href="RPT-03.html">RPT-03 lãi lỗ theo dự án</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 1 / 40</span><span><code>PF-01.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

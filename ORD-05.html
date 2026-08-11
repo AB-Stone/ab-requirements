@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORD-05 Cấp hàng theo đợt — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a class="on" href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / P. TQT — Shopdrawing / <b>ORD-05</b></div><div class="sp"></div>
+  <div class="pnav"><a href="ORD-04.html">← ORD-04</a><a href="index.html">Mục lục</a><a href="ORD-06.html">ORD-06 →</a></div>
+</div>
+<section class="sheet solo" id="ORD-05">
+  <header class="tb">
+    <div class="tb-id">ORD-05</div>
+    <div class="tb-main">
+      <h3>Cấp hàng theo đợt</h3>
+      <p>“Nhà máy / P. CƯ cấp hàng theo đơn đã nhận, có thể cấp theo từng đợt, bước này thể hiện được khối lượng cấp theo đơn, trạng thái đã hoàn thành / chưa hoàn thành, chi tiết hơn có thể thể hiện kế hoạch cấp.”</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Nhà máy · P. Cung ứng · thủ kho</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Duyệt xuất kho theo <a href="ACC-04.html">ACC-04</a></dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Luồng trình + Ban lãnh đạo + P. Đấu thầu + dự án liên quan</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 7.4</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Một đơn hàng hiếm khi giao một lần. Đặc tả tách rõ ba lớp số liệu: <em>kế hoạch cấp</em> (dự kiến), <em>đã cấp</em> (thực tế theo phiếu xuất), và <em>còn lại</em>. Ba lớp này là nguồn của cột tiến độ đơn hàng và của báo cáo sản lượng cấp.</p>
+
+    <h4>Lưu đồ</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-05.1 Vòng lặp cấp hàng chỉ đóng khi lũy kế đã cấp bằng khối lượng đơn. Nhánh trả hàng lỗi đưa phiếu xuất quay về nơi cấp để chỉnh sửa rồi duyệt lại — đúng mô tả tại yêu cầu KT·3."
+ viewBox="0.00 0.00 539.00 981.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 967.88)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="512.67,-954.92 318.01,-954.92 318.01,-910.52 512.67,-910.52 512.67,-954.92"/>
+<text xml:space="preserve" text-anchor="middle" x="415.34" y="-936.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lệnh thực hiện đã tiếp nhận</text>
+<text xml:space="preserve" text-anchor="middle" x="415.34" y="-921.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ORD&#45;04</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="508.85,-875.52 321.83,-875.52 321.83,-831.12 508.85,-831.12 508.85,-875.52"/>
+<text xml:space="preserve" text-anchor="middle" x="415.34" y="-857.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lập kế hoạch cấp</text>
+<text xml:space="preserve" text-anchor="middle" x="415.34" y="-842.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chia đợt theo ngày cần hàng</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M415.34,-910.16C415.34,-901.94 415.34,-892.43 415.34,-883.61"/>
+<polygon fill="#55606b" stroke="#55606b" points="417.61,-883.78 415.34,-877.28 413.06,-883.78 417.61,-883.78"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="510.58,-796.12 320.1,-796.12 320.1,-751.72 510.58,-751.72 510.58,-796.12"/>
+<text xml:space="preserve" text-anchor="middle" x="415.34" y="-777.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đến đợt: lập phiếu xuất kho</text>
+<text xml:space="preserve" text-anchor="middle" x="415.34" y="-762.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ACC&#45;04</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M415.34,-830.76C415.34,-822.54 415.34,-813.03 415.34,-804.21"/>
+<polygon fill="#55606b" stroke="#55606b" points="417.61,-804.38 415.34,-797.88 413.06,-804.38 417.61,-804.38"/>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="370.02,-716.72 256.66,-716.72 256.66,-687.32 370.02,-687.32 370.02,-716.72"/>
+<text xml:space="preserve" text-anchor="middle" x="313.34" y="-698.27" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Duyệt xuất kho</text>
+</g>
+<g id="edge3" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M383.9,-751.38C369.92,-741.79 353.62,-730.63 340.21,-721.44"/>
+<polygon fill="#55606b" stroke="#55606b" points="341.78,-719.75 335.14,-717.96 339.21,-723.51 341.78,-719.75"/>
+</g>
+<g id="node5" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="376.41,-652.32 194.26,-652.32 194.26,-607.92 376.41,-607.92 376.41,-652.32"/>
+<text xml:space="preserve" text-anchor="middle" x="285.34" y="-633.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Thông báo dự án có hàng đi</text>
+<text xml:space="preserve" text-anchor="middle" x="285.34" y="-618.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;04</text>
+</g>
+<g id="edge4" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M307.67,-686.87C304.57,-679.13 300.61,-669.25 296.89,-659.95"/>
+<polygon fill="#55606b" stroke="#55606b" points="299.07,-659.28 294.54,-654.09 294.84,-660.97 299.07,-659.28"/>
+</g>
+<g id="node6" class="node">
+<title>F</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="361.85,-572.92 190.82,-572.92 190.82,-543.52 361.85,-543.52 361.85,-572.92"/>
+<text xml:space="preserve" text-anchor="middle" x="276.34" y="-554.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Vận chuyển tới nơi nhận</text>
+</g>
+<g id="edge5" class="edge">
+<title>E&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M282.59,-607.77C281.49,-599.25 280.23,-589.45 279.13,-580.9"/>
+<polygon fill="#55606b" stroke="#55606b" points="281.41,-580.82 278.33,-574.67 276.9,-581.4 281.41,-580.82"/>
+</g>
+<g id="node7" class="node">
+<title>G</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="378.41,-508.52 146.27,-508.52 146.27,-464.12 378.41,-464.12 378.41,-508.52"/>
+<text xml:space="preserve" text-anchor="middle" x="262.34" y="-490.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Dự án kiểm nhận</text>
+<text xml:space="preserve" text-anchor="middle" x="262.34" y="-475.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đối chiếu khối lượng và chất lượng</text>
+</g>
+<g id="edge6" class="edge">
+<title>F&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M273.51,-543.07C271.99,-535.48 270.05,-525.84 268.22,-516.71"/>
+<polygon fill="#55606b" stroke="#55606b" points="270.46,-516.29 266.95,-510.37 266,-517.19 270.46,-516.29"/>
+</g>
+<g id="node8" class="node">
+<title>H</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="262.34,-429.12 194.85,-396.24 262.34,-363.36 329.82,-396.24 262.34,-429.12"/>
+<text xml:space="preserve" text-anchor="middle" x="262.34" y="-399.99" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Kết quả</text>
+<text xml:space="preserve" text-anchor="middle" x="262.34" y="-384.99" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">kiểm nhận</text>
+</g>
+<g id="edge7" class="edge">
+<title>G&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M262.34,-464C262.34,-455.97 262.34,-446.54 262.34,-437.35"/>
+<polygon fill="#55606b" stroke="#55606b" points="264.61,-437.39 262.34,-430.89 260.06,-437.39 264.61,-437.39"/>
+</g>
+<g id="node9" class="node">
+<title>I</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="194.68,-316.16 0,-316.16 0,-271.76 194.68,-271.76 194.68,-316.16"/>
+<text xml:space="preserve" text-anchor="middle" x="97.34" y="-297.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Xác nhận nhận hàng trên app</text>
+<text xml:space="preserve" text-anchor="middle" x="97.34" y="-282.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;04 · ký điện tử</text>
+</g>
+<g id="edge8" class="edge">
+<title>H&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M232.84,-377.31C206.92,-361.56 168.91,-338.46 139.73,-320.72"/>
+<polygon fill="#55606b" stroke="#55606b" points="140.93,-318.79 134.19,-317.36 138.56,-322.68 140.93,-318.79"/>
+<text xml:space="preserve" text-anchor="middle" x="205.51" y="-336.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đủ và đạt</text>
+</g>
+<g id="node10" class="node">
+<title>J</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="377.94,-316.16 218.74,-316.16 218.74,-271.76 377.94,-271.76 377.94,-316.16"/>
+<text xml:space="preserve" text-anchor="middle" x="298.34" y="-297.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi nhận sai lệch</text>
+<text xml:space="preserve" text-anchor="middle" x="298.34" y="-282.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">trả hàng lỗi về nơi cấp</text>
+</g>
+<g id="edge9" class="edge">
+<title>H&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M272.18,-367.84C277.06,-354.24 282.96,-337.8 287.92,-323.98"/>
+<polygon fill="#55606b" stroke="#55606b" points="290,-324.92 290.05,-318.04 285.72,-323.38 290,-324.92"/>
+<text xml:space="preserve" text-anchor="middle" x="323.44" y="-336.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Thiếu hoặc lỗi</text>
+</g>
+<g id="node12" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="217.35,-229.26 21.32,-229.26 21.32,-199.86 217.35,-199.86 217.35,-229.26"/>
+<text xml:space="preserve" text-anchor="middle" x="119.34" y="-210.81" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cộng dồn khối lượng đã cấp</text>
+</g>
+<g id="edge12" class="edge">
+<title>I&#45;&gt;L</title>
+<path fill="none" stroke="#55606b" d="M103.47,-271.4C106.51,-260.71 110.17,-247.83 113.21,-237.13"/>
+<polygon fill="#55606b" stroke="#55606b" points="115.39,-237.78 114.98,-230.91 111.01,-236.54 115.39,-237.78"/>
+</g>
+<g id="node11" class="node">
+<title>K</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="435.49,-236.76 249.18,-236.76 249.18,-192.36 435.49,-192.36 435.49,-236.76"/>
+<text xml:space="preserve" text-anchor="middle" x="342.34" y="-218.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phiếu xuất quay lại nơi cấp</text>
+<text xml:space="preserve" text-anchor="middle" x="342.34" y="-203.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chỉnh sửa và duyệt lại</text>
+</g>
+<g id="edge10" class="edge">
+<title>J&#45;&gt;K</title>
+<path fill="none" stroke="#55606b" d="M310.59,-271.4C315.46,-262.85 321.12,-252.89 326.3,-243.77"/>
+<polygon fill="#55606b" stroke="#55606b" points="328.17,-245.1 329.4,-238.32 324.21,-242.85 328.17,-245.1"/>
+</g>
+<g id="edge11" class="edge">
+<title>K&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M362.67,-237.12C384.27,-260.02 415.34,-292.96 415.34,-292.96 415.34,-703.02 415.34,-703.02 415.34,-703.02 415.34,-703.02 415.34,-724.45 415.34,-743.58"/>
+<polygon fill="#55606b" stroke="#55606b" points="413.06,-743.55 415.34,-750.05 417.61,-743.55 413.06,-743.55"/>
+</g>
+<g id="node13" class="node">
+<title>M</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="297.34,-157.36 199.27,-124.48 297.34,-91.6 395.4,-124.48 297.34,-157.36"/>
+<text xml:space="preserve" text-anchor="middle" x="297.34" y="-128.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đã cấp đủ</text>
+<text xml:space="preserve" text-anchor="middle" x="297.34" y="-113.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">khối lượng đơn?</text>
+</g>
+<g id="edge13" class="edge">
+<title>L&#45;&gt;M</title>
+<path fill="none" stroke="#55606b" d="M147.94,-199.41C175.92,-185.56 218.99,-164.25 251.71,-148.06"/>
+<polygon fill="#55606b" stroke="#55606b" points="252.35,-150.28 257.16,-145.36 250.33,-146.2 252.35,-150.28"/>
+</g>
+<g id="edge14" class="edge">
+<title>M&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M338.72,-143.93C383.12,-163.73 447.34,-192.36 447.34,-192.36 447.34,-192.36 476.34,-213.56 476.34,-213.56 476.34,-703.02 476.34,-703.02 476.34,-703.02 476.34,-703.02 456.28,-726.01 439.16,-745.62"/>
+<polygon fill="#55606b" stroke="#55606b" points="437.53,-744.03 434.97,-750.43 440.96,-747.03 437.53,-744.03"/>
+<text xml:space="preserve" text-anchor="middle" x="489.48" y="-483.02" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Chưa</text>
+</g>
+<g id="node14" class="node">
+<title>N</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="388.07,-44.4 206.61,-44.4 206.61,0 388.07,0 388.07,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="297.34" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lệnh hoàn thành</text>
+<text xml:space="preserve" text-anchor="middle" x="297.34" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đơn hàng chuyển trạng thái</text>
+</g>
+<g id="edge15" class="edge">
+<title>M&#45;&gt;N</title>
+<path fill="none" stroke="#55606b" d="M297.34,-91.2C297.34,-78.71 297.34,-64.51 297.34,-52.33"/>
+<polygon fill="#55606b" stroke="#55606b" points="299.61,-52.67 297.34,-46.17 295.06,-52.67 299.61,-52.67"/>
+<text xml:space="preserve" text-anchor="middle" x="304.98" y="-64.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đủ</text>
+</g>
+</g>
+</svg></div><figcaption><b>Hình ORD-05.1</b> Vòng lặp cấp hàng chỉ đóng khi lũy kế đã cấp bằng khối lượng đơn. Nhánh trả hàng lỗi đưa phiếu xuất quay về nơi cấp để chỉnh sửa rồi duyệt lại — đúng mô tả tại yêu cầu KT·3.</figcaption></figure>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Đợt cấp</td><td class="k">batch_no</td><td>Số</td><td class="c req">✱</td><td>Đánh số trong phạm vi một lệnh thực hiện.</td></tr>
+          <tr><td>Ngày dự kiến · thực tế</td><td class="k">plan_date, actual_date</td><td>Ngày</td><td class="c req">✱</td><td>Chênh lệch là số ngày trễ cấp hàng.</td></tr>
+          <tr><td>Khối lượng kế hoạch</td><td class="k">qty_plan</td><td>Số</td><td class="c req">✱</td><td>Tổng các đợt phải bằng khối lượng dòng đơn hàng.</td></tr>
+          <tr><td>Khối lượng đã cấp</td><td class="k">qty_issued</td><td>Số</td><td class="c">—</td><td>Lấy từ phiếu xuất kho đã duyệt, không nhập tay.</td></tr>
+          <tr><td>Khối lượng đã nhận</td><td class="k">qty_received</td><td>Số</td><td class="c">—</td><td>Do dự án xác nhận; chênh với đã cấp thì sinh sai lệch.</td></tr>
+          <tr><td>Phiếu xuất kho</td><td class="k">issue_note_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một đợt gắn một phiếu xuất; in kèm biên bản giao hàng.</td></tr>
+          <tr><td>Sai lệch</td><td class="k">discrepancy</td><td>Bảng</td><td class="c">—</td><td>Loại (thiếu / vỡ / sai quy cách), khối lượng, ảnh chụp, hướng xử lý.</td></tr>
+          <tr><td>Người xác nhận nhận hàng</td><td class="k">receiver</td><td>Tham chiếu</td><td class="c">—</td><td>Thuộc dự án; ký điện tử theo <a href="PF-04.html">PF-04</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Màn hình đơn hàng hiển thị ba con số cho mỗi dòng: kế hoạch, đã cấp, còn lại — kèm thanh tiến độ.</li>
+      <li>Trạng thái đơn hàng tự chuyển sang “hoàn thành” khi lũy kế đã nhận bằng khối lượng đơn, không phải bấm tay.</li>
+      <li>Dự án nhận thông báo ngay khi phiếu xuất được duyệt, trước khi hàng tới nơi.</li>
+      <li>Xác nhận nhận hàng trên ứng dụng di động thay cho ký tay trên biên bản giấy.</li>
+      <li>Sai lệch khi kiểm nhận được ghi nhận kèm ảnh và tự sinh việc xử lý cho nơi cấp.</li>
+      <li>Kế hoạch cấp so với thực tế cấp xuất được thành báo cáo tiến độ cấp hàng theo dự án.</li>
+    </ol>
+
+    <h4>Mockup UI — Đơn hàng › Cấp hàng</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">DH-2026-155 ›</span><b>Cấp hàng</b><span class="sp"></span><span class="tag t-warn">Cấp một phần · 62%</span><span class="wf-btn pri"><span class="pin">2</span> + Lập phiếu xuất đợt 3</span></div>
+      <div class="wf-body">
+        <div class="wf-kpi">
+          <div><dt>Khối lượng đơn</dt><dd>1.100 m²</dd></div>
+          <div><dt>Đã cấp</dt><dd>680 m²</dd></div>
+          <div><dt>Đã nhận</dt><dd>660 m²</dd></div>
+          <div><dt>Còn lại</dt><dd>440 m²</dd></div>
+          <div><dt>Trễ kế hoạch</dt><dd>2 ngày</dd></div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">1</span> Kế hoạch &amp; thực tế cấp theo đợt</div>
+          <table><thead><tr><th>Đợt</th><th>Dự kiến</th><th class="num">KH</th><th>Thực tế</th><th class="num">Đã cấp</th><th class="num">Đã nhận</th><th>Phiếu xuất</th><th>Trạng thái</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>05/08</td><td class="num">400</td><td>05/08</td><td class="num">400</td><td class="num">400</td><td>PX-2026-311</td><td><span class="tag t-ok">Đã nhận đủ</span></td></tr>
+            <tr><td>2</td><td>12/08</td><td class="num">400</td><td>14/08</td><td class="num">280</td><td class="num">260</td><td>PX-2026-329</td><td><span class="tag t-crit"><span class="pin">3</span> Sai lệch 20 m²</span></td></tr>
+            <tr><td>3</td><td>20/08</td><td class="num">300</td><td>—</td><td class="num">—</td><td class="num">—</td><td>—</td><td><span class="tag t-neu">Chưa cấp</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">4</span> Sai lệch đợt 2 — chờ xử lý</div>
+          <div class="wf-row">
+            <div class="wf-c"><table><tbody>
+              <tr><td>Loại sai lệch</td><td>Vỡ cạnh khi vận chuyển</td></tr>
+              <tr><td>Khối lượng</td><td class="num">20 m²</td></tr>
+              <tr><td>Hướng xử lý</td><td>Trả về nhà máy, cấp bù đợt 3</td></tr>
+              <tr><td>Người ghi nhận</td><td>Đỗ Thái Sơn · 14/08 16:20</td></tr>
+            </tbody></table></div>
+            <div class="wf-c" style="flex:0 1 200px"><div class="wf-ph">Ảnh kiểm nhận · 4 ảnh</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Lập &amp; sửa kế hoạch cấp</td><td>Chia đợt theo ngày cần hàng; tổng khối lượng các đợt phải khớp khối lượng đơn.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Lập phiếu xuất cho một đợt</td><td>Mở màn hình xuất kho của <a href="ACC-04.html">ACC-04</a> với dữ liệu nạp sẵn; in kèm biên bản giao hàng.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Xác nhận nhận hàng</td><td>Do dự án thực hiện, trên web hoặc ứng dụng di động, có ký điện tử.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Ghi nhận &amp; xử lý sai lệch</td><td>Nhập loại, khối lượng, ảnh; chọn hướng xử lý: trả hàng, cấp bù, hoặc chấp nhận điều chỉnh.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Tổng kế hoạch bằng khối lượng đơn.</b> Tổng khối lượng các đợt trong kế hoạch cấp phải bằng khối lượng dòng đơn hàng.<span class="then">Lệch thì chặn lưu kế hoạch, nêu rõ đang thừa hay thiếu bao nhiêu.</span></li>
+      <li><b>Đã cấp lấy từ phiếu xuất.</b> Khối lượng đã cấp là tổng của các phiếu xuất kho <b>đã duyệt</b>, không nhập tay.<span class="then">Phiếu xuất bị hủy thì lũy kế tự giảm tương ứng.</span></li>
+      <li><b>Đã nhận cần xác nhận của dự án.</b> Khối lượng đã nhận chỉ tăng khi người thuộc dự án xác nhận kiểm nhận.<span class="then">Chênh lệch giữa đã cấp và đã nhận luôn phải có bản ghi sai lệch tương ứng.</span></li>
+      <li><b>Đơn tự hoàn thành.</b> Khi lũy kế đã nhận bằng khối lượng đơn, lệnh và đơn tự chuyển trạng thái hoàn thành.<span class="then">Không có nút “đánh dấu hoàn thành” thủ công — tránh sai lệch giữa trạng thái và số liệu.</span></li>
+      <li><b>Thông báo trước khi hàng tới.</b> Duyệt phiếu xuất là phát thông báo cho dự án ngay, không chờ hàng tới nơi.<span class="then">Dự án có thời gian chuẩn bị mặt bằng và nhân lực tiếp nhận.</span></li>
+      <li><b>Sai lệch phải có hướng xử lý.</b> Ghi nhận sai lệch bắt buộc chọn một trong ba hướng: trả hàng, cấp bù, hoặc chấp nhận điều chỉnh.<span class="then">Chọn “trả hàng” thì phiếu xuất quay về nơi cấp ở trạng thái sửa được và phải duyệt lại từ đầu.</span></li>
+      <li><b>Ảnh bắt buộc khi có sai lệch.</b> Mọi bản ghi sai lệch cần ít nhất một ảnh kiểm nhận.<span class="then">Ảnh chụp từ ứng dụng tự gắn ngày giờ và vị trí, không sửa được.</span></li>
+      <li><b>Trễ cấp tính theo đợt.</b> Chênh giữa ngày thực tế và ngày dự kiến của từng đợt là số ngày trễ.<span class="then">Trễ tổng hợp được thành báo cáo tiến độ cấp hàng theo dự án và theo đơn vị thực hiện.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Kế hoạch lệch khối lượng đơn</td><td><code>sum(qty_plan) ≠ qty_order</code></td><td>“Tổng các đợt đang {thừa/thiếu} {số} {đvt} so với khối lượng đơn.”</td></tr>
+          <tr><td>Cấp vượt khối lượng còn lại</td><td><code>qty_issue &gt; còn lại</code></td><td>“Chỉ còn {số} {đvt} chưa cấp. Cập nhật đơn hàng nếu cần cấp thêm.”</td></tr>
+          <tr><td>Xác nhận nhận nhiều hơn đã cấp</td><td><code>qty_received &gt; qty_issued</code></td><td>“Số nhận lớn hơn số cấp trên phiếu {mã}. Kiểm tra lại hoặc lập phiếu xuất bổ sung.”</td></tr>
+          <tr><td>Sai lệch không chọn hướng xử lý</td><td><code>surplus_action</code> rỗng</td><td>“Chọn hướng xử lý phần sai lệch: trả hàng, cấp bù, hay chấp nhận điều chỉnh.”</td></tr>
+          <tr><td>Ghi sai lệch không có ảnh</td><td>Ảnh rỗng</td><td>“Đính kèm ít nhất một ảnh kiểm nhận làm bằng chứng.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-ORD05-1</td><td>Đơn 1.100 m², lệnh đã tiếp nhận</td><td>Lập kế hoạch 3 đợt 400/400/300</td><td>Chặn lưu vì tổng 1.100 ✓ — trường hợp tổng 1.000 thì báo thiếu 100</td></tr>
+          <tr><td>UAT-ORD05-2</td><td>Đợt 1 lập phiếu xuất 400 m², đã duyệt</td><td>Xem màn hình cấp hàng</td><td>“Đã cấp” hiện 400; “đã nhận” vẫn 0 cho tới khi dự án xác nhận</td></tr>
+          <tr><td>UAT-ORD05-3</td><td>Phiếu xuất đợt 1 vừa được duyệt</td><td>Kiểm tra thông báo của GĐ dự án</td><td>Nhận thông báo “có phiếu xuất hàng đi” ngay, trước khi hàng tới</td></tr>
+          <tr><td>UAT-ORD05-4</td><td>Đợt 2 cấp 280, nhận 260, vỡ 20</td><td>Ghi sai lệch, chọn “cấp bù đợt 3”, đính 4 ảnh</td><td>Sai lệch lưu; khối lượng đợt 3 tăng thêm 20</td></tr>
+          <tr><td>UAT-ORD05-5</td><td>Sai lệch chọn “trả hàng”</td><td>Xác nhận</td><td>Phiếu xuất về nơi cấp ở trạng thái sửa được; phải duyệt lại từ đầu</td></tr>
+          <tr><td>UAT-ORD05-6</td><td>Lũy kế đã nhận đạt 1.100 m²</td><td>Dự án xác nhận đợt cuối</td><td>Lệnh và đơn hàng tự chuyển “hoàn thành”, không cần thao tác khác</td></tr>
+          <tr><td>UAT-ORD05-7</td><td>Kỹ sư đang ở công trường, có mạng</td><td>Xác nhận nhận hàng trên điện thoại</td><td>Ký điện tử thành công; phiếu in ra hiện dấu ký thay chữ ký tay</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="ORD-04.html">ORD-04 lệnh thực hiện</a><a href="ACC-04.html">ACC-04 phiếu xuất kho</a><a href="PRJ-04.html">PRJ-04 nhập kho dự án</a><a href="ORD-07.html">ORD-07 xử lý hàng đã sản xuất khi giảm đơn</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 15 / 40</span><span><code>ORD-05.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

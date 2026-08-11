@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACC-08 Phiếu KT & phân bổ — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a class="on" href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Phòng Kế toán / <b>ACC-08</b></div><div class="sp"></div>
+  <div class="pnav"><a href="ACC-07.html">← ACC-07</a><a href="index.html">Mục lục</a><a href="ACC-09.html">ACC-09 →</a></div>
+</div>
+<section class="sheet solo" id="ACC-08">
+  <header class="tb">
+    <div class="tb-id">ACC-08</div>
+    <div class="tb-main">
+      <h3>Phiếu kế toán tổng hợp &amp; phân bổ chi phí chung</h3>
+      <p>“Form nhập liệu (phiếu kế toán) để hạch toán các chi phí lương, phân bổ các chi phí chung, kết chuyển lãi lỗ… có mã dự án, mã khoản mục chi phí, mã thống kê, cột chi phí hợp lý. Có tab phân bổ các chi phí chung về hạng mục theo tỷ lệ % / tiêu chí phân bổ.”</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Kế toán tổng hợp</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Kế toán trưởng duyệt bút toán phân bổ và kết chuyển</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Kế toán · Ban lãnh đạo</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>KT · dòng 7</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Chỗ để hạch toán những gì không đi qua chứng từ tác nghiệp: lương, khấu hao chung, chi phí quản lý. Và quan trọng hơn — đây là nơi biến khối chi phí <code>CHUNG</code> thành chi phí của từng dự án, hạng mục. Không có bước này thì lãi lỗ dự án luôn thiếu phần chi phí gián tiếp.</p>
+
+    <h4>Lưu đồ — phân bổ chi phí chung</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-08.1 Bốn tiêu chí phân bổ cho cùng một khối chi phí chung. Bảng phân bổ luôn được sinh ở trạng thái nháp để đối chiếu trước khi duyệt — bút toán chỉ ghi sổ sau khi Kế toán trưởng duyệt."
+ viewBox="0.00 0.00 865.00 823.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 809.92)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="524.83,-796.96 251.68,-796.96 251.68,-752.56 524.83,-752.56 524.83,-796.96"/>
+<text xml:space="preserve" text-anchor="middle" x="388.25" y="-778.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chi phí phát sinh không gắn dự án cụ thể</text>
+<text xml:space="preserve" text-anchor="middle" x="388.25" y="-763.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">lương gián tiếp · KH kho tổng · CP quản lý</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="480.7,-717.56 295.8,-717.56 295.8,-673.16 480.7,-673.16 480.7,-717.56"/>
+<text xml:space="preserve" text-anchor="middle" x="388.25" y="-699.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi nhận vào nhóm CHUNG</text>
+<text xml:space="preserve" text-anchor="middle" x="388.25" y="-684.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">bằng phiếu kế toán</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M388.25,-752.2C388.25,-743.98 388.25,-734.47 388.25,-725.65"/>
+<polygon fill="#55606b" stroke="#55606b" points="390.53,-725.82 388.25,-719.32 385.98,-725.82 390.53,-725.82"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="448.06,-638.16 328.45,-638.16 328.45,-608.76 448.06,-608.76 448.06,-638.16"/>
+<text xml:space="preserve" text-anchor="middle" x="388.25" y="-619.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đến kỳ phân bổ</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M388.25,-673.01C388.25,-664.58 388.25,-654.89 388.25,-646.41"/>
+<polygon fill="#55606b" stroke="#55606b" points="390.53,-646.42 388.25,-639.92 385.98,-646.42 390.53,-646.42"/>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="466.13,-573.76 310.38,-573.76 310.38,-544.36 466.13,-544.36 466.13,-573.76"/>
+<text xml:space="preserve" text-anchor="middle" x="388.25" y="-555.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chọn tiêu chí phân bổ</text>
+</g>
+<g id="edge3" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M388.25,-608.3C388.25,-600.56 388.25,-590.8 388.25,-582.09"/>
+<polygon fill="#55606b" stroke="#55606b" points="390.53,-582.18 388.25,-575.68 385.98,-582.18 390.53,-582.18"/>
+</g>
+<g id="node5" class="node">
+<title>E</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="388.25,-509.36 337.44,-491.48 388.25,-473.6 439.07,-491.48 388.25,-509.36"/>
+<text xml:space="preserve" text-anchor="middle" x="388.25" y="-487.73" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tiêu chí</text>
+</g>
+<g id="edge4" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M388.25,-544.15C388.25,-536.44 388.25,-526.61 388.25,-517.6"/>
+<polygon fill="#55606b" stroke="#55606b" points="390.53,-517.65 388.25,-511.15 385.98,-517.65 390.53,-517.65"/>
+</g>
+<g id="node6" class="node">
+<title>F</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="190.51,-426.4 0,-426.4 0,-382 190.51,-382 190.51,-426.4"/>
+<text xml:space="preserve" text-anchor="middle" x="95.25" y="-407.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tỷ trọng doanh thu ghi nhận</text>
+<text xml:space="preserve" text-anchor="middle" x="95.25" y="-392.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">của từng dự án trong kỳ</text>
+</g>
+<g id="edge5" class="edge">
+<title>E&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M359.71,-483.21C320.61,-473.26 255.19,-456.6 255.19,-456.6 255.19,-456.6 211.71,-442.63 170.08,-429.25"/>
+<polygon fill="#55606b" stroke="#55606b" points="170.94,-427.14 164.06,-427.31 169.55,-431.47 170.94,-427.14"/>
+<text xml:space="preserve" text-anchor="middle" x="293.72" y="-446.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Theo doanh thu</text>
+</g>
+<g id="node7" class="node">
+<title>G</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="389.84,-426.4 214.67,-426.4 214.67,-382 389.84,-382 389.84,-426.4"/>
+<text xml:space="preserve" text-anchor="middle" x="302.25" y="-407.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tỷ trọng chi phí trực tiếp</text>
+<text xml:space="preserve" text-anchor="middle" x="302.25" y="-392.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đã tập hợp</text>
+</g>
+<g id="edge6" class="edge">
+<title>E&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M374.58,-478.25C363.73,-468.54 350.37,-456.6 350.37,-456.6 350.37,-456.6 339.24,-444.71 327.68,-432.36"/>
+<polygon fill="#55606b" stroke="#55606b" points="329.52,-431 323.42,-427.81 326.2,-434.11 329.52,-431"/>
+<text xml:space="preserve" text-anchor="middle" x="406.31" y="-446.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Theo chi phí trực tiếp</text>
+</g>
+<g id="node8" class="node">
+<title>H</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="604.83,-426.4 413.67,-426.4 413.67,-382 604.83,-382 604.83,-426.4"/>
+<text xml:space="preserve" text-anchor="middle" x="509.25" y="-407.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tỷ trọng khối lượng thi công</text>
+<text xml:space="preserve" text-anchor="middle" x="509.25" y="-392.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;02</text>
+</g>
+<g id="edge7" class="edge">
+<title>E&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M409.83,-480.86C432.3,-470.85 464.25,-456.6 464.25,-456.6 464.25,-456.6 474.48,-444.92 485.18,-432.7"/>
+<polygon fill="#55606b" stroke="#55606b" points="486.86,-434.23 489.43,-427.84 483.44,-431.23 486.86,-434.23"/>
+<text xml:space="preserve" text-anchor="middle" x="516.09" y="-446.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Theo sản lượng</text>
+</g>
+<g id="node9" class="node">
+<title>I</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="839.58,-418.9 628.93,-418.9 628.93,-389.5 839.58,-389.5 839.58,-418.9"/>
+<text xml:space="preserve" text-anchor="middle" x="734.25" y="-400.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Bảng tỷ lệ do người dùng nhập</text>
+</g>
+<g id="edge8" class="edge">
+<title>E&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M419.95,-484.34C470.38,-474.58 563.25,-456.6 563.25,-456.6 563.25,-456.6 629.49,-436.69 679.51,-421.66"/>
+<polygon fill="#55606b" stroke="#55606b" points="680.06,-423.87 685.63,-419.82 678.75,-419.51 680.06,-423.87"/>
+<text xml:space="preserve" text-anchor="middle" x="662.97" y="-446.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Theo tỷ lệ % ấn định</text>
+</g>
+<g id="node10" class="node">
+<title>J</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="533.14,-347 277.37,-347 277.37,-302.6 533.14,-302.6 533.14,-347"/>
+<text xml:space="preserve" text-anchor="middle" x="405.25" y="-328.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sinh bảng phân bổ nháp</text>
+<text xml:space="preserve" text-anchor="middle" x="405.25" y="-313.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">hiện số tiền về từng dự án, hạng mục</text>
+</g>
+<g id="edge9" class="edge">
+<title>F&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M182.02,-381.54C222.15,-371.52 269.91,-359.59 310.93,-349.35"/>
+<polygon fill="#55606b" stroke="#55606b" points="311.29,-351.61 317.04,-347.82 310.18,-347.19 311.29,-351.61"/>
+</g>
+<g id="edge10" class="edge">
+<title>G&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M330.95,-381.64C343.22,-372.41 357.67,-361.56 370.54,-351.89"/>
+<polygon fill="#55606b" stroke="#55606b" points="371.68,-353.88 375.51,-348.15 368.94,-350.24 371.68,-353.88"/>
+</g>
+<g id="edge11" class="edge">
+<title>H&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M480.28,-381.64C467.89,-372.41 453.3,-361.56 440.31,-351.89"/>
+<polygon fill="#55606b" stroke="#55606b" points="441.86,-350.2 435.28,-348.15 439.14,-353.85 441.86,-350.2"/>
+</g>
+<g id="edge12" class="edge">
+<title>I&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M673.91,-389C626.69,-377.9 560.03,-362.21 504.92,-349.25"/>
+<polygon fill="#55606b" stroke="#55606b" points="505.55,-347.06 498.7,-347.78 504.5,-351.49 505.55,-347.06"/>
+</g>
+<g id="node11" class="node">
+<title>K</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="480,-267.6 330.51,-267.6 330.51,-238.2 480,-238.2 480,-267.6"/>
+<text xml:space="preserve" text-anchor="middle" x="405.25" y="-249.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Kế toán trưởng duyệt</text>
+</g>
+<g id="edge13" class="edge">
+<title>J&#45;&gt;K</title>
+<path fill="none" stroke="#55606b" d="M405.25,-302.45C405.25,-294.02 405.25,-284.33 405.25,-275.85"/>
+<polygon fill="#55606b" stroke="#55606b" points="407.53,-275.86 405.25,-269.36 402.98,-275.86 407.53,-275.86"/>
+</g>
+<g id="node12" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="491.81,-203.2 318.69,-203.2 318.69,-158.8 491.81,-158.8 491.81,-203.2"/>
+<text xml:space="preserve" text-anchor="middle" x="405.25" y="-184.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sinh bút toán phân bổ</text>
+<text xml:space="preserve" text-anchor="middle" x="405.25" y="-169.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ghi chi phí về từng dự án</text>
+</g>
+<g id="edge14" class="edge">
+<title>K&#45;&gt;L</title>
+<path fill="none" stroke="#55606b" d="M405.25,-237.75C405.25,-230.16 405.25,-220.52 405.25,-211.39"/>
+<polygon fill="#55606b" stroke="#55606b" points="407.53,-211.58 405.25,-205.08 402.98,-211.58 407.53,-211.58"/>
+</g>
+<g id="node13" class="node">
+<title>M</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="489.72,-123.8 320.78,-123.8 320.78,-79.4 489.72,-79.4 489.72,-123.8"/>
+<text xml:space="preserve" text-anchor="middle" x="405.25" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sổ chi phí công trình đủ</text>
+<text xml:space="preserve" text-anchor="middle" x="405.25" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">trực tiếp + gián tiếp</text>
+</g>
+<g id="edge15" class="edge">
+<title>L&#45;&gt;M</title>
+<path fill="none" stroke="#55606b" d="M405.25,-158.44C405.25,-150.22 405.25,-140.71 405.25,-131.89"/>
+<polygon fill="#55606b" stroke="#55606b" points="407.53,-132.06 405.25,-125.56 402.98,-132.06 407.53,-132.06"/>
+</g>
+<g id="node14" class="node">
+<title>N</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="467.83,-44.4 342.68,-44.4 342.68,0 467.83,0 467.83,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="405.25" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Kết chuyển lãi lỗ</text>
+<text xml:space="preserve" text-anchor="middle" x="405.25" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ACC&#45;09</text>
+</g>
+<g id="edge16" class="edge">
+<title>M&#45;&gt;N</title>
+<path fill="none" stroke="#55606b" d="M405.25,-79.04C405.25,-70.82 405.25,-61.31 405.25,-52.49"/>
+<polygon fill="#55606b" stroke="#55606b" points="407.53,-52.66 405.25,-46.16 402.98,-52.66 407.53,-52.66"/>
+</g>
+</g>
+</svg></div><figcaption><b>Hình ACC-08.1</b> Bốn tiêu chí phân bổ cho cùng một khối chi phí chung. Bảng phân bổ luôn được sinh ở trạng thái nháp để đối chiếu trước khi duyệt — bút toán chỉ ghi sổ sau khi Kế toán trưởng duyệt.</figcaption></figure>
+
+    <h4>Tham số — phiếu kế toán</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã phiếu</td><td class="k">journal_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>PKT-YYYY-NNNN</code>.</td></tr>
+          <tr><td>Loại phiếu</td><td class="k">journal_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>hạch toán lương</code> · <code>phân bổ chi phí chung</code> · <code>kết chuyển</code> · <code>điều chỉnh</code> · <code>khác</code>.</td></tr>
+          <tr><td>Dòng bút toán</td><td class="k">entries[]</td><td>Bảng</td><td class="c req">✱</td><td>TK nợ, TK có, số tiền, diễn giải. Tổng nợ phải bằng tổng có.</td></tr>
+          <tr><td>Mã dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng; cho phép <code>CHUNG</code>.</td></tr>
+          <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng.</td></tr>
+          <tr><td>Mã thống kê</td><td class="k">stat_id</td><td>Tham chiếu</td><td class="c">—</td><td>Theo dòng.</td></tr>
+          <tr><td>Chi phí hợp lý</td><td class="k">is_deductible</td><td>Boolean</td><td class="c req">✱</td><td>Cột riêng trên lưới nhập liệu, đúng yêu cầu gốc.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — bảng phân bổ</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Kỳ phân bổ</td><td class="k">period</td><td>Tháng · quý</td><td class="c req">✱</td><td>Một kỳ chỉ phân bổ một lần cho mỗi nhóm chi phí.</td></tr>
+          <tr><td>Nhóm chi phí phân bổ</td><td class="k">pool_cost_items[]</td><td>Danh sách</td><td class="c req">✱</td><td>Chọn các khoản mục thuộc khối chung cần phân bổ.</td></tr>
+          <tr><td>Tiêu chí phân bổ</td><td class="k">alloc_basis</td><td>Chọn 1</td><td class="c req">✱</td><td><code>doanh thu</code> · <code>chi phí trực tiếp</code> · <code>sản lượng</code> · <code>tỷ lệ ấn định</code>.</td></tr>
+          <tr><td>Bảng tỷ lệ</td><td class="k">alloc_rates[]</td><td>Bảng</td><td class="c">—</td><td>Bắt buộc với tiêu chí “tỷ lệ ấn định”; tổng phải bằng 100%.</td></tr>
+          <tr><td>Phân bổ tới cấp</td><td class="k">alloc_level</td><td>Chọn 1</td><td class="c req">✱</td><td><code>dự án</code> hoặc <code>hạng mục</code>.</td></tr>
+          <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>nháp</code> · <code>chờ duyệt</code> · <code>đã ghi sổ</code>. Chỉ trạng thái cuối mới sinh bút toán.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Lưới nhập phiếu kế toán có đủ bốn cột quản trị: mã dự án, khoản mục chi phí, mã thống kê, chi phí hợp lý.</li>
+      <li>Phiếu không cân đối nợ – có thì không lưu được.</li>
+      <li>Bảng phân bổ sinh ở trạng thái nháp, xem trước được số tiền về từng dự án trước khi duyệt.</li>
+      <li>Đổi tiêu chí phân bổ thì bảng tính lại ngay, không phải lập lại phiếu.</li>
+      <li>Một kỳ không phân bổ trùng hai lần cho cùng một nhóm chi phí.</li>
+      <li>Sau khi phân bổ, khối chi phí <code>CHUNG</code> của kỳ về 0 — kiểm tra được bằng một báo cáo đối chiếu.</li>
+      <li>Chi phí đánh dấu không hợp lý vẫn phân bổ về dự án nhưng được tách riêng trong báo cáo chi phí không hợp lý.</li>
+      <li>Phân bổ tới cấp hạng mục cho ra sổ chi phí công trình chi tiết đến từng hạng mục.</li>
+    </ol>
+
+    <h4>Mockup UI — Tài chính › Phiếu kế toán &amp; phân bổ</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Tài chính ›</span><b>Phiếu kế toán tổng hợp</b><span class="sp"></span><span class="wf-btn pri">+ Phiếu kế toán</span></div>
+      <div class="wf-body">
+        <div class="wf-chips"><span class="wf-chip on">Nhập liệu phiếu</span><span class="wf-chip"><span class="pin">3</span> Phân bổ chi phí chung</span><span class="wf-chip">Kết chuyển</span></div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">1</span> PKT-2026-0142 · Hạch toán lương tháng 7</div>
+          <table><thead><tr><th>TK Nợ</th><th>TK Có</th><th>Diễn giải</th><th>Mã dự án</th><th>KMCP</th><th>Mã thống kê</th><th class="c">CP hợp lý</th><th class="num">Số tiền</th></tr></thead>
+          <tbody>
+            <tr><td>622</td><td>334</td><td>Lương nhân công trực tiếp T7</td><td>DA-2026-014</td><td>KM-201</td><td>Miền Nam</td><td class="c">✓</td><td class="num">640.000.000</td></tr>
+            <tr><td>627</td><td>334</td><td>Lương quản lý công trình T7</td><td>DA-2026-014</td><td>KM-301</td><td>Miền Nam</td><td class="c">✓</td><td class="num">148.000.000</td></tr>
+            <tr><td>642</td><td>334</td><td>Lương khối văn phòng T7</td><td>CHUNG</td><td>KM-401</td><td>—</td><td class="c">✓</td><td class="num">520.000.000</td></tr>
+          </tbody></table>
+          <p style="margin:7px 0 0;font-size:11.5px;color:var(--ink-3)">Tổng nợ 1.308.000.000 = tổng có 1.308.000.000 ✓</p>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">2</span> Tab phân bổ chi phí chung — kỳ tháng 7/2026</div>
+          <div class="wf-row">
+            <div class="wf-c" style="flex:0 1 230px">
+              <div class="wf-f"><label>Nhóm chi phí phân bổ ✱</label><div class="in">KM-401 Lương VP, KM-410 KH kho tổng <em>▾</em></div></div>
+              <div class="wf-f"><label>Tiêu chí phân bổ ✱</label><div class="in">Theo doanh thu ghi nhận <em>▾</em></div></div>
+              <div class="wf-f"><label>Phân bổ tới cấp ✱</label><div class="in">Dự án <em>▾</em></div></div>
+              <div class="wf-f"><label>Tổng cần phân bổ</label><div class="in ro">574.600.000</div></div>
+            </div>
+            <div class="wf-c"><table><thead><tr><th>Dự án</th><th class="num">Doanh thu kỳ</th><th class="num">Tỷ trọng</th><th class="num">Phân bổ</th></tr></thead>
+            <tbody>
+              <tr><td>DA-2026-014</td><td class="num">2.480.000.000</td><td class="num">53,9%</td><td class="num">309.709.000</td></tr>
+              <tr><td>DA-2026-011</td><td class="num">1.640.000.000</td><td class="num">35,7%</td><td class="num">205.132.000</td></tr>
+              <tr><td>DA-2025-032</td><td class="num">480.000.000</td><td class="num">10,4%</td><td class="num">59.759.000</td></tr>
+            </tbody></table>
+            <div style="margin-top:8px"><span class="wf-btn"><span class="pin">4</span> Đổi tiêu chí, tính lại</span> <span class="wf-btn pri">Trình KTT duyệt &amp; ghi sổ</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Nhập phiếu kế toán</td><td>Lưới nhập nhiều dòng, kiểm cân đối nợ – có trước khi lưu, có đủ bốn cột quản trị.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Lập bảng phân bổ</td><td>Chọn nhóm chi phí, tiêu chí và cấp phân bổ; hệ thống sinh bảng nháp.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Tab phân bổ riêng</td><td>Tách khỏi nhập liệu thường để dễ rà soát cuối kỳ.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Đổi tiêu chí &amp; tính lại</td><td>So sánh được kết quả của các tiêu chí khác nhau trước khi chọn.</td></tr>
+          <tr><td class="c">—</td><td>Duyệt &amp; ghi sổ</td><td>Kế toán trưởng duyệt thì bảng nháp sinh bút toán và khóa lại.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Cân đối nợ có.</b> Phiếu kế toán không lưu được khi tổng nợ khác tổng có.<span class="then">Hiển thị chênh lệch ngay dưới lưới nhập để kế toán biết còn thiếu bao nhiêu.</span></li>
+      <li><b>Bốn cột quản trị trên lưới.</b> Mã dự án, khoản mục chi phí, mã thống kê và cột chi phí hợp lý có mặt trên từng dòng bút toán.<span class="then">Đúng yêu cầu gốc về form nhập liệu phiếu kế toán.</span></li>
+      <li><b>Phân bổ sinh bản nháp trước.</b> Bảng phân bổ luôn tạo ở trạng thái nháp để đối chiếu, chỉ sinh bút toán sau khi Kế toán trưởng duyệt.<span class="then">Đổi tiêu chí thì bảng tính lại ngay, không phải lập phiếu mới — so sánh được các phương án trước khi chọn.</span></li>
+      <li><b>Một kỳ, một lần phân bổ mỗi nhóm.</b> Không phân bổ trùng cùng một nhóm chi phí trong cùng kỳ.<span class="then">Muốn làm lại phải hủy bảng phân bổ cũ, thao tác này ghi nhật ký.</span></li>
+      <li><b>Sau phân bổ khối CHUNG về 0.</b> Kết thúc phân bổ, chi phí chung của kỳ phải bằng 0.<span class="then">Có báo cáo đối chiếu kiểm tra điều này; số dư khác 0 nghĩa là còn nhóm chi phí chưa được phân bổ.</span></li>
+      <li><b>Tỷ lệ ấn định phải đủ 100%.</b> Tiêu chí “tỷ lệ ấn định” yêu cầu tổng bảng tỷ lệ bằng đúng 100%.<span class="then">Ba tiêu chí còn lại tính tỷ trọng tự động từ số liệu thực tế của kỳ.</span></li>
+      <li><b>Chi phí không hợp lý vẫn phân bổ.</b> Chi phí đánh dấu không hợp lý vẫn về dự án nhưng tách riêng trong báo cáo.<span class="then">Nhờ vậy lợi nhuận quản trị và lợi nhuận tính thuế đều ra được từ cùng bộ số liệu.</span></li>
+      <li><b>Phân bổ tới cấp hạng mục là tùy chọn.</b> Chọn phân bổ tới dự án hoặc tới hạng mục.<span class="then">Tới hạng mục cho ra sổ chi phí công trình chi tiết hơn nhưng cần dữ liệu sản lượng theo hạng mục đầy đủ.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Phiếu không cân đối</td><td>Tổng nợ ≠ tổng có</td><td>“Chênh lệch {số}. Kiểm tra lại các dòng bút toán trước khi lưu.”</td></tr>
+          <tr><td>Phân bổ trùng kỳ</td><td>Nhóm đã phân bổ trong kỳ</td><td>“Nhóm chi phí này đã phân bổ cho kỳ {kỳ} bằng bảng {mã}. Hủy bảng cũ nếu muốn làm lại.”</td></tr>
+          <tr><td>Tỷ lệ ấn định không đủ 100%</td><td><code>sum ≠ 100</code></td><td>“Tổng tỷ lệ đang là {x}%. Điều chỉnh cho đủ 100%.”</td></tr>
+          <tr><td>Không có cơ sở phân bổ</td><td>Mọi dự án đều bằng 0 theo tiêu chí</td><td>“Không dự án nào có {tiêu chí} trong kỳ này. Chọn tiêu chí khác hoặc dùng tỷ lệ ấn định.”</td></tr>
+          <tr><td>Còn dư chi phí chung</td><td>Sau phân bổ ≠ 0</td><td>“Còn {giá trị} chi phí chung chưa phân bổ ở các khoản mục: {danh sách}.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-ACC08-1</td><td>Nhập 3 dòng lương, tổng nợ 1,308 tỷ</td><td>Nhập tổng có 1,3 tỷ và Lưu</td><td>Chặn lưu, hiện chênh lệch 8 triệu</td></tr>
+          <tr><td>UAT-ACC08-2</td><td>Chi phí chung kỳ 7 là 574,6 triệu</td><td>Lập bảng phân bổ theo doanh thu</td><td>Bảng nháp hiện tỷ trọng và số tiền về từng dự án</td></tr>
+          <tr><td>UAT-ACC08-3</td><td>Tiếp UAT-2</td><td>Đổi tiêu chí sang “chi phí trực tiếp”</td><td>Bảng tính lại ngay, không phải lập phiếu mới</td></tr>
+          <tr><td>UAT-ACC08-4</td><td>Bảng nháp đã đúng</td><td>Kế toán trưởng duyệt</td><td>Sinh bút toán phân bổ; bảng khóa lại</td></tr>
+          <tr><td>UAT-ACC08-5</td><td>Đã phân bổ nhóm KM-401 kỳ 7</td><td>Lập bảng phân bổ mới cùng nhóm, cùng kỳ</td><td>Bị chặn kèm mã bảng đã dùng</td></tr>
+          <tr><td>UAT-ACC08-6</td><td>Phân bổ xong toàn bộ kỳ 7</td><td>Mở báo cáo đối chiếu chi phí chung</td><td>Số dư CHUNG của kỳ bằng 0</td></tr>
+          <tr><td>UAT-ACC08-7</td><td>Có chi phí đánh dấu không hợp lý 104 triệu</td><td>Phân bổ và mở báo cáo</td><td>Chi phí về dự án nhưng vẫn tách riêng ở báo cáo chi phí không hợp lý</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="PF-01.html">PF-01 khoản mục &amp; mã thống kê</a><a href="ACC-06.html">ACC-06 khấu hao kho tổng</a><a href="ACC-09.html">ACC-09 kết chuyển lãi lỗ</a><a href="RPT-01.html">RPT-01 sổ chi phí công trình</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 30 / 40</span><span><code>ACC-08.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

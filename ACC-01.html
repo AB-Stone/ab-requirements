@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACC-01 Đề xuất mua sắm / chi phí — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a class="on" href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Phòng Kế toán / <b>ACC-01</b></div><div class="sp"></div>
+  <div class="pnav"><a href="PRJ-04.html">← PRJ-04</a><a href="index.html">Mục lục</a><a href="ACC-02.html">ACC-02 →</a></div>
+</div>
+<section class="sheet solo" id="ACC-01">
+  <header class="tb">
+    <div class="tb-id">ACC-01</div>
+    <div class="tb-main">
+      <h3>Đề xuất mua sắm tài sản, CCDC, vật tư &amp; chi phí</h3>
+      <p>Ba loại đề xuất khác nhau về mức chi tiết dữ liệu, hai mức phê duyệt khác nhau theo loại. Đây là cửa vào của toàn bộ dòng chi phí dự án.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Ban Dự án hoặc Kế toán</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Loại 1: một cấp · Loại 2: nhiều cấp theo hạn mức</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Dự án + Kế toán</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>KT · dòng 1 và đoạn trình tự</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Một biểu mẫu duy nhất phục vụ ba loại đề xuất với ba mức chi tiết khác nhau, đồng thời bảo đảm điều kiện mà bảng yêu cầu nhấn mạnh: “cần có thông tin đề xuất dùng cho dự án nào” và “giao diện phê duyệt cần có tóm tắt các thông tin: dự án đề xuất, nội dung tóm tắt, nơi thực hiện cung cấp”.</p>
+
+    <h4>Ba loại đề xuất</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:56px">Loại</th><th>Đối tượng</th><th>Dữ liệu nhập</th><th>Theo dõi tồn kho</th><th>Ghi nhận</th></tr></thead>
+        <tbody>
+          <tr><td><b>Loại 1</b></td><td>Vật tư có theo dõi nhập – xuất – tồn: cát, xi măng, pass móc…</td><td>Số lượng + đơn giá + ĐVT (2 cột: kế toán và dự án)</td><td><span class="tag t-ok">Có</span></td><td>Qua kho, thành chi phí khi xuất kho</td></tr>
+          <tr><td><b>Loại 2</b></td><td>Vật tư chung, nhỏ lẻ, CCDC, TSCĐ</td><td>Số lượng + đơn giá (vẫn nhập đủ)</td><td><span class="tag t-neu">Không</span></td><td>Ghi thẳng chi phí hoặc ghi tăng tài sản, không qua kho</td></tr>
+          <tr><td><b>Loại 3</b></td><td>Chi phí thuần: dịch vụ, thuê ngoài, phí</td><td>Chỉ giá trị — không số lượng, không đơn giá</td><td><span class="tag t-neu">Không</span></td><td>Ghi thẳng chi phí dự án</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note q">
+      <b>Vấn đề cần chốt · Q-01</b>
+      <p style="margin:0">Yêu cầu gốc hỏi: “có thể kết hợp mục 2+3 không?”. Đề xuất của đặc tả: <b>gộp về một biểu mẫu, giữ hai chế độ nhập</b>. Người lập chọn “có số lượng” hay “chỉ giá trị” ở từng dòng chứ không ở cả phiếu — một đề xuất có thể vừa có 5 bộ CCDC (có số lượng) vừa có phí vận chuyển lắp đặt (chỉ giá trị). Cách này giữ được tính linh hoạt mà không tạo thêm loại chứng từ. Xem <a href="PL-C.html">Phụ lục C</a>.</p>
+    </div>
+
+    <h4>Lưu đồ — trình tự đầy đủ từ đề xuất tới thanh toán</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-01.1 Toàn bộ trình tự mà bảng yêu cầu mô tả trong một đoạn văn. Hai điểm cần chú ý: chi phí ghi nhận về dự án tại bước nhập kho (trước VAT), không phải tại bước thanh toán; và đề xuất chỉ đóng khi lũy kế nhập đủ số lượng."
+ viewBox="0.00 0.00 772.00 1045.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 1032.28)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="601.77,-1019.32 358.52,-1019.32 358.52,-974.92 601.77,-974.92 601.77,-1019.32"/>
+<text xml:space="preserve" text-anchor="middle" x="480.14" y="-1000.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lập đề xuất</text>
+<text xml:space="preserve" text-anchor="middle" x="480.14" y="-985.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">form nhập liệu hoặc tải PDF đề xuất</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="480.14,-939.92 398.76,-907.04 480.14,-874.16 561.53,-907.04 480.14,-939.92"/>
+<text xml:space="preserve" text-anchor="middle" x="480.14" y="-910.79" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Loại đề xuất</text>
+<text xml:space="preserve" text-anchor="middle" x="480.14" y="-895.79" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">và giá trị</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M480.14,-974.8C480.14,-966.77 480.14,-957.34 480.14,-948.15"/>
+<polygon fill="#55606b" stroke="#55606b" points="482.42,-948.19 480.14,-941.69 477.87,-948.19 482.42,-948.19"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="467.9,-826.96 218.39,-826.96 218.39,-782.56 467.9,-782.56 467.9,-826.96"/>
+<text xml:space="preserve" text-anchor="middle" x="343.14" y="-808.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">GĐ dự án HOẶC Kế toán trưởng duyệt</text>
+<text xml:space="preserve" text-anchor="middle" x="343.14" y="-793.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">bước kiểu any&#45;of · PF&#45;03</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M451.76,-885.26C430.55,-869.74 401.43,-848.42 378.68,-831.77"/>
+<polygon fill="#55606b" stroke="#55606b" points="380.25,-830.1 373.66,-828.1 377.56,-833.77 380.25,-830.1"/>
+<text xml:space="preserve" text-anchor="middle" x="458.41" y="-847.26" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Loại 1 — một cấp</text>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="745.98,-819.46 492.3,-819.46 492.3,-790.06 745.98,-790.06 745.98,-819.46"/>
+<text xml:space="preserve" text-anchor="middle" x="619.14" y="-801.01" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">GĐ dự án → Kế toán trưởng → Tổng GĐ</text>
+</g>
+<g id="edge3" class="edge">
+<title>B&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M508.94,-885.26C533.8,-867.33 569.39,-841.66 593.33,-824.38"/>
+<polygon fill="#55606b" stroke="#55606b" points="594.59,-826.28 598.53,-820.63 591.93,-822.59 594.59,-826.28"/>
+<text xml:space="preserve" text-anchor="middle" x="617.24" y="-847.26" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Loại 2 — nhiều cấp</text>
+</g>
+<g id="node5" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="551.4,-747.56 408.88,-747.56 408.88,-718.16 551.4,-718.16 551.4,-747.56"/>
+<text xml:space="preserve" text-anchor="middle" x="480.14" y="-729.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đề xuất được duyệt</text>
+</g>
+<g id="edge4" class="edge">
+<title>C&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M385.37,-782.22C404.66,-772.37 427.24,-760.85 445.51,-751.53"/>
+<polygon fill="#55606b" stroke="#55606b" points="446.44,-753.61 451.2,-748.63 444.37,-749.56 446.44,-753.61"/>
+</g>
+<g id="edge5" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M591.01,-789.61C569.16,-778.62 538.72,-763.32 515.27,-751.52"/>
+<polygon fill="#55606b" stroke="#55606b" points="516.41,-749.55 509.58,-748.66 514.37,-753.62 516.41,-749.55"/>
+</g>
+<g id="node6" class="node">
+<title>F</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="597.27,-683.16 363.02,-683.16 363.02,-638.76 597.27,-638.76 597.27,-683.16"/>
+<text xml:space="preserve" text-anchor="middle" x="480.14" y="-664.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chuyển đơn vị cung ứng</text>
+<text xml:space="preserve" text-anchor="middle" x="480.14" y="-649.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhà máy · Ban dự án · P. Cung ứng</text>
+</g>
+<g id="edge6" class="edge">
+<title>E&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M480.14,-717.71C480.14,-710.12 480.14,-700.48 480.14,-691.35"/>
+<polygon fill="#55606b" stroke="#55606b" points="482.42,-691.54 480.14,-685.04 477.87,-691.54 482.42,-691.54"/>
+</g>
+<g id="node7" class="node">
+<title>G</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="519.46,-603.76 440.83,-603.76 440.83,-574.36 519.46,-574.36 519.46,-603.76"/>
+<text xml:space="preserve" text-anchor="middle" x="480.14" y="-585.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Mua hàng</text>
+</g>
+<g id="edge7" class="edge">
+<title>F&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M480.14,-638.61C480.14,-630.18 480.14,-620.49 480.14,-612.01"/>
+<polygon fill="#55606b" stroke="#55606b" points="482.42,-612.02 480.14,-605.52 477.87,-612.02 482.42,-612.02"/>
+</g>
+<g id="node8" class="node">
+<title>H</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="493.22,-539.36 327.06,-539.36 327.06,-494.96 493.22,-494.96 493.22,-539.36"/>
+<text xml:space="preserve" text-anchor="middle" x="410.14" y="-520.91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhận hàng</text>
+<text xml:space="preserve" text-anchor="middle" x="410.14" y="-505.91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">có hoặc chưa có hóa đơn</text>
+</g>
+<g id="edge8" class="edge">
+<title>G&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M465.98,-573.91C457.76,-565.71 447.14,-555.1 437.37,-545.35"/>
+<polygon fill="#55606b" stroke="#55606b" points="439.02,-543.78 432.81,-540.79 435.8,-547 439.02,-543.78"/>
+</g>
+<g id="node9" class="node">
+<title>I</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="490.43,-459.96 247.85,-459.96 247.85,-415.56 490.43,-415.56 490.43,-459.96"/>
+<text xml:space="preserve" text-anchor="middle" x="369.14" y="-441.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lập phiếu nhập kho</text>
+<text xml:space="preserve" text-anchor="middle" x="369.14" y="-426.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ghi nhận chi phí về dự án, trước VAT</text>
+</g>
+<g id="edge9" class="edge">
+<title>H&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M398.72,-494.6C394.24,-486.13 389.02,-476.29 384.23,-467.24"/>
+<polygon fill="#55606b" stroke="#55606b" points="386.26,-466.22 381.21,-461.54 382.24,-468.35 386.26,-466.22"/>
+</g>
+<g id="node10" class="node">
+<title>J</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="459.17,-380.56 279.12,-380.56 279.12,-336.16 459.17,-336.16 459.17,-380.56"/>
+<text xml:space="preserve" text-anchor="middle" x="369.14" y="-362.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tick nhập cho đề xuất nào</text>
+<text xml:space="preserve" text-anchor="middle" x="369.14" y="-347.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">nhập đủ hay một phần</text>
+</g>
+<g id="edge10" class="edge">
+<title>I&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M369.14,-415.2C369.14,-406.98 369.14,-397.47 369.14,-388.65"/>
+<polygon fill="#55606b" stroke="#55606b" points="371.42,-388.82 369.14,-382.32 366.87,-388.82 371.42,-388.82"/>
+</g>
+<g id="node14" class="node">
+<title>N</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="253.52,-380.56 72.77,-380.56 72.77,-336.16 253.52,-336.16 253.52,-380.56"/>
+<text xml:space="preserve" text-anchor="middle" x="163.14" y="-362.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi nhận công nợ phải trả</text>
+<text xml:space="preserve" text-anchor="middle" x="163.14" y="-347.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ACC&#45;05</text>
+</g>
+<g id="edge15" class="edge">
+<title>I&#45;&gt;N</title>
+<path fill="none" stroke="#55606b" d="M311.49,-415.1C285.59,-405.37 254.92,-393.84 228.21,-383.81"/>
+<polygon fill="#55606b" stroke="#55606b" points="229.09,-381.71 222.2,-381.55 227.49,-385.97 229.09,-381.71"/>
+</g>
+<g id="node11" class="node">
+<title>K</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="369.14,-301.16 253.72,-268.28 369.14,-235.4 484.57,-268.28 369.14,-301.16"/>
+<text xml:space="preserve" text-anchor="middle" x="369.14" y="-272.03" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đã nhập đủ</text>
+<text xml:space="preserve" text-anchor="middle" x="369.14" y="-257.03" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">số lượng đề xuất?</text>
+</g>
+<g id="edge11" class="edge">
+<title>J&#45;&gt;K</title>
+<path fill="none" stroke="#55606b" d="M369.14,-336.04C369.14,-328.01 369.14,-318.58 369.14,-309.39"/>
+<polygon fill="#55606b" stroke="#55606b" points="371.42,-309.43 369.14,-302.93 366.87,-309.43 371.42,-309.43"/>
+</g>
+<g id="node12" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="622.59,-188.2 503.7,-188.2 503.7,-143.8 622.59,-143.8 622.59,-188.2"/>
+<text xml:space="preserve" text-anchor="middle" x="563.14" y="-169.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đề xuất còn mở</text>
+<text xml:space="preserve" text-anchor="middle" x="563.14" y="-154.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">hiện số còn lại</text>
+</g>
+<g id="edge12" class="edge">
+<title>K&#45;&gt;L</title>
+<path fill="none" stroke="#55606b" d="M407.36,-245.92C439.47,-227.96 480.18,-205.2 480.18,-205.2 480.18,-205.2 493.45,-199.09 509.37,-191.76"/>
+<polygon fill="#55606b" stroke="#55606b" points="510,-193.97 514.95,-189.19 508.1,-189.84 510,-193.97"/>
+<text xml:space="preserve" text-anchor="middle" x="506.16" y="-208.5" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Một phần</text>
+</g>
+<g id="node13" class="node">
+<title>M</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="479.83,-188.2 234.46,-188.2 234.46,-143.8 479.83,-143.8 479.83,-188.2"/>
+<text xml:space="preserve" text-anchor="middle" x="357.14" y="-169.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đề xuất chuyển trạng thái Hoàn thành</text>
+<text xml:space="preserve" text-anchor="middle" x="357.14" y="-154.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">vào nhóm đã hoàn thành</text>
+</g>
+<g id="edge14" class="edge">
+<title>K&#45;&gt;M</title>
+<path fill="none" stroke="#55606b" d="M365.41,-236.1C363.9,-223.46 362.16,-208.94 360.67,-196.47"/>
+<polygon fill="#55606b" stroke="#55606b" points="362.94,-196.31 359.91,-190.13 358.42,-196.85 362.94,-196.31"/>
+<text xml:space="preserve" text-anchor="middle" x="370.78" y="-208.5" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đủ</text>
+</g>
+<g id="edge13" class="edge">
+<title>L&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M560.6,-188.27C557.08,-217.7 551.14,-267.28 551.14,-267.28 551.14,-518.16 551.14,-518.16 551.14,-518.16 551.14,-518.16 521.16,-547.68 500.16,-568.35"/>
+<polygon fill="#55606b" stroke="#55606b" points="498.63,-566.67 495.59,-572.85 501.82,-569.91 498.63,-566.67"/>
+</g>
+<g id="node15" class="node">
+<title>O</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="226.99,-282.98 89.29,-282.98 89.29,-253.58 226.99,-253.58 226.99,-282.98"/>
+<text xml:space="preserve" text-anchor="middle" x="158.14" y="-264.53" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đề nghị thanh toán</text>
+</g>
+<g id="edge16" class="edge">
+<title>N&#45;&gt;O</title>
+<path fill="none" stroke="#55606b" d="M161.93,-336.04C161.16,-322.46 160.17,-304.92 159.39,-291.22"/>
+<polygon fill="#55606b" stroke="#55606b" points="161.66,-291.14 159.02,-284.78 157.12,-291.39 161.66,-291.14"/>
+</g>
+<g id="node16" class="node">
+<title>P</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="210.81,-180.7 65.47,-180.7 65.47,-151.3 210.81,-151.3 210.81,-180.7"/>
+<text xml:space="preserve" text-anchor="middle" x="138.14" y="-162.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phê duyệt thanh toán</text>
+</g>
+<g id="edge17" class="edge">
+<title>O&#45;&gt;P</title>
+<path fill="none" stroke="#55606b" d="M155.36,-253.34C152.04,-236.67 146.43,-208.57 142.53,-188.97"/>
+<polygon fill="#55606b" stroke="#55606b" points="144.76,-188.56 141.26,-182.63 140.3,-189.45 144.76,-188.56"/>
+</g>
+<g id="node17" class="node">
+<title>Q</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="181.28,-108.8 95,-108.8 95,-79.4 181.28,-79.4 181.28,-108.8"/>
+<text xml:space="preserve" text-anchor="middle" x="138.14" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Thanh toán</text>
+</g>
+<g id="edge18" class="edge">
+<title>P&#45;&gt;Q</title>
+<path fill="none" stroke="#55606b" d="M138.14,-150.85C138.14,-141.19 138.14,-128.19 138.14,-117.17"/>
+<polygon fill="#55606b" stroke="#55606b" points="140.42,-117.24 138.14,-110.74 135.87,-117.24 140.42,-117.24"/>
+</g>
+<g id="node18" class="node">
+<title>R</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="276.29,-44.4 0,-44.4 0,0 276.29,0 276.29,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="138.14" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi giảm công nợ + sổ quỹ / sổ ngân hàng</text>
+<text xml:space="preserve" text-anchor="middle" x="138.14" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ACC&#45;07</text>
+</g>
+<g id="edge19" class="edge">
+<title>Q&#45;&gt;R</title>
+<path fill="none" stroke="#55606b" d="M138.14,-78.95C138.14,-71.36 138.14,-61.72 138.14,-52.59"/>
+<polygon fill="#55606b" stroke="#55606b" points="140.42,-52.78 138.14,-46.28 135.87,-52.78 140.42,-52.78"/>
+</g>
+</g>
+</svg></div><figcaption><b>Hình ACC-01.1</b> Toàn bộ trình tự mà bảng yêu cầu mô tả trong một đoạn văn. Hai điểm cần chú ý: chi phí ghi nhận về dự án tại bước <b>nhập kho</b> (trước VAT), không phải tại bước thanh toán; và đề xuất chỉ đóng khi lũy kế nhập đủ số lượng.</figcaption></figure>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã đề xuất</td><td class="k">proposal_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>DX-YYYY-NNNN</code>.</td></tr>
+          <tr><td>Loại đề xuất</td><td class="k">proposal_type</td><td>Chọn 1</td><td class="c req">✱</td><td>1 · 2 · 3 theo bảng trên; quyết định chuỗi duyệt và cách ghi nhận.</td></tr>
+          <tr><td>Dự án ✱</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc — “cần có thông tin đề xuất dùng cho dự án nào”. Cho phép <code>CHUNG</code> với chi phí toàn công ty.</td></tr>
+          <tr><td>Nội dung tóm tắt ✱</td><td class="k">summary</td><td>Chuỗi</td><td class="c req">✱</td><td>Hiển thị trên màn hình phê duyệt và trong thông báo.</td></tr>
+          <tr><td>Nơi thực hiện / cung cấp ✱</td><td class="k">supply_unit</td><td>Chọn 1</td><td class="c req">✱</td><td>Nhà máy · Ban dự án · P. Cung ứng. Quyết định ai nhận việc mua sau khi duyệt.</td></tr>
+          <tr><td>Dòng đề xuất</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng chọn chế độ: <code>có số lượng</code> (vật tư, ĐVT, SL, đơn giá) hoặc <code>chỉ giá trị</code> (nội dung, thành tiền).</td></tr>
+          <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng.</td></tr>
+          <tr><td>Mã thống kê</td><td class="k">stat_id</td><td>Tham chiếu</td><td class="c">—</td><td>—</td></tr>
+          <tr><td>Chi phí hợp lý</td><td class="k">is_deductible</td><td>Boolean</td><td class="c req">✱</td><td>Mặc định bật; tắt thì bắt buộc lý do.</td></tr>
+          <tr><td>Ngày cần hàng</td><td class="k">required_date</td><td>Ngày</td><td class="c req">✱</td><td>Dùng xếp ưu tiên cho đơn vị cung ứng.</td></tr>
+          <tr><td>Tệp đề xuất</td><td class="k">files[]</td><td>Tệp</td><td class="c">—</td><td>Cho phép tải PDF đề xuất thay vì nhập chi tiết — đúng cột chứng từ gốc “Up file PDF đx hoặc form nhập liệu”.</td></tr>
+          <tr><td>Lũy kế đã nhập</td><td class="k">qty_received</td><td>Số</td><td class="c">—</td><td>Hệ thống cộng từ các phiếu nhập kho có tick về đề xuất này.</td></tr>
+          <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>nháp</code> · <code>chờ duyệt</code> · <code>đã duyệt</code> · <code>đang mua</code> · <code>nhập một phần</code> · <code>hoàn thành</code> · <code>từ chối</code> · <code>hủy</code>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Đề xuất Loại 1 chỉ cần một trong hai người — Giám đốc dự án hoặc Kế toán trưởng — duyệt là đủ để chuyển bước.</li>
+      <li>Đề xuất Loại 2 đi đủ chuỗi ba cấp; số cấp cấu hình được ở <a href="PF-03.html">PF-03</a> mà không sửa phần mềm.</li>
+      <li>Màn hình phê duyệt hiển thị đủ ba thông tin bắt buộc: dự án, nội dung tóm tắt, nơi thực hiện cung cấp.</li>
+      <li>Một đề xuất có thể vừa có dòng “có số lượng” vừa có dòng “chỉ giá trị”.</li>
+      <li>Phiếu nhập kho tick về đề xuất nào thì lũy kế nhập của đề xuất đó tăng tương ứng.</li>
+      <li>Nhập một phần thì đề xuất vẫn mở và hiện rõ số lượng còn lại theo từng dòng.</li>
+      <li>Nhập đủ số lượng thì đề xuất tự chuyển trạng thái “hoàn thành” và rời khỏi nhóm đang theo dõi.</li>
+      <li>Chi phí ghi nhận về dự án tại thời điểm nhập kho, theo giá trước VAT.</li>
+      <li>Đề xuất chỉ tải PDF không nhập chi tiết vẫn duyệt được, nhưng không tự khớp với phiếu nhập kho — hệ thống cảnh báo điều này khi lập.</li>
+    </ol>
+
+    <div class="note q">
+      <b>Vấn đề cần chốt · Q-02</b>
+      <p style="margin:0">Yêu cầu gốc hỏi: “có thể số lượng nhập về khác hoặc thay đổi với đề xuất — hướng xử lý???”. Đề xuất của đặc tả: cho phép nhập <b>lệch trong ngưỡng</b> (mặc định ±5% theo giá trị dòng) mà không cần duyệt lại, chỉ ghi chú; lệch vượt ngưỡng thì phiếu nhập kho phải kèm phê duyệt bổ sung của chính cấp đã duyệt đề xuất. Trường hợp nhà cung cấp giao thiếu và không giao tiếp thì Ban dự án đóng đề xuất sớm với lý do, phần chưa nhập được ghi nhận là hủy. Cần Kế toán trưởng chốt ngưỡng ±5%.</p>
+    </div>
+
+    <h4>Mockup UI — Đề xuất › Lập đề xuất</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Đề xuất ›</span><b>DX-2026-0417</b><span class="sp"></span><span class="tag t-warn">Nhập một phần · 60%</span><span class="wf-btn">Tải PDF đề xuất</span><span class="wf-btn pri"><span class="pin">5</span> Trình duyệt</span></div>
+      <div class="wf-body">
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">1</span> Thông tin bắt buộc hiển thị khi phê duyệt</div>
+            <div class="wf-row">
+              <div class="wf-c"><div class="wf-f"><label>Loại đề xuất ✱</label><div class="in">Loại 2 — không theo dõi NXT <em>▾</em></div></div></div>
+              <div class="wf-c"><div class="wf-f"><label>Dự án ✱</label><div class="in">DA-2026-014 <em>▾</em></div></div></div>
+              <div class="wf-c"><div class="wf-f"><label>Nơi cung cấp ✱</label><div class="in">P. Cung ứng <em>▾</em></div></div></div>
+            </div>
+            <div class="wf-f"><label>Nội dung tóm tắt ✱</label><div class="in">Mua 4 bộ máy cắt cầm tay + phụ kiện cho tổ ốp lát tháp A</div></div>
+          </div></div>
+          <div class="wf-c" style="flex:0 1 200px"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">4</span> Cấp duyệt áp dụng</div>
+            <div class="wf-steps" style="display:block">
+              <div class="done" style="border-right:0"><b>✓ GĐ dự án</b>Ngô Đức Thịnh</div>
+              <div class="done" style="border-right:0"><b>✓ Kế toán trưởng</b>Trần Quốc Bảo</div>
+              <div class="cur" style="border-right:0"><b>Tổng giám đốc</b>đang chờ</div>
+            </div>
+          </div></div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">2</span> Dòng đề xuất — trộn hai chế độ nhập <span class="pin">3</span></div>
+          <table><thead><tr><th>Chế độ</th><th>Nội dung / vật tư</th><th>ĐVT</th><th class="num">SL</th><th class="num">Đơn giá</th><th class="num">Thành tiền</th><th>KMCP</th><th class="c">CP hợp lý</th><th class="num">Đã nhập</th></tr></thead>
+          <tbody>
+            <tr><td>Có số lượng</td><td>Máy cắt cầm tay Makita 4100NH</td><td>bộ</td><td class="num">4</td><td class="num">4.850.000</td><td class="num">19.400.000</td><td>KM-204 CCDC</td><td class="c">✓</td><td class="num">4 / 4</td></tr>
+            <tr><td>Có số lượng</td><td>Lưỡi cắt đá kim cương 110mm</td><td>cái</td><td class="num">40</td><td class="num">185.000</td><td class="num">7.400.000</td><td>KM-206 Vật tư phụ</td><td class="c">✓</td><td class="num">24 / 40</td></tr>
+            <tr><td>Chỉ giá trị</td><td>Phí vận chuyển &amp; giao tới công trình</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">1.200.000</td><td>KM-310 Vận chuyển</td><td class="c">✓</td><td class="num">—</td></tr>
+          </tbody></table>
+          <p style="margin:7px 0 0;font-size:11.5px;color:var(--warn)">Còn 16 lưỡi cắt chưa nhập — đề xuất giữ trạng thái mở.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Khai báo thông tin định danh</td><td>Ba trường dự án / tóm tắt / nơi cung cấp là bắt buộc vì chúng dựng nên màn hình phê duyệt.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Nhập dòng đề xuất</td><td>Chọn chế độ theo từng dòng: có số lượng hoặc chỉ giá trị.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Theo dõi lũy kế nhập</td><td>Cột “Đã nhập” cập nhật từ phiếu nhập kho có tick về đề xuất này.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Xem cấp duyệt áp dụng</td><td>Hệ thống chọn quy trình theo loại đề xuất và giá trị; hiển thị trước khi trình.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Trình duyệt</td><td>Loại 1 dùng bước kiểu “một trong hai người”; Loại 2 đi tuần tự nhiều cấp.</td></tr>
+          <tr><td class="c">—</td><td>Tải PDF đề xuất</td><td>Thay cho nhập chi tiết. Hệ thống cảnh báo sẽ không tự khớp được với phiếu nhập kho.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Chế độ nhập theo dòng.</b> Mỗi dòng đề xuất tự chọn “có số lượng” hay “chỉ giá trị”, không ràng buộc theo cả phiếu.<span class="then">Giải pháp cho câu hỏi gộp loại 2 và loại 3 của yêu cầu gốc — xem <a href="PL-C.html">Q-01</a>.</span></li>
+      <li><b>Loại đề xuất quyết định đường ghi nhận.</b> Loại 1 qua kho và chỉ thành chi phí khi xuất; loại 2 và 3 ghi thẳng chi phí hoặc ghi tăng tài sản.<span class="then">Chọn sai loại sẽ làm chi phí rơi sai kỳ, nên loại đề xuất khóa lại sau khi được duyệt.</span></li>
+      <li><b>Ba thông tin bắt buộc cho màn hình duyệt.</b> Dự án, nội dung tóm tắt và nơi thực hiện cung cấp không được bỏ trống.<span class="then">Đúng yêu cầu “giao diện phê duyệt cần có tóm tắt các thông tin: dự án đề xuất, nội dung tóm tắt, nơi thực hiện cung cấp”.</span></li>
+      <li><b>Loại 1 duyệt kiểu một trong hai.</b> Giám đốc dự án <b>hoặc</b> Kế toán trưởng duyệt là đủ.<span class="then">Người còn lại thấy chứng từ đã xử lý và bởi ai; chứng từ rời khỏi hàng chờ của họ.</span></li>
+      <li><b>Lũy kế nhập từ phiếu nhập kho.</b> Số đã nhập của đề xuất là tổng các phiếu nhập có tick về nó, không nhập tay.<span class="then">Đủ số lượng thì đề xuất tự chuyển “hoàn thành” và rời nhóm đang theo dõi.</span></li>
+      <li><b>Ngưỡng lệch 5%.</b> Số lượng nhập lệch trong ±5% giá trị dòng thì chỉ ghi chú; vượt ngưỡng thì phiếu nhập cần phê duyệt bổ sung của cấp đã duyệt đề xuất.<span class="then">Ngưỡng này cần Kế toán trưởng chốt — xem <a href="PL-C.html">Q-02</a>.</span></li>
+      <li><b>Đóng sớm có lý do.</b> Nhà cung cấp không giao tiếp phần còn lại thì Ban dự án đóng đề xuất sớm kèm lý do.<span class="then">Phần chưa nhập ghi nhận là hủy, không treo vô thời hạn trong nhóm đang theo dõi.</span></li>
+      <li><b>Tải PDF thay nhập chi tiết.</b> Cho phép đính kèm PDF đề xuất mà không nhập từng dòng.<span class="then">Nhưng hệ thống cảnh báo ngay khi lập: đề xuất kiểu này không tự khớp được với phiếu nhập kho, phải theo dõi thủ công.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Thiếu một trong ba thông tin bắt buộc</td><td>Dự án / tóm tắt / nơi cung cấp rỗng</td><td>“Thiếu {tên trường}. Người duyệt cần đủ ba thông tin này để quyết định.”</td></tr>
+          <tr><td>Loại 3 mà nhập số lượng</td><td>Dòng “chỉ giá trị” có <code>qty</code></td><td>“Dòng chi phí chỉ nhập giá trị. Chuyển sang chế độ ‘có số lượng’ nếu cần theo dõi số lượng.”</td></tr>
+          <tr><td>Đổi loại sau khi duyệt</td><td>Trạng thái đã duyệt</td><td>“Loại đề xuất đã khóa sau khi duyệt vì ảnh hưởng cách ghi nhận chi phí. Lập đề xuất mới nếu cần đổi.”</td></tr>
+          <tr><td>Nhập vượt ngưỡng lệch</td><td>Lệch &gt; 5% giá trị dòng</td><td>“Số lượng nhập lệch {x}% so với đề xuất. Cần phê duyệt bổ sung của {cấp duyệt} trước khi ghi sổ.”</td></tr>
+          <tr><td>Chỉ tải PDF, không nhập dòng</td><td><code>lines</code> rỗng</td><td>“Đề xuất chỉ có tệp đính kèm sẽ không tự đối chiếu được với phiếu nhập kho. Xác nhận để tiếp tục.”</td></tr>
+          <tr><td>Ngày cần hàng ở quá khứ</td><td><code>required_date &lt; hôm nay</code></td><td>“Ngày cần hàng đã qua. Cập nhật lại để đơn vị cung ứng xếp thứ tự ưu tiên đúng.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-ACC01-1</td><td>Đề xuất Loại 2 giá trị 28 triệu</td><td>Thêm 2 dòng có số lượng và 1 dòng chỉ giá trị</td><td>Cả ba dòng lưu được trên cùng một phiếu</td></tr>
+          <tr><td>UAT-ACC01-2</td><td>Đề xuất Loại 1 giá trị 150 triệu</td><td>Trình duyệt</td><td>Cả GĐ dự án và KT trưởng thấy; một người duyệt là xong</td></tr>
+          <tr><td>UAT-ACC01-3</td><td>Đề xuất Loại 2 giá trị 800 triệu</td><td>Trình duyệt</td><td>Đi tuần tự GĐ dự án → KT trưởng → Tổng GĐ</td></tr>
+          <tr><td>UAT-ACC01-4</td><td>Đề xuất 40 lưỡi cắt, đã nhập 24</td><td>Xem đề xuất</td><td>Trạng thái “nhập một phần”, hiện còn 16</td></tr>
+          <tr><td>UAT-ACC01-5</td><td>Tiếp UAT-4</td><td>Lập phiếu nhập 16 lưỡi tick về đề xuất</td><td>Đề xuất tự chuyển “hoàn thành” và rời nhóm theo dõi</td></tr>
+          <tr><td>UAT-ACC01-6</td><td>Đề xuất 100 bao xi, nhà cung cấp giao 112</td><td>Lập phiếu nhập 112</td><td>Lệch 12% &gt; 5% → yêu cầu phê duyệt bổ sung</td></tr>
+          <tr><td>UAT-ACC01-7</td><td>Người duyệt mở màn hình phê duyệt</td><td>Xem tóm tắt</td><td>Thấy đủ dự án, nội dung tóm tắt, nơi cung cấp và giá trị</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="PF-03.html">PF-03 cấu hình cấp duyệt</a><a href="ACC-03.html">ACC-03 mua hàng &amp; nhập kho</a><a href="ACC-05.html">ACC-05 công nợ &amp; thanh toán</a><a href="ACC-06.html">ACC-06 ghi tăng TSCĐ, CCDC</a><a href="ORD-04.html">ORD-04 phân biệt với đơn hàng</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 23 / 40</span><span><code>ACC-01.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

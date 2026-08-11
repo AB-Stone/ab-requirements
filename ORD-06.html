@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORD-06 Áp giá doanh thu đơn — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a class="on" href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / P. TQT — Shopdrawing / <b>ORD-06</b></div><div class="sp"></div>
+  <div class="pnav"><a href="ORD-05.html">← ORD-05</a><a href="index.html">Mục lục</a><a href="ORD-07.html">ORD-07 →</a></div>
+</div>
+<section class="sheet solo" id="ORD-06">
+  <header class="tb">
+    <div class="tb-id">ORD-06</div>
+    <div class="tb-main">
+      <h3>Áp giá doanh thu cho đơn hàng</h3>
+      <p>“P. Đấu thầu áp giá doanh thu cho từng đơn hàng trình LĐ duyệt. Ghi chú: bước này không nằm trong luồng công việc, không cản trở / ảnh hưởng các bước công việc đang thực hiện.”</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Ban lãnh đạo</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · P. Kế toán</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 7.4A</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Đây là mắt xích cuối cùng để tính được lãi lỗ dự án: đơn hàng cho biết <em>chi phí</em> đã bỏ ra, bảng áp giá cho biết <em>doanh thu</em> tương ứng. Ràng buộc thiết kế quan trọng nhất nằm ở ghi chú gốc — luồng này chạy song song và <b>không được chặn</b> các bước sản xuất, cấp hàng.</p>
+
+    <h4>Lưu đồ</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-06.1 Hai luồng chạy độc lập, chỉ gặp nhau ở báo cáo lãi lỗ. Nhãn “đã có giá doanh thu” là dấu hiệu duy nhất mà luồng tác nghiệp nhìn thấy từ luồng áp giá."
+ viewBox="0.00 0.00 1244.00 277.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 263.96)">
+<title>G</title>
+<g id="clust1" class="cluster">
+<title>cluster_MAIN</title>
+<polygon fill="#e6eaee" stroke="#a3acb5" points="8,-167 8,-243 948.5,-243 948.5,-167 8,-167"/>
+<text xml:space="preserve" text-anchor="middle" x="112.21" y="-228.65" font-family="Barlow, system-ui, sans-serif" font-size="11.50" fill="#4a545e">Luồng tác nghiệp — không bị chặn</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_PRICE</title>
+<polygon fill="#e6eaee" stroke="#a3acb5" points="259.78,-8 259.78,-159 971.78,-159 971.78,-8 259.78,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="337.15" y="-144.65" font-family="Barlow, system-ui, sans-serif" font-size="11.50" fill="#4a545e">Luồng áp giá — song song</text>
+</g>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="132.68,-208.7 20,-208.7 20,-179.3 132.68,-179.3 132.68,-208.7"/>
+<text xml:space="preserve" text-anchor="middle" x="76.34" y="-190.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đơn hàng duyệt</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="411.55,-208.7 321.8,-208.7 321.8,-179.3 411.55,-179.3 411.55,-208.7"/>
+<text xml:space="preserve" text-anchor="middle" x="366.68" y="-190.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phân luồng</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M132.93,-194C185.13,-194 262.61,-194 313.62,-194"/>
+<polygon fill="#55606b" stroke="#55606b" points="313.56,-196.28 320.06,-194 313.56,-191.73 313.56,-196.28"/>
+</g>
+<g id="node6" class="node">
+<title>P1</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="461.57,-125.2 271.78,-125.2 271.78,-80.8 461.57,-80.8 461.57,-125.2"/>
+<text xml:space="preserve" text-anchor="middle" x="366.68" y="-106.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">P. Đấu thầu lập bảng áp giá</text>
+<text xml:space="preserve" text-anchor="middle" x="366.68" y="-91.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đơn giá doanh thu theo dòng</text>
+</g>
+<g id="edge9" class="edge">
+<title>A&#45;&gt;P1</title>
+<path fill="none" stroke="#7c8792" stroke-dasharray="5,2" d="M125.28,-178.87C169.08,-165.05 234.7,-144.34 286.32,-128.05"/>
+<polygon fill="#7c8792" stroke="#7c8792" points="286.87,-130.26 292.39,-126.13 285.5,-125.92 286.87,-130.26"/>
+<text xml:space="preserve" text-anchor="middle" x="200.73" y="-172.89" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">đơn sẵn sàng áp giá</text>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="604.38,-208.7 525.06,-208.7 525.06,-179.3 604.38,-179.3 604.38,-208.7"/>
+<text xml:space="preserve" text-anchor="middle" x="564.72" y="-190.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sản xuất</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M411.67,-194C443,-194 485.03,-194 516.96,-194"/>
+<polygon fill="#55606b" stroke="#55606b" points="516.84,-196.28 523.33,-194 516.83,-191.73 516.84,-196.28"/>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="754.17,-208.7 673.46,-208.7 673.46,-179.3 754.17,-179.3 754.17,-208.7"/>
+<text xml:space="preserve" text-anchor="middle" x="713.82" y="-190.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cấp hàng</text>
+</g>
+<g id="edge3" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M604.75,-194C623.31,-194 645.65,-194 665.19,-194"/>
+<polygon fill="#55606b" stroke="#55606b" points="665.08,-196.28 671.58,-194 665.08,-191.73 665.08,-196.28"/>
+</g>
+<g id="node5" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="936.5,-208.7 848.84,-208.7 848.84,-179.3 936.5,-179.3 936.5,-208.7"/>
+<text xml:space="preserve" text-anchor="middle" x="892.67" y="-190.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hoàn thành</text>
+</g>
+<g id="edge4" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M754.51,-194C779.9,-194 813.1,-194 840.48,-194"/>
+<polygon fill="#55606b" stroke="#55606b" points="840.39,-196.28 846.89,-194 840.39,-191.73 840.39,-196.28"/>
+</g>
+<g id="node10" class="node">
+<title>R</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="1218.49,-176.2 1094.03,-176.2 1094.03,-131.8 1218.49,-131.8 1218.49,-176.2"/>
+<text xml:space="preserve" text-anchor="middle" x="1156.26" y="-157.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lãi lỗ dự án</text>
+<text xml:space="preserve" text-anchor="middle" x="1156.26" y="-142.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ACC&#45;09 · RPT&#45;03</text>
+</g>
+<g id="edge11" class="edge">
+<title>E&#45;&gt;R</title>
+<path fill="none" stroke="#7c8792" stroke-dasharray="5,2" d="M936.87,-187.39C977.42,-181.19 1038.76,-171.81 1086.12,-164.57"/>
+<polygon fill="#7c8792" stroke="#7c8792" points="1086.32,-166.84 1092.4,-163.61 1085.63,-162.35 1086.32,-166.84"/>
+<text xml:space="preserve" text-anchor="middle" x="1028.41" y="-183.22" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">chi phí thực hiện</text>
+</g>
+<g id="node7" class="node">
+<title>P2</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="632.87,-64.2 496.57,-64.2 496.57,-19.8 632.87,-19.8 632.87,-64.2"/>
+<text xml:space="preserve" text-anchor="middle" x="564.72" y="-45.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Trình Ban lãnh đạo</text>
+<text xml:space="preserve" text-anchor="middle" x="564.72" y="-30.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;03</text>
+</g>
+<g id="edge5" class="edge">
+<title>P1&#45;&gt;P2</title>
+<path fill="none" stroke="#55606b" d="M440.4,-80.37C456.27,-75.43 473.1,-70.2 489.05,-65.23"/>
+<polygon fill="#55606b" stroke="#55606b" points="489.33,-67.53 494.86,-63.43 487.98,-63.18 489.33,-67.53"/>
+</g>
+<g id="node8" class="node">
+<title>P3</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="713.82,-120.88 667.87,-103 713.82,-85.12 759.77,-103 713.82,-120.88"/>
+<text xml:space="preserve" text-anchor="middle" x="713.82" y="-99.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Duyệt?</text>
+</g>
+<g id="edge6" class="edge">
+<title>P2&#45;&gt;P3</title>
+<path fill="none" stroke="#55606b" d="M620.08,-64.54C641.42,-73.39 665.07,-83.2 683.15,-90.7"/>
+<polygon fill="#55606b" stroke="#55606b" points="682.26,-92.79 689.14,-93.18 684.01,-88.59 682.26,-92.79"/>
+</g>
+<g id="edge7" class="edge">
+<title>P3&#45;&gt;P1</title>
+<path fill="none" stroke="#55606b" d="M666.65,-103C616.6,-103 535.13,-103 469.86,-103"/>
+<polygon fill="#55606b" stroke="#55606b" points="470,-100.73 463.5,-103 470,-105.28 470,-100.73"/>
+<text xml:space="preserve" text-anchor="middle" x="564.72" y="-106.3" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Yêu cầu sửa</text>
+</g>
+<g id="node9" class="node">
+<title>P4</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="959.78,-125.2 825.56,-125.2 825.56,-80.8 959.78,-80.8 959.78,-125.2"/>
+<text xml:space="preserve" text-anchor="middle" x="892.67" y="-106.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đơn hàng gắn nhãn</text>
+<text xml:space="preserve" text-anchor="middle" x="892.67" y="-91.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đã có giá doanh thu</text>
+</g>
+<g id="edge8" class="edge">
+<title>P3&#45;&gt;P4</title>
+<path fill="none" stroke="#55606b" d="M760.82,-103C778.09,-103 798.19,-103 817.38,-103"/>
+<polygon fill="#55606b" stroke="#55606b" points="817.24,-105.28 823.74,-103 817.24,-100.73 817.24,-105.28"/>
+<text xml:space="preserve" text-anchor="middle" x="792.66" y="-106.3" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Duyệt</text>
+</g>
+<g id="edge10" class="edge">
+<title>P4&#45;&gt;R</title>
+<path fill="none" stroke="#7c8792" stroke-dasharray="5,2" d="M960.02,-115.94C998.62,-123.46 1047.2,-132.93 1086.24,-140.54"/>
+<polygon fill="#7c8792" stroke="#7c8792" points="1085.62,-142.74 1092.43,-141.75 1086.49,-138.27 1085.62,-142.74"/>
+<text xml:space="preserve" text-anchor="middle" x="1028.41" y="-140.8" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">doanh thu ghi nhận</text>
+</g>
+</g>
+</svg></div><figcaption><b>Hình ORD-06.1</b> Hai luồng chạy độc lập, chỉ gặp nhau ở báo cáo lãi lỗ. Nhãn “đã có giá doanh thu” là dấu hiệu duy nhất mà luồng tác nghiệp nhìn thấy từ luồng áp giá.</figcaption></figure>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Đơn hàng</td><td class="k">order_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ áp giá cho đơn đã được duyệt.</td></tr>
+          <tr><td>Đơn giá doanh thu</td><td class="k">revenue_price</td><td>Số tiền / ĐVT</td><td class="c req">✱</td><td>Gợi ý từ đơn giá BOQ hợp đồng của hạng mục tương ứng; cho sửa và bắt buộc ghi lý do khi lệch quá 5%.</td></tr>
+          <tr><td>Căn cứ áp giá</td><td class="k">price_basis</td><td>Chọn 1</td><td class="c req">✱</td><td><code>theo BOQ hợp đồng</code> · <code>theo phụ lục</code> · <code>giá nội bộ</code> · <code>khác</code>.</td></tr>
+          <tr><td>Giá trị doanh thu</td><td class="k">revenue_amount</td><td>Số tiền</td><td class="c">—</td><td>Tính tự động; hiển thị cả trước và sau VAT.</td></tr>
+          <tr><td>Giá vốn ước tính</td><td class="k">est_cost</td><td>Số tiền</td><td class="c">—</td><td>Lấy từ giá xuất kho thực tế nếu đã cấp hàng, nếu chưa thì lấy giá vốn dự toán ở <a href="BID-03.html">BID-03</a>.</td></tr>
+          <tr><td>Biên lợi nhuận đơn</td><td class="k">order_margin</td><td>Phần trăm</td><td class="c">—</td><td>Chỉ hiển thị cho Ban lãnh đạo và P. Kế toán, đúng phạm vi quyền truy cập của dòng yêu cầu.</td></tr>
+          <tr><td>Nhãn trạng thái giá</td><td class="k">has_price</td><td>Boolean</td><td class="c req">✱</td><td>Bật khi bảng áp giá được duyệt; hiển thị trên danh sách đơn hàng.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Danh sách đơn hàng có bộ lọc “chưa có giá doanh thu” để P. Đấu thầu biết còn đơn nào cần áp giá.</li>
+      <li>Áp giá và duyệt giá không làm đổi trạng thái sản xuất, cấp hàng của đơn — kiểm chứng bằng cách áp giá cho đơn đang cấp dở.</li>
+      <li>Đơn hàng đã duyệt giá hiển thị nhãn riêng trên danh sách và trên chi tiết.</li>
+      <li>Đơn giá lệch quá 5% so với BOQ hợp đồng bắt buộc ghi lý do và lý do hiện trên màn hình duyệt.</li>
+      <li>Biên lợi nhuận đơn hàng chỉ hiện với người có quyền — nhân viên TQT không thấy cột này.</li>
+      <li>Tổng doanh thu của các đơn đã duyệt giá khớp với số liệu doanh thu dự án ở báo cáo lãi lỗ.</li>
+      <li>Thông báo trình duyệt giá nêu rõ đơn hàng nào, dự án nào, hạng mục nào — cùng chuẩn với <a href="ORD-03.html">ORD-03</a>.</li>
+    </ol>
+
+    <h4>Mockup UI — Bán hàng › Áp giá đơn hàng</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Bán hàng ›</span><b>Áp giá doanh thu</b><span class="sp"></span><span class="wf-btn"><span class="pin">1</span> Lọc: chưa có giá (14)</span><span class="wf-btn pri"><span class="pin">4</span> Trình duyệt giá</span></div>
+      <div class="wf-body">
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">2</span> Bảng áp giá — DH-2026-155</div>
+          <table><thead><tr><th>STT</th><th>Sản phẩm</th><th class="num">KL</th><th class="num">Đơn giá BOQ</th><th class="num">Đơn giá áp</th><th class="num">Lệch</th><th class="num">Doanh thu</th><th class="num">Biên</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Đá granite đen 600×600×20</td><td class="num">1.100</td><td class="num">2.280.000</td><td class="num">2.280.000</td><td class="num">0%</td><td class="num">2.508.000.000</td><td class="num">25,1%</td></tr>
+            <tr><td>2</td><td>Viên bo góc R120</td><td class="num">140</td><td class="num">4.100.000</td><td class="num">3.750.000</td><td class="num">−8,5%</td><td class="num">525.000.000</td><td class="num">6,7%</td></tr>
+          </tbody></table>
+          <div class="wf-f" style="margin-top:8px"><label><span class="pin">3</span> Lý do lệch giá ✱ <em>(bắt buộc khi lệch &gt; 5%)</em></label><div class="in">Viên bo góc thực tế cắt từ tấm dư, thống nhất với CĐT giảm giá theo biên bản 12/07.</div></div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg">Tổng hợp đơn hàng</div>
+            <table><tbody>
+              <tr><td>Doanh thu trước VAT</td><td class="num">3.033.000.000</td></tr>
+              <tr><td>VAT 8%</td><td class="num">242.640.000</td></tr>
+              <tr><td>Giá vốn ước tính</td><td class="num">2.318.000.000</td></tr>
+              <tr><td><b>Biên lợi nhuận đơn</b></td><td class="num"><b>23,6%</b></td></tr>
+            </tbody></table>
+            <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Chỉ Ban lãnh đạo và P. Kế toán thấy khối này.</p>
+          </div></div>
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">5</span> Trạng thái luồng tác nghiệp</div>
+            <div class="wf-steps"><div class="done"><b>Đã duyệt đơn</b>26/07</div><div class="done"><b>Đang sản xuất</b>NM An Bình 2</div><div class="cur"><b>Cấp hàng 62%</b>đợt 2/3</div></div>
+            <p style="margin:7px 0 0;font-size:11.5px;color:var(--ok)">Áp giá không tác động tới các bước trên.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Lọc đơn chưa có giá</td><td>Hàng chờ việc riêng của P. Đấu thầu, độc lập với hàng chờ sản xuất.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Nhập đơn giá doanh thu</td><td>Nạp sẵn đơn giá BOQ hợp đồng; cột “Lệch” tính tự động.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Giải trình lệch giá</td><td>Bắt buộc khi lệch quá 5%; nội dung hiện trên màn hình phê duyệt.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Trình duyệt giá</td><td>Một cấp — Ban lãnh đạo. Duyệt xong đơn hàng gắn nhãn “đã có giá doanh thu”.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Xem trạng thái tác nghiệp</td><td>Chỉ để tham chiếu; không có nút nào tác động ngược vào luồng tác nghiệp.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Chỉ áp giá cho đơn đã duyệt.</b> Đơn ở trạng thái nháp hoặc chờ duyệt không xuất hiện trong hàng chờ áp giá.<span class="then">Đơn bị từ chối hoặc hủy cũng bị loại khỏi danh sách.</span></li>
+      <li><b>Không chặn, không bị chặn.</b> Luồng áp giá không đọc và không ghi bất kỳ trường trạng thái nào của luồng tác nghiệp.<span class="then">Nhãn “đã có giá doanh thu” là dữ liệu một chiều: luồng tác nghiệp hiển thị nó nhưng không dùng nó làm điều kiện.</span></li>
+      <li><b>Gợi ý theo BOQ hợp đồng.</b> Đơn giá nạp sẵn từ đơn giá BOQ hợp đồng của hạng mục tương ứng.<span class="then">Hạng mục không có trong BOQ (đầu việc phát sinh) thì để trống và yêu cầu chọn căn cứ áp giá khác.</span></li>
+      <li><b>Lệch quá 5% phải giải trình.</b> Đơn giá áp lệch quá 5% so với BOQ hợp đồng thì bắt buộc nhập lý do.<span class="then">Lý do hiển thị nổi bật trên màn hình duyệt của Ban lãnh đạo.</span></li>
+      <li><b>Biên lợi nhuận có kiểm soát quyền.</b> Cột giá vốn và biên lợi nhuận chỉ hiện với Ban lãnh đạo và P. Kế toán.<span class="then">Nhân viên P. TQT mở cùng màn hình sẽ không thấy khối này — đúng cột quyền truy cập của yêu cầu gốc.</span></li>
+      <li><b>Giá vốn theo thực tế nếu có.</b> Nếu đơn đã cấp hàng thì giá vốn lấy theo giá xuất kho thực tế; chưa cấp thì lấy giá vốn dự toán từ <a href="BID-03.html">BID-03</a>.<span class="then">Nguồn của con số luôn hiển thị bên cạnh để người duyệt biết đang so với gì.</span></li>
+      <li><b>Duyệt giá là điểm ghi nhận doanh thu.</b> Bảng áp giá được duyệt thì doanh thu của đơn vào sổ và vào báo cáo lãi lỗ.<span class="then">Trước đó, đơn hàng chỉ đóng góp chi phí — nên dự án chưa áp giá sẽ hiện lỗ giả, và hệ thống cảnh báo điều này ở <a href="RPT-03.html">RPT-03</a>.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Lệch giá quá 5%</td><td><code>|lệch| &gt; 5%</code></td><td>“Đơn giá lệch {x}% so với BOQ hợp đồng. Nhập lý do — nội dung này hiện trên màn hình duyệt.”</td></tr>
+          <tr><td>Hạng mục không có trong BOQ</td><td>Không tìm thấy đơn giá gợi ý</td><td>“Hạng mục {mã} không có trong BOQ hợp đồng. Chọn căn cứ áp giá: theo phụ lục, giá nội bộ, hoặc khác.”</td></tr>
+          <tr><td>Đơn giá bằng 0</td><td><code>revenue_price = 0</code></td><td>“Đơn giá bằng 0 sẽ ghi nhận doanh thu bằng 0 cho dòng này. Xác nhận nếu là hàng cấp không thu tiền.”</td></tr>
+          <tr><td>Áp giá đơn đã hủy</td><td>Trạng thái đơn là hủy</td><td>“Đơn {mã} đã hủy ngày {ngày}, không cần áp giá.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-ORD06-1</td><td>Có 14 đơn đã duyệt chưa áp giá</td><td>Mở bộ lọc “chưa có giá”</td><td>Hiện đúng 14 đơn; đơn nháp và đơn bị từ chối không có mặt</td></tr>
+          <tr><td>UAT-ORD06-2</td><td>Đơn DH-2026-155 đang cấp hàng đợt 2/3</td><td>Áp giá và trình duyệt</td><td>Trạng thái cấp hàng không đổi; đợt 3 vẫn lập được bình thường</td></tr>
+          <tr><td>UAT-ORD06-3</td><td>Đơn giá BOQ 4.100.000, nhập 3.750.000</td><td>Rời khỏi ô nhập</td><td>Cột lệch hiện −8,5%; ô lý do bật lên và bắt buộc</td></tr>
+          <tr><td>UAT-ORD06-4</td><td>Đăng nhập bằng tài khoản nhân viên P. TQT</td><td>Mở màn hình áp giá</td><td>Không thấy cột giá vốn và biên lợi nhuận</td></tr>
+          <tr><td>UAT-ORD06-5</td><td>Bảng áp giá được Ban lãnh đạo duyệt</td><td>Mở danh sách đơn hàng</td><td>Đơn hiện nhãn “đã có giá doanh thu”; doanh thu vào báo cáo lãi lỗ</td></tr>
+          <tr><td>UAT-ORD06-6</td><td>Dự án có đơn hàng nhưng chưa đơn nào áp giá</td><td>Mở báo cáo lãi lỗ dự án</td><td>Doanh thu bằng 0 kèm cảnh báo “chưa áp giá đơn hàng”, không hiển thị lỗ như số thật</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="ORD-03.html">ORD-03 đơn hàng</a><a href="BID-05.html">BID-05 đơn giá BOQ hợp đồng</a><a href="ACC-09.html">ACC-09 giá thành &amp; lãi lỗ</a><a href="RPT-03.html">RPT-03 báo cáo lãi lỗ</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 16 / 40</span><span><code>ORD-06.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

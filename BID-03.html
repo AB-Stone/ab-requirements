@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BID-03 Áp giá & thương thảo — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a class="on" href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Phòng Đấu thầu / <b>BID-03</b></div><div class="sp"></div>
+  <div class="pnav"><a href="BID-02.html">← BID-02</a><a href="index.html">Mục lục</a><a href="BID-04.html">BID-04 →</a></div>
+</div>
+<section class="sheet solo" id="BID-03">
+  <header class="tb">
+    <div class="tb-id">BID-03</div>
+    <div class="tb-main">
+      <h3>Áp giá, gửi báo giá &amp; thương thảo</h3>
+      <p>Dựng đơn giá cho từng dòng BOQ, trình duyệt nội bộ, gửi đối tác rồi ghi nhận từng vòng đàm phán. Mỗi vòng sinh một phiên bản BOQ báo giá — đúng yêu cầu “BOQ báo giá ban đầu và các BOQ cập nhật trong quá trình đàm phán”.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu</dd></div>
+        <div><dt>Phê duyệt</dt><dd>2 cấp — TP Đấu thầu → Ban lãnh đạo</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · P. Kế toán · P. Đấu thầu</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>ĐT · dòng 3</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Đây là nơi quyết định biên lợi nhuận của cả dự án. Màn hình áp giá phải đặt cạnh nhau <em>giá vốn ước tính</em> và <em>giá chào</em> để người duyệt thấy ngay biên lợi nhuận từng dòng, thay vì chỉ thấy tổng giá chào. Cấu phần giá vốn lấy từ định mức vật tư, giá khoán nhân công tham chiếu, và chi phí biện pháp thi công khó do <a href="BID-02.html">BID-02</a> chuyển sang.</p>
+
+    <h4>Lưu đồ</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-03.1 Vòng lặp thương thảo có một chốt chặn: khi giảm giá làm biên lợi nhuận rơi dưới ngưỡng tối thiểu do Ban lãnh đạo đặt, hệ thống buộc trình duyệt lại thay vì cho phép nhân viên tự quyết."
+ viewBox="0.00 0.00 729.00 1012.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 998.64)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="650.03,-985.68 492.92,-985.68 492.92,-941.28 650.03,-941.28 650.03,-985.68"/>
+<text xml:space="preserve" text-anchor="middle" x="571.47" y="-967.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">BOQ cập nhật đã chốt</text>
+<text xml:space="preserve" text-anchor="middle" x="571.47" y="-952.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">BID&#45;02</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="703.37,-906.28 439.58,-906.28 439.58,-861.88 703.37,-861.88 703.37,-906.28"/>
+<text xml:space="preserve" text-anchor="middle" x="571.47" y="-887.83" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Dựng giá vốn từng dòng</text>
+<text xml:space="preserve" text-anchor="middle" x="571.47" y="-872.83" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">vật tư + nhân công + máy + biện pháp khó</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M571.47,-940.92C571.47,-932.7 571.47,-923.19 571.47,-914.37"/>
+<polygon fill="#55606b" stroke="#55606b" points="573.75,-914.54 571.47,-908.04 569.2,-914.54 573.75,-914.54"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="659.09,-826.88 483.86,-826.88 483.86,-782.48 659.09,-782.48 659.09,-826.88"/>
+<text xml:space="preserve" text-anchor="middle" x="571.47" y="-808.43" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đặt hệ số lợi nhuận</text>
+<text xml:space="preserve" text-anchor="middle" x="571.47" y="-793.43" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">theo dòng hoặc toàn bảng</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M571.47,-861.52C571.47,-853.3 571.47,-843.79 571.47,-834.97"/>
+<polygon fill="#55606b" stroke="#55606b" points="573.75,-835.14 571.47,-828.64 569.2,-835.14 573.75,-835.14"/>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="588.7,-747.48 448.24,-747.48 448.24,-718.08 588.7,-718.08 588.7,-747.48"/>
+<text xml:space="preserve" text-anchor="middle" x="518.47" y="-729.03" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sinh BOQ báo giá v1</text>
+</g>
+<g id="edge3" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M555.28,-782.33C548.43,-773.28 540.48,-762.8 533.72,-753.89"/>
+<polygon fill="#55606b" stroke="#55606b" points="535.7,-752.74 529.96,-748.93 532.08,-755.49 535.7,-752.74"/>
+</g>
+<g id="node5" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="588.31,-670.88 450.64,-670.88 450.64,-626.48 588.31,-626.48 588.31,-670.88"/>
+<text xml:space="preserve" text-anchor="middle" x="519.47" y="-652.43" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Trình duyệt nội bộ</text>
+<text xml:space="preserve" text-anchor="middle" x="519.47" y="-637.43" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;03 · 2 cấp</text>
+</g>
+<g id="edge4" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M518.64,-717.85C518.77,-707.24 518.96,-692.26 519.12,-679.04"/>
+<polygon fill="#55606b" stroke="#55606b" points="521.39,-679.14 519.2,-672.61 516.84,-679.08 521.39,-679.14"/>
+</g>
+<g id="node6" class="node">
+<title>F</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="572.47,-591.48 469.53,-573.6 572.47,-555.72 675.42,-573.6 572.47,-591.48"/>
+<text xml:space="preserve" text-anchor="middle" x="572.47" y="-569.85" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lãnh đạo duyệt?</text>
+</g>
+<g id="edge5" class="edge">
+<title>E&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M535.09,-626.15C541.94,-616.71 549.96,-605.65 556.81,-596.2"/>
+<polygon fill="#55606b" stroke="#55606b" points="558.48,-597.78 560.45,-591.18 554.79,-595.1 558.48,-597.78"/>
+</g>
+<g id="edge6" class="edge">
+<title>F&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M581.03,-590.45C589.26,-605.7 600.47,-626.48 600.47,-626.48 600.47,-626.48 600.47,-747.48 600.47,-747.48 600.47,-747.48 593.32,-761.35 586.11,-775.31"/>
+<polygon fill="#55606b" stroke="#55606b" points="584.26,-773.95 583.3,-780.77 588.3,-776.03 584.26,-773.95"/>
+<text xml:space="preserve" text-anchor="middle" x="634.1" y="-691.18" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Yêu cầu sửa</text>
+</g>
+<g id="node7" class="node">
+<title>G</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="592.64,-508.52 438.31,-508.52 438.31,-464.12 592.64,-464.12 592.64,-508.52"/>
+<text xml:space="preserve" text-anchor="middle" x="515.47" y="-490.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Gửi báo giá tới đối tác</text>
+<text xml:space="preserve" text-anchor="middle" x="515.47" y="-475.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">xuất PDF + gửi email</text>
+</g>
+<g id="edge7" class="edge">
+<title>F&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M562.28,-557.35C554.52,-545.74 543.62,-529.43 534.29,-515.47"/>
+<polygon fill="#55606b" stroke="#55606b" points="536.2,-514.24 530.7,-510.1 532.42,-516.77 536.2,-514.24"/>
+<text xml:space="preserve" text-anchor="middle" x="564.97" y="-528.82" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Duyệt</text>
+</g>
+<g id="node8" class="node">
+<title>H</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="470.44,-429.12 326.51,-429.12 326.51,-384.72 470.44,-384.72 470.44,-429.12"/>
+<text xml:space="preserve" text-anchor="middle" x="398.47" y="-410.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi nhận phản hồi</text>
+<text xml:space="preserve" text-anchor="middle" x="398.47" y="-395.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">vòng đàm phán thứ n</text>
+</g>
+<g id="edge8" class="edge">
+<title>G&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M482.88,-463.76C468.81,-454.45 452.23,-443.48 437.51,-433.74"/>
+<polygon fill="#55606b" stroke="#55606b" points="438.83,-431.89 432.15,-430.2 436.32,-435.68 438.83,-431.89"/>
+</g>
+<g id="node9" class="node">
+<title>I</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="351.47,-349.72 272.85,-316.84 351.47,-283.96 430.1,-316.84 351.47,-349.72"/>
+<text xml:space="preserve" text-anchor="middle" x="351.47" y="-320.59" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đối tác</text>
+<text xml:space="preserve" text-anchor="middle" x="351.47" y="-305.59" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chấp thuận?</text>
+</g>
+<g id="edge9" class="edge">
+<title>H&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M387.1,-384.6C381.74,-374.56 375.23,-362.36 369.25,-351.15"/>
+<polygon fill="#55606b" stroke="#55606b" points="371.39,-350.32 366.32,-345.66 367.37,-352.46 371.39,-350.32"/>
+</g>
+<g id="node10" class="node">
+<title>J</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="160.95,-236.76 0,-236.76 0,-192.36 160.95,-192.36 160.95,-236.76"/>
+<text xml:space="preserve" text-anchor="middle" x="80.47" y="-218.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Điều chỉnh giá</text>
+<text xml:space="preserve" text-anchor="middle" x="80.47" y="-203.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">sinh BOQ báo giá v(n+1)</text>
+</g>
+<g id="edge10" class="edge">
+<title>I&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M309.67,-301.04C269.03,-286.66 213.39,-266.96 213.39,-266.96 213.39,-266.96 177.99,-253.27 143.74,-240.02"/>
+<polygon fill="#55606b" stroke="#55606b" points="144.75,-237.98 137.87,-237.76 143.11,-242.22 144.75,-237.98"/>
+<text xml:space="preserve" text-anchor="middle" x="258.93" y="-257.06" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Yêu cầu giảm giá</text>
+</g>
+<g id="node13" class="node">
+<title>M</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="383.88,-236.76 185.07,-236.76 185.07,-192.36 383.88,-192.36 383.88,-236.76"/>
+<text xml:space="preserve" text-anchor="middle" x="284.47" y="-218.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chốt giá</text>
+<text xml:space="preserve" text-anchor="middle" x="284.47" y="-203.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chuyển ký hợp đồng · BID&#45;05</text>
+</g>
+<g id="edge15" class="edge">
+<title>I&#45;&gt;M</title>
+<path fill="none" stroke="#55606b" d="M334.57,-290.54C325.02,-276.25 313.07,-258.36 303.23,-243.63"/>
+<polygon fill="#55606b" stroke="#55606b" points="305.22,-242.52 299.72,-238.38 301.44,-245.05 305.22,-242.52"/>
+<text xml:space="preserve" text-anchor="middle" x="349.47" y="-257.06" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Chấp thuận</text>
+</g>
+<g id="node14" class="node">
+<title>N</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="507.55,-236.76 407.4,-236.76 407.4,-192.36 507.55,-192.36 507.55,-236.76"/>
+<text xml:space="preserve" text-anchor="middle" x="457.47" y="-218.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hủy gói thầu</text>
+<text xml:space="preserve" text-anchor="middle" x="457.47" y="-203.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">BID&#45;04</text>
+</g>
+<g id="edge16" class="edge">
+<title>I&#45;&gt;N</title>
+<path fill="none" stroke="#55606b" d="M375,-293.58C391,-278.45 412.26,-258.34 429.18,-242.32"/>
+<polygon fill="#55606b" stroke="#55606b" points="430.49,-244.22 433.64,-238.11 427.36,-240.92 430.49,-244.22"/>
+<text xml:space="preserve" text-anchor="middle" x="470.57" y="-257.06" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Từ chối · trượt thầu</text>
+</g>
+<g id="node11" class="node">
+<title>K</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="434.47,-157.36 276.66,-124.48 434.47,-91.6 592.29,-124.48 434.47,-157.36"/>
+<text xml:space="preserve" text-anchor="middle" x="434.47" y="-128.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Biên LN sau điều chỉnh</text>
+<text xml:space="preserve" text-anchor="middle" x="434.47" y="-113.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">còn trên ngưỡng tối thiểu?</text>
+</g>
+<g id="edge11" class="edge">
+<title>J&#45;&gt;K</title>
+<path fill="none" stroke="#55606b" d="M161.25,-193.46C219.64,-178.93 298.11,-159.41 355.97,-145.01"/>
+<polygon fill="#55606b" stroke="#55606b" points="356.41,-147.25 362.17,-143.47 355.31,-142.83 356.41,-147.25"/>
+</g>
+<g id="edge12" class="edge">
+<title>K&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M466.61,-150.76C490.68,-169.7 519.47,-192.36 519.47,-192.36 519.47,-192.36 544.47,-213.56 544.47,-213.56 544.47,-407.92 544.47,-407.92 544.47,-407.92 544.47,-407.92 534.51,-434.51 526.27,-456.52"/>
+<polygon fill="#55606b" stroke="#55606b" points="524.23,-455.46 524.08,-462.34 528.49,-457.05 524.23,-455.46"/>
+<text xml:space="preserve" text-anchor="middle" x="554.56" y="-313.54" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Còn</text>
+</g>
+<g id="node12" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="597.83,-44.4 467.12,-44.4 467.12,0 597.83,0 597.83,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="532.47" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Bắt buộc trình lại</text>
+<text xml:space="preserve" text-anchor="middle" x="532.47" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ban lãnh đạo</text>
+</g>
+<g id="edge13" class="edge">
+<title>K&#45;&gt;L</title>
+<path fill="none" stroke="#55606b" d="M460.74,-96.61C474.75,-82.27 491.95,-64.66 506,-50.29"/>
+<polygon fill="#55606b" stroke="#55606b" points="507.44,-52.07 510.36,-45.83 504.19,-48.89 507.44,-52.07"/>
+<text xml:space="preserve" text-anchor="middle" x="529.37" y="-64.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Dưới ngưỡng</text>
+</g>
+<g id="edge14" class="edge">
+<title>L&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M555.26,-44.84C576.35,-64.88 604.47,-91.6 604.47,-91.6 604.47,-91.6 629.47,-123.48 629.47,-123.48 629.47,-487.32 629.47,-487.32 629.47,-487.32 629.47,-487.32 603.85,-525.66 586.96,-550.93"/>
+<polygon fill="#55606b" stroke="#55606b" points="585.23,-549.43 583.51,-556.1 589.01,-551.96 585.23,-549.43"/>
+</g>
+</g>
+</svg></div><figcaption><b>Hình BID-03.1</b> Vòng lặp thương thảo có một chốt chặn: khi giảm giá làm biên lợi nhuận rơi dưới ngưỡng tối thiểu do Ban lãnh đạo đặt, hệ thống buộc trình duyệt lại thay vì cho phép nhân viên tự quyết.</figcaption></figure>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Dòng báo giá</td><td class="k">quote_lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Kế thừa từ BOQ cập nhật, khóa cột khối lượng.</td></tr>
+          <tr><td>Giá vốn vật tư</td><td class="k">cost_material</td><td>Số tiền / ĐVT</td><td class="c req">✱</td><td>Gợi ý từ giá nhập kho bình quân gần nhất của vật tư tương ứng.</td></tr>
+          <tr><td>Giá vốn nhân công</td><td class="k">cost_labor</td><td>Số tiền / ĐVT</td><td class="c req">✱</td><td>Gợi ý từ bảng giá khoán tổ đội đã duyệt của dự án tương tự (<a href="PRJ-01.html">PRJ-01</a>).</td></tr>
+          <tr><td>Giá vốn máy &amp; biện pháp</td><td class="k">cost_method</td><td>Số tiền</td><td class="c">—</td><td>Nạp tự động từ phiếu khảo sát <a href="BID-02.html">BID-02</a>, phân bổ theo dòng đã gắn.</td></tr>
+          <tr><td>Chi phí chung phân bổ</td><td class="k">cost_overhead_pct</td><td>Phần trăm</td><td class="c">—</td><td>Mặc định theo tham số công ty, cho sửa theo gói.</td></tr>
+          <tr><td>Đơn giá chào</td><td class="k">price_offer</td><td>Số tiền / ĐVT</td><td class="c req">✱</td><td>Nhập tay hoặc sinh từ hệ số lợi nhuận.</td></tr>
+          <tr><td>Biên lợi nhuận dòng</td><td class="k">margin_pct</td><td>Phần trăm</td><td class="c">—</td><td>Tính tự động; tô đỏ khi dưới ngưỡng.</td></tr>
+          <tr><td>Ngưỡng biên tối thiểu</td><td class="k">min_margin</td><td>Phần trăm</td><td class="c req">✱</td><td>Do Ban lãnh đạo đặt cho từng gói; là điều kiện kích hoạt trình duyệt lại.</td></tr>
+          <tr><td>Vòng đàm phán</td><td class="k">round_no</td><td>Số</td><td class="c req">✱</td><td>Tăng mỗi lần gửi báo giá mới.</td></tr>
+          <tr><td>Phản hồi đối tác</td><td class="k">feedback</td><td>Chuỗi dài</td><td class="c">—</td><td>Ghi kèm ngày và người tiếp nhận.</td></tr>
+          <tr><td>Điều kiện thương mại</td><td class="k">terms</td><td>Chuỗi</td><td class="c req">✱</td><td>Tiến độ thanh toán, bảo hành, hiệu lực báo giá — chuyển thẳng vào hợp đồng.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Bảng áp giá hiển thị đồng thời giá vốn, giá chào và biên lợi nhuận từng dòng, cùng dòng tổng ở chân bảng.</li>
+      <li>Sửa hệ số lợi nhuận ở dòng tổng cập nhật toàn bộ các dòng chi tiết chưa bị khóa tay.</li>
+      <li>Mỗi lần gửi báo giá tạo một phiên bản BOQ báo giá mới, kèm ngày gửi và người gửi.</li>
+      <li>Giảm giá làm biên lợi nhuận rơi dưới ngưỡng tối thiểu thì nút “Gửi đối tác” bị khóa cho tới khi có phê duyệt mới.</li>
+      <li>Lịch sử đàm phán hiển thị dạng dòng thời gian: gửi v1 → phản hồi → gửi v2 → chốt, kèm chênh lệch giá trị từng vòng.</li>
+      <li>Xuất được bản báo giá PDF theo mẫu công ty với đủ điều kiện thương mại.</li>
+      <li>Khi chốt giá, toàn bộ bảng giá được đóng băng và trở thành BOQ hợp đồng ở <a href="BID-05.html">BID-05</a>.</li>
+    </ol>
+
+    <h4>Mockup UI — Đấu thầu › Áp giá &amp; thương thảo</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">GT-2026-018 ›</span><b>Áp giá — BOQ báo giá v3</b><span class="sp"></span><span class="tag t-warn">Vòng đàm phán 3</span><span class="wf-btn"><span class="pin">5</span> Xuất PDF</span><span class="wf-btn pri"><span class="pin">4</span> Trình duyệt &amp; gửi</span></div>
+      <div class="wf-body">
+        <div class="wf-kpi">
+          <div><dt>Tổng giá vốn</dt><dd>21,4 tỷ</dd></div>
+          <div><dt>Tổng giá chào</dt><dd>28,5 tỷ</dd></div>
+          <div><dt>Biên lợi nhuận</dt><dd>24,9%</dd></div>
+          <div><dt>Ngưỡng tối thiểu</dt><dd>18,0%</dd></div>
+          <div><dt>Chênh so với v2</dt><dd>−2,4%</dd></div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">1</span> Bảng áp giá theo dòng BOQ <span class="pin">2</span></div>
+          <table><thead><tr><th>Mã HM</th><th>Đầu việc</th><th class="num">KL</th><th class="num">Vật tư</th><th class="num">Nhân công</th><th class="num">Máy · BP khó</th><th class="num">Giá vốn</th><th class="num">Giá chào</th><th class="num">Biên</th></tr></thead>
+          <tbody>
+            <tr><td>HM-01</td><td>Ốp lát mặt đứng tháp A</td><td class="num">8.980</td><td class="num">1.180.000</td><td class="num">420.000</td><td class="num">107.000</td><td class="num">1.707.000</td><td class="num">2.280.000</td><td class="num">25,1%</td></tr>
+            <tr><td>HM-02</td><td>Lát sàn sảnh marble</td><td class="num">1.260</td><td class="num">1.420.000</td><td class="num">380.000</td><td class="num">0</td><td class="num">1.800.000</td><td class="num">2.150.000</td><td class="num">16,3%</td></tr>
+            <tr><td>HM-04</td><td>Gia công đá cong bo góc</td><td class="num">180</td><td class="num">2.600.000</td><td class="num">900.000</td><td class="num">0</td><td class="num">3.500.000</td><td class="num">4.100.000</td><td class="num">14,6%</td></tr>
+          </tbody></table>
+          <p style="margin:7px 0 0;font-size:11.5px;color:var(--crit)">2 dòng có biên dưới ngưỡng 18% — cần giải trình khi trình duyệt.</p>
+        </div>
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">3</span> Lịch sử thương thảo</div>
+            <div class="wf-steps">
+              <div class="done"><b>v1 · 10/11</b>Chào 30,2 tỷ<br>Đối tác đề nghị giảm 6%</div>
+              <div class="done"><b>v2 · 02/12</b>Chào 29,2 tỷ<br>Bổ sung hạng mục lan can</div>
+              <div class="cur"><b>v3 · 18/12</b>Chào 28,5 tỷ<br>Chờ phản hồi</div>
+            </div>
+          </div></div>
+          <div class="wf-c" style="flex:0 1 250px"><div class="wf-sec">
+            <div class="wf-lg">Điều kiện thương mại</div>
+            <div class="wf-f"><label>Tiến độ thanh toán</label><div class="in">Tạm ứng 10% · nghiệm thu theo đợt</div></div>
+            <div class="wf-f"><label>Hiệu lực báo giá</label><div class="in">30 ngày</div></div>
+            <div class="wf-f"><label>Bảo hành</label><div class="in">24 tháng</div></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Dựng giá vốn</td><td>Ba cấu phần nhập tay hoặc lấy gợi ý; cấu phần “máy · biện pháp khó” nạp sẵn từ phiếu khảo sát.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Đặt giá chào &amp; xem biên</td><td>Nhập giá chào hoặc nhập hệ số lợi nhuận. Dòng dưới ngưỡng tự tô đỏ và đếm ở chân bảng.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Ghi nhận vòng đàm phán</td><td>Mỗi vòng lưu giá trị chào, phản hồi đối tác và người tiếp nhận; sinh phiên bản BOQ báo giá.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Trình duyệt &amp; gửi</td><td>Đi qua <a href="PF-03.html">PF-03</a> hai cấp. Duyệt xong mới mở nút gửi email kèm PDF cho đối tác.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Xuất báo giá PDF</td><td>Theo mẫu công ty, đủ bảng giá và điều kiện thương mại, có mã phiên bản ở chân trang.</td></tr>
+          <tr><td class="c">—</td><td>Chốt giá / Trượt thầu</td><td>Hai nút kết thúc: chốt giá dẫn sang <a href="BID-05.html">BID-05</a>, trượt thầu dẫn sang <a href="BID-04.html">BID-04</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Khối lượng khóa, giá mở.</b> Bảng áp giá kế thừa khối lượng từ BOQ cập nhật và khóa cột đó.<span class="then">Muốn đổi khối lượng phải quay lại <a href="BID-02.html">BID-02</a> và chốt bản BOQ mới — tránh việc vừa đàm phán giá vừa âm thầm đổi khối lượng.</span></li>
+      <li><b>Giá vốn ba cấu phần.</b> Vật tư gợi ý từ giá nhập kho bình quân gần nhất; nhân công gợi ý từ bảng giá khoán đã duyệt của dự án tương tự; máy và biện pháp khó nạp từ phiếu khảo sát.<span class="then">Mọi gợi ý đều sửa được, nhưng dòng bị sửa tay được đánh dấu để người duyệt biết con số không còn là số hệ thống tính.</span></li>
+      <li><b>Hệ số lợi nhuận hai chiều.</b> Nhập đơn giá chào thì hệ số lợi nhuận tự tính; nhập hệ số thì đơn giá tự tính.<span class="then">Sửa hệ số ở dòng tổng sẽ áp cho mọi dòng chi tiết <b>chưa bị khóa tay</b>; dòng đã sửa tay giữ nguyên.</span></li>
+      <li><b>Ngưỡng biên là chốt chặn.</b> Khi biên lợi nhuận tổng rơi dưới ngưỡng tối thiểu, nút “Gửi đối tác” bị khóa.<span class="then">Mở khóa chỉ bằng một phê duyệt mới của Ban lãnh đạo cho chính mức giá đó — không có đường vòng.</span></li>
+      <li><b>Mỗi lần gửi là một phiên bản.</b> Bấm gửi đối tác sinh BOQ báo giá phiên bản mới, đóng băng bảng giá tại thời điểm gửi.<span class="then">Sửa giá sau khi gửi sẽ tạo bản nháp của vòng kế tiếp, không sửa được bản đã gửi.</span></li>
+      <li><b>Phản hồi gắn vòng.</b> Mỗi vòng đàm phán lưu ngày gửi, giá trị chào, phản hồi đối tác và người tiếp nhận.<span class="then">Dòng thời gian đàm phán tính được chênh lệch giá trị giữa các vòng và tổng số ngày đàm phán.</span></li>
+      <li><b>Điều kiện thương mại chảy vào hợp đồng.</b> Tiến độ thanh toán, bảo hành và hiệu lực báo giá nhập ở đây được nạp sẵn vào hợp đồng ở <a href="BID-05.html">BID-05</a>.<span class="then">Sửa ở hợp đồng thì hệ thống ghi nhận là sai khác so với báo giá đã chốt và hiện cảnh báo cho người ký.</span></li>
+      <li><b>Chốt giá là điểm đóng băng.</b> Bấm “Chốt giá” khóa toàn bộ bảng áp giá.<span class="then">Bảng này trở thành BOQ hợp đồng, và biên lợi nhuận tại thời điểm chốt được lưu làm <em>biên dự thầu</em> để đối chiếu ở <a href="RPT-03.html">RPT-03</a>.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Đơn giá chào thấp hơn giá vốn</td><td><code>price_offer &lt; cost_total</code></td><td>“Dòng {mã} đang chào dưới giá vốn ({chênh lệch}). Nhập lý do nếu đây là chủ đích.”</td></tr>
+          <tr><td>Biên tổng dưới ngưỡng</td><td><code>margin &lt; min_margin</code></td><td>“Biên lợi nhuận {x}% dưới ngưỡng tối thiểu {y}%. Cần Ban lãnh đạo duyệt mức giá này trước khi gửi đối tác.”</td></tr>
+          <tr><td>Thiếu giá vốn nhân công</td><td><code>cost_labor</code> rỗng</td><td>“Chưa có giá vốn nhân công cho dòng {mã}. Không có số này thì biên lợi nhuận không phản ánh đúng.”</td></tr>
+          <tr><td>Gửi lại khi chưa sửa gì</td><td>Bảng giá không đổi so với vòng trước</td><td>“Bảng giá không thay đổi so với vòng {n}. Xác nhận nếu chỉ gửi lại để nhắc đối tác.”</td></tr>
+          <tr><td>Hiệu lực báo giá đã qua</td><td><code>hôm nay &gt; ngày gửi + hiệu lực</code></td><td>“Báo giá vòng {n} đã hết hiệu lực từ {ngày}. Gửi vòng mới trước khi ký hợp đồng.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-BID03-1</td><td>BOQ cập nhật đã chốt, ngưỡng biên 18%</td><td>Nhập hệ số lợi nhuận 25% ở dòng tổng</td><td>Mọi dòng chưa khóa tay cập nhật đơn giá; biên tổng hiện 25%</td></tr>
+          <tr><td>UAT-BID03-2</td><td>Đang ở biên 19%</td><td>Giảm giá tổng để biên còn 16%</td><td>Nút “Gửi đối tác” khóa; hiện yêu cầu duyệt lại</td></tr>
+          <tr><td>UAT-BID03-3</td><td>Ban lãnh đạo duyệt mức giá biên 16%</td><td>Bấm gửi đối tác</td><td>Gửi thành công, sinh BOQ báo giá vòng mới</td></tr>
+          <tr><td>UAT-BID03-4</td><td>Đã gửi vòng 2</td><td>Mở bảng giá vòng 2 và thử sửa</td><td>Bảng vòng 2 chỉ đọc; thao tác sửa tạo bản nháp vòng 3</td></tr>
+          <tr><td>UAT-BID03-5</td><td>Dòng HM-01 đã sửa tay đơn giá</td><td>Đổi hệ số lợi nhuận ở dòng tổng</td><td>HM-01 giữ nguyên giá; các dòng khác cập nhật</td></tr>
+          <tr><td>UAT-BID03-6</td><td>Đàm phán xong ở biên 24,9%</td><td>Bấm “Chốt giá”</td><td>Bảng khóa; biên dự thầu 24,9% được lưu để đối chiếu về sau</td></tr>
+          <tr><td>UAT-BID03-7</td><td>Người dùng là nhân viên P. TQT</td><td>Mở màn hình áp giá</td><td>Không truy cập được — quyền chỉ dành cho Ban lãnh đạo, Kế toán và Đấu thầu</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="BID-02.html">BID-02 BOQ cập nhật</a><a href="BID-04.html">BID-04 hủy gói thầu</a><a href="BID-05.html">BID-05 ký hợp đồng</a><a href="PRJ-01.html">PRJ-01 giá khoán tham chiếu</a><a href="RPT-03.html">RPT-03 đối chiếu biên LN thực tế</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 8 / 40</span><span><code>BID-03.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

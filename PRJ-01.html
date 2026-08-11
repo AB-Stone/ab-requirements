@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRJ-01 Giá khoán tổ đội — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a class="on" href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Dự án — Thi công / <b>PRJ-01</b></div><div class="sp"></div>
+  <div class="pnav"><a href="ORD-08.html">← ORD-08</a><a href="index.html">Mục lục</a><a href="PRJ-02.html">PRJ-02 →</a></div>
+</div>
+<section class="sheet solo" id="PRJ-01">
+  <header class="tb">
+    <div class="tb-id">PRJ-01</div>
+    <div class="tb-main">
+      <h3>Lập &amp; duyệt bảng giá khoán tổ đội</h3>
+      <p>“Dự án dựa theo các công việc ký hợp đồng với đối tác, lập bảng giá khoán tổ đội trình phê duyệt <b>trước khi triển khai</b>” — luồng trình ba chặng: Dự án lập → P. Đấu thầu kiểm tra, cho ý kiến → trình lãnh đạo duyệt.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Ban Dự án lập · P. Đấu thầu thẩm định</dd></div>
+        <div><dt>Phê duyệt</dt><dd>3 chặng — Dự án → Đấu thầu → Ban lãnh đạo</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Theo luồng trình</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 9</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Bảng giá khoán là đơn giá nhân công mà công ty trả cho tổ đội, đặt cạnh đơn giá bán trong BOQ hợp đồng. Chính cặp số này quyết định biên lợi nhuận của phần thi công. Vai trò của P. Đấu thầu ở chặng giữa là đối chiếu giá khoán đề xuất với giá đã tính trong hồ sơ dự thầu — nếu vượt, biên lợi nhuận dự án bị bào mòn ngay từ trước khi khởi công.</p>
+
+    <h4>Lưu đồ</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PRJ-01.1 Chặng thẩm định của P. Đấu thầu là chốt kiểm soát biên lợi nhuận: nó so đơn giá khoán đề xuất với chính con số đã dùng để tính giá chào thầu ở BID-03."
+ viewBox="0.00 0.00 600.00 819.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 806.28)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="348.79,-793.32 165.96,-793.32 165.96,-748.92 348.79,-748.92 348.79,-793.32"/>
+<text xml:space="preserve" text-anchor="middle" x="257.37" y="-774.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Dự án được khởi tạo</text>
+<text xml:space="preserve" text-anchor="middle" x="257.37" y="-759.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">BID&#45;05 · có BOQ hợp đồng</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="465.14,-701.72 265.61,-701.72 265.61,-657.32 465.14,-657.32 465.14,-701.72"/>
+<text xml:space="preserve" text-anchor="middle" x="365.37" y="-683.27" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ban dự án lập bảng giá khoán</text>
+<text xml:space="preserve" text-anchor="middle" x="365.37" y="-668.27" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">theo từng đầu việc của BOQ</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M283.52,-748.43C298.51,-735.99 317.44,-720.29 333.32,-707.11"/>
+<polygon fill="#55606b" stroke="#55606b" points="334.76,-708.88 338.31,-702.98 331.85,-705.38 334.76,-708.88"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="326.84,-622.32 59.91,-622.32 59.91,-577.92 326.84,-577.92 326.84,-622.32"/>
+<text xml:space="preserve" text-anchor="middle" x="193.37" y="-603.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chọn tổ đội &amp; hình thức khoán</text>
+<text xml:space="preserve" text-anchor="middle" x="193.37" y="-588.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">khoán nhân công · khoán gọn · công nhật</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M317.46,-656.96C296.02,-647.31 270.63,-635.89 248.42,-625.89"/>
+<polygon fill="#55606b" stroke="#55606b" points="249.57,-623.91 242.71,-623.32 247.7,-628.06 249.57,-623.91"/>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="276.12,-542.92 76.62,-542.92 76.62,-513.52 276.12,-513.52 276.12,-542.92"/>
+<text xml:space="preserve" text-anchor="middle" x="176.37" y="-524.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Trình P. Đấu thầu thẩm định</text>
+</g>
+<g id="edge3" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M188.18,-577.77C186.11,-569.25 183.73,-559.45 181.65,-550.9"/>
+<polygon fill="#55606b" stroke="#55606b" points="183.87,-550.41 180.12,-544.64 179.45,-551.49 183.87,-550.41"/>
+</g>
+<g id="node5" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="328.75,-478.52 0,-478.52 0,-434.12 328.75,-434.12 328.75,-478.52"/>
+<text xml:space="preserve" text-anchor="middle" x="164.37" y="-460.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">P. Đấu thầu đối chiếu</text>
+<text xml:space="preserve" text-anchor="middle" x="164.37" y="-445.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">giá khoán ĐX với giá vốn nhân công trong hồ sơ thầu</text>
+</g>
+<g id="edge4" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M173.95,-513.07C172.64,-505.48 170.99,-495.84 169.42,-486.71"/>
+<polygon fill="#55606b" stroke="#55606b" points="171.67,-486.4 168.33,-480.38 167.19,-487.17 171.67,-486.4"/>
+</g>
+<g id="node6" class="node">
+<title>F</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="164.37,-399.12 73.26,-366.24 164.37,-333.36 255.49,-366.24 164.37,-399.12"/>
+<text xml:space="preserve" text-anchor="middle" x="164.37" y="-369.99" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chênh lệch</text>
+<text xml:space="preserve" text-anchor="middle" x="164.37" y="-354.99" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">so với dự thầu</text>
+</g>
+<g id="edge5" class="edge">
+<title>E&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M164.37,-434C164.37,-425.97 164.37,-416.54 164.37,-407.35"/>
+<polygon fill="#55606b" stroke="#55606b" points="166.65,-407.39 164.37,-400.89 162.1,-407.39 166.65,-407.39"/>
+</g>
+<g id="node7" class="node">
+<title>G</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="397.04,-286.16 201.71,-286.16 201.71,-241.76 397.04,-241.76 397.04,-286.16"/>
+<text xml:space="preserve" text-anchor="middle" x="299.37" y="-267.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi ý kiến, yêu cầu giải trình</text>
+<text xml:space="preserve" text-anchor="middle" x="299.37" y="-252.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">trả về Ban dự án</text>
+</g>
+<g id="edge6" class="edge">
+<title>F&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M193.67,-343.48C214.42,-328.07 242.35,-307.32 264.29,-291.02"/>
+<polygon fill="#55606b" stroke="#55606b" points="265.52,-292.94 269.39,-287.23 262.81,-289.28 265.52,-292.94"/>
+<text xml:space="preserve" text-anchor="middle" x="292.57" y="-306.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Vượt giá dự thầu</text>
+</g>
+<g id="node8" class="node">
+<title>H</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="177.24,-286.16 21.5,-286.16 21.5,-241.76 177.24,-241.76 177.24,-286.16"/>
+<text xml:space="preserve" text-anchor="middle" x="99.37" y="-267.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi ý kiến đồng thuận</text>
+<text xml:space="preserve" text-anchor="middle" x="99.37" y="-252.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">trình Ban lãnh đạo</text>
+</g>
+<g id="edge8" class="edge">
+<title>F&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M147.47,-339.15C138.27,-324.96 126.88,-307.4 117.5,-292.93"/>
+<polygon fill="#55606b" stroke="#55606b" points="119.61,-292 114.17,-287.79 115.8,-294.48 119.61,-292"/>
+<text xml:space="preserve" text-anchor="middle" x="169.17" y="-306.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Trong dự thầu</text>
+</g>
+<g id="edge7" class="edge">
+<title>G&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M324.2,-286.52C334.18,-295.18 343.37,-303.16 343.37,-303.16 343.37,-303.16 365.37,-365.24 365.37,-365.24 365.37,-601.12 365.37,-601.12 365.37,-601.12 365.37,-601.12 365.37,-627.25 365.37,-649.14"/>
+<polygon fill="#55606b" stroke="#55606b" points="363.1,-648.95 365.37,-655.45 367.65,-648.95 363.1,-648.95"/>
+</g>
+<g id="node9" class="node">
+<title>I</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="266.37,-206.76 163.43,-188.88 266.37,-171 369.31,-188.88 266.37,-206.76"/>
+<text xml:space="preserve" text-anchor="middle" x="266.37" y="-185.13" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lãnh đạo duyệt?</text>
+</g>
+<g id="edge9" class="edge">
+<title>H&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M148.58,-241.43C175.08,-229.83 207.17,-215.79 231.16,-205.29"/>
+<polygon fill="#55606b" stroke="#55606b" points="231.9,-207.45 236.94,-202.76 230.07,-203.28 231.9,-207.45"/>
+</g>
+<g id="edge10" class="edge">
+<title>I&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M298.47,-201.52C340.63,-216.82 409.37,-241.76 409.37,-241.76 409.37,-241.76 434.37,-262.96 434.37,-262.96 434.37,-601.12 434.37,-601.12 434.37,-601.12 434.37,-601.12 409.63,-628.88 389.78,-651.14"/>
+<polygon fill="#55606b" stroke="#55606b" points="388.23,-649.46 385.6,-655.83 391.62,-652.49 388.23,-649.46"/>
+<text xml:space="preserve" text-anchor="middle" x="487.57" y="-453.02" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Yêu cầu điều chỉnh</text>
+</g>
+<g id="node10" class="node">
+<title>J</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="358.14,-123.8 174.61,-123.8 174.61,-79.4 358.14,-79.4 358.14,-123.8"/>
+<text xml:space="preserve" text-anchor="middle" x="266.37" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Bảng giá khoán có hiệu lực</text>
+<text xml:space="preserve" text-anchor="middle" x="266.37" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">khóa đơn giá</text>
+</g>
+<g id="edge11" class="edge">
+<title>I&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M266.37,-170.62C266.37,-159.5 266.37,-144.75 266.37,-131.83"/>
+<polygon fill="#55606b" stroke="#55606b" points="268.65,-132.09 266.37,-125.59 264.1,-132.09 268.65,-132.09"/>
+<text xml:space="preserve" text-anchor="middle" x="282.27" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Duyệt</text>
+</g>
+<g id="node11" class="node">
+<title>K</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="254.48,-44.4 54.27,-44.4 54.27,0 254.48,0 254.48,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="154.37" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Mở khóa lập hồ sơ giao khoán</text>
+<text xml:space="preserve" text-anchor="middle" x="154.37" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;03</text>
+</g>
+<g id="edge12" class="edge">
+<title>J&#45;&gt;K</title>
+<path fill="none" stroke="#55606b" d="M235.18,-79.04C221.7,-69.73 205.83,-58.76 191.74,-49.02"/>
+<polygon fill="#55606b" stroke="#55606b" points="193.29,-47.33 186.65,-45.51 190.7,-51.07 193.29,-47.33"/>
+</g>
+<g id="node12" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="478.13,-44.4 278.62,-44.4 278.62,0 478.13,0 478.13,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="378.37" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Là đơn giá tham chiếu</text>
+<text xml:space="preserve" text-anchor="middle" x="378.37" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">cho gói thầu tương tự · BID&#45;03</text>
+</g>
+<g id="edge13" class="edge">
+<title>J&#45;&gt;L</title>
+<path fill="none" stroke="#55606b" d="M297.57,-79.04C311.04,-69.73 326.91,-58.76 341.01,-49.02"/>
+<polygon fill="#55606b" stroke="#55606b" points="342.04,-51.07 346.1,-45.51 339.46,-47.33 342.04,-51.07"/>
+</g>
+<g id="node13" class="node">
+<title>M</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="573.83,-785.82 372.92,-785.82 372.92,-756.42 573.83,-756.42 573.83,-785.82"/>
+<text xml:space="preserve" text-anchor="middle" x="473.37" y="-767.37" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phát sinh đầu việc ngoài bảng</text>
+</g>
+<g id="edge14" class="edge">
+<title>M&#45;&gt;B</title>
+<path fill="none" stroke="#7c8792" stroke-dasharray="5,2" d="M456.5,-756.12C440.76,-743.06 416.87,-723.24 397.49,-707.17"/>
+<polygon fill="#7c8792" stroke="#7c8792" points="399,-705.46 392.54,-703.06 396.09,-708.96 399,-705.46"/>
+<text xml:space="preserve" text-anchor="middle" x="481.17" y="-722.02" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">lập phụ lục bảng giá</text>
+</g>
+</g>
+</svg></div><figcaption><b>Hình PRJ-01.1</b> Chặng thẩm định của P. Đấu thầu là chốt kiểm soát biên lợi nhuận: nó so đơn giá khoán đề xuất với chính con số đã dùng để tính giá chào thầu ở <a href="BID-03.html">BID-03</a>.</figcaption></figure>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã bảng giá</td><td class="k">rate_sheet_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>GK-&lt;project&gt;-NN</code>; phụ lục dùng hậu tố <code>-PLn</code>.</td></tr>
+          <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc.</td></tr>
+          <tr><td>Dòng giá khoán</td><td class="k">rates[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: đầu việc (theo BOQ hợp đồng), ĐVT, đơn giá khoán, khối lượng dự kiến, thành tiền.</td></tr>
+          <tr><td>Đầu việc BOQ</td><td class="k">rates[].wbs_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc gắn về đầu việc hợp đồng — điều kiện để so sánh doanh thu / chi phí theo hạng mục.</td></tr>
+          <tr><td>Hình thức khoán</td><td class="k">rates[].mode</td><td>Chọn 1</td><td class="c req">✱</td><td><code>khoán nhân công</code> · <code>khoán gọn (gồm vật tư phụ)</code> · <code>công nhật</code>.</td></tr>
+          <tr><td>Tổ đội</td><td class="k">crew_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một bảng giá có thể áp cho nhiều tổ đội; ghi rõ tổ nào nhận đầu việc nào.</td></tr>
+          <tr><td>Đơn giá dự thầu</td><td class="k">bid_labor_rate</td><td>Số tiền</td><td class="c">—</td><td>Hệ thống nạp từ cấu phần nhân công của <a href="BID-03.html">BID-03</a>; chỉ đọc.</td></tr>
+          <tr><td>Chênh lệch</td><td class="k">variance_pct</td><td>Phần trăm</td><td class="c">—</td><td>Tính tự động; vượt 0% thì tô cảnh báo và bắt buộc giải trình.</td></tr>
+          <tr><td>Giải trình</td><td class="k">justification</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi có dòng vượt đơn giá dự thầu.</td></tr>
+          <tr><td>Ý kiến P. Đấu thầu</td><td class="k">bid_dept_opinion</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Bắt buộc ở chặng 2, kể cả khi đồng thuận.</td></tr>
+          <tr><td>Hiệu lực</td><td class="k">effective_from</td><td>Ngày</td><td class="c req">✱</td><td>Không cho lùi về trước ngày duyệt — bảo đảm nguyên tắc “duyệt trước khi triển khai”.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Bảng giá khoán chưa được duyệt thì không lập được hồ sơ giao khoán nhân công ở <a href="PRJ-03.html">PRJ-03</a>.</li>
+      <li>Mỗi dòng giá khoán hiển thị đồng thời đơn giá đề xuất, đơn giá dự thầu và chênh lệch phần trăm.</li>
+      <li>Có ít nhất một dòng vượt đơn giá dự thầu thì bắt buộc nhập giải trình mới trình được.</li>
+      <li>Ý kiến của P. Đấu thầu là bắt buộc và hiển thị nguyên văn ở màn hình duyệt của lãnh đạo.</li>
+      <li>Bảng giá được duyệt thì khóa đơn giá; thay đổi phải lập phụ lục, giữ nguyên bản gốc.</li>
+      <li>Ngày hiệu lực không lùi về trước ngày duyệt.</li>
+      <li>Đơn giá khoán đã duyệt trở thành gợi ý mặc định khi lập giá vốn nhân công cho gói thầu mới.</li>
+      <li>Tổng giá trị khoán theo hạng mục so được với doanh thu BOQ của chính hạng mục đó.</li>
+    </ol>
+
+    <h4>Mockup UI — Công trình › Giá khoán tổ đội</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>GK-014-01 · Bảng giá khoán tổ đội</b><span class="sp"></span><span class="tag t-warn">Chờ P. Đấu thầu</span><span class="wf-btn"><span class="pin">6</span> Xuất bảng giá</span><span class="wf-btn pri"><span class="pin">5</span> Trình duyệt</span></div>
+      <div class="wf-body">
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">1</span> Luồng trình 3 chặng</div>
+          <div class="wf-steps">
+            <div class="done"><b>Ban dự án lập</b>Ngô Đức Thịnh<br>02/02 09:40</div>
+            <div class="cur"><b>P. Đấu thầu thẩm định</b>Nguyễn Thị Hạnh<br>đang xử lý</div>
+            <div><b>Ban lãnh đạo duyệt</b>Phạm Văn An</div>
+          </div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">2</span> Bảng giá khoán theo đầu việc hợp đồng <span class="pin">3</span></div>
+          <table><thead><tr><th>Mã HM</th><th>Đầu việc</th><th>Hình thức</th><th>Tổ đội</th><th>ĐVT</th><th class="num">KL dự kiến</th><th class="num">ĐG khoán</th><th class="num">ĐG dự thầu</th><th class="num">Chênh</th><th class="num">Thành tiền</th></tr></thead>
+          <tbody>
+            <tr><td>HM-01</td><td>Ốp lát mặt đứng tháp A</td><td>Khoán nhân công</td><td>TD-004</td><td>m²</td><td class="num">8.980</td><td class="num">405.000</td><td class="num">420.000</td><td class="num">−3,6%</td><td class="num">3.636.900.000</td></tr>
+            <tr><td>HM-02</td><td>Lát sàn sảnh marble</td><td>Khoán gọn</td><td>TD-007</td><td>m²</td><td class="num">1.260</td><td class="num">412.000</td><td class="num">380.000</td><td class="num">+8,4%</td><td class="num">519.120.000</td></tr>
+            <tr><td>HM-04</td><td>Gia công đá cong bo góc</td><td>Công nhật</td><td>TD-004</td><td>công</td><td class="num">240</td><td class="num">520.000</td><td class="num">—</td><td class="num">—</td><td class="num">124.800.000</td></tr>
+          </tbody></table>
+          <div class="wf-f" style="margin-top:8px"><label><span class="pin">4</span> Giải trình dòng vượt đơn giá dự thầu ✱</label><div class="in">HM-02 dùng đá khổ lớn 800×800, yêu cầu tổ thợ tay nghề cao; bù lại tiết kiệm ở HM-01.</div></div>
+        </div>
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg">Ý kiến P. Đấu thầu ✱</div>
+            <div class="wf-f"><div class="in" style="min-height:48px">Tổng giá khoán 4,28 tỷ, thấp hơn cấu phần nhân công dự thầu 4,41 tỷ. Đồng thuận trình lãnh đạo.</div></div>
+          </div></div>
+          <div class="wf-c" style="flex:0 1 250px"><div class="wf-sec">
+            <div class="wf-lg">Đối chiếu tổng thể</div>
+            <table><tbody>
+              <tr><td>Tổng giá khoán ĐX</td><td class="num">4.280.820.000</td></tr>
+              <tr><td>Nhân công theo dự thầu</td><td class="num">4.412.600.000</td></tr>
+              <tr><td>Chênh lệch</td><td class="num">−131.780.000</td></tr>
+              <tr><td>Tỷ trọng / doanh thu HĐ</td><td class="num">15,0%</td></tr>
+            </tbody></table>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Theo dõi luồng 3 chặng</td><td>Hiển thị đúng thứ tự Dự án → Đấu thầu → Lãnh đạo với người phụ trách và thời điểm.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Lập dòng giá khoán</td><td>Chọn đầu việc từ BOQ hợp đồng, không gõ tự do — bảo đảm ghép được với doanh thu.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Đối chiếu với đơn giá dự thầu</td><td>Cột dự thầu và cột chênh lệch tính tự động, tô đỏ khi vượt.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Giải trình vượt giá</td><td>Bắt buộc khi có dòng vượt; hiện nguyên văn ở màn hình duyệt.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Trình duyệt</td><td>Đi qua <a href="PF-03.html">PF-03</a> với chuỗi 3 bước. Duyệt xong khóa đơn giá.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Xuất bảng giá giao khoán</td><td>Bản PDF ký số dùng làm phụ lục hợp đồng giao khoán với tổ đội.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Duyệt trước khi triển khai.</b> Ngày hiệu lực của bảng giá không được sớm hơn ngày duyệt.<span class="then">Đúng nguyên tắc “lập bảng giá khoán trình phê duyệt <b>trước khi</b> triển khai” của yêu cầu gốc; không cho hợp thức hóa việc đã làm.</span></li>
+      <li><b>Đầu việc phải thuộc BOQ hợp đồng.</b> Dòng giá khoán chỉ chọn được đầu việc có trong BOQ hợp đồng của dự án.<span class="then">Đây là điều kiện để đặt cạnh nhau doanh thu và chi phí của cùng một hạng mục; đầu việc phát sinh phải qua phụ lục bảng giá.</span></li>
+      <li><b>Đối chiếu tự động với dự thầu.</b> Cột đơn giá dự thầu nạp từ cấu phần nhân công của <a href="BID-03.html">BID-03</a>, ở chế độ chỉ đọc.<span class="then">Chênh lệch tính tự động theo phần trăm; dòng vượt được tô cảnh báo ngay khi nhập.</span></li>
+      <li><b>Vượt dự thầu phải giải trình.</b> Có ít nhất một dòng vượt đơn giá dự thầu thì ô giải trình là bắt buộc.<span class="then">Giải trình hiện nguyên văn ở màn hình thẩm định của P. Đấu thầu và màn hình duyệt của lãnh đạo.</span></li>
+      <li><b>Ý kiến P. Đấu thầu là bắt buộc.</b> Chặng thẩm định không bỏ qua được, kể cả khi hoàn toàn đồng thuận.<span class="then">Ý kiến trống thì không chuyển được sang lãnh đạo.</span></li>
+      <li><b>Khóa đơn giá sau duyệt.</b> Bảng giá được duyệt thì đơn giá khóa vĩnh viễn.<span class="then">Thay đổi chỉ qua phụ lục có hậu tố <code>-PLn</code>, giữ nguyên bản gốc để đối chiếu.</span></li>
+      <li><b>Là điều kiện của giao khoán.</b> Không có bảng giá hiệu lực thì không lập được hồ sơ giao khoán nhân công ở <a href="PRJ-03.html">PRJ-03</a>.<span class="then">Chặn ngay tại bước tạo hồ sơ kèm liên kết tới bảng giá đang chờ duyệt.</span></li>
+      <li><b>Trở thành đơn giá tham chiếu.</b> Đơn giá đã duyệt được dùng làm gợi ý giá vốn nhân công cho gói thầu mới có đầu việc tương tự.<span class="then">Gợi ý ưu tiên dự án cùng vùng miền và cùng loại hình công trình.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Ngày hiệu lực lùi về quá khứ</td><td><code>effective_from &lt; ngày duyệt</code></td><td>“Bảng giá khoán phải được duyệt trước khi triển khai. Ngày hiệu lực sớm nhất là {ngày duyệt}.”</td></tr>
+          <tr><td>Đầu việc ngoài BOQ</td><td>Không có trong BOQ hợp đồng</td><td>“Đầu việc này không có trong BOQ hợp đồng. Lập phụ lục bảng giá cho đầu việc phát sinh.”</td></tr>
+          <tr><td>Có dòng vượt, thiếu giải trình</td><td>Tồn tại <code>variance &gt; 0</code></td><td>“Có {n} dòng vượt đơn giá dự thầu. Nhập giải trình trước khi trình duyệt.”</td></tr>
+          <tr><td>Ý kiến thẩm định trống</td><td><code>bid_dept_opinion</code> rỗng</td><td>“Nhập ý kiến thẩm định, kể cả khi đồng thuận — lãnh đạo cần căn cứ để quyết định.”</td></tr>
+          <tr><td>Tổng khoán vượt doanh thu hạng mục</td><td>Giá khoán &gt; doanh thu BOQ</td><td>“Giá khoán hạng mục {mã} vượt doanh thu hợp đồng của chính hạng mục đó. Hạng mục này chắc chắn lỗ.”</td></tr>
+          <tr><td>Tổ đội chưa gán dự án</td><td>Tổ đội không thuộc dự án</td><td>“Tổ {mã} chưa được gán vào dự án này. Gán tại danh mục tổ đội trước.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-PRJ01-1</td><td>Dự án vừa khởi tạo, có BOQ hợp đồng</td><td>Lập bảng giá khoán, chọn đầu việc</td><td>Chỉ hiện đầu việc thuộc BOQ; cột đơn giá dự thầu nạp sẵn</td></tr>
+          <tr><td>UAT-PRJ01-2</td><td>Đơn giá dự thầu HM-02 là 380.000</td><td>Nhập đơn giá khoán 412.000</td><td>Cột chênh hiện +8,4% và tô cảnh báo; ô giải trình bật lên</td></tr>
+          <tr><td>UAT-PRJ01-3</td><td>Có dòng vượt, chưa giải trình</td><td>Bấm “Trình duyệt”</td><td>Bị chặn kèm số dòng vượt</td></tr>
+          <tr><td>UAT-PRJ01-4</td><td>Bảng ở chặng P. Đấu thầu</td><td>Bấm chuyển tiếp mà chưa nhập ý kiến</td><td>Bị chặn kèm yêu cầu nhập ý kiến thẩm định</td></tr>
+          <tr><td>UAT-PRJ01-5</td><td>Bảng giá vừa được lãnh đạo duyệt</td><td>Mở lại và thử sửa đơn giá</td><td>Ô đơn giá chỉ đọc; có nút “Lập phụ lục”</td></tr>
+          <tr><td>UAT-PRJ01-6</td><td>Dự án chưa có bảng giá hiệu lực</td><td>Vào PRJ-03 lập hồ sơ giao khoán</td><td>Bị chặn kèm liên kết tới bảng giá đang chờ duyệt</td></tr>
+          <tr><td>UAT-PRJ01-7</td><td>Đặt ngày hiệu lực 01/01, hôm nay 02/02</td><td>Duyệt bảng giá</td><td>Bị chặn; ngày hiệu lực sớm nhất là hôm nay</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="BID-05.html">BID-05 BOQ hợp đồng</a><a href="BID-03.html">BID-03 giá vốn nhân công dự thầu</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="PRJ-03.html">PRJ-03 hồ sơ giao khoán</a><a href="ACC-09.html">ACC-09 giá thành</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 19 / 40</span><span><code>PRJ-01.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

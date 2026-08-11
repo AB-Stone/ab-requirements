@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOB-01 Ứng dụng di động — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a class="on" href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Di động / <b>MOB-01</b></div><div class="sp"></div>
+  <div class="pnav"><a href="RPT-04.html">← RPT-04</a><a href="index.html">Mục lục</a><a href="PL-A.html">PL-A →</a></div>
+</div>
+<section class="sheet solo" id="MOB-01">
+  <header class="tb">
+    <div class="tb-id">MOB-01</div>
+    <div class="tb-main">
+      <h3>Ứng dụng di động — phê duyệt, hiện trường, kho</h3>
+      <p>Không phải bản thu nhỏ của web. Ứng dụng chỉ mang bốn nhóm việc mà người dùng thực sự làm khi rời bàn làm việc, cộng cơ chế làm việc khi mất sóng ở công trường.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Giám đốc · kỹ sư hiện trường · thủ kho</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Ký điện tử theo <a href="PF-04.html">PF-04</a></dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Cùng bộ quyền với web (<a href="PF-02.html">PF-02</a>)</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>Ghi chú “thông báo trên app” tại TQT·7.1, 7.5 · KT·3</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Bốn nhóm việc trên ứng dụng</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Nhóm việc</th><th>Người dùng</th><th>Việc làm được</th><th class="c">Đặc tả</th></tr></thead>
+        <tbody>
+          <tr><td>Tổng quan</td><td>Giám đốc, GĐ dự án</td><td>Xem 4 thẻ chỉ số, danh sách chờ duyệt, cảnh báo vượt ngưỡng</td><td class="k"><a href="RPT-04.html">RPT-04</a></td></tr>
+          <tr><td>Phê duyệt</td><td>Mọi người duyệt</td><td>Xem tóm tắt, đọc ý kiến, duyệt / từ chối / yêu cầu bổ sung, ký điện tử</td><td class="k"><a href="PF-03.html">PF-03</a></td></tr>
+          <tr><td>Hiện trường</td><td>Kỹ sư, chỉ huy trưởng</td><td>Nhập sản lượng theo hạng mục, chụp ảnh hiện trường, xác nhận nhận hàng</td><td class="k"><a href="PRJ-02.html">PRJ-02</a>, <a href="ORD-05.html">ORD-05</a></td></tr>
+          <tr><td>Kho</td><td>Thủ kho</td><td>Tra tồn kho, quét mã QR sản phẩm và tài sản, ký xác nhận xuất nhập</td><td class="k"><a href="PRJ-04.html">PRJ-04</a>, <a href="ACC-06.html">ACC-06</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Lưu đồ — làm việc khi mất sóng</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình MOB-01.1 Ranh giới ngoại tuyến: nhập liệu hiện trường được phép làm khi mất sóng, phê duyệt và ký điện tử thì không — vì chữ ký cần mã băm nội dung tại thời điểm ký."
+ viewBox="0.00 0.00 463.00 682.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 669.52)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="206.44,-656.56 6.25,-656.56 6.25,-627.16 206.44,-627.16 206.44,-656.56"/>
+<text xml:space="preserve" text-anchor="middle" x="106.35" y="-638.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Kỹ sư mở app tại công trường</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="106.35,-575.64 33.31,-557.76 106.35,-539.88 179.39,-557.76 106.35,-575.64"/>
+<text xml:space="preserve" text-anchor="middle" x="106.35" y="-554.01" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Có kết nối?</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M106.35,-626.93C106.35,-615.15 106.35,-597.98 106.35,-583.82"/>
+<polygon fill="#55606b" stroke="#55606b" points="108.62,-583.91 106.35,-577.41 104.07,-583.91 108.62,-583.91"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="147.62,-426.96 21.08,-426.96 21.08,-382.56 147.62,-382.56 147.62,-426.96"/>
+<text xml:space="preserve" text-anchor="middle" x="84.35" y="-408.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Thao tác trực tiếp</text>
+<text xml:space="preserve" text-anchor="middle" x="84.35" y="-393.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đồng bộ ngay</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M103.91,-540.02C100.22,-514.68 93.16,-466.22 88.6,-434.98"/>
+<polygon fill="#55606b" stroke="#55606b" points="90.91,-435.03 87.72,-428.93 86.41,-435.69 90.91,-435.03"/>
+<text xml:space="preserve" text-anchor="middle" x="107.39" y="-508.66" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Có</text>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="371.43,-488.36 123.27,-488.36 123.27,-443.96 371.43,-443.96 371.43,-488.36"/>
+<text xml:space="preserve" text-anchor="middle" x="247.35" y="-469.91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chế độ ngoại tuyến</text>
+<text xml:space="preserve" text-anchor="middle" x="247.35" y="-454.91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chỉ cho nhập sản lượng và chụp ảnh</text>
+</g>
+<g id="edge3" class="edge">
+<title>B&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M125.95,-544.3C146.74,-531.09 180.17,-509.85 206.69,-493"/>
+<polygon fill="#55606b" stroke="#55606b" points="207.73,-495.03 211.99,-489.63 205.29,-491.19 207.73,-495.03"/>
+<text xml:space="preserve" text-anchor="middle" x="201.19" y="-508.66" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
+</g>
+<g id="node10" class="node">
+<title>J</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="162.69,-36.9 0,-36.9 0,-7.5 162.69,-7.5 162.69,-36.9"/>
+<text xml:space="preserve" text-anchor="middle" x="81.35" y="-18.45" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi nhận, hiện trên web</text>
+</g>
+<g id="edge10" class="edge">
+<title>C&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M83.7,-382.15C82.81,-352.86 81.35,-304.16 81.35,-304.16 81.35,-304.16 81.35,-304.16 81.35,-123.48 81.35,-123.48 81.35,-74.37 81.35,-44.88"/>
+<polygon fill="#55606b" stroke="#55606b" points="83.62,-45.16 81.35,-38.66 79.07,-45.16 83.62,-45.16"/>
+</g>
+<g id="node5" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="334.59,-365.56 160.1,-365.56 160.1,-321.16 334.59,-321.16 334.59,-365.56"/>
+<text xml:space="preserve" text-anchor="middle" x="247.35" y="-347.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lưu vào hàng đợi trên máy</text>
+<text xml:space="preserve" text-anchor="middle" x="247.35" y="-332.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">gắn nhãn chờ đồng bộ</text>
+</g>
+<g id="edge4" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M247.35,-443.56C247.35,-424.07 247.35,-395.21 247.35,-373.65"/>
+<polygon fill="#55606b" stroke="#55606b" points="249.62,-373.78 247.35,-367.28 245.07,-373.78 249.62,-373.78"/>
+</g>
+<g id="node6" class="node">
+<title>F</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="302.63,-286.16 192.07,-286.16 192.07,-256.76 302.63,-256.76 302.63,-286.16"/>
+<text xml:space="preserve" text-anchor="middle" x="247.35" y="-267.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Có sóng trở lại</text>
+</g>
+<g id="edge5" class="edge">
+<title>E&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M247.35,-321.01C247.35,-312.58 247.35,-302.89 247.35,-294.41"/>
+<polygon fill="#55606b" stroke="#55606b" points="249.62,-294.42 247.35,-287.92 245.07,-294.42 249.62,-294.42"/>
+</g>
+<g id="node7" class="node">
+<title>G</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="365.17,-221.76 129.52,-221.76 129.52,-192.36 365.17,-192.36 365.17,-221.76"/>
+<text xml:space="preserve" text-anchor="middle" x="247.35" y="-203.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tự động đồng bộ theo thứ tự nhập</text>
+</g>
+<g id="edge6" class="edge">
+<title>F&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M247.35,-256.3C247.35,-248.56 247.35,-238.8 247.35,-230.09"/>
+<polygon fill="#55606b" stroke="#55606b" points="249.62,-230.18 247.35,-223.68 245.07,-230.18 249.62,-230.18"/>
+</g>
+<g id="node8" class="node">
+<title>H</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="248.35,-157.36 118.34,-124.48 248.35,-91.6 378.35,-124.48 248.35,-157.36"/>
+<text xml:space="preserve" text-anchor="middle" x="248.35" y="-128.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Có xung đột?</text>
+<text xml:space="preserve" text-anchor="middle" x="248.35" y="-113.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ví dụ đợt đã bị chốt</text>
+</g>
+<g id="edge7" class="edge">
+<title>G&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M247.52,-192.02C247.61,-184.63 247.73,-175.14 247.85,-165.66"/>
+<polygon fill="#55606b" stroke="#55606b" points="250.12,-165.78 247.93,-159.25 245.57,-165.72 250.12,-165.78"/>
+</g>
+<g id="node9" class="node">
+<title>I</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="414,-44.4 186.69,-44.4 186.69,0 414,0 414,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="300.35" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Giữ bản ghi, báo người nhập xử lý</text>
+<text xml:space="preserve" text-anchor="middle" x="300.35" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">không tự ghi đè</text>
+</g>
+<g id="edge8" class="edge">
+<title>H&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M263.11,-95.01C270.17,-81.4 278.59,-65.16 285.64,-51.56"/>
+<polygon fill="#55606b" stroke="#55606b" points="287.52,-52.88 288.49,-46.06 283.48,-50.79 287.52,-52.88"/>
+<text xml:space="preserve" text-anchor="middle" x="287.56" y="-64.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Có</text>
+</g>
+<g id="edge9" class="edge">
+<title>H&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M210.45,-100.72C180.47,-82.72 139.16,-57.92 111.42,-41.26"/>
+<polygon fill="#55606b" stroke="#55606b" points="112.72,-39.38 105.97,-37.99 110.37,-43.28 112.72,-39.38"/>
+<text xml:space="preserve" text-anchor="middle" x="180.75" y="-64.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
+</g>
+<g id="node11" class="node">
+<title>K</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="394.38,-656.56 230.32,-656.56 230.32,-627.16 394.38,-627.16 394.38,-656.56"/>
+<text xml:space="preserve" text-anchor="middle" x="312.35" y="-638.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phê duyệt và ký điện tử</text>
+</g>
+<g id="node12" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="404.79,-579.96 219.9,-579.96 219.9,-535.56 404.79,-535.56 404.79,-579.96"/>
+<text xml:space="preserve" text-anchor="middle" x="312.35" y="-561.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Bắt buộc có kết nối</text>
+<text xml:space="preserve" text-anchor="middle" x="312.35" y="-546.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">để đảm bảo giá trị chữ ký</text>
+</g>
+<g id="edge11" class="edge">
+<title>K&#45;&gt;L</title>
+<path fill="none" stroke="#7c8792" stroke-dasharray="5,2" d="M312.35,-626.93C312.35,-616.32 312.35,-601.34 312.35,-588.12"/>
+<polygon fill="#7c8792" stroke="#7c8792" points="314.62,-588.19 312.35,-581.69 310.07,-588.19 314.62,-588.19"/>
+<text xml:space="preserve" text-anchor="middle" x="374.71" y="-600.26" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">KHÔNG cho ngoại tuyến</text>
+</g>
+</g>
+</svg></div><figcaption><b>Hình MOB-01.1</b> Ranh giới ngoại tuyến: nhập liệu hiện trường được phép làm khi mất sóng, phê duyệt và ký điện tử thì không — vì chữ ký cần mã băm nội dung tại thời điểm ký.</figcaption></figure>
+
+    <h4>Mockup UI — bốn màn hình chính</h4>
+    <div class="wf-row" style="align-items:flex-start;gap:14px;flex-wrap:wrap">
+      <div class="wf mob">
+        <div class="wf-bar"><b>9:41</b><span class="sp"></span><span>▮▮▮</span></div>
+        <div class="wf-body">
+          <p style="margin:0 0 8px;font-size:11px;color:var(--ink-3)">Thứ Ba, 28/07</p>
+          <p style="margin:0 0 10px;font-family:var(--font-h);font-size:17px;font-weight:600">Chào anh An</p>
+          <div class="wf-kpi" style="flex-wrap:wrap">
+            <div style="min-width:0;flex:1 1 46%"><dt>Doanh thu tháng</dt><dd style="font-size:15px">4,6 tỷ</dd></div>
+            <div style="min-width:0;flex:1 1 46%"><dt>Chờ duyệt</dt><dd style="font-size:15px">3</dd></div>
+            <div style="min-width:0;flex:1 1 46%"><dt>Nợ quá hạn</dt><dd style="font-size:15px">1,6 tỷ</dd></div>
+            <div style="min-width:0;flex:1 1 46%"><dt>Tồn kho</dt><dd style="font-size:15px">15,8 tỷ</dd></div>
+          </div>
+          <div class="wf-sec">
+            <div class="wf-lg">Chờ anh phê duyệt</div>
+            <table><tbody>
+              <tr><td>Đơn đá granite — VGP GĐ 3<br><span style="color:var(--ink-3);font-size:10.5px">DH-2026-155 · 2,376 tỷ</span></td></tr>
+              <tr><td>Tạm ứng vật tư — The Maris<br><span style="color:var(--ink-3);font-size:10.5px">PC-2026-233 · 450 triệu</span></td></tr>
+            </tbody></table>
+          </div>
+          <p style="margin:8px 0 0;font-size:10.5px;color:var(--ink-3);text-align:center">Tổng quan · Phê duyệt · Công trình · Thông báo</p>
+        </div>
+      </div>
+      <div class="wf mob">
+        <div class="wf-bar"><b>Phê duyệt</b><span class="sp"></span><span>▮▮▮</span></div>
+        <div class="wf-body">
+          <div class="wf-chips"><span class="wf-chip on">Chờ duyệt (3)</span><span class="wf-chip">Đã duyệt</span></div>
+          <div class="wf-sec">
+            <div class="wf-lg"><span class="pin">1</span> DH-2026-155 · Cấp 2/3</div>
+            <p style="margin:0 0 4px;font-size:11.5px">Đơn đá granite — Vinhomes Grand Park GĐ 3</p>
+            <p style="margin:0 0 2px;font-size:11px;color:var(--ink-3)">Hạng mục HM-01 · Nhà máy An Bình 2</p>
+            <p style="margin:0 0 8px;font-family:var(--font-h);font-size:15px;font-weight:600">2.376.000.000 đ</p>
+            <div class="wf-row"><span class="wf-btn dgr" style="flex:1;justify-content:center">Từ chối</span><span class="wf-btn pri" style="flex:1;justify-content:center"><span class="pin">2</span> Duyệt</span></div>
+          </div>
+          <div class="wf-sec">
+            <div class="wf-lg">PC-2026-233 · Cấp 3/3</div>
+            <p style="margin:0 0 8px;font-size:11.5px">Tạm ứng vật tư — The Maris Vũng Tàu</p>
+            <div class="wf-row"><span class="wf-btn dgr" style="flex:1;justify-content:center">Từ chối</span><span class="wf-btn pri" style="flex:1;justify-content:center">Duyệt</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="wf mob">
+        <div class="wf-bar"><b>Cập nhật tiến độ</b><span class="sp"></span><span>▮▮▮</span></div>
+        <div class="wf-body">
+          <p style="margin:0 0 8px;font-size:11px;color:var(--ink-3)">Vinhomes Grand Park GĐ 3<br>HM-01 · Ốp lát mặt đứng tháp A</p>
+          <div class="wf-sec">
+            <div class="wf-lg"><span class="pin">3</span> Tiến độ hạng mục</div>
+            <p style="margin:0;font-family:var(--font-h);font-size:22px;font-weight:600">55% <span style="font-size:12px;color:var(--ok)">+5% hôm nay</span></p>
+          </div>
+          <div class="wf-f"><label>Khối lượng hoàn thành hôm nay (m²) ✱</label><div class="in">86</div></div>
+          <div class="wf-f"><label>Tổ đội ✱</label><div class="in">TD-004 <em>▾</em></div></div>
+          <div class="wf-f"><label>Ghi chú hiện trường</label><div class="in" style="min-height:38px">Trục 6–7 hoàn thành, chờ giàn treo tầng 24</div></div>
+          <div class="wf-ph" style="min-height:44px"><span class="pin">4</span> Ảnh hiện trường (2) · chạm để chụp</div>
+          <div style="margin-top:8px"><span class="wf-btn pri" style="width:100%;justify-content:center">Gửi cập nhật</span></div>
+          <p style="margin:6px 0 0;font-size:10.5px;color:var(--warn)">Mất sóng: bản ghi lưu tạm, tự gửi khi có mạng.</p>
+        </div>
+      </div>
+      <div class="wf mob">
+        <div class="wf-bar"><b>Tra cứu tồn kho</b><span class="sp"></span><span>▮▮▮</span></div>
+        <div class="wf-body">
+          <div class="wf-sec">
+            <div class="wf-lg">Đá Granite Đen Phú Yên</div>
+            <p style="margin:0 0 4px;font-size:11px;color:var(--ink-3)">Kho Nhà máy · 600×600×20mm</p>
+            <p style="margin:0;font-family:var(--font-h);font-size:17px;font-weight:600">Khả dụng 1.070 m²</p>
+          </div>
+          <div class="wf-sec">
+            <div class="wf-lg">Đá Granite Đen Phú Yên</div>
+            <p style="margin:0 0 4px;font-size:11px;color:var(--ink-3)">Kho công trình VGP · 800×800×20mm</p>
+            <p style="margin:0 0 4px;font-family:var(--font-h);font-size:17px;font-weight:600">Khả dụng 120 m²</p>
+            <span class="tag t-crit">Dưới định mức</span>
+          </div>
+          <div style="margin-top:8px"><span class="wf-btn" style="width:100%;justify-content:center"><span class="pin">5</span> Quét mã QR sản phẩm / tài sản</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên ứng dụng</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Thẻ phê duyệt gọn</td><td>Hiện đủ bốn thông tin bắt buộc: chứng từ, dự án, hạng mục, giá trị — đọc là quyết định được.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Duyệt / từ chối tại chỗ</td><td>Ký điện tử bằng sinh trắc học hoặc OTP. Bắt buộc có kết nối mạng.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Nhập sản lượng hiện trường</td><td>Chọn hạng mục và tổ đội, nhập khối lượng. Làm được khi mất sóng.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Chụp ảnh hiện trường</td><td>Ảnh tự gắn ngày giờ và vị trí, đính thẳng vào bản ghi sản lượng.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Quét mã QR</td><td>Tra nhanh vật tư trong kho hoặc tài sản: đang ở đâu, thuộc dự án nào.</td></tr>
+          <tr><td class="c">—</td><td>Xác nhận nhận hàng</td><td>Kiểm đếm, ghi sai lệch kèm ảnh, ký nhận — thay biên bản giấy (<a href="ORD-05.html">ORD-05</a>).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Thông báo đẩy mở thẳng đúng chứng từ, không dừng ở màn hình danh sách.</li>
+      <li>Duyệt trên điện thoại và duyệt trên web cho kết quả giống hệt nhau, cùng ghi một dấu ký.</li>
+      <li>Nhập sản lượng khi mất sóng được lưu tạm và tự gửi khi có mạng, theo đúng thứ tự nhập.</li>
+      <li>Xung đột khi đồng bộ không tự ghi đè mà báo cho người nhập xử lý.</li>
+      <li>Ảnh chụp từ ứng dụng tự gắn ngày giờ và vị trí, không sửa được.</li>
+      <li>Quét QR tra ra vật tư hoặc tài sản trong dưới 2 giây khi có mạng.</li>
+      <li>Người dùng chỉ thấy dữ liệu trong phạm vi quyền của mình, giống hệt trên web.</li>
+    </ol>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Cùng bộ quyền với web.</b> Ứng dụng không có bộ quyền riêng; mọi giới hạn của <a href="PF-02.html">PF-02</a> áp dụng y hệt.<span class="then">Người dùng không thể thấy trên điện thoại thứ mà họ không thấy trên web.</span></li>
+      <li><b>Ranh giới ngoại tuyến rõ ràng.</b> Nhập sản lượng và chụp ảnh làm được khi mất sóng; phê duyệt và ký điện tử thì không.<span class="then">Chữ ký cần mã băm nội dung tại thời điểm ký, nên bắt buộc có kết nối.</span></li>
+      <li><b>Hàng đợi theo thứ tự nhập.</b> Bản ghi ngoại tuyến đồng bộ theo đúng thứ tự người dùng đã nhập.<span class="then">Tránh trường hợp bản ghi sau ghi đè bản ghi trước khi cùng một đầu việc.</span></li>
+      <li><b>Xung đột không tự ghi đè.</b> Bản ghi ngoại tuyến gặp xung đột (ví dụ đợt đã bị chốt) thì giữ lại và báo cho người nhập.<span class="then">Người nhập chọn ghi vào kỳ mới hoặc bỏ; hệ thống không tự quyết.</span></li>
+      <li><b>Ảnh gắn siêu dữ liệu không sửa được.</b> Ảnh chụp trong ứng dụng tự gắn ngày giờ và vị trí.<span class="then">Ảnh chọn từ thư viện bị đánh dấu “không có siêu dữ liệu hiện trường”.</span></li>
+      <li><b>Thông báo đẩy mở thẳng chứng từ.</b> Một chạm tới đúng bản ghi, đúng tab.<span class="then">Không dừng ở màn hình danh sách bắt người dùng tìm lại.</span></li>
+      <li><b>Thẻ phê duyệt đủ bốn thông tin.</b> Chứng từ, dự án, hạng mục, giá trị hiện ngay trên thẻ.<span class="then">Đọc là quyết định được, không phải mở chi tiết — đúng tinh thần yêu cầu gốc về thông báo.</span></li>
+      <li><b>Quét QR tra hai loại đối tượng.</b> Mã QR nhận diện cả vật tư trong kho và tài sản.<span class="then">Kết quả trả về trong dưới 2 giây khi có mạng; ngoại tuyến thì tra được dữ liệu đã tải sẵn lần cuối kèm mốc thời gian.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Ký khi mất mạng</td><td>Không có kết nối</td><td>“Cần kết nối mạng để ký. Nhập liệu hiện trường vẫn lưu tạm được.”</td></tr>
+          <tr><td>Xung đột khi đồng bộ</td><td>Đợt đã chốt</td><td>“Đợt {n} đã chốt trong lúc bạn ngoại tuyến. Ghi bản này vào kỳ hiện tại hay bỏ?”</td></tr>
+          <tr><td>Hàng đợi tồn lâu</td><td>&gt; 24 giờ chưa đồng bộ</td><td>“Còn {n} bản ghi chờ gửi từ {thời điểm}. Kết nối mạng để đồng bộ.”</td></tr>
+          <tr><td>Ảnh từ thư viện</td><td>Không có siêu dữ liệu</td><td>“Ảnh này không có thông tin thời gian và vị trí chụp.”</td></tr>
+          <tr><td>Quét QR ngoại tuyến</td><td>Không có kết nối</td><td>“Đang hiển thị dữ liệu tải lúc {giờ}. Kết nối mạng để xem số liệu mới nhất.”</td></tr>
+          <tr><td>Mất quyền xem</td><td>Ngoài phạm vi dữ liệu</td><td>“Bạn không còn quyền xem chứng từ này.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-MOB01-1</td><td>Có đơn hàng vừa trình duyệt</td><td>Nhận thông báo đẩy và chạm vào</td><td>Mở thẳng chứng từ, đúng tab</td></tr>
+          <tr><td>UAT-MOB01-2</td><td>Đang xem thẻ phê duyệt</td><td>Đọc thẻ</td><td>Thấy đủ mã chứng từ, dự án, hạng mục và giá trị</td></tr>
+          <tr><td>UAT-MOB01-3</td><td>Duyệt cùng một chứng từ trên điện thoại</td><td>Mở lại trên web</td><td>Trạng thái giống hệt; một dấu ký duy nhất được ghi</td></tr>
+          <tr><td>UAT-MOB01-4</td><td>Kỹ sư ở công trường mất sóng</td><td>Nhập sản lượng 3 lần liên tiếp và chụp ảnh</td><td>Ba bản ghi vào hàng đợi theo thứ tự; ảnh có ngày giờ, vị trí</td></tr>
+          <tr><td>UAT-MOB01-5</td><td>Tiếp UAT-4, có mạng trở lại</td><td>Chờ đồng bộ</td><td>Gửi theo đúng thứ tự nhập; hiện trên web đầy đủ</td></tr>
+          <tr><td>UAT-MOB01-6</td><td>Đợt bị chốt trong lúc ngoại tuyến</td><td>Đồng bộ</td><td>Không tự ghi đè; hỏi người nhập cách xử lý</td></tr>
+          <tr><td>UAT-MOB01-7</td><td>Đang ở kho, có mạng</td><td>Quét QR trên kiện đá</td><td>Hiện tồn khả dụng theo kho trong dưới 2 giây</td></tr>
+          <tr><td>UAT-MOB01-8</td><td>Thủ kho phạm vi 1 kho</td><td>Mở màn hình tra cứu tồn</td><td>Chỉ thấy kho được phân công, giống hệt trên web</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="PF-03.html">PF-03 phê duyệt</a><a href="PF-04.html">PF-04 thông báo &amp; ký</a><a href="PRJ-02.html">PRJ-02 sản lượng</a><a href="ORD-05.html">ORD-05 xác nhận nhận hàng</a><a href="ACC-06.html">ACC-06 QR tài sản</a><a href="RPT-04.html">RPT-04 dashboard</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 36 / 40</span><span><code>MOB-01.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>

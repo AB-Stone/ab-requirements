@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PF-02 Vai trò & phân quyền — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a class="on" href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Nền tảng / <b>PF-02</b></div><div class="sp"></div>
+  <div class="pnav"><a href="PF-01.html">← PF-01</a><a href="index.html">Mục lục</a><a href="PF-03.html">PF-03 →</a></div>
+</div>
+<section class="sheet solo" id="PF-02">
+  <header class="tb">
+    <div class="tb-id">PF-02</div>
+    <div class="tb-main">
+      <h3>Người dùng, vai trò &amp; phân quyền động</h3>
+      <p>Yêu cầu gốc chốt rất rõ: “Quyền truy cập sẽ linh hoạt do người phụ trách phân quyền, không phải là mặc định hệ thống”. Vai trò chỉ là bộ khởi tạo nhanh; quyền thật nằm ở cấu hình từng người.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Quản trị hệ thống · Trưởng bộ phận</dd></div>
+        <div><dt>Phê duyệt</dt><dd>1 cấp — Ban lãnh đạo duyệt khi cấp quyền phê duyệt tài chính</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Chỉ Admin và người được ủy quyền</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>Mục tiêu cốt lõi · KT·3 ghi chú</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Tách quyền thành ba lớp độc lập để một người có thể “được xem toàn bộ phân hệ Kho nhưng chỉ của dự án mình phụ trách, và chỉ được duyệt phiếu dưới 500 triệu”. Bảng yêu cầu nêu ba ràng buộc phải thỏa: giới hạn xem dữ liệu nội bộ phòng ban; người được phân quyền chỉ thấy các phê duyệt có tên mình; Admin thấy toàn bộ.</p>
+
+    <h4>Ba lớp quyền</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PF-02.1 Quyền được tính bằng giao của ba lớp, không phải hợp. Admin là ngoại lệ duy nhất bỏ qua lớp phạm vi dữ liệu — đúng yêu cầu “Admin là người được thấy toàn bộ”."
+ viewBox="0.00 0.00 1095.00 492.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 478.66)">
+<title>G</title>
+<g id="clust1" class="cluster">
+<title>cluster_L1</title>
+<polygon fill="#e6eaee" stroke="#a3acb5" points="144.21,-8 144.21,-166 374.64,-166 374.64,-8 144.21,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="224.44" y="-151.65" font-family="Barlow, system-ui, sans-serif" font-size="11.50" fill="#4a545e">Lớp 1 — Quyền chức năng</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_L2</title>
+<polygon fill="#e6eaee" stroke="#a3acb5" points="391.64,-83 391.64,-318 589.46,-318 589.46,-83 391.64,-83"/>
+<text xml:space="preserve" text-anchor="middle" x="467.71" y="-303.65" font-family="Barlow, system-ui, sans-serif" font-size="11.50" fill="#4a545e">Lớp 2 — Phạm vi dữ liệu</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_L3</title>
+<polygon fill="#e6eaee" stroke="#a3acb5" points="606.46,-242 606.46,-424 807.74,-424 807.74,-242 606.46,-242"/>
+<text xml:space="preserve" text-anchor="middle" x="685.41" y="-409.65" font-family="Barlow, system-ui, sans-serif" font-size="11.50" fill="#4a545e">Lớp 3 — Quyền phê duyệt</text>
+</g>
+<g id="node1" class="node">
+<title>F1</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="344.25,-64.2 174.61,-64.2 174.61,-19.8 344.25,-19.8 344.25,-64.2"/>
+<text xml:space="preserve" text-anchor="middle" x="259.43" y="-45.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phân hệ nào</text>
+<text xml:space="preserve" text-anchor="middle" x="259.43" y="-30.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Kho · Công nợ · Báo cáo</text>
+</g>
+<g id="node2" class="node">
+<title>F2</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="362.64,-132.2 156.21,-132.2 156.21,-87.8 362.64,-87.8 362.64,-132.2"/>
+<text xml:space="preserve" text-anchor="middle" x="259.43" y="-113.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hành động nào</text>
+<text xml:space="preserve" text-anchor="middle" x="259.43" y="-98.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Xem · Tạo · Sửa · Xóa · Xuất</text>
+</g>
+<g id="node3" class="node">
+<title>D1</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="538.2,-124.7 442.91,-124.7 442.91,-95.3 538.2,-95.3 538.2,-124.7"/>
+<text xml:space="preserve" text-anchor="middle" x="490.55" y="-106.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Toàn công ty</text>
+</g>
+<g id="edge2" class="edge">
+<title>F2&#45;&gt;D1</title>
+<path fill="none" stroke="#55606b" d="M374.64,-110C377.78,-110 380.91,-110 384.04,-110"/>
+<polygon fill="#55606b" stroke="#55606b" points="383.63,-112.28 390.13,-110 383.63,-107.73 383.63,-112.28"/>
+</g>
+<g id="node4" class="node">
+<title>D2</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="573.3,-177.7 407.81,-177.7 407.81,-148.3 573.3,-148.3 573.3,-177.7"/>
+<text xml:space="preserve" text-anchor="middle" x="490.55" y="-159.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Theo đơn vị / phòng ban</text>
+</g>
+<g id="node5" class="node">
+<title>D3</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="564.6,-230.7 416.5,-230.7 416.5,-201.3 564.6,-201.3 564.6,-230.7"/>
+<text xml:space="preserve" text-anchor="middle" x="490.55" y="-212.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Theo dự án được gán</text>
+</g>
+<g id="node6" class="node">
+<title>D4</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="577.46,-283.7 403.64,-283.7 403.64,-254.3 577.46,-254.3 577.46,-283.7"/>
+<text xml:space="preserve" text-anchor="middle" x="490.55" y="-265.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chỉ bản ghi do mình tạo</text>
+</g>
+<g id="node7" class="node">
+<title>A1</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="790.53,-283.7 623.67,-283.7 623.67,-254.3 790.53,-254.3 790.53,-283.7"/>
+<text xml:space="preserve" text-anchor="middle" x="707.1" y="-265.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Bước nào trong quy trình</text>
+</g>
+<g id="edge3" class="edge">
+<title>D4&#45;&gt;A1</title>
+<path fill="none" stroke="#55606b" d="M589.46,-269C592.58,-269 595.71,-269 598.84,-269"/>
+<polygon fill="#55606b" stroke="#55606b" points="598.45,-271.28 604.95,-269 598.45,-266.73 598.45,-271.28"/>
+</g>
+<g id="node8" class="node">
+<title>A2</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="767.93,-336.7 646.26,-336.7 646.26,-307.3 767.93,-307.3 767.93,-336.7"/>
+<text xml:space="preserve" text-anchor="middle" x="707.1" y="-318.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hạn mức giá trị</text>
+</g>
+<g id="node9" class="node">
+<title>A3</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="795.74,-389.7 618.46,-389.7 618.46,-360.3 795.74,-360.3 795.74,-389.7"/>
+<text xml:space="preserve" text-anchor="middle" x="707.1" y="-371.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Người duyệt thay khi vắng</text>
+</g>
+<g id="node11" class="node">
+<title>V</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="1069.02,-435.2 899.39,-435.2 899.39,-390.8 1069.02,-390.8 1069.02,-435.2"/>
+<text xml:space="preserve" text-anchor="middle" x="984.21" y="-416.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Dữ liệu &amp; nút bấm</text>
+<text xml:space="preserve" text-anchor="middle" x="984.21" y="-401.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">người dùng thực sự thấy</text>
+</g>
+<g id="edge4" class="edge">
+<title>A3&#45;&gt;V</title>
+<path fill="none" stroke="#55606b" d="M807.73,-388.76C835.02,-392.53 864.47,-396.6 891.31,-400.31"/>
+<polygon fill="#55606b" stroke="#55606b" points="890.8,-402.53 897.55,-401.17 891.42,-398.03 890.8,-402.53"/>
+</g>
+<g id="node10" class="node">
+<title>U</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="118.21,-64.2 0,-64.2 0,-19.8 118.21,-19.8 118.21,-64.2"/>
+<text xml:space="preserve" text-anchor="middle" x="59.1" y="-45.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Người dùng</text>
+<text xml:space="preserve" text-anchor="middle" x="59.1" y="-30.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Trần Quốc Bảo</text>
+</g>
+<g id="edge1" class="edge">
+<title>U&#45;&gt;F1</title>
+<path fill="none" stroke="#55606b" d="M118.53,-42C124.3,-42 130.29,-42 136.41,-42"/>
+<polygon fill="#55606b" stroke="#55606b" points="136.19,-44.28 142.69,-42 136.19,-39.73 136.19,-44.28"/>
+</g>
+<g id="node12" class="node">
+<title>ADM</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="756.13,-465.7 658.07,-465.7 658.07,-436.3 756.13,-436.3 756.13,-465.7"/>
+<text xml:space="preserve" text-anchor="middle" x="707.1" y="-447.25" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Vai trò Admin</text>
+</g>
+<g id="edge5" class="edge">
+<title>ADM&#45;&gt;V</title>
+<path fill="none" stroke="#7c8792" stroke-dasharray="5,2" d="M756.33,-444.34C793.55,-439.2 846.14,-431.93 891.32,-425.69"/>
+<polygon fill="#7c8792" stroke="#7c8792" points="891.46,-427.97 897.58,-424.83 890.83,-423.46 891.46,-427.97"/>
+<text xml:space="preserve" text-anchor="middle" x="849.06" y="-438.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">bỏ qua lớp 2</text>
+</g>
+</g>
+</svg></div><figcaption><b>Hình PF-02.1</b> Quyền được tính bằng giao của ba lớp, không phải hợp. Admin là ngoại lệ duy nhất bỏ qua lớp phạm vi dữ liệu — đúng yêu cầu “Admin là người được thấy toàn bộ”.</figcaption></figure>
+
+    <h4>Lưu đồ — cấp quyền cho một người dùng</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PF-02.2 Quyền thường có hiệu lực ngay; riêng quyền phê duyệt tài chính phải qua một cấp duyệt vì nó trực tiếp mở khóa dòng tiền."
+ viewBox="0.00 0.00 385.00 725.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 711.88)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="359.02,-698.92 106.71,-698.92 106.71,-669.52 359.02,-669.52 359.02,-698.92"/>
+<text xml:space="preserve" text-anchor="middle" x="232.87" y="-680.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Trưởng bộ phận mở hồ sơ người dùng</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="318.03,-634.52 147.7,-634.52 147.7,-590.12 318.03,-590.12 318.03,-634.52"/>
+<text xml:space="preserve" text-anchor="middle" x="232.87" y="-616.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chọn vai trò khởi tạo</text>
+<text xml:space="preserve" text-anchor="middle" x="232.87" y="-601.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">nạp sẵn bộ quyền gợi ý</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M232.87,-669.07C232.87,-661.48 232.87,-651.84 232.87,-642.71"/>
+<polygon fill="#55606b" stroke="#55606b" points="235.14,-642.9 232.87,-636.4 230.59,-642.9 235.14,-642.9"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="319.42,-555.12 146.31,-555.12 146.31,-510.72 319.42,-510.72 319.42,-555.12"/>
+<text xml:space="preserve" text-anchor="middle" x="232.87" y="-536.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tinh chỉnh lớp 1 và lớp 2</text>
+<text xml:space="preserve" text-anchor="middle" x="232.87" y="-521.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">theo thực tế công việc</text>
+</g>
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M232.87,-589.76C232.87,-581.54 232.87,-572.03 232.87,-563.21"/>
+<polygon fill="#55606b" stroke="#55606b" points="235.14,-563.38 232.87,-556.88 230.59,-563.38 235.14,-563.38"/>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="153.87,-475.72 31.47,-442.84 153.87,-409.96 276.26,-442.84 153.87,-475.72"/>
+<text xml:space="preserve" text-anchor="middle" x="153.87" y="-446.59" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Có cấp quyền</text>
+<text xml:space="preserve" text-anchor="middle" x="153.87" y="-431.59" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">phê duyệt tài chính?</text>
+</g>
+<g id="edge3" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M213.74,-510.6C204.33,-500.11 192.8,-487.25 182.37,-475.62"/>
+<polygon fill="#55606b" stroke="#55606b" points="184.08,-474.12 178.05,-470.8 180.7,-477.16 184.08,-474.12"/>
+</g>
+<g id="node5" class="node">
+<title>G</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="156.79,-188.2 14.94,-188.2 14.94,-158.8 156.79,-158.8 156.79,-188.2"/>
+<text xml:space="preserve" text-anchor="middle" x="85.87" y="-169.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lưu — hiệu lực ngay</text>
+</g>
+<g id="edge4" class="edge">
+<title>D&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M132.56,-415.51C113.94,-392.5 89.87,-362.76 89.87,-362.76 89.87,-362.76 87.39,-246.3 86.34,-196.57"/>
+<polygon fill="#55606b" stroke="#55606b" points="88.61,-196.61 86.2,-190.16 84.06,-196.71 88.61,-196.61"/>
+<text xml:space="preserve" text-anchor="middle" x="104.45" y="-291.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
+</g>
+<g id="node6" class="node">
+<title>E</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="275.77,-362.76 101.96,-362.76 101.96,-318.36 275.77,-318.36 275.77,-362.76"/>
+<text xml:space="preserve" text-anchor="middle" x="188.87" y="-344.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Trình Ban lãnh đạo duyệt</text>
+<text xml:space="preserve" text-anchor="middle" x="188.87" y="-329.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;03</text>
+</g>
+<g id="edge5" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M164.18,-412.3C168.76,-399.16 174.15,-383.74 178.71,-370.66"/>
+<polygon fill="#55606b" stroke="#55606b" points="180.8,-371.57 180.8,-364.69 176.51,-370.07 180.8,-371.57"/>
+<text xml:space="preserve" text-anchor="middle" x="182.56" y="-383.06" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Có</text>
+</g>
+<g id="node8" class="node">
+<title>H</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="166,-123.8 5.73,-123.8 5.73,-79.4 166,-79.4 166,-123.8"/>
+<text xml:space="preserve" text-anchor="middle" x="85.87" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi nhật ký + thông báo</text>
+<text xml:space="preserve" text-anchor="middle" x="85.87" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">tới người dùng · PF&#45;04</text>
+</g>
+<g id="edge9" class="edge">
+<title>G&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M85.87,-158.35C85.87,-150.76 85.87,-141.12 85.87,-131.99"/>
+<polygon fill="#55606b" stroke="#55606b" points="88.14,-132.18 85.87,-125.68 83.59,-132.18 88.14,-132.18"/>
+</g>
+<g id="node7" class="node">
+<title>F</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="204.87,-271.16 101.93,-253.28 204.87,-235.4 307.81,-253.28 204.87,-271.16"/>
+<text xml:space="preserve" text-anchor="middle" x="204.87" y="-249.53" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lãnh đạo duyệt?</text>
+</g>
+<g id="edge6" class="edge">
+<title>E&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M192.9,-318.04C195.15,-306.06 197.96,-291.1 200.29,-278.69"/>
+<polygon fill="#55606b" stroke="#55606b" points="202.5,-279.25 201.46,-272.44 198.03,-278.41 202.5,-279.25"/>
+</g>
+<g id="edge8" class="edge">
+<title>F&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M222.88,-268.18C247.29,-287.03 287.87,-318.36 287.87,-318.36 287.87,-318.36 287.87,-475.72 287.87,-475.72 287.87,-475.72 273.54,-490.36 259.51,-504.69"/>
+<polygon fill="#55606b" stroke="#55606b" points="257.95,-503.03 255.03,-509.27 261.2,-506.22 257.95,-503.03"/>
+<text xml:space="preserve" text-anchor="middle" x="308.95" y="-383.06" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Từ chối</text>
+</g>
+<g id="edge7" class="edge">
+<title>F&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M183.87,-238.55C164.48,-225.88 135.54,-206.96 114.13,-192.97"/>
+<polygon fill="#55606b" stroke="#55606b" points="115.41,-191.09 108.73,-189.44 112.92,-194.9 115.41,-191.09"/>
+<text xml:space="preserve" text-anchor="middle" x="168.38" y="-208.5" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Duyệt</text>
+</g>
+<g id="node9" class="node">
+<title>I</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="171.73,-44.4 0,-44.4 0,0 171.73,0 171.73,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="85.87" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phiên đăng nhập hiện tại</text>
+<text xml:space="preserve" text-anchor="middle" x="85.87" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">bị làm mới quyền</text>
+</g>
+<g id="edge10" class="edge">
+<title>H&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M85.87,-79.04C85.87,-70.82 85.87,-61.31 85.87,-52.49"/>
+<polygon fill="#55606b" stroke="#55606b" points="88.14,-52.66 85.87,-46.16 83.59,-52.66 88.14,-52.66"/>
+</g>
+</g>
+</svg></div><figcaption><b>Hình PF-02.2</b> Quyền thường có hiệu lực ngay; riêng quyền phê duyệt tài chính phải qua một cấp duyệt vì nó trực tiếp mở khóa dòng tiền.</figcaption></figure>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Người dùng</td><td class="k">user_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Gắn email công ty, số điện thoại (dùng cho OTP ký duyệt).</td></tr>
+          <tr><td>Vai trò khởi tạo</td><td class="k">role_id</td><td>Tham chiếu</td><td class="c">—</td><td>Chỉ nạp bộ quyền gợi ý một lần; sửa vai trò sau đó <b>không</b> ghi đè quyền đã tinh chỉnh.</td></tr>
+          <tr><td>Quyền chức năng</td><td class="k">perm[module][action]</td><td>Ma trận</td><td class="c req">✱</td><td>Giá trị: <code>full</code> ✓ · <code>read</code> Đ · <code>none</code> —, đúng ba mức của mockup.</td></tr>
+          <tr><td>Phạm vi dữ liệu</td><td class="k">data_scope</td><td>Chọn 1</td><td class="c req">✱</td><td><code>all</code> · <code>unit</code> · <code>project</code> · <code>own</code>.</td></tr>
+          <tr><td>Dự án được gán</td><td class="k">scope_projects[]</td><td>Danh sách</td><td class="c">—</td><td>Bắt buộc khi <code>data_scope = project</code>. Bổ sung tự động khi được thêm vào dự án ở <a href="BID-05.html">BID-05</a>.</td></tr>
+          <tr><td>Bước duyệt được giao</td><td class="k">approval_steps[]</td><td>Danh sách</td><td class="c">—</td><td>Mỗi phần tử: loại chứng từ + số cấp + hạn mức trần.</td></tr>
+          <tr><td>Hạn mức duyệt</td><td class="k">approval_limit</td><td>Số tiền</td><td class="c">—</td><td>Vượt hạn mức thì chứng từ tự đẩy lên cấp cao hơn thay vì báo lỗi.</td></tr>
+          <tr><td>Ủy quyền tạm</td><td class="k">delegate_to, from, to</td><td>Người + khoảng ngày</td><td class="c">—</td><td>Dùng khi đi công tác; nhật ký ghi cả người duyệt thật lẫn người được ủy quyền.</td></tr>
+          <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>active</code> · <code>suspended</code> · <code>disabled</code>. Vô hiệu hóa không xóa lịch sử phê duyệt.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Hai người cùng vai trò “Kế toán” nhưng khác phạm vi dữ liệu thì mở cùng một báo cáo sẽ ra hai tập số liệu khác nhau, không phải thông báo lỗi truy cập.</li>
+      <li>Ở Trung tâm phê duyệt, người dùng chỉ nhìn thấy chứng từ mà tên mình nằm trong danh sách người duyệt; Admin thấy toàn bộ.</li>
+      <li>Bỏ quyền của một người đang giữ chứng từ chờ duyệt thì chứng từ tự chuyển sang người duyệt thay, không bị kẹt.</li>
+      <li>Sửa bộ quyền của vai trò không âm thầm thay đổi quyền của những người đã được tinh chỉnh riêng.</li>
+      <li>Mọi thao tác cấp / thu hồi quyền hiện trong nhật ký hệ thống với đủ IP và thời điểm.</li>
+      <li>Người dùng bị vô hiệu hóa mất quyền đăng nhập ngay ở phiên đang mở, không cần chờ hết hạn phiên.</li>
+    </ol>
+
+    <h4>Mockup UI — Hệ thống › Vai trò &amp; quyền</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Hệ thống ›</span><b>Vai trò &amp; quyền</b><span class="sp"></span><span class="wf-btn">Xuất ma trận</span><span class="wf-btn pri">+ Thêm người dùng</span></div>
+      <div class="wf-body">
+        <div class="wf-chips"><span class="wf-chip">Người dùng</span><span class="wf-chip on">Vai trò &amp; quyền</span><span class="wf-chip">Nhật ký hệ thống</span></div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">1</span> Ma trận quyền chức năng theo phân hệ</div>
+          <table><thead><tr><th>Phân hệ</th><th>Giám đốc</th><th>TP Đấu thầu</th><th>KT trưởng</th><th>Thủ kho</th><th>Kỹ sư CT</th></tr></thead>
+          <tbody>
+            <tr><td>Đấu thầu</td><td>✓</td><td>✓</td><td>Đ</td><td>—</td><td>Đ</td></tr>
+            <tr><td>Đơn hàng — TQT</td><td>✓</td><td>Đ</td><td>Đ</td><td>Đ</td><td>Đ</td></tr>
+            <tr><td>Kho &amp; tồn kho</td><td>✓</td><td>Đ</td><td>✓</td><td>✓</td><td>Đ</td></tr>
+            <tr><td>Công nợ</td><td>✓</td><td>—</td><td>✓</td><td>—</td><td>—</td></tr>
+          </tbody></table>
+          <p style="margin:7px 0 0;font-size:11.5px;color:var(--ink-3)">✓ toàn quyền · Đ chỉ đọc · — không truy cập</p>
+        </div>
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">2</span> Phạm vi dữ liệu — Trần Quốc Bảo</div>
+            <div class="wf-f"><label>Phạm vi</label><div class="in">Theo dự án được gán <em>▾</em></div></div>
+            <div class="wf-f"><label>Dự án được gán</label><div class="in">DA-2026-014, DA-2026-011 <em>+ thêm</em></div></div>
+            <div class="wf-f"><label>Đơn vị</label><div class="in ro">Trụ sở chính · Phòng TCKT</div></div>
+          </div></div>
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">3</span> Quyền phê duyệt</div>
+            <div class="wf-f"><label>Bước được giao</label><div class="in">Đề xuất mua sắm — cấp 2 <em>▾</em></div></div>
+            <div class="wf-f"><label>Hạn mức trần</label><div class="in">1.000.000.000 đ</div></div>
+            <div class="wf-f"><label><span class="pin">4</span> Ủy quyền tạm</label><div class="in">Nguyễn Thị Hạnh · 01/08 → 08/08</div></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Sửa ma trận quyền</td><td>Bấm ô để xoay vòng ✓ → Đ → —. Sửa ở cột vai trò chỉ đổi bộ gợi ý; sửa ở hồ sơ cá nhân mới đổi quyền thật.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Đặt phạm vi dữ liệu</td><td>Chọn 1 trong 4 mức; chọn “theo dự án” thì bắt buộc gán ít nhất một dự án.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Giao bước duyệt &amp; hạn mức</td><td>Thêm nhiều dòng. Cảnh báo khi một bước duyệt không còn người nào đảm nhiệm.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Ủy quyền tạm thời</td><td>Chọn người thay và khoảng ngày; hết hạn tự thu hồi.</td></tr>
+          <tr><td class="c">—</td><td>Xuất ma trận</td><td>Xuất Excel toàn bộ ma trận quyền để rà soát định kỳ.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Quyền là giao của ba lớp.</b> Người dùng thấy một bản ghi khi và chỉ khi lớp chức năng cho phép hành động, lớp phạm vi dữ liệu chứa bản ghi, và (với thao tác duyệt) lớp quyền phê duyệt có tên họ ở bước hiện tại.<span class="then">Thiếu bất kỳ lớp nào thì bản ghi không hiện — không phải hiện rồi báo lỗi truy cập.</span></li>
+      <li><b>Vai trò chỉ nạp một lần.</b> Chọn vai trò khi tạo người dùng sẽ nạp bộ quyền gợi ý.<span class="then">Sửa định nghĩa vai trò về sau <b>không</b> ghi đè lên những người đã được tinh chỉnh riêng; hệ thống hiện danh sách người bị lệch so với vai trò để quản trị viên chủ động rà.</span></li>
+      <li><b>Admin bỏ qua lớp phạm vi.</b> Vai trò Admin hệ thống thấy toàn bộ dữ liệu mọi đơn vị, mọi dự án.<span class="then">Đây là ngoại lệ duy nhất; Admin vẫn bị ghi nhật ký như mọi người dùng khác.</span></li>
+      <li><b>Tự mở rộng phạm vi theo dự án.</b> Khi một người được thêm vào thành phần dự án ở <a href="BID-05.html">BID-05</a>, dự án đó tự được thêm vào <code>scope_projects</code> của họ.<span class="then">Không cần quản trị viên cấp quyền thủ công. Gỡ khỏi dự án thì quyền cũng tự thu hồi.</span></li>
+      <li><b>Quyền phê duyệt tài chính cần duyệt.</b> Cấp cho ai đó quyền duyệt phiếu chi, đề nghị thanh toán hoặc ghi giảm tài sản là một thay đổi phải trình Ban lãnh đạo.<span class="then">Trước khi được duyệt, quyền hiển thị trạng thái “chờ hiệu lực” và chưa dùng được.</span></li>
+      <li><b>Không để bước duyệt trống.</b> Thu hồi quyền của người cuối cùng đang đảm nhiệm một bước duyệt sẽ bị cảnh báo.<span class="then">Hệ thống liệt kê các chứng từ đang chờ ở bước đó và buộc chọn người thay trước khi lưu.</span></li>
+      <li><b>Ủy quyền có thời hạn.</b> Ủy quyền tạm luôn có ngày bắt đầu và ngày kết thúc.<span class="then">Hết hạn tự thu hồi. Trong thời gian ủy quyền, chứng từ hiện đồng thời tên người được giao gốc và tên người ký thay.</span></li>
+      <li><b>Vô hiệu hóa có hiệu lực tức thì.</b> Chuyển người dùng sang trạng thái <code>disabled</code> sẽ chấm dứt mọi phiên đăng nhập đang mở của họ.<span class="then">Chứng từ họ đang giữ ở bước duyệt tự chuyển sang người ủy quyền hoặc quay về hàng chờ của bước đó.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Chọn phạm vi “theo dự án” mà chưa gán dự án</td><td><code>data_scope = project</code> và <code>scope_projects</code> rỗng</td><td>“Chọn ít nhất một dự án cho phạm vi này, nếu không người dùng sẽ không thấy dữ liệu nào.”</td></tr>
+          <tr><td>Hạn mức duyệt lớn hơn hạn mức của cấp trên</td><td><code>approval_limit</code> vượt hạn mức bước kế tiếp</td><td>“Hạn mức {giá trị} vượt hạn mức của cấp duyệt kế tiếp ({giá trị}). Kiểm tra lại bảng hạn mức tại PF-03.”</td></tr>
+          <tr><td>Thu hồi người duyệt cuối cùng</td><td>Không còn ai đảm nhiệm bước</td><td>“Bước ‘{tên bước}’ sẽ không còn người duyệt. {n} chứng từ đang chờ ở bước này. Chọn người thay trước khi lưu.”</td></tr>
+          <tr><td>Ủy quyền cho chính mình</td><td><code>delegate_to = user_id</code></td><td>“Không ủy quyền cho chính mình. Chọn người khác trong danh sách.”</td></tr>
+          <tr><td>Khoảng ủy quyền ngược</td><td><code>from &gt; to</code></td><td>“Ngày kết thúc phải sau ngày bắt đầu.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-PF02-1</td><td>Hai kế toán viên A và B; A phạm vi toàn công ty, B chỉ DA-2026-014</td><td>Cả hai mở Sổ chi phí công trình cùng kỳ</td><td>A thấy mọi dự án, B chỉ thấy DA-2026-014; không ai gặp lỗi truy cập</td></tr>
+          <tr><td>UAT-PF02-2</td><td>Người dùng C không nằm trong bước duyệt nào</td><td>Mở Trung tâm phê duyệt</td><td>Tab “Chờ duyệt” hiển thị 0 lệnh; số trên chuông cũng bằng 0</td></tr>
+          <tr><td>UAT-PF02-3</td><td>Vai trò “Kế toán viên” đã được tinh chỉnh riêng cho D</td><td>Quản trị sửa bộ quyền của vai trò “Kế toán viên”</td><td>Quyền của D giữ nguyên; D xuất hiện trong danh sách “lệch so với vai trò”</td></tr>
+          <tr><td>UAT-PF02-4</td><td>E chưa có quyền trên DA-2026-020</td><td>P. Đấu thầu thêm E vào thành phần dự án DA-2026-020</td><td>E nhận thông báo và thấy ngay dữ liệu dự án mà không cần Admin can thiệp</td></tr>
+          <tr><td>UAT-PF02-5</td><td>F đang giữ 2 chứng từ chờ duyệt, đã ủy quyền cho G</td><td>Vô hiệu hóa tài khoản F</td><td>Phiên của F đóng ngay; 2 chứng từ chuyển sang hàng chờ của G</td></tr>
+          <tr><td>UAT-PF02-6</td><td>Cấp cho H quyền duyệt phiếu chi</td><td>Lưu thay đổi rồi để H mở Trung tâm phê duyệt</td><td>Quyền ở trạng thái “chờ hiệu lực”; H chưa thấy phiếu chi cho tới khi Ban lãnh đạo duyệt</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="PF-03.html">PF-03 trung tâm phê duyệt</a><a href="BID-05.html">BID-05 gán nhân sự dự án</a><a href="PL-B.html">Phụ lục B — ma trận quyền đề xuất</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 2 / 40</span><span><code>PF-02.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>
