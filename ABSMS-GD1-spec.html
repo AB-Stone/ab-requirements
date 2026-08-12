@@ -359,7 +359,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 <section class="block" id="kien-truc">
   <h2><em>§0.2</em>Kiến trúc phân hệ &amp; dòng dữ liệu</h2>
   <p class="intro">Xương sống của GĐ1 là một chuỗi chứng từ liên tục: BOQ mời thầu → hợp đồng → đơn hàng → phiếu xuất/nhập kho → chi phí → lãi lỗ. Mỗi mắt xích đều gắn <code>project_id</code>, nhờ đó lãi lỗ dự án được tính mà không cần đối chiếu thủ công.</p>
-  <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình 0.1 Dòng chứng từ xuyên phòng ban. Mọi nhánh đều đổ về khối tập hợp chi phí theo khoản mục — đây là điều kiện đủ để tính lãi lỗ dự án ở GĐ1. Nét đứt là dòng doanh thu, nét liền là dòng chứng từ tác nghiệp."
+  <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1741px;margin:0 auto"><svg role="img" aria-label="Hình 0.1 Dòng chứng từ xuyên phòng ban. Mọi nhánh đều đổ về khối tập hợp chi phí theo khoản mục — đây là điều kiện đủ để tính lãi lỗ dự án ở GĐ1. Nét đứt là dòng doanh thu, nét liền là dòng chứng từ tác nghiệp."
  viewBox="0.00 0.00 1741.00 383.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 370.16)">
 <title>G</title>
@@ -670,7 +670,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Yêu cầu gốc nêu rõ form nhập liệu phải có “mã dự án, mã khoản mục chi phí, mã thống kê, tick chi phí hợp lý”. Đặc tả này định nghĩa các danh mục đó một lần, cùng quy tắc sinh mã, để mọi chứng từ ở 35 đặc tả còn lại chỉ việc chọn từ danh mục thay vì gõ tay.</p>
 
     <h4>Lưu đồ — vòng đời một mã dự án</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PF-01.1 project_id sinh một lần tại bước ký hợp đồng rồi bám theo mọi chứng từ. Nhánh nét đứt là quy tắc chặn: chứng từ chi phí không gắn dự án không được ghi sổ, trừ khi đánh dấu “chi phí chung” để chờ phân bổ ở ACC-08."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:905px;margin:0 auto"><svg role="img" aria-label="Hình PF-01.1 project_id sinh một lần tại bước ký hợp đồng rồi bám theo mọi chứng từ. Nhánh nét đứt là quy tắc chặn: chứng từ chi phí không gắn dự án không được ghi sổ, trừ khi đánh dấu “chi phí chung” để chờ phân bổ ở ACC-08."
  viewBox="0.00 0.00 905.00 412.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 399.36)">
 <title>G</title>
@@ -956,7 +956,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Tách quyền thành ba lớp độc lập để một người có thể “được xem toàn bộ phân hệ Kho nhưng chỉ của dự án mình phụ trách, và chỉ được duyệt phiếu dưới 500 triệu”. Bảng yêu cầu nêu ba ràng buộc phải thỏa: giới hạn xem dữ liệu nội bộ phòng ban; người được phân quyền chỉ thấy các phê duyệt có tên mình; Admin thấy toàn bộ.</p>
 
     <h4>Ba lớp quyền</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PF-02.1 Quyền được tính bằng giao của ba lớp, không phải hợp. Admin là ngoại lệ duy nhất bỏ qua lớp phạm vi dữ liệu — đúng yêu cầu “Admin là người được thấy toàn bộ”."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1095px;margin:0 auto"><svg role="img" aria-label="Hình PF-02.1 Quyền được tính bằng giao của ba lớp, không phải hợp. Admin là ngoại lệ duy nhất bỏ qua lớp phạm vi dữ liệu — đúng yêu cầu “Admin là người được thấy toàn bộ”."
  viewBox="0.00 0.00 1095.00 492.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 478.66)">
 <title>G</title>
@@ -1069,7 +1069,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 </svg></div><figcaption><b>Hình PF-02.1</b> Quyền được tính bằng giao của ba lớp, không phải hợp. Admin là ngoại lệ duy nhất bỏ qua lớp phạm vi dữ liệu — đúng yêu cầu “Admin là người được thấy toàn bộ”.</figcaption></figure>
 
     <h4>Lưu đồ — cấp quyền cho một người dùng</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PF-02.2 Quyền thường có hiệu lực ngay; riêng quyền phê duyệt tài chính phải qua một cấp duyệt vì nó trực tiếp mở khóa dòng tiền."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:385px;margin:0 auto"><svg role="img" aria-label="Hình PF-02.2 Quyền thường có hiệu lực ngay; riêng quyền phê duyệt tài chính phải qua một cấp duyệt vì nó trực tiếp mở khóa dòng tiền."
  viewBox="0.00 0.00 385.00 725.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 711.88)">
 <title>G</title>
@@ -1322,7 +1322,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th>Nhóm</th><th>Chứng từ</th><th>Chuỗi duyệt mặc định</th><th class="c">Đặc tả</th></tr></thead>
         <tbody>
-          <tr><td>Đấu thầu</td><td>Báo giá gửi đối tác · quyết định hủy thầu</td><td>TP Đấu thầu → Ban lãnh đạo</td><td class="k"><a href="#BID-03">BID-03</a>, <a href="#BID-04">BID-04</a></td></tr>
+          <tr><td>Đấu thầu</td><td>Báo giá gửi đối tác</td><td>TP Đấu thầu → Ban lãnh đạo</td><td class="k"><a href="#BID-03">BID-03</a></td></tr>
           <tr><td>Hợp đồng</td><td>Hợp đồng thi công (ký số nhiều bước)</td><td>TP Đấu thầu → KT trưởng → Tổng GĐ</td><td class="k"><a href="#BID-05">BID-05</a></td></tr>
           <tr><td>Đơn hàng</td><td>Đơn hàng sản xuất · đơn cập nhật · đơn hủy</td><td>TP TQT → Ban lãnh đạo</td><td class="k"><a href="#ORD-03">ORD-03</a>, <a href="#ORD-07">ORD-07</a></td></tr>
           <tr><td>Giá bán</td><td>Bảng áp giá doanh thu đơn hàng</td><td>P. Đấu thầu → Ban lãnh đạo</td><td class="k"><a href="#ORD-06">ORD-06</a></td></tr>
@@ -1335,7 +1335,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Lưu đồ — vòng đời một phiên duyệt</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PF-03.1 Ba lối ra của một bước duyệt. “Yêu cầu bổ sung” khác “Từ chối”: nó trả chứng từ về người lập để sửa rồi trình lại, giữ nguyên số hiệu và toàn bộ lịch sử — đây chính là tình huống 7.2 trong bảng yêu cầu."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:843px;margin:0 auto"><svg role="img" aria-label="Hình PF-03.1 Ba lối ra của một bước duyệt. “Yêu cầu bổ sung” khác “Từ chối”: nó trả chứng từ về người lập để sửa rồi trình lại, giữ nguyên số hiệu và toàn bộ lịch sử — đây chính là tình huống 7.2 trong bảng yêu cầu."
  viewBox="0.00 0.00 843.00 611.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 598.08)">
 <title>G</title>
@@ -1697,7 +1697,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Thông báo phải <em>tự nó nói đủ nội dung</em> — người nhận không cần mở chứng từ mới biết việc gì. Kèm theo đó là cơ chế ký điện tử để thay thế biên bản ký tay ở các bước xác nhận giao nhận hàng và phê duyệt.</p>
 
     <h4>Lưu đồ — từ sự kiện tới hành động</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PF-04.1 Thông báo là lối vào chứng từ, không phải bản tin rời rạc. Mỗi thông báo mang đủ ngữ cảnh để quyết định có mở hay không, và dẫn thẳng tới đúng vị trí cần xử lý."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1989px;margin:0 auto"><svg role="img" aria-label="Hình PF-04.1 Thông báo là lối vào chứng từ, không phải bản tin rời rạc. Mỗi thông báo mang đủ ngữ cảnh để quyết định có mở hay không, và dẫn thẳng tới đúng vị trí cần xử lý."
  viewBox="0.00 0.00 1989.00 182.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 168.86)">
 <title>G</title>
@@ -1976,7 +1976,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>BOQ được sửa nhiều vòng trong đàm phán, bản vẽ shop được đối tác trả lại nhiều lần. Nếu chỉ lưu tệp mới nhất thì mất dấu vết thương thảo. Đặc tả này quy định mọi tệp đều có phiên bản, và tệp gắn vào chứng từ đã duyệt thì bị đóng băng.</p>
 
     <h4>Lưu đồ — vòng đời một tệp</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PF-05.1 Ranh giới quan trọng là mốc phê duyệt: trước mốc tệp còn sửa được, sau mốc tệp trở thành bằng chứng và chỉ đọc."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:326px;margin:0 auto"><svg role="img" aria-label="Hình PF-05.1 Ranh giới quan trọng là mốc phê duyệt: trước mốc tệp còn sửa được, sau mốc tệp trở thành bằng chứng và chỉ đọc."
  viewBox="0.00 0.00 326.00 740.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 726.88)">
 <title>G</title>
@@ -2221,7 +2221,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Ghi nhận gói thầu ngay khi nhận thư mời, kèm BOQ mời thầu bản gốc. Từ thời điểm này gói thầu có mã riêng và mọi tài liệu phát sinh sau đó — BOQ cập nhật, báo giá, hợp đồng — đều bám vào mã đó.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-01.1 Nhánh rẽ theo định dạng BOQ quyết định mức số hóa. Chỉ khi bảng đầu việc đã vào hệ thống thì bước thẩm định ở BID-02 mới đối chiếu được từng dòng."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:526px;margin:0 auto"><svg role="img" aria-label="Hình BID-01.1 Nhánh rẽ theo định dạng BOQ quyết định mức số hóa. Chỉ khi bảng đầu việc đã vào hệ thống thì bước thẩm định ở BID-02 mới đối chiếu được từng dòng."
  viewBox="0.00 0.00 526.00 592.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 579.52)">
 <title>G</title>
@@ -2464,7 +2464,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Yêu cầu gốc tách rõ hai việc: P. TQT “kiểm tra tính đủ/thiếu, đúng/sai đầu việc, khối lượng, quy cách”; Ban dự án “bố trí nhân sự đi kiểm tra mặt bằng/thực tế công trình để bổ sung các biện pháp thi công khó, phát sinh chi phí nếu có”. Hai việc này độc lập nhau nên phải chạy song song, nhưng kết quả phải hợp nhất trước khi áp giá.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-02.1 Hai phiếu chạy song song nhưng có một điểm hợp nhất bắt buộc. Vòng lặp “làm rõ với bên mời thầu” là lý do BOQ phải có nhiều phiên bản (PF-05)."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:551px;margin:0 auto"><svg role="img" aria-label="Hình BID-02.1 Hai phiếu chạy song song nhưng có một điểm hợp nhất bắt buộc. Vòng lặp “làm rõ với bên mời thầu” là lý do BOQ phải có nhiều phiên bản (PF-05)."
  viewBox="0.00 0.00 551.00 770.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 757.48)">
 <title>G</title>
@@ -2792,7 +2792,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Đây là nơi quyết định biên lợi nhuận của cả dự án. Màn hình áp giá phải đặt cạnh nhau <em>giá vốn ước tính</em> và <em>giá chào</em> để người duyệt thấy ngay biên lợi nhuận từng dòng, thay vì chỉ thấy tổng giá chào. Cấu phần giá vốn lấy từ định mức vật tư, giá khoán nhân công tham chiếu, và chi phí biện pháp thi công khó do <a href="#BID-02">BID-02</a> chuyển sang.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-03.1 Vòng lặp thương thảo có một chốt chặn: khi giảm giá làm biên lợi nhuận rơi dưới ngưỡng tối thiểu do Ban lãnh đạo đặt, hệ thống buộc trình duyệt lại thay vì cho phép nhân viên tự quyết."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:729px;margin:0 auto"><svg role="img" aria-label="Hình BID-03.1 Vòng lặp thương thảo có một chốt chặn: khi giảm giá làm biên lợi nhuận rơi dưới ngưỡng tối thiểu do Ban lãnh đạo đặt, hệ thống buộc trình duyệt lại thay vì cho phép nhân viên tự quyết."
  viewBox="0.00 0.00 729.00 1012.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 998.64)">
 <title>G</title>
@@ -3102,208 +3102,142 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
   <header class="tb">
     <div class="tb-id">BID-04</div>
     <div class="tb-main">
-      <h3>Hủy gói thầu / dự án</h3>
-      <p>Yêu cầu gốc chỉ có một câu: “Thể hiện chi tiết lý do hủy dự án”. Đặc tả biến câu đó thành dữ liệu có cấu trúc để phân tích tỷ lệ trúng thầu và nguyên nhân thua.</p>
+      <h3>Hủy gói thầu &amp; thông báo các bộ phận</h3>
+      <p>Đóng gói thầu không theo đuổi nữa và báo cho các bộ phận biết. Giữ ở mức tối thiểu: một thao tác đánh dấu hủy, một thông báo — không dựng thêm quy trình duyệt hay dữ liệu phân tích.</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu</dd></div>
-        <div><dt>Phê duyệt</dt><dd>1 cấp — Ban lãnh đạo</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Không</dd></div>
         <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · trưởng các BP · dự án liên quan</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>ĐT · dòng 4.1</dd></div>
       </dl>
     </div>
   </header>
   <div class="sb">
+    <div class="note">
+      <b>Phạm vi cố ý giữ hẹp</b>
+      <p style="margin:0">Hiện công ty hầu như không tự đứng ra tham gia thầu, nên bước này không cần quy trình duyệt, không cần ghi nhận giá đối thủ, chi phí theo đuổi hay thống kê tỷ lệ trúng thầu. Chức năng duy nhất cần có: <b>đánh dấu gói thầu đã hủy và thông báo cho các bộ phận biết là không tham gia nữa</b>. Nếu về sau công ty tham gia thầu thường xuyên, phần phân tích hiệu quả đấu thầu có thể bổ sung mà không phá vỡ cấu trúc hiện tại.</p>
+    </div>
+
     <h4>Mục tiêu</h4>
-    <p>Đóng gói thầu một cách có kiểm soát: ghi lý do theo danh mục chuẩn (để thống kê được), giải phóng nguồn lực đã dự trù, và giữ lại toàn bộ BOQ đã dựng để tái sử dụng cho gói thầu tương tự sau này.</p>
+    <p>Yêu cầu gốc ghi “thể hiện chi tiết lý do hủy dự án”. Ở mức tối thiểu, điều đó nghĩa là: gói thầu có trạng thái <em>đã hủy</em> kèm lý do đọc được, và các bộ phận đang theo dõi gói thầu đó nhận được thông báo để dừng công việc liên quan — thay vì tự phát hiện qua trao đổi miệng.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-04.1 Hủy là một quyết định có phê duyệt, không phải thao tác xóa. Lãnh đạo có quyền bác đề nghị hủy để yêu cầu đàm phán tiếp."
- viewBox="0.00 0.00 658.00 663.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 650.28)">
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:420px;margin:0 auto"><svg role="img" aria-label="Hình BID-04.1 Một thao tác, hai kết quả: gói thầu đóng lại và các bộ phận được báo. Không có bước phê duyệt vì bảng yêu cầu gốc để trống cột phê duyệt ở dòng này."
+ viewBox="0.00 0.00 420.00 457.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 444.36)">
 <title>G</title>
 <g id="node1" class="node">
 <title>A</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="254.06,-637.32 109.46,-637.32 109.46,-592.92 254.06,-592.92 254.06,-637.32"/>
-<text xml:space="preserve" text-anchor="middle" x="181.76" y="-618.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Không chốt được giá</text>
-<text xml:space="preserve" text-anchor="middle" x="181.76" y="-603.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">hoặc đối tác từ chối</text>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="265.92,-431.4 85.18,-431.4 85.18,-387 265.92,-387 265.92,-431.4"/>
+<text xml:space="preserve" text-anchor="middle" x="175.55" y="-412.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Không chốt được giá</text>
+<text xml:space="preserve" text-anchor="middle" x="175.55" y="-397.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">hoặc chủ đầu tư hủy thầu</text>
 </g>
 <g id="node2" class="node">
 <title>B</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="272.49,-557.92 91.03,-557.92 91.03,-513.52 272.49,-513.52 272.49,-557.92"/>
-<text xml:space="preserve" text-anchor="middle" x="181.76" y="-539.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lập đề nghị hủy gói thầu</text>
-<text xml:space="preserve" text-anchor="middle" x="181.76" y="-524.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chọn lý do theo danh mục</text>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="266.62,-354 84.48,-354 84.48,-309.6 266.62,-309.6 266.62,-354"/>
+<text xml:space="preserve" text-anchor="middle" x="175.55" y="-335.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">P. Đấu thầu đánh dấu Hủy</text>
+<text xml:space="preserve" text-anchor="middle" x="175.55" y="-320.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">nhập lý do ngắn gọn</text>
 </g>
 <g id="edge1" class="edge">
 <title>A&#45;&gt;B</title>
-<path fill="none" stroke="#55606b" d="M181.76,-592.56C181.76,-584.34 181.76,-574.83 181.76,-566.01"/>
-<polygon fill="#55606b" stroke="#55606b" points="184.03,-566.18 181.76,-559.68 179.48,-566.18 184.03,-566.18"/>
+<path fill="none" stroke="#55606b" d="M175.55,-386.8C175.55,-379.15 175.55,-370.41 175.55,-362.21"/>
+<polygon fill="#55606b" stroke="#55606b" points="177.83,-362.27 175.55,-355.77 173.28,-362.27 177.83,-362.27"/>
 </g>
 <g id="node3" class="node">
 <title>C</title>
-<polygon fill="#eef2f5" stroke="#5d6b7a" points="181.76,-478.52 127.45,-445.64 181.76,-412.76 236.07,-445.64 181.76,-478.52"/>
-<text xml:space="preserve" text-anchor="middle" x="181.76" y="-449.39" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lý do là</text>
-<text xml:space="preserve" text-anchor="middle" x="181.76" y="-434.39" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">thua giá?</text>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="287.81,-276.6 63.3,-276.6 63.3,-232.2 287.81,-232.2 287.81,-276.6"/>
+<text xml:space="preserve" text-anchor="middle" x="175.55" y="-258.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Gói thầu chuyển trạng thái Đã hủy</text>
+<text xml:space="preserve" text-anchor="middle" x="175.55" y="-243.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">rời khỏi hàng chờ việc</text>
 </g>
 <g id="edge2" class="edge">
 <title>B&#45;&gt;C</title>
-<path fill="none" stroke="#55606b" d="M181.76,-513.4C181.76,-505.37 181.76,-495.94 181.76,-486.75"/>
-<polygon fill="#55606b" stroke="#55606b" points="184.03,-486.79 181.76,-480.29 179.48,-486.79 184.03,-486.79"/>
+<path fill="none" stroke="#55606b" d="M175.55,-309.4C175.55,-301.75 175.55,-293.01 175.55,-284.81"/>
+<polygon fill="#55606b" stroke="#55606b" points="177.83,-284.87 175.55,-278.37 173.28,-284.87 177.83,-284.87"/>
 </g>
 <g id="node4" class="node">
 <title>D</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="183.52,-365.56 0,-365.56 0,-321.16 183.52,-321.16 183.52,-365.56"/>
-<text xml:space="preserve" text-anchor="middle" x="91.76" y="-347.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhập giá trúng của đối thủ</text>
-<text xml:space="preserve" text-anchor="middle" x="91.76" y="-332.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">nếu nắm được</text>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="173.1,-199.2 0,-199.2 0,-154.8 173.1,-154.8 173.1,-199.2"/>
+<text xml:space="preserve" text-anchor="middle" x="86.55" y="-180.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đóng băng BOQ và tài liệu</text>
+<text xml:space="preserve" text-anchor="middle" x="86.55" y="-165.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">giữ nguyên để tra cứu</text>
 </g>
 <g id="edge3" class="edge">
 <title>C&#45;&gt;D</title>
-<path fill="none" stroke="#55606b" d="M163.11,-423.86C149.54,-408.74 131.03,-388.11 116.26,-371.66"/>
-<polygon fill="#55606b" stroke="#55606b" points="118.05,-370.25 112.02,-366.93 114.66,-373.29 118.05,-370.25"/>
-<text xml:space="preserve" text-anchor="middle" x="143.79" y="-385.86" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Có</text>
+<path fill="none" stroke="#55606b" d="M150.28,-232C140.23,-223.48 128.56,-213.59 117.97,-204.62"/>
+<polygon fill="#55606b" stroke="#55606b" points="119.46,-202.9 113.03,-200.44 116.52,-206.37 119.46,-202.9"/>
 </g>
 <g id="node5" class="node">
 <title>E</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="338.46,-358.06 207.06,-358.06 207.06,-328.66 338.46,-328.66 338.46,-358.06"/>
-<text xml:space="preserve" text-anchor="middle" x="272.76" y="-339.61" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Mô tả chi tiết lý do</text>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="332.35,-199.2 196.75,-199.2 196.75,-154.8 332.35,-154.8 332.35,-199.2"/>
+<text xml:space="preserve" text-anchor="middle" x="264.55" y="-180.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phát một thông báo</text>
+<text xml:space="preserve" text-anchor="middle" x="264.55" y="-165.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;04</text>
 </g>
 <g id="edge4" class="edge">
 <title>C&#45;&gt;E</title>
-<path fill="none" stroke="#55606b" d="M200.62,-423.86C216.61,-406.23 239.39,-381.13 255.05,-363.87"/>
-<polygon fill="#55606b" stroke="#55606b" points="256.37,-365.81 259.05,-359.47 253,-362.75 256.37,-365.81"/>
-<text xml:space="preserve" text-anchor="middle" x="253.99" y="-385.86" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
+<path fill="none" stroke="#55606b" d="M200.82,-232C210.87,-223.48 222.54,-213.59 233.13,-204.62"/>
+<polygon fill="#55606b" stroke="#55606b" points="234.58,-206.37 238.07,-200.44 231.64,-202.9 234.58,-206.37"/>
 </g>
 <g id="node6" class="node">
 <title>F</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="268.66,-286.16 94.86,-286.16 94.86,-241.76 268.66,-241.76 268.66,-286.16"/>
-<text xml:space="preserve" text-anchor="middle" x="181.76" y="-267.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Trình Ban lãnh đạo duyệt</text>
-<text xml:space="preserve" text-anchor="middle" x="181.76" y="-252.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;03 · 1 cấp</text>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="380.29,-121.8 148.81,-121.8 148.81,-77.4 380.29,-77.4 380.29,-121.8"/>
+<text xml:space="preserve" text-anchor="middle" x="264.55" y="-103.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ban lãnh đạo · trưởng các bộ phận</text>
+<text xml:space="preserve" text-anchor="middle" x="264.55" y="-88.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">· dự án liên quan</text>
 </g>
 <g id="edge5" class="edge">
-<title>D&#45;&gt;F</title>
-<path fill="none" stroke="#55606b" d="M116.83,-320.8C127.36,-311.74 139.72,-301.11 150.81,-291.58"/>
-<polygon fill="#55606b" stroke="#55606b" points="152.23,-293.35 155.68,-287.39 149.27,-289.9 152.23,-293.35"/>
-</g>
-<g id="edge6" class="edge">
 <title>E&#45;&gt;F</title>
-<path fill="none" stroke="#55606b" d="M256.07,-328.16C244.04,-317.93 227.44,-303.81 212.98,-291.51"/>
-<polygon fill="#55606b" stroke="#55606b" points="214.51,-289.83 208.09,-287.35 211.57,-293.3 214.51,-289.83"/>
+<path fill="none" stroke="#55606b" d="M264.55,-154.6C264.55,-146.95 264.55,-138.21 264.55,-130.01"/>
+<polygon fill="#55606b" stroke="#55606b" points="266.83,-130.07 264.55,-123.57 262.28,-130.07 266.83,-130.07"/>
 </g>
 <g id="node7" class="node">
 <title>G</title>
-<polygon fill="#eef2f5" stroke="#5d6b7a" points="181.76,-206.76 51.73,-188.88 181.76,-171 311.79,-188.88 181.76,-206.76"/>
-<text xml:space="preserve" text-anchor="middle" x="181.76" y="-185.13" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lãnh đạo duyệt hủy?</text>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="394.18,-44.4 134.92,-44.4 134.92,0 394.18,0 394.18,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="264.55" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nội dung: gói thầu / BOQ / dự án đã hủy</text>
+<text xml:space="preserve" text-anchor="middle" x="264.55" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">công ty không tham gia nữa</text>
 </g>
-<g id="edge7" class="edge">
+<g id="edge6" class="edge">
 <title>F&#45;&gt;G</title>
-<path fill="none" stroke="#55606b" d="M181.76,-241.43C181.76,-233.13 181.76,-223.59 181.76,-214.98"/>
-<polygon fill="#55606b" stroke="#55606b" points="184.03,-215.11 181.76,-208.61 179.48,-215.11 184.03,-215.11"/>
-</g>
-<g id="node8" class="node">
-<title>H</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="165.13,-123.8 50.39,-123.8 50.39,-79.4 165.13,-79.4 165.13,-123.8"/>
-<text xml:space="preserve" text-anchor="middle" x="107.76" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Mở lại gói thầu</text>
-<text xml:space="preserve" text-anchor="middle" x="107.76" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">quay về BID&#45;03</text>
-</g>
-<g id="edge8" class="edge">
-<title>G&#45;&gt;H</title>
-<path fill="none" stroke="#55606b" d="M159.92,-173.71C145.61,-164.42 129.54,-154 129.54,-154 129.54,-154 124.95,-143.15 119.98,-131.43"/>
-<polygon fill="#55606b" stroke="#55606b" points="122.09,-130.59 117.46,-125.49 117.9,-132.37 122.09,-130.59"/>
-<text xml:space="preserve" text-anchor="middle" x="189.15" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Yêu cầu đàm phán tiếp</text>
-</g>
-<g id="node9" class="node">
-<title>I</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="414.02,-116.3 189.5,-116.3 189.5,-86.9 414.02,-86.9 414.02,-116.3"/>
-<text xml:space="preserve" text-anchor="middle" x="301.76" y="-97.85" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Gói thầu chuyển trạng thái Đã hủy</text>
-</g>
-<g id="edge9" class="edge">
-<title>G&#45;&gt;I</title>
-<path fill="none" stroke="#55606b" d="M209.03,-174.49C228.32,-165.02 250.76,-154 250.76,-154 250.76,-154 267.88,-136.75 282.28,-122.23"/>
-<polygon fill="#55606b" stroke="#55606b" points="283.79,-123.94 286.76,-117.72 280.56,-120.73 283.79,-123.94"/>
-<text xml:space="preserve" text-anchor="middle" x="290.9" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Duyệt hủy</text>
-</g>
-<g id="node10" class="node">
-<title>J</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="189.67,-44.4 15.85,-44.4 15.85,0 189.67,0 189.67,-44.4"/>
-<text xml:space="preserve" text-anchor="middle" x="102.76" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đóng băng toàn bộ tài liệu</text>
-<text xml:space="preserve" text-anchor="middle" x="102.76" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">giữ nguyên để tra cứu</text>
-</g>
-<g id="edge10" class="edge">
-<title>I&#45;&gt;J</title>
-<path fill="none" stroke="#55606b" d="M265.26,-86.4C237.41,-75.57 198.37,-60.39 165.53,-47.62"/>
-<polygon fill="#55606b" stroke="#55606b" points="166.49,-45.55 159.61,-45.31 164.84,-49.79 166.49,-45.55"/>
-</g>
-<g id="node11" class="node">
-<title>K</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="390.05,-44.4 213.47,-44.4 213.47,0 390.05,0 390.05,-44.4"/>
-<text xml:space="preserve" text-anchor="middle" x="301.76" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Thông báo trưởng các BP</text>
-<text xml:space="preserve" text-anchor="middle" x="301.76" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">và dự án liên quan · PF&#45;04</text>
-</g>
-<g id="edge11" class="edge">
-<title>I&#45;&gt;K</title>
-<path fill="none" stroke="#55606b" d="M301.76,-86.4C301.76,-76.9 301.76,-64.05 301.76,-52.42"/>
-<polygon fill="#55606b" stroke="#55606b" points="304.03,-52.63 301.76,-46.13 299.48,-52.63 304.03,-52.63"/>
-</g>
-<g id="node12" class="node">
-<title>L</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="631.89,-44.4 413.63,-44.4 413.63,0 631.89,0 631.89,-44.4"/>
-<text xml:space="preserve" text-anchor="middle" x="522.76" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi vào thống kê tỷ lệ trúng thầu</text>
-<text xml:space="preserve" text-anchor="middle" x="522.76" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">RPT&#45;02</text>
-</g>
-<g id="edge12" class="edge">
-<title>I&#45;&gt;L</title>
-<path fill="none" stroke="#55606b" d="M342.29,-86.4C373.49,-75.48 417.31,-60.13 453.97,-47.29"/>
-<polygon fill="#55606b" stroke="#55606b" points="454.38,-49.56 459.77,-45.26 452.88,-45.26 454.38,-49.56"/>
+<path fill="none" stroke="#55606b" d="M264.55,-77.2C264.55,-69.55 264.55,-60.81 264.55,-52.61"/>
+<polygon fill="#55606b" stroke="#55606b" points="266.83,-52.67 264.55,-46.17 262.28,-52.67 266.83,-52.67"/>
 </g>
 </g>
-</svg></div><figcaption><b>Hình BID-04.1</b> Hủy là một quyết định có phê duyệt, không phải thao tác xóa. Lãnh đạo có quyền bác đề nghị hủy để yêu cầu đàm phán tiếp.</figcaption></figure>
+</svg></div><figcaption><b>Hình BID-04.1</b> Một thao tác, hai kết quả: gói thầu đóng lại và các bộ phận được báo. Không có bước phê duyệt vì bảng yêu cầu gốc để trống cột phê duyệt ở dòng này.</figcaption></figure>
 
     <h4>Tham số</h4>
     <div class="tw">
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Nhóm lý do</td><td class="k">cancel_reason</td><td>Chọn 1</td><td class="c req">✱</td><td><code>thua giá</code> · <code>không đạt yêu cầu kỹ thuật</code> · <code>tiến độ không khả thi</code> · <code>rủi ro thanh toán của CĐT</code> · <code>công ty chủ động rút</code> · <code>CĐT hủy thầu</code> · <code>khác</code>.</td></tr>
-          <tr><td>Mô tả chi tiết</td><td class="k">cancel_note</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Tối thiểu 30 ký tự — chặn ghi kiểu “không đạt”.</td></tr>
-          <tr><td>Giá trúng của đối thủ</td><td class="k">rival_price</td><td>Số tiền</td><td class="c">—</td><td>Chỉ hiện khi lý do là “thua giá”; dùng đối chiếu mặt bằng giá thị trường.</td></tr>
-          <tr><td>Đối thủ trúng thầu</td><td class="k">rival_name</td><td>Chuỗi</td><td class="c">—</td><td>—</td></tr>
-          <tr><td>Chi phí đã bỏ ra</td><td class="k">sunk_cost</td><td>Số tiền</td><td class="c">—</td><td>Chi phí khảo sát, hồ sơ dự thầu, bảo lãnh — ghi nhận thành chi phí bán hàng ở <a href="#ACC-08">ACC-08</a>.</td></tr>
-          <tr><td>Bài học rút ra</td><td class="k">lesson</td><td>Chuỗi dài</td><td class="c">—</td><td>Hiện lại khi mở gói thầu mới của cùng đối tác.</td></tr>
+          <tr><td>Gói thầu</td><td class="k">tender_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc.</td></tr>
+          <tr><td>Lý do hủy</td><td class="k">cancel_note</td><td>Chuỗi</td><td class="c req">✱</td><td>Nhập tự do, một hai câu. Nội dung này đi thẳng vào thông báo nên cần đọc là hiểu.</td></tr>
+          <tr><td>Người hủy · thời điểm</td><td class="k">cancelled_by, cancelled_at</td><td>Hệ thống</td><td class="c req">✱</td><td>Ghi tự động theo người đang đăng nhập.</td></tr>
+          <tr><td>Nơi nhận thông báo</td><td class="k">notify_to[]</td><td>Danh sách</td><td class="c req">✱</td><td>Mặc định gồm Ban lãnh đạo, trưởng các bộ phận và những người đã được gán vào gói thầu. Cho thêm người nhận trước khi gửi.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Gói thầu đã hủy không còn xuất hiện ở hàng chờ việc nhưng vẫn tra cứu được đầy đủ.</li>
-      <li>Lý do hủy có cấu trúc nên tổng hợp được tỷ lệ trúng / trượt theo nguyên nhân, theo đối tác, theo vùng miền.</li>
-      <li>Toàn bộ BOQ và bảng áp giá được giữ nguyên, sao chép được sang gói thầu mới.</li>
-      <li>Chi phí đã bỏ ra được đẩy sang kế toán ghi nhận, không bị bỏ sót khỏi báo cáo.</li>
-      <li>Trưởng các bộ phận và dự án liên quan nhận thông báo kèm lý do, không phải hỏi lại.</li>
+      <li>Gói thầu chuyển trạng thái “Đã hủy” và biến khỏi hàng chờ việc của mọi bộ phận.</li>
+      <li>Các bộ phận nhận đúng một thông báo, đọc là biết gói thầu nào, dự án nào, lý do gì.</li>
+      <li>BOQ và toàn bộ tài liệu được giữ nguyên, tra cứu được, và sao chép được sang gói thầu mới nếu sau này có cơ hội tương tự.</li>
+      <li>Hủy nhầm thì mở lại được gói thầu, có ghi nhật ký người mở và thời điểm.</li>
     </ol>
 
-    <h4>Mockup UI — Hủy gói thầu &amp; thống kê</h4>
-    <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">GT-2026-018 ›</span><b>Đề nghị hủy gói thầu</b><span class="sp"></span><span class="wf-btn pri"><span class="pin">3</span> Trình duyệt hủy</span></div>
+    <h4>Mockup UI — Hủy gói thầu</h4>
+    <div class="wf" style="max-width:560px">
+      <div class="wf-bar"><span class="wf-crumb">GT-2026-018 ›</span><b>Hủy gói thầu</b><span class="sp"></span><span class="wf-btn">Đóng</span><span class="wf-btn dgr"><span class="pin">2</span> Xác nhận hủy</span></div>
       <div class="wf-body">
-        <div class="wf-row">
-          <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">1</span> Lý do hủy</div>
-            <div class="wf-f"><label>Nhóm lý do ✱</label><div class="in">Thua giá <em>▾</em></div></div>
-            <div class="wf-f"><label>Mô tả chi tiết ✱</label><div class="in" style="min-height:56px">Đối thủ chào thấp hơn 9% nhờ nguồn đá nhập khẩu; giữ giá sẽ rơi dưới biên tối thiểu 18%.</div></div>
-            <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Đối thủ trúng thầu</label><div class="in">Đá Vĩnh Cửu</div></div></div>
-            <div class="wf-c"><div class="wf-f"><label>Giá trúng</label><div class="in">25.900.000.000</div></div></div></div>
-            <div class="wf-f"><label><span class="pin">2</span> Chi phí đã bỏ ra</label><div class="in">42.000.000 <em>· khảo sát + hồ sơ dự thầu</em></div></div>
-          </div></div>
-          <div class="wf-c" style="flex:0 1 280px"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">4</span> Thống kê trúng thầu 2026</div>
-            <table><tbody>
-              <tr><td>Đã tham gia</td><td class="num">18 gói</td></tr>
-              <tr><td>Trúng</td><td class="num">7 · 38,9%</td></tr>
-              <tr><td>Trượt do giá</td><td class="num">8</td></tr>
-              <tr><td>Trượt do kỹ thuật</td><td class="num">2</td></tr>
-              <tr><td>CĐT hủy thầu</td><td class="num">1</td></tr>
-            </tbody></table>
-          </div></div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">1</span> Lý do hủy</div>
+          <div class="wf-f"><div class="in" style="min-height:48px">Đối thủ chào thấp hơn nhiều, công ty không theo đuổi gói này nữa.</div></div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">3</span> Thông báo sẽ gửi tới</div>
+          <div class="wf-f"><div class="in">Ban lãnh đạo · TP TQT · TP Kế toán · Ban dự án <em>+ thêm</em></div></div>
+          <div class="wf-ph" style="min-height:52px;text-align:left;padding:10px;display:block">
+            <b>Gói thầu GT-2026-018 — Vinhomes Grand Park GĐ 3 đã hủy.</b><br>
+            Công ty không tham gia gói thầu này nữa. Lý do: đối thủ chào thấp hơn nhiều.<br>
+            <span style="color:var(--ink-3)">Nguyễn Thị Hạnh · 22/12/2025</span>
+          </div>
         </div>
       </div>
     </div>
@@ -3311,54 +3245,38 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Chọn lý do có cấu trúc</td><td>Danh mục cố định + mô tả bắt buộc. Chọn “thua giá” mới mở nhóm trường về đối thủ.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Ghi nhận chi phí đã bỏ ra</td><td>Sinh bút toán chờ ở kế toán để không mất dấu chi phí theo đuổi gói thầu.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Trình duyệt hủy</td><td>Một cấp — Ban lãnh đạo. Lãnh đạo có thể bác để yêu cầu đàm phán tiếp.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Bảng thống kê trúng thầu</td><td>Cập nhật ngay khi gói thầu đóng; là nguồn của báo cáo hiệu quả đấu thầu ở <a href="#RPT-02">RPT-02</a>.</td></tr>
-          <tr><td class="c">—</td><td>Sao chép sang gói mới</td><td>Nhân bản BOQ và bảng áp giá sang một gói thầu mới khi có cơ hội tương tự.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Nhập lý do hủy</td><td>Ô nhập tự do, bắt buộc. Nội dung hiển thị nguyên văn trong thông báo.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Xác nhận hủy</td><td>Đổi trạng thái gói thầu, đóng băng tài liệu và gửi thông báo trong một thao tác.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Chọn nơi nhận thông báo</td><td>Danh sách mặc định đã đủ dùng; thêm người nhận khi cần.</td></tr>
+          <tr><td class="c">—</td><td>Mở lại gói thầu</td><td>Dùng khi hủy nhầm hoặc chủ đầu tư mời lại; ghi nhật ký người mở và thời điểm.</td></tr>
+          <tr><td class="c">—</td><td>Sao chép sang gói mới</td><td>Nhân bản BOQ và bảng áp giá sang gói thầu mới khi có cơ hội tương tự.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Hủy là quyết định có duyệt.</b> Không có thao tác xóa gói thầu; chỉ có đề nghị hủy trình Ban lãnh đạo.<span class="then">Lãnh đạo có quyền bác đề nghị để yêu cầu tiếp tục đàm phán — khi đó gói thầu quay về trạng thái đang đàm phán ở <a href="#BID-03">BID-03</a>.</span></li>
-      <li><b>Lý do phải có cấu trúc.</b> Chọn một nhóm lý do từ danh mục cố định, kèm mô tả tối thiểu 30 ký tự.<span class="then">Nhóm lý do là chiều phân tích của báo cáo hiệu quả đấu thầu; mô tả tự do không thay thế được nó.</span></li>
-      <li><b>Thua giá thì hỏi thêm.</b> Chọn nhóm “thua giá” mới mở các trường về đối thủ và giá trúng.<span class="then">Dữ liệu này dựng nên mặt bằng giá thị trường để tham chiếu khi áp giá gói thầu sau.</span></li>
-      <li><b>Chi phí theo đuổi không được mất dấu.</b> Chi phí khảo sát, hồ sơ dự thầu, bảo lãnh dự thầu ghi nhận thành bút toán chờ ở kế toán.<span class="then">Nếu bỏ trống, hệ thống vẫn cho hủy nhưng nhắc rằng báo cáo chi phí bán hàng sẽ thiếu phần này.</span></li>
-      <li><b>Tài liệu giữ nguyên.</b> Hủy gói thầu không xóa BOQ hay bảng áp giá.<span class="then">Toàn bộ được đóng băng và sao chép được sang gói thầu mới bằng một thao tác.</span></li>
-      <li><b>Bài học hiện lại đúng lúc.</b> Ghi chú “bài học rút ra” sẽ hiện lại khi mở gói thầu mới của cùng đối tác.<span class="then">Hiện dưới dạng nhắc nhở ở đầu màn hình gói thầu, không phải chôn trong báo cáo.</span></li>
+      <li><b>Hủy là trạng thái, không phải xóa.</b> Gói thầu đã hủy vẫn tra cứu được đầy đủ.<span class="then">BOQ, bảng áp giá và tài liệu giữ nguyên, đóng băng theo <a href="#PF-05">PF-05</a>.</span></li>
+      <li><b>Lý do đi thẳng vào thông báo.</b> Nội dung nhập ở ô lý do hiển thị nguyên văn cho người nhận.<span class="then">Vì vậy ô này bắt buộc và nên viết đủ câu, không viết tắt kiểu “ko đạt”.</span></li>
+      <li><b>Một thông báo cho mọi bộ phận liên quan.</b> Danh sách nhận mặc định gồm Ban lãnh đạo, trưởng các bộ phận và người đã được gán vào gói thầu.<span class="then">Gửi một lần, không nhắc lại; gói thầu đồng thời rời khỏi hàng chờ việc của họ.</span></li>
+      <li><b>Mở lại được.</b> Hủy nhầm hoặc chủ đầu tư mời lại thì mở lại gói thầu về trạng thái trước đó.<span class="then">Thao tác ghi nhật ký người mở và thời điểm; hệ thống không tự gửi lại thông báo cũ.</span></li>
     </ol>
-
-    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
-    <div class="tw">
-      <table>
-        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
-        <tbody>
-          <tr><td>Mô tả quá ngắn</td><td>&lt; 30 ký tự</td><td>“Mô tả cụ thể hơn — nội dung này dùng để phân tích nguyên nhân trượt thầu, không chỉ để lưu trữ.”</td></tr>
-          <tr><td>Thua giá nhưng thiếu giá đối thủ</td><td><code>rival_price</code> rỗng</td><td>“Chưa có giá trúng của đối thủ. Bỏ trống nếu thật sự không nắm được thông tin.”</td></tr>
-          <tr><td>Hủy khi đang có hợp đồng</td><td>Gói thầu đã ký HĐ</td><td>“Gói thầu đã ký hợp đồng {số}. Muốn dừng thì xử lý theo thủ tục thanh lý hợp đồng, không hủy gói thầu.”</td></tr>
-          <tr><td>Chi phí đã bỏ ra bằng 0</td><td><code>sunk_cost = 0</code></td><td>“Xác nhận không phát sinh chi phí nào? Báo cáo chi phí bán hàng sẽ không ghi nhận gói thầu này.”</td></tr>
-        </tbody>
-      </table>
-    </div>
 
     <h4>Kịch bản kiểm thử</h4>
     <div class="tw">
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-BID04-1</td><td>Gói thầu đang đàm phán vòng 3</td><td>Lập đề nghị hủy lý do “thua giá” và trình</td><td>Mở nhóm trường về đối thủ; trình duyệt tới Ban lãnh đạo</td></tr>
-          <tr><td>UAT-BID04-2</td><td>Đề nghị hủy đang chờ duyệt</td><td>Lãnh đạo bấm Từ chối kèm ý kiến “đàm phán tiếp”</td><td>Gói thầu quay lại trạng thái đàm phán, giữ nguyên bảng giá vòng 3</td></tr>
-          <tr><td>UAT-BID04-3</td><td>Đề nghị hủy được duyệt</td><td>Xem danh sách gói thầu và báo cáo đấu thầu</td><td>Gói thầu rời hàng chờ việc; số liệu trượt do giá tăng thêm 1</td></tr>
-          <tr><td>UAT-BID04-4</td><td>Gói thầu đã hủy có chi phí 42 triệu</td><td>Mở sổ chi phí bán hàng</td><td>Có bút toán chờ ghi nhận 42 triệu gắn gói thầu</td></tr>
-          <tr><td>UAT-BID04-5</td><td>Đã hủy gói thầu của Coteccons có ghi bài học</td><td>Mở gói thầu mới cùng đối tác</td><td>Bài học hiện ở đầu màn hình dạng nhắc nhở</td></tr>
+          <tr><td>UAT-BID04-1</td><td>Gói thầu đang đàm phán</td><td>Nhập lý do và xác nhận hủy</td><td>Trạng thái chuyển “Đã hủy”; gói thầu rời hàng chờ việc</td></tr>
+          <tr><td>UAT-BID04-2</td><td>Tiếp UAT-1</td><td>Kiểm tra thông báo của TP TQT và Ban dự án</td><td>Mỗi người nhận đúng một thông báo nêu gói thầu, dự án và lý do</td></tr>
+          <tr><td>UAT-BID04-3</td><td>Gói thầu đã hủy</td><td>Mở lại hồ sơ gói thầu</td><td>BOQ và bảng áp giá còn nguyên, ở chế độ chỉ đọc</td></tr>
+          <tr><td>UAT-BID04-4</td><td>Hủy nhầm gói thầu</td><td>Bấm “Mở lại gói thầu”</td><td>Về trạng thái trước đó; nhật ký ghi người mở và thời điểm</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-03">BID-03 thương thảo</a><a href="#ACC-08">ACC-08 ghi nhận chi phí</a><a href="#RPT-02">RPT-02 báo cáo đấu thầu</a></p>
+    <p class="links"><a href="#BID-03">BID-03 thương thảo</a><a href="#PF-04">PF-04 thông báo</a><a href="#PF-05">PF-05 tài liệu đóng băng</a></p>
   </div>
 </section>
 <section class="sheet" id="BID-05">
@@ -3380,7 +3298,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Một thao tác duy nhất phải cho ra ba kết quả: hợp đồng được ký đủ chữ ký, dự án được khởi tạo với BOQ hợp đồng, và bộ máy nhân sự dự án được gán kèm thông báo tới từng người. Nếu tách rời ba việc này thì dữ liệu dự án sẽ khuyết ngay từ ngày đầu.</p>
 
     <h4>Lưu đồ — ký số và khởi tạo</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-05.1 Chuỗi ký số nội bộ chạy tuần tự trước khi gửi đối tác; chỉ khi có đủ chữ ký hai bên thì dự án mới được khởi tạo. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:510px;margin:0 auto"><svg role="img" aria-label="Hình BID-05.1 Chuỗi ký số nội bộ chạy tuần tự trước khi gửi đối tác; chỉ khi có đủ chữ ký hai bên thì dự án mới được khởi tạo. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện."
  viewBox="0.00 0.00 510.00 1007.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 994.32)">
 <title>G</title>
@@ -3733,7 +3651,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Hồ sơ tạm ứng thường mắc ở khâu ngoài tầm kiểm soát: chủ đầu tư yêu cầu bổ sung, thiếu bảo lãnh, sai biểu mẫu. Đặc tả này dựng một <em>khung theo dõi hồ sơ</em> gồm chuỗi trạng thái, sổ vướng mắc có người phụ trách và hạn xử lý, cùng bộ báo cáo tổng hợp. Khung này dùng lại nguyên vẹn cho <a href="#ORD-08">ORD-08</a>.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-01.1 Hai vòng lặp quyết định thời gian sống của hồ sơ: vòng vướng mắc nội bộ và vòng phản hồi của chủ đầu tư. Cả hai đều quay về cùng một điểm “ghép đủ thành phần”, nhờ đó số lần lặp đếm được và trở thành chỉ số chất lượng hồ sơ."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:569px;margin:0 auto"><svg role="img" aria-label="Hình ORD-01.1 Hai vòng lặp quyết định thời gian sống của hồ sơ: vòng vướng mắc nội bộ và vòng phản hồi của chủ đầu tư. Cả hai đều quay về cùng một điểm “ghép đủ thành phần”, nhờ đó số lần lặp đếm được và trở thành chỉ số chất lượng hồ sơ."
  viewBox="0.00 0.00 569.00 914.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 900.68)">
 <title>G</title>
@@ -4084,7 +4002,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Bản vẽ shop được duyệt là điều kiện bắt buộc để lập đơn hàng (<a href="#ORD-03">ORD-03</a>). Vì vậy tiến trình duyệt shop chính là đường găng của tiến độ sản xuất. Đặc tả yêu cầu theo dõi từng vòng gửi–trả, đếm số vòng và số ngày nằm ở phía đối tác.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-02.1 Ba kết quả chuẩn của một vòng duyệt shop. “Approved as noted” không quay lại vòng gửi — đây là chi tiết quyết định tiến độ, cần phân biệt rõ với “revise and resubmit”."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:838px;margin:0 auto"><svg role="img" aria-label="Hình ORD-02.1 Ba kết quả chuẩn của một vòng duyệt shop. “Approved as noted” không quay lại vòng gửi — đây là chi tiết quyết định tiến độ, cần phân biệt rõ với “revise and resubmit”."
  viewBox="0.00 0.00 838.00 663.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 650.28)">
 <title>G</title>
@@ -4369,7 +4287,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Đơn hàng là chứng từ trung tâm của cả nhóm ORD: nó nối bản vẽ được duyệt với sản xuất, với cấp hàng, và với doanh thu. Ghi chú gốc nhấn mạnh chất lượng thông báo: “đọc thông báo là sẽ biết được đơn hàng gì, của dự án nào, hạng mục nào”.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-03.1 Nhánh 7.2 của yêu cầu gốc được tách làm hai lối ra khác nhau: “yêu cầu bổ sung” giữ nguyên mã đơn và quay lại bước lập, “từ chối” đóng hẳn đơn hàng."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:575px;margin:0 auto"><svg role="img" aria-label="Hình ORD-03.1 Nhánh 7.2 của yêu cầu gốc được tách làm hai lối ra khác nhau: “yêu cầu bổ sung” giữ nguyên mã đơn và quay lại bước lập, “từ chối” đóng hẳn đơn hàng."
  viewBox="0.00 0.00 575.00 837.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 824.08)">
 <title>G</title>
@@ -4663,7 +4581,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Sau khi lãnh đạo duyệt, đơn hàng phải được chia đúng địa chỉ thực hiện. Quy tắc phân luồng lấy từ ghi chú gốc: đá do nhà máy sản xuất thì về Nhà máy; vật tư mua ngoài thì về Phòng Cung ứng; đá nhỏ lẻ công trình mua để nhà máy sản xuất thì thuộc luồng làm việc của Nhà máy. Một đơn hàng có thể tách thành hai lệnh thực hiện.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-04.1 Một đơn hàng có thể sinh ra hai lệnh thực hiện chạy song song. Hai nhánh nét đứt là hai ranh giới phạm vi mà bảng yêu cầu nhấn mạnh: áp giá không chặn luồng, và vật tư phụ không đi qua đây."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:700px;margin:0 auto"><svg role="img" aria-label="Hình ORD-04.1 Một đơn hàng có thể sinh ra hai lệnh thực hiện chạy song song. Hai nhánh nét đứt là hai ranh giới phạm vi mà bảng yêu cầu nhấn mạnh: áp giá không chặn luồng, và vật tư phụ không đi qua đây."
  viewBox="0.00 0.00 700.00 576.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 562.72)">
 <title>G</title>
@@ -4929,7 +4847,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Một đơn hàng hiếm khi giao một lần. Đặc tả tách rõ ba lớp số liệu: <em>kế hoạch cấp</em> (dự kiến), <em>đã cấp</em> (thực tế theo phiếu xuất), và <em>còn lại</em>. Ba lớp này là nguồn của cột tiến độ đơn hàng và của báo cáo sản lượng cấp.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-05.1 Vòng lặp cấp hàng chỉ đóng khi lũy kế đã cấp bằng khối lượng đơn. Nhánh trả hàng lỗi đưa phiếu xuất quay về nơi cấp để chỉnh sửa rồi duyệt lại — đúng mô tả tại yêu cầu KT·3."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:539px;margin:0 auto"><svg role="img" aria-label="Hình ORD-05.1 Vòng lặp cấp hàng chỉ đóng khi lũy kế đã cấp bằng khối lượng đơn. Nhánh trả hàng lỗi đưa phiếu xuất quay về nơi cấp để chỉnh sửa rồi duyệt lại — đúng mô tả tại yêu cầu KT·3."
  viewBox="0.00 0.00 539.00 981.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 967.88)">
 <title>G</title>
@@ -5234,7 +5152,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Đây là mắt xích cuối cùng để tính được lãi lỗ dự án: đơn hàng cho biết <em>chi phí</em> đã bỏ ra, bảng áp giá cho biết <em>doanh thu</em> tương ứng. Ràng buộc thiết kế quan trọng nhất nằm ở ghi chú gốc — luồng này chạy song song và <b>không được chặn</b> các bước sản xuất, cấp hàng.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-06.1 Hai luồng chạy độc lập, chỉ gặp nhau ở báo cáo lãi lỗ. Nhãn “đã có giá doanh thu” là dấu hiệu duy nhất mà luồng tác nghiệp nhìn thấy từ luồng áp giá."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1244px;margin:0 auto"><svg role="img" aria-label="Hình ORD-06.1 Hai luồng chạy độc lập, chỉ gặp nhau ở báo cáo lãi lỗ. Nhãn “đã có giá doanh thu” là dấu hiệu duy nhất mà luồng tác nghiệp nhìn thấy từ luồng áp giá."
  viewBox="0.00 0.00 1244.00 277.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 263.96)">
 <title>G</title>
@@ -5499,7 +5417,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Xử lý đúng phần hàng đã sản xuất khi khối lượng bị cắt. Yêu cầu gốc đưa ra thứ tự ưu tiên rõ ràng: ưu tiên chuyển sang hạng mục hoặc dự án khác; không chuyển được thì nhập kho công trình để P. TQT làm hồ sơ nhập kho chủ đầu tư và thanh toán.</p>
 
     <h4>Lưu đồ — ba kịch bản</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-07.1 Ba kịch bản nhưng chỉ hai điểm quyết định thật sự: hàng đã sản xuất chưa, và nếu rồi thì chuyển được đi đâu. Nhánh “hủy khi đã sản xuất một phần” quy về đúng nhánh xử lý của giảm khối lượng."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:827px;margin:0 auto"><svg role="img" aria-label="Hình ORD-07.1 Ba kịch bản nhưng chỉ hai điểm quyết định thật sự: hàng đã sản xuất chưa, và nếu rồi thì chuyển được đi đâu. Nhánh “hủy khi đã sản xuất một phần” quy về đúng nhánh xử lý của giảm khối lượng."
  viewBox="0.00 0.00 827.00 602.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 589.44)">
 <title>G</title>
@@ -5809,7 +5727,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Lưu đồ — phần riêng của hồ sơ vật tư</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ORD-08.1 Ba nguồn phát sinh cùng đổ về một bảng kê khối lượng. Từ điểm “ghép hồ sơ” trở đi, quy trình trùng khớp hoàn toàn với ORD-01 nên không mô tả lại."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:652px;margin:0 auto"><svg role="img" aria-label="Hình ORD-08.1 Ba nguồn phát sinh cùng đổ về một bảng kê khối lượng. Từ điểm “ghép hồ sơ” trở đi, quy trình trùng khớp hoàn toàn với ORD-01 nên không mô tả lại."
  viewBox="0.00 0.00 652.00 660.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 646.72)">
 <title>G</title>
@@ -6070,7 +5988,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Bảng giá khoán là đơn giá nhân công mà công ty trả cho tổ đội, đặt cạnh đơn giá bán trong BOQ hợp đồng. Chính cặp số này quyết định biên lợi nhuận của phần thi công. Vai trò của P. Đấu thầu ở chặng giữa là đối chiếu giá khoán đề xuất với giá đã tính trong hồ sơ dự thầu — nếu vượt, biên lợi nhuận dự án bị bào mòn ngay từ trước khi khởi công.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PRJ-01.1 Chặng thẩm định của P. Đấu thầu là chốt kiểm soát biên lợi nhuận: nó so đơn giá khoán đề xuất với chính con số đã dùng để tính giá chào thầu ở BID-03."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:600px;margin:0 auto"><svg role="img" aria-label="Hình PRJ-01.1 Chặng thẩm định của P. Đấu thầu là chốt kiểm soát biên lợi nhuận: nó so đơn giá khoán đề xuất với chính con số đã dùng để tính giá chào thầu ở BID-03."
  viewBox="0.00 0.00 600.00 819.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 806.28)">
 <title>G</title>
@@ -6378,7 +6296,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Sản lượng thi công là thước đo duy nhất nối ba con số với nhau: khối lượng hợp đồng (doanh thu được ghi nhận), khối lượng khoán (chi phí phải trả tổ đội), và tiến độ dự án. Đặc tả yêu cầu nhập theo hai chu kỳ song song — <em>tuần</em> để điều hành, <em>đợt thanh toán</em> để nghiệm thu — trên cùng một tập dữ liệu.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PRJ-02.1 Một dòng dữ liệu, hai chu kỳ. Sản lượng nhập theo tuần để điều hành; đến kỳ nghiệm thu thì gom lại thành bảng khối lượng đợt và khóa lại — từ đó rẽ ba nhánh: trả tổ đội, thu chủ đầu tư, kết chuyển chi phí."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:741px;margin:0 auto"><svg role="img" aria-label="Hình PRJ-02.1 Một dòng dữ liệu, hai chu kỳ. Sản lượng nhập theo tuần để điều hành; đến kỳ nghiệm thu thì gom lại thành bảng khối lượng đợt và khóa lại — từ đó rẽ ba nhánh: trả tổ đội, thu chủ đầu tư, kết chuyển chi phí."
  viewBox="0.00 0.00 741.00 901.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 888.48)">
 <title>G</title>
@@ -6682,7 +6600,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Đây là chứng từ trả tiền cho tổ đội, nên nó phải khớp ba nguồn độc lập: bảng đơn giá khoán đã duyệt (<a href="#PRJ-01">PRJ-01</a>), sản lượng thi công đã chốt (<a href="#PRJ-02">PRJ-02</a>), và bảng công nhật có xác nhận các bên. Bốn chặng thẩm định phía sau mỗi chặng kiểm một khía cạnh khác nhau — đặc tả nêu rõ từng chặng kiểm gì để tránh việc bốn người cùng kiểm một thứ.</p>
 
     <h4>Lưu đồ — 5 chặng và cửa chặn quá hạn</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PRJ-03.1 Mỗi chặng có một tiêu chí kiểm riêng và một lối trả về chung. Cửa chặn quá hạn nằm trước cả chặng 1 — hồ sơ nộp muộn không vào được luồng nếu giải trình chưa được duyệt."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:639px;margin:0 auto"><svg role="img" aria-label="Hình PRJ-03.1 Mỗi chặng có một tiêu chí kiểm riêng và một lối trả về chung. Cửa chặn quá hạn nằm trước cả chặng 1 — hồ sơ nộp muộn không vào được luồng nếu giải trình chưa được duyệt."
  viewBox="0.00 0.00 639.00 794.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 781.28)">
 <title>G</title>
@@ -7003,7 +6921,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Kho dự án là điểm nối giữa dòng vật tư và dòng chi phí: vật tư nhập vào kho dự án chưa phải là chi phí, chỉ khi xuất cho tổ đội thi công mới thành chi phí của hạng mục. Vì vậy phiếu xuất bắt buộc ghi <em>hạng mục</em> và <em>tổ nhận</em> — hai trường này quyết định chi phí rơi vào đâu.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình PRJ-04.1 Ba nguồn nhập, một lối xuất. Điểm quan trọng nhất là bước ghi nhận chi phí: nó rẽ đồng thời vào sổ chi phí công trình và vào bảng khấu trừ vật tư của tổ đội, nên một lần xuất kho phục vụ hai mục đích quản trị khác nhau."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:577px;margin:0 auto"><svg role="img" aria-label="Hình PRJ-04.1 Ba nguồn nhập, một lối xuất. Điểm quan trọng nhất là bước ghi nhận chi phí: nó rẽ đồng thời vào sổ chi phí công trình và vào bảng khấu trừ vật tư của tổ đội, nên một lần xuất kho phục vụ hai mục đích quản trị khác nhau."
  viewBox="0.00 0.00 577.00 892.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 879.32)">
 <title>G</title>
@@ -7362,7 +7280,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Lưu đồ — trình tự đầy đủ từ đề xuất tới thanh toán</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-01.1 Toàn bộ trình tự mà bảng yêu cầu mô tả trong một đoạn văn. Hai điểm cần chú ý: chi phí ghi nhận về dự án tại bước nhập kho (trước VAT), không phải tại bước thanh toán; và đề xuất chỉ đóng khi lũy kế nhập đủ số lượng."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:772px;margin:0 auto"><svg role="img" aria-label="Hình ACC-01.1 Toàn bộ trình tự mà bảng yêu cầu mô tả trong một đoạn văn. Hai điểm cần chú ý: chi phí ghi nhận về dự án tại bước nhập kho (trước VAT), không phải tại bước thanh toán; và đề xuất chỉ đóng khi lũy kế nhập đủ số lượng."
  viewBox="0.00 0.00 772.00 1045.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 1032.28)">
 <title>G</title>
@@ -7742,7 +7660,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Lưu đồ — luân chuyển giữa các nhóm kho</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-02.1 Kho tổng là kho kế toán chứ không phải kho vật lý: tài sản nằm ở đó để tiếp tục trích khấu hao trong thời gian không phục vụ dự án nào, trong khi vị trí vật lý vẫn ghi là nhà máy. Đây là điểm dễ hiểu nhầm nhất của cây kho."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1693px;margin:0 auto"><svg role="img" aria-label="Hình ACC-02.1 Kho tổng là kho kế toán chứ không phải kho vật lý: tài sản nằm ở đó để tiếp tục trích khấu hao trong thời gian không phục vụ dự án nào, trong khi vị trí vật lý vẫn ghi là nhà máy. Đây là điểm dễ hiểu nhầm nhất của cây kho."
  viewBox="0.00 0.00 1693.00 201.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 188.42)">
 <title>G</title>
@@ -8029,7 +7947,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-03.1 Hai loại chi phí vận chuyển rẽ hai hướng hoàn toàn khác nhau: vận chuyển ra dự án là chi phí kỳ, vận chuyển về nhà máy được phân bổ vào giá vốn nhập hàng theo số lượng của phiếu nhập."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:977px;margin:0 auto"><svg role="img" aria-label="Hình ACC-03.1 Hai loại chi phí vận chuyển rẽ hai hướng hoàn toàn khác nhau: vận chuyển ra dự án là chi phí kỳ, vận chuyển về nhà máy được phân bổ vào giá vốn nhập hàng theo số lượng của phiếu nhập."
  viewBox="0.00 0.00 977.00 1008.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 995.04)">
 <title>G</title>
@@ -8421,7 +8339,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Lưu đồ — xuất thi công và vòng xác nhận nhận hàng</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-04.1 Nhánh “thi công” là nhánh dài nhất vì có vòng kiểm nhận hai chiều: phiếu xuất bị trả về nhà máy để chỉnh sửa rồi phải duyệt lại từ đầu, đúng như mô tả trong bảng yêu cầu."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:865px;margin:0 auto"><svg role="img" aria-label="Hình ACC-04.1 Nhánh “thi công” là nhánh dài nhất vì có vòng kiểm nhận hai chiều: phiếu xuất bị trả về nhà máy để chỉnh sửa rồi phải duyệt lại từ đầu, đúng như mô tả trong bảng yêu cầu."
  viewBox="0.00 0.00 865.00 890.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 877.04)">
 <title>G</title>
@@ -8768,7 +8686,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Một sổ công nợ hai chiều — phải thu khách hàng và phải trả nhà cung cấp — với đủ chiều phân tích theo công trình mà báo cáo yêu cầu, cùng quy trình đề nghị thanh toán có phê duyệt theo hạn mức.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-05.1 Hai chiều công nợ có nguồn phát sinh khác nhau nhưng cùng đổ về một sổ chi tiết có chiều phân tích theo công trình — đúng yêu cầu báo cáo “tổng hợp công nợ phải thu, phải trả chi tiết theo công trình và tổng hợp chung”."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1004px;margin:0 auto"><svg role="img" aria-label="Hình ACC-05.1 Hai chiều công nợ có nguồn phát sinh khác nhau nhưng cùng đổ về một sổ chi tiết có chiều phân tích theo công trình — đúng yêu cầu báo cáo “tổng hợp công nợ phải thu, phải trả chi tiết theo công trình và tổng hợp chung”."
  viewBox="0.00 0.00 1004.00 609.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 595.76)">
 <title>G</title>
@@ -9110,7 +9028,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Biết chính xác mỗi tài sản đang ở đâu, phục vụ dự án nào, và được bao nhiêu ngày — vì số ngày ở dự án là căn cứ phân bổ khấu hao vào chi phí của chính dự án đó. Tài sản không phục vụ dự án nào thì nằm ở kho tổng và vẫn trích khấu hao (<a href="#ACC-02">ACC-02</a>).</p>
 
     <h4>Lưu đồ — vòng đời tài sản</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-06.1 Số ngày tài sản ở mỗi vị trí là dữ liệu trung tâm: nó vừa trả lời câu hỏi “tài sản đang ở đâu”, vừa là hệ số phân bổ khấu hao vào chi phí dự án."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:594px;margin:0 auto"><svg role="img" aria-label="Hình ACC-06.1 Số ngày tài sản ở mỗi vị trí là dữ liệu trung tâm: nó vừa trả lời câu hỏi “tài sản đang ở đâu”, vừa là hệ số phân bổ khấu hao vào chi phí dự án."
  viewBox="0.00 0.00 594.00 1276.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 1263.44)">
 <title>G</title>
@@ -9483,7 +9401,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Ba quỹ tiền mặt độc lập và nhiều tài khoản ngân hàng, mỗi nơi một sổ riêng nhưng cùng đổ về một bức tranh dòng tiền. Quỹ phạt được tách riêng vì nguồn thu và mục đích chi khác hẳn hai quỹ còn lại.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-07.1 Báo có ngân hàng không chỉ ghi sổ mà còn được đối chiếu ngược với các hồ sơ đang chờ thanh toán — đó là cách hồ sơ tự chuyển sang trạng thái “đã thanh toán” mà không cần thao tác tay."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1204px;margin:0 auto"><svg role="img" aria-label="Hình ACC-07.1 Báo có ngân hàng không chỉ ghi sổ mà còn được đối chiếu ngược với các hồ sơ đang chờ thanh toán — đó là cách hồ sơ tự chuyển sang trạng thái “đã thanh toán” mà không cần thao tác tay."
  viewBox="0.00 0.00 1204.00 409.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 396.16)">
 <title>G</title>
@@ -9812,7 +9730,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Chỗ để hạch toán những gì không đi qua chứng từ tác nghiệp: lương, khấu hao chung, chi phí quản lý. Và quan trọng hơn — đây là nơi biến khối chi phí <code>CHUNG</code> thành chi phí của từng dự án, hạng mục. Không có bước này thì lãi lỗ dự án luôn thiếu phần chi phí gián tiếp.</p>
 
     <h4>Lưu đồ — phân bổ chi phí chung</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-08.1 Bốn tiêu chí phân bổ cho cùng một khối chi phí chung. Bảng phân bổ luôn được sinh ở trạng thái nháp để đối chiếu trước khi duyệt — bút toán chỉ ghi sổ sau khi Kế toán trưởng duyệt."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:865px;margin:0 auto"><svg role="img" aria-label="Hình ACC-08.1 Bốn tiêu chí phân bổ cho cùng một khối chi phí chung. Bảng phân bổ luôn được sinh ở trạng thái nháp để đối chiếu trước khi duyệt — bút toán chỉ ghi sổ sau khi Kế toán trưởng duyệt."
  viewBox="0.00 0.00 865.00 823.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 809.92)">
 <title>G</title>
@@ -10138,7 +10056,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <p>Đích đến của toàn bộ 35 đặc tả còn lại. Hai bài toán giá thành song song: <em>công trình</em> tập hợp chi phí theo khoản mục rồi kết chuyển theo sản lượng thi công; <em>nhà máy</em> tính giá thành sản phẩm rồi cập nhật ngược giá nhập kho thành phẩm. Bảng yêu cầu ghi rõ phần đi sâu vào giá thành khai thác của nhà máy để lại giai đoạn sau.</p>
 
     <h4>Lưu đồ — kết chuyển giá thành công trình</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-09.1 Năm nguồn chi phí, một điểm tập hợp, một phép trừ. Mỗi mũi tên vào khối “tập hợp chi phí” tương ứng đúng một đặc tả — đây là lý do các đặc tả đó bắt buộc phải có mặt ở giai đoạn 1."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1164px;margin:0 auto"><svg role="img" aria-label="Hình ACC-09.1 Năm nguồn chi phí, một điểm tập hợp, một phép trừ. Mỗi mũi tên vào khối “tập hợp chi phí” tương ứng đúng một đặc tả — đây là lý do các đặc tả đó bắt buộc phải có mặt ở giai đoạn 1."
  viewBox="0.00 0.00 1164.00 559.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 545.96)">
 <title>G</title>
@@ -10283,7 +10201,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 </svg></div><figcaption><b>Hình ACC-09.1</b> Năm nguồn chi phí, một điểm tập hợp, một phép trừ. Mỗi mũi tên vào khối “tập hợp chi phí” tương ứng đúng một đặc tả — đây là lý do các đặc tả đó bắt buộc phải có mặt ở giai đoạn 1.</figcaption></figure>
 
     <h4>Lưu đồ — giá thành nhà máy</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình ACC-09.2 Vòng khép kín của nhà máy: giá thành tính ra được ghi ngược thành giá nhập kho thành phẩm, từ đó thành giá xuất kho ở kỳ sau. Nhánh nét đứt là phần bảng yêu cầu để lại cho giai đoạn sau."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1584px;margin:0 auto"><svg role="img" aria-label="Hình ACC-09.2 Vòng khép kín của nhà máy: giá thành tính ra được ghi ngược thành giá nhập kho thành phẩm, từ đó thành giá xuất kho ở kỳ sau. Nhánh nét đứt là phần bảng yêu cầu để lại cho giai đoạn sau."
  viewBox="0.00 0.00 1584.00 138.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 125.36)">
 <title>G</title>
@@ -10540,7 +10458,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Lưu đồ — cơ chế dựng báo cáo dùng chung</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình RPT-01.1 Một bộ máy, chín báo cáo. Phạm vi dữ liệu được áp ở tầng truy vấn nên hai người mở cùng báo cáo sẽ thấy hai tập số liệu khác nhau — đúng yêu cầu “phân quyền giới hạn xem dữ liệu nội bộ phòng ban”."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:2077px;margin:0 auto"><svg role="img" aria-label="Hình RPT-01.1 Một bộ máy, chín báo cáo. Phạm vi dữ liệu được áp ở tầng truy vấn nên hai người mở cùng báo cáo sẽ thấy hai tập số liệu khác nhau — đúng yêu cầu “phân quyền giới hạn xem dữ liệu nội bộ phòng ban”."
  viewBox="0.00 0.00 2077.00 151.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 137.86)">
 <title>G</title>
@@ -10764,7 +10682,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <div class="tb-id">RPT-02</div>
     <div class="tb-main">
       <h3>Bộ báo cáo quản trị dự án</h3>
-      <p>Sáu báo cáo của khối quản trị dự án cộng một báo cáo hiệu quả đấu thầu suy ra từ <a href="#BID-04">BID-04</a>. Đây là bộ báo cáo mà Giám đốc dự án và Ban lãnh đạo đọc hằng tuần.</p>
+      <p>Sáu báo cáo của khối quản trị dự án — đúng danh sách trong bảng yêu cầu. Đây là bộ báo cáo mà Giám đốc dự án và Ban lãnh đạo đọc hằng tuần.</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>Ban Dự án · P. TQT · P. Đấu thầu</dd></div>
         <div><dt>Phê duyệt</dt><dd>Không</dd></div>
@@ -10785,13 +10703,12 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>4</td><td>Báo cáo sản lượng thi công</td><td>Sản lượng theo tuần và theo đợt, theo tổ đội, lũy kế so với BOQ hợp đồng</td><td class="k"><a href="#PRJ-02">PRJ-02</a></td></tr>
           <tr><td>5</td><td>Báo cáo tiến độ dự án theo kế toán</td><td>% doanh thu ghi nhận và % chi phí đã tập hợp so với giá trị hợp đồng — góc nhìn tài chính của tiến độ</td><td class="k"><a href="#ACC-09">ACC-09</a></td></tr>
           <tr><td>6</td><td>Báo cáo phân loại nhân công</td><td><b>Ba nhóm theo yêu cầu gốc: sản lượng, công nhật sản lượng, công nhật khác — theo từng dự án</b></td><td class="k"><a href="#PRJ-03">PRJ-03</a></td></tr>
-          <tr><td>7</td><td>Báo cáo hiệu quả đấu thầu</td><td>Tỷ lệ trúng / trượt theo nguyên nhân, theo đối tác, theo vùng miền; chi phí theo đuổi gói thầu</td><td class="k"><a href="#BID-04">BID-04</a></td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Lưu đồ — hai góc nhìn tiến độ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình RPT-02.1 Lý do bảng yêu cầu liệt kê riêng “báo cáo tiến độ dự án” và “báo cáo tiến độ dự án theo kế toán”: chênh lệch giữa hai con số này chính là chỉ báo rủi ro sớm nhất của một dự án."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1051px;margin:0 auto"><svg role="img" aria-label="Hình RPT-02.1 Lý do bảng yêu cầu liệt kê riêng “báo cáo tiến độ dự án” và “báo cáo tiến độ dự án theo kế toán”: chênh lệch giữa hai con số này chính là chỉ báo rủi ro sớm nhất của một dự án."
  viewBox="0.00 0.00 1051.00 239.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 226.36)">
 <title>G</title>
@@ -10914,7 +10831,6 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Đặt cạnh nhau tiến độ thi công và tiến độ theo kế toán trên cùng một màn hình.</li>
       <li>Báo cáo hồ sơ nghiệm thu liệt kê hồ sơ đang mắc, tuổi hồ sơ và vướng mắc chưa đóng.</li>
       <li>Bảng kê hợp đồng nêu được tình trạng bảo lãnh sắp hết hạn.</li>
-      <li>Báo cáo hiệu quả đấu thầu tính tỷ lệ trúng thầu theo nguyên nhân trượt.</li>
       <li>Mọi báo cáo lọc được theo dự án, vùng miền và kỳ; xuất Excel và PDF.</li>
     </ol>
 
@@ -10922,7 +10838,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <div class="wf">
       <div class="wf-bar"><span class="wf-crumb">Báo cáo ›</span><b>Tiến độ dự án</b><span class="sp"></span><span class="wf-btn"><span class="pin">1</span> Quý 3/2026 <em>▾</em></span><span class="wf-btn">Xuất Excel</span></div>
       <div class="wf-body">
-        <div class="wf-chips"><span class="wf-chip">Bảng kê hợp đồng</span><span class="wf-chip on">Tiến độ thi công</span><span class="wf-chip">Hồ sơ nghiệm thu</span><span class="wf-chip">Sản lượng</span><span class="wf-chip">Tiến độ theo kế toán</span><span class="wf-chip">Phân loại nhân công</span><span class="wf-chip">Hiệu quả đấu thầu</span></div>
+        <div class="wf-chips"><span class="wf-chip">Bảng kê hợp đồng</span><span class="wf-chip on">Tiến độ thi công</span><span class="wf-chip">Hồ sơ nghiệm thu</span><span class="wf-chip">Sản lượng</span><span class="wf-chip">Tiến độ theo kế toán</span><span class="wf-chip">Phân loại nhân công</span></div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">2</span> Tiến độ thi công so với kế hoạch</div>
           <table><thead><tr><th>Dự án</th><th>Mốc tiến độ</th><th class="num">Kế hoạch</th><th class="num">Thực tế</th><th class="num">Chênh</th><th class="num">Ngày trễ</th><th>Trạng thái</th></tr></thead>
@@ -10998,13 +10914,12 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-RPT02-3</td><td>Mốc “Ốp lát khối đế” kế hoạch 85%, thực tế 80%</td><td>Xem bảng tiến độ</td><td>Chênh −5 điểm phần trăm, nhãn “Chậm nhẹ”, số ngày trễ 6</td></tr>
           <tr><td>UAT-RPT02-4</td><td>Bảo lãnh thực hiện hết hạn sau 10 ngày</td><td>Mở bảng kê hợp đồng</td><td>Cột bảo lãnh gắn cờ cảnh báo</td></tr>
           <tr><td>UAT-RPT02-5</td><td>Có 5 hồ sơ nghiệm thu nhiều trạng thái</td><td>Mở báo cáo hồ sơ</td><td>Tuổi tính theo trạng thái hiện tại; hồ sơ &gt; 30 ngày được đánh dấu</td></tr>
-          <tr><td>UAT-RPT02-6</td><td>Năm 2026 tham gia 18 gói, trúng 7</td><td>Mở báo cáo hiệu quả đấu thầu</td><td>Tỷ lệ trúng 38,9%; phân tích theo nguyên nhân trượt</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#PRJ-02">PRJ-02 sản lượng</a><a href="#PRJ-03">PRJ-03 nhân công</a><a href="#ORD-01">ORD-01 hồ sơ</a><a href="#BID-04">BID-04 hiệu quả đấu thầu</a><a href="#BID-05">BID-05 bảng kê hợp đồng</a><a href="#ACC-09">ACC-09 tiến độ kế toán</a></p>
+    <p class="links"><a href="#PRJ-02">PRJ-02 sản lượng</a><a href="#PRJ-03">PRJ-03 nhân công</a><a href="#ORD-01">ORD-01 hồ sơ</a><a href="#BID-05">BID-05 bảng kê hợp đồng</a><a href="#ACC-09">ACC-09 tiến độ kế toán</a></p>
   </div>
 </section>
 <section class="sheet" id="RPT-03">
@@ -11045,7 +10960,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Lưu đồ — ba cấp gộp</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình RPT-03.1 Ba cấp gộp trên cùng một biểu mẫu. Phép kiểm cộng khớp giữa ba cấp là bài kiểm thử quan trọng nhất khi nghiệm thu báo cáo này."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:639px;margin:0 auto"><svg role="img" aria-label="Hình RPT-03.1 Ba cấp gộp trên cùng một biểu mẫu. Phép kiểm cộng khớp giữa ba cấp là bài kiểm thử quan trọng nhất khi nghiệm thu báo cáo này."
  viewBox="0.00 0.00 639.00 434.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 420.72)">
 <title>G</title>
@@ -11438,7 +11353,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Lưu đồ — làm việc khi mất sóng</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình MOB-01.1 Ranh giới ngoại tuyến: nhập liệu hiện trường được phép làm khi mất sóng, phê duyệt và ký điện tử thì không — vì chữ ký cần mã băm nội dung tại thời điểm ký."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:463px;margin:0 auto"><svg role="img" aria-label="Hình MOB-01.1 Ranh giới ngoại tuyến: nhập liệu hiện trường được phép làm khi mất sóng, phê duyệt và ký điện tử thì không — vì chữ ký cần mã băm nội dung tại thời điểm ký."
  viewBox="0.00 0.00 463.00 682.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 669.52)">
 <title>G</title>
@@ -11809,7 +11724,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 <section class="block" id="PL-D">
   <h2><em>Phụ lục D</em>Lộ trình triển khai đề xuất</h2>
   <p class="intro">Thứ tự triển khai không theo thứ tự đọc của tài liệu mà theo <em>ràng buộc phụ thuộc dữ liệu</em>: đặc tả nào tạo ra dữ liệu mà đặc tả khác cần thì phải làm trước. Bốn chặng dưới đây mỗi chặng đều cho ra một phần hệ thống dùng được thật, không phải nửa vời chờ chặng sau.</p>
-  <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình D.1 Bốn chặng theo ràng buộc phụ thuộc. Chặng 1 không tạo giá trị nghiệp vụ trực tiếp nhưng mọi chặng sau đều dựa vào nó — rút ngắn chặng này sẽ phải trả giá ở ba chặng còn lại."
+  <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:841px;margin:0 auto"><svg role="img" aria-label="Hình D.1 Bốn chặng theo ràng buộc phụ thuộc. Chặng 1 không tạo giá trị nghiệp vụ trực tiếp nhưng mọi chặng sau đều dựa vào nó — rút ngắn chặng này sẽ phải trả giá ở ba chặng còn lại."
  viewBox="0.00 0.00 841.00 937.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 923.96)">
 <title>G</title>
