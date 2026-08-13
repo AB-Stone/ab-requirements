@@ -33,6 +33,8 @@
     <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
     <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
     <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
+    <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
@@ -69,7 +71,7 @@
 </div>
 <section class="block" id="PL-C">
   <h2><em>Phụ lục C</em>Vấn đề cần chốt trước khi lập trình</h2>
-  <p class="intro">Bảng yêu cầu có mười điểm bỏ ngỏ — phần lớn được đánh dấu bằng dấu hỏi ngay trong file gốc. Mỗi điểm dưới đây nêu câu hỏi nguyên trạng, đề xuất của đặc tả, và ai cần quyết định. Đây là danh sách cần chốt trong buổi làm việc trước khi bắt đầu lập trình.</p>
+  <p class="intro">Bảng yêu cầu có mười điểm bỏ ngỏ, cộng một điểm phát sinh khi bổ sung hai bước thanh toán khối lượng — phần lớn được đánh dấu bằng dấu hỏi ngay trong file gốc. Mỗi điểm dưới đây nêu câu hỏi nguyên trạng, đề xuất của đặc tả, và ai cần quyết định. Đây là danh sách cần chốt trong buổi làm việc trước khi bắt đầu lập trình.</p>
   <div class="tw">
     <table>
       <thead><tr><th class="c">Mã</th><th>Câu hỏi từ yêu cầu gốc</th><th>Đề xuất của đặc tả</th><th class="c">Người quyết</th><th class="c">Ảnh hưởng</th></tr></thead>
@@ -84,12 +86,13 @@
         <tr><td class="k">Q-08</td><td>“Phê duyệt 2 cấp hay 3 cấp” — và ở đề xuất Loại 2 ghi “2 cấp duyệt: GĐ DA, KTT và Tổng GĐ” (thực tế là ba người)</td><td>Không cố định số cấp trong phần mềm. Cấu hình theo loại chứng từ × hạn mức tại <a href="PF-03.html">PF-03</a>; cần chốt bảng hạn mức cụ thể cho 8 nhóm chứng từ</td><td class="c">Ban lãnh đạo</td><td class="c"><a href="PF-03.html">PF-03</a> · toàn hệ thống</td></tr>
         <tr><td class="k">Q-09</td><td>“Quyền truy cập linh hoạt do người phụ trách phân quyền” — ai là “người phụ trách”?</td><td>Trưởng bộ phận phân quyền trong phạm vi bộ phận mình; quyền phê duyệt tài chính phải qua Ban lãnh đạo duyệt; Admin hệ thống thấy toàn bộ</td><td class="c">Ban lãnh đạo</td><td class="c"><a href="PF-02.html">PF-02</a></td></tr>
         <tr><td class="k">Q-10</td><td>Ranh giới giai đoạn: “định mức thi công, vật tư phụ để kiểm soát hao hụt” và “giá thành khai thác nhà máy” để giai đoạn sau</td><td>Giữ ngoài phạm vi GĐ1, nhưng cấu trúc dữ liệu của <a href="PRJ-02.html">PRJ-02</a> và <a href="ACC-09.html">ACC-09</a> đã chừa chỗ để bổ sung mà không phải sửa lại mô hình</td><td class="c">Ban lãnh đạo</td><td class="c">Phạm vi GĐ2</td></tr>
+        <tr><td class="k">Q-11</td><td>Ranh giới doanh thu giữa <a href="ORD-06.html">ORD-06</a> (áp giá đơn hàng) và <a href="ORD-09.html">ORD-09</a> (thanh toán khối lượng với chủ đầu tư) — tránh ghi nhận doanh thu hai lần</td><td>Đề xuất: doanh thu hợp đồng ghi nhận theo hồ sơ thanh toán khối lượng đã được chủ đầu tư chấp thuận; giá áp cho đơn hàng ở ORD-06 dùng làm giá trị nội bộ để đối chiếu chi phí và doanh thu theo từng đơn, không cộng vào doanh thu dự án. Cần chốt trong quá trình chạy thử.</td><td class="c">KT trưởng + P. Đấu thầu</td><td class="c"><a href="RPT-03.html">RPT-03</a>, <a href="ACC-09.html">ACC-09</a></td></tr>
       </tbody>
     </table>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 39 / 40</span><span><code>PL-C.html</code></span>
+  <span>Đặc tả 41 / 42</span><span><code>PL-C.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORD-09 Thanh toán khối lượng HT — ABSMS GĐ1</title>
+<link rel="stylesheet" href="assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đặc tả GĐ1</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="PF-01.html"><i>PF-01</i>Danh mục nền &amp; mã hóa</a>
+    <a href="PF-02.html"><i>PF-02</i>Vai trò &amp; phân quyền</a>
+    <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
+    <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
+    <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
+    <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
+    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
+    <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
+    <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
+    <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
+    <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
+    <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
+    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
+    <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
+    <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
+    <a class="on" href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
+    <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
+    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <div class="rail-grp">Phòng Kế toán</div>
+    <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
+    <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
+    <a href="ACC-03.html"><i>ACC-03</i>Mua hàng &amp; nhập kho</a>
+    <a href="ACC-04.html"><i>ACC-04</i>Xuất kho &amp; bán hàng</a>
+    <a href="ACC-05.html"><i>ACC-05</i>Công nợ &amp; thanh toán</a>
+    <a href="ACC-06.html"><i>ACC-06</i>TSCĐ &amp; CCDC</a>
+    <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
+    <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
+    <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
+    <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
+    <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
+    <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <div class="rail-grp">Di động</div>
+    <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
+    <div class="rail-grp">Phụ lục</div>
+    <a href="PL-A.html"><i>PL-A</i>Sổ trạng thái chứng từ</a>
+    <a href="PL-B.html"><i>PL-B</i>Ma trận phân quyền</a>
+    <a href="PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+    <a href="PL-D.html"><i>PL-D</i>Lộ trình triển khai</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / P. TQT — Shopdrawing / <b>ORD-09</b></div><div class="sp"></div>
+  <div class="pnav"><a href="ORD-08.html">← ORD-08</a><a href="index.html">Mục lục</a><a href="ORD-10.html">ORD-10 →</a></div>
+</div>
+<section class="sheet solo" id="ORD-09">
+  <header class="tb">
+    <div class="tb-id">ORD-09</div>
+    <div class="tb-main">
+      <h3>Hồ sơ thanh toán khối lượng hoàn thành</h3>
+      <p>Lập hồ sơ thanh toán với chủ đầu tư theo từng đợt, dựa trên sản lượng đã thi công. Ở giai đoạn này bản vẽ Shopdrawing chỉ cần điều chỉnh nhẹ theo yêu cầu Ban quản lý xây dựng — <b>chưa cần nộp bản vẽ hoàn công</b>.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>P. TQT — Shopdrawing</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Nội bộ 2 cấp trước khi nộp chủ đầu tư</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · trưởng các BP · dự án liên quan</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 13</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <div class="note">
+      <b>Bổ sung tạm thời — sẽ điều chỉnh dần khi thử nghiệm</b>
+      <p style="margin:0">Đặc tả này dựng theo đúng phạm vi hai dòng bổ sung để kịp tiến độ. Trong quá trình chạy thử, phần đối chiếu khối lượng và cách ghi nhận doanh thu sẽ được tinh chỉnh — xem thêm <a href="PL-C.html">Q-11</a> về ranh giới doanh thu giữa đặc tả này và <a href="ORD-06.html">ORD-06</a>.</p>
+    </div>
+
+    <h4>Mục tiêu</h4>
+    <p>Đây là nơi doanh thu thi công thực sự được ghi nhận: khối lượng đã làm được chủ đầu tư nghiệm thu và thanh toán. Vì vậy hồ sơ phải trả lời ba câu cùng lúc — <em>đã làm bao nhiêu</em>, <em>đã trả tổ đội bao nhiêu</em>, và <em>đang đề nghị chủ đầu tư thanh toán bao nhiêu</em>. Chênh lệch giữa câu hai và câu ba chính là phần công ty đang chịu thiệt, nên hệ thống phải chỉ ra ngay chứ không để tới cuối dự án mới phát hiện.</p>
+
+    <h4>Kế thừa khung theo dõi hồ sơ</h4>
+    <p>Chuỗi trạng thái, sổ vướng mắc, cơ chế phối hợp liên phòng ban, đối chiếu báo có ngân hàng và bộ báo cáo tổng hợp <b>dùng lại nguyên vẹn của <a href="ORD-01.html">ORD-01</a></b>. Ba khối dưới đây là phần riêng của hồ sơ thanh toán khối lượng.</p>
+
+    <h4>Lưu đồ</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:509px;margin:0 auto"><svg role="img" aria-label="Hình ORD-09.1 Phép đối chiếu ba khối lượng nằm ngay đầu luồng, trước khi ghép hồ sơ. Chênh lệch không chặn việc lập hồ sơ — nó được ghi nhận và đẩy sang đợt quyết toán để xử lý, đúng chủ trương trong yêu cầu."
+ viewBox="0.00 0.00 509.00 959.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 946.52)">
+<title>G</title>
+<g id="node1" class="node">
+<title>A</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="214.61,-933.56 8.85,-933.56 8.85,-889.16 214.61,-889.16 214.61,-933.56"/>
+<text xml:space="preserve" text-anchor="middle" x="111.73" y="-915.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sản lượng thi công đã chốt đợt</text>
+<text xml:space="preserve" text-anchor="middle" x="111.73" y="-900.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;02</text>
+</g>
+<g id="node2" class="node">
+<title>B</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="360.5,-854.16 110.95,-854.16 110.95,-824.76 360.5,-824.76 360.5,-854.16"/>
+<text xml:space="preserve" text-anchor="middle" x="235.73" y="-835.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lập hồ sơ thanh toán khối lượng đợt n</text>
+</g>
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M149.94,-888.82C167.25,-879.06 187.48,-867.66 203.94,-858.38"/>
+<polygon fill="#55606b" stroke="#55606b" points="204.88,-860.46 209.43,-855.28 202.65,-856.49 204.88,-860.46"/>
+</g>
+<g id="node4" class="node">
+<title>D</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="369.5,-789.76 101.95,-789.76 101.95,-745.36 369.5,-745.36 369.5,-789.76"/>
+<text xml:space="preserve" text-anchor="middle" x="235.73" y="-771.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đối chiếu ba khối lượng</text>
+<text xml:space="preserve" text-anchor="middle" x="235.73" y="-756.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đã thi công · đã trả tổ đội · đề nghị CĐT</text>
+</g>
+<g id="edge3" class="edge">
+<title>B&#45;&gt;D</title>
+<path fill="none" stroke="#55606b" d="M235.73,-824.31C235.73,-816.72 235.73,-807.08 235.73,-797.95"/>
+<polygon fill="#55606b" stroke="#55606b" points="238,-798.14 235.73,-791.64 233.45,-798.14 238,-798.14"/>
+</g>
+<g id="node3" class="node">
+<title>C</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="483.07,-933.56 238.38,-933.56 238.38,-889.16 483.07,-889.16 483.07,-933.56"/>
+<text xml:space="preserve" text-anchor="middle" x="360.73" y="-915.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Bản vẽ Shopdrawing điều chỉnh nhẹ</text>
+<text xml:space="preserve" text-anchor="middle" x="360.73" y="-900.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">theo yêu cầu BQL xây dựng</text>
+</g>
+<g id="edge2" class="edge">
+<title>C&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M322.2,-888.82C304.75,-879.06 284.37,-867.66 267.77,-858.38"/>
+<polygon fill="#55606b" stroke="#55606b" points="269.01,-856.47 262.23,-855.28 266.79,-860.44 269.01,-856.47"/>
+</g>
+<g id="node5" class="node">
+<title>E</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="235.73,-710.36 78.62,-677.48 235.73,-644.6 392.84,-677.48 235.73,-710.36"/>
+<text xml:space="preserve" text-anchor="middle" x="235.73" y="-681.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">KL đề nghị CĐT</text>
+<text xml:space="preserve" text-anchor="middle" x="235.73" y="-666.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">nhỏ hơn KL đã trả tổ đội?</text>
+</g>
+<g id="edge4" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="#55606b" d="M235.73,-745.24C235.73,-737.21 235.73,-727.78 235.73,-718.59"/>
+<polygon fill="#55606b" stroke="#55606b" points="238,-718.63 235.73,-712.13 233.45,-718.63 238,-718.63"/>
+</g>
+<g id="node6" class="node">
+<title>F</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="254.24,-597.4 83.21,-597.4 83.21,-553 254.24,-553 254.24,-597.4"/>
+<text xml:space="preserve" text-anchor="middle" x="168.73" y="-578.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cảnh báo trên hồ sơ</text>
+<text xml:space="preserve" text-anchor="middle" x="168.73" y="-563.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">bắt buộc nhập giải trình</text>
+</g>
+<g id="edge5" class="edge">
+<title>E&#45;&gt;F</title>
+<path fill="none" stroke="#55606b" d="M216.89,-648.28C207.71,-634.54 196.7,-618.06 187.52,-604.33"/>
+<polygon fill="#55606b" stroke="#55606b" points="189.53,-603.23 184.02,-599.09 185.74,-605.76 189.53,-603.23"/>
+<text xml:space="preserve" text-anchor="middle" x="209.26" y="-617.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Có</text>
+</g>
+<g id="node8" class="node">
+<title>H</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="349.62,-426.4 85.84,-426.4 85.84,-382 349.62,-382 349.62,-426.4"/>
+<text xml:space="preserve" text-anchor="middle" x="217.73" y="-407.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghép hồ sơ hai phần</text>
+<text xml:space="preserve" text-anchor="middle" x="217.73" y="-392.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">bản vẽ sơ họa hoàn công + hồ sơ giá trị</text>
+</g>
+<g id="edge8" class="edge">
+<title>E&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M247.45,-646.58C256.23,-624.19 266.73,-597.4 266.73,-597.4 266.73,-597.4 277.73,-505.8 277.73,-505.8 277.73,-505.8 277.73,-461.4 277.73,-461.4 277.73,-461.4 261.82,-446.5 246.39,-432.04"/>
+<polygon fill="#55606b" stroke="#55606b" points="248.16,-430.59 241.86,-427.8 245.05,-433.91 248.16,-430.59"/>
+<text xml:space="preserve" text-anchor="middle" x="291.57" y="-526.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
+</g>
+<g id="node7" class="node">
+<title>G</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="265.43,-505.8 2.03,-505.8 2.03,-461.4 265.43,-461.4 265.43,-505.8"/>
+<text xml:space="preserve" text-anchor="middle" x="133.73" y="-487.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đánh dấu chênh lệch</text>
+<text xml:space="preserve" text-anchor="middle" x="133.73" y="-472.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chuyển xử lý ở đợt quyết toán · ORD&#45;10</text>
+</g>
+<g id="edge6" class="edge">
+<title>F&#45;&gt;G</title>
+<path fill="none" stroke="#55606b" d="M160.26,-552.51C155.66,-540.73 149.91,-526.02 144.94,-513.31"/>
+<polygon fill="#55606b" stroke="#55606b" points="147.16,-512.73 142.67,-507.5 142.92,-514.38 147.16,-512.73"/>
+</g>
+<g id="edge7" class="edge">
+<title>G&#45;&gt;H</title>
+<path fill="none" stroke="#55606b" d="M157.13,-461.04C166.96,-451.98 178.49,-441.35 188.84,-431.82"/>
+<polygon fill="#55606b" stroke="#55606b" points="190.1,-433.75 193.34,-427.67 187.02,-430.4 190.1,-433.75"/>
+</g>
+<g id="node9" class="node">
+<title>I</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="286.56,-347 148.89,-347 148.89,-302.6 286.56,-302.6 286.56,-347"/>
+<text xml:space="preserve" text-anchor="middle" x="217.73" y="-328.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Trình duyệt nội bộ</text>
+<text xml:space="preserve" text-anchor="middle" x="217.73" y="-313.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;03</text>
+</g>
+<g id="edge9" class="edge">
+<title>H&#45;&gt;I</title>
+<path fill="none" stroke="#55606b" d="M217.73,-381.64C217.73,-373.42 217.73,-363.91 217.73,-355.09"/>
+<polygon fill="#55606b" stroke="#55606b" points="220,-355.26 217.73,-348.76 215.45,-355.26 220,-355.26"/>
+</g>
+<g id="node10" class="node">
+<title>J</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="276.83,-267.6 158.62,-267.6 158.62,-238.2 276.83,-238.2 276.83,-267.6"/>
+<text xml:space="preserve" text-anchor="middle" x="217.73" y="-249.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nộp chủ đầu tư</text>
+</g>
+<g id="edge10" class="edge">
+<title>I&#45;&gt;J</title>
+<path fill="none" stroke="#55606b" d="M217.73,-302.45C217.73,-294.02 217.73,-284.33 217.73,-275.85"/>
+<polygon fill="#55606b" stroke="#55606b" points="220,-275.86 217.73,-269.36 215.45,-275.86 220,-275.86"/>
+</g>
+<g id="node11" class="node">
+<title>K</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="331.02,-203.2 104.44,-203.2 104.44,-158.8 331.02,-158.8 331.02,-203.2"/>
+<text xml:space="preserve" text-anchor="middle" x="217.73" y="-184.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chuỗi trạng thái và sổ vướng mắc</text>
+<text xml:space="preserve" text-anchor="middle" x="217.73" y="-169.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">theo khung ORD&#45;01</text>
+</g>
+<g id="edge11" class="edge">
+<title>J&#45;&gt;K</title>
+<path fill="none" stroke="#55606b" d="M217.73,-237.75C217.73,-230.16 217.73,-220.52 217.73,-211.39"/>
+<polygon fill="#55606b" stroke="#55606b" points="220,-211.58 217.73,-205.08 215.45,-211.58 220,-211.58"/>
+</g>
+<g id="node12" class="node">
+<title>L</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="182.84,-116.3 48.61,-116.3 48.61,-86.9 182.84,-86.9 182.84,-116.3"/>
+<text xml:space="preserve" text-anchor="middle" x="115.73" y="-97.85" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đã nhận thanh toán</text>
+</g>
+<g id="edge12" class="edge">
+<title>K&#45;&gt;L</title>
+<path fill="none" stroke="#55606b" d="M189.32,-158.44C173.95,-146.78 155.14,-132.51 140.39,-121.32"/>
+<polygon fill="#55606b" stroke="#55606b" points="142.1,-119.76 135.55,-117.64 139.35,-123.38 142.1,-119.76"/>
+</g>
+<g id="node14" class="node">
+<title>N</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="434.37,-123.8 207.09,-123.8 207.09,-79.4 434.37,-79.4 434.37,-123.8"/>
+<text xml:space="preserve" text-anchor="middle" x="320.73" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Số liệu vào báo cáo và lãi lỗ dự án</text>
+<text xml:space="preserve" text-anchor="middle" x="320.73" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">RPT&#45;02 · RPT&#45;03</text>
+</g>
+<g id="edge14" class="edge">
+<title>K&#45;&gt;N</title>
+<path fill="none" stroke="#55606b" d="M246.42,-158.44C258.7,-149.21 273.14,-138.36 286.01,-128.69"/>
+<polygon fill="#55606b" stroke="#55606b" points="287.15,-130.68 290.98,-124.95 284.42,-127.04 287.15,-130.68"/>
+</g>
+<g id="node13" class="node">
+<title>M</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="231.46,-44.4 0,-44.4 0,0 231.46,0 231.46,-44.4"/>
+<text xml:space="preserve" text-anchor="middle" x="115.73" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi nhận doanh thu đợt</text>
+<text xml:space="preserve" text-anchor="middle" x="115.73" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">và giảm công nợ phải thu · ACC&#45;05</text>
+</g>
+<g id="edge13" class="edge">
+<title>L&#45;&gt;M</title>
+<path fill="none" stroke="#55606b" d="M115.73,-86.4C115.73,-76.9 115.73,-64.05 115.73,-52.42"/>
+<polygon fill="#55606b" stroke="#55606b" points="118,-52.63 115.73,-46.13 113.45,-52.63 118,-52.63"/>
+</g>
+</g>
+</svg></div><figcaption><b>Hình ORD-09.1</b> Phép đối chiếu ba khối lượng nằm ngay đầu luồng, trước khi ghép hồ sơ. Chênh lệch không chặn việc lập hồ sơ — nó được ghi nhận và đẩy sang đợt quyết toán để xử lý, đúng chủ trương trong yêu cầu.</figcaption></figure>
+
+    <h4>Hai tuyến tình trạng hồ sơ</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:190px">Tuyến</th><th>Nội dung theo dõi</th><th>Các trạng thái</th></tr></thead>
+        <tbody>
+          <tr><td><b>Bản vẽ sơ họa hoàn công</b></td><td>Bản vẽ thể hiện khối lượng đã thi công của đợt, chỉnh từ Shopdrawing được duyệt</td><td>Chưa lập → Đang chỉnh → Đã trình BQL → BQL chấp thuận → Cần chỉnh lại</td></tr>
+          <tr><td><b>Hồ sơ giá trị</b></td><td>Bảng khối lượng, đơn giá hợp đồng, biên bản nghiệm thu khối lượng, phụ lục (nếu có)</td><td>Chưa lập → Đang ghép → Đủ thành phần → Thiếu / sai → Đã nộp</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Hai tuyến chạy độc lập và đều phải đạt trạng thái sẵn sàng thì hồ sơ mới nộp được. Danh sách hồ sơ hiển thị cả hai tuyến để nhìn ra hồ sơ đang mắc ở phần bản vẽ hay phần giá trị.</p>
+
+    <h4>Tham số riêng</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã hồ sơ</td><td class="k">vol_dossier_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>HSKL-&lt;project&gt;-NN</code>.</td></tr>
+          <tr><td>Đợt thanh toán</td><td class="k">batch_no</td><td>Số</td><td class="c req">✱</td><td>Gắn với đợt của bảng thanh toán hợp đồng (<a href="BID-05.html">BID-05</a>) nếu hợp đồng chia đợt cố định.</td></tr>
+          <tr><td>Khối lượng đã thi công</td><td class="k">qty_done</td><td>Bảng</td><td class="c req">✱</td><td>Nạp từ sản lượng đã chốt của <a href="PRJ-02.html">PRJ-02</a>, theo từng đầu việc BOQ.</td></tr>
+          <tr><td>Khối lượng đã trả tổ đội</td><td class="k">qty_paid_crew</td><td>Bảng</td><td class="c">—</td><td>Nạp từ hồ sơ giao khoán nhân công đã duyệt (<a href="PRJ-03.html">PRJ-03</a>), lũy kế theo đầu việc. Chỉ đọc.</td></tr>
+          <tr><td>Khối lượng đề nghị CĐT</td><td class="k">qty_claim</td><td>Bảng</td><td class="c req">✱</td><td>Mặc định bằng khối lượng đã thi công; sửa được khi chủ đầu tư chỉ chấp nhận một phần.</td></tr>
+          <tr><td>Chênh lệch bất lợi</td><td class="k">qty_gap</td><td>Số</td><td class="c">—</td><td>Tính tự động: <code>qty_paid_crew − qty_claim</code>. Lớn hơn 0 là công ty đang trả cho đội nhiều hơn thu được.</td></tr>
+          <tr><td>Giải trình chênh lệch</td><td class="k">gap_note</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi <code>qty_gap &gt; 0</code>; hiển thị trên màn hình duyệt nội bộ.</td></tr>
+          <tr><td>Tình trạng bản vẽ sơ họa</td><td class="k">asbuilt_sketch_status</td><td>Chọn 1</td><td class="c req">✱</td><td>Theo bảng hai tuyến ở trên.</td></tr>
+          <tr><td>Tình trạng hồ sơ giá trị</td><td class="k">value_dossier_status</td><td>Chọn 1</td><td class="c req">✱</td><td>Theo bảng hai tuyến ở trên.</td></tr>
+          <tr><td>Giá trị đề nghị · đã nhận</td><td class="k">amount_claim, amount_received</td><td>Số tiền</td><td class="c req">✱</td><td>Cơ chế nhận nhiều lần giống <a href="ORD-01.html">ORD-01</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Khối lượng đã thi công và khối lượng đã trả tổ đội nạp tự động, người lập chỉ nhập khối lượng đề nghị chủ đầu tư.</li>
+      <li>Ba cột khối lượng đặt cạnh nhau trên cùng một dòng đầu việc, chênh lệch tính ngay khi nhập.</li>
+      <li>Khối lượng đề nghị nhỏ hơn khối lượng đã trả tổ đội thì hiện cảnh báo và bắt buộc giải trình — nhưng không chặn việc lập và nộp hồ sơ.</li>
+      <li>Phần chênh lệch được đánh dấu và tự chuyển vào danh sách chờ xử lý của đợt quyết toán ở <a href="ORD-10.html">ORD-10</a>.</li>
+      <li>Danh sách hồ sơ hiển thị đồng thời tình trạng bản vẽ sơ họa và tình trạng hồ sơ giá trị.</li>
+      <li>Không nộp được chủ đầu tư khi một trong hai tuyến chưa sẵn sàng.</li>
+      <li>Trạng thái đã nhận / chưa nhận thanh toán hiển thị bằng số tiền, và số liệu này vào thẳng báo cáo tổng hợp và bài toán lãi lỗ dự án.</li>
+      <li>Hồ sơ dùng chung toàn bộ chuỗi trạng thái, sổ vướng mắc và cơ chế phối hợp phòng ban của <a href="ORD-01.html">ORD-01</a>.</li>
+    </ol>
+
+    <h4>Mockup UI — Hồ sơ › Thanh toán khối lượng</h4>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>HSKL-014-05 · Đợt 5</b><span class="sp"></span><span class="tag t-crit"><span class="pin">3</span> Chênh lệch bất lợi</span><span class="wf-btn">Xuất báo cáo</span><span class="wf-btn pri">Trình duyệt</span></div>
+      <div class="wf-body">
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">1</span> Tình trạng hồ sơ — hai tuyến</div>
+            <div class="wf-steps">
+              <div class="cur"><b>Bản vẽ sơ họa hoàn công</b>Đã trình BQL · chờ chấp thuận</div>
+              <div class="done"><b>Hồ sơ giá trị</b>Đủ thành phần</div>
+            </div>
+            <p style="margin:7px 0 0;font-size:11.5px;color:var(--ink-3)">Chưa cần bản vẽ hoàn công đầy đủ ở đợt này — chỉ điều chỉnh nhẹ từ Shopdrawing đã duyệt.</p>
+          </div></div>
+          <div class="wf-c" style="flex:0 1 230px"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">4</span> Tình trạng thanh toán</div>
+            <table><tbody>
+              <tr><td>Giá trị đề nghị</td><td class="num">3.870.000.000</td></tr>
+              <tr><td>Đã nhận</td><td class="num">0</td></tr>
+              <tr><td>Trạng thái</td><td><span class="tag t-warn">Chưa nhận</span></td></tr>
+            </tbody></table>
+          </div></div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">2</span> Đối chiếu ba khối lượng theo đầu việc</div>
+          <table><thead><tr><th>Mã HM</th><th>Đầu việc</th><th>ĐVT</th><th class="num">Đã thi công</th><th class="num">Đã trả tổ đội</th><th class="num">Đề nghị CĐT</th><th class="num">Chênh bất lợi</th></tr></thead>
+          <tbody>
+            <tr><td>HM-01</td><td>Ốp lát mặt đứng tháp A</td><td>m²</td><td class="num">1.680</td><td class="num">1.680</td><td class="num">1.680</td><td class="num">—</td></tr>
+            <tr><td>HM-02</td><td>Lát sàn sảnh marble</td><td>m²</td><td class="num">378</td><td class="num">378</td><td class="num">310</td><td class="num">68</td></tr>
+            <tr><td>HM-04</td><td>Gia công đá cong bo góc</td><td>công</td><td class="num">86</td><td class="num">86</td><td class="num">86</td><td class="num">—</td></tr>
+          </tbody></table>
+          <p style="margin:7px 0 0;font-size:11.5px;color:var(--crit)">HM-02: đề nghị 310 m² trong khi đã trả tổ đội 378 m² — chênh 68 m². Cần giải trình.</p>
+          <div class="wf-f" style="margin-top:8px"><label><span class="pin">3</span> Giải trình chênh lệch ✱</label><div class="in" style="min-height:44px">BQL chưa nghiệm thu phần sàn trục C do vướng thiết bị của nhà thầu M&amp;E. Đưa vào đợt quyết toán hợp đồng.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
+        <tbody>
+          <tr><td class="c"><span class="pin">1</span></td><td>Theo dõi hai tuyến tình trạng</td><td>Bản vẽ sơ họa và hồ sơ giá trị có trạng thái riêng; cả hai sẵn sàng mới nộp được chủ đầu tư.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Đối chiếu ba khối lượng</td><td>Hai cột đầu chỉ đọc (nạp từ PRJ-02 và PRJ-03); chỉ cột đề nghị CĐT nhập tay. Cột chênh tính tự động.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Cảnh báo &amp; giải trình chênh lệch</td><td>Cảnh báo mức nhẹ, không chặn. Giải trình bắt buộc và phần chênh chuyển sang danh sách chờ của <a href="ORD-10.html">ORD-10</a>.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Ghi nhận thanh toán</td><td>Nhận nhiều lần; đối chiếu báo có ngân hàng như <a href="ORD-01.html">ORD-01</a>.</td></tr>
+          <tr><td class="c">—</td><td>Vướng mắc &amp; phối hợp phòng ban</td><td>Dùng lại nguyên sổ vướng mắc của <a href="ORD-01.html">ORD-01</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Hai cột khối lượng đầu là số hệ thống.</b> Khối lượng đã thi công lấy từ <a href="PRJ-02.html">PRJ-02</a>, khối lượng đã trả tổ đội lấy từ <a href="PRJ-03.html">PRJ-03</a>, cả hai chỉ đọc.<span class="then">Người lập chỉ nhập cột khối lượng đề nghị chủ đầu tư — nhờ vậy phép đối chiếu luôn dựa trên số liệu gốc, không phải số gõ lại.</span></li>
+      <li><b>Chênh lệch bất lợi cảnh báo nhưng không chặn.</b> Khối lượng đề nghị nhỏ hơn khối lượng đã trả tổ đội thì hiện cảnh báo mức nhẹ và bắt buộc giải trình.<span class="then">Hồ sơ vẫn lập và nộp được — chặn ở đây sẽ làm chậm thanh toán với chủ đầu tư, tức là hại thêm.</span></li>
+      <li><b>Chênh lệch được treo, không bị quên.</b> Phần chênh tự vào danh sách chờ xử lý của đợt quyết toán.<span class="then">Tới <a href="ORD-10.html">ORD-10</a> nếu vẫn chưa thu được thì nó thành thiệt hại có địa chỉ.</span></li>
+      <li><b>Hai tuyến tình trạng độc lập.</b> Bản vẽ sơ họa hoàn công và hồ sơ giá trị có trạng thái riêng, cùng phải sẵn sàng mới nộp được.<span class="then">Danh sách hồ sơ hiện cả hai để biết đang mắc ở bản vẽ hay ở phần giá trị.</span></li>
+      <li><b>Chưa cần bản vẽ hoàn công.</b> Ở đợt thanh toán chỉ cần chỉnh nhẹ Shopdrawing đã duyệt theo yêu cầu Ban quản lý xây dựng.<span class="then">Bản vẽ hoàn công đầy đủ là việc của <a href="ORD-10.html">ORD-10</a>; ràng buộc sớm sẽ làm nghẽn thanh toán từng đợt.</span></li>
+      <li><b>Đề nghị vượt khối lượng đã thi công thì chặn.</b> Không đề nghị chủ đầu tư thanh toán phần chưa làm.<span class="then">Khác với chiều ngược lại — đề nghị ít hơn chỉ là cảnh báo.</span></li>
+      <li><b>Số liệu vào thẳng lãi lỗ.</b> Giá trị đã nhận thanh toán là doanh thu thi công của dự án trong kỳ.<span class="then">Đây là lý do trạng thái nhận / chưa nhận phải chính xác, không chỉ để theo dõi hành chính.</span></li>
+      <li><b>Kế thừa khung ORD-01.</b> Chuỗi trạng thái, sổ vướng mắc, phối hợp phòng ban, đối chiếu ngân hàng và báo cáo tổng hợp dùng chung.<span class="then">Không định nghĩa lại; sửa ở <a href="ORD-01.html">ORD-01</a> là có hiệu lực ở đây.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Đề nghị ít hơn đã trả tổ đội</td><td><code>qty_claim &lt; qty_paid_crew</code></td><td>“{mã HM}: đề nghị {số} nhưng đã trả tổ đội {số}. Chênh {số} sẽ chuyển sang đợt quyết toán — nhập giải trình.”</td></tr>
+          <tr><td>Đề nghị vượt khối lượng đã thi công</td><td><code>qty_claim &gt; qty_done</code></td><td>“Không đề nghị thanh toán quá khối lượng đã thi công ({số}). Cập nhật sản lượng ở PRJ-02 nếu số liệu chưa đủ.”</td></tr>
+          <tr><td>Nộp khi một tuyến chưa sẵn sàng</td><td>Bản vẽ hoặc hồ sơ giá trị chưa đạt</td><td>“Chưa nộp được: {tên tuyến} đang ở trạng thái ‘{trạng thái}’.”</td></tr>
+          <tr><td>Chênh lệch nhưng bỏ trống giải trình</td><td><code>qty_gap &gt; 0</code>, ghi chú rỗng</td><td>“Nhập giải trình cho phần chênh {số} — nội dung này hiện trên màn hình duyệt và ở hồ sơ quyết toán.”</td></tr>
+          <tr><td>Đợt chưa chốt sản lượng</td><td>Sản lượng đợt còn mở</td><td>“Đợt {n} chưa chốt sản lượng. Chốt tại PRJ-02 trước khi lập hồ sơ thanh toán.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-ORD09-1</td><td>Sản lượng đợt 5 đã chốt, hồ sơ giao khoán đã duyệt</td><td>Lập hồ sơ thanh toán khối lượng đợt 5</td><td>Hai cột đã thi công và đã trả tổ đội nạp sẵn, ở chế độ chỉ đọc</td></tr>
+          <tr><td>UAT-ORD09-2</td><td>HM-02 đã trả tổ đội 378 m²</td><td>Nhập khối lượng đề nghị CĐT 310 m²</td><td>Cột chênh hiện 68; cảnh báo bật; ô giải trình bắt buộc</td></tr>
+          <tr><td>UAT-ORD09-3</td><td>Tiếp UAT-2, đã nhập giải trình</td><td>Trình duyệt và nộp CĐT</td><td>Cho nộp bình thường; phần chênh 68 m² vào danh sách chờ của ORD-10</td></tr>
+          <tr><td>UAT-ORD09-4</td><td>HM-01 đã thi công 1.680 m²</td><td>Nhập đề nghị 1.800 m²</td><td>Bị chặn kèm thông điệp nêu khối lượng đã thi công</td></tr>
+          <tr><td>UAT-ORD09-5</td><td>Bản vẽ sơ họa đang chờ BQL chấp thuận</td><td>Bấm “Nộp chủ đầu tư”</td><td>Bị chặn, nêu rõ tuyến bản vẽ chưa sẵn sàng</td></tr>
+          <tr><td>UAT-ORD09-6</td><td>Hồ sơ nhận đủ tiền</td><td>Ghi nhận thanh toán</td><td>Doanh thu đợt vào lãi lỗ dự án; công nợ phải thu giảm</td></tr>
+          <tr><td>UAT-ORD09-7</td><td>Có 5 hồ sơ nhiều trạng thái</td><td>Mở danh sách hồ sơ</td><td>Mỗi dòng hiện cả tình trạng bản vẽ lẫn tình trạng hồ sơ giá trị</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="ORD-01.html">ORD-01 khung theo dõi hồ sơ</a><a href="ORD-02.html">ORD-02 bản vẽ Shopdrawing</a><a href="ORD-10.html">ORD-10 quyết toán hợp đồng</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="PRJ-03.html">PRJ-03 khối lượng đã trả tổ đội</a><a href="ACC-05.html">ACC-05 công nợ phải thu</a><a href="RPT-03.html">RPT-03 lãi lỗ dự án</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đặc tả 19 / 42</span><span><code>ORD-09.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
+</div>
+</main>
+</div>
+</body></html>
