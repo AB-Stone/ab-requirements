@@ -3338,7 +3338,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <p>Bước bản lề của cả hệ thống. Ghi chú gốc nói rất rõ: “ở bước này có thể tương đương tạo 1 dự án mới… PĐT sẽ thêm Ban lãnh đạo cty, Giám đốc dự án, các phòng ban vào dự án này, Giám đốc dự án sẽ phân công chỉ huy trưởng, CBKT vào dự án, sẽ có thông báo đến từng ID được thêm vào dự án”.</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu → Giám đốc dự án</dd></div>
-        <div><dt>Phê duyệt</dt><dd>Ký số nhiều bước: TP ĐT → KT trưởng → Tổng GĐ → đối tác</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Kiểm tra hợp đồng đạt → ký số nhiều bước: TP ĐT → KT trưởng → Tổng GĐ → đối tác</dd></div>
         <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · trưởng các BP · dự án liên quan</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>ĐT · dòng 4.2</dd></div>
       </dl>
@@ -3347,10 +3347,11 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
   <div class="sb">
     <h4>Mục tiêu</h4>
     <p>Một thao tác duy nhất phải cho ra ba kết quả: hợp đồng được ký đủ chữ ký, dự án được khởi tạo với BOQ hợp đồng, và bộ máy nhân sự dự án được gán kèm thông báo tới từng người. Nếu tách rời ba việc này thì dữ liệu dự án sẽ khuyết ngay từ ngày đầu.</p>
+    <p>Chữ ký số là chữ ký pháp lý, không thu hồi được — nên trước chữ ký đầu tiên phải có một bước kiểm tra hợp đồng: đối chiếu giá trị và BOQ với gói thầu đã chốt ở <a href="#BID-03">BID-03</a>, soát điều khoản thanh toán, bảo lãnh, pháp nhân bên ký kết và phiên bản bản thảo đính kèm. Sai lệch phải được phát hiện ở đây, không phải sau khi Tổng Giám đốc đã ký.</p>
 
-    <h4>Lưu đồ — ký số và khởi tạo</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:510px;margin:0 auto"><svg role="img" aria-label="Hình BID-05.1 Chuỗi ký số nội bộ chạy tuần tự trước khi gửi đối tác; chỉ khi có đủ chữ ký hai bên thì dự án mới được khởi tạo. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện."
- viewBox="0.00 0.00 510.00 1007.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <h4>Lưu đồ — kiểm tra, ký số và khởi tạo</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:510px;margin:0 auto"><svg role="img" aria-label="Hình BID-05.1 Hợp đồng soạn xong phải qua một bước kiểm tra đối chiếu BOQ chốt, điều khoản và bảo lãnh; còn sai lệch thì quay lại soạn thảo, đạt thì mới mở chuỗi ký số. Chuỗi ký nội bộ chạy tuần tự trước khi gửi đối tác; chỉ khi có đủ chữ ký hai bên thì dự án mới được khởi tạo. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện."
+ viewBox="0.00 0.00 510.00 1167.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 994.32)">
 <title>G</title>
 <g id="node1" class="node">
@@ -3369,15 +3370,50 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 <path fill="none" stroke="#55606b" d="M181.34,-951.51C181.34,-943.92 181.34,-934.28 181.34,-925.15"/>
 <polygon fill="#55606b" stroke="#55606b" points="183.61,-925.34 181.34,-918.84 179.06,-925.34 183.61,-925.34"/>
 </g>
+<g id="node15" class="node">
+<title>P</title>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="338.39,-840 24.28,-840 24.28,-795.6 338.39,-795.6 338.39,-840"/>
+<text xml:space="preserve" text-anchor="middle" x="181.34" y="-821.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Kiểm tra hợp đồng trước khi trình ký</text>
+<text xml:space="preserve" text-anchor="middle" x="181.34" y="-806.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đối chiếu BOQ chốt · điều khoản · bảo lãnh</text>
+</g>
+<g id="edge16" class="edge">
+<title>B&#45;&gt;P</title>
+<path fill="none" stroke="#55606b" d="M181.34,-872.16C181.34,-864.5 181.34,-856.5 181.34,-848.5"/>
+<polygon fill="#55606b" stroke="#55606b" points="183.61,-848.5 181.34,-842 179.06,-848.5 183.61,-848.5"/>
+</g>
+<g id="node16" class="node">
+<title>Q</title>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="181.34,-763 114.55,-745.12 181.34,-727.24 248.13,-745.12 181.34,-763"/>
+<text xml:space="preserve" text-anchor="middle" x="181.34" y="-741.37" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đạt yêu cầu?</text>
+</g>
+<g id="edge17" class="edge">
+<title>P&#45;&gt;Q</title>
+<path fill="none" stroke="#55606b" d="M181.34,-795.2C181.34,-787 181.34,-779 181.34,-771.5"/>
+<polygon fill="#55606b" stroke="#55606b" points="183.61,-771.5 181.34,-765 179.06,-771.5 183.61,-771.5"/>
+</g>
+<g id="edge18" class="edge">
+<title>Q&#45;&gt;C</title>
+<path fill="none" stroke="#55606b" d="M164.8,-731.67C156,-720 143.5,-696.5 135.5,-683.5"/>
+<polygon fill="#55606b" stroke="#55606b" points="133.57,-684.69 132.1,-677.97 137.43,-682.31 133.57,-684.69"/>
+<text xml:space="preserve" text-anchor="middle" x="163" y="-701" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đạt</text>
+</g>
+<g id="edge19" class="edge">
+<title>Q&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M114.35,-745.12C88.5,-745.12 6,-745.12 6,-762 6,-762 6,-878 6,-878 6,-888 11.5,-892.8 17.2,-894.5"/>
+<polygon fill="#55606b" stroke="#55606b" points="17,-892.49 23.5,-894.76 17,-897.03 17,-892.49"/>
+<text xml:space="preserve" text-anchor="middle" x="59" y="-732.6" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Còn sai lệch</text>
+</g>
+<g id="edge7" class="edge">
+<title>G&#45;&gt;B</title>
+<path fill="none" stroke="#55606b" d="M230.73,-398.82C252.5,-410 360,-435 360,-460 360,-460 360,-869 360,-869 360,-879.5 354,-887.5 346.2,-892.4"/>
+<polygon fill="#55606b" stroke="#55606b" points="347.41,-894.33 340.69,-895.86 344.99,-890.48 347.41,-894.33"/>
+<text xml:space="preserve" text-anchor="middle" x="300" y="-716.86" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Yêu cầu sửa điều khoản</text>
+</g>
+<g id="flow-after-check" transform="translate(0,160)">
 <g id="node3" class="node">
 <title>C</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="210,-837.56 14.67,-837.56 14.67,-808.16 210,-808.16 210,-837.56"/>
 <text xml:space="preserve" text-anchor="middle" x="112.34" y="-819.11" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ký số bước 1 — TP Đấu thầu</text>
-</g>
-<g id="edge2" class="edge">
-<title>B&#45;&gt;C</title>
-<path fill="none" stroke="#55606b" d="M160.26,-872.41C151.15,-863.19 140.57,-852.47 131.67,-843.45"/>
-<polygon fill="#55606b" stroke="#55606b" points="133.35,-841.91 127.16,-838.88 130.11,-845.11 133.35,-841.91"/>
 </g>
 <g id="node4" class="node">
 <title>D</title>
@@ -3418,12 +3454,6 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 <title>F&#45;&gt;G</title>
 <path fill="none" stroke="#55606b" d="M157.15,-602.55C164.22,-593.46 173.58,-581.43 181.48,-571.27"/>
 <polygon fill="#55606b" stroke="#55606b" points="183.06,-572.94 185.25,-566.42 179.47,-570.15 183.06,-572.94"/>
-</g>
-<g id="edge7" class="edge">
-<title>G&#45;&gt;B</title>
-<path fill="none" stroke="#55606b" d="M208.62,-565.11C223.91,-584.4 249.34,-616.46 249.34,-616.46 249.34,-823.86 249.34,-823.86 249.34,-823.86 249.34,-823.86 226.78,-847.05 207.65,-866.71"/>
-<polygon fill="#55606b" stroke="#55606b" points="206.06,-865.08 203.16,-871.32 209.33,-868.25 206.06,-865.08"/>
-<text xml:space="preserve" text-anchor="middle" x="314.45" y="-716.86" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Yêu cầu sửa điều khoản</text>
 </g>
 <g id="node8" class="node">
 <title>H</title>
@@ -3509,7 +3539,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 <polygon fill="#55606b" stroke="#55606b" points="256.69,-46.76 249.93,-45.41 254.37,-50.68 256.69,-46.76"/>
 </g>
 </g>
-</svg></div><figcaption><b>Hình BID-05.1</b> Chuỗi ký số nội bộ chạy tuần tự trước khi gửi đối tác; chỉ khi có đủ chữ ký hai bên thì dự án mới được khởi tạo. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện.</figcaption></figure>
+</g>
+</svg></div><figcaption><b>Hình BID-05.1</b> Hợp đồng soạn xong phải qua một bước kiểm tra — đối chiếu BOQ chốt, điều khoản thương mại và bảo lãnh — mới được mở chuỗi ký; còn sai lệch thì quay lại soạn thảo. Chuỗi ký nội bộ chạy tuần tự trước khi gửi đối tác; chỉ khi có đủ chữ ký hai bên thì dự án mới được khởi tạo. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện.</figcaption></figure>
 
     <h4>Tham số — hợp đồng</h4>
     <div class="tw">
@@ -3523,7 +3554,26 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Ngày ký · hiệu lực</td><td class="k">signed_at, effective_from, to</td><td>Ngày</td><td class="c req">✱</td><td>Ngày ký lấy theo thời điểm chữ ký cuối cùng.</td></tr>
           <tr><td>Đợt thanh toán</td><td class="k">payment_terms[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi đợt: tên, điều kiện, tỷ lệ %, giá trị, ngày dự kiến — nguồn của tab Thanh toán ở màn hình công trình.</td></tr>
           <tr><td>Bảo lãnh</td><td class="k">guarantees[]</td><td>Bảng</td><td class="c">—</td><td>Loại (tạm ứng / thực hiện / bảo hành), giá trị, ngân hàng, ngày hết hạn — sinh nhắc trước hạn 15 ngày.</td></tr>
+          <tr><td>Kết quả kiểm tra trước ký</td><td class="k">precheck</td><td>Bản ghi</td><td class="c req">✱</td><td>Trạng thái (<code>chưa chạy</code> · <code>còn sai lệch</code> · <code>đạt</code>), người kiểm tra, thời điểm, phiên bản hợp đồng được kiểm tra. Phải <code>đạt</code> mới mở được chuỗi ký.</td></tr>
           <tr><td>Chuỗi ký</td><td class="k">sign_chain[]</td><td>Danh sách</td><td class="c req">✱</td><td>Thứ tự người ký, trạng thái từng bước, thời điểm, phương thức (<a href="#PF-04">PF-04</a>).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — danh mục kiểm tra trước ký</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Hạng mục kiểm tra</th><th>Mã</th><th>Đối chiếu với</th><th>Mức</th></tr></thead>
+        <tbody>
+          <tr><td>Giá trị hợp đồng</td><td class="k">chk_value</td><td>Giá trị báo giá đã chốt ở <a href="#BID-03">BID-03</a></td><td>Chặn nếu lệch &gt; 1%</td></tr>
+          <tr><td>BOQ hợp đồng</td><td class="k">chk_boq</td><td>Từng dòng khối lượng · đơn giá của BOQ báo giá đã chốt</td><td>Chặn nếu còn dòng lệch</td></tr>
+          <tr><td>Đợt thanh toán</td><td class="k">chk_payment</td><td>Tổng tỷ lệ các đợt của <code>payment_terms[]</code></td><td>Chặn nếu ≠ 100%</td></tr>
+          <tr><td>Điều khoản thương mại</td><td class="k">chk_terms</td><td>Tiến độ thanh toán, bảo hành, hiệu lực đã chốt ở <a href="#BID-03">BID-03</a></td><td>Cảnh báo — người kiểm tra phải xác nhận đã thống nhất lại</td></tr>
+          <tr><td>Pháp nhân bên ký kết</td><td class="k">chk_partner</td><td>Mã số thuế, địa chỉ, người đại diện trong hồ sơ đối tác (<a href="#PF-01">PF-01</a>)</td><td>Chặn nếu thiếu trường bắt buộc</td></tr>
+          <tr><td>Bảo lãnh</td><td class="k">chk_guarantee</td><td>Loại, giá trị, ngân hàng, hạn của <code>guarantees[]</code></td><td>Cảnh báo nếu hợp đồng yêu cầu bảo lãnh mà chưa khai</td></tr>
+          <tr><td>Hiệu lực &amp; tiến độ</td><td class="k">chk_effective</td><td><code>effective_from</code> · <code>effective_to</code> và tiến độ thi công cam kết</td><td>Cảnh báo nếu hiệu lực hồi tố hoặc trống</td></tr>
+          <tr><td>Bản thảo đính kèm</td><td class="k">chk_doc</td><td>Phiên bản tệp hợp đồng trên <a href="#PF-05">PF-05</a></td><td>Chặn nếu thiếu tệp hoặc tệp không phải phiên bản mới nhất</td></tr>
+          <tr><td>Người kiểm tra</td><td class="k">chk_owner</td><td>Chuyên viên Đấu thầu phụ trách gói thầu</td><td>Chặn — phải ký xác nhận kết quả kiểm tra</td></tr>
         </tbody>
       </table>
     </div>
@@ -3546,6 +3596,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
+      <li>Hợp đồng chỉ trình ký được khi danh mục kiểm tra không còn mục ở mức Chặn; mục ở mức Cảnh báo phải có xác nhận của người kiểm tra.</li>
+      <li>Sửa bất kỳ nội dung nào của hợp đồng sau khi kiểm tra đạt thì kết quả kiểm tra hết hiệu lực và phải chạy lại.</li>
       <li>Màn hình hợp đồng hiển thị tiến trình ký theo từng bước, biết ngay đang chờ ai ký.</li>
       <li>Không thể khởi tạo dự án khi chuỗi ký chưa hoàn tất.</li>
       <li>Khởi tạo dự án sinh đồng thời: mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án và bảng đợt thanh toán.</li>
@@ -3558,10 +3610,24 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
     <h4>Mockup UI — Hợp đồng &amp; khởi tạo dự án</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › GT-2026-018 ›</span><b>HD-2026-008</b><span class="sp"></span><span class="tag t-warn">Chờ đối tác ký</span><span class="wf-btn"><span class="pin">2</span> Gửi nhắc ký</span></div>
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › GT-2026-018 ›</span><b>HD-2026-008</b><span class="sp"></span><span class="tag t-warn">Chờ đối tác ký</span><span class="wf-btn"><span class="pin">3</span> Gửi nhắc ký</span></div>
       <div class="wf-body">
         <div class="wf-sec">
-          <div class="wf-lg"><span class="pin">1</span> Tiến trình ký số</div>
+          <div class="wf-lg"><span class="pin">1</span> Kiểm tra hợp đồng trước khi trình ký <span class="tag t-ok">Đạt — 28/12 08:40</span></div>
+          <table><thead><tr><th>Hạng mục</th><th>Đối chiếu</th><th>Kết quả</th></tr></thead>
+          <tbody>
+            <tr><td>Giá trị hợp đồng vs BOQ chốt</td><td>28.500.000.000 / 28.500.000.000</td><td><span class="tag t-ok">Đạt</span></td></tr>
+            <tr><td>Khối lượng &amp; đơn giá BOQ</td><td>124 / 124 dòng khớp</td><td><span class="tag t-ok">Đạt</span></td></tr>
+            <tr><td>Tổng tỷ lệ đợt thanh toán</td><td>100%</td><td><span class="tag t-ok">Đạt</span></td></tr>
+            <tr><td>Điều khoản thanh toán vs báo giá</td><td>Đợt 1: 10% — báo giá chốt 15%</td><td><span class="tag t-warn">Đã xác nhận lại</span></td></tr>
+            <tr><td>Pháp nhân &amp; người đại diện đối tác</td><td>MST · địa chỉ · người ký</td><td><span class="tag t-ok">Đạt</span></td></tr>
+            <tr><td>Bảo lãnh thực hiện 5%</td><td>1.425.000.000 · VCB · hết hạn 31/01/2027</td><td><span class="tag t-ok">Đạt</span></td></tr>
+            <tr><td>Bản thảo đính kèm</td><td>HD-2026-008 · bản v3 · PF-05</td><td><span class="tag t-ok">Đạt</span></td></tr>
+          </tbody></table>
+          <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Người kiểm tra: Ng. Thị Hạnh — 1 mục cảnh báo đã xác nhận, không còn mục chặn. Chuỗi ký được mở lúc 08:42.</p>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">2</span> Tiến trình ký số</div>
           <div class="wf-steps">
             <div class="done"><b>✓ TP Đấu thầu</b>Ng. Thị Hạnh<br>28/12 09:10</div>
             <div class="done"><b>✓ Kế toán trưởng</b>Trần Quốc Bảo<br>29/12 14:22</div>
@@ -3571,14 +3637,14 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         </div>
         <div class="wf-row">
           <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">3</span> Thông tin hợp đồng</div>
+            <div class="wf-lg"><span class="pin">4</span> Thông tin hợp đồng</div>
             <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Giá trị trước VAT ✱</label><div class="in">26.388.888.889</div></div></div>
             <div class="wf-c"><div class="wf-f"><label>Sau VAT 8% ✱</label><div class="in ro">28.500.000.000</div></div></div></div>
             <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Hiệu lực từ ✱</label><div class="in">05/01/2026</div></div></div>
             <div class="wf-c"><div class="wf-f"><label>Đến ✱</label><div class="in">20/12/2026</div></div></div></div>
           </div></div>
           <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">4</span> Đợt thanh toán theo hợp đồng</div>
+            <div class="wf-lg"><span class="pin">5</span> Đợt thanh toán theo hợp đồng</div>
             <table><thead><tr><th>Đợt</th><th>Điều kiện</th><th class="num">Tỷ lệ</th><th>Dự kiến</th></tr></thead>
             <tbody>
               <tr><td>1</td><td>Tạm ứng sau ký</td><td class="num">10%</td><td>15/02/2026</td></tr>
@@ -3590,11 +3656,11 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       </div>
     </div>
     <div class="wf" style="margin-top:10px">
-      <div class="wf-bar"><b>Khởi tạo dự án từ hợp đồng</b><span class="wf-crumb">bước 2/2 — gán nhân sự</span><span class="sp"></span><span class="wf-btn pri"><span class="pin">7</span> Khởi tạo &amp; thông báo</span></div>
+      <div class="wf-bar"><b>Khởi tạo dự án từ hợp đồng</b><span class="wf-crumb">bước 2/2 — gán nhân sự</span><span class="sp"></span><span class="wf-btn pri"><span class="pin">8</span> Khởi tạo &amp; thông báo</span></div>
       <div class="wf-body">
         <div class="wf-row">
           <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">5</span> Thành phần dự án — P. Đấu thầu gán</div>
+            <div class="wf-lg"><span class="pin">6</span> Thành phần dự án — P. Đấu thầu gán</div>
             <table><thead><tr><th>Vai trò</th><th>Người</th><th>Quyền</th></tr></thead>
             <tbody>
               <tr><td>Ban lãnh đạo</td><td>Phạm Văn An</td><td>Toàn quyền</td></tr>
@@ -3604,7 +3670,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
             </tbody></table>
           </div></div>
           <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">6</span> Nhân sự hiện trường — GĐ dự án phân công</div>
+            <div class="wf-lg"><span class="pin">7</span> Nhân sự hiện trường — GĐ dự án phân công</div>
             <table><thead><tr><th>Chức danh</th><th>Người</th><th>Hạng mục phụ trách</th></tr></thead>
             <tbody>
               <tr><td>Chỉ huy trưởng</td><td>Đỗ Thái Sơn</td><td>Toàn công trình</td></tr>
@@ -3620,19 +3686,23 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Theo dõi tiến trình ký</td><td>Từng bước ký hiện người, thời điểm, phương thức. Bước đang chờ được làm nổi.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Nhắc ký</td><td>Gửi nhắc tới người ký nội bộ hoặc email tới đối tác; ghi lại số lần nhắc.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Khai báo giá trị &amp; hiệu lực</td><td>Giá trị sau VAT tính tự động; hiệu lực dùng để cảnh báo trễ tiến độ hợp đồng.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Lập bảng đợt thanh toán</td><td>Tổng tỷ lệ phải bằng 100%. Bảng này sinh trực tiếp tab Thanh toán của màn hình công trình.</td></tr>
-          <tr><td class="c"><span class="pin">5</span></td><td>Gán thành phần dự án</td><td>Do P. Đấu thầu thực hiện. Mỗi dòng gán một vai trò và bộ quyền tương ứng.</td></tr>
-          <tr><td class="c"><span class="pin">6</span></td><td>Phân công nhân sự hiện trường</td><td>Do Giám đốc dự án thực hiện sau khi được gán. Gán được theo hạng mục.</td></tr>
-          <tr><td class="c"><span class="pin">7</span></td><td>Khởi tạo &amp; thông báo</td><td>Chạy đồng thời: sinh mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, bảng đợt thanh toán, và gửi thông báo tới từng ID.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Kiểm tra hợp đồng trước khi trình ký</td><td>Chạy toàn bộ danh mục kiểm tra, hiện kết quả từng mục kèm số liệu đối chiếu. Còn mục Chặn thì nút “Trình ký” khóa; mục Cảnh báo phải được người kiểm tra xác nhận kèm lý do. Kết quả lưu thành bản ghi có người và thời điểm.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Theo dõi tiến trình ký</td><td>Từng bước ký hiện người, thời điểm, phương thức. Bước đang chờ được làm nổi.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Nhắc ký</td><td>Gửi nhắc tới người ký nội bộ hoặc email tới đối tác; ghi lại số lần nhắc.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Khai báo giá trị &amp; hiệu lực</td><td>Giá trị sau VAT tính tự động; hiệu lực dùng để cảnh báo trễ tiến độ hợp đồng. Sửa ở đây làm kết quả kiểm tra hết hiệu lực.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Lập bảng đợt thanh toán</td><td>Tổng tỷ lệ phải bằng 100%. Bảng này sinh trực tiếp tab Thanh toán của màn hình công trình.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Gán thành phần dự án</td><td>Do P. Đấu thầu thực hiện. Mỗi dòng gán một vai trò và bộ quyền tương ứng.</td></tr>
+          <tr><td class="c"><span class="pin">7</span></td><td>Phân công nhân sự hiện trường</td><td>Do Giám đốc dự án thực hiện sau khi được gán. Gán được theo hạng mục.</td></tr>
+          <tr><td class="c"><span class="pin">8</span></td><td>Khởi tạo &amp; thông báo</td><td>Chạy đồng thời: sinh mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, bảng đợt thanh toán, và gửi thông báo tới từng ID.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
+      <li><b>Kiểm tra trước, ký sau.</b> Chuỗi ký chỉ mở khi kết quả kiểm tra hợp đồng ở trạng thái <code>đạt</code>: không còn mục ở mức Chặn, mọi mục ở mức Cảnh báo đã được người kiểm tra xác nhận kèm lý do.<span class="then">Chữ ký số không thu hồi được — phát hiện lệch giá trị hay lệch BOQ sau khi Tổng Giám đốc đã ký thì phải làm lại toàn bộ chuỗi ký.</span></li>
+      <li><b>Sửa hợp đồng thì kiểm tra lại.</b> Mọi thay đổi giá trị, điều khoản, đợt thanh toán, bảo lãnh hoặc tệp bản thảo sau khi kiểm tra đạt đều đưa <code>precheck</code> về <code>chưa chạy</code>.<span class="then">Nếu đã có chữ ký nội bộ thì các chữ ký đó bị hủy hiệu lực và chuỗi ký chạy lại từ bước 1 — kết quả kiểm tra luôn gắn với đúng phiên bản hợp đồng được ký.</span></li>
+      <li><b>Người kiểm tra không phải người ký đầu tiên.</b> Chuyên viên Đấu thầu phụ trách gói thầu chạy và ký xác nhận kết quả kiểm tra; TP Đấu thầu ký số bước 1.<span class="then">Tách hai vai để bước kiểm tra là một lớp soát độc lập, không phải thao tác hình thức của chính người sắp ký.</span></li>
       <li><b>Ký tuần tự trong, song song ngoài.</b> Ba bước ký nội bộ chạy tuần tự; chỉ khi đủ ba chữ ký mới gửi đối tác.<span class="then">Đối tác ký ngoài hệ thống, người phụ trách tải bản ký lên và xác nhận — hệ thống theo dõi trạng thái chứ không điều khiển bước này.</span></li>
       <li><b>Không khởi tạo dự án khi chưa đủ chữ ký.</b> Nút “Khởi tạo &amp; thông báo” chỉ mở khi chuỗi ký hoàn tất.<span class="then">Tránh trường hợp dự án tồn tại trong hệ thống trong khi hợp đồng chưa có hiệu lực pháp lý.</span></li>
       <li><b>Một thao tác, bảy kết quả.</b> Khởi tạo dự án sinh đồng thời: mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, bảng đợt thanh toán, danh sách thành phần và các thông báo.<span class="then">Chạy trong một giao dịch — lỗi ở bất kỳ bước nào thì hoàn tác toàn bộ, không để dự án sinh ra thiếu bộ phận.</span></li>
@@ -3648,6 +3718,10 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
+          <tr><td>Trình ký khi chưa kiểm tra</td><td><code>precheck = chưa chạy</code></td><td>“Chạy kiểm tra hợp đồng trước khi trình ký. Chuỗi ký chỉ mở khi kết quả đạt.”</td></tr>
+          <tr><td>Còn mục kiểm tra ở mức Chặn</td><td>Có mục kết quả “Không đạt”, mức Chặn</td><td>“Còn {n} mục chưa đạt: {danh sách}. Xử lý xong mới trình ký được.”</td></tr>
+          <tr><td>Mục cảnh báo chưa xác nhận</td><td>Có mục mức Cảnh báo chưa có xác nhận</td><td>“{n} mục cảnh báo chưa được xác nhận. Ghi lý do chấp nhận để tiếp tục.”</td></tr>
+          <tr><td>Sửa hợp đồng sau khi kiểm tra đạt</td><td>Có thay đổi trên hợp đồng đã <code>đạt</code></td><td>“Hợp đồng vừa thay đổi nên kết quả kiểm tra hết hiệu lực{, các chữ ký đã có sẽ bị hủy}. Chạy kiểm tra lại?”</td></tr>
           <tr><td>Tổng tỷ lệ đợt khác 100%</td><td><code>sum(pct) ≠ 100</code></td><td>“Tổng tỷ lệ các đợt đang là {x}%. Điều chỉnh để đủ 100% giá trị hợp đồng.”</td></tr>
           <tr><td>Khởi tạo khi chưa đủ chữ ký</td><td>Chuỗi ký chưa hoàn tất</td><td>“Còn chờ {người/đối tác} ký. Chỉ khởi tạo dự án khi hợp đồng đã ký đủ.”</td></tr>
           <tr><td>Chưa gán Giám đốc dự án</td><td>Thiếu vai trò GĐ dự án</td><td>“Gán Giám đốc dự án trước — người này sẽ phân công nhân sự hiện trường.”</td></tr>
@@ -3671,12 +3745,16 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-BID05-6</td><td>Chưa gán Giám đốc dự án</td><td>Mở phần phân công nhân sự hiện trường</td><td>Phần này bị khóa kèm hướng dẫn gán GĐ dự án trước</td></tr>
           <tr><td>UAT-BID05-7</td><td>Bảo lãnh thực hiện hết hạn sau 15 ngày</td><td>Chờ tới mốc nhắc</td><td>Kế toán trưởng nhận nhắc việc gia hạn bảo lãnh</td></tr>
           <tr><td>UAT-BID05-8</td><td>Bảng đợt thanh toán đang tổng 95%</td><td>Bấm Lưu hợp đồng</td><td>Chặn lưu kèm thông điệp nêu con số hiện tại</td></tr>
+          <tr><td>UAT-BID05-9</td><td>Hợp đồng soạn xong, chưa chạy kiểm tra</td><td>Bấm “Trình ký”</td><td>Bị chặn, yêu cầu chạy kiểm tra hợp đồng trước</td></tr>
+          <tr><td>UAT-BID05-10</td><td>Giá trị hợp đồng lệch 3% so với BOQ chốt</td><td>Chạy kiểm tra hợp đồng</td><td>Mục giá trị báo Không đạt (mức Chặn), nút Trình ký vẫn khóa</td></tr>
+          <tr><td>UAT-BID05-11</td><td>Điều khoản thanh toán khác báo giá đã chốt</td><td>Chạy kiểm tra, ghi lý do và xác nhận mục cảnh báo</td><td>Kết quả chuyển sang Đạt, chuỗi ký mở, lý do lưu kèm bản ghi kiểm tra</td></tr>
+          <tr><td>UAT-BID05-12</td><td>Kiểm tra đã đạt, TP Đấu thầu đã ký bước 1</td><td>Sửa giá trị hợp đồng rồi lưu</td><td>Kết quả kiểm tra về “chưa chạy”, chữ ký bước 1 bị hủy, phải kiểm tra và ký lại từ đầu</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-03">BID-03 chốt giá</a><a href="#PF-01">PF-01 sinh mã dự án</a><a href="#PF-02">PF-02 quyền theo dự án</a><a href="#ORD-01">ORD-01 tạm ứng hợp đồng</a><a href="#ORD-02">ORD-02 shopdrawing</a><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#ACC-02">ACC-02 kho dự án</a></p>
+    <p class="links"><a href="#BID-03">BID-03 chốt giá</a><a href="#PF-05">PF-05 phiên bản bản thảo HĐ</a><a href="#PF-01">PF-01 sinh mã dự án</a><a href="#PF-02">PF-02 quyền theo dự án</a><a href="#ORD-01">ORD-01 tạm ứng hợp đồng</a><a href="#ORD-02">ORD-02 shopdrawing</a><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#ACC-02">ACC-02 kho dự án</a></p>
   </div>
 </section>
 <section class="block" id="grp-ord">
