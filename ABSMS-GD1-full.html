@@ -1885,11 +1885,26 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       </table>
     </div>
 
+    <h4>Thiết bị nhận thông báo</h4>
+    <p>Kênh <code>push</code> ở bảng trên chỉ tới được thiết bị đã đăng ký. Mỗi lần đăng nhập, ứng dụng khai báo thiết bị của mình cho hệ thống; đây là bộ tham số của lần khai báo đó.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã thiết bị</td><td class="k">device_id</td><td>Chuỗi</td><td class="c req">✱</td><td>Do ứng dụng sinh và giữ nguyên qua các lần đăng nhập. Đây là mốc để tính trạng thái đã đọc, nên nó phải sống lâu hơn phiên đăng nhập.</td></tr>
+          <tr><td>Nền tảng</td><td class="k">platform</td><td>Chọn 1</td><td class="c req">✱</td><td><code>web</code> · <code>android</code> · <code>ios</code>.</td></tr>
+          <tr><td>Ngôn ngữ</td><td class="k">language</td><td>Chọn 1</td><td class="c req">✱</td><td>Ngôn ngữ dựng nội dung khi đẩy tới thiết bị này. Cùng một người có thể dùng máy tính tiếng Việt và điện thoại tiếng Anh.</td></tr>
+          <tr><td>Khoá đẩy</td><td class="k">push_token</td><td>Chuỗi</td><td class="c">—</td><td>Để trống khi người dùng chưa cấp quyền thông báo. Thiết bị vẫn được đăng ký — chuông trong ứng dụng không phụ thuộc vào khoá này.</td></tr>
+          <tr><td>Trạng thái đã đọc</td><td class="k">read_state</td><td>Đối tượng</td><td class="c req">✱</td><td>Ghi theo cặp (thông báo, thiết bị). Không có bản ghi nghĩa là chưa đọc.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
       <li>Đọc dòng tiêu đề thông báo là biết ngay: chứng từ gì, thuộc dự án nào, hạng mục nào, giá trị bao nhiêu — không cần mở chi tiết.</li>
       <li>Bấm thông báo mở đúng chứng từ ở đúng tab; nếu người dùng không đủ quyền xem thì hiện thông báo lịch sự thay vì lỗi kỹ thuật.</li>
-      <li>Số trên chuông thông báo bằng đúng số việc chưa đọc của riêng người đó, đồng bộ giữa web và điện thoại.</li>
+      <li>Số trên chuông thông báo bằng đúng số việc chưa đọc của riêng người đó. Việc số này có <b>đồng bộ giữa web và điện thoại</b> hay tính riêng cho từng thiết bị đang chờ chốt — bản dựng hiện tại tính riêng theo thiết bị, xem <a href="PL-C.html">Q-12</a>.</li>
       <li>Chữ ký điện tử gắn được mã băm nội dung: sửa chứng từ sau khi ký thì dấu ký bị đánh dấu không còn hợp lệ.</li>
       <li>Bản PDF xuất ra từ chứng từ đã ký hiển thị đủ chuỗi chữ ký thay cho chữ ký tay trên biên bản.</li>
     </ol>
@@ -1942,7 +1957,13 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Ký cần kết nối.</b> Ký điện tử bắt buộc có mạng vì phải lấy mã băm nội dung tại thời điểm ký.<span class="then">Ngoại tuyến thì nút ký bị vô hiệu kèm giải thích, không cho lưu tạm chữ ký.</span></li>
       <li><b>OTP dùng một lần.</b> Mã OTP có hiệu lực 5 phút, chỉ dùng cho đúng một chứng từ.<span class="then">Sai 5 lần liên tiếp thì khóa ký 15 phút và gửi cảnh báo cho quản trị hệ thống.</span></li>
       <li><b>Dấu ký không xóa được.</b> Dấu ký là bản ghi vĩnh viễn kèm người, thời điểm, IP, thiết bị và mã băm.<span class="then">Kể cả khi chứng từ bị hủy, chuỗi dấu ký vẫn tra cứu và in ra được.</span></li>
-      <li><b>Thay ký giấy có điều kiện.</b> Ký điện tử nội bộ thay chữ ký tay cho chứng từ lưu hành nội bộ; hợp đồng với đối tác vẫn dùng chữ ký số CA.<span class="then">Ranh giới này cần Ban lãnh đạo xác nhận — xem <a href="#PL-C">Q-04</a>.</span></li>
+      <li><b>Thay ký giấy có điều kiện.</b> Ký điện tử nội bộ thay chữ ký tay cho chứng từ lưu hành nội bộ; hợp đồng với đối tác vẫn dùng chữ ký số CA.<span class="then">Ranh giới này cần Ban lãnh đạo xác nhận — xem <a href="PL-C.html">Q-04</a>.</span></li>
+      <li><b>Thiết bị tự khai khi đăng nhập.</b> Ứng dụng đăng ký mã thiết bị mỗi lần đăng nhập, và đăng ký lại khi người dùng vừa cấp quyền thông báo.<span class="then">Nhờ vậy hệ thống biết đẩy tới đâu mà không cần người dùng thao tác gì thêm.</span></li>
+      <li><b>Đăng xuất không xoá lịch sử đã đọc.</b> Đăng xuất chỉ gỡ liên kết thiết bị khỏi tài khoản và thu hồi khoá đẩy; bản ghi thiết bị vẫn còn.<span class="then">Xoá hẳn sẽ khiến mọi thông báo cũ quay về trạng thái chưa đọc ở lần đăng nhập sau trên cùng máy — người dùng đọc rồi vẫn thấy báo chưa đọc.</span></li>
+      <li><b>Khoá đẩy chết thì bỏ ngay.</b> Nhà cung cấp báo một khoá không còn hiệu lực thì hệ thống xoá khoá đó khỏi thiết bị tương ứng.<span class="then">Không dọn thì mỗi lần gửi lại tốn thêm một lượt gọi vô ích, và danh sách thiết bị dần chỉ còn khoá chết.</span></li>
+      <li><b>Từ chối quyền thông báo chỉ mất push.</b> Người dùng không cho phép hiện thông báo thì thiết bị vẫn được đăng ký, chỉ là không có khoá đẩy.<span class="then">Đúng với quy tắc “Chuông luôn bật” ở trên: hộp thư trong ứng dụng không phụ thuộc vào quyền của trình duyệt hay hệ điều hành.</span></li>
+      <li><b>Nội dung dựng theo ngôn ngữ người nhận.</b> Thông báo lưu mã sự kiện và tham số, không lưu câu chữ đã dựng sẵn.<span class="then">Cùng một thông báo đọc trên máy tính tiếng Việt và điện thoại tiếng Anh ra hai câu khác nhau; sửa một lỗi chính tả trong mẫu là sửa được cả lịch sử.</span></li>
+      <li><b>Mã thông báo quyết định màn hình đích.</b> Ngoài <code>deep_link</code>, mỗi thông báo mang một mã sự kiện để ứng dụng tự tra ra màn hình cần mở.<span class="then">Ứng dụng chưa biết mã mới thì thông báo vẫn đọc được, chỉ là không bấm chuyển màn được — một mã lạ không được phép làm hỏng cả hộp thư.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -1955,6 +1976,10 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>OTP hết hạn</td><td>Quá 5 phút</td><td>“Mã xác thực đã hết hạn. Bấm Gửi lại để nhận mã mới.”</td></tr>
           <tr><td>OTP sai quá số lần</td><td>5 lần liên tiếp</td><td>“Đã nhập sai 5 lần. Chức năng ký tạm khóa 15 phút.”</td></tr>
           <tr><td>Số điện thoại chưa khai</td><td><code>phone</code> rỗng</td><td>“Chưa có số điện thoại để nhận mã. Cập nhật tại hồ sơ cá nhân hoặc chọn ký bằng sinh trắc học.”</td></tr>
+          <tr><td>Trình duyệt chặn quyền thông báo</td><td>Người dùng đã chọn “Chặn”</td><td>“Trình duyệt đang chặn thông báo của ABSMS nên bạn sẽ không nhận được thông báo đẩy. Chuông trong ứng dụng vẫn hoạt động bình thường.”</td></tr>
+          <tr><td>Thiết bị không hỗ trợ thông báo đẩy</td><td>Trình duyệt hoặc hệ điều hành không hỗ trợ</td><td>“Thiết bị này chưa nhận được thông báo đẩy. Bạn vẫn xem đầy đủ thông báo tại mục Thông báo.”</td></tr>
+          <tr><td>Gửi tới người chưa có thiết bị nào</td><td>Không tìm thấy thiết bị đã đăng ký</td><td>Không báo lỗi. Thông báo vẫn được ghi vào hộp thư và hiện ở lần đăng nhập kế tiếp.</td></tr>
+          <tr><td>Không xác định được thiết bị</td><td>Thiếu <code>device_id</code></td><td>Từ chối yêu cầu thay vì gộp chung trạng thái đã đọc của mọi thiết bị.</td></tr>
         </tbody>
       </table>
     </div>
@@ -1969,7 +1994,12 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-PF04-3</td><td>Duyệt 12 chứng từ liên tiếp trong 2 phút</td><td>Người lập mở chuông</td><td>Các thông báo cùng loại gộp thành một dòng có bộ đếm</td></tr>
           <tr><td>UAT-PF04-4</td><td>Đang bật chế độ máy bay</td><td>Mở chứng từ và bấm Ký</td><td>Nút ký vô hiệu, hiện lý do cần kết nối</td></tr>
           <tr><td>UAT-PF04-5</td><td>Chứng từ đã ký xong</td><td>Xuất PDF chứng từ</td><td>PDF hiển thị đủ chuỗi chữ ký với người, thời điểm và phương thức</td></tr>
-          <tr><td>UAT-PF04-6</td><td>Đăng nhập trên cả web và điện thoại</td><td>Đọc một thông báo trên điện thoại</td><td>Số trên chuông ở web giảm tương ứng trong vòng vài giây</td></tr>
+          <tr><td>UAT-PF04-6</td><td>Đăng nhập trên cả web và điện thoại</td><td>Đọc một thông báo trên điện thoại</td><td>Số trên chuông ở web giảm tương ứng trong vòng vài giây — <b>đang chờ chốt</b>, xem <a href="PL-C.html">Q-12</a></td></tr>
+          <tr><td>UAT-PF04-7</td><td>Đăng nhập lần đầu trên một máy mới</td><td>Mở mục Thông báo</td><td>Thấy đầy đủ lịch sử thông báo của mình, tất cả ở trạng thái chưa đọc</td></tr>
+          <tr><td>UAT-PF04-8</td><td>Đã đọc hết thông báo trên máy này</td><td>Đăng xuất rồi đăng nhập lại trên cùng máy</td><td>Các thông báo đã đọc vẫn là đã đọc; chuông hiện 0</td></tr>
+          <tr><td>UAT-PF04-9</td><td>Một thiết bị có khoá đẩy đã hết hiệu lực</td><td>Gửi một thông báo tới người đó</td><td>Lượt gửi không báo lỗi; khoá chết bị xoá khỏi thiết bị; các thiết bị còn lại vẫn nhận được</td></tr>
+          <tr><td>UAT-PF04-10</td><td>Máy tính đặt tiếng Việt, điện thoại đặt tiếng Anh</td><td>Gửi một thông báo tới người dùng đó</td><td>Mỗi thiết bị nhận đúng ngôn ngữ của mình, từ cùng một bản ghi thông báo</td></tr>
+          <tr><td>UAT-PF04-11</td><td>Từ chối quyền thông báo của trình duyệt</td><td>Gửi một thông báo tới người đó</td><td>Không có thông báo đẩy, nhưng chuông trong ứng dụng vẫn tăng và mở ra đọc được</td></tr>
         </tbody>
       </table>
     </div>
@@ -12370,7 +12400,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr><td class="k">Q-08</td><td>“Phê duyệt 2 cấp hay 3 cấp” — và ở đề xuất Loại 2 ghi “2 cấp duyệt: GĐ DA, KTT và Tổng GĐ” (thực tế là ba người)</td><td>Không cố định số cấp trong phần mềm. Cấu hình theo loại chứng từ × hạn mức tại <a href="#PF-03">PF-03</a>; cần chốt bảng hạn mức cụ thể cho 8 nhóm chứng từ</td><td class="c">Ban lãnh đạo</td><td class="c"><a href="#PF-03">PF-03</a> · toàn hệ thống</td></tr>
         <tr><td class="k">Q-09</td><td>“Quyền truy cập linh hoạt do người phụ trách phân quyền” — ai là “người phụ trách”?</td><td>Trưởng bộ phận phân quyền trong phạm vi bộ phận mình; quyền phê duyệt tài chính phải qua Ban lãnh đạo duyệt; Admin hệ thống thấy toàn bộ</td><td class="c">Ban lãnh đạo</td><td class="c"><a href="#PF-02">PF-02</a></td></tr>
         <tr><td class="k">Q-10</td><td>Ranh giới giai đoạn: “định mức thi công, vật tư phụ để kiểm soát hao hụt” và “giá thành khai thác nhà máy” để giai đoạn sau</td><td>Giữ ngoài phạm vi GĐ1, nhưng cấu trúc dữ liệu của <a href="#PRJ-02">PRJ-02</a> và <a href="#ACC-09">ACC-09</a> đã chừa chỗ để bổ sung mà không phải sửa lại mô hình</td><td class="c">Ban lãnh đạo</td><td class="c">Phạm vi GĐ2</td></tr>
-        <tr><td class="k">Q-11</td><td>Ranh giới doanh thu giữa <a href="#ORD-06">ORD-06</a> (áp giá đơn hàng) và <a href="#ORD-09">ORD-09</a> (thanh toán khối lượng với chủ đầu tư) — tránh ghi nhận doanh thu hai lần</td><td>Đề xuất: doanh thu hợp đồng ghi nhận theo hồ sơ thanh toán khối lượng đã được chủ đầu tư chấp thuận; giá áp cho đơn hàng ở ORD-06 dùng làm giá trị nội bộ để đối chiếu chi phí và doanh thu theo từng đơn, không cộng vào doanh thu dự án. Cần chốt trong quá trình chạy thử.</td><td class="c">KT trưởng + P. Đấu thầu</td><td class="c"><a href="#RPT-03">RPT-03</a>, <a href="#ACC-09">ACC-09</a></td></tr>
+        <tr><td class="k">Q-11</td><td>Ranh giới doanh thu giữa <a href="ORD-06.html">ORD-06</a> (áp giá đơn hàng) và <a href="ORD-09.html">ORD-09</a> (thanh toán khối lượng với chủ đầu tư) — tránh ghi nhận doanh thu hai lần</td><td>Đề xuất: doanh thu hợp đồng ghi nhận theo hồ sơ thanh toán khối lượng đã được chủ đầu tư chấp thuận; giá áp cho đơn hàng ở ORD-06 dùng làm giá trị nội bộ để đối chiếu chi phí và doanh thu theo từng đơn, không cộng vào doanh thu dự án. Cần chốt trong quá trình chạy thử.</td><td class="c">KT trưởng + P. Đấu thầu</td><td class="c"><a href="RPT-03.html">RPT-03</a>, <a href="ACC-09.html">ACC-09</a></td></tr>
+        <tr><td class="k">Q-12</td><td>Trạng thái “đã đọc” của thông báo tính theo <b>từng thiết bị</b> hay <b>theo người</b>? <a href="PF-04.html">PF-04</a> · Kết quả mong đợi 3 và UAT-PF04-6 yêu cầu số trên chuông đồng bộ giữa web và điện thoại; bản dựng hiện tại tính riêng cho từng thiết bị</td><td>Bản dựng hiện tại: đọc trên điện thoại không làm giảm chuông trên web. Cấu trúc dữ liệu ghi trạng thái theo cặp (thông báo, thiết bị) nên <b>đổi chiều được bất cứ lúc nào mà không mất dữ liệu và không phải sửa bảng</b> — chỉ đổi điều kiện truy vấn. Hai câu hỏi cần chốt cùng nhau: (a) chọn cách tính nào; (b) nếu chọn đồng bộ theo người thì yêu cầu “giảm trong vòng vài giây” cần một kênh đẩy trạng thái từ máy chủ, hiện chưa có trong phạm vi GĐ1 — hộp thư đang hỏi lại máy chủ theo chu kỳ.</td><td class="c">Ban lãnh đạo</td><td class="c"><a href="PF-04.html">PF-04</a>, <a href="MOB-01.html">MOB-01</a></td></tr>
       </tbody>
     </table>
   </div>
