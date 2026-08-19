@@ -213,6 +213,8 @@
           <tr><td>Giá trị ước tính</td><td class="k">est_value</td><td>Số tiền</td><td class="c">—</td><td>Dùng xếp thứ tự ưu tiên xử lý.</td></tr>
           <tr><td>Bảng đầu việc BOQ</td><td class="k">boq_lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: STT, mã hạng mục, tên đầu việc, quy cách, ĐVT, khối lượng mời thầu, ghi chú.</td></tr>
           <tr><td>Tệp BOQ gốc</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>Ít nhất một tệp loại “BOQ mời thầu” (<a href="PF-05.html">PF-05</a>).</td></tr>
+          <tr><td>Cột tự thêm của bảng</td><td class="k">boq_extra_columns[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi cột: tên cột, kiểu dữ liệu (chữ · số · có/không). Tối đa 12 cột cho một phiên bản BOQ.</td></tr>
+          <tr><td>Cột có sẵn bị ẩn</td><td class="k">boq_hidden_columns[]</td><td>Danh sách</td><td class="c">—</td><td>Chỉ ẩn được cột không bắt buộc: mã HM, mã nội bộ, quy cách, ghi chú và sáu cột thuộc tính đá.</td></tr>
         </tbody>
       </table>
     </div>
@@ -224,6 +226,7 @@
       <li>Tổng khối lượng theo nhóm đầu việc được tính tự động và hiển thị ở đầu bảng.</li>
       <li>Người phụ trách nhận thông báo nhắc trước hạn nộp 3 ngày và 1 ngày.</li>
       <li>Gói thầu không có tệp BOQ đính kèm không cho chuyển sang bước thẩm định.</li>
+      <li>Bảng đầu việc nhận đúng bộ cột của từng hồ sơ mời thầu: cột không dùng được ẩn đi, cột hồ sơ có mà hệ thống chưa có trường thì tự thêm.</li>
     </ol>
 
     <h4>Mockup UI — Đấu thầu › Hồ sơ gói thầu</h4>
@@ -278,6 +281,9 @@
       <li><b>Nhắc hạn nộp hai mốc.</b> Hệ thống nhắc người phụ trách trước hạn 3 ngày và trước 1 ngày.<span class="then">Quá hạn nộp mà gói thầu chưa chuyển sang trạng thái đã gửi báo giá thì gắn cờ đỏ trên danh sách và báo cho trưởng phòng.</span></li>
       <li><b>Vùng miền suy từ địa điểm.</b> Địa điểm công trình quyết định mã thống kê vùng miền.<span class="then">Đây là chiều gộp của báo cáo lãi lỗ ở <a href="RPT-03.html">RPT-03</a>, nên không được bỏ trống.</span></li>
       <li><b>Nhập Excel không phá thứ tự.</b> Nhập bảng đầu việc từ tệp giữ nguyên thứ tự dòng của bên mời thầu.<span class="then">Dòng bổ sung do công ty thêm vào được đánh dấu riêng và xếp cuối nhóm tương ứng.</span></li>
+      <li><b>Bộ cột thuộc về phiên bản BOQ.</b> Mỗi hồ sơ mời thầu có bộ cột riêng, khai một lần ở bảng đầu việc: ẩn cột không dùng và thêm cột hồ sơ yêu cầu mà hệ thống chưa có trường.<span class="then">Bộ cột đi theo phiên bản BOQ, nên bản cập nhật sau thẩm định (<a href="BID-02.html">BID-02</a>) và bản hợp đồng (<a href="BID-05.html">BID-05</a>) giữ nguyên bộ cột đã chốt, không đọc lại bộ cột của bản nháp; sao chép gói thầu chép luôn bộ cột.</span></li>
+      <li><b>Cột bắt buộc không ẩn được.</b> Đầu việc, ĐVT và khối lượng luôn hiển thị.<span class="then">Toàn bộ quy tắc phía sau đọc ba cột này: tổng khối lượng theo nhóm, ngưỡng lệch 10% ở <a href="BID-02.html">BID-02</a> và dòng báo giá ở <a href="BID-03.html">BID-03</a>.</span></li>
+      <li><b>Xóa cột là xóa dữ liệu.</b> Bỏ một cột tự thêm thì mọi giá trị đã nhập ở cột đó bị xóa cùng lúc.<span class="then">Có cảnh báo trước khi lưu; thêm lại cột cùng tên sau đó là một cột trống, không khôi phục số liệu cũ.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -290,6 +296,9 @@
           <tr><td>Khối lượng bằng 0 hoặc âm</td><td><code>qty ≤ 0</code></td><td>“Khối lượng dòng {stt} phải lớn hơn 0. Nếu chưa có số liệu, để trống và ghi chú ‘chờ làm rõ’.”</td></tr>
           <tr><td>Trùng mã hạng mục</td><td>Hai dòng cùng mã của bên mời thầu</td><td>“Mã hạng mục {mã} xuất hiện ở dòng {a} và {b}. Kiểm tra lại BOQ gốc trước khi nhập.”</td></tr>
           <tr><td>Đối tác chưa có trong danh mục</td><td><code>partner_id</code> mới</td><td>“Chưa có đối tác này. Tạo nhanh với tên và mã số thuế, bổ sung thông tin sau.”</td></tr>
+          <tr><td>Thêm quá số cột cho phép</td><td>Số cột tự thêm &gt; 12</td><td>“Bảng chỉ thêm được tối đa 12 cột.”</td></tr>
+          <tr><td>Ẩn cột bắt buộc</td><td>Ẩn đầu việc, ĐVT hoặc khối lượng</td><td>“Cột {tên} là cột bắt buộc, không ẩn được.”</td></tr>
+          <tr><td>Cột tự thêm trùng cột có sẵn</td><td>Tên cột sinh ra mã trùng cột hệ thống</td><td>“Mã cột {mã} trùng với một cột có sẵn của bảng.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -304,6 +313,9 @@
           <tr><td>UAT-BID01-3</td><td>Hạn nộp còn đúng 3 ngày</td><td>Chờ tới mốc nhắc</td><td>Người phụ trách nhận thông báo nhắc; nhắc lại khi còn 1 ngày</td></tr>
           <tr><td>UAT-BID01-4</td><td>Chỉ có BOQ bản scan PDF</td><td>Lưu gói thầu và chuyển thẩm định</td><td>Cho chuyển nhưng gắn nhãn “cần số hóa”; BID-02 chỉ mở phần nhận xét chung</td></tr>
           <tr><td>UAT-BID01-5</td><td>Địa điểm là TP. Thủ Đức</td><td>Lưu gói thầu</td><td>Mã thống kê vùng miền tự điền “Miền Nam”, cho phép sửa</td></tr>
+          <tr><td>UAT-BID01-6</td><td>Hồ sơ mời thầu có cột “Chiều rộng” mà hệ thống chưa có</td><td>Thêm cột “Chiều rộng” kiểu số, ẩn cột “Dày” và “Sai số”, nhập một dòng rồi lưu</td><td>Bảng hiện đúng bộ cột mới; mở lại gói thầu vẫn giữ nguyên cột và giá trị đã nhập</td></tr>
+          <tr><td>UAT-BID01-7</td><td>Bảng đang có cột tự thêm đã nhập dữ liệu</td><td>Xóa cột đó và lưu cấu trúc bảng</td><td>Có cảnh báo trước khi lưu; sau khi lưu, cột và toàn bộ giá trị của nó biến mất, các cột khác giữ nguyên</td></tr>
+          <tr><td>UAT-BID01-8</td><td>Gói thầu đã khai bộ cột riêng</td><td>Dán vùng chọn Excel có đủ cột hệ thống và các cột tự thêm ở cuối</td><td>Các cột tự thêm nhận đúng giá trị theo thứ tự đã khai; bản dán 5 cột kiểu cũ vẫn nhập được như trước</td></tr>
         </tbody>
       </table>
     </div>
