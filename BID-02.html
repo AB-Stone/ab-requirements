@@ -275,11 +275,13 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Gói thầu</td><td class="k">tender_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc.</td></tr>
+          <tr><td>Chế độ xem bảng đối chiếu</td><td class="k">view_mode</td><td>Danh mục</td><td class="c">—</td><td><code>gọn</code> (mặc định) · <code>đầy đủ</code>. Là lựa chọn hiển thị của người dùng, không phải dữ liệu của phiếu — hệ thống nhớ lựa chọn cho lần mở sau, mỗi người một kiểu.</td></tr>
           <tr><td>Kết luận theo dòng</td><td class="k">line_check[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng BOQ chọn 1 trong: <code>đúng</code> · <code>thiếu đầu việc</code> · <code>sai khối lượng</code> · <code>sai quy cách</code> · <code>trùng lặp</code>.</td></tr>
           <tr><td>Khối lượng đề xuất</td><td class="k">qty_proposed</td><td>Số</td><td class="c">—</td><td>Bắt buộc khi kết luận là “sai khối lượng”.</td></tr>
           <tr><td>Đầu việc bổ sung</td><td class="k">extra_lines[]</td><td>Bảng</td><td class="c">—</td><td>Đầu việc bên mời thầu bỏ sót; cấu trúc giống dòng BOQ.</td></tr>
           <tr><td>Người thẩm định</td><td class="k">reviewer</td><td>Tham chiếu</td><td class="c req">✱</td><td>Thuộc P. TQT.</td></tr>
           <tr><td>Ngày nộp</td><td class="k">submitted_at</td><td>Ngày</td><td class="c req">✱</td><td>So với hạn để tính trễ.</td></tr>
+          <tr><td colspan="5">Chế độ <b>gọn</b> hiện bảy cột đủ để kết luận nhanh: mã HM, đầu việc, ĐVT, khối lượng mời thầu, kết luận, khối lượng đề xuất, ghi chú. Chế độ <b>đầy đủ</b> dựng lại nguyên bảng đầu việc đã nhập ở <a href="BID-01.html">BID-01</a> — đúng bộ cột của gói thầu đó, kể cả cột tự thêm, và bỏ qua cột đã ẩn — rồi nối khối kết luận vào cuối. Người thẩm định cần chế độ đầy đủ khi quy cách, chiều dày hay một cột riêng của hồ sơ mới là thứ quyết định kết luận, chứ không phải tên đầu việc.</td></tr>
         </tbody>
       </table>
     </div>
@@ -294,7 +296,8 @@
           <tr><td>Điều kiện mặt bằng</td><td class="k">site_condition</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Mô tả tiếp cận, cao độ, giàn giáo, điện nước, thời gian thi công cho phép.</td></tr>
           <tr><td>Biện pháp thi công khó</td><td class="k">methods[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi dòng: hạng mục, mô tả biện pháp, chi phí ước tính, gắn vào dòng BOQ nào.</td></tr>
           <tr><td>Chi phí phát sinh</td><td class="k">extra_cost</td><td>Số tiền</td><td class="c">—</td><td>Tổng cộng của bảng biện pháp; chuyển thẳng sang cấu phần giá vốn ở <a href="BID-03.html">BID-03</a>.</td></tr>
-          <tr><td>Ảnh hiện trường</td><td class="k">photos[]</td><td>Tệp ảnh</td><td class="c">—</td><td>Tối thiểu 3 ảnh nếu có ghi nhận biện pháp khó.</td></tr>
+          <tr><td>Ảnh &amp; video hiện trường</td><td class="k">photos[]</td><td>Tệp ảnh / video</td><td class="c">—</td><td>Kéo thả hoặc bấm chọn ngay trên phiếu, nhiều tệp một lần. Ảnh JPG · PNG · WEBP · HEIC tối đa 12 MB mỗi tệp; video MP4 · MOV · M4V · WEBM tối đa 200 MB mỗi tệp; tổng 40 tệp một phiếu. Tối thiểu 3 tệp nếu có ghi nhận biện pháp khó — đếm theo số tệp đã tải, không phải số người dùng khai, và một video tính như một ảnh.</td></tr>
+          <tr><td colspan="5">Tệp lưu trên kho đối tượng (S3 / Cloudflare R2), không lưu trong cơ sở dữ liệu. Trình duyệt tải thẳng lên kho qua liên kết có chữ ký do hệ thống cấp, giống bước lên hồ sơ ở <a href="BID-01.html">BID-01</a> — nhờ vậy một video 200 MB không đi qua máy chủ ứng dụng. Tệp chỉ được tính vào phiếu sau khi hệ thống xác nhận đã có thật trên kho; tệp tải dở không hiện trong thư viện và không được đếm. Mỗi lần mở phiếu, hệ thống cấp liên kết có chữ ký và có hạn cho từng tệp, nên kho vẫn đóng và một liên kết lọt ra ngoài sẽ tự hết hiệu lực. Phiếu đã nộp hoặc đã khóa chỉ xem, không thêm và không xóa được tệp.</td></tr>
         </tbody>
       </table>
     </div>
@@ -302,6 +305,7 @@
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
       <li>Hai phiếu thẩm định hiển thị cùng lúc trên hàng chờ việc của hai bộ phận, có cùng hạn xử lý.</li>
+      <li>Bảng đối chiếu xem được ở hai mức: bản gọn để kết luận nhanh, và bản đầy đủ dựng lại nguyên bảng đầu việc của <a href="BID-01.html">BID-01</a> kèm khối kết luận nối ở cuối.</li>
       <li>Bản BOQ cập nhật sinh ra giữ nguyên mọi dòng gốc và đánh dấu rõ dòng nào đã sửa khối lượng, dòng nào là bổ sung mới.</li>
       <li>So sánh BOQ v2 với v1 hiển thị được số dòng thay đổi và chênh lệch tổng khối lượng theo nhóm.</li>
       <li>Chi phí biện pháp thi công khó tự động chuyển thành một cấu phần giá vốn khi áp giá, không phải nhập lại.</li>
@@ -311,7 +315,7 @@
 
     <h4>Mockup UI — Đấu thầu › Thẩm định</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">GT-2026-018 ›</span><b>Thẩm định BOQ</b><span class="sp"></span><span class="wf-btn"><span class="pin">4</span> So sánh v1 ↔ v2</span><span class="wf-btn pri"><span class="pin">5</span> Chốt BOQ cập nhật</span></div>
+      <div class="wf-bar"><span class="wf-crumb">GT-2026-018 ›</span><b>Thẩm định BOQ</b><span class="sp"></span><span class="wf-btn"><span class="pin">6</span> Xem đầy đủ</span><span class="wf-btn"><span class="pin">4</span> So sánh v1 ↔ v2</span><span class="wf-btn pri"><span class="pin">5</span> Chốt BOQ cập nhật</span></div>
       <div class="wf-body">
         <div class="wf-steps">
           <div class="done"><b>Phiếu kỹ thuật</b>P. TQT · nộp 12/11</div>
@@ -326,6 +330,7 @@
             <tr><td>HM-02</td><td>Lát sàn sảnh marble</td><td class="num">1.260</td><td><span class="tag t-ok">Đúng</span></td><td class="num">1.260</td><td>—</td></tr>
             <tr><td>—</td><td><span class="pin">2</span> <b>Bổ sung:</b> Gia công đá cong bo góc</td><td class="num">—</td><td><span class="tag t-warn">Thiếu đầu việc</span></td><td class="num">180</td><td>Có trong bản vẽ, thiếu trong BOQ</td></tr>
           </tbody></table>
+          <p style="margin:7px 0 0;font-size:11.5px;color:var(--ink-3)">Đang ở chế độ gọn. Bấm “Xem đầy đủ” để hiện thêm quy cách, thuộc tính đá và các cột tự thêm của gói thầu này, khối kết luận vẫn nằm cuối bảng.</p>
         </div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">3</span> Phiếu khảo sát hiện trường — Ban dự án</div>
@@ -335,7 +340,7 @@
             <div class="wf-c"><table><thead><tr><th>Biện pháp thi công khó</th><th>Gắn HM</th><th class="num">CP ước tính</th></tr></thead>
               <tbody><tr><td>Thuê gondola + giàn treo tầng 20–32</td><td>HM-01</td><td class="num">840.000.000</td></tr>
               <tr><td>Vận chuyển đứng ngoài giờ</td><td>HM-01</td><td class="num">120.000.000</td></tr></tbody></table>
-              <div class="wf-ph" style="margin-top:6px">Ảnh hiện trường · 6 ảnh</div></div>
+              <div class="wf-ph" style="margin-top:6px">Ảnh &amp; video hiện trường · 6 tệp</div></div>
           </div>
         </div>
       </div>
@@ -349,6 +354,7 @@
           <tr><td class="c"><span class="pin">3</span></td><td>Nhập kết quả khảo sát</td><td>Bảng biện pháp thi công khó gắn được vào dòng BOQ cụ thể; tổng chi phí cộng tự động.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>So sánh phiên bản BOQ</td><td>Hiện cạnh nhau v1 và v2, tô màu dòng sửa và dòng thêm mới.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Chốt BOQ cập nhật</td><td>Sinh phiên bản BOQ mới, khóa hai phiếu thẩm định, mở bước áp giá.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Xem đầy đủ / xem gọn</td><td>Đổi giữa bảy cột làm việc và toàn bộ cột của bảng đầu việc <a href="BID-01.html">BID-01</a>. Ở chế độ đầy đủ, cột lấy từ BOQ gốc chỉ đọc; chỉ khối kết luận nhập được.</td></tr>
         </tbody>
       </table>
     </div>
@@ -357,9 +363,11 @@
     <ol class="br">
       <li><b>Hai phiếu độc lập, một điểm hợp nhất.</b> Phiếu kỹ thuật và phiếu hiện trường mở cùng lúc, cùng hạn, không phiếu nào chờ phiếu nào.<span class="then">Bước hợp nhất chỉ mở khi cả hai đã nộp; trước đó nút “Chốt BOQ cập nhật” bị vô hiệu và ghi rõ đang thiếu phiếu nào.</span></li>
       <li><b>Kết luận theo dòng là bắt buộc.</b> Phiếu kỹ thuật chỉ nộp được khi mọi dòng BOQ đã có kết luận.<span class="then">Hệ thống hiện bộ đếm “còn {n} dòng chưa kết luận” ngay trên nút nộp.</span></li>
+      <li><b>Bảng đối chiếu có hai mức xem.</b> Chế độ gọn hiện bảy cột đủ để kết luận; chế độ đầy đủ dựng lại nguyên bảng đầu việc đã nhập ở <a href="BID-01.html">BID-01</a> theo đúng bộ cột của gói thầu, rồi nối khối kết luận vào cuối.<span class="then">Đổi chế độ không mất phần đang nhập dở và không đổi điều kiện nộp phiếu — bộ đếm “còn {n} dòng chưa kết luận” luôn đếm trên toàn bộ dòng BOQ, không đếm theo số dòng đang nhìn thấy.</span></li>
+      <li><b>Thẩm định không sửa BOQ gốc.</b> Ở chế độ đầy đủ, mọi cột lấy từ bảng đầu việc <a href="BID-01.html">BID-01</a> đều chỉ đọc; người thẩm định chỉ nhập kết luận, khối lượng đề xuất và ghi chú.<span class="then">Sai quy cách thì ghi vào kết luận kèm đề xuất, số liệu chỉ thay đổi ở bản BOQ v2 sinh ra tại bước hợp nhất — nhờ vậy so sánh v1 ↔ v2 vẫn đọc được. Riêng dòng bổ sung do chính phiếu thẩm định thêm vào thì nhập đủ cột, vì dòng đó chưa có trong bản gốc.</span></li>
       <li><b>Sai khối lượng phải có số đề xuất.</b> Kết luận “sai khối lượng” bắt buộc nhập khối lượng đề xuất khác khối lượng mời thầu.<span class="then">Nhập trùng số cũ thì hệ thống hỏi lại và gợi ý chuyển kết luận về “đúng”.</span></li>
       <li><b>Biện pháp thi công khó phải gắn dòng.</b> Mỗi dòng biện pháp trong phiếu hiện trường phải gắn về một dòng BOQ.<span class="then">Nhờ vậy chi phí biện pháp chảy đúng vào cấu phần giá vốn của dòng đó khi áp giá ở <a href="BID-03.html">BID-03</a>, không phải phân bổ đều.</span></li>
-      <li><b>Ảnh bắt buộc khi có biện pháp khó.</b> Ghi nhận biện pháp thi công khó thì cần tối thiểu 3 ảnh hiện trường.<span class="then">Ảnh là bằng chứng khi giải trình chi phí phát sinh với chủ đầu tư về sau.</span></li>
+      <li><b>Ảnh hoặc video bắt buộc khi có biện pháp khó.</b> Ghi nhận biện pháp thi công khó thì cần tối thiểu 3 tệp hiện trường, đếm trên tệp đã tải lên phiếu và đã xác nhận trên kho.<span class="then">Đây là bằng chứng khi giải trình chi phí phát sinh với chủ đầu tư về sau — nên số đếm là số tệp thật, không phải con số người khảo sát tự khai. Video tính như ảnh: một đoạn quay dọc lối tiếp cận nói được nhiều hơn ba tấm ảnh chụp cùng bức tường.</span></li>
       <li><b>BOQ v2 giữ vết.</b> Bản hợp nhất giữ nguyên mọi dòng gốc và đánh dấu ba loại: giữ nguyên, sửa khối lượng, bổ sung mới.<span class="then">Chức năng so sánh v1 ↔ v2 hiện số dòng từng loại và chênh lệch tổng khối lượng theo nhóm.</span></li>
       <li><b>Sai lệch lớn phải làm rõ.</b> Tổng khối lượng lệch quá 10% so với BOQ mời thầu thì hệ thống nhắc lập văn bản làm rõ trước khi chốt.<span class="then">Cho phép bỏ qua nhưng phải ghi lý do — lý do này hiện lại ở bước áp giá.</span></li>
     </ol>
@@ -371,8 +379,14 @@
         <tbody>
           <tr><td>Nộp phiếu kỹ thuật còn dòng trống</td><td>Có dòng chưa kết luận</td><td>“Còn {n} dòng chưa có kết luận. Bấm để nhảy tới dòng đầu tiên.”</td></tr>
           <tr><td>Sai khối lượng nhưng giữ số cũ</td><td><code>qty_proposed = qty_invited</code></td><td>“Khối lượng đề xuất trùng khối lượng mời thầu. Đổi kết luận sang ‘đúng’ hoặc sửa lại số.”</td></tr>
+          <tr><td>Sửa cột BOQ ở chế độ đầy đủ</td><td>Ô thuộc bảng đầu việc <a href="BID-01.html">BID-01</a>, không phải dòng bổ sung</td><td>“Cột này thuộc BOQ mời thầu, không sửa ở bước thẩm định. Ghi kết luận ‘sai quy cách’ kèm đề xuất để bước hợp nhất xử lý.”</td></tr>
           <tr><td>Biện pháp không gắn dòng BOQ</td><td><code>methods[].wbs</code> rỗng</td><td>“Chọn dòng BOQ mà biện pháp này phục vụ, để chi phí vào đúng cấu phần giá vốn.”</td></tr>
-          <tr><td>Có biện pháp khó mà thiếu ảnh</td><td>Ảnh &lt; 3</td><td>“Cần tối thiểu 3 ảnh hiện trường cho phần biện pháp thi công khó.”</td></tr>
+          <tr><td>Có biện pháp khó mà thiếu bằng chứng</td><td>Số tệp đã xác nhận &lt; 3</td><td>“Cần tối thiểu 3 ảnh hiện trường cho phần biện pháp thi công khó.”</td></tr>
+          <tr><td>Tệp không phải ảnh hoặc video</td><td>Phần mở rộng ngoài .jpg · .jpeg · .png · .webp · .heic · .heif · .mp4 · .mov · .m4v · .webm</td><td>“Tệp {tên} không phải ảnh hoặc video — cho phép .jpg, .jpeg, .png, .webp, .heic, .heif, .mp4, .mov, .m4v, .webm.”</td></tr>
+          <tr><td>Tệp quá nặng</td><td>Ảnh &gt; 12 MB, hoặc video &gt; 200 MB</td><td>“Tệp {tên} nặng {x} MB, vượt giới hạn {giới hạn} MB.” — chặn ngay trên trình duyệt trước khi tải, và kiểm lại theo dung lượng thật trên kho khi xác nhận.</td></tr>
+          <tr><td>Vượt số tệp một phiếu</td><td>Tổng tệp (kể cả tệp đang tải) ≥ 40</td><td>“Một phiếu khảo sát giữ tối đa 40 tệp (hiện có {n}).”</td></tr>
+          <tr><td>Tải xong nhưng không thấy tệp trên kho</td><td>Xác nhận mà kho chưa có đối tượng</td><td>“Chưa thấy tệp {tên} trên kho lưu trữ — tải lại tệp trước khi xác nhận.”</td></tr>
+          <tr><td>Thêm tệp vào phiếu đã nộp</td><td>Phiếu ở trạng thái đã nộp / đã khóa</td><td>“Phiếu đã nộp — mở lại phiếu nếu cần bổ sung ảnh.”</td></tr>
           <tr><td>Chốt khi thiếu phiếu</td><td>Một trong hai phiếu chưa nộp</td><td>“Chưa nhận được {tên phiếu} từ {bộ phận}. Đã gửi nhắc lúc {giờ}.”</td></tr>
         </tbody>
       </table>
@@ -388,6 +402,14 @@
           <tr><td>UAT-BID02-3</td><td>Cả hai phiếu đã nộp, có 1 dòng sửa KL và 1 dòng bổ sung</td><td>Chốt BOQ cập nhật rồi mở so sánh v1 ↔ v2</td><td>Hiện 1 dòng sửa, 1 dòng thêm, chênh lệch tổng khối lượng đúng</td></tr>
           <tr><td>UAT-BID02-4</td><td>Phiếu hiện trường ghi 2 biện pháp gắn HM-01, tổng 960 triệu</td><td>Chuyển sang bước áp giá</td><td>Cấu phần “máy · biện pháp khó” của HM-01 nạp sẵn 960 triệu</td></tr>
           <tr><td>UAT-BID02-5</td><td>Tổng khối lượng v2 lệch 14% so với v1</td><td>Bấm chốt</td><td>Hiện nhắc lập văn bản làm rõ; bỏ qua thì bắt buộc nhập lý do</td></tr>
+          <tr><td>UAT-BID02-7</td><td>Phiếu hiện trường đang mở, đã ghi 1 biện pháp khó, mới có 2 ảnh</td><td>Bấm “Nộp phiếu”</td><td>Bị chặn kèm thông điệp thiếu ảnh; tải thêm 1 ảnh rồi nộp lại thì thành công</td></tr>
+          <tr><td>UAT-BID02-8</td><td>Phiếu có 3 ảnh, đã nộp</td><td>Mở lại phiếu hiện trường</td><td>Vẫn xem và phóng to được cả 3 ảnh; không còn nút tải lên và nút xóa ảnh</td></tr>
+          <tr><td>UAT-BID02-9</td><td>Phiếu hiện trường đang mở</td><td>Kéo thả cùng lúc 2 ảnh JPG và 1 video MP4 40 MB vào vùng thả</td><td>Cả 3 tệp lần lượt hiện ô đang tải rồi vào thư viện; ô video có huy hiệu phát, bấm vào mở trình phát ngay trên phiếu</td></tr>
+          <tr><td>UAT-BID02-10</td><td>Phiếu hiện trường đang mở</td><td>Kéo thả một video 260 MB và một tệp PDF</td><td>Cả hai bị từ chối ngay trên trình duyệt kèm thông điệp vượt giới hạn / không phải ảnh hoặc video; không tệp nào lên kho</td></tr>
+          <tr><td>UAT-BID02-11</td><td>Phiếu hiện trường đang mở, đã ghi 1 biện pháp khó, có 2 ảnh và 1 video</td><td>Bấm “Nộp phiếu”</td><td>Nộp được — video tính vào số tối thiểu 3 tệp</td></tr>
+          <tr><td>UAT-BID02-12</td><td>Gói thầu đã khai bộ cột riêng ở <a href="BID-01.html">BID-01</a> — thêm “Chiều rộng”, ẩn “Sai số”; phiếu kỹ thuật đang mở ở chế độ gọn và có dòng đang nhập dở</td><td>Bấm “Xem đầy đủ”</td><td>Bảng hiện đủ bộ cột của gói kể cả “Chiều rộng”, không hiện “Sai số”; khối kết luận nằm cuối bảng; phần đang nhập dở vẫn còn nguyên</td></tr>
+          <tr><td>UAT-BID02-13</td><td>Đang ở chế độ đầy đủ, 20 dòng BOQ, mới kết luận 12 dòng</td><td>Đổi về chế độ gọn rồi bấm “Nộp phiếu”</td><td>Vẫn báo còn 8 dòng chưa kết luận — số đếm không đổi theo chế độ xem</td></tr>
+          <tr><td>UAT-BID02-14</td><td>Đang ở chế độ đầy đủ</td><td>Sửa ô “Quy cách” của một dòng BOQ gốc, rồi sửa ô “Quy cách” của một dòng bổ sung</td><td>Dòng gốc bị chặn kèm thông điệp; dòng bổ sung sửa được bình thường</td></tr>
           <tr><td>UAT-BID02-6</td><td>Quá hạn 1 ngày, phiếu hiện trường chưa nộp</td><td>Chờ tới mốc quá hạn</td><td>Gói thầu gắn cờ; trưởng Ban dự án nhận nhắc việc</td></tr>
         </tbody>
       </table>

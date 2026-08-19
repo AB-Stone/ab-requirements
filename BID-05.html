@@ -286,7 +286,8 @@
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Số hợp đồng</td><td class="k">contract_no</td><td>Chuỗi</td><td class="c req">✱</td><td><code>HD-YYYY-NNN</code>.</td></tr>
+          <tr><td>Số hợp đồng</td><td class="k">contract_no</td><td>Chuỗi</td><td class="c req">✱</td><td><code>&lt;TIỀN TỐ&gt;_NNNN</code> — tiền tố là chữ cái đầu của địa điểm công trình, suy từ địa chỉ khai ở <a href="BID-01.html">BID-01</a> (Khánh Hòa → <code>KH</code>, Hồ Chí Minh → <code>HCM</code>). Số thứ tự 4 chữ số chạy riêng cho từng tiền tố, lấy số lớn nhất đang dùng cộng một — sổ hợp đồng có khoảng trống và có mã dùng lại cho phát sinh, nên không đếm theo số dòng. Ví dụ <code>KH_0114</code>.</td></tr>
+          <tr><td colspan="5">Một số tỉnh mang tiền tố lịch sử khác công thức và được giữ nguyên theo sổ (Quảng Ninh → <code>MC</code>); công trình không rút được địa điểm xếp vào <code>NL</code> (nhà dân, nhỏ lẻ). Hợp đồng đã cấp mã theo quy ước cũ <code>HD-YYYY-NNN</code> giữ nguyên, không đánh số lại.</td></tr>
           <tr><td>Gói thầu nguồn</td><td class="k">tender_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc, dùng để truy vết BOQ.</td></tr>
           <tr><td>Bên ký kết</td><td class="k">partner_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>—</td></tr>
           <tr><td>Giá trị hợp đồng</td><td class="k">contract_value</td><td>Số tiền</td><td class="c req">✱</td><td>Trước và sau VAT, có ghi thuế suất.</td></tr>
@@ -349,7 +350,7 @@
 
     <h4>Mockup UI — Hợp đồng &amp; khởi tạo dự án</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › GT-2026-018 ›</span><b>HD-2026-008</b><span class="sp"></span><span class="tag t-warn">Chờ đối tác ký</span><span class="wf-btn"><span class="pin">3</span> Gửi nhắc ký</span></div>
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › GT-2026-018 ›</span><b>KH_0114</b><span class="sp"></span><span class="tag t-warn">Chờ đối tác ký</span><span class="wf-btn"><span class="pin">3</span> Gửi nhắc ký</span></div>
       <div class="wf-body">
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">1</span> Kiểm tra hợp đồng trước khi trình ký <span class="tag t-ok">Đạt — 28/12 08:40</span></div>
@@ -361,7 +362,7 @@
             <tr><td>Điều khoản thanh toán vs báo giá</td><td>Đợt 1: 10% — báo giá chốt 15%</td><td><span class="tag t-warn">Đã xác nhận lại</span></td></tr>
             <tr><td>Pháp nhân &amp; người đại diện đối tác</td><td>MST · địa chỉ · người ký</td><td><span class="tag t-ok">Đạt</span></td></tr>
             <tr><td>Bảo lãnh thực hiện 5%</td><td>1.425.000.000 · VCB · hết hạn 31/01/2027</td><td><span class="tag t-ok">Đạt</span></td></tr>
-            <tr><td>Bản thảo đính kèm</td><td>HD-2026-008 · bản v3 · PF-05</td><td><span class="tag t-ok">Đạt</span></td></tr>
+            <tr><td>Bản thảo đính kèm</td><td>KH_0114 · bản v3 · PF-05</td><td><span class="tag t-ok">Đạt</span></td></tr>
           </tbody></table>
           <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Người kiểm tra: Ng. Thị Hạnh — 1 mục cảnh báo đã xác nhận, không còn mục chặn. Chuỗi ký được mở lúc 08:42.</p>
         </div>
