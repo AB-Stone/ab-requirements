@@ -202,7 +202,7 @@
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Mã gói thầu</td><td class="k">tender_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>GT-YYYY-NNN</code>, tự sinh, không sửa.</td></tr>
+          <tr><td>Mã gói thầu</td><td class="k">tender_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>&lt;ĐĐ&gt;_NNNN</code> — viết tắt địa điểm công trình cộng số thứ tự 4 chữ số, ví dụ <code>KH_0112</code>. Tự sinh khi lưu lần đầu, không sửa.</td></tr>
           <tr><td>Tên gói thầu</td><td class="k">tender_name</td><td>Chuỗi</td><td class="c req">✱</td><td>Tên công trình + hạng mục mời thầu.</td></tr>
           <tr><td>Bên mời thầu</td><td class="k">partner_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chọn từ danh mục đối tác; cho tạo nhanh nếu là khách mới.</td></tr>
           <tr><td>Chủ đầu tư</td><td class="k">owner_name</td><td>Chuỗi</td><td class="c">—</td><td>Có thể khác bên mời thầu (tổng thầu mời thầu phụ).</td></tr>
@@ -275,7 +275,8 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Mã gói thầu bất biến.</b> Mã sinh khi lưu lần đầu và theo gói thầu tới cuối vòng đời, kể cả khi thắng thầu và chuyển thành dự án.<span class="then">Dự án sinh ra ở <a href="BID-05.html">BID-05</a> luôn giữ tham chiếu ngược về mã gói thầu để truy vết BOQ gốc.</span></li>
+      <li><b>Mã gói thầu bất biến.</b> Mã sinh khi lưu lần đầu và theo gói thầu tới cuối vòng đời, kể cả khi thắng thầu và chuyển thành dự án.<span class="then">Đổi địa chỉ công trình sau khi đã lưu không sinh lại mã.</span><span class="then">Dự án sinh ra ở <a href="BID-05.html">BID-05</a> luôn giữ tham chiếu ngược về mã gói thầu để truy vết BOQ gốc.</span></li>
+      <li><b>Số thứ tự chạy theo địa điểm.</b> Viết tắt địa điểm lấy từ địa chỉ công trình, số thứ tự 4 chữ số chạy riêng cho từng địa điểm: gói sau nhảy một giá trị so với gói trước ở cùng địa điểm — <code>KH_0112</code> rồi <code>KH_0113</code>, trong khi Hưng Yên vẫn đang ở <code>HY_0021</code>.<span class="then">Số thứ tự lấy theo số lớn nhất đang dùng cộng một, không đếm số bản ghi, nên gói bị hủy vẫn giữ chỗ của nó và mã đã cấp không bị cấp lại. Một vài địa điểm có viết tắt theo sổ cũ thay vì theo chữ cái đầu — Quảng Ninh ghi <code>MC</code> vì công trình nằm ở Móng Cái; gói không xác định được địa điểm rơi vào nhóm <code>NL</code>.</span></li>
       <li><b>Không chuyển thẩm định khi thiếu BOQ.</b> Phải có ít nhất một tệp loại “BOQ mời thầu” và bảng đầu việc có ít nhất một dòng.<span class="then">Gói thầu chỉ có tệp scan mà chưa số hóa bảng đầu việc vẫn chuyển được, nhưng bị gắn nhãn “cần số hóa” và bước thẩm định ở <a href="BID-02.html">BID-02</a> chỉ cho nhận xét chung, không đối chiếu theo dòng.</span></li>
       <li><b>Giữ nguyên mã hạng mục gốc.</b> Bảng đầu việc lưu song song mã hạng mục của bên mời thầu và mã nội bộ.<span class="then">Mọi văn bản gửi ra ngoài dùng mã của bên mời thầu; báo cáo nội bộ dùng mã nội bộ.</span></li>
       <li><b>Nhắc hạn nộp hai mốc.</b> Hệ thống nhắc người phụ trách trước hạn 3 ngày và trước 1 ngày.<span class="then">Quá hạn nộp mà gói thầu chưa chuyển sang trạng thái đã gửi báo giá thì gắn cờ đỏ trên danh sách và báo cho trưởng phòng.</span></li>

@@ -226,7 +226,7 @@
       <table>
         <thead><tr><th>Danh mục</th><th>Mã trường</th><th>Quy tắc mã</th><th>Thuộc tính bắt buộc</th></tr></thead>
         <tbody>
-          <tr><td>Dự án / công trình</td><td class="k">project_id</td><td><code>DA-YYYY-NNN</code></td><td>Tên, chủ đầu tư, vùng miền, giá trị HĐ, GĐ dự án, ngày ký, trạng thái</td></tr>
+          <tr><td>Dự án / công trình</td><td class="k">project_id</td><td><code>&lt;ĐĐ&gt;_NNNN</code> — lấy nguyên mã gói thầu</td><td>Tên, chủ đầu tư, vùng miền, giá trị HĐ, GĐ dự án, ngày ký, trạng thái</td></tr>
           <tr><td>Nhà máy / đơn vị</td><td class="k">unit_id</td><td><code>NM-NN</code>, <code>CN-NN</code></td><td>Tên, loại (nhà máy / chi nhánh / trụ sở), địa chỉ</td></tr>
           <tr><td>Kho</td><td class="k">wh_id</td><td><code>K-&lt;loại&gt;-&lt;mã đơn vị&gt;</code></td><td>Loại kho, đơn vị chủ quản, thủ kho — chi tiết tại <a href="ACC-02.html">ACC-02</a></td></tr>
           <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td><code>KM-NNN</code>, có cấp cha</td><td>Tên, nhóm (NVL / nhân công / máy / chung), TK hạch toán mặc định</td></tr>
@@ -312,6 +312,7 @@
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Sinh mã.</b> Mã của mọi danh mục do hệ thống sinh theo mẫu đã khai, người dùng không nhập tay.<span class="then">Số thứ tự chạy riêng theo từng năm và từng loại danh mục; mã đã cấp không tái sử dụng kể cả khi bản ghi bị ngừng sử dụng.</span></li>
+      <li><b>Dự án không cấp mã mới.</b> <code>project_id</code> không có dãy số riêng: dự án nhận nguyên mã gói thầu đã sinh ở <a href="BID-01.html">BID-01</a> và hợp đồng cũng mang đúng mã đó.<span class="then">Một công việc là một con số ở mọi nơi nó được lưu hồ sơ, nên số thứ tự chạy theo địa điểm chứ không theo năm — xem quy tắc đánh số tại <a href="BID-01.html">BID-01</a>.</span></li>
       <li><b>Không xóa, chỉ ngừng.</b> Bản ghi danh mục đã được ít nhất một chứng từ tham chiếu thì nút Xóa bị ẩn.<span class="then">Chỉ còn thao tác “Ngừng sử dụng”: bản ghi biến khỏi các ô chọn của chứng từ mới nhưng vẫn hiển thị đầy đủ trên chứng từ cũ và trên báo cáo lịch sử.</span></li>
       <li><b>Báo cáo lưu theo mã.</b> Mọi truy vấn báo cáo tham chiếu tới mã, không tới tên.<span class="then">Đổi tên một dự án hay một khoản mục chi phí không làm thay đổi bất kỳ con số nào của báo cáo kỳ trước.</span></li>
       <li><b>Hai hệ đơn vị tính.</b> Mỗi vật tư khai đồng thời ĐVT kế toán, ĐVT dự án và hệ số quy đổi.<span class="then">Nhập số lượng ở một hệ thì hệ còn lại tự tính. Sửa tay giá trị đã quy đổi vẫn được nhưng dòng đó bị gắn cờ để kế toán rà soát.</span></li>
@@ -341,7 +342,7 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-PF01-1</td><td>Chưa có dự án nào trong năm 2026</td><td>Tạo dự án mới và lưu</td><td>Mã sinh ra là <code>DA-2026-001</code>; ô mã ở chế độ chỉ đọc</td></tr>
+          <tr><td>UAT-PF01-1</td><td>Gói thầu <code>KH_0112</code> vừa khởi tạo dự án ở <a href="BID-05.html">BID-05</a></td><td>Mở bản ghi dự án vừa sinh</td><td>Mã dự án là <code>KH_0112</code>, đúng bằng mã gói thầu và mã hợp đồng; ô mã ở chế độ chỉ đọc</td></tr>
           <tr><td>UAT-PF01-2</td><td>Dự án DA-2026-014 đã có 3 phiếu nhập kho</td><td>Bấm Xóa trên bản ghi dự án</td><td>Nút Xóa không hiển thị; chỉ có “Ngừng sử dụng”</td></tr>
           <tr><td>UAT-PF01-3</td><td>Đã có báo cáo chi phí quý 2 của DA-2026-014</td><td>Đổi tên dự án rồi mở lại báo cáo quý 2</td><td>Toàn bộ con số không đổi; tên mới hiển thị ở tiêu đề</td></tr>
           <tr><td>UAT-PF01-4</td><td>Vật tư “đá tấm 600×600” có hệ số 1 m² = 2,78 tấm</td><td>Nhập 100 m² ở ô ĐVT kế toán</td><td>Ô ĐVT dự án tự điền 278 tấm</td></tr>
