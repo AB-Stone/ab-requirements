@@ -829,7 +829,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th>Danh mục</th><th>Mã trường</th><th>Quy tắc mã</th><th>Thuộc tính bắt buộc</th></tr></thead>
         <tbody>
-          <tr><td>Dự án / công trình</td><td class="k">project_id</td><td><code>DA-YYYY-NNN</code></td><td>Tên, chủ đầu tư, vùng miền, giá trị HĐ, GĐ dự án, ngày ký, trạng thái</td></tr>
+          <tr><td>Dự án / công trình</td><td class="k">project_id</td><td><code>&lt;ĐĐ&gt;_NNNN</code> — lấy nguyên mã gói thầu</td><td>Tên, chủ đầu tư, vùng miền, giá trị HĐ, GĐ dự án, ngày ký, trạng thái</td></tr>
           <tr><td>Nhà máy / đơn vị</td><td class="k">unit_id</td><td><code>NM-NN</code>, <code>CN-NN</code></td><td>Tên, loại (nhà máy / chi nhánh / trụ sở), địa chỉ</td></tr>
           <tr><td>Kho</td><td class="k">wh_id</td><td><code>K-&lt;loại&gt;-&lt;mã đơn vị&gt;</code></td><td>Loại kho, đơn vị chủ quản, thủ kho — chi tiết tại <a href="#ACC-02">ACC-02</a></td></tr>
           <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td><code>KM-NNN</code>, có cấp cha</td><td>Tên, nhóm (NVL / nhân công / máy / chung), TK hạch toán mặc định</td></tr>
@@ -915,6 +915,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Sinh mã.</b> Mã của mọi danh mục do hệ thống sinh theo mẫu đã khai, người dùng không nhập tay.<span class="then">Số thứ tự chạy riêng theo từng năm và từng loại danh mục; mã đã cấp không tái sử dụng kể cả khi bản ghi bị ngừng sử dụng.</span></li>
+      <li><b>Dự án không cấp mã mới.</b> <code>project_id</code> không có dãy số riêng: dự án nhận nguyên mã gói thầu đã sinh ở <a href="#BID-01">BID-01</a> và hợp đồng cũng mang đúng mã đó.<span class="then">Một công việc là một con số ở mọi nơi nó được lưu hồ sơ, nên số thứ tự chạy theo địa điểm chứ không theo năm — xem quy tắc đánh số tại <a href="#BID-01">BID-01</a>.</span></li>
       <li><b>Không xóa, chỉ ngừng.</b> Bản ghi danh mục đã được ít nhất một chứng từ tham chiếu thì nút Xóa bị ẩn.<span class="then">Chỉ còn thao tác “Ngừng sử dụng”: bản ghi biến khỏi các ô chọn của chứng từ mới nhưng vẫn hiển thị đầy đủ trên chứng từ cũ và trên báo cáo lịch sử.</span></li>
       <li><b>Báo cáo lưu theo mã.</b> Mọi truy vấn báo cáo tham chiếu tới mã, không tới tên.<span class="then">Đổi tên một dự án hay một khoản mục chi phí không làm thay đổi bất kỳ con số nào của báo cáo kỳ trước.</span></li>
       <li><b>Hai hệ đơn vị tính.</b> Mỗi vật tư khai đồng thời ĐVT kế toán, ĐVT dự án và hệ số quy đổi.<span class="then">Nhập số lượng ở một hệ thì hệ còn lại tự tính. Sửa tay giá trị đã quy đổi vẫn được nhưng dòng đó bị gắn cờ để kế toán rà soát.</span></li>
@@ -944,7 +945,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-PF01-1</td><td>Chưa có dự án nào trong năm 2026</td><td>Tạo dự án mới và lưu</td><td>Mã sinh ra là <code>DA-2026-001</code>; ô mã ở chế độ chỉ đọc</td></tr>
+          <tr><td>UAT-PF01-1</td><td>Gói thầu <code>KH_0112</code> vừa khởi tạo dự án ở <a href="#BID-05">BID-05</a></td><td>Mở bản ghi dự án vừa sinh</td><td>Mã dự án là <code>KH_0112</code>, đúng bằng mã gói thầu và mã hợp đồng; ô mã ở chế độ chỉ đọc</td></tr>
           <tr><td>UAT-PF01-2</td><td>Dự án DA-2026-014 đã có 3 phiếu nhập kho</td><td>Bấm Xóa trên bản ghi dự án</td><td>Nút Xóa không hiển thị; chỉ có “Ngừng sử dụng”</td></tr>
           <tr><td>UAT-PF01-3</td><td>Đã có báo cáo chi phí quý 2 của DA-2026-014</td><td>Đổi tên dự án rồi mở lại báo cáo quý 2</td><td>Toàn bộ con số không đổi; tên mới hiển thị ở tiêu đề</td></tr>
           <tr><td>UAT-PF01-4</td><td>Vật tư “đá tấm 600×600” có hệ số 1 m² = 2,78 tấm</td><td>Nhập 100 m² ở ô ĐVT kế toán</td><td>Ô ĐVT dự án tự điền 278 tấm</td></tr>
@@ -2386,7 +2387,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Mã gói thầu</td><td class="k">tender_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>GT-YYYY-NNN</code>, tự sinh, không sửa.</td></tr>
+          <tr><td>Mã gói thầu</td><td class="k">tender_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>&lt;ĐĐ&gt;_NNNN</code> — viết tắt địa điểm công trình cộng số thứ tự 4 chữ số, ví dụ <code>KH_0112</code>. Tự sinh khi lưu lần đầu, không sửa.</td></tr>
           <tr><td>Tên gói thầu</td><td class="k">tender_name</td><td>Chuỗi</td><td class="c req">✱</td><td>Tên công trình + hạng mục mời thầu.</td></tr>
           <tr><td>Bên mời thầu</td><td class="k">partner_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chọn từ danh mục đối tác; cho tạo nhanh nếu là khách mới.</td></tr>
           <tr><td>Chủ đầu tư</td><td class="k">owner_name</td><td>Chuỗi</td><td class="c">—</td><td>Có thể khác bên mời thầu (tổng thầu mời thầu phụ).</td></tr>
@@ -2459,7 +2460,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Mã gói thầu bất biến.</b> Mã sinh khi lưu lần đầu và theo gói thầu tới cuối vòng đời, kể cả khi thắng thầu và chuyển thành dự án.<span class="then">Dự án sinh ra ở <a href="#BID-05">BID-05</a> luôn giữ tham chiếu ngược về mã gói thầu để truy vết BOQ gốc.</span></li>
+      <li><b>Mã gói thầu bất biến.</b> Mã sinh khi lưu lần đầu và theo gói thầu tới cuối vòng đời, kể cả khi thắng thầu và chuyển thành dự án.<span class="then">Đổi địa chỉ công trình sau khi đã lưu không sinh lại mã.</span><span class="then">Dự án sinh ra ở <a href="#BID-05">BID-05</a> luôn giữ tham chiếu ngược về mã gói thầu để truy vết BOQ gốc.</span></li>
+      <li><b>Số thứ tự chạy theo địa điểm.</b> Viết tắt địa điểm lấy từ địa chỉ công trình, số thứ tự 4 chữ số chạy riêng cho từng địa điểm: gói sau nhảy một giá trị so với gói trước ở cùng địa điểm — <code>KH_0112</code> rồi <code>KH_0113</code>, trong khi Hưng Yên vẫn đang ở <code>HY_0021</code>.<span class="then">Số thứ tự lấy theo số lớn nhất đang dùng cộng một, không đếm số bản ghi, nên gói bị hủy vẫn giữ chỗ của nó và mã đã cấp không bị cấp lại. Một vài địa điểm có viết tắt theo sổ cũ thay vì theo chữ cái đầu — Quảng Ninh ghi <code>MC</code> vì công trình nằm ở Móng Cái; gói không xác định được địa điểm rơi vào nhóm <code>NL</code>.</span></li>
       <li><b>Không chuyển thẩm định khi thiếu BOQ.</b> Phải có ít nhất một tệp loại “BOQ mời thầu” và bảng đầu việc có ít nhất một dòng.<span class="then">Gói thầu chỉ có tệp scan mà chưa số hóa bảng đầu việc vẫn chuyển được, nhưng bị gắn nhãn “cần số hóa” và bước thẩm định ở <a href="#BID-02">BID-02</a> chỉ cho nhận xét chung, không đối chiếu theo dòng.</span></li>
       <li><b>Giữ nguyên mã hạng mục gốc.</b> Bảng đầu việc lưu song song mã hạng mục của bên mời thầu và mã nội bộ.<span class="then">Mọi văn bản gửi ra ngoài dùng mã của bên mời thầu; báo cáo nội bộ dùng mã nội bộ.</span></li>
       <li><b>Nhắc hạn nộp hai mốc.</b> Hệ thống nhắc người phụ trách trước hạn 3 ngày và trước 1 ngày.<span class="then">Quá hạn nộp mà gói thầu chưa chuyển sang trạng thái đã gửi báo giá thì gắn cờ đỏ trên danh sách và báo cho trưởng phòng.</span></li>
@@ -3720,7 +3722,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Mã dự án</td><td class="k">project_id</td><td>Chuỗi</td><td class="c req">✱</td><td>Sinh tự động theo <a href="#PF-01">PF-01</a>.</td></tr>
+          <tr><td>Mã dự án</td><td class="k">project_id</td><td>Chuỗi</td><td class="c req">✱</td><td>Lấy nguyên mã gói thầu của <a href="#BID-01">BID-01</a> — hợp đồng và dự án cùng mang một mã, ví dụ <code>KH_0112</code>.</td></tr>
           <tr><td>BOQ hợp đồng</td><td class="k">contract_boq[]</td><td>Bảng</td><td class="c req">✱</td><td>Sao từ BOQ báo giá đã chốt; khóa cột khối lượng và đơn giá. Là gốc so sánh của <a href="#PRJ-02">PRJ-02</a> và <a href="#RPT-03">RPT-03</a>.</td></tr>
           <tr><td>Danh mục hạng mục</td><td class="k">wbs[]</td><td>Bảng</td><td class="c req">✱</td><td>Sinh từ mã hạng mục của BOQ hợp đồng.</td></tr>
           <tr><td>Thành phần dự án</td><td class="k">members[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: người, vai trò trong dự án, phạm vi quyền. Vai trò tối thiểu: Ban lãnh đạo, Giám đốc dự án, đại diện các phòng ban.</td></tr>
