@@ -3700,19 +3700,21 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Tham số — danh mục kiểm tra trước ký</h4>
+    <p>Mỗi mục cho một trong ba kết quả — <code>đạt</code>, <code>chưa nhập</code>, <code>không đạt</code> — chứ không chỉ đạt/không đạt như tên hai cột sau gợi ý: <code>chưa nhập</code> báo trường liên quan còn trống, <code>không đạt</code> báo trường đó đã có giá trị nhưng sai hoặc lệch. Cột "Kết quả có thể" liệt kê đúng những trạng thái một mục thực sự cho ra được.</p>
     <div class="tw">
       <table>
-        <thead><tr><th>Hạng mục kiểm tra</th><th>Mã</th><th>Đối chiếu với</th><th>Mức</th></tr></thead>
+        <thead><tr><th>Hạng mục kiểm tra</th><th>Mã</th><th>Đối chiếu với</th><th>Mức</th><th>Kết quả có thể</th></tr></thead>
         <tbody>
-          <tr><td>Giá trị hợp đồng</td><td class="k">chk_value</td><td>Giá trị báo giá đã chốt ở <a href="#BID-03">BID-03</a></td><td>Chặn nếu lệch &gt; 1%</td></tr>
-          <tr><td>BOQ hợp đồng</td><td class="k">chk_boq</td><td>Từng dòng khối lượng · đơn giá của BOQ báo giá đã chốt</td><td>Chặn nếu còn dòng lệch</td></tr>
-          <tr><td>Đợt thanh toán</td><td class="k">chk_payment</td><td>Tổng tỷ lệ các đợt của <code>payment_terms[]</code></td><td>Chặn nếu ≠ 100%</td></tr>
-          <tr><td>Điều khoản thương mại</td><td class="k">chk_terms</td><td>Tiến độ thanh toán, bảo hành, hiệu lực đã chốt ở <a href="#BID-03">BID-03</a></td><td>Cảnh báo — người kiểm tra phải xác nhận đã thống nhất lại</td></tr>
-          <tr><td>Pháp nhân bên ký kết</td><td class="k">chk_partner</td><td>Mã số thuế, địa chỉ, người đại diện trong hồ sơ đối tác (<a href="#PF-01">PF-01</a>)</td><td>Chặn nếu thiếu trường bắt buộc</td></tr>
-          <tr><td>Bảo lãnh</td><td class="k">chk_guarantee</td><td>Loại, giá trị, ngân hàng, hạn của <code>guarantees[]</code></td><td>Cảnh báo nếu hợp đồng yêu cầu bảo lãnh mà chưa khai</td></tr>
-          <tr><td>Hiệu lực &amp; tiến độ</td><td class="k">chk_effective</td><td><code>effective_from</code> · <code>effective_to</code> và tiến độ thi công cam kết</td><td>Cảnh báo nếu hiệu lực hồi tố hoặc trống</td></tr>
-          <tr><td>Bản thảo đính kèm</td><td class="k">chk_doc</td><td>Phiên bản tệp hợp đồng trên <a href="#PF-05">PF-05</a></td><td>Chặn nếu thiếu tệp hoặc tệp không phải phiên bản mới nhất</td></tr>
-          <tr><td>Người kiểm tra</td><td class="k">chk_owner</td><td>Chuyên viên Đấu thầu phụ trách gói thầu</td><td>Chặn — phải ký xác nhận kết quả kiểm tra</td></tr>
+          <tr><td>Giá trị hợp đồng</td><td class="k">chk_value</td><td>Giá trị báo giá đã chốt ở <a href="#BID-03">BID-03</a></td><td>Chặn nếu lệch &gt; 1%</td><td>Đạt · Chưa nhập (chưa khai giá trị) · Không đạt (đã khai nhưng lệch)</td></tr>
+          <tr><td>BOQ hợp đồng</td><td class="k">chk_boq</td><td>Từng dòng khối lượng · đơn giá của BOQ báo giá đã chốt</td><td>Chặn nếu còn dòng lệch</td><td>Đạt · Chưa nhập (chưa có BOQ đang hiệu lực) · Không đạt (có BOQ nhưng lệch dòng hoặc thiếu đơn giá)</td></tr>
+          <tr><td>Đợt thanh toán</td><td class="k">chk_payment</td><td>Tổng tỷ lệ các đợt của <code>payment_terms[]</code></td><td>Chặn nếu ≠ 100%</td><td>Đạt · Chưa nhập (chưa khai đợt nào) · Không đạt (đã khai nhưng tổng ≠ 100%)</td></tr>
+          <tr><td>Điều khoản thương mại</td><td class="k">chk_terms</td><td>Tiến độ thanh toán, bảo hành, hiệu lực đã chốt ở <a href="#BID-03">BID-03</a></td><td>Cảnh báo — người kiểm tra phải xác nhận đã thống nhất lại</td><td>Đạt · Chưa nhập (hợp đồng chưa khai điều khoản) · Không đạt (đã khai nhưng khác báo giá)</td></tr>
+          <tr><td>Pháp nhân bên ký kết</td><td class="k">chk_partner</td><td>Mã số thuế, địa chỉ, người đại diện trong hồ sơ đối tác (<a href="#PF-01">PF-01</a>)</td><td>Chặn nếu thiếu trường bắt buộc</td><td>Đạt · Chưa nhập — không có trạng thái Không đạt, mục này chỉ kiểm tra có/không, không kiểm tra đúng/sai định dạng</td></tr>
+          <tr><td>Bảo lãnh</td><td class="k">chk_guarantee</td><td>Loại, giá trị, ngân hàng, hạn của <code>guarantees[]</code></td><td>Cảnh báo nếu hợp đồng yêu cầu bảo lãnh mà chưa khai</td><td>Đạt · Chưa nhập — không có trạng thái Không đạt</td></tr>
+          <tr><td>Hiệu lực &amp; tiến độ</td><td class="k">chk_effective</td><td><code>effective_from</code> · <code>effective_to</code> và tiến độ thi công cam kết</td><td>Cảnh báo nếu hiệu lực hồi tố hoặc trống</td><td>Đạt · Chưa nhập (thiếu ngày từ hoặc đến) · Không đạt (đã nhập cả hai nhưng đến ≤ từ)</td></tr>
+          <tr><td>Bản thảo đính kèm</td><td class="k">chk_doc</td><td>Phiên bản tệp hợp đồng trên <a href="#PF-05">PF-05</a></td><td>Chặn nếu thiếu tệp hoặc tệp không phải phiên bản mới nhất</td><td>Đạt · Chưa nhập — không có trạng thái Không đạt</td></tr>
+          <tr><td>Người kiểm tra</td><td class="k">chk_owner</td><td>Chuyên viên Đấu thầu phụ trách gói thầu</td><td>Chặn — phải ký xác nhận kết quả kiểm tra</td><td>Đạt — luôn đạt, ghi nhận người và thời điểm chạy kiểm tra</td></tr>
+          <tr><td>Khối lượng BOQ hợp đồng</td><td class="k">chk_qty</td><td>Từng dòng BOQ hợp đồng — ô khối lượng phải có giá trị. Để trống là hợp lệ khi tiếp nhận hồ sơ ở <a href="#BID-01">BID-01</a>; <a href="#BID-02">BID-02</a> buộc điền khối lượng đề xuất cho dòng đó trước khi nộp phiếu thẩm định, nên còn trống tới đây nghĩa là đã lọt một chốt chặn</td><td>Chặn nếu còn dòng chưa có khối lượng — nêu số thứ tự các dòng đó</td><td>Đạt · Chưa nhập — không có trạng thái Không đạt, một ô khối lượng chỉ có thể trống hoặc có giá trị</td></tr>
         </tbody>
       </table>
     </div>
@@ -3840,8 +3842,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Kiểm tra trước, ký sau.</b> Chuỗi ký chỉ mở khi kết quả kiểm tra hợp đồng ở trạng thái <code>đạt</code>: không còn mục ở mức Chặn, mọi mục ở mức Cảnh báo đã được người kiểm tra xác nhận kèm lý do.<span class="then">Chữ ký số không thu hồi được — phát hiện lệch giá trị hay lệch BOQ sau khi Tổng Giám đốc đã ký thì phải làm lại toàn bộ chuỗi ký.</span></li>
+      <li><b>Ba trạng thái kết quả, không phải hai.</b> Một mục kiểm tra không đạt báo rõ vì sao: <code>chưa nhập</code> khi trường liên quan còn để trống, <code>không đạt</code> khi trường đó đã có giá trị nhưng sai hoặc lệch so với nơi đối chiếu.<span class="then">Gộp hai trường hợp vào một nhãn "Không đạt" khiến người kiểm tra không phân biệt được giữa việc phải đi nhập liệu và việc phải đi sửa một sai lệch đã có — hai việc khác hẳn nhau. Với mức Chặn, cả hai trạng thái đều giữ chuỗi ký đóng như nhau; với mức Cảnh báo, cả hai đều cần xác nhận kèm lý do mới qua được.</span></li>
       <li><b>Sửa hợp đồng thì kiểm tra lại.</b> Mọi thay đổi giá trị, điều khoản, đợt thanh toán, bảo lãnh hoặc tệp bản thảo sau khi kiểm tra đạt đều đưa <code>precheck</code> về <code>chưa chạy</code>.<span class="then">Nếu đã có chữ ký nội bộ thì các chữ ký đó bị hủy hiệu lực và chuỗi ký chạy lại từ bước 1 — kết quả kiểm tra luôn gắn với đúng phiên bản hợp đồng được ký.</span></li>
-      <li><b>Sửa hồ sơ pháp nhân ngay tại mục kiểm tra không đạt.</b> Dòng <code>chk_partner</code> không đạt mở form sửa hồ sơ pháp nhân của đối tác — mã số thuế, địa chỉ đăng ký, người đại diện theo pháp luật — thay vì chỉ báo thiếu. Quyền sửa theo <a href="PF-01.html">PF-01</a> (Admin); người không có quyền được dẫn về hồ sơ gói thầu để chọn đối tác khác.<span class="then">Tiếp nhận thư chào thầu ở <a href="BID-01.html">BID-01</a> chỉ đòi tên và mã số thuế để không chặn việc nhận hồ sơ, nên phần lớn đối tác đến bước ký vẫn thiếu hai trường còn lại. Nếu không sửa được từ đây thì mục kiểm tra nêu ra một thiếu sót mà không màn hình nào trong hệ thống bổ sung được, và gói thầu kẹt vĩnh viễn trước chuỗi ký.</span></li>
+      <li><b>Sửa hồ sơ pháp nhân ngay tại mục kiểm tra chưa nhập.</b> Dòng <code>chk_partner</code> chưa nhập mở form sửa hồ sơ pháp nhân của đối tác — mã số thuế, địa chỉ đăng ký, người đại diện theo pháp luật — thay vì chỉ báo thiếu. Quyền sửa theo <a href="PF-01.html">PF-01</a> (Admin); người không có quyền được dẫn về hồ sơ gói thầu để chọn đối tác khác.<span class="then">Tiếp nhận thư chào thầu ở <a href="BID-01.html">BID-01</a> chỉ đòi tên và mã số thuế để không chặn việc nhận hồ sơ, nên phần lớn đối tác đến bước ký vẫn thiếu hai trường còn lại. Nếu không sửa được từ đây thì mục kiểm tra nêu ra một thiếu sót mà không màn hình nào trong hệ thống bổ sung được, và gói thầu kẹt vĩnh viễn trước chuỗi ký.</span></li>
       <li><b>Người kiểm tra không phải người ký đầu tiên.</b> Chuyên viên Đấu thầu phụ trách gói thầu chạy và ký xác nhận kết quả kiểm tra; TP Đấu thầu ký số bước 1.<span class="then">Tách hai vai để bước kiểm tra là một lớp soát độc lập, không phải thao tác hình thức của chính người sắp ký.</span></li>
       <li><b>Ký tuần tự trong, song song ngoài.</b> Ba bước ký nội bộ chạy tuần tự; chỉ khi đủ ba chữ ký mới gửi đối tác.<span class="then">Đối tác ký ngoài hệ thống, người phụ trách tải bản ký lên và xác nhận — hệ thống theo dõi trạng thái chứ không điều khiển bước này.</span></li>
       <li><b>Không khởi tạo dự án khi chưa đủ chữ ký.</b> Nút “Khởi tạo &amp; thông báo” chỉ mở khi chuỗi ký hoàn tất.<span class="then">Tránh trường hợp dự án tồn tại trong hệ thống trong khi hợp đồng chưa có hiệu lực pháp lý.</span></li>
@@ -3859,7 +3862,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
           <tr><td>Trình ký khi chưa kiểm tra</td><td><code>precheck = chưa chạy</code></td><td>“Chạy kiểm tra hợp đồng trước khi trình ký. Chuỗi ký chỉ mở khi kết quả đạt.”</td></tr>
-          <tr><td>Còn mục kiểm tra ở mức Chặn</td><td>Có mục kết quả “Không đạt”, mức Chặn</td><td>“Còn {n} mục chưa đạt: {danh sách}. Xử lý xong mới trình ký được.”</td></tr>
+          <tr><td>Còn mục kiểm tra ở mức Chặn</td><td>Có mục kết quả “Chưa nhập” hoặc “Không đạt”, mức Chặn</td><td>“Còn {n} mục chưa đạt: {danh sách}. Xử lý xong mới trình ký được.”</td></tr>
           <tr><td>Mục cảnh báo chưa xác nhận</td><td>Có mục mức Cảnh báo chưa có xác nhận</td><td>“{n} mục cảnh báo chưa được xác nhận. Ghi lý do chấp nhận để tiếp tục.”</td></tr>
           <tr><td>Sửa hợp đồng sau khi kiểm tra đạt</td><td>Có thay đổi trên hợp đồng đã <code>đạt</code></td><td>“Hợp đồng vừa thay đổi nên kết quả kiểm tra hết hiệu lực{, các chữ ký đã có sẽ bị hủy}. Chạy kiểm tra lại?”</td></tr>
           <tr><td>Tổng tỷ lệ đợt khác 100%</td><td><code>sum(pct) ≠ 100</code></td><td>“Tổng tỷ lệ các đợt đang là {x}%. Điều chỉnh để đủ 100% giá trị hợp đồng.”</td></tr>
@@ -3867,7 +3870,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Chưa gán Giám đốc dự án</td><td>Thiếu vai trò GĐ dự án</td><td>“Gán Giám đốc dự án trước — người này sẽ phân công nhân sự hiện trường.”</td></tr>
           <tr><td>Điều khoản lệch báo giá</td><td>Khác điều kiện thương mại đã chốt</td><td>“Điều khoản thanh toán khác báo giá đã chốt ({nội dung cũ}). Xác nhận nếu đã thống nhất lại với đối tác.”</td></tr>
           <tr><td>Ngày hiệu lực trước ngày ký</td><td><code>effective_from &lt; signed_at</code></td><td>“Ngày hiệu lực sớm hơn ngày ký. Xác nhận nếu hợp đồng có hiệu lực hồi tố.”</td></tr>
-          <tr><td>Giá trị lệch BOQ chốt</td><td>Chênh &gt; 1%</td><td>“Giá trị hợp đồng lệch {x}% so với BOQ báo giá đã chốt. Kiểm tra lại trước khi trình ký.”</td></tr>
+          <tr><td>Giá trị lệch BOQ chốt <span class="tag t-crit">Không đạt</span></td><td>Đã khai giá trị, chênh &gt; 1%</td><td>“Giá trị hợp đồng lệch {x}% so với BOQ báo giá đã chốt. Kiểm tra lại trước khi trình ký.”</td></tr>
+          <tr><td>Chưa khai giá trị hợp đồng <span class="tag t-warn">Chưa nhập</span></td><td><code>value_before_vat</code> còn trống</td><td>“Chưa khai giá trị hợp đồng. Nhập giá trị trước VAT rồi chạy lại kiểm tra.”</td></tr>
+          <tr><td>BOQ hợp đồng còn dòng chưa có khối lượng <span class="tag t-warn">Chưa nhập</span></td><td>Có dòng BOQ hợp đồng bỏ trống khối lượng — hợp lệ khi tiếp nhận ở <a href="#BID-01">BID-01</a>, không hợp lệ ở đây</td><td>“BOQ hợp đồng còn {n} dòng chưa có khối lượng: dòng {danh sách}. Không định giá được dòng chưa có số — bổ sung khối lượng rồi chạy lại kiểm tra.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -3889,12 +3894,13 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-BID05-10</td><td>Giá trị hợp đồng lệch 3% so với BOQ chốt</td><td>Chạy kiểm tra hợp đồng</td><td>Mục giá trị báo Không đạt (mức Chặn), nút Trình ký vẫn khóa</td></tr>
           <tr><td>UAT-BID05-11</td><td>Điều khoản thanh toán khác báo giá đã chốt</td><td>Chạy kiểm tra, ghi lý do và xác nhận mục cảnh báo</td><td>Kết quả chuyển sang Đạt, chuỗi ký mở, lý do lưu kèm bản ghi kiểm tra</td></tr>
           <tr><td>UAT-BID05-12</td><td>Kiểm tra đã đạt, TP Đấu thầu đã ký bước 1</td><td>Sửa giá trị hợp đồng rồi lưu</td><td>Kết quả kiểm tra về “chưa chạy”, chữ ký bước 1 bị hủy, phải kiểm tra và ký lại từ đầu</td></tr>
+          <tr><td>UAT-BID05-13</td><td>Đối tác được tiếp nhận ở BID-01 mới chỉ có tên và mã số thuế, chưa khai địa chỉ và người đại diện</td><td>Chạy kiểm tra hợp đồng</td><td>Mục pháp nhân báo <b>Chưa nhập</b> (không phải Không đạt), mức Chặn, mở form sửa hồ sơ pháp nhân ngay tại dòng đó; nút Trình ký vẫn khóa</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-03">BID-03 chốt giá</a><a href="#PF-05">PF-05 phiên bản bản thảo HĐ</a><a href="#PF-01">PF-01 sinh mã dự án</a><a href="#PF-02">PF-02 quyền theo dự án</a><a href="#ORD-01">ORD-01 tạm ứng hợp đồng</a><a href="#ORD-02">ORD-02 shopdrawing</a><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#ACC-02">ACC-02 kho dự án</a></p>
+    <p class="links"><a href="#BID-01">BID-01 BOQ mời thầu</a><a href="#BID-02">BID-02 chốt khối lượng</a><a href="#BID-03">BID-03 chốt giá</a><a href="#PF-05">PF-05 phiên bản bản thảo HĐ</a><a href="#PF-01">PF-01 sinh mã dự án</a><a href="#PF-02">PF-02 quyền theo dự án</a><a href="#ORD-01">ORD-01 tạm ứng hợp đồng</a><a href="#ORD-02">ORD-02 shopdrawing</a><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#ACC-02">ACC-02 kho dự án</a></p>
   </div>
 </section>
 <section class="block" id="grp-ord">
