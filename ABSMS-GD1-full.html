@@ -6200,8 +6200,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Tình trạng bản vẽ sơ họa</td><td class="k">asbuilt_sketch_status</td><td>Chọn 1</td><td class="c req">✱</td><td>Theo bảng hai tuyến ở trên.</td></tr>
           <tr><td>Tình trạng hồ sơ giá trị</td><td class="k">value_dossier_status</td><td>Chọn 1</td><td class="c req">✱</td><td>Theo bảng hai tuyến ở trên.</td></tr>
           <tr><td>Đơn giá hợp đồng</td><td class="k">contract_unit_price</td><td>Số tiền/ĐVT</td><td class="c">—</td><td>Đơn giá hợp đồng của hạng mục, nạp từ <a href="#BID-05">BID-05</a>; chỉ đọc.</td></tr>
-          <tr><td>Giá trị đề nghị · đã nhận</td><td class="k">amount_claim, amount_received</td><td>Số tiền</td><td class="c req">✱</td><td>Cơ chế nhận nhiều lần giống <a href="#ORD-01">ORD-01</a>.</td></tr>
-          <tr><td>Thành tiền đề nghị</td><td class="k">amount_claim</td><td>Số tiền</td><td class="c">—</td><td>Hệ thống tính: <code>qty_claim × contract_unit_price</code>.</td></tr>
+          <tr><td>Giá trị đề nghị · đã nhận</td><td class="k">amount_claim, amount_received</td><td>Số tiền</td><td class="c req">✱</td><td><code>amount_claim</code> do hệ thống tính = Σ (<code>qty_claim × contract_unit_price</code>) trên bảng đối chiếu, người lập không sửa tay; <code>amount_received</code> ghi nhận nhiều lần giống <a href="#ORD-01">ORD-01</a>.</td></tr>
         </tbody>
       </table>
     </div>
@@ -12300,7 +12299,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr><td>Đơn hàng</td><td class="k">DH</td><td>Nháp → Chờ duyệt → Đã duyệt → Đang thực hiện → Cấp một phần → <span class="tag t-ok">Hoàn thành</span> · <span class="tag t-neu">Đã hủy</span> · <span class="tag t-crit">Từ chối</span></td><td>Khi trình duyệt; mở lại khi “yêu cầu bổ sung”</td></tr>
         <tr><td>Lệnh SX/CƯ</td><td class="k">LSX · LCU</td><td>Chờ tiếp nhận → Đã tiếp nhận → Đang thực hiện → Cấp một phần → <span class="tag t-ok">Hoàn thành</span> · <span class="tag t-warn">Tạm dừng</span> · <span class="tag t-neu">Đã hủy</span></td><td>Khi chốt phân luồng</td></tr>
         <tr><td>Đợt cấp hàng</td><td class="k">ĐC</td><td>Kế hoạch → Đã cấp → <span class="tag t-ok">Đã nhận</span> · <span class="tag t-neu">Đã hủy</span></td><td>Khi duyệt phiếu xuất</td></tr>
-        <tr><td>Phiếu xuất ORD</td><td class="k">PX</td><td>Nháp → Đã duyệt → <span class="tag t-neu">Đã hủy</span></td><td>Khi duyệt</td></tr>
+        <tr><td>Phiếu xuất theo đợt (ORD-05)</td><td class="k">PXĐ</td><td>Nháp → Đã duyệt → <span class="tag t-neu">Đã hủy</span></td><td>Khi duyệt · không thay thế PX/PXDA của ACC-04; dùng cho cấp hàng theo đợt tại ORD-05</td></tr>
         <tr><td>Bảng áp giá</td><td class="k">BS</td><td>Nháp → Chờ duyệt giá → <span class="tag t-ok">Đã duyệt giá</span> · <span class="tag t-neu">Đã thay thế</span></td><td>Khi trình</td></tr>
         <tr><td>Yêu cầu thay đổi đơn</td><td class="k">YC</td><td>Nháp → Chờ duyệt → <span class="tag t-ok">Đã duyệt</span> · <span class="tag t-crit">Từ chối</span></td><td>Khi trình</td></tr>
         <tr><td>Hồ sơ tạm ứng / thanh toán</td><td class="k">HSTU · HSVT</td><td>Đang lập → Chờ duyệt nội bộ → Đã nộp CĐT → Chờ thanh toán → <span class="tag t-ok">Đã thanh toán</span> · Đóng không thu được<br><span class="tag t-crit">Vướng mắc</span> là nhãn phụ khi còn vướng mắc mở, không phải một bước trong chuỗi trạng thái chính</td><td>Khi nộp chủ đầu tư</td></tr>
