@@ -40,6 +40,7 @@
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
     <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <div class="rail-grp">Phòng Kế toán</div>
     <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
     <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
@@ -50,11 +51,13 @@
     <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
     <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
     <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <a href="ACC-10.html"><i>ACC-10</i>Danh mục tài khoản</a>
     <div class="rail-grp">Báo cáo</div>
     <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
     <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
     <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
     <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <a href="RPT-05.html"><i>RPT-05</i>Theo dõi tiến độ hợp đồng</a>
     <div class="rail-grp">Di động</div>
     <a class="on" href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
     <div class="rail-grp">Phụ lục</div>
@@ -67,7 +70,7 @@
 <main class="main">
 <div class="pagehead">
   <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Di động / <b>MOB-01</b></div><div class="sp"></div>
-  <div class="pnav"><a href="RPT-04.html">← RPT-04</a><a href="index.html">Mục lục</a><a href="PL-A.html">PL-A →</a></div>
+  <div class="pnav"><a href="RPT-05.html">← RPT-05</a><a href="index.html">Mục lục</a><a href="PL-A.html">PL-A →</a></div>
 </div>
 <section class="sheet solo" id="MOB-01">
   <header class="tb">
@@ -93,6 +96,21 @@
           <tr><td>Phê duyệt</td><td>Mọi người duyệt</td><td>Xem tóm tắt, đọc ý kiến, duyệt / từ chối / yêu cầu bổ sung, ký điện tử</td><td class="k"><a href="PF-03.html">PF-03</a></td></tr>
           <tr><td>Hiện trường</td><td>Kỹ sư, chỉ huy trưởng</td><td>Nhập sản lượng theo hạng mục, chụp ảnh hiện trường, xác nhận nhận hàng</td><td class="k"><a href="PRJ-02.html">PRJ-02</a>, <a href="ORD-05.html">ORD-05</a></td></tr>
           <tr><td>Kho</td><td>Thủ kho</td><td>Tra tồn kho, quét mã QR sản phẩm và tài sản, ký xác nhận xuất nhập</td><td class="k"><a href="PRJ-04.html">PRJ-04</a>, <a href="ACC-06.html">ACC-06</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Ranh giới thiết bị — đọc, duyệt so với lập chứng từ</h4>
+    <p>Trên điện thoại, hai phần mềm chia việc dứt khoát. Bản web <code>abs-ms</code> mở trên màn hình hẹp là nơi <b>tra cứu và phê duyệt</b>; mọi việc <b>lập chứng từ</b> khi rời bàn làm việc thuộc về ứng dụng này. Đây là ranh giới thiết kế, không phải thiếu sót của bản web: luồng lập chứng từ cần bàn phím, nhiều cột đối chiếu và thao tác in ấn nên chỉ dựng đủ trên máy bàn.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">Việc</th><th>Bản web trên màn hình hẹp</th><th>Ứng dụng di động</th><th class="c">Đặc tả</th></tr></thead>
+        <tbody>
+          <tr><td>Tra cứu, đọc chứng từ</td><td>Có — danh sách và thẻ tóm tắt</td><td>Có</td><td class="k"><a href="ORD-04.html">ORD-04</a></td></tr>
+          <tr><td>Phê duyệt, ký điện tử</td><td>Có</td><td>Có</td><td class="k"><a href="PF-03.html">PF-03</a>, <a href="PF-04.html">PF-04</a></td></tr>
+          <tr><td>Lập &amp; trình duyệt đơn hàng</td><td>Không — danh sách đơn hàng không có nút “Lập đơn hàng”</td><td>Có</td><td class="k"><a href="ORD-03.html">ORD-03</a></td></tr>
+          <tr><td>Cập nhật, hủy đơn hàng</td><td>Không</td><td>Có</td><td class="k"><a href="ORD-07.html">ORD-07</a></td></tr>
+          <tr><td>Xác nhận nhận hàng tại công trường</td><td>Không</td><td>Có</td><td class="k"><a href="ORD-05.html">ORD-05</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -329,11 +347,13 @@
       <li>Ảnh chụp từ ứng dụng tự gắn ngày giờ và vị trí, không sửa được.</li>
       <li>Quét QR tra ra vật tư hoặc tài sản trong dưới 2 giây khi có mạng.</li>
       <li>Người dùng chỉ thấy dữ liệu trong phạm vi quyền của mình, giống hệt trên web.</li>
+      <li>Bản web mở trên điện thoại không có lối lập chứng từ nào; người dùng lập, sửa chứng từ khi rời bàn làm việc bằng ứng dụng này.</li>
     </ol>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Cùng bộ quyền với web.</b> Ứng dụng không có bộ quyền riêng; mọi giới hạn của <a href="PF-02.html">PF-02</a> áp dụng y hệt.<span class="then">Người dùng không thể thấy trên điện thoại thứ mà họ không thấy trên web.</span></li>
+      <li><b>Lập chứng từ trên điện thoại là việc của ứng dụng.</b> Bản web trên màn hình hẹp chỉ tra cứu và phê duyệt; lập &amp; trình duyệt đơn hàng (<a href="ORD-03.html">ORD-03</a>), cập nhật hoặc hủy đơn hàng (<a href="ORD-07.html">ORD-07</a>) và xác nhận nhận hàng tại công trường (<a href="ORD-05.html">ORD-05</a>) đều thực hiện trên ứng dụng.<span class="then">Bản web chủ động không hiện lối lập chứng từ khi màn hình hẹp, thay vì mở một luồng chỉ hoàn tất được trên máy bàn.</span></li>
       <li><b>Ranh giới ngoại tuyến rõ ràng.</b> Nhập sản lượng và chụp ảnh làm được khi mất sóng; phê duyệt và ký điện tử thì không.<span class="then">Chữ ký cần mã băm nội dung tại thời điểm ký, nên bắt buộc có kết nối.</span></li>
       <li><b>Hàng đợi theo thứ tự nhập.</b> Bản ghi ngoại tuyến đồng bộ theo đúng thứ tự người dùng đã nhập.<span class="then">Tránh trường hợp bản ghi sau ghi đè bản ghi trước khi cùng một đầu việc.</span></li>
       <li><b>Xung đột không tự ghi đè.</b> Bản ghi ngoại tuyến gặp xung đột (ví dụ đợt đã bị chốt) thì giữ lại và báo cho người nhập.<span class="then">Người nhập chọn ghi vào kỳ mới hoặc bỏ; hệ thống không tự quyết.</span></li>
@@ -371,12 +391,14 @@
           <tr><td>UAT-MOB01-6</td><td>Đợt bị chốt trong lúc ngoại tuyến</td><td>Đồng bộ</td><td>Không tự ghi đè; hỏi người nhập cách xử lý</td></tr>
           <tr><td>UAT-MOB01-7</td><td>Đang ở kho, có mạng</td><td>Quét QR trên kiện đá</td><td>Hiện tồn khả dụng theo kho trong dưới 2 giây</td></tr>
           <tr><td>UAT-MOB01-8</td><td>Thủ kho phạm vi 1 kho</td><td>Mở màn hình tra cứu tồn</td><td>Chỉ thấy kho được phân công, giống hệt trên web</td></tr>
+          <tr><td>UAT-MOB01-9</td><td>Nhân viên có quyền lập đơn, mở bản web trên điện thoại</td><td>Vào danh sách đơn hàng (<a href="ORD-04.html">ORD-04</a>)</td><td>Xem và mở được đơn hàng; không có nút “Lập đơn hàng”</td></tr>
+          <tr><td>UAT-MOB01-10</td><td>Tiếp UAT-9, cùng người dùng</td><td>Mở ứng dụng di động và lập đơn hàng theo <a href="ORD-03.html">ORD-03</a></td><td>Lập và trình duyệt được trọn vẹn trên ứng dụng</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PF-03.html">PF-03 phê duyệt</a><a href="PF-04.html">PF-04 thông báo &amp; ký</a><a href="PRJ-02.html">PRJ-02 sản lượng</a><a href="ORD-05.html">ORD-05 xác nhận nhận hàng</a><a href="ACC-06.html">ACC-06 QR tài sản</a><a href="RPT-04.html">RPT-04 dashboard</a></p>
+    <p class="links"><a href="PF-03.html">PF-03 phê duyệt</a><a href="PF-04.html">PF-04 thông báo &amp; ký</a><a href="PRJ-02.html">PRJ-02 sản lượng</a><a href="ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="ORD-04.html">ORD-04 danh sách &amp; phê duyệt đơn hàng</a><a href="ORD-05.html">ORD-05 xác nhận nhận hàng</a><a href="ORD-07.html">ORD-07 cập nhật &amp; hủy đơn hàng</a><a href="ACC-06.html">ACC-06 QR tài sản</a><a href="RPT-04.html">RPT-04 dashboard</a></p>
   </div>
 </section>
 <div class="filefoot">
