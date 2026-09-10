@@ -285,7 +285,7 @@
           <tr><td>Chi phí chung phân bổ</td><td class="k">cost_overhead_pct</td><td>Phần trăm</td><td class="c">—</td><td>Mặc định theo tham số công ty, cho sửa theo gói.</td></tr>
           <tr><td>Đơn giá chào</td><td class="k">price_offer</td><td>Số tiền / ĐVT</td><td class="c req">✱</td><td>Nhập tay hoặc sinh từ hệ số lợi nhuận.</td></tr>
           <tr><td>Biên lợi nhuận dòng</td><td class="k">margin_pct</td><td>Phần trăm</td><td class="c">—</td><td>Tính tự động; tô đỏ khi dưới ngưỡng.</td></tr>
-          <tr><td>Ngưỡng biên tối thiểu</td><td class="k">min_margin</td><td>Phần trăm</td><td class="c req">✱</td><td>Do Ban lãnh đạo đặt cho từng gói; là điều kiện kích hoạt trình duyệt lại.</td></tr>
+          <tr><td>Ngưỡng biên tối thiểu</td><td class="k">min_margin</td><td>Phần trăm</td><td class="c req">✱</td><td>Do Ban lãnh đạo đặt cho từng gói; là điều kiện kích hoạt trình duyệt lại. Bắt buộc và phải <b>lớn hơn 0</b>: để ngưỡng 0% thì điều kiện <code>margin &lt; min_margin</code> không bao giờ đúng, tức quy tắc <em>Ngưỡng biên là chốt chặn</em> mất tác dụng hoàn toàn và gói gửi được ở bất kỳ mức giá nào.</td></tr>
           <tr><td>Vòng đàm phán</td><td class="k">round_no</td><td>Số</td><td class="c req">✱</td><td>Tăng mỗi lần gửi báo giá mới.</td></tr>
           <tr><td>Phản hồi đối tác</td><td class="k">feedback</td><td>Chuỗi dài</td><td class="c">—</td><td>Ghi kèm ngày và người tiếp nhận.</td></tr>
           <tr><td>Điều kiện thương mại</td><td class="k">terms</td><td>Chuỗi</td><td class="c req">✱</td><td>Tiến độ thanh toán, bảo hành, hiệu lực báo giá — chuyển thẳng vào hợp đồng.</td></tr>
@@ -335,7 +335,7 @@
           <tr><td>Tên tệp</td><td><code>BG_&lt;mã gói&gt;_v&lt;vòng&gt;_&lt;yyyymmdd&gt;</code> — ví dụ <code>BG_GT-2026-018_v3_20261218.pdf</code>.</td></tr>
           <tr><td>Chân trang PDF</td><td>Mã gói · số vòng · ngày giờ xuất · người xuất · số trang. Nhờ vậy một bản in nằm trên bàn họp vẫn truy được về đúng vòng nào.</td></tr>
           <tr><td>Tệp Excel</td><td>Cùng bảng, nhưng ô số là <b>số thật</b> chứ không phải chuỗi đã định dạng, và dòng tổng là công thức cộng — để đối tác kiểm lại được ngay trên tệp.</td></tr>
-          <tr><td>Lưu trữ</td><td>Mỗi lần xuất từ vòng đã trình duyệt lưu tệp thành chứng từ của gói thầu ở <a href="PF-05.html">PF-05</a>, gắn vào đúng vòng đó.</td></tr>
+          <tr><td>Lưu trữ</td><td><b>Lần xuất đầu tiên</b> từ vòng đã trình duyệt lưu tệp thành chứng từ của gói thầu ở <a href="PF-05.html">PF-05</a>, gắn vào đúng vòng và đúng định dạng đó; <b>những lần xuất sau</b> của cùng vòng, cùng định dạng trả về đúng chứng từ ấy chứ không dựng tệp mới. Nhờ vậy bản công ty lưu và bản đối tác đang cầm luôn là một — đúng như quy tắc <em>Tệp của vòng đã gửi không dựng lại</em> đòi hỏi.</td></tr>
           <tr><td>Nhật ký</td><td>Ghi ai xuất, lúc nào, vòng nào, định dạng gì; hiện lại trên dòng thời gian thương thảo.</td></tr>
           <tr><td>Quyền</td><td>Theo quyền của màn hình áp giá — Ban lãnh đạo · P. Kế toán · P. Đấu thầu (<a href="PL-B.html">PL-B</a>).</td></tr>
         </tbody>
@@ -458,6 +458,7 @@
           <tr><td>Kết thúc vòng khi chưa ghi phản hồi</td><td><code>feedback</code> rỗng hoặc dưới 3 ký tự</td><td>“Ghi lại phản hồi của đối tác trước khi kết thúc vòng {n} — đây là căn cứ của quyết định này.”</td></tr>
           <tr><td>Kết thúc vòng chưa gửi đối tác</td><td>Trạng thái vòng khác <code>đã gửi</code></td><td>“Chỉ kết thúc được vòng đã gửi đối tác. Vòng {n} đang ở trạng thái {trạng thái}.”</td></tr>
           <tr><td>Hiệu lực báo giá đã qua</td><td><code>hôm nay &gt; ngày gửi + hiệu lực</code></td><td>“Báo giá vòng {n} đã hết hiệu lực từ {ngày}. Gửi vòng mới trước khi ký hợp đồng.”</td></tr>
+          <tr><td>Ngưỡng biên tối thiểu bằng 0 hoặc âm</td><td><code>min_margin ≤ 0</code></td><td>“Ngưỡng biên tối thiểu phải lớn hơn 0. Để 0% là bỏ hẳn chốt chặn biên lợi nhuận của gói thầu này.”</td></tr>
         </tbody>
       </table>
     </div>

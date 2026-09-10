@@ -272,6 +272,11 @@
       <p style="margin:0">Yêu cầu gốc băn khoăn: “mở kho theo từng dự án — xem nếu như vậy có nhiều kho lắm không?”. Đề xuất của đặc tả: <b>vẫn mở kho theo dự án</b>, vì đó là cách duy nhất để tổng hợp nhập – xuất – tồn theo dự án đúng yêu cầu báo cáo. Kho dự án được tạo tự động, tự đóng khi dự án quyết toán xong, và giao diện mặc định <em>chỉ hiển thị kho của các dự án đang thi công</em> — nên số kho tăng theo dự án không gây rối cho người dùng. Với dự án nhỏ dùng chung mặt bằng, cho phép gộp nhiều dự án vào một kho vật lý bằng cách gắn nhiều <code>project_id</code> lên cùng một kho.</p>
     </div>
 
+    <div class="note q">
+      <b>Vấn đề cần chốt · Q-17</b>
+      <p style="margin:0">Bảng <em>Kiểm tra dữ liệu</em> bên dưới có dòng “Định mức tối thiểu vượt sức chứa khai báo”, nhưng bảng <em>Tham số</em> ở trên không khai trường sức chứa — chỉ có <code>min_stock</code> theo từng vật tư, nên kiểm tra đó chưa có gì để so. Đề xuất của đặc tả: khai thêm <b>tồn tối đa</b> (<code>max_stock</code>) cùng bảng và cùng cặp khóa <em>kho × vật tư</em>, để kiểm tra này chạy được và để <a href="ACC-03.html">ACC-03</a> cảnh báo được khi nhập vượt sức chứa. Xem <a href="PL-C.html">Q-17</a>.</p>
+    </div>
+
     <h4>Mockup UI — Kho › Danh mục kho</h4>
     <div class="wf">
       <div class="wf-bar"><span class="wf-crumb">Kho ›</span><b>Danh mục kho</b><span class="wf-crumb">9 kho đang hoạt động · giá trị tồn 15,8 tỷ</span><span class="sp"></span><span class="wf-btn pri">+ Khai báo kho</span></div>
@@ -321,7 +326,10 @@
       <li><b>Kho dự án sinh tự động.</b> Khởi tạo dự án ở <a href="BID-05.html">BID-05</a> tạo luôn một kho dự án tương ứng.<span class="then">Không phải khai báo tay, và mã kho luôn suy được từ mã dự án.</span></li>
       <li><b>Kho tổng là kho kế toán.</b> Tài sản ở kho tổng vẫn ghi vị trí vật lý là nhà máy.<span class="then">Mục đích duy nhất của kho tổng là tính khấu hao cho những ngày tài sản không phục vụ dự án nào — đây là điểm dễ hiểu nhầm nhất của cây kho.</span></li>
       <li><b>Nghiệp vụ cho phép là hàng rào cứng.</b> Mỗi kho chỉ thực hiện được những nghiệp vụ đã khai.<span class="then">Nghiệp vụ không hợp lệ không hiện trên giao diện, không phải hiện rồi báo lỗi khi lưu.</span></li>
-      <li><b>Một phương pháp tính giá cho toàn hệ thống.</b> Bình quân gia quyền tại thời điểm ghi nhận, áp dụng cho mọi kho.<span class="then">Không cho cấu hình khác nhau giữa các kho — nếu khác nhau thì giá vốn giữa các dự án không so sánh được.</span></li>
+      <li><b>Phương pháp tính giá xuất kho chọn theo từng kho.</b> Hệ thống hỗ trợ đúng hai phương pháp: <b>Nhập trước xuất trước (FIFO)</b> và <b>Bình quân gia quyền</b> — trong đó bình quân gia quyền có hai biến thể: <em>theo từng lần nhập</em> (bình quân di động, tính lại ngay sau mỗi lần nhập — đây là cách tính hiện có của đặc tả) và <em>cuối kỳ</em> (bình quân cố định, tính lại một lần khi chốt kỳ).<span class="then">Mỗi kho khai báo riêng một phương pháp và, nếu chọn bình quân gia quyền, một biến thể; khai rõ ràng theo từng kho thay vì ngầm định giống nhau để giá vốn vẫn đối chiếu được khi có kho dùng phương pháp khác.</span></li>
+      <li><b>Trường “Đơn vị chủ quản” đổi thành “Nhân viên phụ trách”.</b> Chủ thể chịu trách nhiệm về một kho phải là một nhân viên cụ thể, không phải một đơn vị/phòng ban.<span class="then">Một đơn vị tổ chức không chịu trách nhiệm được cho chênh lệch tồn kho thực tế theo cách một cá nhân được nêu đích danh phải chịu — đổi nhãn trường và kiểu tham chiếu sang nhân viên để có người chịu trách nhiệm rõ ràng.</span></li>
+      <li><b>Thêm nghiệp vụ “Khác” để cân bằng kiểm kê.</b> Bổ sung nghiệp vụ <code>khác</code> vào danh sách nghiệp vụ cho phép, dùng riêng để ghi nhận điều chỉnh khi kiểm kê phát hiện thừa hoặc thiếu không rõ nguyên nhân.<span class="then">Số tồn sổ sách được đối chiếu về đúng số tồn thực tế qua một phiếu nhập/xuất hợp lệ, thay vì sửa thẳng số tồn mà không để lại chứng từ.</span></li>
+      <li><b>Nhãn nhóm kho cần đối chiếu lại — chưa chốt.</b> Yêu cầu hiện tại đòi ba nhãn nhóm kho là <b>Kho nhà máy</b>, <b>Kho công trình</b>, <b>Đang đi đường</b>, trong khi đặc tả này đang định nghĩa ba nhóm khác: <b>Kho tổng công ty</b>, <b>Kho dự án</b>, <b>Kho nhà máy</b> (nhóm Kho nhà máy lại chia tiếp 6 kho con, trong đó có <code>K-CT</code> — “Kho công trình tại nhà máy” — không phải một nhóm kho cấp cao nhất, và không có nhóm nào tương ứng với “Đang đi đường”).<span class="then">Chưa rõ đây là đổi tên ba nhóm hiện có, hay là thêm một trục phân loại song song theo trạng thái luân chuyển (tại nhà máy / tại công trình / đang vận chuyển) bên cạnh trục nhóm kho hiện tại — cần xác nhận với người yêu cầu trước khi đổi cấu trúc cây kho.</span></li>
       <li><b>Giao diện ẩn kho đã đóng.</b> Danh sách mặc định chỉ hiện kho của dự án đang thi công.<span class="then">Cách trả lời cho lo ngại “nhiều kho quá” trong yêu cầu gốc — xem <a href="PL-C.html">Q-03</a>.</span></li>
       <li><b>Nhiều dự án chung một kho vật lý.</b> Với công trình nhỏ dùng chung mặt bằng, một kho gắn được nhiều mã dự án.<span class="then">Khi đó phiếu xuất bắt buộc chọn dự án, và báo cáo nhập xuất tồn vẫn tách được theo dự án.</span></li>
       <li><b>Kho K-CT ghi nguồn dự án.</b> Đá dư từ dự án hoàn nhập về nhà máy lưu ở K-CT và giữ tham chiếu dự án nguồn.<span class="then">Nhờ vậy khi nhà máy mua lại, giá trị được ghi nhận đúng về dự án đã hoàn nhập.</span></li>
@@ -337,7 +345,7 @@
           <tr><td>Đóng kho còn tồn</td><td>Tồn &gt; 0</td><td>“Kho còn {giá trị} tồn. Điều chuyển hoặc hoàn nhập hết trước khi đóng.”</td></tr>
           <tr><td>Xóa kho có lịch sử</td><td>Có chứng từ tham chiếu</td><td>“Kho đã phát sinh {n} chứng từ, không xóa được. Chọn Đóng kho để ngừng sử dụng.”</td></tr>
           <tr><td>Kho dự án không gắn dự án</td><td>Nhóm kho là dự án, thiếu <code>project_id</code></td><td>“Kho thuộc nhóm dự án phải gắn ít nhất một mã dự án.”</td></tr>
-          <tr><td>Định mức lớn hơn sức chứa</td><td>Định mức &gt; tồn tối đa khai báo</td><td>“Định mức tối thiểu {số} vượt sức chứa khai báo {số}. Kiểm tra lại đơn vị tính.”</td></tr>
+          <tr><td>Định mức lớn hơn sức chứa</td><td>Định mức &gt; tồn tối đa khai báo — trường sức chứa chưa khai, xem <a href="PL-C.html">Q-17</a></td><td>“Định mức tối thiểu {số} vượt sức chứa khai báo {số}. Kiểm tra lại đơn vị tính.”</td></tr>
         </tbody>
       </table>
     </div>

@@ -276,7 +276,7 @@
         <tbody>
           <tr><td>Gói thầu</td><td class="k">tender_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc.</td></tr>
           <tr><td>Chế độ xem bảng đối chiếu</td><td class="k">view_mode</td><td>Danh mục</td><td class="c">—</td><td><code>gọn</code> (mặc định) · <code>đầy đủ</code>. Là lựa chọn hiển thị của người dùng, không phải dữ liệu của phiếu — hệ thống nhớ lựa chọn cho lần mở sau, mỗi người một kiểu.</td></tr>
-          <tr><td>Kết luận theo dòng</td><td class="k">line_check[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng BOQ chọn 1 trong: <code>đúng</code> · <code>thiếu đầu việc</code> · <code>sai khối lượng</code> · <code>sai quy cách</code> · <code>trùng lặp</code>.</td></tr>
+          <tr><td>Kết luận theo dòng</td><td class="k">line_check[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng BOQ chọn 1 trong bốn giá trị: <code>đúng</code> · <code>sai khối lượng</code> · <code>sai quy cách</code> · <code>trùng lặp</code>. Đầu việc bị bỏ sót không nằm trong danh sách này: kết luận theo dòng là nhận xét về một dòng đang có, mà đầu việc bỏ sót thì chưa có dòng nào để chọn. Trường hợp đó xử lý bằng thao tác riêng “Thêm đầu việc bỏ sót” — sinh một dòng mới có đánh dấu bổ sung, thay vì gán kết luận cho một dòng không tồn tại.</td></tr>
           <tr><td>Khối lượng đề xuất</td><td class="k">qty_proposed</td><td>Số</td><td class="c">—</td><td>Bắt buộc khi kết luận là “sai khối lượng”.</td></tr>
           <tr><td>Đầu việc bổ sung</td><td class="k">extra_lines[]</td><td>Bảng</td><td class="c">—</td><td>Đầu việc bên mời thầu bỏ sót; cấu trúc giống dòng BOQ.</td></tr>
           <tr><td>Người thẩm định</td><td class="k">reviewer</td><td>Tham chiếu</td><td class="c req">✱</td><td>Thuộc P. TQT.</td></tr>
@@ -370,6 +370,7 @@
       <li><b>Ảnh hoặc video bắt buộc khi có biện pháp khó.</b> Ghi nhận biện pháp thi công khó thì cần tối thiểu 3 tệp hiện trường, đếm trên tệp đã tải lên phiếu và đã xác nhận trên kho.<span class="then">Đây là bằng chứng khi giải trình chi phí phát sinh với chủ đầu tư về sau — nên số đếm là số tệp thật, không phải con số người khảo sát tự khai. Video tính như ảnh: một đoạn quay dọc lối tiếp cận nói được nhiều hơn ba tấm ảnh chụp cùng bức tường.</span></li>
       <li><b>BOQ v2 giữ vết.</b> Bản hợp nhất giữ nguyên mọi dòng gốc và đánh dấu ba loại: giữ nguyên, sửa khối lượng, bổ sung mới.<span class="then">Chức năng so sánh v1 ↔ v2 hiện số dòng từng loại và chênh lệch tổng khối lượng theo nhóm.</span></li>
       <li><b>Sai lệch lớn phải làm rõ.</b> Tổng khối lượng lệch quá 10% so với BOQ mời thầu thì hệ thống nhắc lập văn bản làm rõ trước khi chốt.<span class="then">Cho phép bỏ qua nhưng phải ghi lý do — lý do này hiện lại ở bước áp giá.</span></li>
+      <li><b>Dòng chưa có khối lượng phải chốt xong ở bước này.</b> Dòng mang sang từ <a href="BID-01.html">BID-01</a> với ô khối lượng để trống — trạng thái hợp lệ lúc tiếp nhận hồ sơ, kèm ghi chú “chờ làm rõ” — chỉ nộp phiếu được khi người thẩm định đã điền khối lượng đề xuất cho nó, <b>bất kể chọn kết luận nào trong bốn giá trị của <code>line_check[]</code></b>. Chính vì cổng nộp đó mà kết luận “đúng” không dùng được cho dòng như vậy: “đúng” nghĩa là số mời thầu đã chuẩn, mà ở đây chưa có số nào để mà chuẩn.<span class="then">Đây là điểm cuối cùng còn đổi được khối lượng: từ <a href="BID-03.html">BID-03</a> trở đi khối lượng khóa, muốn đổi phải quay lại đây và chốt một bản BOQ mới.</span><span class="then">Dòng để trống lọt qua bước này sẽ nằm nguyên trong BOQ hợp đồng và bị chốt chặn <code>chk_qty</code> của <a href="BID-05.html">BID-05</a> giữ lại ngay trước khi trình ký — muộn hơn nhiều so với chỗ đáng lẽ phải xử lý.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -388,6 +389,7 @@
           <tr><td>Tải xong nhưng không thấy tệp trên kho</td><td>Xác nhận mà kho chưa có đối tượng</td><td>“Chưa thấy tệp {tên} trên kho lưu trữ — tải lại tệp trước khi xác nhận.”</td></tr>
           <tr><td>Thêm tệp vào phiếu đã nộp</td><td>Phiếu ở trạng thái đã nộp / đã khóa</td><td>“Phiếu đã nộp — mở lại phiếu nếu cần bổ sung ảnh.”</td></tr>
           <tr><td>Chốt khi thiếu phiếu</td><td>Một trong hai phiếu chưa nộp</td><td>“Chưa nhận được {tên phiếu} từ {bộ phận}. Đã gửi nhắc lúc {giờ}.”</td></tr>
+          <tr><td>Nộp phiếu khi còn dòng chưa có khối lượng</td><td>Dòng có <code>qty_invited</code> rỗng mà <code>qty_proposed</code> cũng rỗng</td><td>“Dòng {stt} chưa có khối lượng. Nhập khối lượng đề xuất trước khi nộp phiếu — đây là bước cuối còn đổi được khối lượng.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -416,7 +418,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-01.html">BID-01 gói thầu</a><a href="BID-03.html">BID-03 áp giá</a><a href="PF-04.html">PF-04 nhắc việc quá hạn</a><a href="PF-05.html">PF-05 phiên bản BOQ</a></p>
+    <p class="links"><a href="BID-01.html">BID-01 gói thầu</a><a href="BID-03.html">BID-03 áp giá</a><a href="BID-05.html">BID-05 kiểm tra trước ký</a><a href="PF-04.html">PF-04 nhắc việc quá hạn</a><a href="PF-05.html">PF-05 phiên bản BOQ</a></p>
   </div>
 </section>
 <div class="filefoot">
