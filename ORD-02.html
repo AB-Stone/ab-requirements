@@ -40,6 +40,7 @@
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
     <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
+    <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <div class="rail-grp">Phòng Kế toán</div>
     <a href="ACC-01.html"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
     <a href="ACC-02.html"><i>ACC-02</i>Hệ thống kho</a>
@@ -50,11 +51,13 @@
     <a href="ACC-07.html"><i>ACC-07</i>Thu chi — quỹ &amp; NH</a>
     <a href="ACC-08.html"><i>ACC-08</i>Phiếu KT &amp; phân bổ</a>
     <a href="ACC-09.html"><i>ACC-09</i>Giá thành &amp; lãi lỗ</a>
+    <a href="ACC-10.html"><i>ACC-10</i>Danh mục tài khoản</a>
     <div class="rail-grp">Báo cáo</div>
     <a href="RPT-01.html"><i>RPT-01</i>Báo cáo kế toán</a>
     <a href="RPT-02.html"><i>RPT-02</i>Báo cáo quản trị dự án</a>
     <a href="RPT-03.html"><i>RPT-03</i>Báo cáo lãi lỗ</a>
     <a href="RPT-04.html"><i>RPT-04</i>Dashboard &amp; KPI</a>
+    <a href="RPT-05.html"><i>RPT-05</i>Theo dõi tiến độ hợp đồng</a>
     <div class="rail-grp">Di động</div>
     <a href="MOB-01.html"><i>MOB-01</i>Ứng dụng di động</a>
     <div class="rail-grp">Phụ lục</div>
@@ -73,11 +76,11 @@
   <header class="tb">
     <div class="tb-id">ORD-02</div>
     <div class="tb-main">
-      <h3>Lập bản vẽ Shopdrawing &amp; phê duyệt của đối tác</h3>
-      <p>“Thể hiện được tiến trình phê duyệt bản vẽ Shopdrawing (đối tác phê duyệt)”. Điểm khó là quy trình duyệt nằm <em>bên ngoài</em> công ty, nên hệ thống phải theo dõi trạng thái chứ không điều khiển được nó.</p>
+      <h3>Lập bản vẽ Shopdrawing &amp; phê duyệt của CĐT / TVGS</h3>
+      <p>“Thể hiện được tiến trình phê duyệt bản vẽ Shopdrawing (đối tác phê duyệt)”. Điểm khó là quy trình duyệt nằm <em>bên ngoài</em> công ty — CĐT trả lời qua mail — nên hệ thống chỉ theo dõi và ghi nhận trạng thái chứ không điều khiển được nó.</p>
       <dl class="tb-meta">
-        <div><dt>Thực hiện</dt><dd>P. TQT — Shopdrawing</dd></div>
-        <div><dt>Phê duyệt</dt><dd>Nội bộ 1 cấp · sau đó đối tác / tư vấn giám sát</dd></div>
+        <div><dt>Thực hiện</dt><dd>P. TQT — kỹ sư phụ trách lập; TP TQT duyệt &amp; phát hành</dd></div>
+        <div><dt>Phê duyệt</dt><dd>TP TQT duyệt nội bộ → CĐT / TVGS duyệt qua mail → TP TQT phát hành</dd></div>
         <div><dt>Quyền truy cập</dt><dd>Không giới hạn</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 6</dd></div>
       </dl>
@@ -85,156 +88,93 @@
   </header>
   <div class="sb">
     <h4>Mục tiêu</h4>
-    <p>Bản vẽ shop được duyệt là điều kiện bắt buộc để lập đơn hàng (<a href="ORD-03.html">ORD-03</a>). Vì vậy tiến trình duyệt shop chính là đường găng của tiến độ sản xuất. Đặc tả yêu cầu theo dõi từng vòng gửi–trả, đếm số vòng và số ngày nằm ở phía đối tác.</p>
+    <p>Bản vẽ shop được duyệt là điều kiện bắt buộc để lập đơn hàng (<a href="ORD-03.html">ORD-03</a>). Vì vậy tiến trình duyệt shop chính là đường găng của tiến độ sản xuất. Đặc tả yêu cầu theo dõi từng vòng gửi–trả, đếm số vòng và số ngày nằm ở phía CĐT.</p>
+    <p>Bảng khối lượng là phần việc của <b>kỹ sư phụ trách</b> và được nhập <b>ngay khi lập bản vẽ</b>, trước mọi bước duyệt: đó chính là nội dung trưởng phòng kiểm tra và CĐT xem xét, nên không thể chờ có kết quả duyệt rồi mới nhập. Trưởng phòng duyệt hai lần và hai lần đó khác nhau về ý nghĩa — <b>duyệt nội bộ</b> là điều kiện để gửi CĐT, <b>phát hành</b> là điều kiện để bản vẽ xuất hiện ở màn hình lập đơn hàng.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:838px;margin:0 auto"><svg role="img" aria-label="Hình ORD-02.1 Ba kết quả chuẩn của một vòng duyệt shop. “Approved as noted” không quay lại vòng gửi — đây là chi tiết quyết định tiến độ, cần phân biệt rõ với “revise and resubmit”."
- viewBox="0.00 0.00 838.00 663.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 650.28)">
-<title>G</title>
-<g id="node1" class="node">
-<title>A</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="231.39,-637.32 76.36,-637.32 76.36,-592.92 231.39,-592.92 231.39,-637.32"/>
-<text xml:space="preserve" text-anchor="middle" x="153.88" y="-618.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhận bản vẽ thiết kế</text>
-<text xml:space="preserve" text-anchor="middle" x="153.88" y="-603.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">+ BOQ hợp đồng</text>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:838px;margin:0 auto"><svg role="img" aria-label="Hình ORD-02.1 Luồng thật của một bản vẽ shop: kỹ sư phụ trách lập bản vẽ và nhập khối lượng ngay từ đầu; trưởng phòng duyệt hai lần — duyệt nội bộ trước khi gửi CĐT, và phát hành sau khi CĐT chấp thuận."
+ viewBox="0 0 838 730" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ord02-tip" markerWidth="7" markerHeight="7" refX="6.2" refY="3.5" orient="auto"><polygon points="0,0.6 6.5,3.5 0,6.4" fill="#55606b"/></marker></defs>
+<g font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a" text-anchor="middle">
+
+<rect x="30" y="14" width="225" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="35">Tạo bản vẽ mới</text>
+<text x="142.5" y="52">kỹ sư phụ trách · chọn hạng mục</text>
+
+<rect x="30" y="94" width="225" height="64" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="114">Nhập khối lượng bản vẽ</text>
+<text x="142.5" y="131">STT · mã việc · mã đá · đvt</text>
+<text x="142.5" y="148">KL · quy cách · ghi chú</text>
+
+<rect x="30" y="188" width="225" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="209">Trưởng phòng xem khối lượng</text>
+<text x="142.5" y="226">và tệp bản vẽ tải lên</text>
+
+<polygon points="142.5,256 200.5,284 142.5,312 84.5,284" fill="#eef2f5" stroke="#5d6b7a"/>
+<text x="142.5" y="288">Đạt?</text>
+
+<rect x="30" y="336" width="225" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="357">Duyệt bản vẽ</text>
+<text x="142.5" y="374">TP TQT ký duyệt nội bộ</text>
+
+<rect x="30" y="416" width="225" height="64" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="436">Xuất file &amp; gửi mail CĐT</text>
+<text x="142.5" y="453">ghi ngày gửi, vòng thứ n</text>
+<text x="142.5" y="470">và ngày cam kết trả</text>
+
+<rect x="30" y="510" width="225" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="531">CĐT trả lời qua mail</text>
+<text x="142.5" y="548">TP TQT ghi nhận kết quả</text>
+
+<rect x="330" y="470" width="235" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="447.5" y="491">Chấp thuận</text>
+<text x="447.5" y="508">approved · approved as noted</text>
+
+<rect x="330" y="550" width="235" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="447.5" y="571">Sửa theo ý kiến CĐT</text>
+<text x="447.5" y="588">kỹ sư sửa bản vẽ &amp; khối lượng</text>
+
+<rect x="330" y="630" width="235" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="447.5" y="651">Từ chối</text>
+<text x="447.5" y="668">lập bản vẽ mới thay thế</text>
+
+<rect x="615" y="390" width="200" height="50" fill="#eef2f5" stroke="#5d6b7a"/>
+<text x="715" y="411">Quá hạn cam kết trả</text>
+<text x="715" y="428">cảnh báo tiến độ · PF-04</text>
+
+<rect x="615" y="470" width="200" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="715" y="491">Phát hành sang đơn hàng</text>
+<text x="715" y="508">TP TQT duyệt lần cuối</text>
+
+<rect x="615" y="550" width="200" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="715" y="571">Bản vẽ hiện ở ORD-03</text>
+<text x="715" y="588">khối lượng khóa lại</text>
+
+<g fill="none" stroke="#55606b" marker-end="url(#ord02-tip)">
+<path d="M142.5,64 L142.5,92"/>
+<path d="M142.5,158 L142.5,186"/>
+<path d="M142.5,238 L142.5,254"/>
+<path d="M142.5,312 L142.5,334"/>
+<path d="M142.5,386 L142.5,414"/>
+<path d="M142.5,480 L142.5,508"/>
+<path d="M84.5,284 L20,284 L20,140 L26,140"/>
+<path d="M255,440 L590,440 L590,415 L613,415"/>
+<path d="M255,525 L292,525 L292,495 L328,495"/>
+<path d="M255,540 L305,540 L305,575 L328,575"/>
+<path d="M255,550 L292,550 L292,655 L328,655"/>
+<path d="M565,495 L613,495"/>
+<path d="M715,520 L715,548"/>
+<path d="M565,575 L590,575 L590,712 L10,712 L10,126 L26,126"/>
 </g>
-<g id="node2" class="node">
-<title>B</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="231.75,-557.92 76.01,-557.92 76.01,-513.52 231.75,-513.52 231.75,-557.92"/>
-<text xml:space="preserve" text-anchor="middle" x="153.88" y="-539.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Triển khai shopdrawing</text>
-<text xml:space="preserve" text-anchor="middle" x="153.88" y="-524.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">theo hạng mục</text>
-</g>
-<g id="edge1" class="edge">
-<title>A&#45;&gt;B</title>
-<path fill="none" stroke="#55606b" d="M153.88,-592.56C153.88,-584.34 153.88,-574.83 153.88,-566.01"/>
-<polygon fill="#55606b" stroke="#55606b" points="156.15,-566.18 153.88,-559.68 151.6,-566.18 156.15,-566.18"/>
-</g>
-<g id="node3" class="node">
-<title>C</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="173.75,-478.52 0,-478.52 0,-434.12 173.75,-434.12 173.75,-478.52"/>
-<text xml:space="preserve" text-anchor="middle" x="86.88" y="-460.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Duyệt nội bộ</text>
-<text xml:space="preserve" text-anchor="middle" x="86.88" y="-445.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">TP TQT kiểm tra kỹ thuật</text>
-</g>
-<g id="edge2" class="edge">
-<title>B&#45;&gt;C</title>
-<path fill="none" stroke="#55606b" d="M135.21,-513.16C127.59,-504.35 118.68,-494.06 110.61,-484.73"/>
-<polygon fill="#55606b" stroke="#55606b" points="112.41,-483.33 106.43,-479.91 108.96,-486.31 112.41,-483.33"/>
-</g>
-<g id="node4" class="node">
-<title>D</title>
-<polygon fill="#eef2f5" stroke="#5d6b7a" points="221.88,-399.12 191.21,-381.24 221.88,-363.36 252.55,-381.24 221.88,-399.12"/>
-<text xml:space="preserve" text-anchor="middle" x="221.88" y="-377.49" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đạt?</text>
-</g>
-<g id="edge3" class="edge">
-<title>C&#45;&gt;D</title>
-<path fill="none" stroke="#55606b" d="M126.65,-433.79C150.48,-420.89 179.89,-404.97 199.67,-394.26"/>
-<polygon fill="#55606b" stroke="#55606b" points="200.53,-396.39 205.16,-391.29 198.36,-392.38 200.53,-396.39"/>
-</g>
-<g id="edge4" class="edge">
-<title>D&#45;&gt;B</title>
-<path fill="none" stroke="#55606b" d="M216.57,-396.45C206.55,-423.23 185.88,-478.52 185.88,-478.52 185.88,-478.52 177.98,-492.39 170.03,-506.35"/>
-<polygon fill="#55606b" stroke="#55606b" points="168.15,-505.06 166.91,-511.84 172.1,-507.31 168.15,-505.06"/>
-<text xml:space="preserve" text-anchor="middle" x="217.98" y="-453.02" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
-</g>
-<g id="node5" class="node">
-<title>E</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="360.23,-316.16 197.53,-316.16 197.53,-271.76 360.23,-271.76 360.23,-316.16"/>
-<text xml:space="preserve" text-anchor="middle" x="278.88" y="-297.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Gửi đối tác / TVGS</text>
-<text xml:space="preserve" text-anchor="middle" x="278.88" y="-282.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ghi ngày gửi, vòng thứ n</text>
-</g>
-<g id="edge5" class="edge">
-<title>D&#45;&gt;E</title>
-<path fill="none" stroke="#55606b" d="M230.04,-368.02C237.91,-356.25 250.08,-338.04 260.31,-322.74"/>
-<polygon fill="#55606b" stroke="#55606b" points="261.99,-324.31 263.71,-317.65 258.21,-321.79 261.99,-324.31"/>
-<text xml:space="preserve" text-anchor="middle" x="261.25" y="-336.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đạt</text>
-</g>
-<g id="node6" class="node">
-<title>F</title>
-<polygon fill="#eef2f5" stroke="#5d6b7a" points="325.88,-236.76 261.19,-203.88 325.88,-171 390.57,-203.88 325.88,-236.76"/>
-<text xml:space="preserve" text-anchor="middle" x="325.88" y="-207.63" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Kết quả</text>
-<text xml:space="preserve" text-anchor="middle" x="325.88" y="-192.63" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đối tác trả</text>
-</g>
-<g id="edge6" class="edge">
-<title>E&#45;&gt;F</title>
-<path fill="none" stroke="#55606b" d="M290.25,-271.64C295.74,-261.35 302.45,-248.79 308.55,-237.34"/>
-<polygon fill="#55606b" stroke="#55606b" points="310.5,-238.53 311.55,-231.73 306.48,-236.39 310.5,-238.53"/>
-</g>
-<g id="node7" class="node">
-<title>G</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="811.88,-123.8 633.88,-123.8 633.88,-79.4 811.88,-79.4 811.88,-123.8"/>
-<text xml:space="preserve" text-anchor="middle" x="722.88" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Bản vẽ được duyệt</text>
-<text xml:space="preserve" text-anchor="middle" x="722.88" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đóng dấu phiên bản duyệt</text>
-</g>
-<g id="edge7" class="edge">
-<title>F&#45;&gt;G</title>
-<path fill="none" stroke="#55606b" d="M368.36,-192.15C430.4,-176.48 547.36,-146.93 629.94,-126.08"/>
-<polygon fill="#55606b" stroke="#55606b" points="630.11,-128.38 635.85,-124.58 629,-123.97 630.11,-128.38"/>
-<text xml:space="preserve" text-anchor="middle" x="595.15" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Approved</text>
-</g>
-<g id="node8" class="node">
-<title>H</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="378.39,-123.8 141.37,-123.8 141.37,-79.4 378.39,-79.4 378.39,-123.8"/>
-<text xml:space="preserve" text-anchor="middle" x="259.88" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Duyệt kèm ghi chú</text>
-<text xml:space="preserve" text-anchor="middle" x="259.88" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">cập nhật bản vẽ, không cần gửi lại</text>
-</g>
-<g id="edge8" class="edge">
-<title>F&#45;&gt;H</title>
-<path fill="none" stroke="#55606b" d="M302.22,-182.72C286.43,-169.25 268.53,-154 268.53,-154 268.53,-154 266.74,-143.36 264.79,-131.76"/>
-<polygon fill="#55606b" stroke="#55606b" points="267.07,-131.62 263.75,-125.59 262.58,-132.38 267.07,-131.62"/>
-<text xml:space="preserve" text-anchor="middle" x="314.7" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Approved as noted</text>
-</g>
-<g id="node9" class="node">
-<title>I</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="117.3,-123.8 0.46,-123.8 0.46,-79.4 117.3,-79.4 117.3,-123.8"/>
-<text xml:space="preserve" text-anchor="middle" x="58.88" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sửa theo ý kiến</text>
-<text xml:space="preserve" text-anchor="middle" x="58.88" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">tăng vòng gửi</text>
-</g>
-<g id="edge9" class="edge">
-<title>F&#45;&gt;I</title>
-<path fill="none" stroke="#55606b" d="M285.87,-191.05C236.96,-176.58 160.61,-154 160.61,-154 160.61,-154 134.42,-140.77 108.62,-127.73"/>
-<polygon fill="#55606b" stroke="#55606b" points="109.9,-125.83 103.08,-124.93 107.85,-129.89 109.9,-125.83"/>
-<text xml:space="preserve" text-anchor="middle" x="210.74" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Revise and resubmit</text>
-</g>
-<g id="node10" class="node">
-<title>J</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="609.45,-123.8 402.3,-123.8 402.3,-79.4 609.45,-79.4 609.45,-123.8"/>
-<text xml:space="preserve" text-anchor="middle" x="505.88" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cảnh báo trễ</text>
-<text xml:space="preserve" text-anchor="middle" x="505.88" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ghi vào báo cáo tiến độ · PF&#45;04</text>
-</g>
-<g id="edge11" class="edge">
-<title>F&#45;&gt;J</title>
-<path fill="none" stroke="#55606b" d="M348.57,-182.21C368.39,-164.15 394.01,-140.8 394.01,-140.8 394.01,-140.8 412.88,-134.36 435.11,-126.77"/>
-<polygon fill="#55606b" stroke="#55606b" points="435.58,-129.01 441,-124.76 434.11,-124.7 435.58,-129.01"/>
-<text xml:space="preserve" text-anchor="middle" x="438.95" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Quá hạn cam kết</text>
-</g>
-<g id="node11" class="node">
-<title>K</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="567.7,-44.4 414.05,-44.4 414.05,0 567.7,0 567.7,-44.4"/>
-<text xml:space="preserve" text-anchor="middle" x="490.88" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Mở khóa lập đơn hàng</text>
-<text xml:space="preserve" text-anchor="middle" x="490.88" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ORD&#45;03</text>
-</g>
-<g id="edge13" class="edge">
-<title>G&#45;&gt;K</title>
-<path fill="none" stroke="#55606b" d="M657.94,-78.94C628.53,-69.12 593.65,-57.49 563.38,-47.39"/>
-<polygon fill="#55606b" stroke="#55606b" points="564.12,-45.24 557.23,-45.34 562.68,-49.55 564.12,-45.24"/>
-</g>
-<g id="edge14" class="edge">
-<title>H&#45;&gt;K</title>
-<path fill="none" stroke="#55606b" d="M324.53,-78.94C353.82,-69.12 388.55,-57.49 418.68,-47.39"/>
-<polygon fill="#55606b" stroke="#55606b" points="419.36,-49.56 424.8,-45.34 417.92,-45.25 419.36,-49.56"/>
-</g>
-<g id="edge10" class="edge">
-<title>I&#45;&gt;C</title>
-<path fill="none" stroke="#55606b" d="M61,-123.87C63.93,-153.3 68.88,-202.88 68.88,-202.88 68.88,-382.24 68.88,-382.24 68.88,-382.24 68.88,-382.24 74.69,-405.82 79.7,-426.19"/>
-<polygon fill="#55606b" stroke="#55606b" points="77.45,-426.55 81.21,-432.32 81.87,-425.46 77.45,-426.55"/>
-</g>
-<g id="edge12" class="edge">
-<title>J&#45;&gt;F</title>
-<path fill="none" stroke="#55606b" d="M497.51,-124.1C492.03,-138.19 485.88,-154 485.88,-154 485.88,-154 420.04,-174.11 372.83,-188.54"/>
-<polygon fill="#55606b" stroke="#55606b" points="372.43,-186.28 366.88,-190.36 373.76,-190.63 372.43,-186.28"/>
+
+<g font-size="11" fill="#3f4a54">
+<text x="52" y="277">Không</text>
+<text x="163" y="327" text-anchor="start">Đạt</text>
+<text x="420" y="434">Quá ngày cam kết</text>
+<text x="250" y="706">gửi lại — tăng vòng gửi</text>
 </g>
 </g>
-</svg></div><figcaption><b>Hình ORD-02.1</b> Ba kết quả chuẩn của một vòng duyệt shop. “Approved as noted” không quay lại vòng gửi — đây là chi tiết quyết định tiến độ, cần phân biệt rõ với “revise and resubmit”.</figcaption></figure>
+</svg></div><figcaption><b>Hình ORD-02.1</b> Luồng thật của một bản vẽ shop. Khối lượng do kỹ sư phụ trách nhập <em>ngay khi lập bản vẽ</em>, không chờ duyệt — vì đó chính là nội dung trưởng phòng và CĐT xem xét. Trưởng phòng duyệt <em>hai lần</em>: duyệt nội bộ trước khi gửi mail CĐT, và phát hành sau khi CĐT chấp thuận.</figcaption></figure>
 
     <h4>Tham số</h4>
     <div class="tw">
@@ -243,38 +183,52 @@
         <tbody>
           <tr><td>Mã bản vẽ</td><td class="k">shop_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>SD-&lt;project&gt;-NNN</code>.</td></tr>
           <tr><td>Hạng mục</td><td class="k">wbs_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một bản vẽ phục vụ một hoặc nhiều hạng mục.</td></tr>
-          <tr><td>Người triển khai</td><td class="k">drafter</td><td>Tham chiếu</td><td class="c req">✱</td><td>—</td></tr>
-          <tr><td>Vòng gửi</td><td class="k">submission_no</td><td>Số</td><td class="c req">✱</td><td>Tăng mỗi lần gửi đối tác.</td></tr>
-          <tr><td>Ngày gửi · ngày cam kết trả</td><td class="k">sent_at, due_at</td><td>Ngày</td><td class="c req">✱</td><td>Chênh lệch giữa hai mốc và ngày trả thực tế là số ngày trễ của đối tác.</td></tr>
+          <tr><td>Kỹ sư phụ trách</td><td class="k">drafter</td><td>Tham chiếu</td><td class="c req">✱</td><td>Người lập bản vẽ và nhập bảng khối lượng.</td></tr>
+          <tr><td>Vòng gửi</td><td class="k">submission_no</td><td>Số</td><td class="c req">✱</td><td>Tăng mỗi lần gửi CĐT.</td></tr>
+          <tr><td>Ngày gửi · ngày cam kết trả</td><td class="k">sent_at, due_at</td><td>Ngày</td><td class="c req">✱</td><td>Chênh lệch giữa hai mốc và ngày trả thực tế là số ngày trễ của CĐT.</td></tr>
           <tr><td>Kết quả</td><td class="k">result</td><td>Chọn 1</td><td class="c">—</td><td><code>approved</code> · <code>approved_as_noted</code> · <code>revise_resubmit</code> · <code>rejected</code>.</td></tr>
-          <tr><td>Ý kiến đối tác</td><td class="k">comments[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi ý kiến gắn được vào một chi tiết bản vẽ; đánh dấu đã xử lý hay chưa.</td></tr>
+          <tr><td>Ý kiến CĐT</td><td class="k">comments[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi ý kiến gắn được vào một chi tiết bản vẽ; đánh dấu đã xử lý hay chưa.</td></tr>
           <tr><td>Tệp bản vẽ</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>DWG + PDF mỗi vòng, theo phiên bản của <a href="PF-05.html">PF-05</a>.</td></tr>
-          <tr><td>Khối lượng theo shop</td><td class="k">shop_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Bóc tách từ bản vẽ được duyệt; là dữ liệu đầu vào của đơn hàng.</td></tr>
+          <tr><td>Khối lượng bản vẽ</td><td class="k">shop_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Kỹ sư phụ trách nhập ngay khi lập bản vẽ. Là dữ liệu đầu vào của đơn hàng.</td></tr>
+          <tr><td>— dòng khối lượng</td><td class="k">line_no, work_code, stone_code,<br>uom, qty, spec, note</td><td>Dòng</td><td class="c req">✱</td><td>STT · mã việc · mã đá · đvt · khối lượng · quy cách · ghi chú. <code>stone_code</code> tra từ danh mục đá của <a href="PF-01.html">PF-01</a>; <code>spec</code> là quy cách gia công (dày, bo, mài).</td></tr>
+          <tr><td>Duyệt nội bộ</td><td class="k">internal_approved_at, _by</td><td>Ngày · tham chiếu</td><td class="c req">✱</td><td>TP TQT bấm “Duyệt bản vẽ”. Là điều kiện để gửi CĐT.</td></tr>
+          <tr><td>Phát hành sang đơn hàng</td><td class="k">released_at, released_by</td><td>Ngày · tham chiếu</td><td class="c">—</td><td>TP TQT bấm sau khi CĐT chấp thuận. Là điều kiện để bản vẽ hiện ở <a href="ORD-03.html">ORD-03</a>.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Mỗi bản vẽ hiển thị vòng gửi hiện tại, đang nằm ở phía công ty hay phía đối tác, và đã bao nhiêu ngày.</li>
-      <li>Bản vẽ chưa có kết quả “approved” hoặc “approved as noted” thì không lập được đơn hàng.</li>
-      <li>Ý kiến của đối tác được theo dõi từng mục, đếm được số ý kiến chưa xử lý.</li>
-      <li>Số vòng gửi trung bình theo dự án và theo người triển khai tổng hợp được thành chỉ số chất lượng bản vẽ.</li>
-      <li>Trễ hạn cam kết của đối tác được ghi nhận riêng, dùng làm căn cứ giải trình khi tiến độ thi công chậm.</li>
-      <li>Khối lượng bóc tách theo shop được duyệt tự động chảy sang màn hình lập đơn hàng.</li>
+      <li>Mỗi bản vẽ hiển thị vòng gửi hiện tại, đang nằm ở phía công ty hay phía CĐT, và đã bao nhiêu ngày.</li>
+      <li>Bản vẽ chưa được TP TQT phát hành thì không xuất hiện ở màn hình lập đơn hàng — kể cả khi CĐT đã chấp thuận.</li>
+      <li>Ý kiến của CĐT được theo dõi từng mục, đếm được số ý kiến chưa xử lý.</li>
+      <li>Số vòng gửi trung bình theo dự án và theo kỹ sư phụ trách tổng hợp được thành chỉ số chất lượng bản vẽ.</li>
+      <li>Trễ hạn cam kết của CĐT được ghi nhận riêng, dùng làm căn cứ giải trình khi tiến độ thi công chậm.</li>
+      <li>Khối lượng kỹ sư nhập từ đầu chảy thẳng sang màn hình lập đơn hàng khi bản vẽ được phát hành, không phải gõ lại.</li>
+      <li>Mỗi bản vẽ truy được ai lập, ai duyệt nội bộ, ai phát hành và vào thời điểm nào.</li>
     </ol>
 
     <h4>Mockup UI — Shopdrawing › Theo dõi duyệt</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>Shopdrawing</b><span class="wf-crumb">24 bản vẽ · 5 đang chờ đối tác</span><span class="sp"></span><span class="wf-btn"><span class="pin">4</span> Báo cáo vòng duyệt</span><span class="wf-btn pri">+ Bản vẽ mới</span></div>
+      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>Shopdrawing</b><span class="wf-crumb">24 bản vẽ · 5 đang chờ CĐT</span><span class="sp"></span><span class="wf-btn"><span class="pin">4</span> Báo cáo vòng duyệt</span><span class="wf-btn"><span class="pin">6</span> Phát hành sang đơn hàng</span><span class="wf-btn pri">+ Bản vẽ mới</span></div>
       <div class="wf-body">
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">1</span> Danh sách bản vẽ theo hạng mục</div>
-          <table><thead><tr><th>Mã bản vẽ</th><th>Hạng mục</th><th>Vòng</th><th>Trạng thái</th><th>Gửi</th><th>Cam kết trả</th><th class="num">Trễ</th></tr></thead>
+          <table><thead><tr><th>Mã bản vẽ</th><th>Hạng mục</th><th>Vòng</th><th>Trạng thái</th><th>Gửi</th><th>Cam kết trả</th><th class="num">Trễ</th><th>Phát hành</th></tr></thead>
           <tbody>
-            <tr><td>SD-014-007</td><td>HM-01 Mặt đứng tháp A · trục 1–4</td><td>v2</td><td><span class="tag t-ok">Approved</span></td><td>02/06</td><td>09/06</td><td class="num">—</td></tr>
-            <tr><td>SD-014-008</td><td>HM-01 Mặt đứng tháp A · trục 5–9</td><td>v3</td><td><span class="tag t-warn">Chờ đối tác</span></td><td>18/07</td><td>25/07</td><td class="num">3 ngày</td></tr>
-            <tr><td>SD-014-012</td><td>HM-02 Sàn sảnh marble</td><td>v1</td><td><span class="tag t-crit">Revise &amp; resubmit</span></td><td>12/07</td><td>19/07</td><td class="num">—</td></tr>
+            <tr><td>SD-014-005</td><td>HM-01 Mặt đứng tháp A · trục 1–3</td><td>v1</td><td><span class="tag t-ok">Approved</span></td><td>04/05</td><td>11/05</td><td class="num">—</td><td><span class="tag t-ok">Đã phát hành</span></td></tr>
+            <tr><td>SD-014-007</td><td>HM-01 Mặt đứng tháp A · trục 1–4</td><td>v2</td><td><span class="tag t-ok">Approved</span></td><td>02/06</td><td>09/06</td><td class="num">—</td><td><span class="tag t-warn">Chờ TP phát hành</span></td></tr>
+            <tr><td>SD-014-008</td><td>HM-01 Mặt đứng tháp A · trục 5–9</td><td>v3</td><td><span class="tag t-warn">Chờ CĐT</span></td><td>18/07</td><td>25/07</td><td class="num">3 ngày</td><td>—</td></tr>
+            <tr><td>SD-014-012</td><td>HM-02 Sàn sảnh marble</td><td>v1</td><td><span class="tag t-crit">Revise &amp; resubmit</span></td><td>12/07</td><td>19/07</td><td class="num">—</td><td>—</td></tr>
+          </tbody></table>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">5</span> Khối lượng bản vẽ — SD-014-008 <span class="wf-crumb">kỹ sư phụ trách nhập</span></div>
+          <table><thead><tr><th class="num">STT</th><th>Mã việc</th><th>Mã đá</th><th>ĐVT</th><th class="num">KL</th><th>Quy cách</th><th>Ghi chú</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>OP-CLAD</td><td>GR-PY-BLK</td><td>m²</td><td class="num">318,40</td><td>dày 20 · mài bóng</td><td>—</td></tr>
+            <tr><td class="num">2</td><td>OP-EDGE</td><td>GR-PY-BLK</td><td>viên</td><td class="num">420</td><td>bo góc R120</td><td>Cắt cong theo trục 7</td></tr>
+            <tr><td class="num">3</td><td>OP-ANCH</td><td>SS-304</td><td>bộ</td><td class="num">1.240</td><td>neo góc M8</td><td>Bổ sung theo ý kiến v2</td></tr>
           </tbody></table>
         </div>
         <div class="wf-row">
@@ -283,11 +237,11 @@
             <div class="wf-steps">
               <div class="done"><b>v1 · 20/05</b>Revise &amp; resubmit<br>7 ý kiến</div>
               <div class="done"><b>v2 · 22/06</b>Revise &amp; resubmit<br>2 ý kiến</div>
-              <div class="cur"><b>v3 · 18/07</b>Đang chờ đối tác<br>trễ 3 ngày</div>
+              <div class="cur"><b>v3 · 18/07</b>Đang chờ CĐT<br>trễ 3 ngày</div>
             </div>
           </div></div>
           <div class="wf-c" style="flex:0 1 300px"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">3</span> Ý kiến đối tác chưa xử lý</div>
+            <div class="wf-lg"><span class="pin">3</span> Ý kiến CĐT chưa xử lý</div>
             <table><tbody>
               <tr><td>Bổ sung chi tiết neo góc trục 7</td><td><span class="tag t-warn">Chưa</span></td></tr>
               <tr><td>Ghi rõ dung sai mạch 3mm</td><td><span class="tag t-ok">Đã sửa</span></td></tr>
@@ -302,23 +256,27 @@
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Theo dõi danh sách bản vẽ</td><td>Lọc theo hạng mục, trạng thái, người triển khai. Cột “Trễ” tính tự động từ ngày cam kết.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Ghi nhận vòng gửi &amp; kết quả</td><td>Mỗi vòng lưu ngày gửi, ngày trả, kết quả và tệp bản vẽ tương ứng.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Quản lý ý kiến đối tác</td><td>Nhập từng ý kiến, đánh dấu đã xử lý. Còn ý kiến chưa xử lý thì cảnh báo khi gửi lại.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Báo cáo vòng duyệt</td><td>Số vòng trung bình, số ngày nằm ở đối tác, xếp theo hạng mục và người triển khai.</td></tr>
-          <tr><td class="c">—</td><td>Bóc khối lượng theo shop</td><td>Nhập bảng khối lượng từ bản vẽ được duyệt; chuyển thẳng sang <a href="ORD-03.html">ORD-03</a>.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Ghi nhận vòng gửi &amp; kết quả</td><td>Mỗi vòng lưu ngày gửi, ngày cam kết trả, ngày trả thực tế, kết quả CĐT trả qua mail và tệp bản vẽ tương ứng.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Quản lý ý kiến CĐT</td><td>Nhập từng ý kiến, đánh dấu đã xử lý. Còn ý kiến chưa xử lý thì cảnh báo khi gửi lại.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Báo cáo vòng duyệt</td><td>Số vòng trung bình, số ngày nằm ở CĐT, xếp theo hạng mục và kỹ sư phụ trách.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Nhập khối lượng bản vẽ</td><td>Kỹ sư phụ trách nhập ngay khi lập bản vẽ: STT, mã việc, mã đá, đvt, khối lượng, quy cách, ghi chú. Sửa được cho tới khi bản vẽ được phát hành.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Phát hành sang đơn hàng</td><td>TP TQT chọn bản vẽ CĐT đã chấp thuận và bấm phát hành. Từ đó bản vẽ mới hiện trong danh sách chọn của <a href="ORD-03.html">ORD-03</a> và bảng khối lượng khóa lại.</td></tr>
+          <tr><td class="c">—</td><td>Xuất file gửi CĐT</td><td>Xuất bộ hồ sơ (bản vẽ + bảng khối lượng) để gửi mail cho CĐT; ghi ngày gửi và ngày cam kết trả vào vòng gửi.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Duyệt nội bộ trước khi gửi.</b> Bản vẽ phải qua kiểm tra kỹ thuật của TP TQT trước khi gửi đối tác.<span class="then">Bỏ qua bước này sẽ làm tăng số vòng gửi — chỉ số bị theo dõi trong báo cáo chất lượng bản vẽ.</span></li>
-      <li><b>Hai kết quả mở khóa đơn hàng.</b> Chỉ <code>approved</code> và <code>approved_as_noted</code> cho phép lập đơn hàng ở <a href="ORD-03.html">ORD-03</a>.<span class="then"><code>approved_as_noted</code> yêu cầu cập nhật bản vẽ theo ghi chú nhưng <b>không</b> phải gửi lại, nên không tăng vòng gửi.</span></li>
-      <li><b>Vòng gửi chỉ tăng khi gửi.</b> Số vòng tăng tại thời điểm bấm “Gửi đối tác”, không tăng khi sửa nội bộ.<span class="then">Nhờ vậy chỉ số “số vòng trung bình” phản ánh đúng số lần làm phiền đối tác.</span></li>
-      <li><b>Ngày nằm ở hai phía tính riêng.</b> Hệ thống tách số ngày bản vẽ nằm ở công ty và số ngày nằm ở đối tác.<span class="then">Đây là căn cứ giải trình khi tiến độ thi công chậm do đối tác duyệt lâu.</span></li>
-      <li><b>Ý kiến chưa xử lý chặn gửi lại.</b> Còn ý kiến của đối tác chưa đánh dấu đã xử lý thì cảnh báo khi gửi vòng mới.<span class="then">Cho phép bỏ qua nhưng phải ghi lý do, vì gửi lại khi chưa xử lý hết ý kiến gần như chắc chắn bị trả về.</span></li>
-      <li><b>Khối lượng bóc tách gắn bản duyệt.</b> Bảng khối lượng theo shop chỉ nhập được trên phiên bản đã được duyệt.<span class="then">Đơn hàng lập từ đó luôn truy ngược được về đúng phiên bản bản vẽ.</span></li>
-      <li><b>Trễ hạn cam kết ghi nhận riêng.</b> Quá ngày cam kết trả mà chưa có kết quả thì cảnh báo và tính vào cột “trễ”.<span class="then">Trễ của đối tác không tính vào chỉ số chất lượng bản vẽ của người triển khai.</span></li>
+      <li><b>Khối lượng nhập cùng lúc lập bản vẽ.</b> Kỹ sư phụ trách nhập bảng khối lượng ngay khi tạo bản vẽ, trước khi trình TP TQT.<span class="then">Bảng khối lượng chính là nội dung được đem đi duyệt. Bản vẽ không có dòng khối lượng nào thì không trình duyệt nội bộ được — duyệt xong cũng không có gì để chuyển sang đơn hàng.</span></li>
+      <li><b>Duyệt nội bộ trước khi gửi.</b> TP TQT xem cả bảng khối lượng đã nhập lẫn tệp bản vẽ tải lên rồi mới bấm “Duyệt bản vẽ”; chưa duyệt nội bộ thì không xuất file gửi CĐT được.<span class="then">Bỏ qua bước này sẽ làm tăng số vòng gửi — chỉ số bị theo dõi trong báo cáo chất lượng bản vẽ.</span></li>
+      <li><b>Hai kết quả mở khóa việc phát hành.</b> Chỉ <code>approved</code> và <code>approved_as_noted</code> cho phép TP TQT bấm phát hành.<span class="then"><code>approved_as_noted</code> yêu cầu cập nhật bản vẽ theo ghi chú nhưng <b>không</b> phải gửi lại, nên không tăng vòng gửi.</span></li>
+      <li><b>Vòng gửi chỉ tăng khi gửi.</b> Số vòng tăng tại thời điểm bấm “Xuất file &amp; gửi mail CĐT”, không tăng khi kỹ sư sửa nội bộ.<span class="then">Nhờ vậy chỉ số “số vòng trung bình” phản ánh đúng số lần làm phiền CĐT.</span></li>
+      <li><b>Ngày nằm ở hai phía tính riêng.</b> Hệ thống tách số ngày bản vẽ nằm ở công ty và số ngày nằm ở CĐT.<span class="then">Đây là căn cứ giải trình khi tiến độ thi công chậm do CĐT duyệt lâu.</span></li>
+      <li><b>Ý kiến chưa xử lý chặn gửi lại.</b> Còn ý kiến của CĐT chưa đánh dấu đã xử lý thì cảnh báo khi gửi vòng mới.<span class="then">Cho phép bỏ qua nhưng phải ghi lý do, vì gửi lại khi chưa xử lý hết ý kiến gần như chắc chắn bị trả về.</span></li>
+      <li><b>Phát hành là bước riêng, không tự động.</b> Kết quả chấp thuận của CĐT chưa đưa bản vẽ vào <a href="ORD-03.html">ORD-03</a>; TP TQT phải chọn bản vẽ và bấm “Phát hành sang đơn hàng”.<span class="then">CĐT trả lời qua mail, người ghi nhận kết quả vào hệ thống có thể không phải người quyết định cho sản xuất. Tách hai thao tác để việc mở đường cho đơn hàng luôn có một người chịu trách nhiệm và một dấu thời gian.</span></li>
+      <li><b>Phát hành khóa bảng khối lượng.</b> Sau khi phát hành, các dòng khối lượng không sửa được nữa; muốn sửa phải thu hồi phát hành, và không thu hồi được nếu đã có đơn hàng cắt từ bản vẽ.<span class="then">Đơn hàng lập từ bản vẽ luôn truy ngược được về đúng bộ khối lượng và đúng vòng duyệt đã sinh ra nó.</span></li>
+      <li><b>Trễ hạn cam kết ghi nhận riêng.</b> Quá ngày cam kết trả mà chưa có kết quả thì cảnh báo và tính vào cột “trễ”.<span class="then">Trễ của CĐT không tính vào chỉ số chất lượng bản vẽ của kỹ sư phụ trách.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -326,10 +284,14 @@
       <table>
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
-          <tr><td>Gửi khi chưa duyệt nội bộ</td><td>Chưa có xác nhận của TP TQT</td><td>“Bản vẽ chưa qua kiểm tra kỹ thuật nội bộ. Trình TP TQT trước khi gửi đối tác.”</td></tr>
+          <tr><td>Trình duyệt khi chưa nhập khối lượng</td><td><code>shop_qty[]</code> rỗng</td><td>“Bản vẽ chưa có dòng khối lượng nào. Nhập bảng khối lượng trước khi trình TP TQT.”</td></tr>
+          <tr><td>Dòng khối lượng thiếu mã đá</td><td><code>stone_code</code> trống</td><td>“Dòng {n} chưa có mã đá. Chọn mã đá từ danh mục để đơn hàng đặt đúng loại.”</td></tr>
+          <tr><td>Gửi CĐT khi chưa duyệt nội bộ</td><td>Chưa có xác nhận của TP TQT</td><td>“Bản vẽ chưa qua kiểm tra kỹ thuật nội bộ. Trình TP TQT trước khi gửi CĐT.”</td></tr>
           <tr><td>Gửi lại còn ý kiến chưa xử lý</td><td>Có ý kiến <code>chưa xử lý</code></td><td>“Còn {n} ý kiến chưa xử lý từ vòng {m}. Gửi lại bây giờ nhiều khả năng bị trả về.”</td></tr>
-          <tr><td>Ngày cam kết trước ngày gửi</td><td><code>due_at &lt; sent_at</code></td><td>“Ngày cam kết trả sớm hơn ngày gửi. Kiểm tra lại thỏa thuận với đối tác.”</td></tr>
-          <tr><td>Nhập khối lượng trên bản chưa duyệt</td><td>Kết quả chưa <code>approved</code></td><td>“Chỉ bóc khối lượng trên bản vẽ đã được duyệt. Bản hiện tại đang ở trạng thái {trạng thái}.”</td></tr>
+          <tr><td>Ngày cam kết trước ngày gửi</td><td><code>due_at &lt; sent_at</code></td><td>“Ngày cam kết trả sớm hơn ngày gửi. Kiểm tra lại thỏa thuận với CĐT.”</td></tr>
+          <tr><td>Phát hành khi CĐT chưa chấp thuận</td><td>Kết quả chưa <code>approved</code> / <code>approved_as_noted</code></td><td>“Chỉ phát hành bản vẽ CĐT đã chấp thuận. Bản hiện tại đang ở trạng thái {trạng thái}.”</td></tr>
+          <tr><td>Sửa khối lượng sau khi phát hành</td><td><code>released_at</code> đã có</td><td>“Bản vẽ đã phát hành sang đơn hàng. Thu hồi phát hành trước khi sửa bảng khối lượng.”</td></tr>
+          <tr><td>Thu hồi phát hành khi đã có đơn</td><td>Tồn tại đơn hàng cắt từ bản vẽ</td><td>“Đã có {n} đơn hàng lập từ bản vẽ này. Không thu hồi phát hành được; sửa khối lượng phải qua bản vẽ mới.”</td></tr>
           <tr><td>Thiếu tệp DWG hoặc PDF</td><td>Thiếu một trong hai định dạng</td><td>“Mỗi vòng gửi cần cả bản DWG và bản PDF.”</td></tr>
         </tbody>
       </table>
@@ -340,18 +302,21 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-ORD02-1</td><td>Bản vẽ v1 vừa triển khai xong</td><td>Bấm “Gửi đối tác” khi chưa duyệt nội bộ</td><td>Bị chặn kèm hướng dẫn trình TP TQT</td></tr>
-          <tr><td>UAT-ORD02-2</td><td>Bản vẽ v2 đang chờ đối tác, cam kết trả 25/07</td><td>Chờ tới 28/07</td><td>Cột “Trễ” hiện 3 ngày; sinh cảnh báo tiến độ</td></tr>
-          <tr><td>UAT-ORD02-3</td><td>Đối tác trả kết quả “approved as noted” kèm 2 ghi chú</td><td>Cập nhật bản vẽ theo ghi chú</td><td>Không tăng vòng gửi; mở khóa lập đơn hàng ngay</td></tr>
-          <tr><td>UAT-ORD02-4</td><td>Đối tác trả “revise and resubmit”</td><td>Sửa và gửi lại</td><td>Vòng gửi tăng lên v3; lịch sử giữ đủ v1, v2</td></tr>
-          <tr><td>UAT-ORD02-5</td><td>Bản vẽ chưa được duyệt</td><td>Vào ORD-03 chọn bản vẽ nguồn</td><td>Bản vẽ này không xuất hiện trong danh sách chọn</td></tr>
-          <tr><td>UAT-ORD02-6</td><td>Dự án có 24 bản vẽ nhiều vòng</td><td>Mở báo cáo vòng duyệt</td><td>Hiện số vòng trung bình theo hạng mục và theo người triển khai</td></tr>
+          <tr><td>UAT-ORD02-1</td><td>Kỹ sư vừa tạo bản vẽ, chưa nhập dòng khối lượng nào</td><td>Bấm “Trình TP TQT”</td><td>Bị chặn kèm yêu cầu nhập bảng khối lượng trước</td></tr>
+          <tr><td>UAT-ORD02-2</td><td>Bản vẽ đã nhập đủ 3 dòng khối lượng, chưa duyệt nội bộ</td><td>Bấm “Xuất file &amp; gửi CĐT”</td><td>Bị chặn kèm hướng dẫn trình TP TQT duyệt bản vẽ</td></tr>
+          <tr><td>UAT-ORD02-3</td><td>Bản vẽ v2 đang chờ CĐT, cam kết trả 25/07</td><td>Chờ tới 28/07</td><td>Cột “Trễ” hiện 3 ngày; sinh cảnh báo tiến độ</td></tr>
+          <tr><td>UAT-ORD02-4</td><td>CĐT rep mail “approved as noted” kèm 2 ghi chú</td><td>TP TQT ghi nhận kết quả và cập nhật bản vẽ theo ghi chú</td><td>Không tăng vòng gửi; nút “Phát hành sang đơn hàng” mở ra</td></tr>
+          <tr><td>UAT-ORD02-5</td><td>CĐT trả “revise and resubmit”</td><td>Kỹ sư sửa bản vẽ và bảng khối lượng rồi gửi lại</td><td>Sửa được khối lượng; vòng gửi tăng lên v3; lịch sử giữ đủ v1, v2</td></tr>
+          <tr><td>UAT-ORD02-6</td><td>CĐT đã chấp thuận nhưng TP TQT chưa bấm phát hành</td><td>Vào <a href="ORD-03.html">ORD-03</a> chọn bản vẽ nguồn</td><td>Bản vẽ này <b>không</b> xuất hiện trong danh sách chọn</td></tr>
+          <tr><td>UAT-ORD02-7</td><td>Bản vẽ trên, sau khi TP TQT bấm phát hành</td><td>Vào <a href="ORD-03.html">ORD-03</a> chọn lại bản vẽ nguồn</td><td>Bản vẽ hiện trong danh sách; 3 dòng khối lượng tự nạp vào đơn</td></tr>
+          <tr><td>UAT-ORD02-8</td><td>Bản vẽ đã phát hành, chưa có đơn hàng nào</td><td>Sửa một dòng khối lượng</td><td>Bị chặn kèm hướng dẫn thu hồi phát hành trước</td></tr>
+          <tr><td>UAT-ORD02-9</td><td>Dự án có 24 bản vẽ nhiều vòng</td><td>Mở báo cáo vòng duyệt</td><td>Hiện số vòng trung bình theo hạng mục và theo kỹ sư phụ trách</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-05.html">BID-05 BOQ hợp đồng</a><a href="ORD-03.html">ORD-03 lập đơn hàng</a><a href="PF-05.html">PF-05 phiên bản bản vẽ</a><a href="RPT-02.html">RPT-02 báo cáo tiến độ</a></p>
+    <p class="links"><a href="BID-05.html">BID-05 BOQ hợp đồng</a><a href="ORD-03.html">ORD-03 lập đơn hàng</a><a href="PF-01.html">PF-01 danh mục mã đá</a><a href="PF-05.html">PF-05 phiên bản bản vẽ</a><a href="RPT-02.html">RPT-02 báo cáo tiến độ</a><a href="PL-A.html">PL-A trạng thái bản vẽ</a></p>
   </div>
 </section>
 <div class="filefoot">

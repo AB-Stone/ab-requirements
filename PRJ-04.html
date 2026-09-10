@@ -282,7 +282,7 @@
           <tr><td>Giá xuất kho</td><td class="k">unit_cost</td><td>Số tiền</td><td class="c">—</td><td>Hệ thống tính theo bình quân gia quyền tại thời điểm ghi nhận, không nhập tay.</td></tr>
           <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Mặc định theo nhóm vật tư.</td></tr>
           <tr><td>Người nhận · ký xác nhận</td><td class="k">receiver, signature</td><td>Tham chiếu</td><td class="c req">✱</td><td>Đại diện tổ nhận ký điện tử; thay cho ký tay trên phiếu giấy.</td></tr>
-          <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>nháp</code> · <code>chờ duyệt</code> · <code>đã duyệt</code> · <code>đã giao</code> · <code>hủy</code>.</td></tr>
+          <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>nháp</code> · <code>chờ duyệt</code> · <code>GĐ dự án duyệt</code> · <code>đã duyệt</code> · <code>đã giao</code> · <code>hủy</code>.</td></tr>
         </tbody>
       </table>
     </div>
@@ -311,6 +311,7 @@
       <li>Tồn kho dự án hiển thị theo ba con số: tồn, đang giữ (đã duyệt xuất chưa giao), khả dụng.</li>
       <li>Kiểm kê định kỳ lập được biên bản chênh lệch và bút toán xử lý thừa / thiếu.</li>
       <li>Vật tư tồn cuối dự án đưa được vào hồ sơ thanh toán vật tư ở <a href="ORD-08.html">ORD-08</a> hoặc điều chuyển sang dự án khác.</li>
+      <li>Mỗi lần xử lý tồn cuối lập một phiếu xử lý tồn ghi sổ theo giá bình quân; điều chuyển làm phát sinh phiếu nhập tương ứng ở dự án nhận.</li>
     </ol>
 
     <h4>Mockup UI — Kho › Kho dự án</h4>
@@ -364,12 +365,13 @@
       <li><b>Hạng mục và tổ nhận là bắt buộc.</b> Phiếu xuất thiếu một trong hai trường thì không lưu được.<span class="then">Hai trường này quyết định chi phí rơi vào hạng mục nào và khấu trừ vào tổ nào — thiếu là mất dấu chi phí.</span></li>
       <li><b>Giá xuất do hệ thống tính.</b> Bình quân gia quyền tại thời điểm ghi nhận, ô chỉ đọc.<span class="then">Người dùng không sửa được, kể cả Kế toán trưởng; điều chỉnh giá vốn phải qua bút toán riêng ở <a href="ACC-08.html">ACC-08</a>.</span></li>
       <li><b>Không xuất quá khả dụng.</b> Khả dụng bằng tồn trừ phần đang giữ (đã duyệt xuất nhưng chưa giao).<span class="then">Chặn ngay khi nhập, kèm số khả dụng hiện tại của vật tư đó.</span></li>
-      <li><b>Duyệt rồi mới giữ hàng.</b> Phiếu xuất được duyệt sẽ chuyển khối lượng từ “tồn” sang “đang giữ”; giao xong mới trừ khỏi tồn.<span class="then">Nhờ vậy hai phiếu xuất cùng lúc không cùng tiêu một lượng tồn.</span></li>
+      <li><b>Hai chữ ký theo ACC-04.</b> Phiếu xuất kho dự án đi qua chữ ký của GĐ dự án rồi mới tới chữ ký của Kế toán trưởng.<span class="then">Chữ ký thứ nhất không giữ hàng — nếu giữ, một phiếu mà Kế toán trưởng sau đó từ chối vẫn chiếm tồn trong suốt thời gian chờ, và hai phiếu như vậy cùng giữ lượng tồn không phiếu nào được quyền có.</span></li>
+      <li><b>Duyệt rồi mới giữ hàng.</b> Chữ ký thứ hai chuyển khối lượng từ “tồn” sang “đang giữ” và chốt giá xuất bình quân; giao xong mới trừ khỏi tồn.<span class="then">Nhờ vậy hai phiếu xuất cùng lúc không cùng tiêu một lượng tồn.</span></li>
       <li><b>Tổ nhận ký điện tử.</b> Đại diện tổ nhận ký trên ứng dụng thay cho ký tay trên phiếu giấy.<span class="then">Phiếu in ra hiển thị dấu ký kèm người, thời điểm và thiết bị.</span></li>
       <li><b>Xuất kho là thời điểm thành chi phí.</b> Vật tư nhập kho dự án chưa phải chi phí; chỉ khi xuất cho tổ đội mới ghi chi phí vào hạng mục.<span class="then">Đây là điểm khác biệt cốt lõi giữa kho dự án và mua không qua kho ở <a href="ACC-03.html">ACC-03</a>.</span></li>
       <li><b>Một lần xuất, hai đích ghi nhận.</b> Giá trị xuất vào sổ chi phí công trình đồng thời vào bảng khấu trừ VTTB của tổ đội trong kỳ.<span class="then">Hai đích này không cộng trùng vì bảng khấu trừ chỉ dùng để trừ tiền khoán, không phải ghi chi phí lần hai.</span></li>
-      <li><b>Kiểm kê sinh bút toán.</b> Chênh lệch kiểm kê lập biên bản và sinh bút toán xử lý thừa hoặc thiếu.<span class="then">Thiếu quá định mức hao hụt cho phép thì phải quy trách nhiệm trước khi ghi sổ.</span></li>
-      <li><b>Tồn cuối dự án có ba lối ra.</b> Điều chuyển sang dự án khác, hoàn nhập về nhà máy, hoặc đưa vào hồ sơ thanh toán vật tư ở <a href="ORD-08.html">ORD-08</a>.<span class="then">Kho dự án chỉ đóng được khi tồn bằng 0.</span></li>
+      <li><b>Kiểm kê sinh bút toán.</b> Chênh lệch kiểm kê lập biên bản và sinh bút toán xử lý thừa hoặc thiếu.<span class="then">Định mức hao hụt cho phép khai theo vật tư (phần trăm của số sổ sách). Thiếu trong định mức thì ghi sổ kèm ghi chú; thiếu quá định mức thì phải đính biên bản quy trách nhiệm trước khi ghi sổ. Ghi sổ đưa số tồn về bằng số đếm thực tế và đẩy giá trị phần thiếu sang sổ chi phí công trình.</span></li>
+      <li><b>Tồn cuối dự án có ba lối ra.</b> Điều chuyển sang dự án khác, hoàn nhập về nhà máy, hoặc đưa vào hồ sơ thanh toán vật tư ở <a href="ORD-08.html">ORD-08</a>.<span class="then">Mỗi lối ra là một phiếu xử lý tồn (<code>XLT-&lt;project&gt;-NNNN</code>) ghi sổ theo giá bình quân, trừ vào tồn chứ không sinh chi phí — vật tư chỉ thành chi phí khi xuất cho tổ đội. Điều chuyển đồng thời sinh phiếu nhập “điều chuyển từ dự án khác” bên dự án nhận, giữ nguyên giá vốn. Kho dự án chỉ đóng được khi tồn bằng 0.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -400,6 +402,10 @@
           <tr><td>UAT-PRJ04-6</td><td>Kiểm kê thiếu 12 m², định mức hao hụt 5 m²</td><td>Lưu kết quả kiểm kê</td><td>Yêu cầu biên bản quy trách nhiệm trước khi sinh bút toán</td></tr>
           <tr><td>UAT-PRJ04-7</td><td>Dự án quyết toán xong, kho còn 40 m²</td><td>Bấm đóng kho</td><td>Bị chặn kèm ba lựa chọn xử lý tồn</td></tr>
           <tr><td>UAT-PRJ04-8</td><td>Kế toán trưởng mở phiếu xuất đã duyệt</td><td>Thử sửa giá xuất kho</td><td>Ô chỉ đọc; gợi ý dùng bút toán điều chỉnh ở ACC-08</td></tr>
+          <tr><td>UAT-PRJ04-9</td><td>Phiếu xuất 300 m² đang ở “chờ duyệt”</td><td>Kế toán trưởng bấm duyệt khi GĐ dự án chưa ký</td><td>Bị chặn; tồn và “đang giữ” không đổi</td></tr>
+          <tr><td>UAT-PRJ04-10</td><td>GĐ dự án đã ký phiếu xuất 300 m²</td><td>Xem tồn kho</td><td>“Đang giữ” chưa tăng; chỉ tăng sau chữ ký của Kế toán trưởng</td></tr>
+          <tr><td>UAT-PRJ04-11</td><td>Vật tư có định mức hao hụt 0,5%; sổ 1.000, đếm 988</td><td>Lưu xử lý chênh lệch không kèm biên bản</td><td>Bị chặn: thiếu 12 vượt định mức 5, cần biên bản quy trách nhiệm</td></tr>
+          <tr><td>UAT-PRJ04-12</td><td>Dự án quyết toán, kho còn 20 m²</td><td>Lập phiếu xử lý tồn “điều chuyển” sang dự án khác và ghi sổ</td><td>Tồn giảm 20; dự án nhận có phiếu nhập điều chuyển đúng giá bình quân</td></tr>
         </tbody>
       </table>
     </div>

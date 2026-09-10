@@ -2396,7 +2396,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Hạn nộp hồ sơ</td><td class="k">due_at</td><td>Ngày giờ</td><td class="c req">✱</td><td>Sinh nhắc việc trước 3 ngày và trước 1 ngày.</td></tr>
           <tr><td>Người phụ trách</td><td class="k">owner_user</td><td>Tham chiếu</td><td class="c req">✱</td><td>Thuộc Phòng Đấu thầu; nhận mọi thông báo của gói thầu.</td></tr>
           <tr><td>Giá trị ước tính</td><td class="k">est_value</td><td>Số tiền</td><td class="c">—</td><td>Dùng xếp thứ tự ưu tiên xử lý.</td></tr>
-          <tr><td>Bảng đầu việc BOQ</td><td class="k">boq_lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: STT, mã hạng mục, tên đầu việc, quy cách, ĐVT, khối lượng mời thầu, ghi chú.</td></tr>
+          <tr><td>Bảng đầu việc BOQ</td><td class="k">boq_lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: STT, mã hạng mục, tên đầu việc, quy cách, ĐVT, khối lượng mời thầu, ghi chú. Ô <b>đầu việc</b> và ô <b>ĐVT</b> bắt buộc có giá trị; ô <b>khối lượng mời thầu</b> được để trống khi chưa có số liệu, đã điền thì phải lớn hơn 0. Ô <b>đầu việc</b> tối đa 1.000 ký tự, ô <b>quy cách</b> tối đa 2.000 ký tự — hồ sơ thật thường chép cả đoạn mô tả kỹ thuật vào ô quy cách chứ không chỉ ghi <code>600×600×20</code>.</td></tr>
           <tr><td>Tệp BOQ gốc</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>Ít nhất một tệp loại “BOQ mời thầu” (<a href="#PF-05">PF-05</a>).</td></tr>
           <tr><td>Cột tự thêm của bảng</td><td class="k">boq_extra_columns[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi cột: tên cột, kiểu dữ liệu (chữ · số · có/không). Tối đa 12 cột cho một phiên bản BOQ.</td></tr>
           <tr><td>Cột có sẵn bị ẩn</td><td class="k">boq_hidden_columns[]</td><td>Danh sách</td><td class="c">—</td><td>Chỉ ẩn được cột không bắt buộc: mã HM, mã nội bộ, quy cách, ghi chú và sáu cột thuộc tính đá.</td></tr>
@@ -2406,7 +2406,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Sau khi lưu, gói thầu có mã duy nhất và xuất hiện ở danh sách gói thầu với trạng thái “Đang thẩm định”.</li>
+      <li>Sau khi lưu, gói thầu có mã duy nhất và xuất hiện ở danh sách gói thầu với trạng thái “Nháp”; chỉ thao tác “Chuyển thẩm định” mới đưa gói sang “Đang thẩm định” (<a href="#PL-A">PL-A</a>).</li>
       <li>Nhập BOQ từ Excel giữ nguyên thứ tự dòng và mã hạng mục gốc của bên mời thầu để đối chiếu về sau.</li>
       <li>Tổng khối lượng theo nhóm đầu việc được tính tự động và hiển thị ở đầu bảng.</li>
       <li>Người phụ trách nhận thông báo nhắc trước hạn nộp 3 ngày và 1 ngày.</li>
@@ -2416,7 +2416,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
     <h4>Mockup UI — Đấu thầu › Hồ sơ gói thầu</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">Đấu thầu ›</span><b>GT-2026-018 · Vinhomes Grand Park GĐ 3</b><span class="sp"></span><span class="tag t-warn">Đang thẩm định</span><span class="wf-btn"><span class="pin">4</span> Chuyển thẩm định</span></div>
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu ›</span><b>GT-2026-018 · Vinhomes Grand Park GĐ 3</b><span class="sp"></span><span class="tag t-neu">Nháp</span><span class="wf-btn"><span class="pin">4</span> Chuyển thẩm định</span></div>
       <div class="wf-body">
         <div class="wf-row">
           <div class="wf-c"><div class="wf-sec">
@@ -2470,6 +2470,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Bộ cột thuộc về phiên bản BOQ.</b> Mỗi hồ sơ mời thầu có bộ cột riêng, khai một lần ở bảng đầu việc: ẩn cột không dùng và thêm cột hồ sơ yêu cầu mà hệ thống chưa có trường.<span class="then">Bộ cột đi theo phiên bản BOQ, nên bản cập nhật sau thẩm định (<a href="#BID-02">BID-02</a>) và bản hợp đồng (<a href="#BID-05">BID-05</a>) giữ nguyên bộ cột đã chốt, không đọc lại bộ cột của bản nháp; sao chép gói thầu chép luôn bộ cột.</span></li>
       <li><b>Cột bắt buộc không ẩn được.</b> Đầu việc, ĐVT và khối lượng luôn hiển thị.<span class="then">Toàn bộ quy tắc phía sau đọc ba cột này: tổng khối lượng theo nhóm, ngưỡng lệch 10% ở <a href="#BID-02">BID-02</a> và dòng báo giá ở <a href="#BID-03">BID-03</a>.</span></li>
       <li><b>Xóa cột là xóa dữ liệu.</b> Bỏ một cột tự thêm thì mọi giá trị đã nhập ở cột đó bị xóa cùng lúc.<span class="then">Có cảnh báo trước khi lưu; thêm lại cột cùng tên sau đó là một cột trống, không khôi phục số liệu cũ.</span></li>
+      <li><b>Đầu việc và ĐVT là hai ô bắt buộc của mỗi dòng.</b> Thiếu một trong hai ô thì dòng không lưu được, và còn một dòng thiếu thì cả bảng không lưu.<span class="then">Nút lưu khóa chừng nào còn dòng thiếu và ô thiếu được đánh dấu ngay trên lưới — đúng cách hộp thoại hủy gói thầu ở <a href="#BID-04">BID-04</a> khóa nút xác nhận khi ô lý do còn trống.</span><span class="then"><b>Ô trống và số 0 là hai chuyện khác nhau.</b> Khối lượng không nằm trong hai ô bắt buộc: chưa có số liệu thì để trống và ghi chú “chờ làm rõ”, dòng vẫn lưu bình thường. Nhưng đã điền thì phải lớn hơn 0 — số 0 là một giá trị sai chứ không phải một ô chưa điền, nên nó bị chặn bằng thông điệp riêng cho khối lượng bằng 0 hoặc âm.</span><span class="then">Hệ thống không được lặng lẽ bỏ dòng thiếu ô bắt buộc hay dòng có khối lượng bằng 0 rồi lưu phần còn lại: bảng đầu việc là hồ sơ gốc của gói thầu, một dòng mất ở đây là mất vĩnh viễn.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -2485,6 +2486,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Thêm quá số cột cho phép</td><td>Số cột tự thêm &gt; 12</td><td>“Bảng chỉ thêm được tối đa 12 cột.”</td></tr>
           <tr><td>Ẩn cột bắt buộc</td><td>Ẩn đầu việc, ĐVT hoặc khối lượng</td><td>“Cột {tên} là cột bắt buộc, không ẩn được.”</td></tr>
           <tr><td>Cột tự thêm trùng cột có sẵn</td><td>Tên cột sinh ra mã trùng cột hệ thống</td><td>“Mã cột {mã} trùng với một cột có sẵn của bảng.”</td></tr>
+          <tr><td>Máy chủ từ chối cả bảng đầu việc</td><td>Có ít nhất một dòng thiếu ô bắt buộc hoặc vượt giới hạn độ dài. Đây là chốt chặn cuối ở máy chủ, kiểm lại độc lập với khóa lưới của quy tắc nghiệp vụ — khóa lưới chỉ đỡ tay người đang nhập, còn bản dán từ Excel hay tab để lâu vẫn gửi lên được dữ liệu chưa qua lưới</td><td>“Chưa lưu được bảng đầu việc: {n} dòng chưa hợp lệ, dòng đầu tiên là dòng {stt} — cột {tên}. Cả {n} dòng đều được đánh dấu trên lưới; sửa hết rồi lưu lại. Bảng vẫn giữ nguyên như trước khi lưu.”</td></tr>
+          <tr><td>Cột tự thêm trùng tiêu đề cột có sẵn</td><td>Tên hiển thị của cột mới trùng tên một cột đang có — cột hệ thống hoặc cột tự thêm — so không phân biệt hoa thường và bỏ khoảng trắng thừa hai đầu. So trên <b>tên người dùng đọc</b> chứ không phải mã cột sinh ra: bộ sinh mã tự tránh trùng nên trường hợp này lọt qua phép kiểm tra trùng mã cột. Chạy cả khi thêm cột lẫn khi lưu cấu trúc bảng</td><td>“Bảng đã có cột tên ‘{tên}’. Đặt tên khác để hai cột không trùng tiêu đề.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -2507,7 +2510,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-02">BID-02 thẩm định BOQ</a><a href="#PF-05">PF-05 đính kèm</a><a href="#PF-01">PF-01 danh mục đối tác</a></p>
+    <p class="links"><a href="#BID-02">BID-02 thẩm định BOQ</a><a href="#BID-05">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="#PF-05">PF-05 đính kèm</a><a href="#PF-01">PF-01 danh mục đối tác</a></p>
   </div>
 </section>
 <section class="sheet" id="BID-02">
@@ -2717,7 +2720,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tbody>
           <tr><td>Gói thầu</td><td class="k">tender_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc.</td></tr>
           <tr><td>Chế độ xem bảng đối chiếu</td><td class="k">view_mode</td><td>Danh mục</td><td class="c">—</td><td><code>gọn</code> (mặc định) · <code>đầy đủ</code>. Là lựa chọn hiển thị của người dùng, không phải dữ liệu của phiếu — hệ thống nhớ lựa chọn cho lần mở sau, mỗi người một kiểu.</td></tr>
-          <tr><td>Kết luận theo dòng</td><td class="k">line_check[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng BOQ chọn 1 trong: <code>đúng</code> · <code>thiếu đầu việc</code> · <code>sai khối lượng</code> · <code>sai quy cách</code> · <code>trùng lặp</code>.</td></tr>
+          <tr><td>Kết luận theo dòng</td><td class="k">line_check[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng BOQ chọn 1 trong bốn giá trị: <code>đúng</code> · <code>sai khối lượng</code> · <code>sai quy cách</code> · <code>trùng lặp</code>. Đầu việc bị bỏ sót không nằm trong danh sách này: kết luận theo dòng là nhận xét về một dòng đang có, mà đầu việc bỏ sót thì chưa có dòng nào để chọn. Trường hợp đó xử lý bằng thao tác riêng “Thêm đầu việc bỏ sót” — sinh một dòng mới có đánh dấu bổ sung, thay vì gán kết luận cho một dòng không tồn tại.</td></tr>
           <tr><td>Khối lượng đề xuất</td><td class="k">qty_proposed</td><td>Số</td><td class="c">—</td><td>Bắt buộc khi kết luận là “sai khối lượng”.</td></tr>
           <tr><td>Đầu việc bổ sung</td><td class="k">extra_lines[]</td><td>Bảng</td><td class="c">—</td><td>Đầu việc bên mời thầu bỏ sót; cấu trúc giống dòng BOQ.</td></tr>
           <tr><td>Người thẩm định</td><td class="k">reviewer</td><td>Tham chiếu</td><td class="c req">✱</td><td>Thuộc P. TQT.</td></tr>
@@ -2811,6 +2814,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Ảnh hoặc video bắt buộc khi có biện pháp khó.</b> Ghi nhận biện pháp thi công khó thì cần tối thiểu 3 tệp hiện trường, đếm trên tệp đã tải lên phiếu và đã xác nhận trên kho.<span class="then">Đây là bằng chứng khi giải trình chi phí phát sinh với chủ đầu tư về sau — nên số đếm là số tệp thật, không phải con số người khảo sát tự khai. Video tính như ảnh: một đoạn quay dọc lối tiếp cận nói được nhiều hơn ba tấm ảnh chụp cùng bức tường.</span></li>
       <li><b>BOQ v2 giữ vết.</b> Bản hợp nhất giữ nguyên mọi dòng gốc và đánh dấu ba loại: giữ nguyên, sửa khối lượng, bổ sung mới.<span class="then">Chức năng so sánh v1 ↔ v2 hiện số dòng từng loại và chênh lệch tổng khối lượng theo nhóm.</span></li>
       <li><b>Sai lệch lớn phải làm rõ.</b> Tổng khối lượng lệch quá 10% so với BOQ mời thầu thì hệ thống nhắc lập văn bản làm rõ trước khi chốt.<span class="then">Cho phép bỏ qua nhưng phải ghi lý do — lý do này hiện lại ở bước áp giá.</span></li>
+      <li><b>Dòng chưa có khối lượng phải chốt xong ở bước này.</b> Dòng mang sang từ <a href="#BID-01">BID-01</a> với ô khối lượng để trống — trạng thái hợp lệ lúc tiếp nhận hồ sơ, kèm ghi chú “chờ làm rõ” — chỉ nộp phiếu được khi người thẩm định đã điền khối lượng đề xuất cho nó, <b>bất kể chọn kết luận nào trong bốn giá trị của <code>line_check[]</code></b>. Chính vì cổng nộp đó mà kết luận “đúng” không dùng được cho dòng như vậy: “đúng” nghĩa là số mời thầu đã chuẩn, mà ở đây chưa có số nào để mà chuẩn.<span class="then">Đây là điểm cuối cùng còn đổi được khối lượng: từ <a href="#BID-03">BID-03</a> trở đi khối lượng khóa, muốn đổi phải quay lại đây và chốt một bản BOQ mới.</span><span class="then">Dòng để trống lọt qua bước này sẽ nằm nguyên trong BOQ hợp đồng và bị chốt chặn <code>chk_qty</code> của <a href="#BID-05">BID-05</a> giữ lại ngay trước khi trình ký — muộn hơn nhiều so với chỗ đáng lẽ phải xử lý.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -2829,6 +2833,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Tải xong nhưng không thấy tệp trên kho</td><td>Xác nhận mà kho chưa có đối tượng</td><td>“Chưa thấy tệp {tên} trên kho lưu trữ — tải lại tệp trước khi xác nhận.”</td></tr>
           <tr><td>Thêm tệp vào phiếu đã nộp</td><td>Phiếu ở trạng thái đã nộp / đã khóa</td><td>“Phiếu đã nộp — mở lại phiếu nếu cần bổ sung ảnh.”</td></tr>
           <tr><td>Chốt khi thiếu phiếu</td><td>Một trong hai phiếu chưa nộp</td><td>“Chưa nhận được {tên phiếu} từ {bộ phận}. Đã gửi nhắc lúc {giờ}.”</td></tr>
+          <tr><td>Nộp phiếu khi còn dòng chưa có khối lượng</td><td>Dòng có <code>qty_invited</code> rỗng mà <code>qty_proposed</code> cũng rỗng</td><td>“Dòng {stt} chưa có khối lượng. Nhập khối lượng đề xuất trước khi nộp phiếu — đây là bước cuối còn đổi được khối lượng.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -2857,7 +2862,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-01">BID-01 gói thầu</a><a href="#BID-03">BID-03 áp giá</a><a href="#PF-04">PF-04 nhắc việc quá hạn</a><a href="#PF-05">PF-05 phiên bản BOQ</a></p>
+    <p class="links"><a href="#BID-01">BID-01 gói thầu</a><a href="#BID-03">BID-03 áp giá</a><a href="#BID-05">BID-05 kiểm tra trước ký</a><a href="#PF-04">PF-04 nhắc việc quá hạn</a><a href="#PF-05">PF-05 phiên bản BOQ</a></p>
   </div>
 </section>
 <section class="sheet" id="BID-03">
@@ -3076,7 +3081,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Chi phí chung phân bổ</td><td class="k">cost_overhead_pct</td><td>Phần trăm</td><td class="c">—</td><td>Mặc định theo tham số công ty, cho sửa theo gói.</td></tr>
           <tr><td>Đơn giá chào</td><td class="k">price_offer</td><td>Số tiền / ĐVT</td><td class="c req">✱</td><td>Nhập tay hoặc sinh từ hệ số lợi nhuận.</td></tr>
           <tr><td>Biên lợi nhuận dòng</td><td class="k">margin_pct</td><td>Phần trăm</td><td class="c">—</td><td>Tính tự động; tô đỏ khi dưới ngưỡng.</td></tr>
-          <tr><td>Ngưỡng biên tối thiểu</td><td class="k">min_margin</td><td>Phần trăm</td><td class="c req">✱</td><td>Do Ban lãnh đạo đặt cho từng gói; là điều kiện kích hoạt trình duyệt lại.</td></tr>
+          <tr><td>Ngưỡng biên tối thiểu</td><td class="k">min_margin</td><td>Phần trăm</td><td class="c req">✱</td><td>Do Ban lãnh đạo đặt cho từng gói; là điều kiện kích hoạt trình duyệt lại. Bắt buộc và phải <b>lớn hơn 0</b>: để ngưỡng 0% thì điều kiện <code>margin &lt; min_margin</code> không bao giờ đúng, tức quy tắc <em>Ngưỡng biên là chốt chặn</em> mất tác dụng hoàn toàn và gói gửi được ở bất kỳ mức giá nào.</td></tr>
           <tr><td>Vòng đàm phán</td><td class="k">round_no</td><td>Số</td><td class="c req">✱</td><td>Tăng mỗi lần gửi báo giá mới.</td></tr>
           <tr><td>Phản hồi đối tác</td><td class="k">feedback</td><td>Chuỗi dài</td><td class="c">—</td><td>Ghi kèm ngày và người tiếp nhận.</td></tr>
           <tr><td>Điều kiện thương mại</td><td class="k">terms</td><td>Chuỗi</td><td class="c req">✱</td><td>Tiến độ thanh toán, bảo hành, hiệu lực báo giá — chuyển thẳng vào hợp đồng.</td></tr>
@@ -3126,7 +3131,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Tên tệp</td><td><code>BG_&lt;mã gói&gt;_v&lt;vòng&gt;_&lt;yyyymmdd&gt;</code> — ví dụ <code>BG_GT-2026-018_v3_20261218.pdf</code>.</td></tr>
           <tr><td>Chân trang PDF</td><td>Mã gói · số vòng · ngày giờ xuất · người xuất · số trang. Nhờ vậy một bản in nằm trên bàn họp vẫn truy được về đúng vòng nào.</td></tr>
           <tr><td>Tệp Excel</td><td>Cùng bảng, nhưng ô số là <b>số thật</b> chứ không phải chuỗi đã định dạng, và dòng tổng là công thức cộng — để đối tác kiểm lại được ngay trên tệp.</td></tr>
-          <tr><td>Lưu trữ</td><td>Mỗi lần xuất từ vòng đã trình duyệt lưu tệp thành chứng từ của gói thầu ở <a href="#PF-05">PF-05</a>, gắn vào đúng vòng đó.</td></tr>
+          <tr><td>Lưu trữ</td><td><b>Lần xuất đầu tiên</b> từ vòng đã trình duyệt lưu tệp thành chứng từ của gói thầu ở <a href="#PF-05">PF-05</a>, gắn vào đúng vòng và đúng định dạng đó; <b>những lần xuất sau</b> của cùng vòng, cùng định dạng trả về đúng chứng từ ấy chứ không dựng tệp mới. Nhờ vậy bản công ty lưu và bản đối tác đang cầm luôn là một — đúng như quy tắc <em>Tệp của vòng đã gửi không dựng lại</em> đòi hỏi.</td></tr>
           <tr><td>Nhật ký</td><td>Ghi ai xuất, lúc nào, vòng nào, định dạng gì; hiện lại trên dòng thời gian thương thảo.</td></tr>
           <tr><td>Quyền</td><td>Theo quyền của màn hình áp giá — Ban lãnh đạo · P. Kế toán · P. Đấu thầu (<a href="#PL-B">PL-B</a>).</td></tr>
         </tbody>
@@ -3249,6 +3254,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Kết thúc vòng khi chưa ghi phản hồi</td><td><code>feedback</code> rỗng hoặc dưới 3 ký tự</td><td>“Ghi lại phản hồi của đối tác trước khi kết thúc vòng {n} — đây là căn cứ của quyết định này.”</td></tr>
           <tr><td>Kết thúc vòng chưa gửi đối tác</td><td>Trạng thái vòng khác <code>đã gửi</code></td><td>“Chỉ kết thúc được vòng đã gửi đối tác. Vòng {n} đang ở trạng thái {trạng thái}.”</td></tr>
           <tr><td>Hiệu lực báo giá đã qua</td><td><code>hôm nay &gt; ngày gửi + hiệu lực</code></td><td>“Báo giá vòng {n} đã hết hiệu lực từ {ngày}. Gửi vòng mới trước khi ký hợp đồng.”</td></tr>
+          <tr><td>Ngưỡng biên tối thiểu bằng 0 hoặc âm</td><td><code>min_margin ≤ 0</code></td><td>“Ngưỡng biên tối thiểu phải lớn hơn 0. Để 0% là bỏ hẳn chốt chặn biên lợi nhuận của gói thầu này.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -3446,9 +3452,10 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Hủy là trạng thái, không phải xóa.</b> Gói thầu đã hủy vẫn tra cứu được đầy đủ.<span class="then">BOQ, bảng áp giá và tài liệu giữ nguyên, đóng băng theo <a href="#PF-05">PF-05</a>.</span></li>
-      <li><b>Lý do đi thẳng vào thông báo.</b> Nội dung nhập ở ô lý do hiển thị nguyên văn cho người nhận.<span class="then">Vì vậy ô này bắt buộc và nên viết đủ câu, không viết tắt kiểu “ko đạt”.</span></li>
+      <li><b>Lý do đi thẳng vào thông báo.</b> Nội dung nhập ở ô lý do hiển thị nguyên văn cho người nhận.<span class="then">Vì vậy ô này bắt buộc và nên viết đủ câu, không viết tắt kiểu “ko đạt”. Nút “Xác nhận hủy” khóa chừng nào ô lý do còn trống — chặn ngay ở thiết kế thay vì để bấm rồi mới báo lỗi.</span></li>
       <li><b>Một thông báo cho mọi bộ phận liên quan.</b> Danh sách nhận mặc định gồm Ban lãnh đạo, trưởng các bộ phận và người đã được gán vào gói thầu.<span class="then">Gửi một lần, không nhắc lại; gói thầu đồng thời rời khỏi hàng chờ việc của họ.</span></li>
       <li><b>Mở lại được.</b> Hủy nhầm hoặc chủ đầu tư mời lại thì mở lại gói thầu về trạng thái trước đó.<span class="then">Thao tác ghi nhật ký người mở và thời điểm; hệ thống không tự gửi lại thông báo cũ.</span></li>
+      <li><b>Gói đã ký hợp đồng không hủy ở màn hình này.</b> Từ khi gói sang “Đã ký HĐ” và dự án đã khởi tạo ở <a href="#BID-05">BID-05</a>, nút “Hủy gói thầu” không còn hiện trên hồ sơ gói — chặn ngay ở thiết kế, không phải hiện nút rồi báo lỗi khi bấm: dừng một hợp đồng đã ký là việc thanh lý hợp đồng, không phải đánh dấu một gói thầu là không theo đuổi nữa.<span class="then">Một gói đã sinh dự án và kho riêng mà vẫn nhận được thông báo “đã hủy” sẽ để hai nơi nói hai điều trái ngược về cùng một gói; trạng thái hiển thị và thông báo đã phát phải cùng kể một câu chuyện.</span><span class="then">Ranh giới giữa hủy gói thầu và thanh lý hợp đồng đã ký chưa được chốt — xem <a href="#PL-C">PL-C · Q-27</a>.</span></li>
     </ol>
 
     <h4>Kịch bản kiểm thử</h4>
@@ -3465,7 +3472,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-03">BID-03 thương thảo</a><a href="#PF-04">PF-04 thông báo</a><a href="#PF-05">PF-05 tài liệu đóng băng</a></p>
+    <p class="links"><a href="#BID-03">BID-03 thương thảo</a><a href="#BID-05">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="#PF-04">PF-04 thông báo</a><a href="#PF-05">PF-05 tài liệu đóng băng</a><a href="#PL-C">PL-C vấn đề cần chốt</a></p>
   </div>
 </section>
 <section class="sheet" id="BID-05">
@@ -3700,19 +3707,21 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Tham số — danh mục kiểm tra trước ký</h4>
+    <p>Mỗi mục cho một trong ba kết quả — <code>đạt</code>, <code>chưa nhập</code>, <code>không đạt</code> — chứ không chỉ đạt/không đạt như tên hai cột sau gợi ý: <code>chưa nhập</code> báo trường liên quan còn trống, <code>không đạt</code> báo trường đó đã có giá trị nhưng sai hoặc lệch. Cột "Kết quả có thể" liệt kê đúng những trạng thái một mục thực sự cho ra được.</p>
     <div class="tw">
       <table>
-        <thead><tr><th>Hạng mục kiểm tra</th><th>Mã</th><th>Đối chiếu với</th><th>Mức</th></tr></thead>
+        <thead><tr><th>Hạng mục kiểm tra</th><th>Mã</th><th>Đối chiếu với</th><th>Mức</th><th>Kết quả có thể</th></tr></thead>
         <tbody>
-          <tr><td>Giá trị hợp đồng</td><td class="k">chk_value</td><td>Giá trị báo giá đã chốt ở <a href="#BID-03">BID-03</a></td><td>Chặn nếu lệch &gt; 1%</td></tr>
-          <tr><td>BOQ hợp đồng</td><td class="k">chk_boq</td><td>Từng dòng khối lượng · đơn giá của BOQ báo giá đã chốt</td><td>Chặn nếu còn dòng lệch</td></tr>
-          <tr><td>Đợt thanh toán</td><td class="k">chk_payment</td><td>Tổng tỷ lệ các đợt của <code>payment_terms[]</code></td><td>Chặn nếu ≠ 100%</td></tr>
-          <tr><td>Điều khoản thương mại</td><td class="k">chk_terms</td><td>Tiến độ thanh toán, bảo hành, hiệu lực đã chốt ở <a href="#BID-03">BID-03</a></td><td>Cảnh báo — người kiểm tra phải xác nhận đã thống nhất lại</td></tr>
-          <tr><td>Pháp nhân bên ký kết</td><td class="k">chk_partner</td><td>Mã số thuế, địa chỉ, người đại diện trong hồ sơ đối tác (<a href="#PF-01">PF-01</a>)</td><td>Chặn nếu thiếu trường bắt buộc</td></tr>
-          <tr><td>Bảo lãnh</td><td class="k">chk_guarantee</td><td>Loại, giá trị, ngân hàng, hạn của <code>guarantees[]</code></td><td>Cảnh báo nếu hợp đồng yêu cầu bảo lãnh mà chưa khai</td></tr>
-          <tr><td>Hiệu lực &amp; tiến độ</td><td class="k">chk_effective</td><td><code>effective_from</code> · <code>effective_to</code> và tiến độ thi công cam kết</td><td>Cảnh báo nếu hiệu lực hồi tố hoặc trống</td></tr>
-          <tr><td>Bản thảo đính kèm</td><td class="k">chk_doc</td><td>Phiên bản tệp hợp đồng trên <a href="#PF-05">PF-05</a></td><td>Chặn nếu thiếu tệp hoặc tệp không phải phiên bản mới nhất</td></tr>
-          <tr><td>Người kiểm tra</td><td class="k">chk_owner</td><td>Chuyên viên Đấu thầu phụ trách gói thầu</td><td>Chặn — phải ký xác nhận kết quả kiểm tra</td></tr>
+          <tr><td>Giá trị hợp đồng</td><td class="k">chk_value</td><td>Giá trị báo giá đã chốt ở <a href="#BID-03">BID-03</a></td><td>Chặn nếu lệch &gt; 1%</td><td>Đạt · Chưa nhập (chưa khai giá trị) · Không đạt (đã khai nhưng lệch)</td></tr>
+          <tr><td>BOQ hợp đồng</td><td class="k">chk_boq</td><td>Từng dòng khối lượng · đơn giá của BOQ báo giá đã chốt</td><td>Chặn nếu còn dòng lệch</td><td>Đạt · Chưa nhập (chưa có BOQ đang hiệu lực) · Không đạt (có BOQ nhưng lệch dòng hoặc thiếu đơn giá)</td></tr>
+          <tr><td>Đợt thanh toán</td><td class="k">chk_payment</td><td>Tổng tỷ lệ các đợt của <code>payment_terms[]</code></td><td>Chặn nếu ≠ 100%</td><td>Đạt · Chưa nhập (chưa khai đợt nào) · Không đạt (đã khai nhưng tổng ≠ 100%)</td></tr>
+          <tr><td>Điều khoản thương mại</td><td class="k">chk_terms</td><td>Tiến độ thanh toán, bảo hành, hiệu lực đã chốt ở <a href="#BID-03">BID-03</a></td><td>Cảnh báo — người kiểm tra phải xác nhận đã thống nhất lại</td><td>Đạt · Chưa nhập (hợp đồng chưa khai điều khoản) · Không đạt (đã khai nhưng khác báo giá)</td></tr>
+          <tr><td>Pháp nhân bên ký kết</td><td class="k">chk_partner</td><td>Mã số thuế, địa chỉ, người đại diện trong hồ sơ đối tác (<a href="#PF-01">PF-01</a>)</td><td>Chặn nếu thiếu trường bắt buộc</td><td>Đạt · Chưa nhập — không có trạng thái Không đạt, mục này chỉ kiểm tra có/không, không kiểm tra đúng/sai định dạng</td></tr>
+          <tr><td>Bảo lãnh</td><td class="k">chk_guarantee</td><td>Loại, giá trị, ngân hàng, hạn của <code>guarantees[]</code></td><td>Cảnh báo nếu hợp đồng yêu cầu bảo lãnh mà chưa khai</td><td>Đạt · Chưa nhập — không có trạng thái Không đạt</td></tr>
+          <tr><td>Hiệu lực &amp; tiến độ</td><td class="k">chk_effective</td><td><code>effective_from</code> · <code>effective_to</code> và tiến độ thi công cam kết</td><td>Cảnh báo nếu hiệu lực hồi tố hoặc trống</td><td>Đạt · Chưa nhập (thiếu ngày từ hoặc đến) · Không đạt (đã nhập cả hai nhưng đến ≤ từ)</td></tr>
+          <tr><td>Bản thảo đính kèm</td><td class="k">chk_doc</td><td>Phiên bản tệp hợp đồng trên <a href="#PF-05">PF-05</a></td><td>Chặn nếu thiếu tệp hoặc tệp không phải phiên bản mới nhất</td><td>Đạt · Chưa nhập — không có trạng thái Không đạt</td></tr>
+          <tr><td>Người kiểm tra</td><td class="k">chk_owner</td><td>Chuyên viên Đấu thầu phụ trách gói thầu</td><td>Chặn — phải ký xác nhận kết quả kiểm tra</td><td>Đạt — luôn đạt, ghi nhận người và thời điểm chạy kiểm tra</td></tr>
+          <tr><td>Khối lượng BOQ hợp đồng</td><td class="k">chk_qty</td><td>Từng dòng BOQ hợp đồng — ô khối lượng phải có giá trị. Để trống là hợp lệ khi tiếp nhận hồ sơ ở <a href="#BID-01">BID-01</a>; <a href="#BID-02">BID-02</a> buộc điền khối lượng đề xuất cho dòng đó trước khi nộp phiếu thẩm định, nên còn trống tới đây nghĩa là đã lọt một chốt chặn</td><td>Chặn nếu còn dòng chưa có khối lượng — nêu số thứ tự các dòng đó</td><td>Đạt · Chưa nhập — không có trạng thái Không đạt, một ô khối lượng chỉ có thể trống hoặc có giá trị</td></tr>
         </tbody>
       </table>
     </div>
@@ -3840,8 +3849,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Kiểm tra trước, ký sau.</b> Chuỗi ký chỉ mở khi kết quả kiểm tra hợp đồng ở trạng thái <code>đạt</code>: không còn mục ở mức Chặn, mọi mục ở mức Cảnh báo đã được người kiểm tra xác nhận kèm lý do.<span class="then">Chữ ký số không thu hồi được — phát hiện lệch giá trị hay lệch BOQ sau khi Tổng Giám đốc đã ký thì phải làm lại toàn bộ chuỗi ký.</span></li>
+      <li><b>Ba trạng thái kết quả, không phải hai.</b> Một mục kiểm tra không đạt báo rõ vì sao: <code>chưa nhập</code> khi trường liên quan còn để trống, <code>không đạt</code> khi trường đó đã có giá trị nhưng sai hoặc lệch so với nơi đối chiếu.<span class="then">Gộp hai trường hợp vào một nhãn "Không đạt" khiến người kiểm tra không phân biệt được giữa việc phải đi nhập liệu và việc phải đi sửa một sai lệch đã có — hai việc khác hẳn nhau. Với mức Chặn, cả hai trạng thái đều giữ chuỗi ký đóng như nhau; với mức Cảnh báo, cả hai đều cần xác nhận kèm lý do mới qua được.</span></li>
       <li><b>Sửa hợp đồng thì kiểm tra lại.</b> Mọi thay đổi giá trị, điều khoản, đợt thanh toán, bảo lãnh hoặc tệp bản thảo sau khi kiểm tra đạt đều đưa <code>precheck</code> về <code>chưa chạy</code>.<span class="then">Nếu đã có chữ ký nội bộ thì các chữ ký đó bị hủy hiệu lực và chuỗi ký chạy lại từ bước 1 — kết quả kiểm tra luôn gắn với đúng phiên bản hợp đồng được ký.</span></li>
-      <li><b>Sửa hồ sơ pháp nhân ngay tại mục kiểm tra không đạt.</b> Dòng <code>chk_partner</code> không đạt mở form sửa hồ sơ pháp nhân của đối tác — mã số thuế, địa chỉ đăng ký, người đại diện theo pháp luật — thay vì chỉ báo thiếu. Quyền sửa theo <a href="PF-01.html">PF-01</a> (Admin); người không có quyền được dẫn về hồ sơ gói thầu để chọn đối tác khác.<span class="then">Tiếp nhận thư chào thầu ở <a href="BID-01.html">BID-01</a> chỉ đòi tên và mã số thuế để không chặn việc nhận hồ sơ, nên phần lớn đối tác đến bước ký vẫn thiếu hai trường còn lại. Nếu không sửa được từ đây thì mục kiểm tra nêu ra một thiếu sót mà không màn hình nào trong hệ thống bổ sung được, và gói thầu kẹt vĩnh viễn trước chuỗi ký.</span></li>
+      <li><b>Sửa hồ sơ pháp nhân ngay tại mục kiểm tra chưa nhập.</b> Dòng <code>chk_partner</code> chưa nhập mở form sửa hồ sơ pháp nhân của đối tác — mã số thuế, địa chỉ đăng ký, người đại diện theo pháp luật — thay vì chỉ báo thiếu. Quyền sửa theo <a href="PF-01.html">PF-01</a> (Admin); người không có quyền được dẫn về hồ sơ gói thầu để chọn đối tác khác.<span class="then">Tiếp nhận thư chào thầu ở <a href="BID-01.html">BID-01</a> chỉ đòi tên và mã số thuế để không chặn việc nhận hồ sơ, nên phần lớn đối tác đến bước ký vẫn thiếu hai trường còn lại. Nếu không sửa được từ đây thì mục kiểm tra nêu ra một thiếu sót mà không màn hình nào trong hệ thống bổ sung được, và gói thầu kẹt vĩnh viễn trước chuỗi ký.</span></li>
       <li><b>Người kiểm tra không phải người ký đầu tiên.</b> Chuyên viên Đấu thầu phụ trách gói thầu chạy và ký xác nhận kết quả kiểm tra; TP Đấu thầu ký số bước 1.<span class="then">Tách hai vai để bước kiểm tra là một lớp soát độc lập, không phải thao tác hình thức của chính người sắp ký.</span></li>
       <li><b>Ký tuần tự trong, song song ngoài.</b> Ba bước ký nội bộ chạy tuần tự; chỉ khi đủ ba chữ ký mới gửi đối tác.<span class="then">Đối tác ký ngoài hệ thống, người phụ trách tải bản ký lên và xác nhận — hệ thống theo dõi trạng thái chứ không điều khiển bước này.</span></li>
       <li><b>Không khởi tạo dự án khi chưa đủ chữ ký.</b> Nút “Khởi tạo &amp; thông báo” chỉ mở khi chuỗi ký hoàn tất.<span class="then">Tránh trường hợp dự án tồn tại trong hệ thống trong khi hợp đồng chưa có hiệu lực pháp lý.</span></li>
@@ -3859,7 +3869,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
           <tr><td>Trình ký khi chưa kiểm tra</td><td><code>precheck = chưa chạy</code></td><td>“Chạy kiểm tra hợp đồng trước khi trình ký. Chuỗi ký chỉ mở khi kết quả đạt.”</td></tr>
-          <tr><td>Còn mục kiểm tra ở mức Chặn</td><td>Có mục kết quả “Không đạt”, mức Chặn</td><td>“Còn {n} mục chưa đạt: {danh sách}. Xử lý xong mới trình ký được.”</td></tr>
+          <tr><td>Còn mục kiểm tra ở mức Chặn</td><td>Có mục kết quả “Chưa nhập” hoặc “Không đạt”, mức Chặn</td><td>“Còn {n} mục chưa đạt: {danh sách}. Xử lý xong mới trình ký được.”</td></tr>
           <tr><td>Mục cảnh báo chưa xác nhận</td><td>Có mục mức Cảnh báo chưa có xác nhận</td><td>“{n} mục cảnh báo chưa được xác nhận. Ghi lý do chấp nhận để tiếp tục.”</td></tr>
           <tr><td>Sửa hợp đồng sau khi kiểm tra đạt</td><td>Có thay đổi trên hợp đồng đã <code>đạt</code></td><td>“Hợp đồng vừa thay đổi nên kết quả kiểm tra hết hiệu lực{, các chữ ký đã có sẽ bị hủy}. Chạy kiểm tra lại?”</td></tr>
           <tr><td>Tổng tỷ lệ đợt khác 100%</td><td><code>sum(pct) ≠ 100</code></td><td>“Tổng tỷ lệ các đợt đang là {x}%. Điều chỉnh để đủ 100% giá trị hợp đồng.”</td></tr>
@@ -3867,7 +3877,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Chưa gán Giám đốc dự án</td><td>Thiếu vai trò GĐ dự án</td><td>“Gán Giám đốc dự án trước — người này sẽ phân công nhân sự hiện trường.”</td></tr>
           <tr><td>Điều khoản lệch báo giá</td><td>Khác điều kiện thương mại đã chốt</td><td>“Điều khoản thanh toán khác báo giá đã chốt ({nội dung cũ}). Xác nhận nếu đã thống nhất lại với đối tác.”</td></tr>
           <tr><td>Ngày hiệu lực trước ngày ký</td><td><code>effective_from &lt; signed_at</code></td><td>“Ngày hiệu lực sớm hơn ngày ký. Xác nhận nếu hợp đồng có hiệu lực hồi tố.”</td></tr>
-          <tr><td>Giá trị lệch BOQ chốt</td><td>Chênh &gt; 1%</td><td>“Giá trị hợp đồng lệch {x}% so với BOQ báo giá đã chốt. Kiểm tra lại trước khi trình ký.”</td></tr>
+          <tr><td>Giá trị lệch BOQ chốt <span class="tag t-crit">Không đạt</span></td><td>Đã khai giá trị, chênh &gt; 1%</td><td>“Giá trị hợp đồng lệch {x}% so với BOQ báo giá đã chốt. Kiểm tra lại trước khi trình ký.”</td></tr>
+          <tr><td>Chưa khai giá trị hợp đồng <span class="tag t-warn">Chưa nhập</span></td><td><code>value_before_vat</code> còn trống</td><td>“Chưa khai giá trị hợp đồng. Nhập giá trị trước VAT rồi chạy lại kiểm tra.”</td></tr>
+          <tr><td>BOQ hợp đồng còn dòng chưa có khối lượng <span class="tag t-warn">Chưa nhập</span></td><td>Có dòng BOQ hợp đồng bỏ trống khối lượng — hợp lệ khi tiếp nhận ở <a href="#BID-01">BID-01</a>, không hợp lệ ở đây</td><td>“BOQ hợp đồng còn {n} dòng chưa có khối lượng: dòng {danh sách}. Không định giá được dòng chưa có số — bổ sung khối lượng rồi chạy lại kiểm tra.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -3889,12 +3901,13 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-BID05-10</td><td>Giá trị hợp đồng lệch 3% so với BOQ chốt</td><td>Chạy kiểm tra hợp đồng</td><td>Mục giá trị báo Không đạt (mức Chặn), nút Trình ký vẫn khóa</td></tr>
           <tr><td>UAT-BID05-11</td><td>Điều khoản thanh toán khác báo giá đã chốt</td><td>Chạy kiểm tra, ghi lý do và xác nhận mục cảnh báo</td><td>Kết quả chuyển sang Đạt, chuỗi ký mở, lý do lưu kèm bản ghi kiểm tra</td></tr>
           <tr><td>UAT-BID05-12</td><td>Kiểm tra đã đạt, TP Đấu thầu đã ký bước 1</td><td>Sửa giá trị hợp đồng rồi lưu</td><td>Kết quả kiểm tra về “chưa chạy”, chữ ký bước 1 bị hủy, phải kiểm tra và ký lại từ đầu</td></tr>
+          <tr><td>UAT-BID05-13</td><td>Đối tác được tiếp nhận ở BID-01 mới chỉ có tên và mã số thuế, chưa khai địa chỉ và người đại diện</td><td>Chạy kiểm tra hợp đồng</td><td>Mục pháp nhân báo <b>Chưa nhập</b> (không phải Không đạt), mức Chặn, mở form sửa hồ sơ pháp nhân ngay tại dòng đó; nút Trình ký vẫn khóa</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-03">BID-03 chốt giá</a><a href="#PF-05">PF-05 phiên bản bản thảo HĐ</a><a href="#PF-01">PF-01 sinh mã dự án</a><a href="#PF-02">PF-02 quyền theo dự án</a><a href="#ORD-01">ORD-01 tạm ứng hợp đồng</a><a href="#ORD-02">ORD-02 shopdrawing</a><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#ACC-02">ACC-02 kho dự án</a></p>
+    <p class="links"><a href="#BID-01">BID-01 BOQ mời thầu</a><a href="#BID-02">BID-02 chốt khối lượng</a><a href="#BID-03">BID-03 chốt giá</a><a href="#PF-05">PF-05 phiên bản bản thảo HĐ</a><a href="#PF-01">PF-01 sinh mã dự án</a><a href="#PF-02">PF-02 quyền theo dự án</a><a href="#ORD-01">ORD-01 tạm ứng hợp đồng</a><a href="#ORD-02">ORD-02 shopdrawing</a><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#ACC-02">ACC-02 kho dự án</a></p>
   </div>
 </section>
 <section class="block" id="grp-ord">
@@ -4256,11 +4269,11 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
   <header class="tb">
     <div class="tb-id">ORD-02</div>
     <div class="tb-main">
-      <h3>Lập bản vẽ Shopdrawing &amp; phê duyệt của đối tác</h3>
-      <p>“Thể hiện được tiến trình phê duyệt bản vẽ Shopdrawing (đối tác phê duyệt)”. Điểm khó là quy trình duyệt nằm <em>bên ngoài</em> công ty, nên hệ thống phải theo dõi trạng thái chứ không điều khiển được nó.</p>
+      <h3>Lập bản vẽ Shopdrawing &amp; phê duyệt của CĐT / TVGS</h3>
+      <p>“Thể hiện được tiến trình phê duyệt bản vẽ Shopdrawing (đối tác phê duyệt)”. Điểm khó là quy trình duyệt nằm <em>bên ngoài</em> công ty — CĐT trả lời qua mail — nên hệ thống chỉ theo dõi và ghi nhận trạng thái chứ không điều khiển được nó.</p>
       <dl class="tb-meta">
-        <div><dt>Thực hiện</dt><dd>P. TQT — Shopdrawing</dd></div>
-        <div><dt>Phê duyệt</dt><dd>Nội bộ 1 cấp · sau đó đối tác / tư vấn giám sát</dd></div>
+        <div><dt>Thực hiện</dt><dd>P. TQT — kỹ sư phụ trách lập; TP TQT duyệt &amp; phát hành</dd></div>
+        <div><dt>Phê duyệt</dt><dd>TP TQT duyệt nội bộ → CĐT / TVGS duyệt qua mail → TP TQT phát hành</dd></div>
         <div><dt>Quyền truy cập</dt><dd>Không giới hạn</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 6</dd></div>
       </dl>
@@ -4268,156 +4281,93 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
   </header>
   <div class="sb">
     <h4>Mục tiêu</h4>
-    <p>Bản vẽ shop được duyệt là điều kiện bắt buộc để lập đơn hàng (<a href="#ORD-03">ORD-03</a>). Vì vậy tiến trình duyệt shop chính là đường găng của tiến độ sản xuất. Đặc tả yêu cầu theo dõi từng vòng gửi–trả, đếm số vòng và số ngày nằm ở phía đối tác.</p>
+    <p>Bản vẽ shop được duyệt là điều kiện bắt buộc để lập đơn hàng (<a href="#ORD-03">ORD-03</a>). Vì vậy tiến trình duyệt shop chính là đường găng của tiến độ sản xuất. Đặc tả yêu cầu theo dõi từng vòng gửi–trả, đếm số vòng và số ngày nằm ở phía CĐT.</p>
+    <p>Bảng khối lượng là phần việc của <b>kỹ sư phụ trách</b> và được nhập <b>ngay khi lập bản vẽ</b>, trước mọi bước duyệt: đó chính là nội dung trưởng phòng kiểm tra và CĐT xem xét, nên không thể chờ có kết quả duyệt rồi mới nhập. Trưởng phòng duyệt hai lần và hai lần đó khác nhau về ý nghĩa — <b>duyệt nội bộ</b> là điều kiện để gửi CĐT, <b>phát hành</b> là điều kiện để bản vẽ xuất hiện ở màn hình lập đơn hàng.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:838px;margin:0 auto"><svg role="img" aria-label="Hình ORD-02.1 Ba kết quả chuẩn của một vòng duyệt shop. “Approved as noted” không quay lại vòng gửi — đây là chi tiết quyết định tiến độ, cần phân biệt rõ với “revise and resubmit”."
- viewBox="0.00 0.00 838.00 663.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 650.28)">
-<title>G</title>
-<g id="node1" class="node">
-<title>A</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="231.39,-637.32 76.36,-637.32 76.36,-592.92 231.39,-592.92 231.39,-637.32"/>
-<text xml:space="preserve" text-anchor="middle" x="153.88" y="-618.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhận bản vẽ thiết kế</text>
-<text xml:space="preserve" text-anchor="middle" x="153.88" y="-603.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">+ BOQ hợp đồng</text>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:838px;margin:0 auto"><svg role="img" aria-label="Hình ORD-02.1 Luồng thật của một bản vẽ shop: kỹ sư phụ trách lập bản vẽ và nhập khối lượng ngay từ đầu; trưởng phòng duyệt hai lần — duyệt nội bộ trước khi gửi CĐT, và phát hành sau khi CĐT chấp thuận."
+ viewBox="0 0 838 730" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ord02-tip" markerWidth="7" markerHeight="7" refX="6.2" refY="3.5" orient="auto"><polygon points="0,0.6 6.5,3.5 0,6.4" fill="#55606b"/></marker></defs>
+<g font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a" text-anchor="middle">
+
+<rect x="30" y="14" width="225" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="35">Tạo bản vẽ mới</text>
+<text x="142.5" y="52">kỹ sư phụ trách · chọn hạng mục</text>
+
+<rect x="30" y="94" width="225" height="64" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="114">Nhập khối lượng bản vẽ</text>
+<text x="142.5" y="131">STT · mã việc · mã đá · đvt</text>
+<text x="142.5" y="148">KL · quy cách · ghi chú</text>
+
+<rect x="30" y="188" width="225" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="209">Trưởng phòng xem khối lượng</text>
+<text x="142.5" y="226">và tệp bản vẽ tải lên</text>
+
+<polygon points="142.5,256 200.5,284 142.5,312 84.5,284" fill="#eef2f5" stroke="#5d6b7a"/>
+<text x="142.5" y="288">Đạt?</text>
+
+<rect x="30" y="336" width="225" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="357">Duyệt bản vẽ</text>
+<text x="142.5" y="374">TP TQT ký duyệt nội bộ</text>
+
+<rect x="30" y="416" width="225" height="64" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="436">Xuất file &amp; gửi mail CĐT</text>
+<text x="142.5" y="453">ghi ngày gửi, vòng thứ n</text>
+<text x="142.5" y="470">và ngày cam kết trả</text>
+
+<rect x="30" y="510" width="225" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="531">CĐT trả lời qua mail</text>
+<text x="142.5" y="548">TP TQT ghi nhận kết quả</text>
+
+<rect x="330" y="470" width="235" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="447.5" y="491">Chấp thuận</text>
+<text x="447.5" y="508">approved · approved as noted</text>
+
+<rect x="330" y="550" width="235" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="447.5" y="571">Sửa theo ý kiến CĐT</text>
+<text x="447.5" y="588">kỹ sư sửa bản vẽ &amp; khối lượng</text>
+
+<rect x="330" y="630" width="235" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="447.5" y="651">Từ chối</text>
+<text x="447.5" y="668">lập bản vẽ mới thay thế</text>
+
+<rect x="615" y="390" width="200" height="50" fill="#eef2f5" stroke="#5d6b7a"/>
+<text x="715" y="411">Quá hạn cam kết trả</text>
+<text x="715" y="428">cảnh báo tiến độ · PF-04</text>
+
+<rect x="615" y="470" width="200" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="715" y="491">Phát hành sang đơn hàng</text>
+<text x="715" y="508">TP TQT duyệt lần cuối</text>
+
+<rect x="615" y="550" width="200" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="715" y="571">Bản vẽ hiện ở ORD-03</text>
+<text x="715" y="588">khối lượng khóa lại</text>
+
+<g fill="none" stroke="#55606b" marker-end="url(#ord02-tip)">
+<path d="M142.5,64 L142.5,92"/>
+<path d="M142.5,158 L142.5,186"/>
+<path d="M142.5,238 L142.5,254"/>
+<path d="M142.5,312 L142.5,334"/>
+<path d="M142.5,386 L142.5,414"/>
+<path d="M142.5,480 L142.5,508"/>
+<path d="M84.5,284 L20,284 L20,140 L26,140"/>
+<path d="M255,440 L590,440 L590,415 L613,415"/>
+<path d="M255,525 L292,525 L292,495 L328,495"/>
+<path d="M255,540 L305,540 L305,575 L328,575"/>
+<path d="M255,550 L292,550 L292,655 L328,655"/>
+<path d="M565,495 L613,495"/>
+<path d="M715,520 L715,548"/>
+<path d="M565,575 L590,575 L590,712 L10,712 L10,126 L26,126"/>
 </g>
-<g id="node2" class="node">
-<title>B</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="231.75,-557.92 76.01,-557.92 76.01,-513.52 231.75,-513.52 231.75,-557.92"/>
-<text xml:space="preserve" text-anchor="middle" x="153.88" y="-539.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Triển khai shopdrawing</text>
-<text xml:space="preserve" text-anchor="middle" x="153.88" y="-524.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">theo hạng mục</text>
-</g>
-<g id="edge1" class="edge">
-<title>A&#45;&gt;B</title>
-<path fill="none" stroke="#55606b" d="M153.88,-592.56C153.88,-584.34 153.88,-574.83 153.88,-566.01"/>
-<polygon fill="#55606b" stroke="#55606b" points="156.15,-566.18 153.88,-559.68 151.6,-566.18 156.15,-566.18"/>
-</g>
-<g id="node3" class="node">
-<title>C</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="173.75,-478.52 0,-478.52 0,-434.12 173.75,-434.12 173.75,-478.52"/>
-<text xml:space="preserve" text-anchor="middle" x="86.88" y="-460.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Duyệt nội bộ</text>
-<text xml:space="preserve" text-anchor="middle" x="86.88" y="-445.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">TP TQT kiểm tra kỹ thuật</text>
-</g>
-<g id="edge2" class="edge">
-<title>B&#45;&gt;C</title>
-<path fill="none" stroke="#55606b" d="M135.21,-513.16C127.59,-504.35 118.68,-494.06 110.61,-484.73"/>
-<polygon fill="#55606b" stroke="#55606b" points="112.41,-483.33 106.43,-479.91 108.96,-486.31 112.41,-483.33"/>
-</g>
-<g id="node4" class="node">
-<title>D</title>
-<polygon fill="#eef2f5" stroke="#5d6b7a" points="221.88,-399.12 191.21,-381.24 221.88,-363.36 252.55,-381.24 221.88,-399.12"/>
-<text xml:space="preserve" text-anchor="middle" x="221.88" y="-377.49" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đạt?</text>
-</g>
-<g id="edge3" class="edge">
-<title>C&#45;&gt;D</title>
-<path fill="none" stroke="#55606b" d="M126.65,-433.79C150.48,-420.89 179.89,-404.97 199.67,-394.26"/>
-<polygon fill="#55606b" stroke="#55606b" points="200.53,-396.39 205.16,-391.29 198.36,-392.38 200.53,-396.39"/>
-</g>
-<g id="edge4" class="edge">
-<title>D&#45;&gt;B</title>
-<path fill="none" stroke="#55606b" d="M216.57,-396.45C206.55,-423.23 185.88,-478.52 185.88,-478.52 185.88,-478.52 177.98,-492.39 170.03,-506.35"/>
-<polygon fill="#55606b" stroke="#55606b" points="168.15,-505.06 166.91,-511.84 172.1,-507.31 168.15,-505.06"/>
-<text xml:space="preserve" text-anchor="middle" x="217.98" y="-453.02" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
-</g>
-<g id="node5" class="node">
-<title>E</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="360.23,-316.16 197.53,-316.16 197.53,-271.76 360.23,-271.76 360.23,-316.16"/>
-<text xml:space="preserve" text-anchor="middle" x="278.88" y="-297.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Gửi đối tác / TVGS</text>
-<text xml:space="preserve" text-anchor="middle" x="278.88" y="-282.71" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ghi ngày gửi, vòng thứ n</text>
-</g>
-<g id="edge5" class="edge">
-<title>D&#45;&gt;E</title>
-<path fill="none" stroke="#55606b" d="M230.04,-368.02C237.91,-356.25 250.08,-338.04 260.31,-322.74"/>
-<polygon fill="#55606b" stroke="#55606b" points="261.99,-324.31 263.71,-317.65 258.21,-321.79 261.99,-324.31"/>
-<text xml:space="preserve" text-anchor="middle" x="261.25" y="-336.46" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đạt</text>
-</g>
-<g id="node6" class="node">
-<title>F</title>
-<polygon fill="#eef2f5" stroke="#5d6b7a" points="325.88,-236.76 261.19,-203.88 325.88,-171 390.57,-203.88 325.88,-236.76"/>
-<text xml:space="preserve" text-anchor="middle" x="325.88" y="-207.63" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Kết quả</text>
-<text xml:space="preserve" text-anchor="middle" x="325.88" y="-192.63" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đối tác trả</text>
-</g>
-<g id="edge6" class="edge">
-<title>E&#45;&gt;F</title>
-<path fill="none" stroke="#55606b" d="M290.25,-271.64C295.74,-261.35 302.45,-248.79 308.55,-237.34"/>
-<polygon fill="#55606b" stroke="#55606b" points="310.5,-238.53 311.55,-231.73 306.48,-236.39 310.5,-238.53"/>
-</g>
-<g id="node7" class="node">
-<title>G</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="811.88,-123.8 633.88,-123.8 633.88,-79.4 811.88,-79.4 811.88,-123.8"/>
-<text xml:space="preserve" text-anchor="middle" x="722.88" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Bản vẽ được duyệt</text>
-<text xml:space="preserve" text-anchor="middle" x="722.88" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đóng dấu phiên bản duyệt</text>
-</g>
-<g id="edge7" class="edge">
-<title>F&#45;&gt;G</title>
-<path fill="none" stroke="#55606b" d="M368.36,-192.15C430.4,-176.48 547.36,-146.93 629.94,-126.08"/>
-<polygon fill="#55606b" stroke="#55606b" points="630.11,-128.38 635.85,-124.58 629,-123.97 630.11,-128.38"/>
-<text xml:space="preserve" text-anchor="middle" x="595.15" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Approved</text>
-</g>
-<g id="node8" class="node">
-<title>H</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="378.39,-123.8 141.37,-123.8 141.37,-79.4 378.39,-79.4 378.39,-123.8"/>
-<text xml:space="preserve" text-anchor="middle" x="259.88" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Duyệt kèm ghi chú</text>
-<text xml:space="preserve" text-anchor="middle" x="259.88" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">cập nhật bản vẽ, không cần gửi lại</text>
-</g>
-<g id="edge8" class="edge">
-<title>F&#45;&gt;H</title>
-<path fill="none" stroke="#55606b" d="M302.22,-182.72C286.43,-169.25 268.53,-154 268.53,-154 268.53,-154 266.74,-143.36 264.79,-131.76"/>
-<polygon fill="#55606b" stroke="#55606b" points="267.07,-131.62 263.75,-125.59 262.58,-132.38 267.07,-131.62"/>
-<text xml:space="preserve" text-anchor="middle" x="314.7" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Approved as noted</text>
-</g>
-<g id="node9" class="node">
-<title>I</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="117.3,-123.8 0.46,-123.8 0.46,-79.4 117.3,-79.4 117.3,-123.8"/>
-<text xml:space="preserve" text-anchor="middle" x="58.88" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sửa theo ý kiến</text>
-<text xml:space="preserve" text-anchor="middle" x="58.88" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">tăng vòng gửi</text>
-</g>
-<g id="edge9" class="edge">
-<title>F&#45;&gt;I</title>
-<path fill="none" stroke="#55606b" d="M285.87,-191.05C236.96,-176.58 160.61,-154 160.61,-154 160.61,-154 134.42,-140.77 108.62,-127.73"/>
-<polygon fill="#55606b" stroke="#55606b" points="109.9,-125.83 103.08,-124.93 107.85,-129.89 109.9,-125.83"/>
-<text xml:space="preserve" text-anchor="middle" x="210.74" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Revise and resubmit</text>
-</g>
-<g id="node10" class="node">
-<title>J</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="609.45,-123.8 402.3,-123.8 402.3,-79.4 609.45,-79.4 609.45,-123.8"/>
-<text xml:space="preserve" text-anchor="middle" x="505.88" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cảnh báo trễ</text>
-<text xml:space="preserve" text-anchor="middle" x="505.88" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ghi vào báo cáo tiến độ · PF&#45;04</text>
-</g>
-<g id="edge11" class="edge">
-<title>F&#45;&gt;J</title>
-<path fill="none" stroke="#55606b" d="M348.57,-182.21C368.39,-164.15 394.01,-140.8 394.01,-140.8 394.01,-140.8 412.88,-134.36 435.11,-126.77"/>
-<polygon fill="#55606b" stroke="#55606b" points="435.58,-129.01 441,-124.76 434.11,-124.7 435.58,-129.01"/>
-<text xml:space="preserve" text-anchor="middle" x="438.95" y="-144.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Quá hạn cam kết</text>
-</g>
-<g id="node11" class="node">
-<title>K</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="567.7,-44.4 414.05,-44.4 414.05,0 567.7,0 567.7,-44.4"/>
-<text xml:space="preserve" text-anchor="middle" x="490.88" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Mở khóa lập đơn hàng</text>
-<text xml:space="preserve" text-anchor="middle" x="490.88" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ORD&#45;03</text>
-</g>
-<g id="edge13" class="edge">
-<title>G&#45;&gt;K</title>
-<path fill="none" stroke="#55606b" d="M657.94,-78.94C628.53,-69.12 593.65,-57.49 563.38,-47.39"/>
-<polygon fill="#55606b" stroke="#55606b" points="564.12,-45.24 557.23,-45.34 562.68,-49.55 564.12,-45.24"/>
-</g>
-<g id="edge14" class="edge">
-<title>H&#45;&gt;K</title>
-<path fill="none" stroke="#55606b" d="M324.53,-78.94C353.82,-69.12 388.55,-57.49 418.68,-47.39"/>
-<polygon fill="#55606b" stroke="#55606b" points="419.36,-49.56 424.8,-45.34 417.92,-45.25 419.36,-49.56"/>
-</g>
-<g id="edge10" class="edge">
-<title>I&#45;&gt;C</title>
-<path fill="none" stroke="#55606b" d="M61,-123.87C63.93,-153.3 68.88,-202.88 68.88,-202.88 68.88,-382.24 68.88,-382.24 68.88,-382.24 68.88,-382.24 74.69,-405.82 79.7,-426.19"/>
-<polygon fill="#55606b" stroke="#55606b" points="77.45,-426.55 81.21,-432.32 81.87,-425.46 77.45,-426.55"/>
-</g>
-<g id="edge12" class="edge">
-<title>J&#45;&gt;F</title>
-<path fill="none" stroke="#55606b" d="M497.51,-124.1C492.03,-138.19 485.88,-154 485.88,-154 485.88,-154 420.04,-174.11 372.83,-188.54"/>
-<polygon fill="#55606b" stroke="#55606b" points="372.43,-186.28 366.88,-190.36 373.76,-190.63 372.43,-186.28"/>
+
+<g font-size="11" fill="#3f4a54">
+<text x="52" y="277">Không</text>
+<text x="163" y="327" text-anchor="start">Đạt</text>
+<text x="420" y="434">Quá ngày cam kết</text>
+<text x="250" y="706">gửi lại — tăng vòng gửi</text>
 </g>
 </g>
-</svg></div><figcaption><b>Hình ORD-02.1</b> Ba kết quả chuẩn của một vòng duyệt shop. “Approved as noted” không quay lại vòng gửi — đây là chi tiết quyết định tiến độ, cần phân biệt rõ với “revise and resubmit”.</figcaption></figure>
+</svg></div><figcaption><b>Hình ORD-02.1</b> Luồng thật của một bản vẽ shop. Khối lượng do kỹ sư phụ trách nhập <em>ngay khi lập bản vẽ</em>, không chờ duyệt — vì đó chính là nội dung trưởng phòng và CĐT xem xét. Trưởng phòng duyệt <em>hai lần</em>: duyệt nội bộ trước khi gửi mail CĐT, và phát hành sau khi CĐT chấp thuận.</figcaption></figure>
 
     <h4>Tham số</h4>
     <div class="tw">
@@ -4426,38 +4376,52 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tbody>
           <tr><td>Mã bản vẽ</td><td class="k">shop_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>SD-&lt;project&gt;-NNN</code>.</td></tr>
           <tr><td>Hạng mục</td><td class="k">wbs_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một bản vẽ phục vụ một hoặc nhiều hạng mục.</td></tr>
-          <tr><td>Người triển khai</td><td class="k">drafter</td><td>Tham chiếu</td><td class="c req">✱</td><td>—</td></tr>
-          <tr><td>Vòng gửi</td><td class="k">submission_no</td><td>Số</td><td class="c req">✱</td><td>Tăng mỗi lần gửi đối tác.</td></tr>
-          <tr><td>Ngày gửi · ngày cam kết trả</td><td class="k">sent_at, due_at</td><td>Ngày</td><td class="c req">✱</td><td>Chênh lệch giữa hai mốc và ngày trả thực tế là số ngày trễ của đối tác.</td></tr>
+          <tr><td>Kỹ sư phụ trách</td><td class="k">drafter</td><td>Tham chiếu</td><td class="c req">✱</td><td>Người lập bản vẽ và nhập bảng khối lượng.</td></tr>
+          <tr><td>Vòng gửi</td><td class="k">submission_no</td><td>Số</td><td class="c req">✱</td><td>Tăng mỗi lần gửi CĐT.</td></tr>
+          <tr><td>Ngày gửi · ngày cam kết trả</td><td class="k">sent_at, due_at</td><td>Ngày</td><td class="c req">✱</td><td>Chênh lệch giữa hai mốc và ngày trả thực tế là số ngày trễ của CĐT.</td></tr>
           <tr><td>Kết quả</td><td class="k">result</td><td>Chọn 1</td><td class="c">—</td><td><code>approved</code> · <code>approved_as_noted</code> · <code>revise_resubmit</code> · <code>rejected</code>.</td></tr>
-          <tr><td>Ý kiến đối tác</td><td class="k">comments[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi ý kiến gắn được vào một chi tiết bản vẽ; đánh dấu đã xử lý hay chưa.</td></tr>
+          <tr><td>Ý kiến CĐT</td><td class="k">comments[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi ý kiến gắn được vào một chi tiết bản vẽ; đánh dấu đã xử lý hay chưa.</td></tr>
           <tr><td>Tệp bản vẽ</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>DWG + PDF mỗi vòng, theo phiên bản của <a href="#PF-05">PF-05</a>.</td></tr>
-          <tr><td>Khối lượng theo shop</td><td class="k">shop_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Bóc tách từ bản vẽ được duyệt; là dữ liệu đầu vào của đơn hàng.</td></tr>
+          <tr><td>Khối lượng bản vẽ</td><td class="k">shop_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Kỹ sư phụ trách nhập ngay khi lập bản vẽ. Là dữ liệu đầu vào của đơn hàng.</td></tr>
+          <tr><td>— dòng khối lượng</td><td class="k">line_no, work_code, stone_code,<br>uom, qty, spec, note</td><td>Dòng</td><td class="c req">✱</td><td>STT · mã việc · mã đá · đvt · khối lượng · quy cách · ghi chú. <code>stone_code</code> tra từ danh mục đá của <a href="#PF-01">PF-01</a>; <code>spec</code> là quy cách gia công (dày, bo, mài).</td></tr>
+          <tr><td>Duyệt nội bộ</td><td class="k">internal_approved_at, _by</td><td>Ngày · tham chiếu</td><td class="c req">✱</td><td>TP TQT bấm “Duyệt bản vẽ”. Là điều kiện để gửi CĐT.</td></tr>
+          <tr><td>Phát hành sang đơn hàng</td><td class="k">released_at, released_by</td><td>Ngày · tham chiếu</td><td class="c">—</td><td>TP TQT bấm sau khi CĐT chấp thuận. Là điều kiện để bản vẽ hiện ở <a href="#ORD-03">ORD-03</a>.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Mỗi bản vẽ hiển thị vòng gửi hiện tại, đang nằm ở phía công ty hay phía đối tác, và đã bao nhiêu ngày.</li>
-      <li>Bản vẽ chưa có kết quả “approved” hoặc “approved as noted” thì không lập được đơn hàng.</li>
-      <li>Ý kiến của đối tác được theo dõi từng mục, đếm được số ý kiến chưa xử lý.</li>
-      <li>Số vòng gửi trung bình theo dự án và theo người triển khai tổng hợp được thành chỉ số chất lượng bản vẽ.</li>
-      <li>Trễ hạn cam kết của đối tác được ghi nhận riêng, dùng làm căn cứ giải trình khi tiến độ thi công chậm.</li>
-      <li>Khối lượng bóc tách theo shop được duyệt tự động chảy sang màn hình lập đơn hàng.</li>
+      <li>Mỗi bản vẽ hiển thị vòng gửi hiện tại, đang nằm ở phía công ty hay phía CĐT, và đã bao nhiêu ngày.</li>
+      <li>Bản vẽ chưa được TP TQT phát hành thì không xuất hiện ở màn hình lập đơn hàng — kể cả khi CĐT đã chấp thuận.</li>
+      <li>Ý kiến của CĐT được theo dõi từng mục, đếm được số ý kiến chưa xử lý.</li>
+      <li>Số vòng gửi trung bình theo dự án và theo kỹ sư phụ trách tổng hợp được thành chỉ số chất lượng bản vẽ.</li>
+      <li>Trễ hạn cam kết của CĐT được ghi nhận riêng, dùng làm căn cứ giải trình khi tiến độ thi công chậm.</li>
+      <li>Khối lượng kỹ sư nhập từ đầu chảy thẳng sang màn hình lập đơn hàng khi bản vẽ được phát hành, không phải gõ lại.</li>
+      <li>Mỗi bản vẽ truy được ai lập, ai duyệt nội bộ, ai phát hành và vào thời điểm nào.</li>
     </ol>
 
     <h4>Mockup UI — Shopdrawing › Theo dõi duyệt</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>Shopdrawing</b><span class="wf-crumb">24 bản vẽ · 5 đang chờ đối tác</span><span class="sp"></span><span class="wf-btn"><span class="pin">4</span> Báo cáo vòng duyệt</span><span class="wf-btn pri">+ Bản vẽ mới</span></div>
+      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>Shopdrawing</b><span class="wf-crumb">24 bản vẽ · 5 đang chờ CĐT</span><span class="sp"></span><span class="wf-btn"><span class="pin">4</span> Báo cáo vòng duyệt</span><span class="wf-btn"><span class="pin">6</span> Phát hành sang đơn hàng</span><span class="wf-btn pri">+ Bản vẽ mới</span></div>
       <div class="wf-body">
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">1</span> Danh sách bản vẽ theo hạng mục</div>
-          <table><thead><tr><th>Mã bản vẽ</th><th>Hạng mục</th><th>Vòng</th><th>Trạng thái</th><th>Gửi</th><th>Cam kết trả</th><th class="num">Trễ</th></tr></thead>
+          <table><thead><tr><th>Mã bản vẽ</th><th>Hạng mục</th><th>Vòng</th><th>Trạng thái</th><th>Gửi</th><th>Cam kết trả</th><th class="num">Trễ</th><th>Phát hành</th></tr></thead>
           <tbody>
-            <tr><td>SD-014-007</td><td>HM-01 Mặt đứng tháp A · trục 1–4</td><td>v2</td><td><span class="tag t-ok">Approved</span></td><td>02/06</td><td>09/06</td><td class="num">—</td></tr>
-            <tr><td>SD-014-008</td><td>HM-01 Mặt đứng tháp A · trục 5–9</td><td>v3</td><td><span class="tag t-warn">Chờ đối tác</span></td><td>18/07</td><td>25/07</td><td class="num">3 ngày</td></tr>
-            <tr><td>SD-014-012</td><td>HM-02 Sàn sảnh marble</td><td>v1</td><td><span class="tag t-crit">Revise &amp; resubmit</span></td><td>12/07</td><td>19/07</td><td class="num">—</td></tr>
+            <tr><td>SD-014-005</td><td>HM-01 Mặt đứng tháp A · trục 1–3</td><td>v1</td><td><span class="tag t-ok">Approved</span></td><td>04/05</td><td>11/05</td><td class="num">—</td><td><span class="tag t-ok">Đã phát hành</span></td></tr>
+            <tr><td>SD-014-007</td><td>HM-01 Mặt đứng tháp A · trục 1–4</td><td>v2</td><td><span class="tag t-ok">Approved</span></td><td>02/06</td><td>09/06</td><td class="num">—</td><td><span class="tag t-warn">Chờ TP phát hành</span></td></tr>
+            <tr><td>SD-014-008</td><td>HM-01 Mặt đứng tháp A · trục 5–9</td><td>v3</td><td><span class="tag t-warn">Chờ CĐT</span></td><td>18/07</td><td>25/07</td><td class="num">3 ngày</td><td>—</td></tr>
+            <tr><td>SD-014-012</td><td>HM-02 Sàn sảnh marble</td><td>v1</td><td><span class="tag t-crit">Revise &amp; resubmit</span></td><td>12/07</td><td>19/07</td><td class="num">—</td><td>—</td></tr>
+          </tbody></table>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">5</span> Khối lượng bản vẽ — SD-014-008 <span class="wf-crumb">kỹ sư phụ trách nhập</span></div>
+          <table><thead><tr><th class="num">STT</th><th>Mã việc</th><th>Mã đá</th><th>ĐVT</th><th class="num">KL</th><th>Quy cách</th><th>Ghi chú</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>OP-CLAD</td><td>GR-PY-BLK</td><td>m²</td><td class="num">318,40</td><td>dày 20 · mài bóng</td><td>—</td></tr>
+            <tr><td class="num">2</td><td>OP-EDGE</td><td>GR-PY-BLK</td><td>viên</td><td class="num">420</td><td>bo góc R120</td><td>Cắt cong theo trục 7</td></tr>
+            <tr><td class="num">3</td><td>OP-ANCH</td><td>SS-304</td><td>bộ</td><td class="num">1.240</td><td>neo góc M8</td><td>Bổ sung theo ý kiến v2</td></tr>
           </tbody></table>
         </div>
         <div class="wf-row">
@@ -4466,11 +4430,11 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
             <div class="wf-steps">
               <div class="done"><b>v1 · 20/05</b>Revise &amp; resubmit<br>7 ý kiến</div>
               <div class="done"><b>v2 · 22/06</b>Revise &amp; resubmit<br>2 ý kiến</div>
-              <div class="cur"><b>v3 · 18/07</b>Đang chờ đối tác<br>trễ 3 ngày</div>
+              <div class="cur"><b>v3 · 18/07</b>Đang chờ CĐT<br>trễ 3 ngày</div>
             </div>
           </div></div>
           <div class="wf-c" style="flex:0 1 300px"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">3</span> Ý kiến đối tác chưa xử lý</div>
+            <div class="wf-lg"><span class="pin">3</span> Ý kiến CĐT chưa xử lý</div>
             <table><tbody>
               <tr><td>Bổ sung chi tiết neo góc trục 7</td><td><span class="tag t-warn">Chưa</span></td></tr>
               <tr><td>Ghi rõ dung sai mạch 3mm</td><td><span class="tag t-ok">Đã sửa</span></td></tr>
@@ -4485,23 +4449,27 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Theo dõi danh sách bản vẽ</td><td>Lọc theo hạng mục, trạng thái, người triển khai. Cột “Trễ” tính tự động từ ngày cam kết.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Ghi nhận vòng gửi &amp; kết quả</td><td>Mỗi vòng lưu ngày gửi, ngày trả, kết quả và tệp bản vẽ tương ứng.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Quản lý ý kiến đối tác</td><td>Nhập từng ý kiến, đánh dấu đã xử lý. Còn ý kiến chưa xử lý thì cảnh báo khi gửi lại.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Báo cáo vòng duyệt</td><td>Số vòng trung bình, số ngày nằm ở đối tác, xếp theo hạng mục và người triển khai.</td></tr>
-          <tr><td class="c">—</td><td>Bóc khối lượng theo shop</td><td>Nhập bảng khối lượng từ bản vẽ được duyệt; chuyển thẳng sang <a href="#ORD-03">ORD-03</a>.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Ghi nhận vòng gửi &amp; kết quả</td><td>Mỗi vòng lưu ngày gửi, ngày cam kết trả, ngày trả thực tế, kết quả CĐT trả qua mail và tệp bản vẽ tương ứng.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Quản lý ý kiến CĐT</td><td>Nhập từng ý kiến, đánh dấu đã xử lý. Còn ý kiến chưa xử lý thì cảnh báo khi gửi lại.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Báo cáo vòng duyệt</td><td>Số vòng trung bình, số ngày nằm ở CĐT, xếp theo hạng mục và kỹ sư phụ trách.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Nhập khối lượng bản vẽ</td><td>Kỹ sư phụ trách nhập ngay khi lập bản vẽ: STT, mã việc, mã đá, đvt, khối lượng, quy cách, ghi chú. Sửa được cho tới khi bản vẽ được phát hành.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Phát hành sang đơn hàng</td><td>TP TQT chọn bản vẽ CĐT đã chấp thuận và bấm phát hành. Từ đó bản vẽ mới hiện trong danh sách chọn của <a href="#ORD-03">ORD-03</a> và bảng khối lượng khóa lại.</td></tr>
+          <tr><td class="c">—</td><td>Xuất file gửi CĐT</td><td>Xuất bộ hồ sơ (bản vẽ + bảng khối lượng) để gửi mail cho CĐT; ghi ngày gửi và ngày cam kết trả vào vòng gửi.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Duyệt nội bộ trước khi gửi.</b> Bản vẽ phải qua kiểm tra kỹ thuật của TP TQT trước khi gửi đối tác.<span class="then">Bỏ qua bước này sẽ làm tăng số vòng gửi — chỉ số bị theo dõi trong báo cáo chất lượng bản vẽ.</span></li>
-      <li><b>Hai kết quả mở khóa đơn hàng.</b> Chỉ <code>approved</code> và <code>approved_as_noted</code> cho phép lập đơn hàng ở <a href="#ORD-03">ORD-03</a>.<span class="then"><code>approved_as_noted</code> yêu cầu cập nhật bản vẽ theo ghi chú nhưng <b>không</b> phải gửi lại, nên không tăng vòng gửi.</span></li>
-      <li><b>Vòng gửi chỉ tăng khi gửi.</b> Số vòng tăng tại thời điểm bấm “Gửi đối tác”, không tăng khi sửa nội bộ.<span class="then">Nhờ vậy chỉ số “số vòng trung bình” phản ánh đúng số lần làm phiền đối tác.</span></li>
-      <li><b>Ngày nằm ở hai phía tính riêng.</b> Hệ thống tách số ngày bản vẽ nằm ở công ty và số ngày nằm ở đối tác.<span class="then">Đây là căn cứ giải trình khi tiến độ thi công chậm do đối tác duyệt lâu.</span></li>
-      <li><b>Ý kiến chưa xử lý chặn gửi lại.</b> Còn ý kiến của đối tác chưa đánh dấu đã xử lý thì cảnh báo khi gửi vòng mới.<span class="then">Cho phép bỏ qua nhưng phải ghi lý do, vì gửi lại khi chưa xử lý hết ý kiến gần như chắc chắn bị trả về.</span></li>
-      <li><b>Khối lượng bóc tách gắn bản duyệt.</b> Bảng khối lượng theo shop chỉ nhập được trên phiên bản đã được duyệt.<span class="then">Đơn hàng lập từ đó luôn truy ngược được về đúng phiên bản bản vẽ.</span></li>
-      <li><b>Trễ hạn cam kết ghi nhận riêng.</b> Quá ngày cam kết trả mà chưa có kết quả thì cảnh báo và tính vào cột “trễ”.<span class="then">Trễ của đối tác không tính vào chỉ số chất lượng bản vẽ của người triển khai.</span></li>
+      <li><b>Khối lượng nhập cùng lúc lập bản vẽ.</b> Kỹ sư phụ trách nhập bảng khối lượng ngay khi tạo bản vẽ, trước khi trình TP TQT.<span class="then">Bảng khối lượng chính là nội dung được đem đi duyệt. Bản vẽ không có dòng khối lượng nào thì không trình duyệt nội bộ được — duyệt xong cũng không có gì để chuyển sang đơn hàng.</span></li>
+      <li><b>Duyệt nội bộ trước khi gửi.</b> TP TQT xem cả bảng khối lượng đã nhập lẫn tệp bản vẽ tải lên rồi mới bấm “Duyệt bản vẽ”; chưa duyệt nội bộ thì không xuất file gửi CĐT được.<span class="then">Bỏ qua bước này sẽ làm tăng số vòng gửi — chỉ số bị theo dõi trong báo cáo chất lượng bản vẽ.</span></li>
+      <li><b>Hai kết quả mở khóa việc phát hành.</b> Chỉ <code>approved</code> và <code>approved_as_noted</code> cho phép TP TQT bấm phát hành.<span class="then"><code>approved_as_noted</code> yêu cầu cập nhật bản vẽ theo ghi chú nhưng <b>không</b> phải gửi lại, nên không tăng vòng gửi.</span></li>
+      <li><b>Vòng gửi chỉ tăng khi gửi.</b> Số vòng tăng tại thời điểm bấm “Xuất file &amp; gửi mail CĐT”, không tăng khi kỹ sư sửa nội bộ.<span class="then">Nhờ vậy chỉ số “số vòng trung bình” phản ánh đúng số lần làm phiền CĐT.</span></li>
+      <li><b>Ngày nằm ở hai phía tính riêng.</b> Hệ thống tách số ngày bản vẽ nằm ở công ty và số ngày nằm ở CĐT.<span class="then">Đây là căn cứ giải trình khi tiến độ thi công chậm do CĐT duyệt lâu.</span></li>
+      <li><b>Ý kiến chưa xử lý chặn gửi lại.</b> Còn ý kiến của CĐT chưa đánh dấu đã xử lý thì cảnh báo khi gửi vòng mới.<span class="then">Cho phép bỏ qua nhưng phải ghi lý do, vì gửi lại khi chưa xử lý hết ý kiến gần như chắc chắn bị trả về.</span></li>
+      <li><b>Phát hành là bước riêng, không tự động.</b> Kết quả chấp thuận của CĐT chưa đưa bản vẽ vào <a href="#ORD-03">ORD-03</a>; TP TQT phải chọn bản vẽ và bấm “Phát hành sang đơn hàng”.<span class="then">CĐT trả lời qua mail, người ghi nhận kết quả vào hệ thống có thể không phải người quyết định cho sản xuất. Tách hai thao tác để việc mở đường cho đơn hàng luôn có một người chịu trách nhiệm và một dấu thời gian.</span></li>
+      <li><b>Phát hành khóa bảng khối lượng.</b> Sau khi phát hành, các dòng khối lượng không sửa được nữa; muốn sửa phải thu hồi phát hành, và không thu hồi được nếu đã có đơn hàng cắt từ bản vẽ.<span class="then">Đơn hàng lập từ bản vẽ luôn truy ngược được về đúng bộ khối lượng và đúng vòng duyệt đã sinh ra nó.</span></li>
+      <li><b>Trễ hạn cam kết ghi nhận riêng.</b> Quá ngày cam kết trả mà chưa có kết quả thì cảnh báo và tính vào cột “trễ”.<span class="then">Trễ của CĐT không tính vào chỉ số chất lượng bản vẽ của kỹ sư phụ trách.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -4509,10 +4477,14 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
-          <tr><td>Gửi khi chưa duyệt nội bộ</td><td>Chưa có xác nhận của TP TQT</td><td>“Bản vẽ chưa qua kiểm tra kỹ thuật nội bộ. Trình TP TQT trước khi gửi đối tác.”</td></tr>
+          <tr><td>Trình duyệt khi chưa nhập khối lượng</td><td><code>shop_qty[]</code> rỗng</td><td>“Bản vẽ chưa có dòng khối lượng nào. Nhập bảng khối lượng trước khi trình TP TQT.”</td></tr>
+          <tr><td>Dòng khối lượng thiếu mã đá</td><td><code>stone_code</code> trống</td><td>“Dòng {n} chưa có mã đá. Chọn mã đá từ danh mục để đơn hàng đặt đúng loại.”</td></tr>
+          <tr><td>Gửi CĐT khi chưa duyệt nội bộ</td><td>Chưa có xác nhận của TP TQT</td><td>“Bản vẽ chưa qua kiểm tra kỹ thuật nội bộ. Trình TP TQT trước khi gửi CĐT.”</td></tr>
           <tr><td>Gửi lại còn ý kiến chưa xử lý</td><td>Có ý kiến <code>chưa xử lý</code></td><td>“Còn {n} ý kiến chưa xử lý từ vòng {m}. Gửi lại bây giờ nhiều khả năng bị trả về.”</td></tr>
-          <tr><td>Ngày cam kết trước ngày gửi</td><td><code>due_at &lt; sent_at</code></td><td>“Ngày cam kết trả sớm hơn ngày gửi. Kiểm tra lại thỏa thuận với đối tác.”</td></tr>
-          <tr><td>Nhập khối lượng trên bản chưa duyệt</td><td>Kết quả chưa <code>approved</code></td><td>“Chỉ bóc khối lượng trên bản vẽ đã được duyệt. Bản hiện tại đang ở trạng thái {trạng thái}.”</td></tr>
+          <tr><td>Ngày cam kết trước ngày gửi</td><td><code>due_at &lt; sent_at</code></td><td>“Ngày cam kết trả sớm hơn ngày gửi. Kiểm tra lại thỏa thuận với CĐT.”</td></tr>
+          <tr><td>Phát hành khi CĐT chưa chấp thuận</td><td>Kết quả chưa <code>approved</code> / <code>approved_as_noted</code></td><td>“Chỉ phát hành bản vẽ CĐT đã chấp thuận. Bản hiện tại đang ở trạng thái {trạng thái}.”</td></tr>
+          <tr><td>Sửa khối lượng sau khi phát hành</td><td><code>released_at</code> đã có</td><td>“Bản vẽ đã phát hành sang đơn hàng. Thu hồi phát hành trước khi sửa bảng khối lượng.”</td></tr>
+          <tr><td>Thu hồi phát hành khi đã có đơn</td><td>Tồn tại đơn hàng cắt từ bản vẽ</td><td>“Đã có {n} đơn hàng lập từ bản vẽ này. Không thu hồi phát hành được; sửa khối lượng phải qua bản vẽ mới.”</td></tr>
           <tr><td>Thiếu tệp DWG hoặc PDF</td><td>Thiếu một trong hai định dạng</td><td>“Mỗi vòng gửi cần cả bản DWG và bản PDF.”</td></tr>
         </tbody>
       </table>
@@ -4523,18 +4495,21 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-ORD02-1</td><td>Bản vẽ v1 vừa triển khai xong</td><td>Bấm “Gửi đối tác” khi chưa duyệt nội bộ</td><td>Bị chặn kèm hướng dẫn trình TP TQT</td></tr>
-          <tr><td>UAT-ORD02-2</td><td>Bản vẽ v2 đang chờ đối tác, cam kết trả 25/07</td><td>Chờ tới 28/07</td><td>Cột “Trễ” hiện 3 ngày; sinh cảnh báo tiến độ</td></tr>
-          <tr><td>UAT-ORD02-3</td><td>Đối tác trả kết quả “approved as noted” kèm 2 ghi chú</td><td>Cập nhật bản vẽ theo ghi chú</td><td>Không tăng vòng gửi; mở khóa lập đơn hàng ngay</td></tr>
-          <tr><td>UAT-ORD02-4</td><td>Đối tác trả “revise and resubmit”</td><td>Sửa và gửi lại</td><td>Vòng gửi tăng lên v3; lịch sử giữ đủ v1, v2</td></tr>
-          <tr><td>UAT-ORD02-5</td><td>Bản vẽ chưa được duyệt</td><td>Vào ORD-03 chọn bản vẽ nguồn</td><td>Bản vẽ này không xuất hiện trong danh sách chọn</td></tr>
-          <tr><td>UAT-ORD02-6</td><td>Dự án có 24 bản vẽ nhiều vòng</td><td>Mở báo cáo vòng duyệt</td><td>Hiện số vòng trung bình theo hạng mục và theo người triển khai</td></tr>
+          <tr><td>UAT-ORD02-1</td><td>Kỹ sư vừa tạo bản vẽ, chưa nhập dòng khối lượng nào</td><td>Bấm “Trình TP TQT”</td><td>Bị chặn kèm yêu cầu nhập bảng khối lượng trước</td></tr>
+          <tr><td>UAT-ORD02-2</td><td>Bản vẽ đã nhập đủ 3 dòng khối lượng, chưa duyệt nội bộ</td><td>Bấm “Xuất file &amp; gửi CĐT”</td><td>Bị chặn kèm hướng dẫn trình TP TQT duyệt bản vẽ</td></tr>
+          <tr><td>UAT-ORD02-3</td><td>Bản vẽ v2 đang chờ CĐT, cam kết trả 25/07</td><td>Chờ tới 28/07</td><td>Cột “Trễ” hiện 3 ngày; sinh cảnh báo tiến độ</td></tr>
+          <tr><td>UAT-ORD02-4</td><td>CĐT rep mail “approved as noted” kèm 2 ghi chú</td><td>TP TQT ghi nhận kết quả và cập nhật bản vẽ theo ghi chú</td><td>Không tăng vòng gửi; nút “Phát hành sang đơn hàng” mở ra</td></tr>
+          <tr><td>UAT-ORD02-5</td><td>CĐT trả “revise and resubmit”</td><td>Kỹ sư sửa bản vẽ và bảng khối lượng rồi gửi lại</td><td>Sửa được khối lượng; vòng gửi tăng lên v3; lịch sử giữ đủ v1, v2</td></tr>
+          <tr><td>UAT-ORD02-6</td><td>CĐT đã chấp thuận nhưng TP TQT chưa bấm phát hành</td><td>Vào <a href="#ORD-03">ORD-03</a> chọn bản vẽ nguồn</td><td>Bản vẽ này <b>không</b> xuất hiện trong danh sách chọn</td></tr>
+          <tr><td>UAT-ORD02-7</td><td>Bản vẽ trên, sau khi TP TQT bấm phát hành</td><td>Vào <a href="#ORD-03">ORD-03</a> chọn lại bản vẽ nguồn</td><td>Bản vẽ hiện trong danh sách; 3 dòng khối lượng tự nạp vào đơn</td></tr>
+          <tr><td>UAT-ORD02-8</td><td>Bản vẽ đã phát hành, chưa có đơn hàng nào</td><td>Sửa một dòng khối lượng</td><td>Bị chặn kèm hướng dẫn thu hồi phát hành trước</td></tr>
+          <tr><td>UAT-ORD02-9</td><td>Dự án có 24 bản vẽ nhiều vòng</td><td>Mở báo cáo vòng duyệt</td><td>Hiện số vòng trung bình theo hạng mục và theo kỹ sư phụ trách</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-05">BID-05 BOQ hợp đồng</a><a href="#ORD-03">ORD-03 lập đơn hàng</a><a href="#PF-05">PF-05 phiên bản bản vẽ</a><a href="#RPT-02">RPT-02 báo cáo tiến độ</a></p>
+    <p class="links"><a href="#BID-05">BID-05 BOQ hợp đồng</a><a href="#ORD-03">ORD-03 lập đơn hàng</a><a href="#PF-01">PF-01 danh mục mã đá</a><a href="#PF-05">PF-05 phiên bản bản vẽ</a><a href="#RPT-02">RPT-02 báo cáo tiến độ</a><a href="#PL-A">PL-A trạng thái bản vẽ</a></p>
   </div>
 </section>
 <section class="sheet" id="ORD-03">
@@ -4563,7 +4538,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 <g id="node1" class="node">
 <title>A</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="481.54,-811.12 313.98,-811.12 313.98,-766.72 481.54,-766.72 481.54,-811.12"/>
-<text xml:space="preserve" text-anchor="middle" x="397.76" y="-792.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Shopdrawing được duyệt</text>
+<text xml:space="preserve" text-anchor="middle" x="397.76" y="-792.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Shopdrawing đã phát hành</text>
 <text xml:space="preserve" text-anchor="middle" x="397.76" y="-777.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ORD&#45;02</text>
 </g>
 <g id="node2" class="node">
@@ -4711,7 +4686,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tbody>
           <tr><td>Mã đơn hàng</td><td class="k">order_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>DH-YYYY-NNN</code>.</td></tr>
           <tr><td>Dự án · hạng mục</td><td class="k">project_id, wbs_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc — là nội dung chính của thông báo.</td></tr>
-          <tr><td>Bản vẽ nguồn</td><td class="k">shop_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ chọn được bản vẽ đã duyệt.</td></tr>
+          <tr><td>Bản vẽ nguồn</td><td class="k">shop_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ chọn được bản vẽ đã <b>phát hành</b> ở <a href="#ORD-02">ORD-02</a> — CĐT chấp thuận nhưng TP TQT chưa phát hành thì chưa hiện.</td></tr>
           <tr><td>Dòng đơn hàng</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: vật tư / sản phẩm, quy cách, ĐVT dự án, ĐVT kế toán, khối lượng, ghi chú gia công.</td></tr>
           <tr><td>Khối lượng BOQ còn lại</td><td class="k">boq_remaining</td><td>Số</td><td class="c">—</td><td>Hệ thống tính: khối lượng BOQ hợp đồng trừ lũy kế các đơn đã duyệt của cùng hạng mục.</td></tr>
           <tr><td>Lý do vượt khối lượng</td><td class="k">over_reason</td><td>Chuỗi</td><td class="c">—</td><td>Bắt buộc khi vượt; hiển thị nổi bật cho người duyệt.</td></tr>
@@ -4742,7 +4717,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
             <div class="wf-lg"><span class="pin">1</span> Thông tin đơn hàng</div>
             <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Dự án ✱</label><div class="in">DA-2026-014 · Vinhomes Grand Park GĐ 3 <em>▾</em></div></div></div></div>
             <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Hạng mục ✱</label><div class="in">HM-01 · Ốp lát mặt đứng tháp A <em>▾</em></div></div></div>
-            <div class="wf-c"><div class="wf-f"><label>Bản vẽ nguồn ✱</label><div class="in">SD-014-008 v3 <em>· đã duyệt</em></div></div></div></div>
+            <div class="wf-c"><div class="wf-f"><label>Bản vẽ nguồn ✱</label><div class="in">SD-014-008 v3 <em>· đã phát hành</em></div></div></div></div>
             <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Ngày cần hàng ✱</label><div class="in">20/08/2026</div></div></div>
             <div class="wf-c"><div class="wf-f"><label>Nơi nhận ✱</label><div class="in">Kho công trình DA-2026-014 <em>▾</em></div></div></div></div>
           </div></div>
@@ -4775,7 +4750,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Chọn dự án · hạng mục · bản vẽ</td><td>Danh sách bản vẽ chỉ hiện bản đã duyệt của hạng mục đã chọn.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Chọn dự án · hạng mục · bản vẽ</td><td>Danh sách bản vẽ chỉ hiện bản đã phát hành của hạng mục đã chọn.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Đối chiếu BOQ trực tiếp</td><td>Cập nhật ngay khi sửa khối lượng dòng. Vượt hạn mức thì đổi màu và mở ô lý do.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Nhập dòng đơn hàng</td><td>Hai cột ĐVT: ĐVT dự án để lập biên bản giao hàng, ĐVT kế toán để tính giá vốn (<a href="#PF-01">PF-01</a>).</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Đính kèm bản vẽ sản xuất</td><td>Bắt buộc ít nhất một tệp trước khi trình duyệt.</td></tr>
@@ -4786,7 +4761,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Chỉ lập từ bản vẽ đã duyệt.</b> Danh sách bản vẽ nguồn chỉ hiện bản có kết quả duyệt của đối tác.<span class="then">Khối lượng theo shop tự nạp vào các dòng đơn hàng, người lập chỉ điều chỉnh khi cần.</span></li>
+      <li><b>Chỉ lập từ bản vẽ đã phát hành.</b> Danh sách bản vẽ nguồn chỉ hiện bản TP TQT đã bấm “Phát hành sang đơn hàng” ở <a href="#ORD-02">ORD-02</a>.<span class="then">Khối lượng theo shop tự nạp vào các dòng đơn hàng, người lập chỉ điều chỉnh khi cần.</span></li>
       <li><b>Đối chiếu BOQ theo thời gian thực.</b> Lũy kế đã đặt tính từ các đơn <b>đã duyệt</b> của cùng hạng mục; đơn bị từ chối hoặc hủy không tính.<span class="then">Con số cập nhật ngay khi sửa khối lượng dòng, không chờ lưu.</span></li>
       <li><b>Vượt BOQ được phép nhưng phải giải trình.</b> Đặt vượt khối lượng hợp đồng không bị chặn.<span class="then">Bắt buộc nhập lý do, và lý do hiển thị nổi bật trên màn hình phê duyệt — vì đây là điểm phát sinh chi phí ngoài hợp đồng.</span></li>
       <li><b>Bản vẽ sản xuất là điều kiện trình.</b> Đơn không kèm ít nhất một tệp bản vẽ sản xuất thì không trình duyệt được.<span class="then">Đúng cột chứng từ của yêu cầu gốc: “Đơn hàng + bản vẽ sản xuất”.</span></li>
@@ -7058,6 +7033,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Đơn giá dự thầu</td><td class="k">bid_labor_rate</td><td>Số tiền</td><td class="c">—</td><td>Hệ thống nạp từ cấu phần nhân công của <a href="#BID-03">BID-03</a>; chỉ đọc.</td></tr>
           <tr><td>Chênh lệch</td><td class="k">variance_pct</td><td>Phần trăm</td><td class="c">—</td><td>Tính tự động; vượt 0% thì tô cảnh báo và bắt buộc giải trình.</td></tr>
           <tr><td>Giải trình</td><td class="k">justification</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi có dòng vượt đơn giá dự thầu.</td></tr>
+          <tr><td>Xác nhận hạng mục lỗ</td><td class="k">loss_ack</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi có hạng mục vượt doanh thu; lưu kèm người và thời điểm xác nhận.</td></tr>
           <tr><td>Ý kiến P. Đấu thầu</td><td class="k">bid_dept_opinion</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Bắt buộc ở chặng 2, kể cả khi đồng thuận.</td></tr>
           <tr><td>Hiệu lực</td><td class="k">effective_from</td><td>Ngày</td><td class="c req">✱</td><td>Không cho lùi về trước ngày duyệt — bảo đảm nguyên tắc “duyệt trước khi triển khai”.</td></tr>
         </tbody>
@@ -7074,6 +7050,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Ngày hiệu lực không lùi về trước ngày duyệt.</li>
       <li>Đơn giá khoán đã duyệt trở thành gợi ý mặc định khi lập giá vốn nhân công cho gói thầu mới.</li>
       <li>Tổng giá trị khoán theo hạng mục so được với doanh thu BOQ của chính hạng mục đó.</li>
+      <li>Hạng mục có giá khoán vượt doanh thu của chính nó thì phải được chấp thuận bằng xác nhận có ghi người và thời điểm mới trình duyệt được.</li>
     </ol>
 
     <h4>Mockup UI — Công trình › Giá khoán tổ đội</h4>
@@ -7138,6 +7115,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Ý kiến P. Đấu thầu là bắt buộc.</b> Chặng thẩm định không bỏ qua được, kể cả khi hoàn toàn đồng thuận.<span class="then">Ý kiến trống thì không chuyển được sang lãnh đạo.</span></li>
       <li><b>Khóa đơn giá sau duyệt.</b> Bảng giá được duyệt thì đơn giá khóa vĩnh viễn.<span class="then">Thay đổi chỉ qua phụ lục có hậu tố <code>-PLn</code>, giữ nguyên bản gốc để đối chiếu.</span></li>
       <li><b>Là điều kiện của giao khoán.</b> Không có bảng giá hiệu lực thì không lập được hồ sơ giao khoán nhân công ở <a href="#PRJ-03">PRJ-03</a>.<span class="then">Chặn ngay tại bước tạo hồ sơ kèm liên kết tới bảng giá đang chờ duyệt.</span></li>
+      <li><b>Hạng mục lỗ phải được chấp thuận.</b> Tổng giá khoán của một hạng mục vượt doanh thu hợp đồng của chính hạng mục đó thì không trình duyệt được cho tới khi có xác nhận chấp thuận.<span class="then">Cảnh báo kèm xác nhận chứ không chặn cứng: bù chéo giữa các hạng mục là quyết định kinh doanh hợp lệ. Xác nhận ghi rõ người và thời điểm, hiện nguyên văn ở màn hình thẩm định và màn hình duyệt.</span></li>
       <li><b>Trở thành đơn giá tham chiếu.</b> Đơn giá đã duyệt được dùng làm gợi ý giá vốn nhân công cho gói thầu mới có đầu việc tương tự.<span class="then">Gợi ý ưu tiên dự án cùng vùng miền và cùng loại hình công trình.</span></li>
     </ol>
 
@@ -7151,6 +7129,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Có dòng vượt, thiếu giải trình</td><td>Tồn tại <code>variance &gt; 0</code></td><td>“Có {n} dòng vượt đơn giá dự thầu. Nhập giải trình trước khi trình duyệt.”</td></tr>
           <tr><td>Ý kiến thẩm định trống</td><td><code>bid_dept_opinion</code> rỗng</td><td>“Nhập ý kiến thẩm định, kể cả khi đồng thuận — lãnh đạo cần căn cứ để quyết định.”</td></tr>
           <tr><td>Tổng khoán vượt doanh thu hạng mục</td><td>Giá khoán &gt; doanh thu BOQ</td><td>“Giá khoán hạng mục {mã} vượt doanh thu hợp đồng của chính hạng mục đó. Hạng mục này chắc chắn lỗ.”</td></tr>
+          <tr><td>Hạng mục lỗ chưa được chấp thuận</td><td>Có hạng mục vượt doanh thu, <code>loss_ack</code> rỗng</td><td>“Giá khoán hạng mục {mã} vượt doanh thu hợp đồng của chính hạng mục đó. Hạng mục này chắc chắn lỗ. Xác nhận chấp thuận trước khi trình duyệt.”</td></tr>
           <tr><td>Tổ đội chưa gán dự án</td><td>Tổ đội không thuộc dự án</td><td>“Tổ {mã} chưa được gán vào dự án này. Gán tại danh mục tổ đội trước.”</td></tr>
         </tbody>
       </table>
@@ -7168,6 +7147,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-PRJ01-5</td><td>Bảng giá vừa được lãnh đạo duyệt</td><td>Mở lại và thử sửa đơn giá</td><td>Ô đơn giá chỉ đọc; có nút “Lập phụ lục”</td></tr>
           <tr><td>UAT-PRJ01-6</td><td>Dự án chưa có bảng giá hiệu lực</td><td>Vào PRJ-03 lập hồ sơ giao khoán</td><td>Bị chặn kèm liên kết tới bảng giá đang chờ duyệt</td></tr>
           <tr><td>UAT-PRJ01-7</td><td>Đặt ngày hiệu lực 01/01, hôm nay 02/02</td><td>Duyệt bảng giá</td><td>Bị chặn; ngày hiệu lực sớm nhất là hôm nay</td></tr>
+          <tr><td>UAT-PRJ01-8</td><td>Giá khoán HM-02 vượt doanh thu BOQ của HM-02</td><td>Bấm “Trình duyệt”</td><td>Bị chặn kèm cảnh báo hạng mục lỗ; nhập xác nhận chấp thuận rồi trình lại thì đi tiếp</td></tr>
         </tbody>
       </table>
     </div>
@@ -8014,7 +7994,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Giá xuất kho</td><td class="k">unit_cost</td><td>Số tiền</td><td class="c">—</td><td>Hệ thống tính theo bình quân gia quyền tại thời điểm ghi nhận, không nhập tay.</td></tr>
           <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Mặc định theo nhóm vật tư.</td></tr>
           <tr><td>Người nhận · ký xác nhận</td><td class="k">receiver, signature</td><td>Tham chiếu</td><td class="c req">✱</td><td>Đại diện tổ nhận ký điện tử; thay cho ký tay trên phiếu giấy.</td></tr>
-          <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>nháp</code> · <code>chờ duyệt</code> · <code>đã duyệt</code> · <code>đã giao</code> · <code>hủy</code>.</td></tr>
+          <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>nháp</code> · <code>chờ duyệt</code> · <code>GĐ dự án duyệt</code> · <code>đã duyệt</code> · <code>đã giao</code> · <code>hủy</code>.</td></tr>
         </tbody>
       </table>
     </div>
@@ -8043,6 +8023,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Tồn kho dự án hiển thị theo ba con số: tồn, đang giữ (đã duyệt xuất chưa giao), khả dụng.</li>
       <li>Kiểm kê định kỳ lập được biên bản chênh lệch và bút toán xử lý thừa / thiếu.</li>
       <li>Vật tư tồn cuối dự án đưa được vào hồ sơ thanh toán vật tư ở <a href="#ORD-08">ORD-08</a> hoặc điều chuyển sang dự án khác.</li>
+      <li>Mỗi lần xử lý tồn cuối lập một phiếu xử lý tồn ghi sổ theo giá bình quân; điều chuyển làm phát sinh phiếu nhập tương ứng ở dự án nhận.</li>
     </ol>
 
     <h4>Mockup UI — Kho › Kho dự án</h4>
@@ -8096,12 +8077,13 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Hạng mục và tổ nhận là bắt buộc.</b> Phiếu xuất thiếu một trong hai trường thì không lưu được.<span class="then">Hai trường này quyết định chi phí rơi vào hạng mục nào và khấu trừ vào tổ nào — thiếu là mất dấu chi phí.</span></li>
       <li><b>Giá xuất do hệ thống tính.</b> Bình quân gia quyền tại thời điểm ghi nhận, ô chỉ đọc.<span class="then">Người dùng không sửa được, kể cả Kế toán trưởng; điều chỉnh giá vốn phải qua bút toán riêng ở <a href="#ACC-08">ACC-08</a>.</span></li>
       <li><b>Không xuất quá khả dụng.</b> Khả dụng bằng tồn trừ phần đang giữ (đã duyệt xuất nhưng chưa giao).<span class="then">Chặn ngay khi nhập, kèm số khả dụng hiện tại của vật tư đó.</span></li>
-      <li><b>Duyệt rồi mới giữ hàng.</b> Phiếu xuất được duyệt sẽ chuyển khối lượng từ “tồn” sang “đang giữ”; giao xong mới trừ khỏi tồn.<span class="then">Nhờ vậy hai phiếu xuất cùng lúc không cùng tiêu một lượng tồn.</span></li>
+      <li><b>Hai chữ ký theo ACC-04.</b> Phiếu xuất kho dự án đi qua chữ ký của GĐ dự án rồi mới tới chữ ký của Kế toán trưởng.<span class="then">Chữ ký thứ nhất không giữ hàng — nếu giữ, một phiếu mà Kế toán trưởng sau đó từ chối vẫn chiếm tồn trong suốt thời gian chờ, và hai phiếu như vậy cùng giữ lượng tồn không phiếu nào được quyền có.</span></li>
+      <li><b>Duyệt rồi mới giữ hàng.</b> Chữ ký thứ hai chuyển khối lượng từ “tồn” sang “đang giữ” và chốt giá xuất bình quân; giao xong mới trừ khỏi tồn.<span class="then">Nhờ vậy hai phiếu xuất cùng lúc không cùng tiêu một lượng tồn.</span></li>
       <li><b>Tổ nhận ký điện tử.</b> Đại diện tổ nhận ký trên ứng dụng thay cho ký tay trên phiếu giấy.<span class="then">Phiếu in ra hiển thị dấu ký kèm người, thời điểm và thiết bị.</span></li>
       <li><b>Xuất kho là thời điểm thành chi phí.</b> Vật tư nhập kho dự án chưa phải chi phí; chỉ khi xuất cho tổ đội mới ghi chi phí vào hạng mục.<span class="then">Đây là điểm khác biệt cốt lõi giữa kho dự án và mua không qua kho ở <a href="#ACC-03">ACC-03</a>.</span></li>
       <li><b>Một lần xuất, hai đích ghi nhận.</b> Giá trị xuất vào sổ chi phí công trình đồng thời vào bảng khấu trừ VTTB của tổ đội trong kỳ.<span class="then">Hai đích này không cộng trùng vì bảng khấu trừ chỉ dùng để trừ tiền khoán, không phải ghi chi phí lần hai.</span></li>
-      <li><b>Kiểm kê sinh bút toán.</b> Chênh lệch kiểm kê lập biên bản và sinh bút toán xử lý thừa hoặc thiếu.<span class="then">Thiếu quá định mức hao hụt cho phép thì phải quy trách nhiệm trước khi ghi sổ.</span></li>
-      <li><b>Tồn cuối dự án có ba lối ra.</b> Điều chuyển sang dự án khác, hoàn nhập về nhà máy, hoặc đưa vào hồ sơ thanh toán vật tư ở <a href="#ORD-08">ORD-08</a>.<span class="then">Kho dự án chỉ đóng được khi tồn bằng 0.</span></li>
+      <li><b>Kiểm kê sinh bút toán.</b> Chênh lệch kiểm kê lập biên bản và sinh bút toán xử lý thừa hoặc thiếu.<span class="then">Định mức hao hụt cho phép khai theo vật tư (phần trăm của số sổ sách). Thiếu trong định mức thì ghi sổ kèm ghi chú; thiếu quá định mức thì phải đính biên bản quy trách nhiệm trước khi ghi sổ. Ghi sổ đưa số tồn về bằng số đếm thực tế và đẩy giá trị phần thiếu sang sổ chi phí công trình.</span></li>
+      <li><b>Tồn cuối dự án có ba lối ra.</b> Điều chuyển sang dự án khác, hoàn nhập về nhà máy, hoặc đưa vào hồ sơ thanh toán vật tư ở <a href="#ORD-08">ORD-08</a>.<span class="then">Mỗi lối ra là một phiếu xử lý tồn (<code>XLT-&lt;project&gt;-NNNN</code>) ghi sổ theo giá bình quân, trừ vào tồn chứ không sinh chi phí — vật tư chỉ thành chi phí khi xuất cho tổ đội. Điều chuyển đồng thời sinh phiếu nhập “điều chuyển từ dự án khác” bên dự án nhận, giữ nguyên giá vốn. Kho dự án chỉ đóng được khi tồn bằng 0.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -8132,6 +8114,10 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-PRJ04-6</td><td>Kiểm kê thiếu 12 m², định mức hao hụt 5 m²</td><td>Lưu kết quả kiểm kê</td><td>Yêu cầu biên bản quy trách nhiệm trước khi sinh bút toán</td></tr>
           <tr><td>UAT-PRJ04-7</td><td>Dự án quyết toán xong, kho còn 40 m²</td><td>Bấm đóng kho</td><td>Bị chặn kèm ba lựa chọn xử lý tồn</td></tr>
           <tr><td>UAT-PRJ04-8</td><td>Kế toán trưởng mở phiếu xuất đã duyệt</td><td>Thử sửa giá xuất kho</td><td>Ô chỉ đọc; gợi ý dùng bút toán điều chỉnh ở ACC-08</td></tr>
+          <tr><td>UAT-PRJ04-9</td><td>Phiếu xuất 300 m² đang ở “chờ duyệt”</td><td>Kế toán trưởng bấm duyệt khi GĐ dự án chưa ký</td><td>Bị chặn; tồn và “đang giữ” không đổi</td></tr>
+          <tr><td>UAT-PRJ04-10</td><td>GĐ dự án đã ký phiếu xuất 300 m²</td><td>Xem tồn kho</td><td>“Đang giữ” chưa tăng; chỉ tăng sau chữ ký của Kế toán trưởng</td></tr>
+          <tr><td>UAT-PRJ04-11</td><td>Vật tư có định mức hao hụt 0,5%; sổ 1.000, đếm 988</td><td>Lưu xử lý chênh lệch không kèm biên bản</td><td>Bị chặn: thiếu 12 vượt định mức 5, cần biên bản quy trách nhiệm</td></tr>
+          <tr><td>UAT-PRJ04-12</td><td>Dự án quyết toán, kho còn 20 m²</td><td>Lập phiếu xử lý tồn “điều chuyển” sang dự án khác và ghi sổ</td><td>Tồn giảm 20; dự án nhận có phiếu nhập điều chuyển đúng giá bình quân</td></tr>
         </tbody>
       </table>
     </div>
@@ -8726,6 +8712,11 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <p style="margin:0">Yêu cầu gốc băn khoăn: “mở kho theo từng dự án — xem nếu như vậy có nhiều kho lắm không?”. Đề xuất của đặc tả: <b>vẫn mở kho theo dự án</b>, vì đó là cách duy nhất để tổng hợp nhập – xuất – tồn theo dự án đúng yêu cầu báo cáo. Kho dự án được tạo tự động, tự đóng khi dự án quyết toán xong, và giao diện mặc định <em>chỉ hiển thị kho của các dự án đang thi công</em> — nên số kho tăng theo dự án không gây rối cho người dùng. Với dự án nhỏ dùng chung mặt bằng, cho phép gộp nhiều dự án vào một kho vật lý bằng cách gắn nhiều <code>project_id</code> lên cùng một kho.</p>
     </div>
 
+    <div class="note q">
+      <b>Vấn đề cần chốt · Q-17</b>
+      <p style="margin:0">Bảng <em>Kiểm tra dữ liệu</em> bên dưới có dòng “Định mức tối thiểu vượt sức chứa khai báo”, nhưng bảng <em>Tham số</em> ở trên không khai trường sức chứa — chỉ có <code>min_stock</code> theo từng vật tư, nên kiểm tra đó chưa có gì để so. Đề xuất của đặc tả: khai thêm <b>tồn tối đa</b> (<code>max_stock</code>) cùng bảng và cùng cặp khóa <em>kho × vật tư</em>, để kiểm tra này chạy được và để <a href="#ACC-03">ACC-03</a> cảnh báo được khi nhập vượt sức chứa. Xem <a href="#PL-C">Q-17</a>.</p>
+    </div>
+
     <h4>Mockup UI — Kho › Danh mục kho</h4>
     <div class="wf">
       <div class="wf-bar"><span class="wf-crumb">Kho ›</span><b>Danh mục kho</b><span class="wf-crumb">9 kho đang hoạt động · giá trị tồn 15,8 tỷ</span><span class="sp"></span><span class="wf-btn pri">+ Khai báo kho</span></div>
@@ -8791,7 +8782,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Đóng kho còn tồn</td><td>Tồn &gt; 0</td><td>“Kho còn {giá trị} tồn. Điều chuyển hoặc hoàn nhập hết trước khi đóng.”</td></tr>
           <tr><td>Xóa kho có lịch sử</td><td>Có chứng từ tham chiếu</td><td>“Kho đã phát sinh {n} chứng từ, không xóa được. Chọn Đóng kho để ngừng sử dụng.”</td></tr>
           <tr><td>Kho dự án không gắn dự án</td><td>Nhóm kho là dự án, thiếu <code>project_id</code></td><td>“Kho thuộc nhóm dự án phải gắn ít nhất một mã dự án.”</td></tr>
-          <tr><td>Định mức lớn hơn sức chứa</td><td>Định mức &gt; tồn tối đa khai báo</td><td>“Định mức tối thiểu {số} vượt sức chứa khai báo {số}. Kiểm tra lại đơn vị tính.”</td></tr>
+          <tr><td>Định mức lớn hơn sức chứa</td><td>Định mức &gt; tồn tối đa khai báo — trường sức chứa chưa khai, xem <a href="#PL-C">Q-17</a></td><td>“Định mức tối thiểu {số} vượt sức chứa khai báo {số}. Kiểm tra lại đơn vị tính.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -10278,7 +10269,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#ACC-01">ACC-01 đề xuất mua TS, CCDC</a><a href="#ACC-02">ACC-02 kho tổng</a><a href="#ACC-08">ACC-08 phân bổ khấu hao chung</a><a href="#RPT-01">RPT-01 tổng hợp CCDC, TSCĐ</a><a href="#MOB-01">MOB-01 quét QR</a></p>
+    <p class="links"><a href="#ACC-01">ACC-01 đề xuất mua TS, CCDC</a><a href="#ACC-02">ACC-02 kho tổng</a><a href="#ACC-03">ACC-03 phiếu nhập ghi nguyên giá</a><a href="#ACC-07">ACC-07 chi phí bảo trì</a><a href="#ACC-08">ACC-08 phân bổ khấu hao chung</a><a href="#RPT-01">RPT-01 tổng hợp CCDC, TSCĐ</a><a href="#MOB-01">MOB-01 quét QR</a></p>
   </div>
 </section>
 <section class="sheet" id="ACC-07">
@@ -10933,7 +10924,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#PF-01">PF-01 khoản mục &amp; mã thống kê</a><a href="#ACC-06">ACC-06 khấu hao kho tổng</a><a href="#ACC-09">ACC-09 kết chuyển lãi lỗ</a><a href="#RPT-01">RPT-01 sổ chi phí công trình</a></p>
+    <p class="links"><a href="#PF-01">PF-01 khoản mục &amp; mã thống kê</a><a href="#PF-03">PF-03 Kế toán trưởng duyệt bảng phân bổ</a><a href="#ACC-06">ACC-06 khấu hao kho tổng</a><a href="#ACC-09">ACC-09 kết chuyển lãi lỗ</a><a href="#RPT-01">RPT-01 sổ chi phí công trình</a><a href="#RPT-03">RPT-03 lãi lỗ dự án</a></p>
   </div>
 </section>
 <section class="sheet" id="ACC-09">
@@ -11249,10 +11240,10 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         </div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">5</span> Lãi lỗ dự án — đối chiếu với dự thầu</div>
-          <table><thead><tr><th>Dự án</th><th class="num">Doanh thu ghi nhận</th><th class="num">Giá vốn kết chuyển</th><th class="num">Lợi nhuận gộp</th><th class="num">Biên thực tế</th><th class="num">Biên dự thầu</th><th>Chênh</th></tr></thead>
+          <table><thead><tr><th>Dự án</th><th class="num">Doanh thu ghi nhận</th><th class="num">Giá vốn kết chuyển</th><th class="num">Lợi nhuận gộp</th><th class="num">Chi phí chung phân bổ</th><th class="num">Lợi nhuận thuần</th><th class="num">Biên thuần</th><th class="num">Biên dự thầu</th><th>Chênh</th></tr></thead>
           <tbody>
-            <tr><td>DA-2026-014</td><td class="num">18.900.000.000</td><td class="num">14.180.000.000</td><td class="num">4.720.000.000</td><td class="num">25,0%</td><td class="num">24,9%</td><td><span class="tag t-ok">+0,1 đ%</span></td></tr>
-            <tr><td>DA-2026-011</td><td class="num">9.400.000.000</td><td class="num">7.640.000.000</td><td class="num">1.760.000.000</td><td class="num">18,7%</td><td class="num">22,4%</td><td><span class="tag t-crit">−3,7 đ%</span></td></tr>
+            <tr><td>DA-2026-014</td><td class="num">18.900.000.000</td><td class="num">14.180.000.000</td><td class="num">4.720.000.000</td><td class="num">960.000.000</td><td class="num">3.760.000.000</td><td class="num">19,9%</td><td class="num">24,9%</td><td><span class="tag t-crit">−5,0 đ%</span></td></tr>
+            <tr><td>DA-2026-011</td><td class="num">9.400.000.000</td><td class="num">7.640.000.000</td><td class="num">1.760.000.000</td><td class="num">430.000.000</td><td class="num">1.330.000.000</td><td class="num">14,1%</td><td class="num">22,4%</td><td><span class="tag t-crit">−8,3 đ%</span></td></tr>
           </tbody></table>
         </div>
       </div>
@@ -11282,6 +11273,10 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Giá thành nhà máy ghi ngược giá nhập.</b> Giá thành sản phẩm tính ra được cập nhật thành giá nhập kho thành phẩm.<span class="then">Từ đó thành giá xuất kho ở kỳ sau — vòng khép kín của nhà máy.</span></li>
       <li><b>Cảnh báo khi thiếu doanh thu.</b> Dự án có chi phí nhưng chưa có đơn hàng nào áp giá thì hiện cảnh báo thay vì báo lỗ.<span class="then">Tránh đọc nhầm số liệu giai đoạn đầu dự án.</span></li>
       <li><b>Đối chiếu tổng.</b> Tổng chi phí trực tiếp cộng phân bổ của mọi dự án phải bằng tổng chi phí trên sổ cái.<span class="then">Có báo cáo đối chiếu chạy tự động cuối mỗi kỳ; lệch thì chỉ ra khoản mục gây lệch.</span></li>
+      <li><b>Bút toán kết chuyển đi qua 154.</b> Chốt kỳ ghi Nợ 154 / Có 621, 622, 627 để tập hợp chi phí sản xuất, rồi Nợ 632 / Có 154 phần đã hoàn thành.<span class="then">Số dư 154 của mỗi dự án sau bút toán chính là dở dang cuối kỳ — đọc được trên sổ chứ không chỉ trong báo cáo. Kết chuyển ra số âm (sản lượng bị điều chỉnh giảm) thì đảo chiều bút toán, không ghi số âm.</span></li>
+      <li><b>Chi phí chung phân bổ không vào giá thành.</b> Khoản 642 phân bổ về dự án đi thẳng vào kết quả kinh doanh của kỳ, không qua 154 và không thành dở dang.<span class="then">Theo <a href="#PL-C">PL-C Q-23</a> phương án (a) và ranh giới TT200. Vì vậy bảng lãi lỗ có hai mức — lợi nhuận gộp sau giá vốn, lợi nhuận thuần sau chi phí chung — và cột đối chiếu với dự thầu đọc từ <b>biên thuần</b>, vì giá vốn trong báo giá <a href="#BID-03">BID-03</a> đã cộng chi phí chung.</span></li>
+      <li><b>Chốt kỳ theo thứ tự.</b> Không chốt được một kỳ khi còn kỳ trước nó đang mở.<span class="then">Số dư 154 là tổng cộng dồn của các bút toán kết chuyển, còn dở dang trong báo cáo tính từ lũy kế; hai con số chỉ khớp nếu mọi kỳ trước đã kết chuyển.</span></li>
+      <li><b>Mở lại kỳ thì đảo bút toán kết chuyển.</b> Phiếu đảo mang ngày trong chính kỳ được mở lại, không phải ngày hôm nay.<span class="then">Ngày hôm nay sẽ đẩy phiếu đảo sang kỳ khác và làm sai cả hai kỳ. Sau khi đảo, đóng lại kỳ sẽ kết chuyển lại từ đầu theo số liệu mới.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -11294,6 +11289,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Dự án chưa áp giá</td><td>Doanh thu bằng 0, chi phí &gt; 0</td><td>“Dự án {mã} chưa có đơn hàng áp giá. Số lỗ hiển thị chưa phản ánh đúng kết quả.”</td></tr>
           <tr><td>Ghi chứng từ vào kỳ đã chốt</td><td>Ngày thuộc kỳ khóa</td><td>“Kỳ {kỳ} đã chốt ngày {ngày}. Chứng từ sẽ ghi vào kỳ hiện tại.”</td></tr>
           <tr><td>Đối chiếu lệch</td><td>Tổng dự án ≠ sổ cái</td><td>“Lệch {giá trị} giữa tổng chi phí dự án và sổ cái. Khoản mục gây lệch: {danh sách}.”</td></tr>
+          <tr><td>Chốt kỳ vượt thứ tự</td><td>Còn kỳ trước đang mở</td><td>“Kỳ {kỳ trước} vẫn đang mở. Chốt kỳ theo thứ tự — {kỳ trước} trước, rồi tới {kỳ}.”</td></tr>
+          <tr><td>Kỳ đã kết chuyển</td><td>Kỳ đã có phiếu kết chuyển còn hiệu lực</td><td>“Kỳ {kỳ} đã kết chuyển giá thành ở phiếu {mã phiếu}.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -11316,7 +11313,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#PRJ-02">PRJ-02 sản lượng</a><a href="#PRJ-03">PRJ-03 nhân công</a><a href="#PRJ-04">PRJ-04 vật tư</a><a href="#ACC-06">ACC-06 khấu hao</a><a href="#ACC-08">ACC-08 phân bổ chung</a><a href="#ORD-06">ORD-06 doanh thu</a><a href="#RPT-03">RPT-03 báo cáo lãi lỗ</a></p>
+    <p class="links"><a href="#PRJ-02">PRJ-02 sản lượng</a><a href="#PRJ-03">PRJ-03 nhân công</a><a href="#PRJ-04">PRJ-04 vật tư</a><a href="#ACC-06">ACC-06 khấu hao</a><a href="#ACC-08">ACC-08 phân bổ chung</a><a href="#ORD-06">ORD-06 doanh thu</a><a href="#ORD-09">ORD-09 hồ sơ khối lượng</a><a href="#ACC-03">ACC-03 mua không qua kho</a><a href="#RPT-03">RPT-03 báo cáo lãi lỗ</a><a href="#PL-C">PL-C Q-23, Q-25, Q-26</a></p>
   </div>
 </section>
 <section class="block" id="grp-rpt">
@@ -12251,6 +12248,21 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       </table>
     </div>
 
+    <h4>Ranh giới thiết bị — đọc, duyệt so với lập chứng từ</h4>
+    <p>Trên điện thoại, hai phần mềm chia việc dứt khoát. Bản web <code>abs-ms</code> mở trên màn hình hẹp là nơi <b>tra cứu và phê duyệt</b>; mọi việc <b>lập chứng từ</b> khi rời bàn làm việc thuộc về ứng dụng này. Đây là ranh giới thiết kế, không phải thiếu sót của bản web: luồng lập chứng từ cần bàn phím, nhiều cột đối chiếu và thao tác in ấn nên chỉ dựng đủ trên máy bàn.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">Việc</th><th>Bản web trên màn hình hẹp</th><th>Ứng dụng di động</th><th class="c">Đặc tả</th></tr></thead>
+        <tbody>
+          <tr><td>Tra cứu, đọc chứng từ</td><td>Có — danh sách và thẻ tóm tắt</td><td>Có</td><td class="k"><a href="#ORD-04">ORD-04</a></td></tr>
+          <tr><td>Phê duyệt, ký điện tử</td><td>Có</td><td>Có</td><td class="k"><a href="#PF-03">PF-03</a>, <a href="#PF-04">PF-04</a></td></tr>
+          <tr><td>Lập &amp; trình duyệt đơn hàng</td><td>Không — danh sách đơn hàng không có nút “Lập đơn hàng”</td><td>Có</td><td class="k"><a href="#ORD-03">ORD-03</a></td></tr>
+          <tr><td>Cập nhật, hủy đơn hàng</td><td>Không</td><td>Có</td><td class="k"><a href="#ORD-07">ORD-07</a></td></tr>
+          <tr><td>Xác nhận nhận hàng tại công trường</td><td>Không</td><td>Có</td><td class="k"><a href="#ORD-05">ORD-05</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h4>Lưu đồ — làm việc khi mất sóng</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:463px;margin:0 auto"><svg role="img" aria-label="Hình MOB-01.1 Ranh giới ngoại tuyến: nhập liệu hiện trường được phép làm khi mất sóng, phê duyệt và ký điện tử thì không — vì chữ ký cần mã băm nội dung tại thời điểm ký."
  viewBox="0.00 0.00 463.00 682.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -12483,11 +12495,13 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Ảnh chụp từ ứng dụng tự gắn ngày giờ và vị trí, không sửa được.</li>
       <li>Quét QR tra ra vật tư hoặc tài sản trong dưới 2 giây khi có mạng.</li>
       <li>Người dùng chỉ thấy dữ liệu trong phạm vi quyền của mình, giống hệt trên web.</li>
+      <li>Bản web mở trên điện thoại không có lối lập chứng từ nào; người dùng lập, sửa chứng từ khi rời bàn làm việc bằng ứng dụng này.</li>
     </ol>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Cùng bộ quyền với web.</b> Ứng dụng không có bộ quyền riêng; mọi giới hạn của <a href="#PF-02">PF-02</a> áp dụng y hệt.<span class="then">Người dùng không thể thấy trên điện thoại thứ mà họ không thấy trên web.</span></li>
+      <li><b>Lập chứng từ trên điện thoại là việc của ứng dụng.</b> Bản web trên màn hình hẹp chỉ tra cứu và phê duyệt; lập &amp; trình duyệt đơn hàng (<a href="#ORD-03">ORD-03</a>), cập nhật hoặc hủy đơn hàng (<a href="#ORD-07">ORD-07</a>) và xác nhận nhận hàng tại công trường (<a href="#ORD-05">ORD-05</a>) đều thực hiện trên ứng dụng.<span class="then">Bản web chủ động không hiện lối lập chứng từ khi màn hình hẹp, thay vì mở một luồng chỉ hoàn tất được trên máy bàn.</span></li>
       <li><b>Ranh giới ngoại tuyến rõ ràng.</b> Nhập sản lượng và chụp ảnh làm được khi mất sóng; phê duyệt và ký điện tử thì không.<span class="then">Chữ ký cần mã băm nội dung tại thời điểm ký, nên bắt buộc có kết nối.</span></li>
       <li><b>Hàng đợi theo thứ tự nhập.</b> Bản ghi ngoại tuyến đồng bộ theo đúng thứ tự người dùng đã nhập.<span class="then">Tránh trường hợp bản ghi sau ghi đè bản ghi trước khi cùng một đầu việc.</span></li>
       <li><b>Xung đột không tự ghi đè.</b> Bản ghi ngoại tuyến gặp xung đột (ví dụ đợt đã bị chốt) thì giữ lại và báo cho người nhập.<span class="then">Người nhập chọn ghi vào kỳ mới hoặc bỏ; hệ thống không tự quyết.</span></li>
@@ -12525,12 +12539,14 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-MOB01-6</td><td>Đợt bị chốt trong lúc ngoại tuyến</td><td>Đồng bộ</td><td>Không tự ghi đè; hỏi người nhập cách xử lý</td></tr>
           <tr><td>UAT-MOB01-7</td><td>Đang ở kho, có mạng</td><td>Quét QR trên kiện đá</td><td>Hiện tồn khả dụng theo kho trong dưới 2 giây</td></tr>
           <tr><td>UAT-MOB01-8</td><td>Thủ kho phạm vi 1 kho</td><td>Mở màn hình tra cứu tồn</td><td>Chỉ thấy kho được phân công, giống hệt trên web</td></tr>
+          <tr><td>UAT-MOB01-9</td><td>Nhân viên có quyền lập đơn, mở bản web trên điện thoại</td><td>Vào danh sách đơn hàng (<a href="#ORD-04">ORD-04</a>)</td><td>Xem và mở được đơn hàng; không có nút “Lập đơn hàng”</td></tr>
+          <tr><td>UAT-MOB01-10</td><td>Tiếp UAT-9, cùng người dùng</td><td>Mở ứng dụng di động và lập đơn hàng theo <a href="#ORD-03">ORD-03</a></td><td>Lập và trình duyệt được trọn vẹn trên ứng dụng</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#PF-03">PF-03 phê duyệt</a><a href="#PF-04">PF-04 thông báo &amp; ký</a><a href="#PRJ-02">PRJ-02 sản lượng</a><a href="#ORD-05">ORD-05 xác nhận nhận hàng</a><a href="#ACC-06">ACC-06 QR tài sản</a><a href="#RPT-04">RPT-04 dashboard</a></p>
+    <p class="links"><a href="#PF-03">PF-03 phê duyệt</a><a href="#PF-04">PF-04 thông báo &amp; ký</a><a href="#PRJ-02">PRJ-02 sản lượng</a><a href="#ORD-03">ORD-03 lập &amp; trình đơn hàng</a><a href="#ORD-04">ORD-04 danh sách &amp; phê duyệt đơn hàng</a><a href="#ORD-05">ORD-05 xác nhận nhận hàng</a><a href="#ORD-07">ORD-07 cập nhật &amp; hủy đơn hàng</a><a href="#ACC-06">ACC-06 QR tài sản</a><a href="#RPT-04">RPT-04 dashboard</a></p>
   </div>
 </section>
 <section class="block" id="PL-A">
@@ -12540,22 +12556,28 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <table>
       <thead><tr><th>Chứng từ</th><th class="c">Mã</th><th>Chuỗi trạng thái</th><th>Điểm khóa chỉnh sửa</th></tr></thead>
       <tbody>
-        <tr><td>Gói thầu</td><td class="k">GT</td><td>Đang thẩm định → Đang áp giá → Đang đàm phán → Chốt giá → <span class="tag t-ok">Đã ký HĐ</span> · <span class="tag t-neu">Đã hủy</span></td><td>Khi chốt giá</td></tr>
+        <tr><td>Gói thầu</td><td class="k">GT</td><td><span class="tag t-neu">Nháp</span> → Đang thẩm định → Đang áp giá → Đang đàm phán → Chốt giá → <span class="tag t-ok">Đã ký HĐ</span> · <span class="tag t-neu">Đã hủy</span><br>Gói vừa khai ở <a href="#BID-01">BID-01</a> nằm ở “Nháp”; chỉ thao tác “Chuyển thẩm định” mới đưa sang “Đang thẩm định”.</td><td>Khi chốt giá</td></tr>
         <tr><td>Hợp đồng</td><td class="k">HD</td><td>Soạn thảo → Đang ký nội bộ → Chờ đối tác ký → <span class="tag t-ok">Có hiệu lực</span> → Thanh lý</td><td>Khi bắt đầu ký nội bộ</td></tr>
-        <tr><td>Bản vẽ shop</td><td class="k">SD</td><td>Đang triển khai → Duyệt nội bộ → Chờ đối tác → Revise &amp; resubmit → <span class="tag t-ok">Approved</span> · Approved as noted</td><td>Khi gửi đối tác</td></tr>
+        <tr><td>Bản vẽ shop</td><td class="k">SD</td><td>Đang lập (nhập khối lượng) → Chờ duyệt nội bộ → Duyệt nội bộ → Chờ CĐT → Revise &amp; resubmit → Approved · Approved as noted → <span class="tag t-ok">Đã phát hành</span> · <span class="tag t-crit">Từ chối</span><br>“Đã phát hành” là trạng thái riêng do TP TQT bấm ở <a href="#ORD-02">ORD-02</a>: CĐT chấp thuận chưa đưa bản vẽ vào <a href="#ORD-03">ORD-03</a>.</td><td>Tệp bản vẽ khóa khi gửi CĐT · bảng khối lượng khóa khi phát hành</td></tr>
         <tr><td>Đơn hàng</td><td class="k">DH</td><td>Nháp → Chờ duyệt → Đã duyệt → Đang thực hiện → Cấp một phần → <span class="tag t-ok">Hoàn thành</span> · <span class="tag t-neu">Đã hủy</span> · <span class="tag t-crit">Từ chối</span></td><td>Khi trình duyệt; mở lại khi “yêu cầu bổ sung”</td></tr>
         <tr><td>Hồ sơ tạm ứng / thanh toán</td><td class="k">HSTU · HSVT</td><td>Đang lập → Chờ duyệt nội bộ → Đã nộp CĐT → <span class="tag t-crit">Vướng mắc</span> → Chờ thanh toán → <span class="tag t-ok">Đã thanh toán</span> · Đóng không thu được</td><td>Khi nộp chủ đầu tư</td></tr>
         <tr><td>Hồ sơ thanh toán khối lượng</td><td class="k">HSKL</td><td>Đang lập → Chờ duyệt nội bộ → Đã nộp CĐT → <span class="tag t-crit">Vướng mắc</span> → Chờ thanh toán → <span class="tag t-ok">Đã thanh toán</span><br>Hai tuyến phụ chạy song song: bản vẽ sơ họa hoàn công · hồ sơ giá trị</td><td>Khi nộp chủ đầu tư</td></tr>
         <tr><td>Hồ sơ quyết toán hợp đồng</td><td class="k">HSQT</td><td>Như HSKL, thêm điều kiện đủ bản vẽ hoàn công và biên bản nghiệm thu hoàn thành trước khi trình</td><td>Khi nộp chủ đầu tư · bản ghi thiệt hại khóa vĩnh viễn</td></tr>
         <tr><td>Bảng giá khoán</td><td class="k">GK</td><td>Đang lập → Chờ P. Đấu thầu → Chờ lãnh đạo → <span class="tag t-ok">Có hiệu lực</span> → Có phụ lục</td><td>Khi được duyệt</td></tr>
         <tr><td>Sản lượng thi công</td><td class="k">SL</td><td>Đang ghi nhận → Chỉ huy trưởng xác nhận → <span class="tag t-ok">Đã chốt đợt</span> → Đã nghiệm thu với CĐT</td><td>Khi chốt đợt</td></tr>
-        <tr><td>Hồ sơ giao khoán nhân công</td><td class="k">GKNC</td><td>Đang lập → (Giải trình quá hạn) → TQT → Đấu thầu → Kế toán → Lãnh đạo → <span class="tag t-ok">Đã duyệt chi</span> · <span class="tag t-crit">Trả về</span></td><td>Khi trình chặng 1</td></tr>
+        <tr><td>Hồ sơ giao khoán nhân công</td><td class="k">GKNC</td><td>Đang lập → (Giải trình quá hạn) → TQT → Đấu thầu → Kế toán → Lãnh đạo → Đã duyệt chi → <span class="tag t-ok">Đã chi</span> · <span class="tag t-crit">Trả về</span></td><td>Khi trình chặng 1 · “Đã chi” chỉ do <a href="#ACC-05">ACC-05</a> ghi khi tiền đã ra</td></tr>
         <tr><td>Đề xuất mua sắm</td><td class="k">DX</td><td>Nháp → Chờ duyệt → Đã duyệt → Đang mua → Nhập một phần → <span class="tag t-ok">Hoàn thành</span> · <span class="tag t-crit">Từ chối</span> · <span class="tag t-neu">Hủy</span></td><td>Khi trình duyệt</td></tr>
         <tr><td>Phiếu nhập kho</td><td class="k">PN</td><td>Nháp → <span class="tag t-warn">Chờ hóa đơn</span> → <span class="tag t-ok">Đã ghi sổ</span></td><td>Khi ghi sổ</td></tr>
-        <tr><td>Phiếu xuất kho</td><td class="k">PX · PXDA</td><td>Nháp → Chờ duyệt → Đã duyệt → Đã giao → <span class="tag t-ok">Đã xác nhận nhận</span> · <span class="tag t-crit">Trả hàng lỗi</span></td><td>Khi duyệt xuất</td></tr>
+        <tr><td>Phiếu xuất kho tổng</td><td class="k">PX</td><td>Nháp → Chờ duyệt → Đã duyệt → Đã giao → <span class="tag t-ok">Đã xác nhận nhận</span> · <span class="tag t-crit">Trả hàng lỗi</span></td><td>Khi duyệt xuất</td></tr>
+        <tr><td>Phiếu xuất kho dự án</td><td class="k">PXDA</td><td>Nháp → Chờ duyệt → GĐ dự án duyệt → Đã duyệt (KT trưởng) → Đã giao → <span class="tag t-ok">Đã xác nhận nhận</span> · <span class="tag t-crit">Hủy</span></td><td>Hai chữ ký theo <a href="#ACC-04">ACC-04</a>; hàng chỉ chuyển sang “đang giữ” ở chữ ký thứ hai</td></tr>
+        <tr><td>Phiếu xử lý tồn cuối dự án</td><td class="k">XLT</td><td>Nháp → <span class="tag t-ok">Đã ghi sổ</span> · <span class="tag t-crit">Hủy</span></td><td>Khi ghi sổ — điều chuyển, hoàn nhập hoặc đưa vào <a href="#ORD-08">ORD-08</a></td></tr>
         <tr><td>Đề nghị thanh toán</td><td class="k">DNTT</td><td>Nháp → Chờ duyệt (1–3 cấp) → Đã duyệt → <span class="tag t-ok">Đã thanh toán</span> · <span class="tag t-crit">Từ chối</span></td><td>Khi trình duyệt</td></tr>
-        <tr><td>Tài sản</td><td class="k">TS</td><td>Ghi tăng → <span class="tag t-ok">Đang hoạt động</span> → Đang điều chuyển → Bảo trì → <span class="tag t-neu">Đã ghi giảm</span></td><td>Khi ghi giảm</td></tr>
-        <tr><td>Phiếu kế toán</td><td class="k">PKT</td><td>Nháp → Chờ duyệt (bút toán phân bổ, kết chuyển) → <span class="tag t-ok">Đã ghi sổ</span></td><td>Khi ghi sổ</td></tr>
+        <tr><td>Tài sản</td><td class="k">TS</td><td>Ghi tăng → <span class="tag t-ok">Đang hoạt động</span> → <span class="tag t-neu">Đã ghi giảm</span><br>“Đang điều chuyển” không phải trạng thái của thẻ tài sản mà là hệ quả của việc có phiếu <code>DC</code> chưa xử lý xong — suy ra khi hiển thị, không lưu, để hai nơi không thể lệch nhau. “Bảo trì” là dòng nhật ký, xem <a href="#PL-C">Q-21</a>.</td><td>Khi ghi giảm</td></tr>
+        <tr><td>Phiếu điều chuyển tài sản</td><td class="k">DC</td><td>Nháp → Chờ duyệt → <span class="tag t-warn">Chờ nơi nhận xác nhận</span> → <span class="tag t-ok">Đã xác nhận</span> · Từ chối · Hủy<br>“Chờ nơi nhận xác nhận” là trạng thái riêng chứ không gộp vào “Đã duyệt”: phiếu đang chờ một người cụ thể ở nơi nhận, và <b>vị trí tài sản chưa đổi</b> — xem <a href="#ACC-06">ACC-06</a>.</td><td>Khi nơi nhận xác nhận</td></tr>
+        <tr><td>Biên bản ghi giảm tài sản</td><td class="k">TL</td><td>Nháp → Chờ duyệt → Đã duyệt → <span class="tag t-ok">Đã ghi sổ</span> · Từ chối · Hủy<br>Ngày ngưng khấu hao lấy theo <b>ngày ghi trên biên bản</b>, không phải ngày nhập liệu — nhập muộn không làm sai kỳ. Ghi sổ đóng chặng vị trí cuối cùng tại đúng ngày đó, xem <a href="#ACC-06">ACC-06</a>.</td><td>Khi ghi sổ</td></tr>
+        <tr><td>Phiếu trích khấu hao kỳ</td><td class="k">KH</td><td><span class="tag t-ok">Đã ghi sổ</span> · <span class="tag t-neu">Đã hủy</span><br>Không có trạng thái nháp: bảng xem trước không ghi gì, nên một phiếu tồn tại nghĩa là bút toán đã vào sổ. Sửa một kỳ đã trích là <b>đảo phiếu rồi chạy lại</b>, và mỗi kỳ chỉ có một phiếu còn hiệu lực.</td><td>Ngay khi ghi sổ</td></tr>
+        <tr><td>Bảng phân bổ chi phí chung</td><td class="k">PB</td><td><span class="tag t-neu">Nháp</span> · <span class="tag t-warn">Chờ duyệt</span> · <span class="tag t-ok">Đã ghi sổ</span> · <span class="tag t-neu">Hủy</span><br>Không có “Đã duyệt”: Kế toán trưởng duyệt thì bút toán sinh ngay trong cùng giao dịch, nên không có khoảng nào bảng đã duyệt mà chưa có phiếu. Đổi tiêu chí là <b>tính lại chính bảng đó</b>, không lập bảng mới. Bảng nháp thì hủy; bảng đã ghi sổ thì <b>đảo bút toán</b> — phiếu đảo mang ngày cuối kỳ của chính bảng, không phải ngày hôm nay, để khối chi phí chung quay lại đúng kỳ đó. Cả hai đường đều trả nhóm chi phí lại cho kỳ.</td><td>Khi Kế toán trưởng duyệt</td></tr>
+        <tr><td>Phiếu kế toán</td><td class="k">PKT</td><td>Nháp → Chờ duyệt (bút toán phân bổ, kết chuyển) → <span class="tag t-ok">Đã ghi sổ</span> → <span class="tag t-neu">Đã đảo</span><br><b>“Đã đảo” không có nghĩa là biến mất khỏi sổ.</b> Đảo một phiếu sinh một phiếu ngược lại; phiếu gốc chuyển sang “Đã đảo” và phiếu đảo ở “Đã ghi sổ”. Mọi báo cáo số dư — công nợ, hạn mức tín dụng, số dư phiếu nhập, khối chi phí chung — phải đọc <b>cả hai</b> thì cặp mới triệt tiêu. Đọc mỗi “Đã ghi sổ” là đếm phiếu đảo mà bỏ phiếu gốc, và số dư sai đúng bằng khoản đã đảo, ngược dấu. Phiếu đảo mang ngày hôm nay, nên hai nửa có thể rơi vào hai kỳ khác nhau — trừ hai trường hợp mang ngày trong chính kỳ của phiếu gốc: bảng phân bổ (xem dòng PB) và phiếu kết chuyển giá thành sinh khi chốt kỳ. Mở lại kỳ sẽ đảo phiếu kết chuyển, và đóng lại kỳ thì kết chuyển lại từ đầu theo số liệu mới.</td><td>Khi ghi sổ</td></tr>
         <tr><td>Kỳ giá thành</td><td class="k">—</td><td>Đang mở → <span class="tag t-ok">Đã chốt</span> (mở lại cần quyền KTT, ghi nhật ký)</td><td>Khi chốt kỳ</td></tr>
       </tbody>
     </table>
@@ -12603,7 +12625,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 </section>
 <section class="block" id="PL-C">
   <h2><em>Phụ lục C</em>Vấn đề cần chốt trước khi lập trình</h2>
-  <p class="intro">Bảng yêu cầu có mười điểm bỏ ngỏ, cộng bốn điểm phát sinh trong quá trình đặc tả — phần lớn được đánh dấu bằng dấu hỏi ngay trong file gốc. Mỗi điểm dưới đây nêu câu hỏi nguyên trạng, đề xuất của đặc tả, và ai cần quyết định. Đây là danh sách cần chốt trong buổi làm việc trước khi bắt đầu lập trình.</p>
+  <p class="intro">Bảng yêu cầu có mười điểm bỏ ngỏ, cộng mười tám điểm phát sinh trong quá trình đặc tả và trong các đợt chạy thử — phần lớn được đánh dấu bằng dấu hỏi ngay trong file gốc. Mỗi điểm dưới đây nêu câu hỏi nguyên trạng, đề xuất của đặc tả, và ai cần quyết định. Đây là danh sách cần chốt trong buổi làm việc trước khi bắt đầu lập trình.</p>
   <div class="tw">
     <table>
       <thead><tr><th class="c">Mã</th><th>Câu hỏi từ yêu cầu gốc</th><th>Đề xuất của đặc tả</th><th class="c">Người quyết</th><th class="c">Ảnh hưởng</th></tr></thead>
@@ -12623,7 +12645,21 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
         <tr><td class="k">Q-13</td><td>Danh mục <b>chủng loại đá</b> — bảng tổng hợp giá trị đơn hàng (<a href="#BID-03">BID-03</a>) khai chủng loại đá, tính chất bề mặt, chiều dày và sai số trên từng dòng BOQ. Bề mặt và sai số là danh mục đóng theo bảng nhà máy; riêng chủng loại đá hiện chưa có màn hình quản lý danh mục</td><td>Bản dựng hiện tại để chủng loại đá là <b>trường mở kèm gợi ý</b>: hơn bảy mươi loại đá nội và ngoại, và danh sách còn dài thêm theo mỏ mới, nên khóa danh mục sẽ chặn ngay dòng đầu tiên dùng loại đá chưa khai báo. Cần chốt: (a) đưa danh mục chủng loại đá thành dữ liệu nền có màn hình quản lý ở <a href="#PF-01">PF-01</a>, hay (b) giữ trường mở và chỉ chuẩn hóa khi lập phiếu yêu cầu sản xuất. Chuyển sang (a) không phải sửa mô hình dữ liệu, chỉ thêm ràng buộc.</td><td class="c">P. TQT + P. Đấu thầu</td><td class="c"><a href="#BID-01">BID-01</a>, <a href="#BID-03">BID-03</a>, <a href="#PF-01">PF-01</a></td></tr>
         <tr><td class="k">Q-14</td><td>Danh mục <b>cấu phần giá vốn</b> — <a href="#BID-03">BID-03</a> cho mỗi gói thầu tự khai bộ cột giá vốn: bật/tắt ba cấu phần có sẵn và khai thêm tối đa 8 cấu phần riêng. Chưa chốt việc các cấu phần tự khai có được chuẩn hóa thành danh mục dùng chung hay không</td><td>Bản dựng hiện tại khai tự do theo gói, vì mỗi hợp đồng cấu thành giá một kiểu — đây chính là yêu cầu đặt ra khi bổ sung chức năng. Hệ quả: hai gói có thể gọi cùng một khoản là “Vận chuyển” và “Cước vận chuyển”, nên <a href="#RPT-03">RPT-03</a> chỉ gộp được ở mức tổng giá vốn, không phân tích chéo được theo cấu phần. Cần chốt: (a) lập danh mục cấu phần giá vốn dùng chung ở <a href="#PF-01">PF-01</a>, gói chỉ chọn từ danh mục rồi bật/tắt; hay (b) giữ khai tự do và chấp nhận không phân tích chéo theo cấu phần. Chuyển sang (a) không phải sửa mô hình dữ liệu, chỉ thêm ràng buộc khi khai cấu phần mới.</td><td class="c">Ban lãnh đạo + KT trưởng</td><td class="c"><a href="#BID-03">BID-03</a>, <a href="#PF-01">PF-01</a>, <a href="#RPT-03">RPT-03</a></td></tr>
-      </tbody>
+        <tr><td class="k">Q-15</td><td><b>Hạng mục chắc chắn lỗ</b> — <a href="#PRJ-01">PRJ-01</a> cảnh báo khi tổng giá khoán của một hạng mục vượt doanh thu hợp đồng của chính hạng mục đó. Chưa chốt: chặn cứng, cảnh báo kèm xác nhận, hay chỉ gắn cờ</td><td><b>Đã chốt: cảnh báo kèm xác nhận.</b> Không trình duyệt được chừng nào chưa có xác nhận chấp thuận; xác nhận ghi rõ người và thời điểm, hiện nguyên văn ở màn hình thẩm định và màn hình duyệt. Chặn cứng bị loại vì chính ví dụ trong đặc tả bù chéo giữa hai hạng mục (HM-02 vượt, HM-01 dưới) — một hạng mục lỗ có thể là quyết định kinh doanh, điều không được phép là nó đi qua mà không ai biết.</td><td class="c">Ban lãnh đạo</td><td class="c"><a href="#PRJ-01">PRJ-01</a>, <a href="#RPT-03">RPT-03</a></td></tr>
+        <tr><td class="k">Q-16</td><td><b>Duyệt phiếu xuất kho dự án</b> — <a href="#PRJ-04">PRJ-04</a> ghi “duyệt theo <a href="#ACC-04">ACC-04</a>”, mà ACC-04 là luồng hai chữ ký (GĐ dự án và Kế toán trưởng). Chưa chốt: giữ một bước duyệt hay tách đủ hai chữ ký</td><td><b>Đã chốt: hai chữ ký đúng theo ACC-04.</b> Chờ duyệt → GĐ dự án duyệt → Đã duyệt (Kế toán trưởng) → Đã giao. Chữ ký thứ nhất không giữ hàng; chỉ chữ ký thứ hai chuyển khối lượng sang “đang giữ” và chốt giá xuất bình quân. Giữ như vậy để quy tắc “duyệt rồi mới giữ hàng” đúng với lần duyệt <i>hoàn tất</i> — nếu giữ ngay từ chữ ký thứ nhất thì một phiếu mà Kế toán trưởng sau đó từ chối vẫn chiếm tồn trong thời gian chờ.</td><td class="c">KT trưởng + GĐ dự án</td><td class="c"><a href="#PRJ-04">PRJ-04</a>, <a href="#ACC-04">ACC-04</a>, <a href="#PL-A">PL-A</a></td></tr>
+        <tr><td class="k">Q-17</td><td><b>Sức chứa kho</b> — bảng kiểm tra dữ liệu của <a href="#ACC-02">ACC-02</a> có dòng “Định mức tối thiểu {số} vượt sức chứa khai báo {số}”, nhưng bảng tham số của chính màn hình đó không khai trường sức chứa: chỉ có <code>min_stock</code> theo từng vật tư. Kiểm tra này hiện không thực hiện được</td><td>Đề xuất: khai thêm <b>tồn tối đa</b> (<code>max_stock</code>) ngay cạnh định mức tối thiểu, cùng một bảng và cùng cặp khóa <em>kho × vật tư</em> — sức chứa của một kho đá không đo bằng một con số cho cả kho mà theo từng vật tư, đúng như thông điệp đã ngụ ý khi viết “tồn tối đa khai báo”. Có trường này thì kiểm tra ở ACC-02 chạy được, và <a href="#ACC-03">ACC-03</a> cảnh báo được khi nhập kho vượt sức chứa. Phương án còn lại: bỏ dòng kiểm tra khỏi đặc tả và dựa vào việc khai đúng đơn vị tính. Chọn phương án nào cũng không phải sửa mô hình dữ liệu đã dựng, chỉ thêm một cột</td><td class="c">KT trưởng</td><td class="c"><a href="#ACC-02">ACC-02</a>, <a href="#ACC-03">ACC-03</a></td></tr>
+        <tr><td class="k">Q-18</td><td><b>Hạn thanh toán suy ra hay lưu lại</b> — bảng tham số của <a href="#ACC-05">ACC-05</a> khai <code>due_at</code> lấy “từ điều khoản của đối tác <em>hoặc của hợp đồng</em>”, nhưng chưa nói lấy tại thời điểm nào. Bản dựng hiện tại suy ra lúc đọc: <code>hạn = ngày chứng từ + điều khoản của đối tác</code></td><td>Hệ quả của cách suy ra: sửa điều khoản của một đối tác sẽ <b>dịch hạn của mọi phát sinh cũ</b> của họ, kể cả những cái đã quá hạn từ lâu, và bảng tuổi nợ đọc hôm nay khác bảng đã in tuần trước. Đổi lại, sổ công nợ không có bảng riêng nào để lệch với sổ cái — đúng quy tắc “công nợ sinh tự động, tránh lệch giữa sổ kho và sổ công nợ”. Vế “hoặc của hợp đồng” hiện chưa có chỗ chứa. Cần chốt: (a) giữ suy ra ở GĐ1, chấp nhận hạn dịch khi đổi điều khoản; hay (b) lưu <code>due_at</code> tại thời điểm ghi sổ, khi đó phải thêm bảng phát sinh công nợ riêng và nhận lại rủi ro lệch sổ. Đối tác chưa khai điều khoản hiện nằm ở nhóm <em>chưa xác định hạn</em> tách riêng, không gộp vào “trong hạn”</td><td class="c">KT trưởng</td><td class="c"><a href="#ACC-05">ACC-05</a>, <a href="#RPT-01">RPT-01</a></td></tr>
+              <tr><td class="k">Q-19</td><td><b>Điều chuyển giữa hai quỹ — một chứng từ hay hai</b> — quy tắc nghiệp vụ của <a href="#ACC-07">ACC-07</a> viết “chuyển tiền giữa các quỹ phải lập <em>chứng từ điều chuyển nội bộ</em>” (số ít, nghe như một loại chứng từ riêng), nhưng danh sách <code>cash_doc_type</code> của chính màn hình đó chỉ có năm loại và không có loại nào tên như vậy</td><td>Mockup của đặc tả tự trả lời theo hướng hai chứng từ: nghiệp vụ “Rút tiền gửi nhập quỹ” hiện ra là <b>một phiếu thu</b> PT-2026-118 định khoản <code>1111/1121</code>, tức chỉ ghi chân nhận tiền — chân ngân hàng phải là một báo nợ riêng trên sổ tiền gửi. Bản dựng hiện tại theo mockup: hai chứng từ độc lập, mỗi sổ một chứng từ, và vì số dư quỹ được tính lúc đọc từ chính các chứng từ nên <b>không có số dư nào để sửa tay</b> — vế sau của quy tắc đã được bảo đảm bằng cấu trúc. Cần chốt: (a) giữ hai chứng từ, kế toán tự lập đủ cặp; hay (b) thêm loại chứng từ điều chuyển mang cả quỹ đi và quỹ đến, hệ thống tự sinh cặp bút toán. Chọn (b) là thêm một loại vào danh sách và một cột quỹ đối ứng, không phải sửa mô hình đã dựng</td><td class="c">KT trưởng</td><td class="c"><a href="#ACC-07">ACC-07</a>, <a href="#PL-A">PL-A</a></td></tr>
+        <tr><td class="k">Q-20</td><td><b>Tài sản giao thẳng ra công trường</b> — <a href="#ACC-06">ACC-06</a> bắt mọi tài sản ghi tăng vào kho tổng rồi mới điều chuyển (“Tài sản mua mới mặc định vào kho tổng, không phải chọn tay”), nhưng một máy nhà cung cấp giao thẳng tới công trường thì chưa từng ở kho tổng ngày nào</td><td>Bản dựng hiện tại theo đúng chữ của đặc tả: ghi tăng luôn mở chặng đầu tiên ở kho tổng, và đưa ra dự án là một phiếu điều chuyển lập ngay sau đó. Hệ quả là vài ngày giữa lúc ghi tăng và lúc dự án xác nhận nhận sẽ tính khấu hao vào chi phí chung thay vì vào dự án. Cần chốt: (a) chấp nhận sai lệch vài ngày, đổi lại quy tắc “mọi tài sản đều đi qua kho tổng” không có ngoại lệ; hay (b) cho phép ghi tăng thẳng vào một dự án kèm lý do, đánh đổi bằng việc thêm một đường vào sổ tài sản mà không ai duyệt</td><td class="c">KT trưởng</td><td class="c"><a href="#ACC-06">ACC-06</a></td></tr>
+        <tr><td class="k">Q-21</td><td><b>“Bảo trì” có phải một trạng thái của tài sản</b> — <a href="#PL-A">PL-A</a> liệt kê “Bảo trì” trong vòng đời thẻ tài sản, nhưng bảng Tham số của <a href="#ACC-06">ACC-06</a> lại khai <code>maintenance[]</code> là một <em>bảng</em> nhật ký, không có trạng thái</td><td>Bản dựng hiện tại theo bảng Tham số: bảo trì là dòng nhật ký, tài sản đang sửa vẫn là “đang hoạt động”. Nếu “bảo trì” trở thành trạng thái thật thì kéo theo hai câu hỏi chưa ai trả lời: máy đang nằm xưởng sửa <b>có ngừng trích khấu hao</b> không, và có <b>chặn điều chuyển</b> không. Cần chốt: (a) giữ nhật ký như hiện tại; hay (b) thêm trạng thái, kèm câu trả lời cho hai câu hỏi trên</td><td class="c">KT trưởng</td><td class="c"><a href="#ACC-06">ACC-06</a>, <a href="#PL-A">PL-A</a></td></tr>
+        <tr><td class="k">Q-22</td><td><b>Tiền bán thanh lý vào thẳng quỹ hay qua phải thu</b> — <a href="#ACC-06">ACC-06</a> nói ghi giảm phải “ghi nhận thu nhập bán thanh lý”, nhưng không nói chân đối ứng là tiền hay công nợ</td><td>Bản dựng hiện tại ghi <b>Nợ 131 / Có 711</b>: người mua nợ tiền, và tiền về sau bằng phiếu thu ở <a href="#ACC-07">ACC-07</a> khớp với khoản phải thu đó. Lý do: ACC-07 là nơi duy nhất viết vào sổ quỹ và sổ ngân hàng — cho biên bản ghi giảm ghi thẳng vào quỹ là mở một cửa thứ hai vào cùng cuốn sổ, và số dư quỹ sẽ có hai người viết. Đánh đổi: thanh lý thu tiền mặt ngay tại chỗ vẫn phải lập thêm một phiếu thu. Cần chốt: (a) giữ như hiện tại; hay (b) cho phép chọn quỹ trên biên bản, chấp nhận biên bản ghi giảm cũng là một chứng từ tiền</td><td class="c">KT trưởng</td><td class="c"><a href="#ACC-06">ACC-06</a>, <a href="#ACC-07">ACC-07</a></td></tr>
+        <tr><td class="k">Q-23</td><td><b>Chi phí chung đã phân bổ có vào giá thành công trình không</b> — <a href="ACC-08.html">ACC-08</a> nói phân bổ để “sổ chi phí công trình đủ trực tiếp + gián tiếp”, nhưng không nói khoản gián tiếp ấy có được kết chuyển vào 154 khi tính giá thành ở <a href="ACC-09.html">ACC-09</a> hay không</td><td>Bản dựng hiện tại <b>giữ nguyên tài khoản</b> của dòng chi phí gốc ở cả hai chân bút toán (Nợ 642/dự án — Có 642/CHUNG), chỉ chuyển chiều mã dự án. Hệ quả: chi phí quản lý phân bổ vào <b>lãi lỗ dự án</b> (<a href="RPT-03.html">RPT-03</a>) chứ không vào giá thành 154, đúng ranh giới TT200 — 642 không kết chuyển vào 154. Lợi ích kèm theo: “sau phân bổ khối CHUNG về 0” đúng theo cấu tạo, vì chân Có triệt tiêu đúng cái mà báo cáo đối chiếu đếm. Cần chốt: (a) giữ như hiện tại — chi phí chung chỉ vào lãi lỗ quản trị; hay (b) chuyển sang 627 khi phân bổ, chấp nhận chi phí quản lý doanh nghiệp chảy vào giá thành</td><td class="c">KT trưởng</td><td class="c"><a href="ACC-08.html">ACC-08</a>, <a href="ACC-09.html">ACC-09</a></td></tr>
+        <tr><td class="k">Q-24</td><td><b>Có được khóa kỳ khi còn chi phí chung chưa phân bổ không</b> — <a href="ACC-08.html">ACC-08</a> yêu cầu “sau phân bổ khối CHUNG của kỳ phải bằng 0” và có báo cáo đối chiếu, nhưng không nói điều gì xảy ra nếu kế toán đóng kỳ trước khi phân bổ</td><td>Hiện <a href="ACC-01.html">kỳ kế toán</a> chỉ chặn đóng khi còn phiếu nháp; chi phí chung chưa phân bổ không chặn. Nếu kỳ đóng mà chưa phân bổ thì khoản gián tiếp của kỳ đó không bao giờ về dự án, và lãi lỗ dự án thiếu vĩnh viễn. Cần chốt: (a) cảnh báo khi đóng kỳ, vẫn cho đóng; hay (b) chặn đóng kỳ cho tới khi khối CHUNG về 0</td><td class="c">KT trưởng</td><td class="c"><a href="ACC-08.html">ACC-08</a>, <a href="ACC-01.html">ACC-01</a></td></tr>
+        <tr><td class="k">Q-25</td><td><b>Giá thành nhà máy có dựng ở GĐ1 không</b> — <a href="#ACC-09">ACC-09</a> vẽ vòng khép kín của nhà máy (xuất NVL sản xuất → tập hợp chi phí → kết chuyển giá thành sản phẩm → cập nhật giá nhập kho thành phẩm → giá xuất kho kỳ sau) và có UAT-ACC09-7 kiểm thử nó, nhưng cũng ghi “phần đi sâu vào giá thành khai thác của nhà máy để lại giai đoạn sau”</td><td>GĐ1 không có <b>lệnh sản xuất</b>, không có <b>thành phẩm</b> (tài khoản 155 chưa có trong danh mục ở <a href="#ACC-08">ACC-08</a>) và không có <b>định mức tiêu hao</b>. Vòng khép kín cần cả ba. Dựng bây giờ nghĩa là tự nghĩ ra một phân hệ sản xuất mà không đặc tả nào mô tả, nên bản dựng hiện tại chỉ làm giá thành công trình và ghi nhận UAT-ACC09-7 là chưa chạy được. Cần chốt: (a) để lại GĐ sau đúng như bảng yêu cầu đã nói, chấp nhận UAT-ACC09-7 chưa có; hay (b) viết một đặc tả sản xuất tối giản cho GĐ1 rồi mới dựng</td><td class="c">Ban lãnh đạo</td><td class="c"><a href="#ACC-09">ACC-09</a>, <a href="#ACC-04">ACC-04</a></td></tr>
+        <tr><td class="k">Q-26</td><td><b>Nhân công khoán có ghi sổ kế toán không</b> — <a href="#ACC-09">ACC-09</a> liệt kê nhân công khoán <a href="#PRJ-03">PRJ-03</a> là một trong năm nguồn chi phí của giá thành, nhưng hồ sơ giao khoán được duyệt không sinh bút toán nào</td><td>Mọi nguồn chi phí khác — vật tư xuất kho, khấu hao, mua không qua kho, chi phí chung phân bổ — đều đi qua sổ cái. Riêng <a href="#PRJ-03">PRJ-03</a> thì không, nên khoản mục KM-201 trong bảng tập hợp chi phí đọc ra 0. Không vá bằng cách cho <a href="#ACC-09">ACC-09</a> đọc thẳng bảng giao khoán: chi phí sẽ có trong giá thành mà không có trong sổ cái, và báo cáo đối chiếu — thứ tồn tại để bắt đúng loại lệch này — sẽ báo lệch mãi mãi. Màn hình hiện cảnh báo nêu đúng số tiền chưa ghi sổ thay vì hiển thị một con số 0 im lặng. Cần chốt: (a) <a href="#PRJ-03">PRJ-03</a> ghi sổ Nợ 622 / Có 334 khi hồ sơ được duyệt; hay (b) giữ nhân công khoán ngoài sổ và chấp nhận giá thành công trình thiếu khoản mục nhân công</td><td class="c">KT trưởng</td><td class="c"><a href="#ACC-09">ACC-09</a>, <a href="#PRJ-03">PRJ-03</a></td></tr>
+        <tr><td class="k">Q-27</td><td><b>Hủy một gói đã ký hợp đồng và đã sinh dự án</b> — <a href="#BID-04">BID-04</a> cố ý giữ hẹp: một thao tác đánh dấu hủy và một thông báo, không nói gì về giới hạn trên của nó. Đợt chạy thử cho ra một gói vừa mang thông báo “đã hủy” vừa đang ở trạng thái “Đã ký HĐ”, đã khởi tạo dự án và kho riêng của dự án đó</td><td>Đặc tả đã thêm một quy tắc ở <a href="#BID-04">BID-04</a>: từ khi hợp đồng được ký ở <a href="#BID-05">BID-05</a> thì không hủy gói thầu ở màn hình này nữa. Cần chốt phần còn lại: (a) giữ nguyên như vậy, và việc dừng một hợp đồng đã ký được xử lý bằng thanh lý hợp đồng — luồng chưa có trong phạm vi GĐ1; hay (b) cho phép hủy kèm một cấp duyệt của Ban lãnh đạo, kèm câu trả lời cho ba câu hỏi đi theo: dự án đã sinh đi đâu, kho của dự án còn tồn thì xử lý thế nào, và hợp đồng đang có hiệu lực chuyển sang trạng thái nào. Chọn đường nào cũng phải bảo đảm một gói không đồng thời mang hai trạng thái trái ngược</td><td class="c">Ban lãnh đạo + P. Đấu thầu</td><td class="c"><a href="#BID-04">BID-04</a>, <a href="#BID-05">BID-05</a>, <a href="#PL-A">PL-A</a></td></tr>
+        <tr><td class="k">Q-28</td><td><b>Đổi người phụ trách có cắt sạch quyền của người đang làm dở không</b> — <a href="#BID-01">BID-01</a> chỉ nói <code>owner_user</code> “nhận mọi thông báo của gói thầu”, không nói quyền thao tác trên một gói cụ thể suy từ người phụ trách hay từ vai ở <a href="#PL-B">PL-B</a>. Đợt chạy thử cho thấy các nút sửa hồ sơ, nhập BOQ và chuyển thẩm định từng hiện trên một gói rồi mất sau khi đổi người phụ trách</td><td>Cần chốt: (a) đổi người phụ trách chuyển hết quyền thao tác sang người mới, người cũ chỉ còn quyền đọc — trách nhiệm rõ nhưng cắt ngang việc đang làm dở; hay (b) người phụ trách chỉ quyết định nơi nhận thông báo và trách nhiệm chính, còn quyền thao tác suy từ vai cộng phân công theo bước, ai đã được gán vào bước nào thì giữ quyền ở bước đó cho tới khi bước đó xong. Kèm theo, cần một lối để người tạo gói tự đưa mình vào gói vừa tạo: hiện màn hình hồ sơ không có nút gán nhân sự và ô <em>Người phụ trách</em> không liệt kê tài khoản đang đăng nhập, nên gói tạo mới không ai thao tác được</td><td class="c">Ban lãnh đạo + P. Đấu thầu</td><td class="c"><a href="#BID-01">BID-01</a>, <a href="#PF-02">PF-02</a>, <a href="#PL-B">PL-B</a></td></tr>
+</tbody>
     </table>
   </div>
 </section>

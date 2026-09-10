@@ -204,14 +204,14 @@
         <tbody>
           <tr><td>Mã gói thầu</td><td class="k">tender_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>&lt;ĐĐ&gt;_NNNN</code> — viết tắt địa điểm công trình cộng số thứ tự 4 chữ số, ví dụ <code>KH_0112</code>. Tự sinh khi lưu lần đầu, không sửa.</td></tr>
           <tr><td>Tên gói thầu</td><td class="k">tender_name</td><td>Chuỗi</td><td class="c req">✱</td><td>Tên công trình + hạng mục mời thầu.</td></tr>
-          <tr><td>Bên mời thầu</td><td class="k">partner_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chọn từ danh mục đối tác; cho tạo nhanh nếu là khách mới.</td></tr>
+          <tr><td>Bên mời thầu</td><td class="k">partner_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chọn từ danh mục đối tác; cho tạo nhanh nếu là khách mới. Tạo nhanh Chủ đầu tư thu đúng các trường: mã Chủ đầu tư, tên Chủ đầu tư, mã số thuế, địa chỉ. Ô <b>tên Chủ đầu tư</b> bắt buộc; ô <b>mã Chủ đầu tư</b> được gợi ý tự động nhưng sửa được; ô <b>mã số thuế</b> và ô <b>địa chỉ</b> không bắt buộc lúc tạo nhanh, bổ sung sau. Công trình/địa điểm công trình dùng lại trường Địa điểm công trình đã khai ở gói thầu này, không nhập lại.</td></tr>
           <tr><td>Chủ đầu tư</td><td class="k">owner_name</td><td>Chuỗi</td><td class="c">—</td><td>Có thể khác bên mời thầu (tổng thầu mời thầu phụ).</td></tr>
           <tr><td>Địa điểm công trình</td><td class="k">site_address</td><td>Chuỗi</td><td class="c req">✱</td><td>Quyết định vùng miền — chiều phân tích của <a href="RPT-03.html">RPT-03</a>.</td></tr>
           <tr><td>Ngày nhận thư</td><td class="k">received_at</td><td>Ngày</td><td class="c req">✱</td><td>Mặc định hôm nay.</td></tr>
           <tr><td>Hạn nộp hồ sơ</td><td class="k">due_at</td><td>Ngày giờ</td><td class="c req">✱</td><td>Sinh nhắc việc trước 3 ngày và trước 1 ngày.</td></tr>
           <tr><td>Người phụ trách</td><td class="k">owner_user</td><td>Tham chiếu</td><td class="c req">✱</td><td>Thuộc Phòng Đấu thầu; nhận mọi thông báo của gói thầu.</td></tr>
           <tr><td>Giá trị ước tính</td><td class="k">est_value</td><td>Số tiền</td><td class="c">—</td><td>Dùng xếp thứ tự ưu tiên xử lý.</td></tr>
-          <tr><td>Bảng đầu việc BOQ</td><td class="k">boq_lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: STT, mã hạng mục, tên đầu việc, quy cách, ĐVT, khối lượng mời thầu, ghi chú.</td></tr>
+          <tr><td>Bảng đầu việc BOQ</td><td class="k">boq_lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: STT, mã hạng mục, tên đầu việc, quy cách, ĐVT, khối lượng mời thầu, ghi chú. Ô <b>đầu việc</b> và ô <b>ĐVT</b> bắt buộc có giá trị; ô <b>khối lượng mời thầu</b> được để trống khi chưa có số liệu, đã điền thì phải lớn hơn 0. Ô <b>đầu việc</b> tối đa 1.000 ký tự, ô <b>quy cách</b> tối đa 2.000 ký tự — hồ sơ thật thường chép cả đoạn mô tả kỹ thuật vào ô quy cách chứ không chỉ ghi <code>600×600×20</code>.</td></tr>
           <tr><td>Tệp BOQ gốc</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>Ít nhất một tệp loại “BOQ mời thầu” (<a href="PF-05.html">PF-05</a>).</td></tr>
           <tr><td>Cột tự thêm của bảng</td><td class="k">boq_extra_columns[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi cột: tên cột, kiểu dữ liệu (chữ · số · có/không). Tối đa 12 cột cho một phiên bản BOQ.</td></tr>
           <tr><td>Cột có sẵn bị ẩn</td><td class="k">boq_hidden_columns[]</td><td>Danh sách</td><td class="c">—</td><td>Chỉ ẩn được cột không bắt buộc: mã HM, mã nội bộ, quy cách, ghi chú và sáu cột thuộc tính đá.</td></tr>
@@ -221,7 +221,7 @@
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Sau khi lưu, gói thầu có mã duy nhất và xuất hiện ở danh sách gói thầu với trạng thái “Đang thẩm định”.</li>
+      <li>Sau khi lưu, gói thầu có mã duy nhất và xuất hiện ở danh sách gói thầu với trạng thái “Nháp”; chỉ thao tác “Chuyển thẩm định” mới đưa gói sang “Đang thẩm định” (<a href="PL-A.html">PL-A</a>).</li>
       <li>Nhập BOQ từ Excel giữ nguyên thứ tự dòng và mã hạng mục gốc của bên mời thầu để đối chiếu về sau.</li>
       <li>Tổng khối lượng theo nhóm đầu việc được tính tự động và hiển thị ở đầu bảng.</li>
       <li>Người phụ trách nhận thông báo nhắc trước hạn nộp 3 ngày và 1 ngày.</li>
@@ -231,7 +231,7 @@
 
     <h4>Mockup UI — Đấu thầu › Hồ sơ gói thầu</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">Đấu thầu ›</span><b>GT-2026-018 · Vinhomes Grand Park GĐ 3</b><span class="sp"></span><span class="tag t-warn">Đang thẩm định</span><span class="wf-btn"><span class="pin">4</span> Chuyển thẩm định</span></div>
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu ›</span><b>GT-2026-018 · Vinhomes Grand Park GĐ 3</b><span class="sp"></span><span class="tag t-neu">Nháp</span><span class="wf-btn"><span class="pin">4</span> Chuyển thẩm định</span></div>
       <div class="wf-body">
         <div class="wf-row">
           <div class="wf-c"><div class="wf-sec">
@@ -285,6 +285,8 @@
       <li><b>Bộ cột thuộc về phiên bản BOQ.</b> Mỗi hồ sơ mời thầu có bộ cột riêng, khai một lần ở bảng đầu việc: ẩn cột không dùng và thêm cột hồ sơ yêu cầu mà hệ thống chưa có trường.<span class="then">Bộ cột đi theo phiên bản BOQ, nên bản cập nhật sau thẩm định (<a href="BID-02.html">BID-02</a>) và bản hợp đồng (<a href="BID-05.html">BID-05</a>) giữ nguyên bộ cột đã chốt, không đọc lại bộ cột của bản nháp; sao chép gói thầu chép luôn bộ cột.</span></li>
       <li><b>Cột bắt buộc không ẩn được.</b> Đầu việc, ĐVT và khối lượng luôn hiển thị.<span class="then">Toàn bộ quy tắc phía sau đọc ba cột này: tổng khối lượng theo nhóm, ngưỡng lệch 10% ở <a href="BID-02.html">BID-02</a> và dòng báo giá ở <a href="BID-03.html">BID-03</a>.</span></li>
       <li><b>Xóa cột là xóa dữ liệu.</b> Bỏ một cột tự thêm thì mọi giá trị đã nhập ở cột đó bị xóa cùng lúc.<span class="then">Có cảnh báo trước khi lưu; thêm lại cột cùng tên sau đó là một cột trống, không khôi phục số liệu cũ.</span></li>
+      <li><b>Đầu việc và ĐVT là hai ô bắt buộc của mỗi dòng.</b> Thiếu một trong hai ô thì dòng không lưu được, và còn một dòng thiếu thì cả bảng không lưu.<span class="then">Nút lưu khóa chừng nào còn dòng thiếu và ô thiếu được đánh dấu ngay trên lưới — đúng cách hộp thoại hủy gói thầu ở <a href="BID-04.html">BID-04</a> khóa nút xác nhận khi ô lý do còn trống.</span><span class="then"><b>Ô trống và số 0 là hai chuyện khác nhau.</b> Khối lượng không nằm trong hai ô bắt buộc: chưa có số liệu thì để trống và ghi chú “chờ làm rõ”, dòng vẫn lưu bình thường. Nhưng đã điền thì phải lớn hơn 0 — số 0 là một giá trị sai chứ không phải một ô chưa điền, nên nó bị chặn bằng thông điệp riêng cho khối lượng bằng 0 hoặc âm.</span><span class="then">Hệ thống không được lặng lẽ bỏ dòng thiếu ô bắt buộc hay dòng có khối lượng bằng 0 rồi lưu phần còn lại: bảng đầu việc là hồ sơ gốc của gói thầu, một dòng mất ở đây là mất vĩnh viễn.</span></li>
+      <li><b>Gói thầu đã thi công dở được nhập thẳng vào đúng giai đoạn.</b> Nhiều gói thầu thực tế đã qua chào thầu, thẩm định BOQ, ký hợp đồng và đang thi công dở trước khi hệ thống này tồn tại; hệ thống phải cho đăng ký gói thầu đó thẳng vào đúng giai đoạn đã đạt được — ví dụ vào thẳng trạng thái “Đã ký hợp đồng” kèm các mốc ngày lịch sử — thay vì bắt đi tuần tự qua <a href="BID-02.html">BID-02</a> (Thẩm định BOQ liên phòng) rồi <a href="BID-03.html">BID-03</a> (Áp giá &amp; thương thảo).<span class="then">Áp dụng cho mọi nơi có thể nhập một gói thầu, không riêng màn hình này: <a href="BID-05.html">BID-05</a> (Ký HĐ &amp; khởi tạo dự án) là điểm nhập khác của cùng gói thầu và phải chấp nhận lối tắt tương tự cho gói đang thi công dở. Tổ đội thi công của gói thầu nhập theo lối tắt này cần khớp với danh mục tổ đội ở PRJ-05 (Danh mục tổ đội) — màn hình mới đang được bổ sung cùng đợt.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -300,6 +302,8 @@
           <tr><td>Thêm quá số cột cho phép</td><td>Số cột tự thêm &gt; 12</td><td>“Bảng chỉ thêm được tối đa 12 cột.”</td></tr>
           <tr><td>Ẩn cột bắt buộc</td><td>Ẩn đầu việc, ĐVT hoặc khối lượng</td><td>“Cột {tên} là cột bắt buộc, không ẩn được.”</td></tr>
           <tr><td>Cột tự thêm trùng cột có sẵn</td><td>Tên cột sinh ra mã trùng cột hệ thống</td><td>“Mã cột {mã} trùng với một cột có sẵn của bảng.”</td></tr>
+          <tr><td>Máy chủ từ chối cả bảng đầu việc</td><td>Có ít nhất một dòng thiếu ô bắt buộc hoặc vượt giới hạn độ dài. Đây là chốt chặn cuối ở máy chủ, kiểm lại độc lập với khóa lưới của quy tắc nghiệp vụ — khóa lưới chỉ đỡ tay người đang nhập, còn bản dán từ Excel hay tab để lâu vẫn gửi lên được dữ liệu chưa qua lưới</td><td>“Chưa lưu được bảng đầu việc: {n} dòng chưa hợp lệ, dòng đầu tiên là dòng {stt} — cột {tên}. Cả {n} dòng đều được đánh dấu trên lưới; sửa hết rồi lưu lại. Bảng vẫn giữ nguyên như trước khi lưu.”</td></tr>
+          <tr><td>Cột tự thêm trùng tiêu đề cột có sẵn</td><td>Tên hiển thị của cột mới trùng tên một cột đang có — cột hệ thống hoặc cột tự thêm — so không phân biệt hoa thường và bỏ khoảng trắng thừa hai đầu. So trên <b>tên người dùng đọc</b> chứ không phải mã cột sinh ra: bộ sinh mã tự tránh trùng nên trường hợp này lọt qua phép kiểm tra trùng mã cột. Chạy cả khi thêm cột lẫn khi lưu cấu trúc bảng</td><td>“Bảng đã có cột tên ‘{tên}’. Đặt tên khác để hai cột không trùng tiêu đề.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -322,7 +326,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-02.html">BID-02 thẩm định BOQ</a><a href="PF-05.html">PF-05 đính kèm</a><a href="PF-01.html">PF-01 danh mục đối tác</a></p>
+    <p class="links"><a href="BID-02.html">BID-02 thẩm định BOQ</a><a href="BID-05.html">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="PF-05.html">PF-05 đính kèm</a><a href="PF-01.html">PF-01 danh mục đối tác</a></p>
   </div>
 </section>
 <div class="filefoot">

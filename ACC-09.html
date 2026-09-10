@@ -382,10 +382,10 @@
         </div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">5</span> Lãi lỗ dự án — đối chiếu với dự thầu</div>
-          <table><thead><tr><th>Dự án</th><th class="num">Doanh thu ghi nhận</th><th class="num">Giá vốn kết chuyển</th><th class="num">Lợi nhuận gộp</th><th class="num">Biên thực tế</th><th class="num">Biên dự thầu</th><th>Chênh</th></tr></thead>
+          <table><thead><tr><th>Dự án</th><th class="num">Doanh thu ghi nhận</th><th class="num">Giá vốn kết chuyển</th><th class="num">Lợi nhuận gộp</th><th class="num">Chi phí chung phân bổ</th><th class="num">Lợi nhuận thuần</th><th class="num">Biên thuần</th><th class="num">Biên dự thầu</th><th>Chênh</th></tr></thead>
           <tbody>
-            <tr><td>DA-2026-014</td><td class="num">18.900.000.000</td><td class="num">14.180.000.000</td><td class="num">4.720.000.000</td><td class="num">25,0%</td><td class="num">24,9%</td><td><span class="tag t-ok">+0,1 đ%</span></td></tr>
-            <tr><td>DA-2026-011</td><td class="num">9.400.000.000</td><td class="num">7.640.000.000</td><td class="num">1.760.000.000</td><td class="num">18,7%</td><td class="num">22,4%</td><td><span class="tag t-crit">−3,7 đ%</span></td></tr>
+            <tr><td>DA-2026-014</td><td class="num">18.900.000.000</td><td class="num">14.180.000.000</td><td class="num">4.720.000.000</td><td class="num">960.000.000</td><td class="num">3.760.000.000</td><td class="num">19,9%</td><td class="num">24,9%</td><td><span class="tag t-crit">−5,0 đ%</span></td></tr>
+            <tr><td>DA-2026-011</td><td class="num">9.400.000.000</td><td class="num">7.640.000.000</td><td class="num">1.760.000.000</td><td class="num">430.000.000</td><td class="num">1.330.000.000</td><td class="num">14,1%</td><td class="num">22,4%</td><td><span class="tag t-crit">−8,3 đ%</span></td></tr>
           </tbody></table>
         </div>
       </div>
@@ -415,6 +415,10 @@
       <li><b>Giá thành nhà máy ghi ngược giá nhập.</b> Giá thành sản phẩm tính ra được cập nhật thành giá nhập kho thành phẩm.<span class="then">Từ đó thành giá xuất kho ở kỳ sau — vòng khép kín của nhà máy.</span></li>
       <li><b>Cảnh báo khi thiếu doanh thu.</b> Dự án có chi phí nhưng chưa có đơn hàng nào áp giá thì hiện cảnh báo thay vì báo lỗ.<span class="then">Tránh đọc nhầm số liệu giai đoạn đầu dự án.</span></li>
       <li><b>Đối chiếu tổng.</b> Tổng chi phí trực tiếp cộng phân bổ của mọi dự án phải bằng tổng chi phí trên sổ cái.<span class="then">Có báo cáo đối chiếu chạy tự động cuối mỗi kỳ; lệch thì chỉ ra khoản mục gây lệch.</span></li>
+      <li><b>Bút toán kết chuyển đi qua 154.</b> Chốt kỳ ghi Nợ 154 / Có 621, 622, 627 để tập hợp chi phí sản xuất, rồi Nợ 632 / Có 154 phần đã hoàn thành.<span class="then">Số dư 154 của mỗi dự án sau bút toán chính là dở dang cuối kỳ — đọc được trên sổ chứ không chỉ trong báo cáo. Kết chuyển ra số âm (sản lượng bị điều chỉnh giảm) thì đảo chiều bút toán, không ghi số âm.</span></li>
+      <li><b>Chi phí chung phân bổ không vào giá thành.</b> Khoản 642 phân bổ về dự án đi thẳng vào kết quả kinh doanh của kỳ, không qua 154 và không thành dở dang.<span class="then">Theo <a href="PL-C.html">PL-C Q-23</a> phương án (a) và ranh giới TT200. Vì vậy bảng lãi lỗ có hai mức — lợi nhuận gộp sau giá vốn, lợi nhuận thuần sau chi phí chung — và cột đối chiếu với dự thầu đọc từ <b>biên thuần</b>, vì giá vốn trong báo giá <a href="BID-03.html">BID-03</a> đã cộng chi phí chung.</span></li>
+      <li><b>Chốt kỳ theo thứ tự.</b> Không chốt được một kỳ khi còn kỳ trước nó đang mở.<span class="then">Số dư 154 là tổng cộng dồn của các bút toán kết chuyển, còn dở dang trong báo cáo tính từ lũy kế; hai con số chỉ khớp nếu mọi kỳ trước đã kết chuyển.</span></li>
+      <li><b>Mở lại kỳ thì đảo bút toán kết chuyển.</b> Phiếu đảo mang ngày trong chính kỳ được mở lại, không phải ngày hôm nay.<span class="then">Ngày hôm nay sẽ đẩy phiếu đảo sang kỳ khác và làm sai cả hai kỳ. Sau khi đảo, đóng lại kỳ sẽ kết chuyển lại từ đầu theo số liệu mới.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -427,6 +431,8 @@
           <tr><td>Dự án chưa áp giá</td><td>Doanh thu bằng 0, chi phí &gt; 0</td><td>“Dự án {mã} chưa có đơn hàng áp giá. Số lỗ hiển thị chưa phản ánh đúng kết quả.”</td></tr>
           <tr><td>Ghi chứng từ vào kỳ đã chốt</td><td>Ngày thuộc kỳ khóa</td><td>“Kỳ {kỳ} đã chốt ngày {ngày}. Chứng từ sẽ ghi vào kỳ hiện tại.”</td></tr>
           <tr><td>Đối chiếu lệch</td><td>Tổng dự án ≠ sổ cái</td><td>“Lệch {giá trị} giữa tổng chi phí dự án và sổ cái. Khoản mục gây lệch: {danh sách}.”</td></tr>
+          <tr><td>Chốt kỳ vượt thứ tự</td><td>Còn kỳ trước đang mở</td><td>“Kỳ {kỳ trước} vẫn đang mở. Chốt kỳ theo thứ tự — {kỳ trước} trước, rồi tới {kỳ}.”</td></tr>
+          <tr><td>Kỳ đã kết chuyển</td><td>Kỳ đã có phiếu kết chuyển còn hiệu lực</td><td>“Kỳ {kỳ} đã kết chuyển giá thành ở phiếu {mã phiếu}.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -449,7 +455,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PRJ-02.html">PRJ-02 sản lượng</a><a href="PRJ-03.html">PRJ-03 nhân công</a><a href="PRJ-04.html">PRJ-04 vật tư</a><a href="ACC-06.html">ACC-06 khấu hao</a><a href="ACC-08.html">ACC-08 phân bổ chung</a><a href="ORD-06.html">ORD-06 doanh thu</a><a href="RPT-03.html">RPT-03 báo cáo lãi lỗ</a></p>
+    <p class="links"><a href="PRJ-02.html">PRJ-02 sản lượng</a><a href="PRJ-03.html">PRJ-03 nhân công</a><a href="PRJ-04.html">PRJ-04 vật tư</a><a href="ACC-06.html">ACC-06 khấu hao</a><a href="ACC-08.html">ACC-08 phân bổ chung</a><a href="ORD-06.html">ORD-06 doanh thu</a><a href="ORD-09.html">ORD-09 hồ sơ khối lượng</a><a href="ACC-03.html">ACC-03 mua không qua kho</a><a href="RPT-03.html">RPT-03 báo cáo lãi lỗ</a><a href="PL-C.html">PL-C Q-23, Q-25, Q-26</a></p>
   </div>
 </section>
 <div class="filefoot">
