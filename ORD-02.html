@@ -90,6 +90,7 @@
     <h4>Mục tiêu</h4>
     <p>Bản vẽ shop được duyệt là điều kiện bắt buộc để lập đơn hàng (<a href="ORD-03.html">ORD-03</a>). Vì vậy tiến trình duyệt shop chính là đường găng của tiến độ sản xuất. Đặc tả yêu cầu theo dõi từng vòng gửi–trả, đếm số vòng và số ngày nằm ở phía CĐT.</p>
     <p>Bảng khối lượng là phần việc của <b>kỹ sư phụ trách</b> và được nhập <b>ngay khi lập bản vẽ</b>, trước mọi bước duyệt: đó chính là nội dung trưởng phòng kiểm tra và CĐT xem xét, nên không thể chờ có kết quả duyệt rồi mới nhập. Trưởng phòng duyệt hai lần và hai lần đó khác nhau về ý nghĩa — <b>duyệt nội bộ</b> là điều kiện để gửi CĐT, <b>phát hành</b> là điều kiện để bản vẽ xuất hiện ở màn hình lập đơn hàng.</p>
+    <p>Một bản vẽ thường thể hiện <b>nhiều đầu việc</b> cùng lúc: ba đầu việc của cùng một hạng mục trong BOQ hợp đồng (<a href="BID-05.html">BID-05</a>) hay nằm trên một bản vẽ. Bản vẽ vì vậy gắn với một <em>tập</em> đầu việc, và mỗi dòng khối lượng phải chỉ rõ nó thuộc đầu việc nào — đó là căn cứ để <a href="ORD-03.html">ORD-03</a> đối chiếu đơn hàng với BOQ. Cần phân biệt hai từ: <b>hạng mục</b> là nhóm cha, <b>đầu việc</b> là dòng BOQ hợp đồng; màn hình phải gọi đúng tên vì người dùng đếm khối lượng theo đầu việc.</p>
 
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:838px;margin:0 auto"><svg role="img" aria-label="Hình ORD-02.1 Luồng thật của một bản vẽ shop: kỹ sư phụ trách lập bản vẽ và nhập khối lượng ngay từ đầu; trưởng phòng duyệt hai lần — duyệt nội bộ trước khi gửi CĐT, và phát hành sau khi CĐT chấp thuận."
@@ -97,9 +98,10 @@
 <defs><marker id="ord02-tip" markerWidth="7" markerHeight="7" refX="6.2" refY="3.5" orient="auto"><polygon points="0,0.6 6.5,3.5 0,6.4" fill="#55606b"/></marker></defs>
 <g font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a" text-anchor="middle">
 
-<rect x="30" y="14" width="225" height="50" fill="#dde3e9" stroke="#5d6b7a"/>
-<text x="142.5" y="35">Tạo bản vẽ mới</text>
-<text x="142.5" y="52">kỹ sư phụ trách · chọn hạng mục</text>
+<rect x="30" y="14" width="225" height="64" fill="#dde3e9" stroke="#5d6b7a"/>
+<text x="142.5" y="34">Tạo bản vẽ mới</text>
+<text x="142.5" y="51">kỹ sư phụ trách · chọn dự án</text>
+<text x="142.5" y="68">chọn nhiều đầu việc · tải tệp</text>
 
 <rect x="30" y="94" width="225" height="64" fill="#dde3e9" stroke="#5d6b7a"/>
 <text x="142.5" y="114">Nhập khối lượng bản vẽ</text>
@@ -151,7 +153,7 @@
 <text x="715" y="588">khối lượng khóa lại</text>
 
 <g fill="none" stroke="#55606b" marker-end="url(#ord02-tip)">
-<path d="M142.5,64 L142.5,92"/>
+<path d="M142.5,78 L142.5,92"/>
 <path d="M142.5,158 L142.5,186"/>
 <path d="M142.5,238 L142.5,254"/>
 <path d="M142.5,312 L142.5,334"/>
@@ -182,7 +184,7 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Mã bản vẽ</td><td class="k">shop_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>SD-&lt;project&gt;-NNN</code>.</td></tr>
-          <tr><td>Hạng mục</td><td class="k">wbs_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một bản vẽ phục vụ một hoặc nhiều hạng mục.</td></tr>
+          <tr><td>Đầu việc</td><td class="k">wbs_ids[]</td><td>Tham chiếu</td><td class="c req">✱</td><td>Tập đầu việc (dòng BOQ hợp đồng) mà bản vẽ thể hiện — ít nhất một, tất cả thuộc cùng một dự án. Hạng mục là nhóm cha của đầu việc, không phải trường riêng.</td></tr>
           <tr><td>Kỹ sư phụ trách</td><td class="k">drafter</td><td>Tham chiếu</td><td class="c req">✱</td><td>Người lập bản vẽ và nhập bảng khối lượng.</td></tr>
           <tr><td>Vòng gửi</td><td class="k">submission_no</td><td>Số</td><td class="c req">✱</td><td>Tăng mỗi lần gửi CĐT.</td></tr>
           <tr><td>Ngày gửi · ngày cam kết trả</td><td class="k">sent_at, due_at</td><td>Ngày</td><td class="c req">✱</td><td>Chênh lệch giữa hai mốc và ngày trả thực tế là số ngày trễ của CĐT.</td></tr>
@@ -190,7 +192,7 @@
           <tr><td>Ý kiến CĐT</td><td class="k">comments[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi ý kiến gắn được vào một chi tiết bản vẽ; đánh dấu đã xử lý hay chưa.</td></tr>
           <tr><td>Tệp bản vẽ</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>DWG + PDF mỗi vòng, theo phiên bản của <a href="PF-05.html">PF-05</a>.</td></tr>
           <tr><td>Khối lượng bản vẽ</td><td class="k">shop_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Kỹ sư phụ trách nhập ngay khi lập bản vẽ. Là dữ liệu đầu vào của đơn hàng.</td></tr>
-          <tr><td>— dòng khối lượng</td><td class="k">line_no, work_code, stone_code,<br>uom, qty, spec, note</td><td>Dòng</td><td class="c req">✱</td><td>STT · mã việc · mã đá · đvt · khối lượng · quy cách · ghi chú. <code>stone_code</code> tra từ danh mục đá của <a href="PF-01.html">PF-01</a>; <code>spec</code> là quy cách gia công (dày, bo, mài).</td></tr>
+          <tr><td>— dòng khối lượng</td><td class="k">line_no, wbs_id, work_code, stone_code,<br>uom, qty, spec, note</td><td>Dòng</td><td class="c req">✱</td><td>STT · đầu việc · mã việc · mã đá · đvt · khối lượng · quy cách · ghi chú. <code>wbs_id</code> phải là một trong các đầu việc của bản vẽ. <code>stone_code</code> tra từ danh mục đá của <a href="PF-01.html">PF-01</a>; <code>spec</code> là quy cách gia công (dày, bo, mài).</td></tr>
           <tr><td>Duyệt nội bộ</td><td class="k">internal_approved_at, _by</td><td>Ngày · tham chiếu</td><td class="c req">✱</td><td>TP TQT bấm “Duyệt bản vẽ”. Là điều kiện để gửi CĐT.</td></tr>
           <tr><td>Phát hành sang đơn hàng</td><td class="k">released_at, released_by</td><td>Ngày · tham chiếu</td><td class="c">—</td><td>TP TQT bấm sau khi CĐT chấp thuận. Là điều kiện để bản vẽ hiện ở <a href="ORD-03.html">ORD-03</a>.</td></tr>
         </tbody>
@@ -206,6 +208,7 @@
       <li>Trễ hạn cam kết của CĐT được ghi nhận riêng, dùng làm căn cứ giải trình khi tiến độ thi công chậm.</li>
       <li>Khối lượng kỹ sư nhập từ đầu chảy thẳng sang màn hình lập đơn hàng khi bản vẽ được phát hành, không phải gõ lại.</li>
       <li>Mỗi bản vẽ truy được ai lập, ai duyệt nội bộ, ai phát hành và vào thời điểm nào.</li>
+      <li>Nhìn theo hợp đồng biết được đầu việc nào đã có bản vẽ, đầu việc nào chưa, và đầu việc nào đang có nhiều hơn một bản vẽ.</li>
     </ol>
 
     <h4>Mockup UI — Shopdrawing › Theo dõi duyệt</h4>
@@ -269,7 +272,7 @@
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Khối lượng nhập cùng lúc lập bản vẽ.</b> Kỹ sư phụ trách nhập bảng khối lượng ngay khi tạo bản vẽ, trước khi trình TP TQT.<span class="then">Bảng khối lượng chính là nội dung được đem đi duyệt. Bản vẽ không có dòng khối lượng nào thì không trình duyệt nội bộ được — duyệt xong cũng không có gì để chuyển sang đơn hàng.</span></li>
-      <li><b>Duyệt nội bộ trước khi gửi.</b> TP TQT xem cả bảng khối lượng đã nhập lẫn tệp bản vẽ tải lên rồi mới bấm “Duyệt bản vẽ”; chưa duyệt nội bộ thì không xuất file gửi CĐT được.<span class="then">Bỏ qua bước này sẽ làm tăng số vòng gửi — chỉ số bị theo dõi trong báo cáo chất lượng bản vẽ.</span></li>
+      <li><b>Duyệt nội bộ trước khi gửi.</b> TP TQT xem cả bảng khối lượng đã nhập lẫn tệp bản vẽ tải lên rồi mới bấm “Duyệt bản vẽ”; chưa duyệt nội bộ thì không xuất file gửi CĐT được. Bản vẽ chưa có tệp nào thì không trình duyệt được — không có gì để xem.<span class="then">Bỏ qua bước này sẽ làm tăng số vòng gửi — chỉ số bị theo dõi trong báo cáo chất lượng bản vẽ.</span></li>
       <li><b>Hai kết quả mở khóa việc phát hành.</b> Chỉ <code>approved</code> và <code>approved_as_noted</code> cho phép TP TQT bấm phát hành.<span class="then"><code>approved_as_noted</code> yêu cầu cập nhật bản vẽ theo ghi chú nhưng <b>không</b> phải gửi lại, nên không tăng vòng gửi.</span></li>
       <li><b>Vòng gửi chỉ tăng khi gửi.</b> Số vòng tăng tại thời điểm bấm “Xuất file &amp; gửi mail CĐT”, không tăng khi kỹ sư sửa nội bộ.<span class="then">Nhờ vậy chỉ số “số vòng trung bình” phản ánh đúng số lần làm phiền CĐT.</span></li>
       <li><b>Ngày nằm ở hai phía tính riêng.</b> Hệ thống tách số ngày bản vẽ nằm ở công ty và số ngày nằm ở CĐT.<span class="then">Đây là căn cứ giải trình khi tiến độ thi công chậm do CĐT duyệt lâu.</span></li>
@@ -277,6 +280,8 @@
       <li><b>Phát hành là bước riêng, không tự động.</b> Kết quả chấp thuận của CĐT chưa đưa bản vẽ vào <a href="ORD-03.html">ORD-03</a>; TP TQT phải chọn bản vẽ và bấm “Phát hành sang đơn hàng”.<span class="then">CĐT trả lời qua mail, người ghi nhận kết quả vào hệ thống có thể không phải người quyết định cho sản xuất. Tách hai thao tác để việc mở đường cho đơn hàng luôn có một người chịu trách nhiệm và một dấu thời gian.</span></li>
       <li><b>Phát hành khóa bảng khối lượng.</b> Sau khi phát hành, các dòng khối lượng không sửa được nữa; muốn sửa phải thu hồi phát hành, và không thu hồi được nếu đã có đơn hàng cắt từ bản vẽ.<span class="then">Đơn hàng lập từ bản vẽ luôn truy ngược được về đúng bộ khối lượng và đúng vòng duyệt đã sinh ra nó.</span></li>
       <li><b>Trễ hạn cam kết ghi nhận riêng.</b> Quá ngày cam kết trả mà chưa có kết quả thì cảnh báo và tính vào cột “trễ”.<span class="then">Trễ của CĐT không tính vào chỉ số chất lượng bản vẽ của kỹ sư phụ trách.</span></li>
+      <li><b>Một bản vẽ phủ nhiều đầu việc.</b> Kỹ sư chọn mọi đầu việc mà bản vẽ thể hiện, trong cùng một dự án; mỗi dòng khối lượng chỉ rõ nó thuộc đầu việc nào trong tập đó.<span class="then">Ba đầu việc của cùng một hạng mục thường nằm trên một bản vẽ. Bắt lập ba bản vẽ và tải tệp ba lần là ghi sai thực tế; còn gộp mà không ghi đầu việc từng dòng thì <a href="ORD-03.html">ORD-03</a> mất căn cứ đối chiếu BOQ.</span></li>
+      <li><b>Đầu việc đã có bản vẽ được ẩn mặc định.</b> Khi lập bản vẽ mới, đầu việc đang thuộc một bản vẽ còn hiệu lực không hiện trong danh sách chọn; muốn chọn lại phải bật tùy chọn hiện chúng.<span class="then">Bản vẽ thứ hai trên cùng một đầu việc là bản bổ sung có chủ đích chứ không phải thao tác nhầm, nên vẫn cho phép — nhưng danh sách bản vẽ đánh dấu trùng để trưởng phòng nhìn ra ngay.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -293,6 +298,10 @@
           <tr><td>Sửa khối lượng sau khi phát hành</td><td><code>released_at</code> đã có</td><td>“Bản vẽ đã phát hành sang đơn hàng. Thu hồi phát hành trước khi sửa bảng khối lượng.”</td></tr>
           <tr><td>Thu hồi phát hành khi đã có đơn</td><td>Tồn tại đơn hàng cắt từ bản vẽ</td><td>“Đã có {n} đơn hàng lập từ bản vẽ này. Không thu hồi phát hành được; sửa khối lượng phải qua bản vẽ mới.”</td></tr>
           <tr><td>Thiếu tệp DWG hoặc PDF</td><td>Thiếu một trong hai định dạng</td><td>“Mỗi vòng gửi cần cả bản DWG và bản PDF.”</td></tr>
+          <tr><td>Tạo bản vẽ chưa chọn đầu việc</td><td><code>wbs_ids[]</code> rỗng</td><td>“Chọn ít nhất một đầu việc cho bản vẽ này.”</td></tr>
+          <tr><td>Chọn đầu việc đã có bản vẽ</td><td>Đầu việc thuộc một bản vẽ còn hiệu lực</td><td>“Đầu việc {mã} đã có bản vẽ {shop_id}. Tiếp tục sẽ tạo bản vẽ bổ sung cho đầu việc này.”</td></tr>
+          <tr><td>Dòng khối lượng thuộc đầu việc lạ</td><td><code>wbs_id</code> của dòng không nằm trong <code>wbs_ids[]</code></td><td>“Dòng {n} thuộc đầu việc không có trong bản vẽ này. Chọn lại đầu việc hoặc bổ sung nó vào bản vẽ.”</td></tr>
+          <tr><td>Trình duyệt khi chưa có tệp bản vẽ</td><td><code>files[]</code> rỗng</td><td>“Bản vẽ chưa có tệp nào. Tải tệp bản vẽ lên trước khi trình TP TQT.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -310,7 +319,10 @@
           <tr><td>UAT-ORD02-6</td><td>CĐT đã chấp thuận nhưng TP TQT chưa bấm phát hành</td><td>Vào <a href="ORD-03.html">ORD-03</a> chọn bản vẽ nguồn</td><td>Bản vẽ này <b>không</b> xuất hiện trong danh sách chọn</td></tr>
           <tr><td>UAT-ORD02-7</td><td>Bản vẽ trên, sau khi TP TQT bấm phát hành</td><td>Vào <a href="ORD-03.html">ORD-03</a> chọn lại bản vẽ nguồn</td><td>Bản vẽ hiện trong danh sách; 3 dòng khối lượng tự nạp vào đơn</td></tr>
           <tr><td>UAT-ORD02-8</td><td>Bản vẽ đã phát hành, chưa có đơn hàng nào</td><td>Sửa một dòng khối lượng</td><td>Bị chặn kèm hướng dẫn thu hồi phát hành trước</td></tr>
-          <tr><td>UAT-ORD02-9</td><td>Dự án có 24 bản vẽ nhiều vòng</td><td>Mở báo cáo vòng duyệt</td><td>Hiện số vòng trung bình theo hạng mục và theo kỹ sư phụ trách</td></tr>
+          <tr><td>UAT-ORD02-9</td><td>Dự án có 24 bản vẽ nhiều vòng</td><td>Mở báo cáo vòng duyệt</td><td>Hiện số vòng trung bình theo đầu việc và theo kỹ sư phụ trách</td></tr>
+          <tr><td>UAT-ORD02-10</td><td>Hợp đồng có 1 BOQ gồm 3 đầu việc, chưa lập bản vẽ nào</td><td>Tạo một bản vẽ, chọn cả 3 đầu việc, tải tệp ngay trong hộp thoại tạo</td><td>Một bản vẽ duy nhất phủ cả 3 đầu việc; tệp đính kèm ngay, không phải mở trang chi tiết mới tải được</td></tr>
+          <tr><td>UAT-ORD02-11</td><td>Bản vẽ ở UAT-ORD02-10 đã tạo</td><td>Mở lại hộp thoại tạo bản vẽ cho cùng dự án</td><td>Cả 3 đầu việc không còn trong danh sách chọn; bật “hiện đầu việc đã có bản vẽ” thì chúng hiện lại kèm mã bản vẽ đang phủ</td></tr>
+          <tr><td>UAT-ORD02-12</td><td>Dự án có 5 đầu việc, 3 trong số đó đã có bản vẽ</td><td>Mở bảng độ phủ đầu việc của dự án</td><td>Liệt kê đủ 5 dòng; 2 dòng chưa có bản vẽ hiện nút tạo bản vẽ với đầu việc đã chọn sẵn</td></tr>
         </tbody>
       </table>
     </div>
