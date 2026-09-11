@@ -77,7 +77,7 @@
     <div class="tb-id">ORD-03</div>
     <div class="tb-main">
       <h3>Lập &amp; trình đơn hàng theo shop được duyệt</h3>
-      <p>Gộp hai dòng 7.1 và 7.2 của bảng yêu cầu: phụ trách P. TQT trình lãnh đạo đơn hàng; trường hợp lãnh đạo không phê duyệt thì từ chối, yêu cầu bổ sung thông tin hoặc chỉnh sửa và quay lại bước lập.</p>
+      <p>Gộp hai dòng 7.1 và 7.2 của bảng yêu cầu: phụ trách P. TQT trình lãnh đạo đơn hàng; trường hợp lãnh đạo không phê duyệt thì từ chối, yêu cầu bổ sung thông tin hoặc chỉnh sửa và quay lại bước lập. Đơn hàng bám theo bản vẽ shopdrawing: chọn dự án rồi chọn bản vẽ, đầu việc đọc từ chính bảng khối lượng của bản vẽ.</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>P. TQT — Shopdrawing</dd></div>
         <div><dt>Phê duyệt</dt><dd>TP TQT → Ban lãnh đạo</dd></div>
@@ -89,6 +89,7 @@
   <div class="sb">
     <h4>Mục tiêu</h4>
     <p>Đơn hàng là chứng từ trung tâm của cả nhóm ORD: nó nối bản vẽ được duyệt với sản xuất, với cấp hàng, và với doanh thu. Ghi chú gốc nhấn mạnh chất lượng thông báo: “đọc thông báo là sẽ biết được đơn hàng gì, của dự án nào, hạng mục nào”.</p>
+    <p>Đơn phụ thuộc vào bản vẽ chứ không phụ thuộc vào đầu việc: một bản vẽ phủ nhiều đầu việc, và một bản vẽ thường phải yêu cầu làm nhiều đợt, mỗi đợt có thể lấy hàng từ nguồn khác nhau, về nơi khác nhau, vào lúc khác nhau. Vì vậy ngày cần hàng, nơi nhận và nguồn cung ứng nằm ở <em>từng dòng</em>, còn mốc đối chiếu khối lượng là khối lượng bản vẽ chứ không phải BOQ hợp đồng.</p>
 
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:575px;margin:0 auto"><svg role="img" aria-label="Hình ORD-03.1 Nhánh 7.2 của yêu cầu gốc được tách làm hai lối ra khác nhau: “yêu cầu bổ sung” giữ nguyên mã đơn và quay lại bước lập, “từ chối” đóng hẳn đơn hàng."
@@ -105,7 +106,7 @@
 <title>B</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="535.74,-731.72 259.79,-731.72 259.79,-687.32 535.74,-687.32 535.74,-731.72"/>
 <text xml:space="preserve" text-anchor="middle" x="397.76" y="-713.27" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lập đơn hàng</text>
-<text xml:space="preserve" text-anchor="middle" x="397.76" y="-698.27" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chọn đầu việc, nạp khối lượng theo shop</text>
+<text xml:space="preserve" text-anchor="middle" x="397.76" y="-698.27" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chọn bản vẽ, nạp khối lượng bản vẽ</text>
 </g>
 <g id="edge1" class="edge">
 <title>A&#45;&gt;B</title>
@@ -115,7 +116,7 @@
 <g id="node3" class="node">
 <title>C</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="420.12,-652.32 223.41,-652.32 223.41,-622.92 420.12,-622.92 420.12,-652.32"/>
-<text xml:space="preserve" text-anchor="middle" x="321.76" y="-633.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đối chiếu với BOQ hợp đồng</text>
+<text xml:space="preserve" text-anchor="middle" x="321.76" y="-633.87" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đối chiếu khối lượng bản vẽ</text>
 </g>
 <g id="edge2" class="edge">
 <title>B&#45;&gt;C</title>
@@ -125,8 +126,8 @@
 <g id="node4" class="node">
 <title>D</title>
 <polygon fill="#eef2f5" stroke="#5d6b7a" points="292.76,-587.92 157.2,-555.04 292.76,-522.16 428.33,-555.04 292.76,-587.92"/>
-<text xml:space="preserve" text-anchor="middle" x="292.76" y="-558.79" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lũy kế đơn hàng</text>
-<text xml:space="preserve" text-anchor="middle" x="292.76" y="-543.79" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">vượt khối lượng BOQ?</text>
+<text xml:space="preserve" text-anchor="middle" x="292.76" y="-558.79" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lũy kế đã yêu cầu</text>
+<text xml:space="preserve" text-anchor="middle" x="292.76" y="-543.79" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">vượt KL bản vẽ?</text>
 </g>
 <g id="edge3" class="edge">
 <title>C&#45;&gt;D</title>
@@ -245,13 +246,20 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Mã đơn hàng</td><td class="k">order_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>DH-YYYY-NNN</code>.</td></tr>
-          <tr><td>Dự án · đầu việc</td><td class="k">project_id, wbs_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc — là nội dung chính của thông báo.</td></tr>
-          <tr><td>Bản vẽ nguồn</td><td class="k">shop_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ chọn được bản vẽ đã <b>phát hành</b> ở <a href="ORD-02.html">ORD-02</a> — CĐT chấp thuận nhưng TP TQT chưa phát hành thì chưa hiện.</td></tr>
-          <tr><td>Dòng đơn hàng</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: vật tư / sản phẩm, quy cách, ĐVT dự án, ĐVT kế toán, khối lượng, ghi chú gia công.</td></tr>
-          <tr><td>Khối lượng BOQ còn lại</td><td class="k">boq_remaining</td><td>Số</td><td class="c">—</td><td>Hệ thống tính: khối lượng BOQ hợp đồng trừ lũy kế các đơn đã duyệt của cùng đầu việc.</td></tr>
-          <tr><td>Lý do vượt khối lượng</td><td class="k">over_reason</td><td>Chuỗi</td><td class="c">—</td><td>Bắt buộc khi vượt; hiển thị nổi bật cho người duyệt.</td></tr>
-          <tr><td>Ngày cần hàng</td><td class="k">required_date</td><td>Ngày</td><td class="c req">✱</td><td>Cơ sở lập kế hoạch cấp hàng ở <a href="ORD-05.html">ORD-05</a>.</td></tr>
-          <tr><td>Nơi nhận</td><td class="k">deliver_to</td><td>Tham chiếu</td><td class="c req">✱</td><td>Kho dự án hoặc địa điểm công trình.</td></tr>
+          <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chọn trước tiên — chỉ để lọc danh sách bản vẽ.</td></tr>
+          <tr><td>Bản vẽ nguồn</td><td class="k">shop_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ chọn được bản vẽ đã <b>phát hành</b> ở <a href="ORD-02.html">ORD-02</a>. Một đơn hàng gắn đúng <b>một</b> bản vẽ; đơn cho bản vẽ khác thì lập đơn khác.</td></tr>
+          <tr><td>Đầu việc</td><td class="k">—</td><td>—</td><td class="c">—</td><td><b>Không còn là trường của đơn.</b> Đầu việc đọc từ từng dòng khối lượng của bản vẽ, nên một đơn phủ đủ các đầu việc mà bản vẽ phủ.</td></tr>
+          <tr><td>Dòng đơn hàng</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng mang đủ: dòng khối lượng nguồn, sản phẩm, quy cách, ĐVT, khối lượng, ngày cần hàng, nơi nhận, nguồn cung ứng, ghi chú.</td></tr>
+          <tr><td>Dòng khối lượng nguồn</td><td class="k">lines[].shop_qty_line_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Trỏ về đúng dòng trong bảng khối lượng của bản vẽ. <b>Nhiều dòng đơn cùng trỏ một dòng bản vẽ là hợp lệ</b> — đó chính là cách chia một đầu việc ra nhiều nguồn cung ứng.</td></tr>
+          <tr><td>Đầu việc của dòng</td><td class="k">lines[].wbs_id</td><td>Tham chiếu</td><td class="c">—</td><td>Hệ thống đọc từ dòng khối lượng bản vẽ, người lập không nhập tay.</td></tr>
+          <tr><td>ĐVT</td><td class="k">lines[].unit</td><td>Chuỗi</td><td class="c">—</td><td>Kế thừa nguyên một hệ từ BOQ đấu thầu → bản vẽ → đơn hàng. Chỉ hiển thị để rà soát, không sửa, không quy đổi.</td></tr>
+          <tr><td>Khối lượng dòng</td><td class="k">lines[].qty</td><td>Số</td><td class="c req">✱</td><td>Nhỏ hơn khối lượng bản vẽ là bình thường — một bản vẽ yêu cầu làm nhiều đợt.</td></tr>
+          <tr><td>Ngày cần hàng</td><td class="k">lines[].required_date</td><td>Ngày</td><td class="c req">✱</td><td><b>Ở cấp dòng.</b> Mỗi dòng một mốc riêng; là cơ sở lập kế hoạch cấp hàng ở <a href="ORD-05.html">ORD-05</a>.</td></tr>
+          <tr><td>Nơi nhận</td><td class="k">lines[].deliver_to</td><td>Tham chiếu</td><td class="c req">✱</td><td><b>Ở cấp dòng.</b> Kho dự án hoặc địa điểm công trình.</td></tr>
+          <tr><td>Nguồn cung ứng</td><td class="k">lines[].supply_source</td><td>Tham chiếu</td><td class="c">—</td><td>Chọn kho (<a href="ACC-02.html">ACC-02</a>) hoặc nhà cung cấp. <b>Để trống nghĩa là Nhà máy sản xuất</b> — màn hình hiện sẵn chữ mờ đó. Quyết định luồng thực hiện ở <a href="ORD-04.html">ORD-04</a>.</td></tr>
+          <tr><td>Ghi chú dòng</td><td class="k">lines[].note</td><td>Chuỗi</td><td class="c">—</td><td>Quy cách gia công, lưu ý giao nhận, mục đích của đợt. Hiện thẳng dưới dòng chứ không giấu trong một cột hẹp.</td></tr>
+          <tr><td>Khối lượng bản vẽ còn lại</td><td class="k">shop_remaining</td><td>Số</td><td class="c">—</td><td>Hệ thống tính cho <em>từng dòng khối lượng bản vẽ</em>: khối lượng bản vẽ trừ lũy kế đã yêu cầu ở các đơn đã duyệt.</td></tr>
+          <tr><td>Lý do vượt khối lượng</td><td class="k">over_reason</td><td>Chuỗi</td><td class="c">—</td><td>Bắt buộc khi tổng yêu cầu vượt khối lượng bản vẽ; hiển thị nổi bật cho người duyệt.</td></tr>
           <tr><td>Bản vẽ sản xuất</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>Bắt buộc kèm theo đơn — đúng cột “Chứng từ cần up: Đơn hàng + bản vẽ sản xuất”.</td></tr>
         </tbody>
       </table>
@@ -259,49 +267,56 @@
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Chọn đầu việc xong, khối lượng theo shop được duyệt tự nạp vào các dòng đơn hàng, không phải gõ lại.</li>
-      <li>Màn hình luôn hiện khối lượng BOQ hợp đồng, lũy kế đã đặt và phần còn lại của đầu việc đó.</li>
-      <li>Đặt vượt khối lượng BOQ không bị chặn nhưng bắt buộc nhập lý do và lý do hiện ngay trên màn hình duyệt.</li>
+      <li>Chọn dự án rồi chọn bản vẽ là đủ để mở đơn — không phải chọn đầu việc, vì đầu việc đã nằm sẵn trong bảng khối lượng của bản vẽ.</li>
+      <li>Chọn bản vẽ xong, toàn bộ dòng khối lượng tự nạp vào đơn với khối lượng đầy đủ, không phải gõ lại.</li>
+      <li>Mỗi dòng luôn hiện ba con số của bản vẽ: khối lượng bản vẽ, đã yêu cầu ở các đơn trước, còn lại.</li>
+      <li>Đặt ít hơn khối lượng bản vẽ không có cảnh báo nào — đơn đi nhiều đợt là chuyện thường.</li>
+      <li>Tổng đã yêu cầu vượt khối lượng bản vẽ thì cảnh báo và bắt nhập lý do, nhưng không chặn trình duyệt.</li>
+      <li>Một đầu việc tách được thành nhiều dòng để chia nguồn cung ứng, mỗi dòng có ngày cần hàng và nơi nhận riêng.</li>
+      <li>Nguồn cung ứng để trống hiểu là Nhà máy sản xuất, và màn hình nói rõ điều đó chứ không để người lập đoán.</li>
+      <li>Số BOQ hợp đồng vẫn xem được nhưng thuần tham khảo — không đổi màu, không bắt lý do, không chặn.</li>
       <li>Đơn hàng không kèm bản vẽ sản xuất không trình duyệt được.</li>
-      <li>Thông báo gửi lãnh đạo nêu đủ: mã đơn, dự án, đầu việc, khối lượng, ngày cần hàng.</li>
       <li>Lãnh đạo yêu cầu bổ sung thì đơn quay về trạng thái soạn, giữ nguyên mã và toàn bộ lịch sử trao đổi.</li>
-      <li>Đơn bị từ chối vẫn tra cứu được và không tính vào lũy kế khối lượng đã đặt.</li>
+      <li>Đơn bị từ chối vẫn tra cứu được và không tính vào lũy kế đã yêu cầu.</li>
     </ol>
 
     <h4>Mockup UI — Đơn hàng › Lập đơn</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">Đơn hàng ›</span><b>DH-2026-155 · nháp</b><span class="sp"></span><span class="wf-btn">In đơn</span><span class="wf-btn pri"><span class="pin">5</span> Trình duyệt</span></div>
+      <div class="wf-bar"><span class="wf-crumb">Đơn hàng ›</span><b>DH-2026-155 · nháp</b><span class="sp"></span><span class="wf-btn">In đơn</span><span class="wf-btn pri"><span class="pin">6</span> Trình duyệt</span></div>
       <div class="wf-body">
         <div class="wf-row">
           <div class="wf-c"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">1</span> Thông tin đơn hàng</div>
-            <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Dự án ✱</label><div class="in">DA-2026-014 · Vinhomes Grand Park GĐ 3 <em>▾</em></div></div></div></div>
-            <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Đầu việc ✱</label><div class="in">HM-01.2 · Ốp lát mặt đứng tháp A <em>▾</em></div></div></div>
+            <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Dự án ✱</label><div class="in">DA-2026-014 · Vinhomes Grand Park GĐ 3 <em>▾</em></div></div></div>
             <div class="wf-c"><div class="wf-f"><label>Bản vẽ nguồn ✱</label><div class="in">SD-014-008 v3 <em>· đã phát hành</em></div></div></div></div>
-            <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Ngày cần hàng ✱</label><div class="in">20/08/2026</div></div></div>
-            <div class="wf-c"><div class="wf-f"><label>Nơi nhận ✱</label><div class="in">Kho công trình DA-2026-014 <em>▾</em></div></div></div></div>
+            <p style="margin:6px 0 0;font-size:11.5px">Bản vẽ phủ đầu việc: <b>HM-01.2</b> · <b>HM-01.3</b> — đơn hàng lấy khối lượng của cả hai.</p>
           </div></div>
           <div class="wf-c" style="flex:0 1 240px"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">2</span> Đối chiếu BOQ hợp đồng</div>
+            <div class="wf-lg"><span class="pin">2</span> Đối chiếu BOQ hợp đồng <em>· tham khảo</em></div>
             <table><tbody>
+              <tr><td>Đầu việc</td><td class="num">HM-01.2 ▾</td></tr>
               <tr><td>KL BOQ đầu việc</td><td class="num">8.980 m²</td></tr>
               <tr><td>Đã đặt lũy kế</td><td class="num">7.420 m²</td></tr>
               <tr><td>Còn lại</td><td class="num">1.560 m²</td></tr>
-              <tr><td>Đơn này</td><td class="num">1.240 m²</td></tr>
             </tbody></table>
-            <p style="margin:6px 0 0;font-size:11.5px;color:var(--ok)">Trong hạn mức BOQ.</p>
+            <p style="margin:6px 0 0;font-size:11.5px">Chỉ để xem — cảnh báo vượt tính theo khối lượng bản vẽ.</p>
           </div></div>
         </div>
         <div class="wf-sec">
-          <div class="wf-lg"><span class="pin">3</span> Chi tiết đơn hàng</div>
-          <table><thead><tr><th>STT</th><th>Sản phẩm</th><th>Quy cách</th><th>ĐVT dự án</th><th class="num">KL</th><th>ĐVT kế toán</th><th class="num">Quy đổi</th><th>Ghi chú gia công</th></tr></thead>
+          <div class="wf-lg">Chi tiết đơn hàng — <span class="pin">3</span> nút “Tách dòng” ở cuối mỗi hàng</div>
+          <table><thead><tr><th>STT</th><th>Đầu việc</th><th>Sản phẩm · Quy cách</th><th>ĐVT</th><th class="num">Theo bản vẽ<br>KL · đã YC · còn</th><th class="num">KL đơn này</th><th>Ngày cần hàng</th><th>Nơi nhận</th><th><span class="pin">4</span> Nguồn cung ứng</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td>Đá granite đen Phú Yên</td><td>600×600×20</td><td>m²</td><td class="num">1.100</td><td>m²</td><td class="num">1.100</td><td>Mài bóng, vát cạnh 2mm</td></tr>
-            <tr><td>2</td><td>Đá granite đen Phú Yên — viên bo góc</td><td>Theo bản vẽ</td><td>viên</td><td class="num">420</td><td>m²</td><td class="num">140</td><td>Cắt cong R120</td></tr>
+            <tr><td>1a</td><td>HM-01.2</td><td>Đá granite đen Phú Yên · 600×600×20</td><td>m²</td><td class="num">1.100 · 0 · 1.100</td><td class="num">700</td><td>20/08/2026</td><td>Kho công trình DA-2026-014 <em>▾</em></td><td><em>Nhà máy sản xuất</em> ▾</td></tr>
+            <tr><td></td><td colspan="8" style="font-size:11.5px"><span class="pin">5</span> Ghi chú: Mài bóng, vát cạnh 2mm — đợt 1 ốp tầng 5–9.</td></tr>
+            <tr><td>1b</td><td>HM-01.2</td><td>Đá granite đen Phú Yên · 600×600×20</td><td>m²</td><td class="num">— · — · —</td><td class="num">400</td><td>05/09/2026</td><td>Công trình tháp A <em>▾</em></td><td>Kho trung tâm Bình Dương ▾</td></tr>
+            <tr><td></td><td colspan="8" style="font-size:11.5px"><span class="pin">5</span> Ghi chú: Đợt 2 lấy tồn kho, không đặt nhà máy.</td></tr>
+            <tr><td>2</td><td>HM-01.3</td><td>Đá granite đen — viên bo góc · Theo bản vẽ</td><td>viên</td><td class="num">420 · 380 · 40</td><td class="num" style="color:var(--warn)"><b>60</b></td><td>20/08/2026</td><td>Kho công trình DA-2026-014 <em>▾</em></td><td>Cty TNHH Đá Hoàng Gia ▾</td></tr>
+            <tr><td></td><td colspan="8" style="font-size:11.5px"><span class="pin">5</span> Ghi chú: Cắt cong R120.</td></tr>
           </tbody></table>
+          <p class="note q" style="margin:8px 0 0;font-size:11.5px"><b>Vượt khối lượng bản vẽ</b> — dòng 2 vượt 20 viên (bản vẽ 420 · đã yêu cầu 380 · đơn này 60). Nhập lý do để trình duyệt.</p>
         </div>
         <div class="wf-sec">
-          <div class="wf-lg"><span class="pin">4</span> Bản vẽ sản xuất đính kèm ✱</div>
+          <div class="wf-lg"><span class="pin">6</span> Bản vẽ sản xuất đính kèm ✱</div>
           <div style="display:flex;gap:6px"><span class="wf-btn">BV_SX_HM01_trục5-9.dwg</span><span class="wf-btn">BV_SX_HM01_trục5-9.pdf</span></div>
         </div>
       </div>
@@ -310,40 +325,46 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Chọn dự án · đầu việc · bản vẽ</td><td>Danh sách bản vẽ chỉ hiện bản đã phát hành có chứa đầu việc đã chọn.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Đối chiếu BOQ trực tiếp</td><td>Cập nhật ngay khi sửa khối lượng dòng. Vượt hạn mức thì đổi màu và mở ô lý do.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Nhập dòng đơn hàng</td><td>Hai cột ĐVT: ĐVT dự án để lập biên bản giao hàng, ĐVT kế toán để tính giá vốn (<a href="PF-01.html">PF-01</a>).</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Đính kèm bản vẽ sản xuất</td><td>Bắt buộc ít nhất một tệp trước khi trình duyệt.</td></tr>
-          <tr><td class="c"><span class="pin">5</span></td><td>Trình duyệt</td><td>Khóa chỉnh sửa, sinh phiên duyệt và thông báo có đủ ngữ cảnh cho lãnh đạo.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Chọn dự án · bản vẽ</td><td>Chỉ hiện bản vẽ đã phát hành của dự án. Chọn xong, toàn bộ dòng khối lượng tự nạp vào bảng. Đổi bản vẽ thì hỏi lại trước khi thay bảng.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Đối chiếu BOQ hợp đồng</td><td>Khối thu gọn, chỉ để xem. Không đổi màu, không mở ô lý do, không chặn trình.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Tách dòng</td><td>Nhân đôi hàng, giữ nguyên dòng khối lượng nguồn · sản phẩm · ĐVT · đầu việc; khối lượng chia để người lập sửa; ngày · nơi nhận · nguồn · ghi chú để trống. Các hàng cùng một dòng bản vẽ đánh số <code>1a</code>, <code>1b</code> và cụm “Theo bản vẽ” chỉ in ở hàng đầu nhóm.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Chọn nguồn cung ứng</td><td>Combobox hai nhóm: <b>Kho</b> và <b>Nhà cung cấp</b>. Để trống hiện chữ mờ “Nhà máy sản xuất” — đó là mặc định, không phải lỗi.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Ghi chú dòng</td><td>Hàng phụ tràn ngang ngay dưới dòng, đọc được cả câu thay vì bị cắt trong một cột hẹp.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Trình duyệt</td><td>Bắt buộc có ít nhất một tệp bản vẽ sản xuất. Khóa chỉnh sửa, sinh phiên duyệt và thông báo có đủ ngữ cảnh cho lãnh đạo.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Chỉ lập từ bản vẽ đã phát hành.</b> Danh sách bản vẽ nguồn chỉ hiện bản TP TQT đã bấm “Phát hành sang đơn hàng” ở <a href="ORD-02.html">ORD-02</a>.<span class="then">Khối lượng theo shop tự nạp vào các dòng đơn hàng, người lập chỉ điều chỉnh khi cần.</span></li>
-      <li><b>Đối chiếu BOQ theo thời gian thực.</b> Lũy kế đã đặt tính từ các đơn <b>đã duyệt</b> của cùng đầu việc; đơn bị từ chối hoặc hủy không tính.<span class="then">Con số cập nhật ngay khi sửa khối lượng dòng, không chờ lưu.</span></li>
-      <li><b>Vượt BOQ được phép nhưng phải giải trình.</b> Đặt vượt khối lượng hợp đồng không bị chặn.<span class="then">Bắt buộc nhập lý do, và lý do hiển thị nổi bật trên màn hình phê duyệt — vì đây là điểm phát sinh chi phí ngoài hợp đồng.</span></li>
+      <li><b>Chỉ lập từ bản vẽ đã phát hành.</b> Danh sách bản vẽ nguồn chỉ hiện bản TP TQT đã bấm “Phát hành sang đơn hàng” ở <a href="ORD-02.html">ORD-02</a>.<span class="then">Chọn xong, khối lượng bản vẽ tự nạp hết vào các dòng đơn hàng; người lập sửa khối lượng, xóa dòng không cần, hoặc tách dòng.</span></li>
+      <li><b>Đơn hàng bám bản vẽ, không bám đầu việc.</b> Đầu đơn chỉ còn dự án và bản vẽ; đầu việc của mỗi dòng đọc từ dòng khối lượng bản vẽ (<a href="ORD-02.html">ORD-02</a> quy tắc “một bản vẽ phủ nhiều đầu việc”).<span class="then">Nhờ vậy một đơn phủ đủ các đầu việc của bản vẽ mà không cần lập ba đơn cho ba đầu việc nằm chung một bản vẽ.</span></li>
+      <li><b>Mốc đối chiếu là khối lượng bản vẽ, ở cấp dòng khối lượng.</b> “Đã yêu cầu” là tổng khối lượng các dòng đơn <b>đã duyệt</b> cùng trỏ về một dòng khối lượng bản vẽ; đơn bị từ chối hoặc hủy không tính.<span class="then">Con số cập nhật ngay khi sửa khối lượng dòng, không chờ lưu.</span></li>
+      <li><b>Cảnh báo tính theo nhóm dòng, không theo từng hàng.</b> Một dòng bản vẽ tách làm ba nguồn thì so <em>(đã yêu cầu + tổng ba hàng)</em> với khối lượng bản vẽ.<span class="then">So từng hàng riêng sẽ không bao giờ báo vượt dù tổng đã vượt gấp đôi — đây là cái bẫy chính của việc cho phép tách dòng.</span></li>
+      <li><b>Đặt ít hơn bản vẽ là bình thường, vượt thì phải giải trình.</b> Một bản vẽ yêu cầu làm nhiều đợt nên khối lượng đơn nhỏ hơn khối lượng bản vẽ không sinh cảnh báo nào. Vượt cũng không bị chặn.<span class="then">Bắt buộc nhập lý do, và lý do hiển thị nổi bật trên màn hình phê duyệt — vì đây là điểm phát sinh chi phí ngoài hợp đồng.</span></li>
+      <li><b>BOQ hợp đồng chỉ để xem.</b> Khối đối chiếu BOQ vẫn hiện theo từng đầu việc nhưng không đổi màu, không bắt lý do, không chặn trình.<span class="then">Việc canh BOQ đã làm ở khâu thẩm định và ở khâu bản vẽ; kiểm lại lần nữa ở đơn hàng chỉ tạo cảnh báo trùng mà người lập học cách bỏ qua.</span></li>
+      <li><b>Một hệ đơn vị duy nhất.</b> ĐVT đi thẳng từ BOQ đấu thầu sang bản vẽ sang đơn hàng, không quy đổi, không có ĐVT kế toán riêng, không có hệ số.<span class="then">Dòng đơn chỉ hiển thị ĐVT để rà soát. Kế toán dùng đúng đơn vị đó ở <a href="ACC-04.html">ACC-04</a>.</span></li>
+      <li><b>Ngày cần hàng và nơi nhận thuộc về dòng.</b> Mỗi dòng có mốc và địa chỉ riêng vì mỗi đầu việc có thể nhập từ nguồn khác nhau, về thời điểm khác nhau.<span class="then">Đầu đơn không còn hai trường này. <a href="ORD-05.html">ORD-05</a> gom đợt cấp theo cặp (ngày cần hàng · nơi nhận) của dòng.</span></li>
+      <li><b>Nguồn cung ứng là quyết định cuối, không phải đề xuất.</b> Để trống nghĩa là Nhà máy sản xuất; chọn kho hoặc nhà cung cấp nghĩa là đường cung ứng.<span class="then"><a href="ORD-04.html">ORD-04</a> đọc cột này để sinh lệnh và không hỏi lại — người duyệt muốn đổi nguồn thì trả đơn về cho người lập sửa.</span></li>
       <li><b>Bản vẽ sản xuất là điều kiện trình.</b> Đơn không kèm ít nhất một tệp bản vẽ sản xuất thì không trình duyệt được.<span class="then">Đúng cột chứng từ của yêu cầu gốc: “Đơn hàng + bản vẽ sản xuất”.</span></li>
-      <li><b>Hai hệ đơn vị trên mỗi dòng.</b> Dòng đơn hàng ghi cả ĐVT dự án và ĐVT kế toán kèm số quy đổi.<span class="then">ĐVT dự án dùng lập biên bản giao hàng; ĐVT kế toán dùng tính giá vốn ở <a href="ACC-04.html">ACC-04</a>.</span></li>
+      <li><b>Ngày cần hàng ràng buộc kế hoạch.</b> Cảnh báo thời gian sản xuất tối thiểu bắn theo <em>từng dòng</em>, không phải cả đơn.<span class="then">Dòng lấy từ kho về ngay và dòng đặt nhà máy gia công không thể chung một mốc cảnh báo.</span></li>
       <li><b>Yêu cầu bổ sung giữ mã.</b> Lãnh đạo yêu cầu bổ sung thì đơn về trạng thái soạn, giữ nguyên mã và toàn bộ trao đổi.<span class="then">Khác hẳn từ chối — từ chối đóng đơn và phải lập đơn mới.</span></li>
-      <li><b>Ngày cần hàng ràng buộc kế hoạch.</b> Ngày cần hàng là mốc để lập kế hoạch cấp ở <a href="ORD-05.html">ORD-05</a>.<span class="then">Đặt ngày quá gần so với thời gian sản xuất tối thiểu của nhóm vật tư thì cảnh báo ngay khi lập.</span></li>
-      <li><b>Đối chiếu theo đầu việc của từng dòng khối lượng.</b> Một bản vẽ phủ nhiều đầu việc (<a href="ORD-02.html">ORD-02</a> quy tắc “một bản vẽ phủ nhiều đầu việc”), nên đơn hàng khớp đầu việc ghi ở <em>dòng khối lượng</em>, không phải đầu việc của bản vẽ.<span class="then">Nếu so với đầu việc của bản vẽ thì đơn lập cho đầu việc A sẽ nuốt luôn khối lượng của B và C nằm chung bản vẽ — lũy kế BOQ sai ngay từ đơn đầu tiên.</span></li>
-      <li><b>Thông báo đủ ngữ cảnh.</b> Thông báo trình duyệt nêu mã đơn, dự án, đầu việc, khối lượng và ngày cần hàng.<span class="then">Đúng yêu cầu gốc: đọc thông báo là biết đơn hàng gì, của dự án nào, hạng mục nào.</span></li>
+      <li><b>Thông báo đủ ngữ cảnh.</b> Thông báo trình duyệt nêu mã đơn, dự án, bản vẽ, các đầu việc, tổng khối lượng và ngày cần hàng sớm nhất trong đơn.<span class="then">Đúng yêu cầu gốc: đọc thông báo là biết đơn hàng gì, của dự án nào, hạng mục nào.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
     <div class="tw">
       <table>
-        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <thead><tr><th style="width:30%">Tình huống</th><th style="width:28%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
-          <tr><td>Vượt khối lượng BOQ</td><td>Lũy kế + đơn này &gt; BOQ</td><td>“Vượt khối lượng hợp đồng {số} {đvt} ở đầu việc {mã}. Nhập lý do để trình duyệt.”</td></tr>
-          <tr><td>Trình khi thiếu bản vẽ</td><td>Không có tệp bản vẽ sản xuất</td><td>“Đính kèm bản vẽ sản xuất trước khi trình duyệt.”</td></tr>
-          <tr><td>Ngày cần hàng quá gấp</td><td>&lt; thời gian sản xuất tối thiểu</td><td>“Ngày cần hàng {ngày} sớm hơn thời gian sản xuất tối thiểu ({n} ngày) của nhóm vật tư này.”</td></tr>
+          <tr><td>Vượt khối lượng bản vẽ</td><td>Σ nhóm cùng <code>shop_qty_line_id</code> + đã yêu cầu &gt; KL bản vẽ</td><td>“Dòng {stt} vượt khối lượng bản vẽ {n} {đvt} (bản vẽ {a} · đã yêu cầu {b} · đơn này {c}). Nhập lý do để trình duyệt.”</td></tr>
+          <tr><td>Thiếu ngày cần hàng</td><td>Dòng trống <code>required_date</code></td><td>“Dòng {stt} chưa có ngày cần hàng.”</td></tr>
+          <tr><td>Thiếu nơi nhận</td><td>Dòng trống <code>deliver_to</code></td><td>“Dòng {stt} chưa có nơi nhận.”</td></tr>
+          <tr><td>Ngày cần hàng quá gấp</td><td>Theo <em>từng dòng</em>: &lt; thời gian sản xuất tối thiểu</td><td>“Dòng {stt}: ngày cần hàng {ngày} sớm hơn thời gian sản xuất tối thiểu ({n} ngày) của nhóm vật tư này.”</td></tr>
           <tr><td>Khối lượng bằng 0</td><td><code>qty ≤ 0</code></td><td>“Khối lượng dòng {stt} phải lớn hơn 0. Xóa dòng nếu không còn cần.”</td></tr>
-          <tr><td>Hệ số quy đổi bất thường</td><td>Lệch hệ số chuẩn của vật tư</td><td>“Số quy đổi lệch hệ số chuẩn ({hệ số}). Dòng này sẽ được đánh dấu để kế toán rà soát.”</td></tr>
-          <tr><td>Dòng khối lượng thuộc đầu việc khác</td><td><code>wbs_id</code> của dòng khác đầu việc của đơn</td><td>“Dòng {n} thuộc đầu việc {mã}, khác đầu việc của đơn hàng. Bỏ dòng này hoặc lập đơn riêng cho đầu việc đó.”</td></tr>
-          <tr><td>Đầu việc không thuộc dự án</td><td><code>wbs_id</code> khác dự án đã chọn</td><td>“Đầu việc {mã} không thuộc dự án {mã}. Chọn lại đầu việc.”</td></tr>
+          <tr><td>Trình khi thiếu bản vẽ</td><td>Không có tệp bản vẽ sản xuất</td><td>“Đính kèm bản vẽ sản xuất trước khi trình duyệt.”</td></tr>
+          <tr><td>Đơn không có dòng nào</td><td><code>lines[]</code> rỗng sau khi xóa hết</td><td>“Đơn hàng chưa có dòng nào. Chọn lại bản vẽ hoặc thêm dòng khối lượng.”</td></tr>
+          <tr><td>Nguồn cung ứng để trống</td><td>—</td><td><b>Không phải lỗi.</b> Ô hiện chữ mờ “Nhà máy sản xuất” để người lập thấy mặc định đang là gì.</td></tr>
         </tbody>
       </table>
     </div>
@@ -353,19 +374,23 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-ORD03-1</td><td>HM-01 có BOQ 8.980 m², đã đặt 7.420 m²</td><td>Lập đơn 1.240 m²</td><td>Khối “Đối chiếu BOQ” hiện còn 1.560, đơn này 1.240, trong hạn mức</td></tr>
-          <tr><td>UAT-ORD03-2</td><td>Cùng tiền đề trên</td><td>Sửa khối lượng lên 1.800 m²</td><td>Ô đổi màu cảnh báo, mở ô nhập lý do vượt BOQ</td></tr>
-          <tr><td>UAT-ORD03-3</td><td>Đơn đã nhập đủ dòng, chưa đính kèm tệp</td><td>Bấm “Trình duyệt”</td><td>Bị chặn kèm yêu cầu bản vẽ sản xuất</td></tr>
-          <tr><td>UAT-ORD03-4</td><td>Đơn đã trình, đang chờ lãnh đạo</td><td>Lãnh đạo mở chuông thông báo</td><td>Thông báo nêu đủ mã đơn, dự án, đầu việc, khối lượng, ngày cần hàng</td></tr>
-          <tr><td>UAT-ORD03-5</td><td>Đơn ở cấp 2</td><td>Lãnh đạo bấm “Yêu cầu bổ sung”</td><td>Đơn về trạng thái soạn, giữ mã DH-2026-155 và lịch sử trao đổi</td></tr>
-          <tr><td>UAT-ORD03-6</td><td>Đơn bị từ chối</td><td>Lập đơn mới cùng đầu việc</td><td>Lũy kế đã đặt không tính đơn bị từ chối</td></tr>
-          <tr><td>UAT-ORD03-7</td><td>Chọn bản vẽ nguồn SD-014-008 v3</td><td>Chọn đầu việc HM-01.2</td><td>Khối lượng theo shop tự nạp vào các dòng đơn hàng</td></tr>
+          <tr><td>UAT-ORD03-1</td><td>SD-014-008 v3 đã phát hành, phủ HM-01.2 và HM-01.3</td><td>Chọn dự án rồi chọn bản vẽ</td><td>Không phải chọn đầu việc; toàn bộ dòng khối lượng của cả hai đầu việc tự nạp vào bảng</td></tr>
+          <tr><td>UAT-ORD03-2</td><td>Dòng bản vẽ 1.100 m², chưa đơn nào yêu cầu</td><td>Sửa khối lượng xuống 700</td><td>Không cảnh báo gì — cụm “Theo bản vẽ” hiện 1.100 · 0 · 1.100</td></tr>
+          <tr><td>UAT-ORD03-3</td><td>Cùng dòng trên, đang để 700</td><td>Bấm “Tách dòng”, nhập 400 cho hàng mới, chọn nguồn “Kho trung tâm Bình Dương”</td><td>Hai hàng <code>1a</code>/<code>1b</code> cùng dòng bản vẽ, nhóm lại bằng viền chung, mỗi hàng ngày cần hàng và nơi nhận riêng</td></tr>
+          <tr><td>UAT-ORD03-4</td><td>Dòng bản vẽ 420 viên, đơn trước đã duyệt 380</td><td>Nhập 60 viên</td><td>Cảnh báo vượt 20 viên, mở ô nhập lý do, nút Trình duyệt vẫn bấm được sau khi nhập lý do</td></tr>
+          <tr><td>UAT-ORD03-5</td><td>Dòng bản vẽ 1.000 m², đã yêu cầu 0</td><td>Tách 3 hàng, mỗi hàng 400 m²</td><td>Cảnh báo vượt 200 m² tính trên <b>tổng ba hàng</b>, không phải trên từng hàng 400</td></tr>
+          <tr><td>UAT-ORD03-6</td><td>Đơn đủ dòng, một dòng bỏ trống ngày cần hàng</td><td>Bấm “Trình duyệt”</td><td>Bị chặn kèm thông điệp nêu đúng số thứ tự dòng thiếu</td></tr>
+          <tr><td>UAT-ORD03-7</td><td>Đơn đã nhập đủ dòng, chưa đính kèm tệp</td><td>Bấm “Trình duyệt”</td><td>Bị chặn kèm yêu cầu bản vẽ sản xuất</td></tr>
+          <tr><td>UAT-ORD03-8</td><td>Một dòng để trống nguồn cung ứng</td><td>Trình và duyệt đơn</td><td>Không báo lỗi; <a href="ORD-04.html">ORD-04</a> sinh lệnh sản xuất cho dòng đó, lệnh cung ứng cho các dòng có kho / nhà cung cấp</td></tr>
+          <tr><td>UAT-ORD03-9</td><td>HM-01.2 có BOQ 8.980 m², đã đặt lũy kế 7.420</td><td>Lập đơn 2.000 m² cho HM-01.2</td><td>Khối BOQ hiện còn lại 1.560 nhưng <b>không</b> đổi màu, <b>không</b> bắt lý do, <b>không</b> chặn</td></tr>
+          <tr><td>UAT-ORD03-10</td><td>Đơn ở cấp 2</td><td>Lãnh đạo bấm “Yêu cầu bổ sung”</td><td>Đơn về trạng thái soạn, giữ mã DH-2026-155 và lịch sử trao đổi</td></tr>
+          <tr><td>UAT-ORD03-11</td><td>Đơn bị từ chối, có dòng trỏ về dòng bản vẽ X</td><td>Lập đơn mới cùng bản vẽ</td><td>“Đã yêu cầu” của dòng X không tính đơn bị từ chối</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-02.html">ORD-02 shopdrawing</a><a href="ORD-04.html">ORD-04 phân luồng</a><a href="ORD-06.html">ORD-06 áp giá doanh thu</a><a href="ORD-07.html">ORD-07 cập nhật / hủy</a><a href="PF-03.html">PF-03 phê duyệt</a></p>
+    <p class="links"><a href="ORD-02.html">ORD-02 shopdrawing</a><a href="ORD-04.html">ORD-04 phân luồng</a><a href="ORD-05.html">ORD-05 cấp hàng theo đợt</a><a href="ORD-06.html">ORD-06 áp giá doanh thu</a><a href="ORD-07.html">ORD-07 cập nhật / hủy</a><a href="ACC-02.html">ACC-02 hệ thống kho</a><a href="PF-03.html">PF-03 phê duyệt</a></p>
   </div>
 </section>
 <div class="filefoot">

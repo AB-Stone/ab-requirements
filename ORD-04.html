@@ -89,6 +89,7 @@
   <div class="sb">
     <h4>Mục tiêu</h4>
     <p>Sau khi lãnh đạo duyệt, đơn hàng phải được chia đúng địa chỉ thực hiện. Quy tắc phân luồng lấy từ ghi chú gốc: đá do nhà máy sản xuất thì về Nhà máy; vật tư mua ngoài thì về Phòng Cung ứng; đá nhỏ lẻ công trình mua để nhà máy sản xuất thì thuộc luồng làm việc của Nhà máy. Một đơn hàng có thể tách thành hai lệnh thực hiện.</p>
+    <p><b>Nguồn cung ứng không còn được chọn ở màn hình này.</b> Người lập đơn đã ghi nguồn trên từng dòng ở <a href="ORD-03.html">ORD-03</a> — kho, nhà cung cấp, hoặc để trống nghĩa là Nhà máy sản xuất. ORD-04 đọc cột đó, gom dòng thành lệnh và sinh lệnh; việc còn lại ở đây là phê duyệt và theo dõi. Muốn đổi nguồn thì trả đơn về cho người lập sửa, vì đổi nguồn là đổi nội dung đơn chứ không phải một quyết định điều phối.</p>
 
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:700px;margin:0 auto"><svg role="img" aria-label="Hình ORD-04.1 Một đơn hàng có thể sinh ra hai lệnh thực hiện chạy song song. Hai nhánh nét đứt là hai ranh giới phạm vi mà bảng yêu cầu nhấn mạnh: áp giá không chặn luồng, và vật tư phụ không đi qua đây."
@@ -104,7 +105,7 @@
 <g id="node2" class="node">
 <title>B</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="251.87,-450.66 55.11,-450.66 55.11,-421.26 251.87,-421.26 251.87,-450.66"/>
-<text xml:space="preserve" text-anchor="middle" x="153.49" y="-432.21" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Phân loại từng dòng đơn hàng</text>
+<text xml:space="preserve" text-anchor="middle" x="153.49" y="-432.21" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đọc nguồn cung ứng đã ghi</text>
 </g>
 <g id="edge1" class="edge">
 <title>A&#45;&gt;B</title>
@@ -126,8 +127,8 @@
 <g id="node3" class="node">
 <title>C</title>
 <polygon fill="#eef2f5" stroke="#5d6b7a" points="153.49,-378.76 79.73,-345.88 153.49,-313 227.25,-345.88 153.49,-378.76"/>
-<text xml:space="preserve" text-anchor="middle" x="153.49" y="-349.63" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nguồn cung</text>
-<text xml:space="preserve" text-anchor="middle" x="153.49" y="-334.63" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">của dòng</text>
+<text xml:space="preserve" text-anchor="middle" x="153.49" y="-349.63" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nguồn cung ứng</text>
+<text xml:space="preserve" text-anchor="middle" x="153.49" y="-334.63" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chốt ở ORD-03</text>
 </g>
 <g id="edge2" class="edge">
 <title>B&#45;&gt;C</title>
@@ -143,13 +144,13 @@
 <title>C&#45;&gt;D</title>
 <path fill="none" stroke="#55606b" d="M111.14,-331.39C65.71,-316.93 0,-296 0,-296 0,-296 0,-269.6 0,-269.6 0,-269.6 22.14,-262.7 45.42,-255.44"/>
 <polygon fill="#55606b" stroke="#55606b" points="46.02,-257.64 51.55,-253.53 44.67,-253.29 46.02,-257.64"/>
-<text xml:space="preserve" text-anchor="middle" x="61.75" y="-279.5" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đá do nhà máy sản xuất</text>
+<text xml:space="preserve" text-anchor="middle" x="61.75" y="-279.5" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Nguồn để trống</text>
 </g>
 <g id="edge5" class="edge">
 <title>C&#45;&gt;D</title>
 <path fill="none" stroke="#55606b" d="M143.23,-317.28C135.23,-295.79 125.49,-269.6 125.49,-269.6 125.49,-269.6 121.03,-264.52 115.73,-258.49"/>
 <polygon fill="#55606b" stroke="#55606b" points="117.73,-257.33 111.73,-253.95 114.31,-260.33 117.73,-257.33"/>
-<text xml:space="preserve" text-anchor="middle" x="199.97" y="-286.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đá nhỏ lẻ công trình mua</text>
+<text xml:space="preserve" text-anchor="middle" x="199.97" y="-286.1" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đá công trình mua</text>
 <text xml:space="preserve" text-anchor="middle" x="199.97" y="-272.9" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">để NM gia công</text>
 </g>
 <g id="node5" class="node">
@@ -161,7 +162,7 @@
 <title>C&#45;&gt;E</title>
 <path fill="none" stroke="#55606b" d="M191.15,-329.28C225.69,-314.97 271.49,-296 271.49,-296 271.49,-296 286.44,-275.68 298.5,-259.28"/>
 <polygon fill="#55606b" stroke="#55606b" points="300.19,-260.82 302.21,-254.23 296.53,-258.12 300.19,-260.82"/>
-<text xml:space="preserve" text-anchor="middle" x="333.08" y="-279.5" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Vật tư mua ngoài</text>
+<text xml:space="preserve" text-anchor="middle" x="333.08" y="-279.5" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Nguồn là kho / NCC</text>
 </g>
 <g id="node6" class="node">
 <title>F</title>
@@ -249,7 +250,9 @@
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Duyệt xong đơn hàng, hệ thống tự đề xuất phân luồng từng dòng theo nhóm vật tư; người dùng sửa được trước khi chốt.</li>
+      <li>Duyệt xong đơn hàng, hệ thống gom dòng theo nguồn cung ứng đã ghi ở <a href="ORD-03.html">ORD-03</a> và sinh lệnh — không hỏi lại người duyệt.</li>
+      <li>Dòng để trống nguồn đi về Nhà máy; dòng có kho hoặc nhà cung cấp đi về P. Cung ứng.</li>
+      <li>Muốn đổi nguồn của một dòng thì phải trả đơn về người lập, và màn hình nói rõ như vậy thay vì cho sửa tại chỗ.</li>
       <li>Nhà máy và P. Cung ứng nhận thông báo kèm bản vẽ sản xuất và khối lượng thuộc phần của mình.</li>
       <li>Một đơn hàng tách hai lệnh thì trạng thái đơn là “hoàn thành” chỉ khi cả hai lệnh hoàn thành.</li>
       <li>Người xem đơn hàng thấy được đơn đang nằm ở Nhà máy hay Cung ứng, đã tiếp nhận chưa.</li>
@@ -259,21 +262,21 @@
 
     <h4>Mockup UI — Đơn hàng › Phân luồng thực hiện</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">DH-2026-155 ›</span><b>Phân luồng thực hiện</b><span class="sp"></span><span class="tag t-ok">Đã duyệt 26/07</span><span class="wf-btn pri"><span class="pin">2</span> Chốt phân luồng</span></div>
+      <div class="wf-bar"><span class="wf-crumb">DH-2026-155 ›</span><b>Phân luồng thực hiện</b><span class="sp"></span><span class="tag t-ok">Đã duyệt 26/07</span><span class="wf-btn pri"><span class="pin">2</span> Sinh lệnh thực hiện</span></div>
       <div class="wf-body">
         <div class="wf-sec">
-          <div class="wf-lg"><span class="pin">1</span> Phân luồng theo dòng</div>
-          <table><thead><tr><th>STT</th><th>Sản phẩm</th><th class="num">KL</th><th>Nguồn cung</th><th>Đơn vị thực hiện</th></tr></thead>
+          <div class="wf-lg"><span class="pin">1</span> Dòng đơn hàng &amp; nguồn cung ứng <em>· chỉ đọc, theo ORD-03</em></div>
+          <table><thead><tr><th>STT</th><th>Sản phẩm</th><th class="num">KL</th><th>Ngày cần hàng</th><th>Nguồn cung ứng</th><th>Đơn vị thực hiện</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td>Đá granite đen Phú Yên 600×600×20</td><td class="num">1.100 m²</td><td>NM sản xuất <em>▾</em></td><td>Nhà máy An Bình 2</td></tr>
-            <tr><td>2</td><td>Viên bo góc cắt cong R120</td><td class="num">420 viên</td><td>NM sản xuất <em>▾</em></td><td>Nhà máy An Bình 2</td></tr>
-            <tr><td>3</td><td>Keo chà ron ngoại thất</td><td class="num">48 thùng</td><td>Mua ngoài <em>▾</em></td><td>P. Cung ứng</td></tr>
-          </tbody></table>
+            <tr><td>1a</td><td>Đá granite đen Phú Yên 600×600×20</td><td class="num">700 m²</td><td>20/08/2026</td><td><em>Nhà máy sản xuất</em></td><td>Nhà máy An Bình 2</td></tr>
+            <tr><td>1b</td><td>Đá granite đen Phú Yên 600×600×20</td><td class="num">400 m²</td><td>05/09/2026</td><td>Kho trung tâm Bình Dương</td><td>P. Cung ứng</td></tr>
+            <tr><td>2</td><td>Viên bo góc cắt cong R120</td><td class="num">60 viên</td><td>20/08/2026</td><td>Cty TNHH Đá Hoàng Gia</td><td>P. Cung ứng</td></tr>
+                      </tbody></table>
         </div>
         <div class="wf-row">
           <div class="wf-c"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">3</span> LSX-2026-088 · Nhà máy An Bình 2</div>
-            <div class="wf-steps"><div class="done"><b>Đã tiếp nhận</b>27/07</div><div class="cur"><b>Đang sản xuất</b>đợt 1/3</div><div><b>Hoàn thành</b>—</div></div>
+            <div class="wf-steps"><div class="done"><b>Đã tiếp nhận</b>27/07</div><div class="cur"><b>Đang sản xuất</b>đợt 2/2</div><div><b>Hoàn thành</b>—</div></div>
           </div></div>
           <div class="wf-c"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">4</span> LCU-2026-042 · P. Cung ứng</div>
@@ -287,8 +290,8 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Gán nguồn cung theo dòng</td><td>Hệ thống gợi ý theo nhóm vật tư; người dùng đổi được. Mỗi dòng chỉ thuộc một lệnh.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Chốt phân luồng</td><td>Sinh các lệnh thực hiện, gửi thông báo kèm bản vẽ tới đơn vị thực hiện.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Xem nguồn cung ứng theo dòng</td><td>Chỉ đọc — cột này do người lập đơn ghi ở <a href="ORD-03.html">ORD-03</a>. Trống nghĩa là Nhà máy sản xuất. Mỗi dòng chỉ thuộc một lệnh; dòng đã tách sẵn ở khâu lập đơn.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Sinh lệnh thực hiện</td><td>Gom dòng theo nguồn, sinh lệnh, gửi thông báo kèm bản vẽ tới đơn vị thực hiện. Không có bước chọn luồng nào trước đó.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Theo dõi lệnh sản xuất</td><td>Trạng thái do Nhà máy cập nhật; hiển thị đợt cấp hiện tại.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Theo dõi lệnh cung ứng</td><td>Chưa tiếp nhận quá 2 ngày làm việc thì nhắc trưởng P. Cung ứng.</td></tr>
         </tbody>
@@ -297,8 +300,10 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Gợi ý theo nhóm vật tư.</b> Hệ thống đề xuất nguồn cung cho từng dòng dựa trên nhóm vật tư đã khai ở <a href="PF-01.html">PF-01</a>.<span class="then">Người dùng đổi được trước khi chốt; lựa chọn cuối cùng ghi nhật ký để rà soát quy tắc gợi ý về sau.</span></li>
-      <li><b>Mỗi dòng thuộc đúng một lệnh.</b> Không tách một dòng đơn hàng cho hai đơn vị thực hiện.<span class="then">Muốn chia thì tách thành hai dòng đơn hàng với khối lượng tương ứng.</span></li>
+      <li><b>Nguồn cung ứng chốt từ khâu lập đơn.</b> Cột nguồn của mỗi dòng do người lập ghi ở <a href="ORD-03.html">ORD-03</a>; màn hình này chỉ đọc.<span class="then">Người lập là người biết đợt hàng đó lấy ở đâu — bắt người duyệt đoán lại một lần nữa chỉ sinh ra hai phiên bản sự thật cho cùng một dòng.</span></li>
+      <li><b>Trống nghĩa là Nhà máy.</b> Dòng không ghi nguồn đi về luồng sản xuất; dòng ghi kho hoặc nhà cung cấp đi về P. Cung ứng.<span class="then">Quy ước này phải hiện thành chữ trên cả hai màn hình, không để người dùng suy ra từ việc ô trống.</span></li>
+      <li><b>Đổi nguồn là sửa đơn, không phải điều phối.</b> Muốn đổi nguồn một dòng thì trả đơn về trạng thái soạn cho người lập sửa.<span class="then">Sửa tại màn hình phân luồng sẽ làm lịch sử đơn hàng ở <a href="ORD-07.html">ORD-07</a> không còn khớp với thứ đã được lãnh đạo duyệt.</span></li>
+      <li><b>Mỗi dòng thuộc đúng một lệnh.</b> Không tách một dòng đơn hàng cho hai đơn vị thực hiện.<span class="then">Việc chia đã làm ở <a href="ORD-03.html">ORD-03</a> bằng thao tác tách dòng: một đầu việc lấy từ hai nguồn thì ở đơn hàng nó đã là hai dòng.</span></li>
       <li><b>Đá nhỏ lẻ công trình mua vẫn thuộc Nhà máy.</b> Theo ghi chú gốc, đá do công trình mua để nhà máy gia công đi theo luồng Nhà máy.<span class="then">Chỉ vật tư mua ngoài không qua gia công mới thuộc P. Cung ứng.</span></li>
       <li><b>Vật tư phụ không đi luồng này.</b> Màn hình phân luồng không cho tạo lệnh cho vật tư phụ, vật tư khác.<span class="then">Thử thêm sẽ được dẫn sang <a href="ACC-01.html">ACC-01</a> — đúng ranh giới mà yêu cầu gốc đặt ra.</span></li>
       <li><b>Đơn hoàn thành khi mọi lệnh hoàn thành.</b> Trạng thái đơn hàng là hàm của trạng thái các lệnh con.<span class="then">Một lệnh xong, một lệnh dở thì đơn ở trạng thái “cấp một phần”, không phải “hoàn thành”.</span></li>
@@ -311,7 +316,8 @@
       <table>
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
-          <tr><td>Còn dòng chưa gán nguồn</td><td>Có dòng <code>source</code> rỗng</td><td>“Còn {n} dòng chưa chọn nguồn cung. Mọi dòng phải thuộc một lệnh thực hiện.”</td></tr>
+          <tr><td>Sửa nguồn tại màn hình phân luồng</td><td>Người dùng thử đổi cột nguồn</td><td>“Nguồn cung ứng ghi ở đơn hàng. Trả đơn về người lập để sửa, hoặc mở ORD-07 để lập phiên bản mới.”</td></tr>
+          <tr><td>Nguồn trỏ về kho đã đóng</td><td>Kho bị vô hiệu sau khi đơn được duyệt</td><td>“Dòng {stt} trỏ về kho {tên} đã ngừng hoạt động. Trả đơn về người lập để chọn nguồn khác.”</td></tr>
           <tr><td>Thêm vật tư phụ</td><td>Nhóm vật tư là phụ trợ</td><td>“Vật tư phụ đi theo luồng đề xuất mua sắm. Mở ACC-01 để lập đề xuất.”</td></tr>
           <tr><td>Chốt phân luồng lần hai</td><td>Đã có lệnh thực hiện</td><td>“Đơn này đã phân luồng ngày {ngày}. Muốn đổi phải hủy lệnh chưa tiếp nhận trước.”</td></tr>
           <tr><td>Đơn vị thực hiện ngừng hoạt động</td><td>Đơn vị bị vô hiệu</td><td>“{tên đơn vị} đang ngừng hoạt động. Chọn đơn vị khác.”</td></tr>
@@ -324,8 +330,9 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-ORD04-1</td><td>Đơn có 2 dòng đá và 1 dòng keo chà ron</td><td>Mở màn hình phân luồng</td><td>Hai dòng đá gợi ý Nhà máy, dòng keo gợi ý P. Cung ứng</td></tr>
-          <tr><td>UAT-ORD04-2</td><td>Đã gán xong nguồn cho mọi dòng</td><td>Bấm “Chốt phân luồng”</td><td>Sinh LSX và LCU; hai đơn vị nhận thông báo kèm bản vẽ phần của mình</td></tr>
+          <tr><td>UAT-ORD04-1</td><td>Đơn có dòng để trống nguồn, dòng ghi kho, dòng ghi nhà cung cấp</td><td>Mở màn hình phân luồng</td><td>Cột nguồn chỉ đọc, hiện đúng thứ người lập đã ghi; dòng trống hiện “Nhà máy sản xuất”</td></tr>
+          <tr><td>UAT-ORD04-1b</td><td>Cùng tiền đề trên</td><td>Thử sửa cột nguồn</td><td>Không sửa được; thông điệp dẫn về ORD-03 / ORD-07</td></tr>
+          <tr><td>UAT-ORD04-2</td><td>Đơn vừa được lãnh đạo duyệt</td><td>Bấm “Sinh lệnh thực hiện”</td><td>Dòng trống nguồn gom vào LSX, dòng có kho / NCC gom vào LCU; hai đơn vị nhận thông báo kèm bản vẽ phần của mình</td></tr>
           <tr><td>UAT-ORD04-3</td><td>LSX hoàn thành, LCU đang mua</td><td>Xem trạng thái đơn hàng</td><td>Đơn ở “cấp một phần”, không phải “hoàn thành”</td></tr>
           <tr><td>UAT-ORD04-4</td><td>LCU gửi 2 ngày làm việc chưa tiếp nhận</td><td>Chờ tới mốc</td><td>Trưởng P. Cung ứng nhận nhắc việc</td></tr>
           <tr><td>UAT-ORD04-5</td><td>Đơn chưa được áp giá doanh thu</td><td>Chạy hết vòng cấp hàng</td><td>Mọi bước chạy bình thường; không bước nào bị chặn vì thiếu giá</td></tr>
