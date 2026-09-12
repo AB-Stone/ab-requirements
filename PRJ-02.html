@@ -85,7 +85,7 @@
   </header>
   <div class="sb">
     <h4>Mục tiêu</h4>
-    <p>Sản lượng thi công là thước đo duy nhất nối ba con số với nhau: khối lượng hợp đồng (doanh thu được ghi nhận), khối lượng khoán (chi phí phải trả tổ đội), và tiến độ dự án. Đặc tả yêu cầu nhập theo hai chu kỳ song song — <em>tuần</em> để điều hành, <em>đợt thanh toán</em> để nghiệm thu — trên cùng một tập dữ liệu.</p>
+    <p>Sản lượng nhập theo <b>đợt thanh toán</b>, trên bảng dựng sẵn từ bảng giá khoán đã duyệt: mỗi dòng là một cặp đầu việc – tổ đội đã có đơn giá, và chỉ còn một cột để điền. Sản lượng thi công là thước đo duy nhất nối ba con số với nhau: khối lượng hợp đồng (doanh thu được ghi nhận), khối lượng khoán (chi phí phải trả tổ đội), và tiến độ dự án. Đặc tả yêu cầu nhập theo hai chu kỳ song song — <em>tuần</em> để điều hành, <em>đợt thanh toán</em> để nghiệm thu — trên cùng một tập dữ liệu.</p>
 
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:741px;margin:0 auto"><svg role="img" aria-label="Hình PRJ-02.1 Một dòng dữ liệu, hai chu kỳ. Sản lượng nhập theo tuần để điều hành; đến kỳ nghiệm thu thì gom lại thành bảng khối lượng đợt và khóa lại — từ đó rẽ ba nhánh: trả tổ đội, thu chủ đầu tư, kết chuyển chi phí."
@@ -250,12 +250,15 @@
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Kỳ báo cáo</td><td class="k">period</td><td>Chọn 1 + ngày</td><td class="c req">✱</td><td><code>tuần</code> (số tuần + năm) hoặc <code>đợt thanh toán</code> (trỏ tới đợt của hợp đồng).</td></tr>
+          <tr><td>Đợt thanh toán</td><td class="k">batch_no</td><td>Tham chiếu</td><td class="c req">✱</td><td>Đơn vị nhập của màn hình. Mỗi đợt là một khoảng ngày cố định (xem quy tắc chu kỳ chốt); chọn đợt xong mới hiện bảng.</td></tr>
+          <tr><td>Bảng giá khoán nguồn</td><td class="k">rate_sheet_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bảng giá khoán đang hiệu lực của dự án (<a href="PRJ-01.html">PRJ-01</a>). Các dòng của bảng sản lượng chính là các dòng của bảng giá — không tự thêm dòng ở đây.</td></tr>
           <tr><td>Đầu việc</td><td class="k">wbs_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ chọn được đầu việc có trong BOQ hợp đồng.</td></tr>
-          <tr><td>Khối lượng thực hiện</td><td class="k">qty_done</td><td>Số</td><td class="c req">✱</td><td>Theo ĐVT của BOQ. Cho phép số âm khi điều chỉnh giảm, kèm lý do.</td></tr>
-          <tr><td>Lũy kế</td><td class="k">qty_cumulative</td><td>Số</td><td class="c">—</td><td>Hệ thống tính; so với khối lượng BOQ ra phần trăm hoàn thành hạng mục.</td></tr>
           <tr><td>Tổ đội thực hiện</td><td class="k">crew_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc — là căn cứ tính tiền khoán ở <a href="PRJ-03.html">PRJ-03</a>.</td></tr>
-          <tr><td>Bản vẽ thể hiện</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>Theo cột chứng từ gốc: “Bảng khối lượng thi công thực tế + bản vẽ thể hiện”.</td></tr>
+          <tr><td>KL thực hiện kỳ này</td><td class="k">qty_done</td><td>Số</td><td class="c req">✱</td><td>Theo ĐVT của BOQ. Là <b>tổng của cả kỳ cho cặp đó</b>, không phải số cộng thêm: lưu lại lần nữa thì số không đổi. Giảm số kỳ trước dùng dòng điều chỉnh âm.</td></tr>
+          <tr><td>KL thực hiện lũy kế</td><td class="k">qty_cumulative</td><td>Số</td><td class="c">—</td><td>Hệ thống tính: đã xác nhận các đợt trước + số đang nhập. Cập nhật ngay khi gõ.</td></tr>
+          <tr><td>Tỉ lệ hoàn thành</td><td class="k">pct_complete</td><td>Số</td><td class="c">—</td><td>Lũy kế chia khối lượng hợp đồng của <b>đầu việc</b>. Dòng Tổng cộng của mỗi đầu việc mới là tỉ lệ hoàn thành thật của đầu việc đó.</td></tr>
+          <tr><td>Ghi chú dòng</td><td class="k">note</td><td>Chuỗi</td><td class="c">—</td><td>Nhập trực tiếp trên bảng.</td></tr>
+          <tr><td>Bản vẽ thể hiện</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>Đính theo <b>đợt</b>, không theo từng dòng. Theo cột chứng từ gốc: “Bảng khối lượng thi công thực tế + bản vẽ thể hiện”.</td></tr>
           <tr><td>Ảnh hiện trường</td><td class="k">photos[]</td><td>Tệp ảnh</td><td class="c">—</td><td>Chụp từ ứng dụng di động, tự gắn ngày giờ và vị trí.</td></tr>
           <tr><td>Người nhập · xác nhận</td><td class="k">created_by, confirmed_by</td><td>Tham chiếu</td><td class="c req">✱</td><td>Người nhập là kỹ sư; xác nhận là chỉ huy trưởng.</td></tr>
           <tr><td>Trạng thái đợt</td><td class="k">batch_status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>đang ghi nhận</code> · <code>đã chốt</code> · <code>đã nghiệm thu với CĐT</code>.</td></tr>
@@ -265,8 +268,12 @@
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Nhập sản lượng theo tuần và xem tổng hợp theo đợt thanh toán trên cùng bộ dữ liệu, không nhập hai lần.</li>
-      <li>Tiến độ phần trăm của hạng mục và của dự án cập nhật ngay sau khi chỉ huy trưởng xác nhận.</li>
+      <li>Chọn dự án và đợt thanh toán là bảng hiện ra đã đủ dòng — không phải chọn lại đầu việc và tổ đội cho từng dòng.</li>
+      <li>Chỉ một cột phải điền: KL thực hiện kỳ này. Lũy kế và tỉ lệ hoàn thành tự tính ngay khi gõ.</li>
+      <li>Mỗi đầu việc có dòng Tổng cộng gộp các tổ đội cùng làm đầu việc đó; cuối bảng có tổng chung.</li>
+      <li>Lưu bảng nhiều lần không nhân đôi số liệu — bảng ghi trạng thái của kỳ, không cộng dồn.</li>
+      <li>Dán được cả khối số từ Excel vào cột khối lượng.</li>
+      <li>Tiến độ phần trăm của hạng mục và của dự án cập nhật ngay sau khi chỉ huy trưởng xác nhận cả kỳ.</li>
       <li>Lũy kế vượt khối lượng BOQ hợp đồng thì cảnh báo và yêu cầu chỉ ra phụ lục hợp đồng tương ứng.</li>
       <li>Đợt đã chốt thì khóa số liệu; sửa phải qua bản điều chỉnh có ghi lý do.</li>
       <li>Kỹ sư hiện trường nhập được sản lượng và chụp ảnh trực tiếp trên điện thoại (<a href="MOB-01.html">MOB-01</a>).</li>
@@ -276,22 +283,28 @@
 
     <h4>Mockup UI — Công trình › Sản lượng thi công</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>Sản lượng thi công</b><span class="sp"></span><span class="wf-btn"><span class="pin">1</span> Tuần 30/2026 <em>▾</em></span><span class="wf-btn"><span class="pin">5</span> Xuất bảng nghiệm thu</span><span class="wf-btn pri"><span class="pin">2</span> + Nhập sản lượng</span></div>
+      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>Sản lượng thi công</b><span class="sp"></span><span class="wf-btn"><span class="pin">1</span> Đợt 5 · 01/09–15/09/2026 <em>▾</em></span><span class="wf-btn">+ Tạo đợt</span><span class="wf-btn"><span class="pin">5</span> Xuất bảng nghiệm thu</span><span class="wf-btn pri"><span class="pin">4</span> Xác nhận sản lượng kỳ</span></div>
       <div class="wf-body">
-        <div class="wf-chips"><span class="wf-chip on">Theo tuần</span><span class="wf-chip">Theo đợt thanh toán</span><span class="wf-chip">Lũy kế toàn dự án</span></div>
+        <div class="wf-chips"><span class="wf-chip on">Theo đợt thanh toán</span><span class="wf-chip">Lũy kế toàn dự án</span></div>
         <div class="wf-kpi">
           <div><dt>Tiến độ dự án</dt><dd>62%</dd></div>
-          <div><dt>Sản lượng tuần</dt><dd>486 m²</dd></div>
-          <div><dt>Lũy kế đợt 5</dt><dd>1.940 m²</dd></div>
-          <div><dt>Còn lại theo BOQ</dt><dd>3.412 m²</dd></div>
+          <div><dt>Bảng giá nguồn</dt><dd>GK-DA14-02</dd></div>
+          <div><dt>Sản lượng kỳ này</dt><dd>2.106,70</dd></div>
+          <div><dt>Chờ xác nhận</dt><dd>7 dòng</dd></div>
         </div>
         <div class="wf-sec">
-          <div class="wf-lg"><span class="pin">3</span> Sản lượng theo đầu việc hợp đồng</div>
-          <table><thead><tr><th>Mã HM</th><th>Đầu việc</th><th>Tổ đội</th><th>ĐVT</th><th class="num">KL BOQ</th><th class="num">Tuần này</th><th class="num">Lũy kế</th><th class="num">% HT</th><th>Bản vẽ</th></tr></thead>
+          <div class="wf-lg"><span class="pin">2</span> Bảng sản lượng — mỗi dòng một cặp đầu việc – tổ đội, chỉ cột <span class="pin">3</span> phải nhập</div>
+          <table><thead><tr><th>Mã đầu việc</th><th>Đầu việc</th><th>Hình thức</th><th>Tổ đội</th><th>ĐVT</th><th class="num">ĐG khoán</th><th class="num">KL theo hợp đồng</th><th class="num">KL thực hiện kỳ này</th><th class="num">KL thực hiện lũy kế</th><th class="num">Tỉ lệ hoàn thành</th><th>Ghi chú</th></tr></thead>
           <tbody>
-            <tr><td>HM-01</td><td>Ốp lát mặt đứng tháp A</td><td>TD-004</td><td>m²</td><td class="num">8.980</td><td class="num">420</td><td class="num">5.568</td><td class="num">62%</td><td>BV_T30.pdf</td></tr>
-            <tr><td>HM-02</td><td>Lát sàn sảnh marble</td><td>TD-007</td><td>m²</td><td class="num">1.260</td><td class="num">66</td><td class="num">378</td><td class="num">30%</td><td>BV_T30.pdf</td></tr>
-            <tr><td>HM-04</td><td>Gia công đá cong bo góc</td><td>TD-004</td><td>công</td><td class="num">240</td><td class="num">12</td><td class="num">86</td><td class="num">36%</td><td>—</td></tr>
+            <tr><td>CV-001</td><td>Ốp lát mặt đứng đá granite tháp A</td><td>Khoán gọn</td><td>TD-001</td><td>m²</td><td class="num">500.000</td><td class="num">100.000,00</td><td class="num">500,00</td><td class="num">1.000,00</td><td class="num">1,00%</td><td>—</td></tr>
+            <tr><td>CV-001</td><td>Ốp lát mặt đứng đá granite tháp A</td><td>Khoán nhân công</td><td>TD-002</td><td>m²</td><td class="num">490.000</td><td class="num">100.000,00</td><td class="num">300,00</td><td class="num">700,00</td><td class="num">0,70%</td><td>—</td></tr>
+            <tr><td colspan="6"><b>Tổng cộng CV-001</b></td><td class="num">100.000,00</td><td class="num"><b>800,00</b></td><td class="num"><b>1.700,00</b></td><td class="num"><b>1,70%</b></td><td></td></tr>
+            <tr><td>CV-002</td><td>Lát sàn sảnh marble</td><td>Khoán nhân công</td><td>TD-001</td><td>m²</td><td class="num">500.000</td><td class="num">150.000,00</td><td class="num">100,00</td><td class="num">300,00</td><td class="num">0,20%</td><td>—</td></tr>
+            <tr><td colspan="6"><b>Tổng cộng CV-002</b></td><td class="num">150.000,00</td><td class="num"><b>100,00</b></td><td class="num"><b>300,00</b></td><td class="num"><b>0,20%</b></td><td></td></tr>
+            <tr><td>CV-003</td><td>Gia công đá cong bo góc</td><td>Khoán nhân công</td><td>TD-001</td><td>công</td><td class="num">490.000</td><td class="num">200.000,00</td><td class="num">205,50</td><td class="num">507,05</td><td class="num">0,25%</td><td>—</td></tr>
+            <tr><td>CV-003</td><td>Gia công đá cong bo góc</td><td>Khoán nhân công</td><td>TD-003</td><td>công</td><td class="num">495.000</td><td class="num">200.000,00</td><td class="num">200,45</td><td class="num">500,00</td><td class="num">0,25%</td><td>—</td></tr>
+            <tr><td>CV-003</td><td>Gia công đá cong bo góc</td><td>Khoán nhân công</td><td>TD-004</td><td>công</td><td class="num">500.000</td><td class="num">200.000,00</td><td class="num">300,50</td><td class="num">750,25</td><td class="num">0,38%</td><td>—</td></tr>
+            <tr><td colspan="6"><b>Tổng cộng CV-003</b></td><td class="num">200.000,00</td><td class="num"><b>706,45</b></td><td class="num"><b>1.757,30</b></td><td class="num"><b>0,88%</b></td><td></td></tr>
           </tbody></table>
         </div>
         <div class="wf-row">
@@ -315,10 +328,10 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Chuyển chu kỳ xem</td><td>Cùng dữ liệu, ba cách nhìn: tuần, đợt thanh toán, lũy kế. Không nhập lại số liệu.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Nhập sản lượng</td><td>Trên web hoặc điện thoại. Chọn đầu việc từ BOQ, nhập khối lượng, đính bản vẽ và ảnh.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Đối chiếu với BOQ</td><td>Cột lũy kế và % hoàn thành tính tự động; vượt BOQ thì cảnh báo.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Cập nhật mốc tiến độ</td><td>Tiến độ mốc suy ra từ sản lượng các đầu việc thuộc mốc đó.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Chọn đợt thanh toán</td><td>Đơn vị nhập của màn hình. Hai tab cùng một bộ dòng: theo đợt (nhập được) và lũy kế toàn dự án (chỉ xem, có thêm cột KL còn lại).</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Bảng dựng sẵn từ bảng giá khoán</td><td>Không thêm / xóa dòng ở đây: dòng nào có là do bảng giá khoán đã duyệt của dự án quyết định.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Nhập KL thực hiện kỳ này</td><td>Gõ thẳng vào bảng; Enter hoặc ↑↓ chuyển dòng, dán được cả khối từ Excel. Lũy kế và tỉ lệ hoàn thành tính lại theo từng phím gõ; vượt hợp đồng thì tô đỏ.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Xác nhận sản lượng kỳ</td><td>Chỉ huy trưởng xác nhận cả kỳ một lần, kèm bản vẽ thể hiện của đợt. Sau đó bảng khóa, sửa bằng dòng điều chỉnh.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Chốt đợt &amp; xuất bảng nghiệm thu</td><td>GĐ dự án chốt đợt, khóa số liệu, xuất bảng khối lượng theo mẫu chủ đầu tư.</td></tr>
         </tbody>
       </table>
@@ -326,15 +339,17 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Một dữ liệu, hai cách nhìn.</b> Sản lượng nhập theo tuần; báo cáo theo đợt thanh toán là phép gộp các tuần thuộc đợt.<span class="then">Không có màn hình nhập riêng cho đợt — tránh hai nguồn số liệu mâu thuẫn.</span></li>
-      <li><b>Xác nhận mới tính tiến độ.</b> Sản lượng do kỹ sư nhập chỉ tính vào tiến độ dự án sau khi chỉ huy trưởng xác nhận.<span class="then">Trước đó bản ghi ở trạng thái chờ, hiện riêng trong hàng chờ của chỉ huy trưởng và bị loại khỏi số liệu tổng hợp tiến độ — tránh trường hợp tổ đội tự khai khối lượng làm tiến độ chính thức bị thổi phồng trước khi được xác nhận tại hiện trường.</span></li>
+      <li><b>Nhập theo đợt thanh toán, trên một bảng duy nhất.</b> Chọn dự án và đợt là bảng hiện ra; mọi số liệu của kỳ nằm trên bảng đó.<span class="then">Nhập theo tuần là đường của ứng dụng hiện trường (<a href="MOB-01.html">MOB-01</a>), nơi kỹ sư ghi ngay tại chỗ. Trên web chỉ có một lối nhập — hai màn hình nhập trên cùng bộ dữ liệu là cách hai con số mâu thuẫn được gõ vào.</span></li>
+      <li><b>Dòng của bảng lấy từ bảng giá khoán.</b> Mỗi dòng là một cặp đầu việc – tổ đội đã có đơn giá ở bảng giá khoán hiệu lực (<a href="PRJ-01.html">PRJ-01</a>). Không thêm, không xóa dòng trên màn hình này.<span class="then">Cặp chưa có trong bảng giá thì chưa ghi được sản lượng — phải lập phụ lục bảng giá trước. Ghi khối lượng cho một cặp không có đơn giá là để lại cho <a href="PRJ-03.html">PRJ-03</a> một khối lượng không biết trả bao nhiêu.</span></li>
+      <li><b>Một cặp – một dòng trong mỗi đợt.</b> Ô “KL thực hiện kỳ này” là tổng của cả kỳ cho cặp đó, không phải số cộng thêm.<span class="then">Lưu bảng lần thứ hai để nguyên số cũ — bảng ghi trạng thái của kỳ chứ không cộng dồn. Đây là điều kiện để người dùng dám bấm Lưu nhiều lần trong khi nhập dở.</span></li>
+      <li><b>Xác nhận mới tính tiến độ — xác nhận cả kỳ.</b> Chỉ huy trưởng xác nhận một lần cho toàn bộ bảng của đợt; trước đó số liệu chưa vào tiến độ.<span class="then">Trước đó bản ghi ở trạng thái chờ, hiện riêng trong hàng chờ của chỉ huy trưởng và bị loại khỏi số liệu tổng hợp tiến độ — tránh trường hợp tổ đội tự khai khối lượng làm tiến độ chính thức bị thổi phồng trước khi được xác nhận tại hiện trường.</span></li>
       <li><b>Tổ đội là bắt buộc.</b> Mọi dòng sản lượng phải gắn tổ đội thực hiện.<span class="then">Đây là căn cứ tính tiền khoán ở <a href="PRJ-03.html">PRJ-03</a>; thiếu thì hồ sơ giao khoán không nạp được khối lượng.</span></li>
       <li><b>Tổ đội chọn từ danh mục, không nhập tay.</b> Trường Tổ đội trên màn hình nhập sản lượng thi công lấy dữ liệu từ màn hình danh mục tổ đội và bắt buộc chọn — không cho gõ tự do.<span class="then">Sản lượng ghi nhận mà không gắn đúng tổ đội trong danh mục thì không truy được ai là người được trả tiền cho khối lượng đó.</span></li>
       <li><b>Vượt BOQ phải chỉ ra phụ lục.</b> Lũy kế vượt khối lượng BOQ hợp đồng thì cảnh báo và yêu cầu chỉ ra phụ lục hợp đồng tương ứng.<span class="then">Không có phụ lục thì phần vượt vẫn ghi nhận nhưng bị tách riêng trong báo cáo, vì đó là khối lượng chưa chắc thu được tiền.</span></li>
-      <li><b>Điều chỉnh bằng số âm.</b> Sửa sai sản lượng kỳ trước bằng cách nhập dòng điều chỉnh âm, không sửa trực tiếp bản ghi cũ.<span class="then">Dòng âm bắt buộc có lý do và giữ nguyên vết của cả hai bản ghi.</span></li>
+      <li><b>Điều chỉnh bằng số âm.</b> Sửa sai sản lượng đã xác nhận bằng cách nhập dòng điều chỉnh âm, không sửa trực tiếp bản ghi cũ.<span class="then">Dòng âm bắt buộc có lý do và giữ nguyên vết của cả hai bản ghi. Vì vậy kỳ đã xác nhận thì bảng chuyển sang chỉ đọc: ô khối lượng không gõ đè được nữa, chỗ đó hiện nút Điều chỉnh.</span></li>
       <li><b>Đợt chốt là khóa cứng.</b> Đợt đã chốt không nhận thêm sản lượng ngày thuộc đợt đó.<span class="then">Sản lượng phát sinh muộn ghi vào đợt kế tiếp kèm ghi chú kỳ gốc.</span></li>
       <li><b>Chu kỳ chốt sản lượng — hai lần mỗi tháng.</b> Sản lượng chốt theo hai kỳ cố định trong tháng: Kỳ 1 (ngày 01–15) chốt trong ngày 16–20 và chi trả cũng trong ngày 16–20; Kỳ 2 (ngày 16–cuối tháng) chốt trong ngày 01–05 tháng sau và chi trả cũng trong ngày 01–05 tháng sau.<span class="then">Kỳ đã chốt thì khối lượng bị khóa, không đổi — cùng nguyên tắc “khối lượng chốt không đổi” như ở <a href="PRJ-01.html">PRJ-01</a>.</span></li>
-      <li><b>Bản vẽ thể hiện là bắt buộc.</b> Mỗi kỳ báo cáo cần đính kèm bản vẽ thể hiện khối lượng.<span class="then">Đúng cột chứng từ gốc: “Bảng khối lượng thi công thực tế + bản vẽ thể hiện”.</span></li>
+      <li><b>Bản vẽ thể hiện là bắt buộc, và gắn vào đợt.</b> Mỗi kỳ báo cáo cần đính kèm bản vẽ thể hiện khối lượng; tệp gắn vào đợt thanh toán, không gắn vào từng dòng.<span class="then">Đúng cột chứng từ gốc: “Bảng khối lượng thi công thực tế + bản vẽ thể hiện”. Một bảng ba mươi dòng là một kỳ báo cáo, nên là một bản vẽ — bắt đính kèm ba mươi lần là bắt lặp lại một quyết định duy nhất.</span></li>
       <li><b>Ảnh gắn siêu dữ liệu.</b> Ảnh chụp từ ứng dụng tự gắn ngày giờ và vị trí, không sửa được.<span class="then">Ảnh tải lên từ máy tính bị đánh dấu là “không có siêu dữ liệu hiện trường”.</span></li>
       <li><b>Mốc tiến độ là phép gộp.</b> Phần trăm của mốc suy ra từ sản lượng các đầu việc thuộc mốc, có trọng số theo giá trị hợp đồng.<span class="then">Không nhập tay phần trăm mốc — tránh tiến độ báo cáo đẹp hơn thực tế.</span></li>
     </ol>
@@ -347,7 +362,12 @@
           <tr><td>Lũy kế vượt BOQ</td><td>Lũy kế &gt; khối lượng hợp đồng</td><td>“Lũy kế {số} vượt khối lượng hợp đồng {số} ở {mã}. Chỉ ra phụ lục hợp đồng hoặc phần vượt sẽ bị tách riêng.”</td></tr>
           <tr><td>Nhập vào đợt đã chốt</td><td>Ngày thuộc đợt đã khóa</td><td>“Đợt {n} đã chốt ngày {ngày}. Sản lượng này sẽ ghi vào đợt {n+1} kèm ghi chú kỳ gốc.”</td></tr>
           <tr><td>Thiếu tổ đội</td><td><code>crew_id</code> rỗng</td><td>“Chọn tổ đội thực hiện — thiếu thông tin này thì không tính được tiền khoán.”</td></tr>
-          <tr><td>Thiếu bản vẽ thể hiện</td><td>Không có tệp bản vẽ</td><td>“Đính kèm bản vẽ thể hiện khối lượng của kỳ này.”</td></tr>
+          <tr><td>Thiếu bản vẽ thể hiện</td><td>Đợt chưa có tệp bản vẽ, khi xác nhận kỳ</td><td>“Đính kèm bản vẽ thể hiện khối lượng của kỳ này.”</td></tr>
+          <tr><td>Chưa có bảng giá khoán</td><td>Dự án không có bảng giá hiệu lực</td><td>“Dự án chưa có bảng giá khoán hiệu lực. Lập và duyệt bảng giá ở màn hình Giá khoán tổ đội trước khi ghi sản lượng.”</td></tr>
+          <tr><td>Cặp chưa có đơn giá</td><td>Cặp đầu việc – tổ đội không có trong bảng giá</td><td>“Có cặp đầu việc – tổ đội chưa nằm trong bảng giá khoán hiệu lực — lập phụ lục bảng giá trước.”</td></tr>
+          <tr><td>Gõ số âm vào bảng</td><td><code>qty &lt; 0</code> trên ô khối lượng kỳ này</td><td>“Khối lượng âm ở {mã} — {tổ đội}: giảm số kỳ trước bằng dòng điều chỉnh có lý do.”</td></tr>
+          <tr><td>Lưu bảng của kỳ đã xác nhận</td><td>Đợt có dòng đã xác nhận</td><td>“Sản lượng kỳ này đã được xác nhận — sửa bằng dòng điều chỉnh.”</td></tr>
+          <tr><td>Dán khối vượt số dòng</td><td>Khối dán dài hơn bảng</td><td>“{n} dòng dán vượt quá số dòng của bảng nên bị bỏ qua — bảng chỉ nhận các cặp đã có trong bảng giá khoán.”</td></tr>
           <tr><td>Dòng điều chỉnh âm thiếu lý do</td><td><code>qty &lt; 0</code> và lý do rỗng</td><td>“Nhập lý do điều chỉnh giảm — bản ghi gốc vẫn được giữ nguyên.”</td></tr>
           <tr><td>Sản lượng bất thường</td><td>Gấp &gt; 3 lần trung bình 4 tuần</td><td>“Sản lượng tuần này gấp {x} lần mức trung bình gần đây. Kiểm tra lại đơn vị tính và số liệu.”</td></tr>
         </tbody>
@@ -359,14 +379,16 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-PRJ02-1</td><td>Tuần 30, HM-01 lũy kế 5.148 m²</td><td>Kỹ sư nhập 420 m² và gửi</td><td>Bản ghi ở trạng thái chờ; tiến độ chưa đổi</td></tr>
-          <tr><td>UAT-PRJ02-2</td><td>Tiếp UAT-1</td><td>Chỉ huy trưởng xác nhận</td><td>Lũy kế lên 5.568; % hoàn thành HM-01 và tiến độ dự án cập nhật</td></tr>
-          <tr><td>UAT-PRJ02-3</td><td>Đã nhập sản lượng 4 tuần của đợt 5</td><td>Chuyển sang xem theo đợt thanh toán</td><td>Tổng đợt bằng tổng 4 tuần; không phải nhập lại số nào</td></tr>
+          <tr><td>UAT-PRJ02-1</td><td>Dự án có bảng giá khoán hiệu lực 8 dòng, đợt 5 đang mở</td><td>Chọn dự án và đợt 5</td><td>Bảng hiện đủ 8 dòng theo cặp đầu việc – tổ đội, chỉ cột KL kỳ này để trống</td></tr>
+          <tr><td>UAT-PRJ02-2</td><td>Tiếp UAT-1, CV-001/TD-001 lũy kế trước kỳ 500</td><td>Gõ 500 vào ô KL kỳ này</td><td>Lũy kế đổi thành 1.000 và tỉ lệ hoàn thành đổi theo ngay khi gõ, chưa cần lưu</td></tr>
+          <tr><td>UAT-PRJ02-3</td><td>Tiếp UAT-2, đã bấm Lưu bảng</td><td>Bấm Lưu bảng lần nữa</td><td>Số liệu không đổi — vẫn 500, không thành 1.000</td></tr>
           <tr><td>UAT-PRJ02-4</td><td>Đợt 4 đã chốt</td><td>Nhập sản lượng ngày thuộc đợt 4</td><td>Hệ thống chuyển sang đợt 5 kèm ghi chú kỳ gốc</td></tr>
           <tr><td>UAT-PRJ02-5</td><td>BOQ HM-02 là 1.260 m², lũy kế 1.240</td><td>Nhập thêm 60 m²</td><td>Cảnh báo vượt BOQ; yêu cầu chỉ ra phụ lục hợp đồng</td></tr>
           <tr><td>UAT-PRJ02-6</td><td>Kỹ sư ở công trường mất sóng</td><td>Nhập sản lượng và chụp 2 ảnh</td><td>Lưu tạm, nhãn chờ đồng bộ; tự gửi khi có mạng</td></tr>
           <tr><td>UAT-PRJ02-7</td><td>Nhập nhầm 4.200 thay vì 420</td><td>Bấm gửi</td><td>Cảnh báo sản lượng bất thường trước khi lưu</td></tr>
           <tr><td>UAT-PRJ02-8</td><td>Đợt 5 đã đủ sản lượng</td><td>GĐ dự án chốt đợt và xuất bảng nghiệm thu</td><td>Số liệu khóa; xuất Excel theo mẫu chủ đầu tư</td></tr>
+          <tr><td>UAT-PRJ02-9</td><td>Đợt 5 có 7 dòng chờ, đã đính bản vẽ của đợt</td><td>Chỉ huy trưởng bấm Xác nhận sản lượng kỳ</td><td>Cả 7 dòng chuyển sang đã xác nhận; tiến độ các đầu việc cập nhật; bảng chuyển chỉ đọc kèm nút Điều chỉnh</td></tr>
+          <tr><td>UAT-PRJ02-10</td><td>Copy cột khối lượng 12 dòng từ Excel, bảng chỉ có 8 dòng</td><td>Dán vào ô đầu của cột KL kỳ này</td><td>8 dòng nhận số, 4 dòng thừa bị bỏ qua kèm cảnh báo — không tự sinh dòng mới</td></tr>
         </tbody>
       </table>
     </div>

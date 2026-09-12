@@ -298,7 +298,7 @@
           <tr><td>Mục đích xuất</td><td class="k">issue_purpose</td><td>Chọn 1</td><td class="c req">✱</td><td><code>sản xuất</code> · <code>bán</code> · <code>hao hụt</code> · <code>thi công</code> · <code>điều chuyển</code>. Quyết định định khoản và việc có cần duyệt hay không.</td></tr>
           <tr><td>Dự án nhận</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc với mục đích thi công; với bán thì ghi dự án của khách nếu có.</td></tr>
           <tr><td>Đơn hàng nguồn</td><td class="k">order_id</td><td>Tham chiếu</td><td class="c">—</td><td>Với xuất thi công theo đợt cấp hàng (<a href="ORD-05.html">ORD-05</a>).</td></tr>
-          <tr><td>Dòng xuất</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Vật tư, ĐVT kế toán + SL, ĐVT dự án + SL, giá xuất (hệ thống tính), thành tiền.</td></tr>
+          <tr><td>Dòng xuất</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Vật tư, ĐVT + số lượng (một hệ duy nhất, theo <a href="PF-01.html">PF-01</a>), giá xuất (hệ thống tính), thành tiền.</td></tr>
           <tr><td>Tình trạng hóa đơn</td><td class="k">has_invoice</td><td>Boolean</td><td class="c">—</td><td>Chỉ với mục đích bán; quyết định dùng TK 1311 hay 1312.</td></tr>
           <tr><td>Biên bản nguyên nhân</td><td class="k">loss_report</td><td>Tệp</td><td class="c">—</td><td>Bắt buộc với mục đích hao hụt.</td></tr>
           <tr><td>Xác nhận nhận hàng</td><td class="k">receipt_confirm</td><td>Đối tượng</td><td class="c">—</td><td>Người xác nhận, thời điểm, chữ ký điện tử, số lượng thực nhận.</td></tr>
@@ -376,7 +376,7 @@
           <tr><td class="c"><span class="pin">1</span></td><td>Lập phiếu xuất</td><td>Kho và mục đích xuất quyết định các trường còn lại và luồng duyệt.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Xem định khoản áp dụng</td><td>Hiển thị trước khi ghi sổ để kế toán kiểm chứng, đổi theo mục đích xuất.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Nhập dòng xuất</td><td>Không cho xuất quá tồn khả dụng. Giá xuất là ô chỉ đọc do hệ thống tính.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>In biên bản giao hàng</td><td>Liên kết trực tiếp từ phiếu xuất, dùng ĐVT dự án.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>In biên bản giao hàng</td><td>Liên kết trực tiếp từ phiếu xuất, dùng chính ĐVT của vật tư.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Theo dõi vòng kiểm nhận</td><td>Bốn mốc: duyệt xuất, thông báo, kiểm nhận, xác nhận. Dự án thao tác trên web hoặc app.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Trả hàng lỗi</td><td>Đưa phiếu về trạng thái sửa được tại nơi cấp; sửa xong phải duyệt lại.</td></tr>
         </tbody>
@@ -392,7 +392,7 @@
       <li><b>Xuất thi công là điều chuyển nội bộ.</b> Không ghi doanh thu, không ghi giá vốn; chi phí phát sinh khi kho dự án xuất cho tổ đội ở <a href="PRJ-04.html">PRJ-04</a>.<span class="then">Đây là lý do một lô đá đi từ nhà máy tới công trình không làm tăng chi phí dự án ngay lập tức.</span></li>
       <li><b>Vòng kiểm nhận hai chiều.</b> Trả hàng lỗi đưa phiếu xuất về nơi cấp ở trạng thái sửa được và phải duyệt lại từ đầu.<span class="then">Đúng mô tả gốc: “phiếu xuất quay về NM chỉnh sửa cập nhật → phê duyệt lại”.</span></li>
       <li><b>Giá xuất kho là số hệ thống.</b> Bình quân gia quyền tại thời điểm ghi nhận, ô chỉ đọc với mọi vai trò.<span class="then">Điều chỉnh giá vốn phải qua bút toán riêng ở <a href="ACC-08.html">ACC-08</a>, có dấu vết.</span></li>
-      <li><b>Biên bản giao hàng in từ phiếu.</b> Phiếu xuất thi công in được biên bản giao hàng, dùng ĐVT dự án.<span class="then">Không phải lập chứng từ riêng, tránh lệch số liệu giữa hai bản.</span></li>
+      <li><b>Biên bản giao hàng in từ phiếu.</b> Phiếu xuất thi công in được biên bản giao hàng, dùng chính ĐVT của vật tư (<a href="PF-01.html">PF-01</a>).<span class="then">Không phải lập chứng từ riêng, tránh lệch số liệu giữa hai bản.</span></li>
       <li><b>Thông báo trước khi hàng đi.</b> Duyệt xuất thi công phát thông báo cho dự án ngay lập tức.<span class="then">“Nhảy thông báo cho dự án có phiếu xuất hàng đi” theo đúng yêu cầu gốc.</span></li>
     </ol>
 
@@ -421,7 +421,7 @@
           <tr><td>UAT-ACC04-3</td><td>Cùng phiếu, đổi sang chưa xuất hóa đơn</td><td>Xem lại bảng định khoản</td><td>Tài khoản phải thu đổi thành 1312</td></tr>
           <tr><td>UAT-ACC04-4</td><td>Phiếu xuất thi công vừa được duyệt</td><td>Kiểm tra thông báo của dự án</td><td>Dự án nhận thông báo có phiếu xuất hàng đi</td></tr>
           <tr><td>UAT-ACC04-5</td><td>Dự án kiểm nhận thấy vỡ 20 m²</td><td>Ghi sai lệch và chọn trả hàng</td><td>Phiếu về nhà máy ở trạng thái sửa được; phải duyệt lại từ đầu</td></tr>
-          <tr><td>UAT-ACC04-6</td><td>Phiếu xuất thi công đã duyệt</td><td>Bấm “In biên bản giao hàng”</td><td>Biên bản dùng ĐVT dự án, số liệu khớp phiếu xuất</td></tr>
+          <tr><td>UAT-ACC04-6</td><td>Phiếu xuất thi công đã duyệt</td><td>Bấm “In biên bản giao hàng”</td><td>Biên bản dùng đúng ĐVT của vật tư, số liệu khớp phiếu xuất, không có cột quy đổi nào</td></tr>
           <tr><td>UAT-ACC04-7</td><td>Kế toán trưởng mở phiếu đã ghi sổ</td><td>Thử sửa giá xuất kho</td><td>Ô chỉ đọc kèm gợi ý dùng bút toán điều chỉnh</td></tr>
           <tr><td>UAT-ACC04-8</td><td>Xuất hao hụt 3% trên định mức 1%</td><td>Trình duyệt</td><td>Yêu cầu biên bản quy trách nhiệm trước khi ghi sổ</td></tr>
         </tbody>

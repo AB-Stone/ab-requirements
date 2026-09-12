@@ -278,7 +278,7 @@
           <tr><td>Mã phiếu</td><td class="k">issue_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>PXDA-&lt;project&gt;-NNNN</code>.</td></tr>
           <tr><td>Hạng mục ✱</td><td class="k">wbs_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc — quyết định chi phí thuộc hạng mục nào.</td></tr>
           <tr><td>Tổ nhận ✱</td><td class="k">crew_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc — cơ sở khấu trừ VTTB ở <a href="PRJ-03.html">PRJ-03</a>.</td></tr>
-          <tr><td>Dòng vật tư</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Vật tư, ĐVT dự án, số lượng, ĐVT kế toán, số lượng quy đổi.</td></tr>
+          <tr><td>Dòng vật tư</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Vật tư, ĐVT, số lượng — một hệ đơn vị duy nhất theo <a href="PF-01.html">PF-01</a>, không quy đổi.</td></tr>
           <tr><td>Giá xuất kho</td><td class="k">unit_cost</td><td>Số tiền</td><td class="c">—</td><td>Hệ thống tính theo bình quân gia quyền tại thời điểm ghi nhận, không nhập tay.</td></tr>
           <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Mặc định theo nhóm vật tư.</td></tr>
           <tr><td>Người nhận · ký xác nhận</td><td class="k">receiver, signature</td><td>Tham chiếu</td><td class="c req">✱</td><td>Đại diện tổ nhận ký điện tử; thay cho ký tay trên phiếu giấy.</td></tr>
@@ -334,9 +334,9 @@
               <div class="wf-c"><div class="wf-f"><label>Hạng mục ✱</label><div class="in">HM-01 · Ốp lát mặt đứng tháp A <em>▾</em></div></div></div>
               <div class="wf-c"><div class="wf-f"><label>Tổ nhận ✱</label><div class="in">TD-004 · Tổ ốp lát Nguyễn Văn Đại <em>▾</em></div></div></div>
             </div>
-            <table><thead><tr><th>Vật tư</th><th>ĐVT dự án</th><th class="num">SL</th><th>ĐVT kế toán</th><th class="num">Quy đổi</th><th class="num">Giá xuất</th><th class="num">Thành tiền</th></tr></thead>
-            <tbody><tr><td>Đá granite đen 600×600×20</td><td>m²</td><td class="num">300</td><td>m²</td><td class="num">300</td><td class="num">1.712.000</td><td class="num">513.600.000</td></tr>
-            <tr><td>Keo chà ron</td><td>thùng</td><td class="num">12</td><td>kg</td><td class="num">300</td><td class="num">47.200</td><td class="num">14.160.000</td></tr></tbody></table></div>
+            <table><thead><tr><th>Vật tư</th><th>ĐVT</th><th class="num">SL</th><th class="num">Giá xuất</th><th class="num">Thành tiền</th></tr></thead>
+            <tbody><tr><td>Đá granite đen 600×600×20</td><td>m²</td><td class="num">300</td><td class="num">1.712.000</td><td class="num">513.600.000</td></tr>
+            <tr><td>Keo chà ron</td><td>thùng</td><td class="num">12</td><td class="num">1.180.000</td><td class="num">14.160.000</td></tr></tbody></table></div>
             <div class="wf-c" style="flex:0 1 190px">
               <div class="wf-f"><label>Khoản mục CP ✱</label><div class="in">KM-101 Vật liệu chính</div></div>
               <div class="wf-f"><label>Người nhận ✱</label><div class="in">Nguyễn Văn Đại</div></div>

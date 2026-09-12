@@ -88,7 +88,7 @@
   </header>
   <div class="sb">
     <h4>Mục tiêu</h4>
-    <p>Ghi nhận đúng chi phí về dự án ngay tại thời điểm nhập kho theo giá trước VAT, đồng thời giữ được hai hệ đơn vị tính mà bảng yêu cầu đòi: ĐVT kế toán để tính giá xuất kho, ĐVT dự án để lập biên bản giao hàng và quản lý tồn tại công trình.</p>
+    <p>Ghi nhận đúng chi phí về dự án ngay tại thời điểm nhập kho theo giá trước VAT. Phiếu nhập dùng <b>một đơn vị tính duy nhất</b> cho mỗi vật tư — chính đơn vị đã khai ở <a href="PF-01.html">PF-01</a> và dùng suốt từ BOQ đấu thầu tới sổ kế toán. Phương án hai cột ĐVT trước đây đã bị thay (<a href="PL-C.html">Q-07</a>).</p>
 
     <h4>Ba hình thức mua</h4>
     <div class="tw">
@@ -325,8 +325,8 @@
           <tr><td>Mã dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc theo <a href="PF-01.html">PF-01</a>.</td></tr>
           <tr><td>Khoản mục chi phí · mã thống kê</td><td class="k">cost_item_id, stat_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Có trên form nhập liệu đúng yêu cầu gốc.</td></tr>
           <tr><td>Chi phí hợp lý</td><td class="k">is_deductible</td><td>Boolean</td><td class="c req">✱</td><td>Tick trên phiếu; dồn vào báo cáo chi phí không hợp lý theo dự án.</td></tr>
-          <tr><td>ĐVT kế toán · SL kế toán</td><td class="k">uom_acc, qty_acc</td><td>Chuỗi · số</td><td class="c req">✱</td><td>Dùng tính giá xuất kho và ghi nhận chi phí.</td></tr>
-          <tr><td>ĐVT dự án · SL dự án</td><td class="k">uom_proj, qty_proj</td><td>Chuỗi · số</td><td class="c req">✱</td><td>Dùng lập biên bản giao hàng và quản lý tồn tại dự án. Hệ số quy đổi khai ở <a href="PF-01.html">PF-01</a>.</td></tr>
+          <tr><td>ĐVT · Số lượng</td><td class="k">uom, qty</td><td>Chuỗi · số</td><td class="c req">✱</td><td>Một đơn vị duy nhất, kế thừa từ danh mục vật tư (<a href="PF-01.html">PF-01</a>). Dùng cho cả giá xuất kho, biên bản giao hàng và tồn tại công trình.</td></tr>
+          
           <tr><td>Đơn giá trước VAT</td><td class="k">unit_price</td><td>Số tiền</td><td class="c req">✱</td><td>Chi phí ghi nhận theo giá này.</td></tr>
           <tr><td>Thuế suất VAT</td><td class="k">vat_rate</td><td>Phần trăm</td><td class="c req">✱</td><td>Tách riêng, không nhập vào giá vốn.</td></tr>
           <tr><td>Chứng từ</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>Hóa đơn và phiếu giao hàng. Cho phép nhập hàng chưa có hóa đơn, gắn cờ chờ hóa đơn.</td></tr>
@@ -339,7 +339,7 @@
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
       <li>Form nhập liệu có đủ bốn trường mà yêu cầu gốc liệt kê: mã dự án, mã khoản mục phí, mã thống kê, tick chi phí hợp lý.</li>
-      <li>Mỗi dòng phiếu nhập có hai cặp ĐVT – số lượng (kế toán và dự án) với hệ số quy đổi tự áp dụng.</li>
+      <li>Mỗi dòng phiếu nhập chỉ có một cặp ĐVT – số lượng; không màn hình nào hỏi hệ số quy đổi.</li>
       <li>Chi phí ghi nhận về dự án theo giá trước VAT; phần VAT tách riêng không ảnh hưởng giá vốn.</li>
       <li>Nhập kho thành phẩm nạp được hàng loạt từ tệp Excel theo mẫu, có bước đối chiếu cột và báo lỗi theo dòng.</li>
       <li>Giảm giá hàng mua làm giảm giá trị hàng mua và giá xuất kho bình quân được tính lại cho các lần xuất sau.</li>
@@ -374,10 +374,10 @@
         </div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">3</span> Dòng hàng — hai hệ đơn vị tính</div>
-          <table><thead><tr><th>Vật tư</th><th>ĐVT kế toán</th><th class="num">SL kế toán</th><th>ĐVT dự án</th><th class="num">SL dự án</th><th class="num">Đơn giá trước VAT</th><th class="num">VAT</th><th class="num">Thành tiền</th></tr></thead>
+          <table><thead><tr><th>Vật tư</th><th>ĐVT</th><th class="num">Số lượng</th><th class="num">Đơn giá trước VAT</th><th class="num">VAT</th><th class="num">Thành tiền</th></tr></thead>
           <tbody>
-            <tr><td>Đá block granite đen</td><td>m³</td><td class="num">86</td><td>khối</td><td class="num">86</td><td class="num">12.400.000</td><td class="num">8%</td><td class="num">1.066.400.000</td></tr>
-            <tr><td>Đá tấm thô 600×600</td><td>m²</td><td class="num">1.240</td><td>tấm</td><td class="num">3.444</td><td class="num">620.000</td><td class="num">8%</td><td class="num">768.800.000</td></tr>
+            <tr><td>Đá block granite đen</td><td>m³</td><td class="num">86</td><td class="num">12.400.000</td><td class="num">8%</td><td class="num">1.066.400.000</td></tr>
+            <tr><td>Đá tấm thô 600×600</td><td>m²</td><td class="num">1.240</td><td class="num">620.000</td><td class="num">8%</td><td class="num">768.800.000</td></tr>
           </tbody></table>
         </div>
         <div class="wf-row">
@@ -406,7 +406,7 @@
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Khai báo 4 trường quản trị</td><td>Dự án, khoản mục chi phí, mã thống kê, tick chi phí hợp lý — có mặt trên mọi phiếu.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Tick nhập cho đề xuất</td><td>Chọn nhiều đề xuất; hệ thống tự cập nhật lũy kế và trạng thái hoàn thành của từng đề xuất.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Nhập dòng hàng hai hệ ĐVT</td><td>Nhập một hệ, hệ còn lại tự quy đổi; sửa tay được và ghi cờ nếu lệch hệ số chuẩn.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Nhập dòng hàng</td><td>ĐVT lấy từ danh mục vật tư và không sửa ở phiếu; chỉ nhập số lượng và đơn giá.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Xử lý chi phí vận chuyển</td><td>Chọn loại vận chuyển quyết định cách hạch toán. Loại về nhà máy mở bảng tick phân bổ nhiều phiếu.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Ghi nhận giảm giá hàng mua</td><td>Giảm giá trị hàng mua và kích hoạt tính lại giá xuất kho bình quân.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Nhập hàng chưa có hóa đơn</td><td>Gắn cờ chờ hóa đơn; có báo cáo theo dõi và nhắc việc khi quá hạn nhận hóa đơn.</td></tr>
@@ -419,7 +419,7 @@
     <ol class="br">
       <li><b>Chi phí ghi nhận tại thời điểm nhập kho, trước VAT.</b> Không phải tại thời điểm thanh toán, không gồm thuế.<span class="then">Đúng câu “lập phiếu nhập kho (ghi nhận chi phí về dự án — trước VAT)” của yêu cầu gốc.</span></li>
       <li><b>Bốn trường quản trị trên mọi phiếu.</b> Mã dự án, khoản mục chi phí, mã thống kê và tick chi phí hợp lý.<span class="then">Ba trường đầu bắt buộc; tick chi phí hợp lý mặc định bật và tắt thì phải ghi lý do.</span></li>
-      <li><b>Hai hệ đơn vị song song.</b> Số lượng và ĐVT theo kế toán để tính giá xuất kho; theo dự án để lập biên bản giao hàng và quản lý tồn tại công trình.<span class="then">Nhập một hệ thì hệ kia tự quy đổi; sửa tay bị gắn cờ — xem <a href="PL-C.html">Q-07</a>.</span></li>
+      <li><b>Một hệ đơn vị duy nhất.</b> Số lượng và ĐVT của phiếu nhập là đơn vị đã khai ở <a href="PF-01.html">PF-01</a>, dùng luôn cho giá xuất kho, biên bản giao hàng và tồn tại công trình.<span class="then">Không còn cột kế toán riêng và không còn hệ số quy đổi — xem <a href="PL-C.html">Q-07</a> về quyết định đảo lại và <a href="PL-C.html">Q-34</a> về chứng từ cũ.</span></li>
       <li><b>Vận chuyển hai đường khác nhau.</b> Vận chuyển ra dự án ghi tài khoản chi phí; vận chuyển về nhà máy phân bổ vào giá vốn nhập hàng theo số lượng của phiếu nhập.<span class="then">Chọn sai loại làm sai giá vốn của toàn bộ lô hàng, nên trường này bắt buộc và không có giá trị mặc định.</span></li>
       <li><b>Giảm giá tính lại giá xuất.</b> Ghi nhận giảm giá hàng mua làm giảm giá trị hàng mua và kích hoạt tính lại giá xuất kho bình quân.<span class="then">Chỉ ảnh hưởng các lần xuất <em>sau</em> thời điểm ghi giảm giá; các phiếu xuất đã ghi sổ giữ nguyên giá vốn cũ.</span></li>
       <li><b>Nhập chưa có hóa đơn vẫn được.</b> Phiếu gắn cờ “chờ hóa đơn” và vào báo cáo theo dõi riêng.<span class="then">Quá 30 ngày chưa nhận hóa đơn thì nhắc kế toán và trưởng bộ phận mua hàng.</span></li>

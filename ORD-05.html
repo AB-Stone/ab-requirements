@@ -89,6 +89,7 @@
   <div class="sb">
     <h4>Mục tiêu</h4>
     <p>Một đơn hàng hiếm khi giao một lần. Đặc tả tách rõ ba lớp số liệu: <em>kế hoạch cấp</em> (dự kiến), <em>đã cấp</em> (thực tế theo phiếu xuất), và <em>còn lại</em>. Ba lớp này là nguồn của cột tiến độ đơn hàng và của báo cáo sản lượng cấp.</p>
+    <p>Ngày cần hàng và nơi nhận nằm ở <em>từng dòng đơn hàng</em> (<a href="ORD-03.html">ORD-03</a>), không còn ở đầu đơn. Kế hoạch cấp vì vậy không chia đợt cho cả đơn nữa: hệ thống gom dòng theo cặp <b>(ngày cần hàng · nơi nhận)</b> và mỗi cặp là một đợt dự kiến. Một đơn có ba dòng về ba nơi vào ba ngày thì mở sẵn ba đợt, người lập kế hoạch chỉ điều chỉnh thay vì gõ từ đầu.</p>
 
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:539px;margin:0 auto"><svg role="img" aria-label="Hình ORD-05.1 Vòng lặp cấp hàng chỉ đóng khi lũy kế đã cấp bằng khối lượng đơn. Nhánh trả hàng lỗi đưa phiếu xuất quay về nơi cấp để chỉnh sửa rồi duyệt lại — đúng mô tả tại yêu cầu KT·3."
@@ -105,7 +106,7 @@
 <title>B</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="508.85,-875.52 321.83,-875.52 321.83,-831.12 508.85,-831.12 508.85,-875.52"/>
 <text xml:space="preserve" text-anchor="middle" x="415.34" y="-857.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lập kế hoạch cấp</text>
-<text xml:space="preserve" text-anchor="middle" x="415.34" y="-842.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chia đợt theo ngày cần hàng</text>
+<text xml:space="preserve" text-anchor="middle" x="415.34" y="-842.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">gom đợt theo ngày · nơi nhận</text>
 </g>
 <g id="edge1" class="edge">
 <title>A&#45;&gt;B</title>
@@ -264,8 +265,11 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Đợt cấp</td><td class="k">batch_no</td><td>Số</td><td class="c req">✱</td><td>Đánh số trong phạm vi một lệnh thực hiện.</td></tr>
+          <tr><td>Dòng đơn của đợt</td><td class="k">order_line_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Đợt cấp thuộc về một dòng đơn hàng cụ thể — dòng mang sẵn ngày cần hàng, nơi nhận và nguồn cung ứng của nó.</td></tr>
+          <tr><td>Nơi nhận của đợt</td><td class="k">deliver_to</td><td>Tham chiếu</td><td class="c">—</td><td>Kế thừa từ dòng đơn hàng, không nhập lại. Đổi nơi nhận phải sửa ở đơn (<a href="ORD-07.html">ORD-07</a>).</td></tr>
+          <tr><td>Ngày cần hàng của dòng</td><td class="k">required_date</td><td>Ngày</td><td class="c">—</td><td>Mốc để đặt <code>plan_date</code>; đợt dự kiến trễ hơn ngày cần hàng thì cảnh báo ngay khi lập kế hoạch.</td></tr>
           <tr><td>Ngày dự kiến · thực tế</td><td class="k">plan_date, actual_date</td><td>Ngày</td><td class="c req">✱</td><td>Chênh lệch là số ngày trễ cấp hàng.</td></tr>
-          <tr><td>Khối lượng kế hoạch</td><td class="k">qty_plan</td><td>Số</td><td class="c req">✱</td><td>Tổng các đợt phải bằng khối lượng dòng đơn hàng.</td></tr>
+          <tr><td>Khối lượng kế hoạch</td><td class="k">qty_plan</td><td>Số</td><td class="c req">✱</td><td>Tổng các đợt của một dòng phải bằng khối lượng <em>dòng</em> đó, không phải của cả đơn.</td></tr>
           <tr><td>Khối lượng đã cấp</td><td class="k">qty_issued</td><td>Số</td><td class="c">—</td><td>Lấy từ phiếu xuất kho đã duyệt, không nhập tay.</td></tr>
           <tr><td>Khối lượng đã nhận</td><td class="k">qty_received</td><td>Số</td><td class="c">—</td><td>Do dự án xác nhận; chênh với đã cấp thì sinh sai lệch.</td></tr>
           <tr><td>Phiếu xuất kho</td><td class="k">issue_note_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một đợt gắn một phiếu xuất; in kèm biên bản giao hàng.</td></tr>
@@ -278,6 +282,8 @@
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
       <li>Màn hình đơn hàng hiển thị ba con số cho mỗi dòng: kế hoạch, đã cấp, còn lại — kèm thanh tiến độ.</li>
+      <li>Mở kế hoạch cấp lần đầu, các đợt đã được gom sẵn theo cặp (ngày cần hàng · nơi nhận) của các dòng đơn.</li>
+      <li>Hai dòng cùng ngày nhưng khác nơi nhận không bị gộp chung một đợt — mỗi nơi nhận một phiếu xuất, một biên bản giao hàng.</li>
       <li>Trạng thái đơn hàng tự chuyển sang “hoàn thành” khi lũy kế đã nhận bằng khối lượng đơn, không phải bấm tay.</li>
       <li>Dự án nhận thông báo ngay khi phiếu xuất được duyệt, trước khi hàng tới nơi.</li>
       <li>Xác nhận nhận hàng trên ứng dụng di động thay cho ký tay trên biên bản giấy.</li>
@@ -298,11 +304,11 @@
         </div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">1</span> Kế hoạch &amp; thực tế cấp theo đợt</div>
-          <table><thead><tr><th>Đợt</th><th>Dự kiến</th><th class="num">KH</th><th>Thực tế</th><th class="num">Đã cấp</th><th class="num">Đã nhận</th><th>Phiếu xuất</th><th>Trạng thái</th></tr></thead>
+          <table><thead><tr><th>Đợt</th><th>Dòng</th><th>Nơi nhận</th><th>Dự kiến</th><th class="num">KH</th><th>Thực tế</th><th class="num">Đã cấp</th><th class="num">Đã nhận</th><th>Phiếu xuất</th><th>Trạng thái</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td>05/08</td><td class="num">400</td><td>05/08</td><td class="num">400</td><td class="num">400</td><td>PX-2026-311</td><td><span class="tag t-ok">Đã nhận đủ</span></td></tr>
-            <tr><td>2</td><td>12/08</td><td class="num">400</td><td>14/08</td><td class="num">280</td><td class="num">260</td><td>PX-2026-329</td><td><span class="tag t-crit"><span class="pin">3</span> Sai lệch 20 m²</span></td></tr>
-            <tr><td>3</td><td>20/08</td><td class="num">300</td><td>—</td><td class="num">—</td><td class="num">—</td><td>—</td><td><span class="tag t-neu">Chưa cấp</span></td></tr>
+            <tr><td>1</td><td>1a</td><td>Kho công trình DA-2026-014</td><td>05/08</td><td class="num">400</td><td>05/08</td><td class="num">400</td><td class="num">400</td><td>PX-2026-311</td><td><span class="tag t-ok">Đã nhận đủ</span></td></tr>
+            <tr><td>2</td><td>1a</td><td>Kho công trình DA-2026-014</td><td>12/08</td><td class="num">300</td><td>14/08</td><td class="num">280</td><td class="num">260</td><td>PX-2026-329</td><td><span class="tag t-crit"><span class="pin">3</span> Sai lệch 20 m²</span></td></tr>
+            <tr><td>3</td><td>1b</td><td>Công trình tháp A</td><td>05/09</td><td class="num">400</td><td>—</td><td class="num">—</td><td class="num">—</td><td>—</td><td><span class="tag t-neu">Chưa cấp</span></td></tr>
           </tbody></table>
         </div>
         <div class="wf-sec">
@@ -323,7 +329,7 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Lập &amp; sửa kế hoạch cấp</td><td>Chia đợt theo ngày cần hàng; tổng khối lượng các đợt phải khớp khối lượng đơn.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Lập &amp; sửa kế hoạch cấp</td><td>Đợt gom sẵn theo cặp (ngày cần hàng · nơi nhận) của từng dòng đơn. Chia nhỏ thêm được; tổng các đợt của một dòng phải khớp khối lượng dòng đó.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Lập phiếu xuất cho một đợt</td><td>Mở màn hình xuất kho của <a href="ACC-04.html">ACC-04</a> với dữ liệu nạp sẵn; in kèm biên bản giao hàng.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Xác nhận nhận hàng</td><td>Do dự án thực hiện, trên web hoặc ứng dụng di động, có ký điện tử.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Ghi nhận &amp; xử lý sai lệch</td><td>Nhập loại, khối lượng, ảnh; chọn hướng xử lý: trả hàng, cấp bù, hoặc chấp nhận điều chỉnh.</td></tr>
@@ -333,7 +339,9 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Tổng kế hoạch bằng khối lượng đơn.</b> Tổng khối lượng các đợt trong kế hoạch cấp phải bằng khối lượng dòng đơn hàng.<span class="then">Lệch thì chặn lưu kế hoạch, nêu rõ đang thừa hay thiếu bao nhiêu.</span></li>
+      <li><b>Đợt cấp gom theo (ngày cần hàng · nơi nhận) của dòng.</b> Ngày và nơi nhận thuộc về dòng đơn hàng (<a href="ORD-03.html">ORD-03</a>), nên kế hoạch cấp mở sẵn một đợt cho mỗi cặp khác nhau.<span class="then">Hai dòng cùng ngày nhưng khác nơi nhận là hai đợt, vì mỗi nơi nhận cần phiếu xuất và biên bản giao hàng riêng.</span></li>
+      <li><b>Tổng kế hoạch bằng khối lượng dòng.</b> Tổng khối lượng các đợt của một dòng phải bằng khối lượng dòng đó.<span class="then">Lệch thì chặn lưu kế hoạch, nêu rõ dòng nào đang thừa hay thiếu bao nhiêu.</span></li>
+      <li><b>Nơi nhận không sửa được ở đây.</b> Đổi nơi nhận của một đợt là đổi nội dung đơn hàng, phải đi qua <a href="ORD-07.html">ORD-07</a>.<span class="then">Cho sửa tại màn hình cấp hàng thì biên bản giao hàng sẽ ghi một nơi khác với nơi lãnh đạo đã duyệt.</span></li>
       <li><b>Đã cấp lấy từ phiếu xuất.</b> Khối lượng đã cấp là tổng của các phiếu xuất kho <b>đã duyệt</b>, không nhập tay.<span class="then">Phiếu xuất bị hủy thì lũy kế tự giảm tương ứng.</span></li>
       <li><b>Đã nhận cần xác nhận của dự án.</b> Khối lượng đã nhận chỉ tăng khi người thuộc dự án xác nhận kiểm nhận.<span class="then">Chênh lệch giữa đã cấp và đã nhận luôn phải có bản ghi sai lệch tương ứng.</span></li>
       <li><b>Đơn tự hoàn thành.</b> Khi lũy kế đã nhận bằng khối lượng đơn, lệnh và đơn tự chuyển trạng thái hoàn thành.<span class="then">Không có nút “đánh dấu hoàn thành” thủ công — tránh sai lệch giữa trạng thái và số liệu.</span></li>
@@ -341,6 +349,7 @@
       <li><b>Sai lệch phải có hướng xử lý.</b> Ghi nhận sai lệch bắt buộc chọn một trong ba hướng: trả hàng, cấp bù, hoặc chấp nhận điều chỉnh.<span class="then">Chọn “trả hàng” thì phiếu xuất quay về nơi cấp ở trạng thái sửa được và phải duyệt lại từ đầu.</span></li>
       <li><b>Ảnh bắt buộc khi có sai lệch.</b> Mọi bản ghi sai lệch cần ít nhất một ảnh kiểm nhận.<span class="then">Ảnh chụp từ ứng dụng tự gắn ngày giờ và vị trí, không sửa được.</span></li>
       <li><b>Trễ cấp tính theo đợt.</b> Chênh giữa ngày thực tế và ngày dự kiến của từng đợt là số ngày trễ.<span class="then">Trễ tổng hợp được thành báo cáo tiến độ cấp hàng theo dự án và theo đơn vị thực hiện.</span></li>
+      <li><b>Đợt trễ hơn ngày cần hàng thì cảnh báo ngay khi lập.</b> Đặt <code>plan_date</code> sau <code>required_date</code> của dòng không bị chặn nhưng phải hiện cảnh báo.<span class="then">Người lập kế hoạch biết ngay mình đang hứa muộn hơn cam kết, thay vì phát hiện lúc dự án gọi hỏi.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -362,7 +371,10 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-ORD05-1</td><td>Đơn 1.100 m², lệnh đã tiếp nhận</td><td>Lập kế hoạch 3 đợt 400/400/300</td><td>Chặn lưu vì tổng 1.100 ✓ — trường hợp tổng 1.000 thì báo thiếu 100</td></tr>
+          <tr><td>UAT-ORD05-1</td><td>Đơn có dòng 1a 700 m² (20/08 · kho công trình) và dòng 1b 400 m² (05/09 · công trình tháp A)</td><td>Mở kế hoạch cấp lần đầu</td><td>Hệ thống mở sẵn hai nhóm đợt theo hai cặp (ngày · nơi nhận), không gộp chung</td></tr>
+          <tr><td>UAT-ORD05-1b</td><td>Cùng tiền đề trên</td><td>Chia dòng 1a thành 2 đợt 400/300</td><td>Lưu được vì tổng đợt của dòng 1a bằng 700; nhập 400/200 thì báo dòng 1a thiếu 100</td></tr>
+          <tr><td>UAT-ORD05-1c</td><td>Dòng 1a có ngày cần hàng 20/08</td><td>Đặt <code>plan_date</code> đợt 2 là 25/08</td><td>Cảnh báo trễ hơn ngày cần hàng nhưng vẫn lưu được</td></tr>
+          <tr><td>UAT-ORD05-1d</td><td>Đang ở màn hình cấp hàng</td><td>Thử đổi nơi nhận của đợt 3</td><td>Không sửa được; thông điệp dẫn sang ORD-07</td></tr>
           <tr><td>UAT-ORD05-2</td><td>Đợt 1 lập phiếu xuất 400 m², đã duyệt</td><td>Xem màn hình cấp hàng</td><td>“Đã cấp” hiện 400; “đã nhận” vẫn 0 cho tới khi dự án xác nhận</td></tr>
           <tr><td>UAT-ORD05-3</td><td>Phiếu xuất đợt 1 vừa được duyệt</td><td>Kiểm tra thông báo của GĐ dự án</td><td>Nhận thông báo “có phiếu xuất hàng đi” ngay, trước khi hàng tới</td></tr>
           <tr><td>UAT-ORD05-4</td><td>Đợt 2 cấp 280, nhận 260, vỡ 20</td><td>Ghi sai lệch, chọn “cấp bù đợt 3”, đính 4 ảnh</td><td>Sai lệch lưu; khối lượng đợt 3 tăng thêm 20</td></tr>

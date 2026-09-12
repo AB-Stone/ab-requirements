@@ -289,8 +289,8 @@
         <tbody>
           <tr><td>Mã hồ sơ</td><td class="k">dossier_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>HSTU-YYYY-NNN</code>.</td></tr>
           <tr><td>Dự án · hợp đồng</td><td class="k">project_id, contract_no</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc, lấy từ <a href="BID-05.html">BID-05</a>.</td></tr>
-          <tr><td>Đợt thanh toán</td><td class="k">payment_term_no</td><td>Tham chiếu</td><td class="c req">✱</td><td>Trỏ tới một dòng trong bảng đợt thanh toán của hợp đồng.</td></tr>
-          <tr><td>Giá trị đề nghị</td><td class="k">amount_request</td><td>Số tiền</td><td class="c req">✱</td><td>Không vượt giá trị đợt; cảnh báo nếu lệch.</td></tr>
+          <tr><td>Đợt thanh toán</td><td class="k">payment_term_no</td><td>Số nguyên</td><td class="c">—</td><td>Số đợt hồ sơ đang đề nghị. Bảng đợt thanh toán của hợp đồng nạp sẵn để chọn cho nhanh; vẫn gõ được số đợt bất kỳ, kể cả số không có trong bảng, hoặc bỏ trống.</td></tr>
+          <tr><td>Giá trị đề nghị</td><td class="k">amount_request</td><td>Số tiền</td><td class="c req">✱</td><td>Nhập theo khối lượng công việc thực tế; màn hình hiện kèm quy đổi % giá trị hợp đồng. Chỉ khi chọn một đợt có trong bảng mới đối chiếu với giá trị đợt đó.</td></tr>
           <tr><td>Thành phần hồ sơ</td><td class="k">checklist[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: tên thành phần, bắt buộc hay không, tệp đính kèm, trạng thái. Mẫu danh mục cấu hình theo chủ đầu tư.</td></tr>
           <tr><td>Ngày nộp · người nhận</td><td class="k">submitted_at, receiver</td><td>Ngày · chuỗi</td><td class="c">—</td><td>Bắt buộc khi chuyển sang “Đã nộp CĐT”.</td></tr>
           <tr><td>Ngày hẹn thanh toán</td><td class="k">promised_at</td><td>Ngày</td><td class="c">—</td><td>Cơ sở tính chậm; quá hạn sinh cảnh báo.</td></tr>
@@ -379,7 +379,8 @@
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Một đợt, một hồ sơ đang mở.</b> Mỗi đợt thanh toán của hợp đồng chỉ có một hồ sơ ở trạng thái đang xử lý.<span class="then">Đợt đã có hồ sơ chưa đóng thì không lập hồ sơ thứ hai; muốn tách phải đóng hồ sơ cũ với lý do.</span></li>
-      <li><b>Giá trị không vượt đợt.</b> Giá trị đề nghị không lớn hơn giá trị đợt trong bảng thanh toán hợp đồng.<span class="then">Lệch thì cảnh báo và yêu cầu ghi lý do; lý do hiện trên màn hình duyệt nội bộ.</span></li>
+      <li><b>Đợt thanh toán là gợi ý, không phải ràng buộc.</b> Bảng đợt thanh toán khai ở <a href="BID-05.html">BID-05</a> phục vụ bản thân hợp đồng — đủ 100% giá trị hợp đồng. Ở màn lập hồ sơ, bảng đó chỉ nạp sẵn để chọn cho nhanh: ô đợt không bắt buộc, không bao giờ khóa, và nhận cả số đợt gõ tay không có trong bảng.<span class="then">Cái quyết định hồ sơ đề nghị bao nhiêu là khối lượng công việc thực tế, không phải bảng đợt của hợp đồng. Ô này có ba lý do không có gì để gợi ý — chưa chọn dự án, hợp đồng chưa khai bảng đợt, hoặc không đọc được bảng đợt — mỗi lý do hiện một câu riêng ngay dưới ô, nhưng cả ba đều chỉ là “chưa có gợi ý”, không chặn lập hồ sơ. Muốn có sẵn danh sách thì khai bảng đợt ở <a href="BID-05.html">BID-05</a>.</span></li>
+      <li><b>Vượt giá trị đợt đã chọn thì phải giải trình.</b> Khi người lập chọn một đợt có thật trong bảng thanh toán hợp đồng, giá trị đề nghị lớn hơn giá trị đợt đó phải kèm lý do.<span class="then">Lệch thì cảnh báo và yêu cầu ghi lý do; lý do hiện trên màn hình duyệt nội bộ. Gõ tay số đợt hoặc bỏ trống thì không có dòng nào để so — giá trị nhập tự do, hệ thống chỉ hiện quy đổi % giá trị hợp đồng để người lập tự đối chiếu.</span></li>
       <li><b>Danh mục thành phần theo chủ đầu tư.</b> Mỗi chủ đầu tư có một mẫu danh mục thành phần hồ sơ riêng.<span class="then">Lập hồ sơ mới sẽ nạp mẫu của chủ đầu tư tương ứng; thêm bớt dòng được nhưng dòng bắt buộc không xóa được.</span></li>
       <li><b>Vướng mắc chặn đóng hồ sơ.</b> Còn vướng mắc ở trạng thái mở thì không chuyển hồ sơ sang “đã thanh toán”.<span class="then">Đóng vướng mắc cần chính người phụ trách xác nhận, không phải người lập hồ sơ tự đóng.</span></li>
       <li><b>Tuổi hồ sơ đếm theo trạng thái.</b> Tuổi tính từ lúc hồ sơ vào trạng thái hiện tại, không phải từ lúc lập.<span class="then">Nhờ vậy nhìn ra được hồ sơ đang mắc ở khâu nào lâu nhất, thay vì chỉ biết tổng thời gian.</span></li>
@@ -394,7 +395,9 @@
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
           <tr><td>Lập hồ sơ trùng đợt</td><td>Đợt đã có hồ sơ đang mở</td><td>“Đợt {n} đã có hồ sơ {mã} đang xử lý. Mở hồ sơ đó hoặc đóng trước khi lập hồ sơ mới.”</td></tr>
-          <tr><td>Giá trị vượt đợt</td><td><code>amount_request &gt; giá trị đợt</code></td><td>“Đề nghị {giá trị} vượt giá trị đợt {giá trị}. Nhập lý do để trình duyệt.”</td></tr>
+          <tr><td>Hợp đồng chưa khai bảng đợt thanh toán</td><td>Đã chọn dự án, bảng đợt của hợp đồng rỗng</td><td>“Hợp đồng của dự án này chưa khai bảng đợt thanh toán nên chưa có gợi ý — gõ thẳng số đợt để lập hồ sơ. Muốn có sẵn danh sách thì khai bảng đợt ở BID-05 của gói thầu tương ứng.” (ghi chú, không chặn)</td></tr>
+          <tr><td>Không đọc được bảng đợt</td><td>Lời gọi lấy bảng đợt lỗi</td><td>“Không đọc được bảng đợt thanh toán nên chưa có gợi ý — gõ thẳng số đợt, hoặc thử lại sau.” (ghi chú, không chặn)</td></tr>
+          <tr><td>Giá trị vượt đợt đã chọn</td><td>Đã chọn một đợt có trong bảng và <code>amount_request &gt; giá trị đợt</code></td><td>“Đề nghị {giá trị} vượt giá trị đợt {giá trị}. Nhập lý do để trình duyệt.”</td></tr>
           <tr><td>Trình duyệt khi thiếu thành phần</td><td>Còn dòng bắt buộc chưa đủ</td><td>“Còn {n} thành phần bắt buộc chưa đủ: {danh sách}.”</td></tr>
           <tr><td>Đóng hồ sơ còn vướng mắc</td><td>Có vướng mắc mở</td><td>“Còn {n} vướng mắc chưa đóng. Người phụ trách phải xác nhận đã xử lý xong.”</td></tr>
           <tr><td>Nhận tiền vượt đề nghị</td><td><code>lũy kế &gt; amount_request</code></td><td>“Tổng đã nhận vượt giá trị đề nghị {chênh lệch}. Kiểm tra lại hoặc ghi nhận phần dư sang đợt sau.”</td></tr>
@@ -409,6 +412,9 @@
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
           <tr><td>UAT-ORD01-1</td><td>Hợp đồng có hiệu lực, đợt 1 chưa có hồ sơ</td><td>Lập hồ sơ tạm ứng đợt 1</td><td>Danh mục thành phần nạp theo mẫu của chủ đầu tư; giá trị nạp sẵn theo đợt</td></tr>
+          <tr><td>UAT-ORD01-1b</td><td>Dự án có hợp đồng chưa khai bảng đợt thanh toán</td><td>Mở “Lập hồ sơ”, chọn loại Tạm ứng và chọn dự án đó, gõ số đợt 1 rồi nhập giá trị</td><td>Ô Đợt thanh toán vẫn nhập được, chỉ hiện ghi chú chưa có gợi ý và dẫn sang <a href="BID-05.html">BID-05</a>; hồ sơ lập được với đợt 1</td></tr>
+          <tr><td>UAT-ORD01-1c</td><td>Hợp đồng khai 3 đợt</td><td>Gõ số đợt 9 (không có trong bảng) rồi nhập giá trị cao hơn giá trị đợt 1</td><td>Hồ sơ lập được, ghi nhận đợt 9; không hỏi lý do vượt đợt vì không có dòng nào để so</td></tr>
+          <tr><td>UAT-ORD01-1d</td><td>Hợp đồng 9,5 tỷ sau VAT</td><td>Nhập giá trị đề nghị 2,85 tỷ</td><td>Dưới ô giá trị hiện quy đổi “≈ 30,0% giá trị hợp đồng”; ô % chỉ để đọc, không nhập được</td></tr>
           <tr><td>UAT-ORD01-2</td><td>Hồ sơ bị chủ đầu tư trả lại</td><td>Mở vướng mắc giao P. Kế toán, đặt hạn 3 ngày</td><td>Hồ sơ chuyển nhãn “Vướng mắc”; người phụ trách nhận thông báo</td></tr>
           <tr><td>UAT-ORD01-3</td><td>Vướng mắc quá hạn 1 ngày</td><td>Chờ tới mốc</td><td>Vướng mắc đổi nhãn quá hạn; trưởng bộ phận nhận nhắc</td></tr>
           <tr><td>UAT-ORD01-4</td><td>Hồ sơ 2 tỷ, đã nhận 1,2 tỷ</td><td>Ghi nhận nhận thêm 800 triệu</td><td>Hồ sơ chuyển “Đã thanh toán”; công nợ phải thu giảm 2 tỷ</td></tr>

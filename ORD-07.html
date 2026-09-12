@@ -273,7 +273,8 @@
       <li>Chọn “nhập kho công trình” tự tạo việc lập hồ sơ nhập kho chủ đầu tư ở <a href="ORD-08.html">ORD-08</a>.</li>
       <li>Đơn hàng giữ nguyên mã qua mọi lần cập nhật; xem được lịch sử từng phiên bản và ai duyệt.</li>
       <li>Hủy đơn chưa sản xuất thì lệnh thực hiện đóng ngay và kế hoạch cấp được giải phóng.</li>
-      <li>Mọi thay đổi khối lượng phản ánh lại vào lũy kế đối chiếu BOQ ở <a href="ORD-03.html">ORD-03</a> và vào bảng áp giá ở <a href="ORD-06.html">ORD-06</a>.</li>
+      <li>Mọi thay đổi khối lượng phản ánh lại vào lũy kế “đã yêu cầu” theo khối lượng bản vẽ ở <a href="ORD-03.html">ORD-03</a> và vào bảng áp giá ở <a href="ORD-06.html">ORD-06</a>.</li>
+      <li>Đổi ngày cần hàng, nơi nhận hoặc nguồn cung ứng của một dòng đều phải đi qua màn hình này — ba trường đó thuộc về dòng đơn hàng nên là nội dung đơn, không phải thông tin điều phối.</li>
     </ol>
 
     <h4>Mockup UI — Đơn hàng › Cập nhật / hủy</h4>
@@ -333,7 +334,8 @@
       <li><b>Nhập kho công trình sinh việc.</b> Chọn “nhập kho công trình” tự tạo việc lập hồ sơ nhập kho chủ đầu tư ở <a href="ORD-08.html">ORD-08</a>.<span class="then">Việc xuất hiện trong hàng chờ của P. TQT kèm liên kết ngược về đơn hàng.</span></li>
       <li><b>Mã đơn không đổi.</b> Mọi lần cập nhật đều sinh phiên bản mới của cùng đơn hàng.<span class="then">So sánh hai phiên bản bất kỳ và xem ai duyệt bản nào là thao tác một cú bấm.</span></li>
       <li><b>Hủy khi chưa sản xuất thì gọn.</b> Đơn chưa sản xuất phần nào thì hủy sẽ đóng lệnh thực hiện và giải phóng kế hoạch cấp.<span class="then">Đã sản xuất một phần thì quy về nhánh xử lý hàng dư của kịch bản giảm khối lượng.</span></li>
-      <li><b>Lan tỏa số liệu.</b> Cập nhật khối lượng phản ánh ngay vào lũy kế đối chiếu BOQ ở <a href="ORD-03.html">ORD-03</a> và vào bảng áp giá ở <a href="ORD-06.html">ORD-06</a>.<span class="then">Bảng áp giá đã duyệt trước đó sẽ bị gắn cờ “cần áp giá lại” nếu khối lượng đổi.</span></li>
+      <li><b>Lan tỏa số liệu.</b> Cập nhật khối lượng phản ánh ngay vào lũy kế “đã yêu cầu” của dòng khối lượng bản vẽ ở <a href="ORD-03.html">ORD-03</a> và vào bảng áp giá ở <a href="ORD-06.html">ORD-06</a>.<span class="then">Bảng áp giá đã duyệt trước đó sẽ bị gắn cờ “cần áp giá lại” nếu khối lượng đổi.</span></li>
+      <li><b>Ngày cần hàng · nơi nhận · nguồn cung ứng sửa ở đây.</b> Ba trường này nằm trên dòng đơn hàng (<a href="ORD-03.html">ORD-03</a>) nên đổi chúng là lập phiên bản đơn mới, không phải thao tác ở màn hình phân luồng hay cấp hàng.<span class="then">Đổi nguồn khi lệnh thực hiện đã tiếp nhận thì lệnh cũ phải hủy trước — <a href="ORD-04.html">ORD-04</a> không chuyển dòng giữa hai lệnh đang chạy.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -362,7 +364,8 @@
           <tr><td>UAT-ORD07-5</td><td>Chọn “nhập kho công trình”</td><td>Duyệt cập nhật</td><td>Hàng chờ của P. TQT có việc lập hồ sơ nhập kho CĐT, liên kết về đơn</td></tr>
           <tr><td>UAT-ORD07-6</td><td>Đơn đã áp giá và duyệt giá</td><td>Cập nhật giảm khối lượng và duyệt</td><td>Bảng áp giá gắn cờ “cần áp giá lại”</td></tr>
           <tr><td>UAT-ORD07-7</td><td>Đơn v1 và v2</td><td>Mở lịch sử phiên bản</td><td>So sánh được hai bản; mỗi bản có người duyệt và thời điểm</td></tr>
-          <tr><td>UAT-ORD07-8</td><td>Đơn chưa sản xuất phần nào</td><td>Bấm “Hủy đơn” và duyệt</td><td>Lệnh thực hiện đóng; kế hoạch cấp giải phóng; lũy kế BOQ trả lại</td></tr>
+          <tr><td>UAT-ORD07-8</td><td>Đơn chưa sản xuất phần nào</td><td>Bấm “Hủy đơn” và duyệt</td><td>Lệnh thực hiện đóng; kế hoạch cấp giải phóng; lũy kế “đã yêu cầu” của các dòng bản vẽ trả lại</td></tr>
+          <tr><td>UAT-ORD07-9</td><td>Đơn đã duyệt, một dòng ghi nguồn “Kho trung tâm Bình Dương”</td><td>Lập phiên bản mới đổi nguồn dòng đó sang để trống</td><td>Sau khi duyệt, dòng chuyển từ lệnh cung ứng sang lệnh sản xuất; lệnh cũ phải hủy trước nếu đã tiếp nhận</td></tr>
         </tbody>
       </table>
     </div>

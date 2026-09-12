@@ -86,6 +86,7 @@
   <div class="sb">
     <h4>Mục tiêu</h4>
     <p>Đây là chứng từ trả tiền cho tổ đội, nên nó phải khớp ba nguồn độc lập: bảng đơn giá khoán đã duyệt (<a href="PRJ-01.html">PRJ-01</a>), sản lượng thi công đã chốt (<a href="PRJ-02.html">PRJ-02</a>), và bảng công nhật có xác nhận các bên. Bốn chặng thẩm định phía sau mỗi chặng kiểm một khía cạnh khác nhau — đặc tả nêu rõ từng chặng kiểm gì để tránh việc bốn người cùng kiểm một thứ.</p>
+    <p>Số liệu được nhập theo <b>đợt thanh toán</b>, trên một bảng duy nhất cho cả đợt: chọn dự án, chọn đợt, bảng hiện đủ các cặp đầu việc – tổ đội mà đợt đó đã nghiệm thu, kèm khối lượng và đơn giá. Việc phải quyết ở đây là <b>tỉ lệ thanh toán kỳ này</b> — trả bao nhiêu phần trăm giá trị đã làm — cùng hai khoản đã chi trước cho tổ đội. Một đợt là một quyết định, và nó được lấy bằng cách so các tổ đội với nhau, nên nó phải nằm trên một màn hình. Mỗi tổ đội vẫn là một hồ sơ riêng khi trình duyệt, vì tiền đi về từng tổ đội.</p>
 
     <h4>Lưu đồ — 5 chặng và cửa chặn quá hạn</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:639px;margin:0 auto"><svg role="img" aria-label="Hình PRJ-03.1 Mỗi chặng có một tiêu chí kiểm riêng và một lối trả về chung. Cửa chặn quá hạn nằm trước cả chặng 1 — hồ sơ nộp muộn không vào được luồng nếu giải trình chưa được duyệt."
@@ -256,16 +257,22 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Mã hồ sơ</td><td class="k">payroll_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>GKNC-&lt;project&gt;-YYYYMM</code>.</td></tr>
-          <tr><td>Tổ đội · kỳ</td><td class="k">crew_id, period</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một hồ sơ cho một tổ đội trong một kỳ.</td></tr>
+          <tr><td>Tổ đội · kỳ</td><td class="k">crew_id, batch_no</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một hồ sơ cho một tổ đội trong một đợt thanh toán. Đợt là đợt của <a href="PRJ-02.html">PRJ-02</a> — không mở kỳ riêng ở đây.</td></tr>
           <tr><td>Hạn nộp</td><td class="k">deadline</td><td>Ngày</td><td class="c req">✱</td><td>Cấu hình theo dự án; so với ngày nộp để xác định quá hạn.</td></tr>
           <tr><td>Giải trình quá hạn</td><td class="k">late_justification</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi nộp muộn; phải được duyệt riêng trước khi vào luồng chính.</td></tr>
-          <tr><td>Khối lượng nghiệm thu</td><td class="k">work_lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: đầu việc, khối lượng, đơn giá khoán, thành tiền. Nạp từ sản lượng đã chốt.</td></tr>
+          <tr><td>Khối lượng nghiệm thu</td><td class="k">work_lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng là một cặp đầu việc – tổ đội: khối lượng, đơn giá khoán, thành tiền. Khối lượng lấy từ sản lượng đã xác nhận của đợt, không nhập lại.</td></tr>
+          <tr><td>Tỉ lệ thanh toán kỳ này</td><td class="k">pay_ratio_pct</td><td>Phần trăm</td><td class="c req">✱</td><td>0–100. Phần trăm giá trị đã làm được trả trong đợt này; đặt chung cho cả bảng rồi sửa riêng từng dòng.</td></tr>
+          <tr><td>Thành tiền TT kỳ này</td><td class="k">amount_payable</td><td>Số tiền</td><td class="c">—</td><td><code>thành tiền × tỉ lệ</code> — tính tự động.</td></tr>
+          <tr><td>Đã tạm ứng</td><td class="k">advance_amount</td><td>Số tiền</td><td class="c">—</td><td>Số âm. Khoản tạm ứng thu hồi trong đợt này; hệ thống gợi ý sẵn số dư tạm ứng của tổ đội để đối chiếu.</td></tr>
+          <tr><td>Khác</td><td class="k">other_amount</td><td>Số tiền</td><td class="c">—</td><td>Số âm. Khoản trừ khác của đợt không thuộc ba nhóm phạt / tiện ích / VTTB.</td></tr>
+          <tr><td>Số đề nghị thanh toán</td><td class="k">requested_amount</td><td>Số tiền</td><td class="c">—</td><td><code>thành tiền TT kỳ này + đã tạm ứng + khác</code> — tính tự động.</td></tr>
+          <tr><td>Số dư phải trả tổ đội</td><td class="k">retention</td><td>Số tiền</td><td class="c">—</td><td><code>thành tiền − thành tiền TT kỳ này</code>: phần giữ lại chờ quyết toán. Hiện cả số của kỳ và số lũy kế mọi đợt.</td></tr>
           <tr><td>Bảng công nhật</td><td class="k">timesheet[]</td><td>Bảng</td><td class="c">—</td><td>Bắt buộc với hình thức khoán công nhật: người, số công, đơn giá công, xác nhận của các bên.</td></tr>
           <tr><td>Khoản phạt</td><td class="k">penalties[]</td><td>Bảng</td><td class="c">—</td><td>Lý do, giá trị, chứng từ kèm theo (biên bản vi phạm an toàn, chậm tiến độ, hư hỏng).</td></tr>
           <tr><td>Tiện ích đã cấp</td><td class="k">utilities[]</td><td>Bảng</td><td class="c">—</td><td>Điện, nước, chỗ ở, ăn ca — khấu trừ vào tiền khoán.</td></tr>
           <tr><td>VTTB đã cấp</td><td class="k">materials_issued[]</td><td>Bảng</td><td class="c">—</td><td>Vật tư, thiết bị đã xuất cho tổ đội; lấy từ phiếu xuất kho dự án (<a href="PRJ-04.html">PRJ-04</a>).</td></tr>
           <tr><td>Tạm ứng đã cấp</td><td class="k">advances[]</td><td>Bảng</td><td class="c">—</td><td>Số dư tạm ứng của tổ đội; khấu trừ trước khi thanh toán.</td></tr>
-          <tr><td>Giá trị thực trả</td><td class="k">net_amount</td><td>Số tiền</td><td class="c">—</td><td>Tổng khoán trừ phạt, tiện ích, VTTB, tạm ứng — tính tự động.</td></tr>
+          <tr><td>Giá trị thực trả</td><td class="k">net_amount</td><td>Số tiền</td><td class="c">—</td><td>Tổng thanh toán kỳ này trừ phạt, tiện ích, VTTB, tạm ứng — tính tự động. Tính trên phần đợt thực trả, không trên toàn bộ giá trị đã làm.</td></tr>
         </tbody>
       </table>
     </div>
@@ -280,45 +287,56 @@
       <li>Hồ sơ được lãnh đạo duyệt sinh ngay đề nghị thanh toán ở <a href="ACC-05.html">ACC-05</a>, không nhập lại.</li>
       <li>Xuất được bộ hồ sơ đầy đủ: bảng khối lượng, bảng đơn giá được duyệt, bảng công nhật có xác nhận, chứng từ phạt / tiện ích / VTTB.</li>
       <li>Báo cáo phân loại nhân công theo sản lượng, công nhật sản lượng và công nhật khác lấy dữ liệu trực tiếp từ đây (<a href="RPT-02.html">RPT-02</a>).</li>
+      <li>Cả đợt nằm trên một bảng: chọn dự án và đợt là thấy đủ các cặp đầu việc – tổ đội đã nghiệm thu, nhóm theo tổ đội, có dòng cộng của từng tổ và dòng tổng của cả đợt.</li>
+      <li>Tỉ lệ thanh toán đặt được một lần cho cả bảng rồi sửa riêng từng dòng; thành tiền TT kỳ này, số đề nghị thanh toán và số dư phải trả tính lại ngay khi gõ.</li>
+      <li>Số dư phải trả tổ đội hiện cả theo kỳ và lũy kế mọi đợt, để biết công ty đang giữ lại của tổ đội bao nhiêu.</li>
+      <li>Một lần bấm trình duyệt cả đợt: mỗi tổ đội một hồ sơ, cùng vào luồng 5 chặng, không có trạng thái nửa đợt đã trình nửa chưa.</li>
     </ol>
 
     <h4>Mockup UI — Công trình › Giao khoán nhân công</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>GKNC-014-202607 · Tổ TD-004</b><span class="sp"></span><span class="tag t-crit"><span class="pin">1</span> Nộp muộn 4 ngày</span><span class="wf-btn"><span class="pin">6</span> Xuất bộ hồ sơ</span><span class="wf-btn pri">Trình duyệt</span></div>
+      <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>Đợt #7 · 01/07–15/07/2026</b><span class="tag t-info">Đang ghi nhận</span><span class="sp"></span><span class="tag t-crit"><span class="pin">1</span> Nộp muộn 4 ngày</span><span class="wf-btn"><span class="pin">6</span> Xuất bộ hồ sơ</span><span class="wf-btn pri"><span class="pin">7</span> Trình duyệt cả đợt (2 tổ đội)</span></div>
       <div class="wf-body">
-        <div class="wf-sec">
-          <div class="wf-lg"><span class="pin">2</span> Luồng trình 5 chặng</div>
-          <div class="wf-steps">
-            <div class="done"><b>Dự án lập</b>Ngô Đức Thịnh<br>04/08</div>
-            <div class="cur"><b>TBP TQT</b>đối chiếu khối lượng</div>
-            <div><b>P. Đấu thầu</b>đối chiếu đơn giá</div>
-            <div><b>P. Kế toán</b>kiểm khấu trừ</div>
-            <div><b>Lãnh đạo</b>duyệt chi</div>
-          </div>
-        </div>
         <div class="wf-sec">
           <div class="wf-lg">Giải trình quá hạn ✱ — đã được duyệt 04/08</div>
           <div class="wf-f"><div class="in ro">Chậm do chờ CĐT ký biên bản nghiệm thu khối lượng đợt 4 (nhận ngày 03/08).</div></div>
         </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">3</span> Bảng giao khoán theo đầu việc và tổ đội<span>· áp tỉ lệ cho tất cả dòng: 80%</span></div>
+          <div class="tw">
+          <table><thead><tr><th>Đầu việc</th><th>Tổ đội</th><th>ĐVT</th><th class="num">ĐG khoán</th><th class="num">KL kỳ này</th><th class="num">Thành tiền</th><th class="num">Tỉ lệ TT</th><th class="num">TT kỳ này</th><th class="num">Đã tạm ứng</th><th class="num">Khác</th><th class="num">Số đề nghị TT</th><th class="num">Số dư phải trả</th><th>Ghi chú</th></tr></thead>
+          <tbody>
+            <tr><td>CV-001 Ốp lát mặt đứng</td><td>TD-001</td><td>m²</td><td class="num">500.000</td><td class="num">500,00</td><td class="num">250.000.000</td><td class="num">80%</td><td class="num">200.000.000</td><td class="num">−20.000.000</td><td class="num">0</td><td class="num">180.000.000</td><td class="num">50.000.000</td><td>ứng 20/06</td></tr>
+            <tr><td>CV-002 Gia công đá</td><td>TD-001</td><td>m²</td><td class="num">500.000</td><td class="num">100,00</td><td class="num">50.000.000</td><td class="num">90%</td><td class="num">45.000.000</td><td class="num">0</td><td class="num">0</td><td class="num">45.000.000</td><td class="num">5.000.000</td><td></td></tr>
+            <tr><td colspan="5"><b>Cộng tổ đội TD-001</b> · GKNC-014-202607 · Nháp</td><td class="num"><b>300.000.000</b></td><td class="num">81,67%</td><td class="num"><b>245.000.000</b></td><td class="num"><b>−20.000.000</b></td><td class="num">0</td><td class="num"><b>225.000.000</b></td><td class="num"><b>55.000.000</b></td><td>Lũy kế còn giữ: 143.000.000</td></tr>
+            <tr><td>CV-001 Ốp lát mặt đứng</td><td>TD-002</td><td>m²</td><td class="num">490.000</td><td class="num">300,00</td><td class="num">147.000.000</td><td class="num">80%</td><td class="num">117.600.000</td><td class="num">0</td><td class="num">−5.000.000</td><td class="num">112.600.000</td><td class="num">29.400.000</td><td>Phạt 5tr do vi phạm</td></tr>
+            <tr><td colspan="5"><b>Cộng tổ đội TD-002</b> · GKNC-014-202607 · Nháp</td><td class="num"><b>147.000.000</b></td><td class="num">80,00%</td><td class="num"><b>117.600.000</b></td><td class="num">0</td><td class="num"><b>−5.000.000</b></td><td class="num"><b>112.600.000</b></td><td class="num"><b>29.400.000</b></td><td>Lũy kế còn giữ: 29.400.000</td></tr>
+            <tr><td colspan="5"><b>Tổng cộng cả đợt</b></td><td class="num"><b>447.000.000</b></td><td class="num">81,12%</td><td class="num"><b>362.600.000</b></td><td class="num"><b>−20.000.000</b></td><td class="num"><b>−5.000.000</b></td><td class="num"><b>337.600.000</b></td><td class="num"><b>84.400.000</b></td><td></td></tr>
+          </tbody></table>
+          </div>
+        </div>
         <div class="wf-row">
-          <div class="wf-c" style="flex:1.6 1 380px"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">3</span> Khối lượng nghiệm thu &amp; đơn giá khoán</div>
-            <table><thead><tr><th>Đầu việc</th><th>ĐVT</th><th class="num">KL</th><th class="num">ĐG khoán</th><th class="num">Thành tiền</th><th>Nguồn</th></tr></thead>
-            <tbody>
-              <tr><td>Ốp lát mặt đứng tháp A</td><td>m²</td><td class="num">1.680</td><td class="num">405.000</td><td class="num">680.400.000</td><td>PRJ-02 đợt 4</td></tr>
-              <tr><td>Gia công đá cong bo góc</td><td>công</td><td class="num">42</td><td class="num">520.000</td><td class="num">21.840.000</td><td>Công nhật</td></tr>
-            </tbody></table>
-          </div></div>
           <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">4</span> Khấu trừ</div>
+            <div class="wf-lg"><span class="pin">4</span> Khấu trừ của hồ sơ TD-001</div>
             <table><tbody>
-              <tr><td>Tổng giá trị khoán</td><td class="num">702.240.000</td></tr>
+              <tr><td>Thanh toán kỳ này</td><td class="num">245.000.000</td></tr>
+              <tr><td>Giữ lại chờ quyết toán</td><td class="num">55.000.000</td></tr>
+              <tr><td>Đã tạm ứng (bảng giao khoán)</td><td class="num">−20.000.000</td></tr>
               <tr><td>Phạt an toàn lao động</td><td class="num">−8.000.000</td></tr>
               <tr><td>Tiện ích (điện, nước, ở)</td><td class="num">−14.600.000</td></tr>
               <tr><td>VTTB đã cấp</td><td class="num">−23.400.000</td></tr>
-              <tr><td>Tạm ứng đã cấp</td><td class="num">−300.000.000</td></tr>
-              <tr><td><b>Thực trả</b></td><td class="num"><b>356.240.000</b></td></tr>
+              <tr><td><b>Thực trả</b></td><td class="num"><b>179.000.000</b></td></tr>
             </tbody></table>
+          </div></div>
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">2</span> Luồng trình 5 chặng của hồ sơ TD-001</div>
+            <div class="wf-steps">
+              <div class="done"><b>Dự án lập</b>Ngô Đức Thịnh<br>04/08</div>
+              <div class="cur"><b>TBP TQT</b>đối chiếu khối lượng</div>
+              <div><b>P. Đấu thầu</b>đối chiếu đơn giá</div>
+              <div><b>P. Kế toán</b>kiểm khấu trừ</div>
+              <div><b>Lãnh đạo</b>duyệt chi</div>
+            </div>
           </div></div>
         </div>
         <div class="wf-sec">
@@ -333,10 +351,11 @@
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Kiểm soát hạn nộp</td><td>Quá hạn thì khóa nút trình duyệt cho tới khi giải trình được duyệt riêng.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Theo dõi 5 chặng</td><td>Mỗi chặng hiện tiêu chí kiểm của chặng đó, tránh kiểm chồng chéo.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Nạp khối lượng &amp; đơn giá</td><td>Tự lấy từ sản lượng đã chốt và bảng giá đã duyệt; sửa tay bị gắn cờ.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Lập bảng khấu trừ</td><td>Bốn nhóm khấu trừ; VTTB và tạm ứng nạp từ chứng từ kho và công nợ.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Bảng giao khoán của đợt</td><td>Dòng lấy từ sản lượng đã xác nhận và bảng giá đã duyệt; chỉ nhập tỉ lệ TT, hai khoản đã chi và ghi chú. Nhóm theo tổ đội, mỗi tổ một dòng cộng.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Lập bảng khấu trừ</td><td>Bốn nhóm khấu trừ cộng nhóm “khác”; VTTB và tạm ứng nạp từ chứng từ kho và công nợ, hai cột của bảng ghi thẳng vào đây.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Đính kèm chứng từ</td><td>Bảng công nhật có xác nhận các bên là bắt buộc với phần công nhật.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Xuất bộ hồ sơ</td><td>Gộp toàn bộ thành một tệp nén theo cấu trúc chuẩn để lưu và đối chiếu.</td></tr>
+          <tr><td class="c"><span class="pin">7</span></td><td>Trình duyệt cả đợt</td><td>Một lần bấm đưa mọi hồ sơ nháp của đợt vào luồng 5 chặng; giải trình quá hạn hỏi một lần cho cả đợt.</td></tr>
         </tbody>
       </table>
     </div>
@@ -345,11 +364,16 @@
     <ol class="br">
       <li><b>Cửa chặn quá hạn nằm trước chặng 1.</b> Hồ sơ nộp sau hạn quy định không vào được luồng cho tới khi giải trình quá hạn được duyệt riêng.<span class="then">Đúng câu “quá thời hạn thì cần phải giải trình được phê duyệt mới gửi được” của yêu cầu gốc.</span></li>
       <li><b>Mỗi chặng một tiêu chí.</b> Bốn chặng thẩm định kiểm bốn nội dung khác nhau, hiển thị ngay trên màn hình của chặng đó.<span class="then">Tránh bốn người cùng kiểm một thứ và cùng bỏ sót một thứ.</span></li>
-      <li><b>Khối lượng nạp từ sản lượng đã chốt.</b> Bảng khối lượng nghiệm thu lấy từ <a href="PRJ-02.html">PRJ-02</a>, lọc theo tổ đội và kỳ.<span class="then">Sửa tay được nhưng dòng sửa bị gắn cờ và hiện nổi bật cho chặng 1 của TBP TQT kiểm.</span></li>
+      <li><b>Nhập theo đợt thanh toán.</b> Màn hình xoay quanh một đợt: chọn dự án, chọn đợt, bảng hiện đủ các cặp đầu việc – tổ đội mà đợt đó đã nghiệm thu, nhóm theo tổ đội.<span class="then">Tỉ lệ thanh toán là quyết định của cả đợt, lấy bằng cách so các tổ đội với nhau — nhập rời từng hồ sơ thì không so được.</span></li>
+      <li><b>Khối lượng nạp từ sản lượng đã chốt.</b> Bảng khối lượng nghiệm thu lấy từ <a href="PRJ-02.html">PRJ-02</a>, lọc theo tổ đội và đợt; cặp chưa có sản lượng đã xác nhận thì không có dòng để trả tiền.<span class="then">Sửa tay được nhưng dòng sửa bị gắn cờ và hiện nổi bật cho chặng 1 của TBP TQT kiểm. Muốn đổi khối lượng thì sửa ở PRJ-02, giữ một nguồn số liệu duy nhất.</span></li>
+      <li><b>Tỉ lệ thanh toán kỳ này.</b> Mỗi dòng có một tỉ lệ 0–100%; đặt chung cho cả bảng rồi sửa riêng dòng nào cần. Thành tiền TT kỳ này = thành tiền × tỉ lệ.<span class="then">Đợt không trả hết giá trị đã làm là chuyện bình thường; phần chênh phải có chỗ đứng trên chứng từ thay vì biến mất.</span></li>
+      <li><b>Số dư phải trả tổ đội.</b> Phần không trả trong kỳ được giữ lại và cộng dồn qua các đợt; màn hình hiện cả số của kỳ lẫn số lũy kế của từng tổ đội.<span class="then">Tiền giữ lại rồi cũng phải trả, nên phải nhìn thấy tổng đang nợ tổ đội chứ không chỉ từng lát cắt một đợt.</span></li>
       <li><b>Đơn giá lấy từ bảng giá đã duyệt.</b> Đầu việc không có trong bảng giá khoán hiệu lực thì không đưa vào hồ sơ được.<span class="then">Phải lập phụ lục bảng giá ở <a href="PRJ-01.html">PRJ-01</a> trước; hệ thống cung cấp liên kết thẳng.</span></li>
       <li><b>Bốn nhóm khấu trừ.</b> Phạt, tiện ích, vật tư thiết bị đã cấp, và tạm ứng đã cấp đều tự cộng vào bảng khấu trừ.<span class="then">Vật tư lấy từ phiếu xuất kho dự án cho tổ đó; tạm ứng lấy từ số dư tạm ứng ở công nợ.</span></li>
-      <li><b>Không trả âm.</b> Giá trị thực trả không âm; khấu trừ vượt giá trị khoán thì phần dư chuyển sang kỳ sau.<span class="then">Hệ thống hiện rõ số chuyển kỳ sau để tổ đội đối chiếu.</span></li>
+      <li><b>Hai cột của bảng ghi thẳng vào bảng khấu trừ.</b> “Đã tạm ứng” vào nhóm tạm ứng, “Khác” vào nhóm khấu trừ khác; chúng nhập số âm trên bảng và hiện là khoản trừ trong hồ sơ.<span class="then">Chặng 3 vẫn đọc một danh sách khấu trừ đủ nhóm, và không có đường nào trừ hai lần: cột nào bảng ghi thì bảng sửa, dòng nào nhập trong hồ sơ thì hồ sơ sửa. Khi bảng đã ghi số tạm ứng thu hồi của kỳ thì hệ thống không tự cộng thêm số dư tạm ứng nữa.</span></li>
+      <li><b>Không trả âm.</b> Giá trị thực trả không âm; khấu trừ vượt phần thanh toán kỳ này thì phần dư chuyển sang kỳ sau.<span class="then">Khấu trừ tính trên số đợt thực trả chứ không trên toàn bộ giá trị đã làm — trừ vào phần đang giữ lại là thu của tổ đội một khoản chưa hề trả cho họ. Hệ thống hiện rõ số chuyển kỳ sau để tổ đội đối chiếu.</span></li>
       <li><b>Bảng công nhật cần xác nhận các bên.</b> Phần công nhật bắt buộc có bảng công nhật đính kèm với xác nhận của tổ đội, kỹ thuật và chỉ huy trưởng.<span class="then">Thiếu thì chặn ngay tại bước lập, không để tới chặng kế toán mới phát hiện.</span></li>
+      <li><b>Trình duyệt cả đợt một lần.</b> Một lần bấm đưa mọi hồ sơ nháp của đợt vào luồng; nếu có hồ sơ không đủ điều kiện thì cả đợt dừng lại và nêu rõ hồ sơ nào.<span class="then">Một đợt nửa đã trình nửa còn mở là trạng thái không ai đọc được trên màn hình. Giải trình quá hạn hỏi một lần cho cả đợt, vì đợt nộp muộn thì muộn với mọi tổ đội và vì cùng một lý do.</span></li>
       <li><b>Trả về giữ mã.</b> Bất kỳ chặng nào trả về đều đưa hồ sơ về người lập, giữ nguyên mã và ghi rõ chặng nào trả, lý do gì.<span class="then">Trình lại sẽ đi từ chặng 1, vì số liệu đã thay đổi.</span></li>
       <li><b>Duyệt xong sinh đề nghị thanh toán.</b> Lãnh đạo duyệt thì tự tạo đề nghị thanh toán ở <a href="ACC-05.html">ACC-05</a> với đầy đủ dữ liệu.<span class="then">Kế toán chỉ kiểm và trình, không nhập lại từ đầu.</span></li>
       <li><b>Phụ thuộc danh mục Tổ đội.</b> Danh sách Tổ đội để chọn ở màn hình này lấy từ màn hình danh mục tổ đội — tổ đội phải được tạo ở đó, có đủ thông tin thanh toán (số tài khoản ngân hàng, ngân hàng) trước khi được gán một hồ sơ giao khoán tại đây.<span class="then">Giao khoán nhân công tính ra số tiền phải trả cho tổ đội, nên cần sẵn nơi nhận tiền đã có trên hồ sơ; danh mục tổ đội trống là lý do màn hình này hiện “0 kết quả” ở mọi nơi.</span></li>
@@ -366,6 +390,11 @@
           <tr><td>Thiếu bảng công nhật</td><td>Có dòng công nhật, thiếu tệp</td><td>“Đính kèm bảng công nhật có xác nhận của tổ đội, kỹ thuật và chỉ huy trưởng.”</td></tr>
           <tr><td>Khấu trừ vượt giá trị khoán</td><td><code>net_amount &lt; 0</code></td><td>“Khấu trừ vượt giá trị khoán {số}. Phần dư {số} sẽ chuyển sang kỳ sau.”</td></tr>
           <tr><td>Phạt thiếu chứng từ</td><td>Có khoản phạt, thiếu biên bản</td><td>“Khoản phạt cần biên bản kèm theo để tổ đội đối chiếu.”</td></tr>
+          <tr><td>Tỉ lệ ngoài khoảng</td><td><code>pay_ratio_pct &lt; 0</code> hoặc <code>&gt; 100</code></td><td>“Tỉ lệ thanh toán ở {đầu việc} — {tổ đội} phải nằm trong khoảng 0–100%.”</td></tr>
+          <tr><td>Cặp chưa có sản lượng chốt</td><td>Không có sản lượng đã xác nhận trong đợt</td><td>“{đầu việc} — {tổ đội} chưa có sản lượng đã xác nhận trong đợt {n}: chốt sản lượng ở PRJ-02 trước.”</td></tr>
+          <tr><td>Hai cột trừ nhập số dương</td><td><code>advance_amount &gt; 0</code> hoặc <code>other_amount &gt; 0</code></td><td>“Cột Đã tạm ứng và Khác ở {đầu việc} — {tổ đội} nhập số âm: đó là khoản trừ vào tiền khoán.”</td></tr>
+          <tr><td>Sửa bảng sau khi đã trình</td><td>Hồ sơ của tổ đội không còn ở trạng thái nháp</td><td>“Hồ sơ {mã} đã trình duyệt — không sửa được từ bảng.”</td></tr>
+          <tr><td>Cặp đã làm nhưng chưa có giá</td><td>Có sản lượng, không có dòng trong bảng giá hiệu lực</td><td>“Chưa có đơn giá cho: {danh sách}. Lập phụ lục bảng giá khoán để đưa các cặp này vào thanh toán.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -377,12 +406,16 @@
         <tbody>
           <tr><td>UAT-PRJ03-1</td><td>Hạn nộp 31/07, hôm nay 04/08</td><td>Bấm “Trình duyệt”</td><td>Bị chặn; hiện ô giải trình quá hạn và luồng duyệt riêng</td></tr>
           <tr><td>UAT-PRJ03-2</td><td>Giải trình quá hạn được duyệt</td><td>Trình lại</td><td>Hồ sơ vào chặng 1 — TBP TQT</td></tr>
-          <tr><td>UAT-PRJ03-3</td><td>Sản lượng tổ TD-004 đợt 4 là 1.680 m²</td><td>Lập hồ sơ kỳ tháng 7</td><td>Bảng khối lượng nạp sẵn 1.680, nguồn ghi “PRJ-02 đợt 4”</td></tr>
+          <tr><td>UAT-PRJ03-3</td><td>Sản lượng tổ TD-004 đợt 4 là 1.680 m²</td><td>Chọn dự án và đợt 4</td><td>Bảng hiện sẵn dòng 1.680 m² của TD-004, đơn giá lấy từ bảng giá hiệu lực</td></tr>
           <tr><td>UAT-PRJ03-4</td><td>Sửa tay khối lượng lên 1.800</td><td>Trình duyệt</td><td>Dòng gắn cờ; chặng 1 thấy cảnh báo lệch so với sản lượng đã chốt</td></tr>
           <tr><td>UAT-PRJ03-5</td><td>Tổ đội còn dư tạm ứng 300 triệu, VTTB 23,4 triệu</td><td>Mở bảng khấu trừ</td><td>Hai khoản tự điền từ công nợ và phiếu xuất kho dự án</td></tr>
           <tr><td>UAT-PRJ03-6</td><td>Hồ sơ ở chặng 3 — P. Kế toán</td><td>Kế toán bấm “Trả về” kèm lý do thiếu biên bản phạt</td><td>Hồ sơ về người lập, giữ mã, ghi rõ chặng 3 trả và lý do</td></tr>
           <tr><td>UAT-PRJ03-7</td><td>Hồ sơ được lãnh đạo duyệt</td><td>Mở màn hình đề nghị thanh toán</td><td>Đã có đề nghị với đủ đối tượng, giá trị thực trả và dự án</td></tr>
           <tr><td>UAT-PRJ03-8</td><td>Đã duyệt hồ sơ 3 tổ đội trong quý</td><td>Mở báo cáo phân loại nhân công</td><td>Chia đúng ba nhóm sản lượng / công nhật sản lượng / công nhật khác</td></tr>
+          <tr><td>UAT-PRJ03-9</td><td>Đợt 7 có CV-001/TD-001 500 m² × 500.000</td><td>Nhập tỉ lệ 80%, đã tạm ứng −20.000.000</td><td>TT kỳ này 200.000.000, số đề nghị 180.000.000, số dư phải trả 50.000.000 — hiện ngay khi gõ</td></tr>
+          <tr><td>UAT-PRJ03-10</td><td>Đã lưu bảng của đợt 7</td><td>Lưu lại đúng bảng đó lần nữa</td><td>Số liệu không đổi, không sinh thêm hồ sơ hay dòng khấu trừ nào</td></tr>
+          <tr><td>UAT-PRJ03-11</td><td>Đợt 7 có 2 tổ đội ở trạng thái nháp</td><td>Bấm “Trình duyệt cả đợt”</td><td>Hai hồ sơ cùng vào chặng 1; bảng chuyển sang chỉ đọc</td></tr>
+          <tr><td>UAT-PRJ03-12</td><td>Tổ đội đã giữ lại 55 triệu ở đợt 7</td><td>Mở bảng của đợt 8</td><td>Dòng cộng của tổ đó hiện “Lũy kế còn giữ” gồm cả 55 triệu của đợt trước</td></tr>
         </tbody>
       </table>
     </div>

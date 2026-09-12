@@ -232,7 +232,7 @@
           <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td><code>KM-NNN</code>, có cấp cha</td><td>Tên, nhóm (NVL / nhân công / máy / chung), TK hạch toán mặc định</td></tr>
           <tr><td>Mã thống kê</td><td class="k">stat_id</td><td>Tự do, tối đa 20 ký tự</td><td>Tên, chiều phân tích (vùng miền / loại hình / khách hàng)</td></tr>
           <tr><td>Hạng mục công trình</td><td class="k">wbs_id</td><td><code>&lt;project_id&gt;.NN</code></td><td>Tên hạng mục, khối lượng BOQ, đơn vị tính</td></tr>
-          <tr><td>Vật tư / sản phẩm</td><td class="k">item_id</td><td><code>VT-NNNNN</code></td><td>Tên, quy cách, ĐVT kế toán, ĐVT dự án, nhóm, theo dõi NXT (có/không)</td></tr>
+          <tr><td>Vật tư / sản phẩm</td><td class="k">item_id</td><td><code>VT-NNNNN</code></td><td>Tên, quy cách, ĐVT, nhóm, theo dõi NXT (có/không)</td></tr>
           <tr><td>Đối tác</td><td class="k">partner_id</td><td><code>KH-NNNN</code> / <code>NCC-NNNN</code></td><td>Tên, MST, loại, hạn mức công nợ, điều khoản thanh toán</td></tr>
           <tr><td>Tổ đội thi công</td><td class="k">crew_id</td><td><code>TD-NNN</code></td><td>Tên tổ, đội trưởng, dự án đang thi công, hình thức khoán</td></tr>
           <tr><td>Tài khoản kế toán</td><td class="k">acc_code</td><td>Theo TT200</td><td>Số hiệu, tên, cấp, tính chất dư</td></tr>
@@ -260,7 +260,7 @@
       <li>Mọi form nhập liệu chứng từ đều hiển thị đủ 6 trường dùng chung ở bảng trên, trường bắt buộc không cho lưu nếu bỏ trống.</li>
       <li>Xóa một mã đang được chứng từ tham chiếu bị chặn; hệ thống chỉ cho <em>ngừng sử dụng</em> để giữ toàn vẹn số liệu lịch sử.</li>
       <li>Sửa tên danh mục không làm thay đổi báo cáo quá khứ vì báo cáo lưu theo mã, không theo tên.</li>
-      <li>Mỗi vật tư khai báo được đồng thời ĐVT kế toán và ĐVT dự án cùng hệ số quy đổi — đúng yêu cầu 2 cột ĐVT tại KT·2.</li>
+      <li>Mỗi vật tư khai <b>một</b> đơn vị tính, dùng chung cho đấu thầu, bản vẽ, đơn hàng, kho và kế toán.</li>
       <li>Mọi thay đổi danh mục ghi vào nhật ký hệ thống: ai, lúc nào, giá trị cũ → giá trị mới.</li>
     </ol>
 
@@ -315,7 +315,7 @@
       <li><b>Dự án không cấp mã mới.</b> <code>project_id</code> không có dãy số riêng: dự án nhận nguyên mã gói thầu đã sinh ở <a href="BID-01.html">BID-01</a> và hợp đồng cũng mang đúng mã đó.<span class="then">Một công việc là một con số ở mọi nơi nó được lưu hồ sơ, nên số thứ tự chạy theo địa điểm chứ không theo năm — xem quy tắc đánh số tại <a href="BID-01.html">BID-01</a>.</span></li>
       <li><b>Không xóa, chỉ ngừng.</b> Bản ghi danh mục đã được ít nhất một chứng từ tham chiếu thì nút Xóa bị ẩn.<span class="then">Chỉ còn thao tác “Ngừng sử dụng”: bản ghi biến khỏi các ô chọn của chứng từ mới nhưng vẫn hiển thị đầy đủ trên chứng từ cũ và trên báo cáo lịch sử.</span></li>
       <li><b>Báo cáo lưu theo mã.</b> Mọi truy vấn báo cáo tham chiếu tới mã, không tới tên.<span class="then">Đổi tên một dự án hay một khoản mục chi phí không làm thay đổi bất kỳ con số nào của báo cáo kỳ trước.</span></li>
-      <li><b>Hai hệ đơn vị tính.</b> Mỗi vật tư khai đồng thời ĐVT kế toán, ĐVT dự án và hệ số quy đổi.<span class="then">Nhập số lượng ở một hệ thì hệ còn lại tự tính. Sửa tay giá trị đã quy đổi vẫn được nhưng dòng đó bị gắn cờ để kế toán rà soát.</span></li>
+      <li><b>Một hệ đơn vị tính duy nhất.</b> Mỗi vật tư khai đúng một ĐVT; đơn vị đó đi thẳng từ BOQ đấu thầu sang bản vẽ, đơn hàng, phiếu kho và sổ kế toán mà không quy đổi ở bất kỳ chặng nào.<span class="then">Quyết định thay cho phương án hai hệ đơn vị trước đây (<a href="PL-C.html">Q-07</a>): mỗi lần quy đổi là một chỗ số liệu có thể lệch, và người lập đơn hàng không có cơ sở để biết hệ số kế toán. Đổi ĐVT của một vật tư đã phát sinh chứng từ thì phải ngừng sử dụng mã cũ và mở mã mới.</span></li>
       <li><b>Chi phí chung.</b> Giá trị <code>CHUNG</code> của trường mã dự án là hợp lệ nhưng không phải mặc định.<span class="then">Chứng từ chọn <code>CHUNG</code> vào hàng chờ phân bổ của <a href="ACC-08.html">ACC-08</a> và bị đếm trong báo cáo “chi phí chưa phân bổ” cho tới khi được phân bổ hết.</span></li>
       <li><b>Khoản mục có cấp cha.</b> Khoản mục chi phí tổ chức theo cây, chứng từ chỉ chọn được nút lá.<span class="then">Nút cha dùng để cộng gộp trên báo cáo; chọn nút cha trên chứng từ bị chặn kèm gợi ý các nút lá bên dưới.</span></li>
       <li><b>Mã thống kê nhiều giá trị.</b> Một chứng từ gắn được nhiều mã thống kê thuộc các chiều phân tích khác nhau.<span class="then">Nhưng chỉ được một giá trị trên mỗi chiều — chọn giá trị thứ hai cùng chiều sẽ thay thế giá trị cũ.</span></li>
@@ -331,7 +331,7 @@
         <tbody>
           <tr><td>Trùng tên trong cùng đơn vị</td><td>Tên danh mục đã tồn tại ở cùng <code>unit_id</code></td><td>“Đã có bản ghi cùng tên trong đơn vị này: {mã} — {tên}. Đặt tên khác hoặc mở bản ghi đã có.”</td></tr>
           <tr><td>Xóa bản ghi đang dùng</td><td>Tồn tại chứng từ tham chiếu</td><td>“Không xóa được vì đang được {n} chứng từ sử dụng. Chọn Ngừng sử dụng để ẩn khỏi các chứng từ mới.”</td></tr>
-          <tr><td>Hệ số quy đổi bằng 0 hoặc âm</td><td><code>conversion_rate &gt; 0</code></td><td>“Hệ số quy đổi phải lớn hơn 0. Nhập số quy đổi từ ĐVT dự án sang ĐVT kế toán.”</td></tr>
+          <tr><td>Đổi ĐVT của vật tư đã phát sinh</td><td>Có chứng từ tham chiếu mã vật tư</td><td>“Vật tư {mã} đã có {n} chứng từ theo ĐVT {cũ}. Ngừng sử dụng mã này và mở mã mới nếu cần đơn vị tính khác.”</td></tr>
           <tr><td>Chọn khoản mục là nút cha</td><td>Khoản mục còn nút con</td><td>“{mã} là nhóm tổng hợp, không hạch toán trực tiếp. Chọn một trong các khoản mục con: {danh sách}.”</td></tr>
           <tr><td>Tắt cờ chi phí hợp lý</td><td><code>is_deductible = false</code> mà thiếu lý do</td><td>“Nhập lý do không tính là chi phí hợp lý — nội dung này xuất hiện trên báo cáo chi phí không hợp lý theo dự án.”</td></tr>
           <tr><td>Nhập Excel sai cột</td><td>Thiếu cột bắt buộc trong tệp</td><td>“Tệp thiếu cột bắt buộc: {danh sách}. Tải tệp mẫu để đối chiếu rồi nhập lại.”</td></tr>
@@ -347,7 +347,7 @@
           <tr><td>UAT-PF01-1</td><td>Gói thầu <code>KH_0112</code> vừa khởi tạo dự án ở <a href="BID-05.html">BID-05</a></td><td>Mở bản ghi dự án vừa sinh</td><td>Mã dự án là <code>KH_0112</code>, đúng bằng mã gói thầu và mã hợp đồng; ô mã ở chế độ chỉ đọc</td></tr>
           <tr><td>UAT-PF01-2</td><td>Dự án DA-2026-014 đã có 3 phiếu nhập kho</td><td>Bấm Xóa trên bản ghi dự án</td><td>Nút Xóa không hiển thị; chỉ có “Ngừng sử dụng”</td></tr>
           <tr><td>UAT-PF01-3</td><td>Đã có báo cáo chi phí quý 2 của DA-2026-014</td><td>Đổi tên dự án rồi mở lại báo cáo quý 2</td><td>Toàn bộ con số không đổi; tên mới hiển thị ở tiêu đề</td></tr>
-          <tr><td>UAT-PF01-4</td><td>Vật tư “đá tấm 600×600” có hệ số 1 m² = 2,78 tấm</td><td>Nhập 100 m² ở ô ĐVT kế toán</td><td>Ô ĐVT dự án tự điền 278 tấm</td></tr>
+          <tr><td>UAT-PF01-4</td><td>Vật tư “đá tấm 600×600” khai ĐVT m²</td><td>Mở phiếu nhập kho, đơn hàng và phiếu xuất của vật tư này</td><td>Cả ba chứng từ đều hiện m², không màn hình nào hỏi đơn vị thứ hai hay hệ số quy đổi</td></tr>
           <tr><td>UAT-PF01-5</td><td>Đang lập phiếu chi phí</td><td>Bỏ trống mã dự án rồi bấm Lưu</td><td>Chặn lưu, con trỏ nhảy về ô mã dự án kèm thông điệp bắt buộc</td></tr>
           <tr><td>UAT-PF01-6</td><td>Người dùng là Kế toán viên</td><td>Mở màn hình Danh mục nền</td><td>Xem được toàn bộ; các nút Thêm / Sửa bị ẩn</td></tr>
         </tbody>
