@@ -5149,6 +5149,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
   <div class="sb">
     <h4>Mục tiêu</h4>
     <p>Một đơn hàng hiếm khi giao một lần. Đặc tả tách rõ ba lớp số liệu: <em>kế hoạch cấp</em> (dự kiến), <em>đã cấp</em> (thực tế theo phiếu xuất), và <em>còn lại</em>. Ba lớp này là nguồn của cột tiến độ đơn hàng và của báo cáo sản lượng cấp.</p>
+    <p>Mỗi đợt là <em>một chuyến hàng của cả lệnh</em>, không phải một dòng đơn. Lập đợt mới là chép lại toàn bộ dòng của lệnh rồi nhập <b>% trên khối lượng còn lại</b> của từng dòng — cách người lập kế hoạch thực sự nghĩ (“đợt này cấp nốt dòng này, một nửa dòng kia”) — và màn hình giữ mỗi đợt trong một thẻ riêng để xem lại được kết quả của từng đợt.</p>
     <p>Ngày cần hàng và nơi nhận nằm ở <em>từng dòng đơn hàng</em> (<a href="#ORD-03">ORD-03</a>), không còn ở đầu đơn. Kế hoạch cấp vì vậy không chia đợt cho cả đơn nữa: hệ thống gom dòng theo cặp <b>(ngày cần hàng · nơi nhận)</b> và mỗi cặp là một đợt dự kiến. Một đơn có ba dòng về ba nơi vào ba ngày thì mở sẵn ba đợt, người lập kế hoạch chỉ điều chỉnh thay vì gõ từ đầu.</p>
 
     <h4>Lưu đồ</h4>
@@ -5400,7 +5401,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Đợt cấp gom theo (ngày cần hàng · nơi nhận) của dòng.</b> Ngày và nơi nhận thuộc về dòng đơn hàng (<a href="#ORD-03">ORD-03</a>), nên kế hoạch cấp mở sẵn một đợt cho mỗi cặp khác nhau.<span class="then">Hai dòng cùng ngày nhưng khác nơi nhận là hai đợt, vì mỗi nơi nhận cần phiếu xuất và biên bản giao hàng riêng.</span></li>
-      <li><b>Tổng kế hoạch bằng khối lượng dòng.</b> Tổng khối lượng các đợt của một dòng phải bằng khối lượng dòng đó.<span class="then">Lệch thì chặn lưu kế hoạch, nêu rõ dòng nào đang thừa hay thiếu bao nhiêu.</span></li>
+      <li><b>Một đợt trải trên nhiều dòng, nhập theo % còn lại.</b> Đợt cấp là một chuyến hàng của cả lệnh, nên khi lập đợt mới hệ thống chép sẵn toàn bộ dòng đơn của lệnh và người lập nhập <b>phần trăm trên khối lượng còn lại</b> của từng dòng; dòng nào đợt này không cấp thì để trống.<span class="then">Người lập nghĩ theo “đợt này cấp một nửa chỗ còn thiếu”, không phải theo khối lượng tuyệt đối, nên bảng tự quy ra khối lượng và hiện luỹ kế sau đợt cho từng dòng.</span></li>
+      <li><b>Tổng kế hoạch không vượt khối lượng dòng.</b> Tổng khối lượng các đợt của một dòng phải nhỏ hơn hoặc bằng khối lượng dòng đó.<span class="then">Vượt thì chặn lưu kế hoạch, nêu rõ dòng nào đang thừa bao nhiêu. Chưa đủ thì vẫn lưu được — kế hoạch cắt dần theo tiến độ, đợt sau bù phần còn thiếu — nhưng phải hiện rõ dòng nào còn thiếu bao nhiêu.</span></li>
+      <li><b>Mỗi đợt một thẻ, giữ lại kết quả riêng.</b> Màn hình cấp hàng xếp các đợt thành từng thẻ theo số đợt, mỗi thẻ liệt kê các dòng của đợt cùng khối lượng kế hoạch · đã cấp · đã nhận và luỹ kế tính đến đợt đó.<span class="then">Chỉ đợt mới nhất mở sẵn, các đợt trước thu gọn thành một dòng tóm tắt (ngày · ba con số · trạng thái) — cần xem lại kết quả đợt nào thì mở đợt đó, thay vì đọc một bảng phẳng trộn mọi đợt.</span></li>
       <li><b>Nơi nhận không sửa được ở đây.</b> Đổi nơi nhận của một đợt là đổi nội dung đơn hàng, phải đi qua <a href="#ORD-07">ORD-07</a>.<span class="then">Cho sửa tại màn hình cấp hàng thì biên bản giao hàng sẽ ghi một nơi khác với nơi lãnh đạo đã duyệt.</span></li>
       <li><b>Đã cấp lấy từ phiếu xuất.</b> Khối lượng đã cấp là tổng của các phiếu xuất kho <b>đã duyệt</b>, không nhập tay.<span class="then">Phiếu xuất bị hủy thì lũy kế tự giảm tương ứng.</span></li>
       <li><b>Đã nhận cần xác nhận của dự án.</b> Khối lượng đã nhận chỉ tăng khi người thuộc dự án xác nhận kiểm nhận.<span class="then">Chênh lệch giữa đã cấp và đã nhận luôn phải có bản ghi sai lệch tương ứng.</span></li>
@@ -5417,7 +5420,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
-          <tr><td>Kế hoạch lệch khối lượng đơn</td><td><code>sum(qty_plan) ≠ qty_order</code></td><td>“Tổng các đợt đang {thừa/thiếu} {số} {đvt} so với khối lượng đơn.”</td></tr>
+          <tr><td>Kế hoạch vượt khối lượng đơn</td><td><code>sum(qty_plan) &gt; qty_order</code></td><td>“Tổng các đợt đang thừa {số} {đvt} so với khối lượng đơn.”</td></tr>
+          <tr><td>Kế hoạch chưa đủ khối lượng đơn</td><td><code>sum(qty_plan) &lt; qty_order</code></td><td>“Dòng {số dòng} còn thiếu {số} {đvt} — bổ sung ở đợt sau.” (cảnh báo, vẫn lưu được)</td></tr>
+          <tr><td>% cấp của một dòng vượt phần còn lại</td><td><code>percent &gt; 100</code></td><td>“Dòng {số dòng} đang vượt 100% khối lượng còn lại.”</td></tr>
           <tr><td>Cấp vượt khối lượng còn lại</td><td><code>qty_issue &gt; còn lại</code></td><td>“Chỉ còn {số} {đvt} chưa cấp. Cập nhật đơn hàng nếu cần cấp thêm.”</td></tr>
           <tr><td>Xác nhận nhận nhiều hơn đã cấp</td><td><code>qty_received &gt; qty_issued</code></td><td>“Số nhận lớn hơn số cấp trên phiếu {mã}. Kiểm tra lại hoặc lập phiếu xuất bổ sung.”</td></tr>
           <tr><td>Sai lệch không chọn hướng xử lý</td><td><code>surplus_action</code> rỗng</td><td>“Chọn hướng xử lý phần sai lệch: trả hàng, cấp bù, hay chấp nhận điều chỉnh.”</td></tr>
@@ -5432,7 +5437,10 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
           <tr><td>UAT-ORD05-1</td><td>Đơn có dòng 1a 700 m² (20/08 · kho công trình) và dòng 1b 400 m² (05/09 · công trình tháp A)</td><td>Mở kế hoạch cấp lần đầu</td><td>Hệ thống mở sẵn hai nhóm đợt theo hai cặp (ngày · nơi nhận), không gộp chung</td></tr>
-          <tr><td>UAT-ORD05-1b</td><td>Cùng tiền đề trên</td><td>Chia dòng 1a thành 2 đợt 400/300</td><td>Lưu được vì tổng đợt của dòng 1a bằng 700; nhập 400/200 thì báo dòng 1a thiếu 100</td></tr>
+          <tr><td>UAT-ORD05-1b</td><td>Cùng tiền đề trên</td><td>Chia dòng 1a thành 2 đợt 400/300</td><td>Lưu được vì tổng đợt của dòng 1a bằng 700; nhập 400/200 thì vẫn lưu được nhưng cảnh báo dòng 1a còn thiếu 100</td></tr>
+          <tr><td>UAT-ORD05-1e</td><td>Lệnh có 7 dòng, chưa có đợt nào</td><td>Lập đợt 1: nhập 40% dòng #1, 25% dòng #3, 50% dòng #5, bỏ trống các dòng còn lại</td><td>Đợt 1 lưu thành một thẻ gồm đúng 3 dòng; luỹ kế từng dòng hiện 40% · 25% · 50%</td></tr>
+          <tr><td>UAT-ORD05-1f</td><td>Đã có đợt 1 như trên</td><td>Lập đợt 2: cột “còn lại” của dòng #1 phải là 360; nhập 100%</td><td>Đợt 2 lưu 360 cho dòng #1, luỹ kế dòng #1 lên 600/600 (100%); đợt 1 thu gọn, chỉ đợt 2 mở sẵn</td></tr>
+          <tr><td>UAT-ORD05-1g</td><td>Dòng #1 đã đủ 100% sau đợt 2</td><td>Lập đợt 3, nhập bất kỳ % nào cho dòng #1</td><td>Ô % của dòng #1 khoá vì không còn khối lượng; các dòng khác vẫn nhập được bình thường</td></tr>
           <tr><td>UAT-ORD05-1c</td><td>Dòng 1a có ngày cần hàng 20/08</td><td>Đặt <code>plan_date</code> đợt 2 là 25/08</td><td>Cảnh báo trễ hơn ngày cần hàng nhưng vẫn lưu được</td></tr>
           <tr><td>UAT-ORD05-1d</td><td>Đang ở màn hình cấp hàng</td><td>Thử đổi nơi nhận của đợt 3</td><td>Không sửa được; thông điệp dẫn sang ORD-07</td></tr>
           <tr><td>UAT-ORD05-2</td><td>Đợt 1 lập phiếu xuất 400 m², đã duyệt</td><td>Xem màn hình cấp hàng</td><td>“Đã cấp” hiện 400; “đã nhận” vẫn 0 cho tới khi dự án xác nhận</td></tr>
