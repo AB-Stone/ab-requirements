@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-09 Phiếu yêu cầu sản xuất &amp; Danh sách cắt đá — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 15/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Đợt yêu cầu 15/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Tổng quan 10 yêu cầu</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="YC-01.html"><i>YC-01</i>Chuyển Áp giá doanh thu</a>
+    <a href="YC-03.html"><i>YC-03</i>Đổi tên phiếu rà soát HSMT</a>
+    <a href="YC-04.html"><i>YC-04</i>Mã gói thầu &amp; gộp gói</a>
+    <a href="YC-05.html"><i>YC-05</i>Mẫu bảng đầu việc BOQ</a>
+    <a href="YC-06.html"><i>YC-06</i>Thông tin chung gói thầu</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="YC-02.html"><i>YC-02</i>Đơn giá chuẩn theo vùng</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="YC-07.html"><i>YC-07</i>Hồ sơ bản vẽ thiết kế</a>
+    <a href="YC-08.html"><i>YC-08</i>Cấu trúc hồ sơ Shopdrawing</a>
+    <a class="on" href="YC-09.html"><i>YC-09</i>PYCSX &amp; Danh sách cắt đá</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="YC-10.html"><i>YC-10</i>Theo dõi hồ sơ thanh toán</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Đợt yêu cầu 15/09/2026</a> / P. TQT — Shopdrawing / <b>YC-09</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-08.html">← YC-08</a><a href="index.html">Mục lục</a><a href="YC-10.html">YC-10 →</a></div>
+</div>
+<section class="sheet solo" id="YC-09">
+  <header class="tb">
+    <div class="tb-id">YC-09</div>
+    <div class="tb-main">
+      <h3>Phiếu yêu cầu sản xuất &amp; Danh sách cắt đá</h3>
+      <p>Đơn hàng gửi nhà máy không phải một bảng mà là <b>hai</b>, và yêu cầu gốc nói rõ chúng “không thể tách rời của một đơn hàng hoàn thiện”. Phiếu yêu cầu sản xuất là tờ lệnh — ai gửi, gửi cho ai, giao khi nào, ai ký. Danh sách cắt đá là bản chi tiết từng viên đá: kích thước, khối lượng và 47 công đoạn gia công. Tờ lệnh chỉ là bản cộng dồn của bản chi tiết.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Sửa ORD-03 + thêm màn hình</dd></div>
+        <div><dt>Màn hình mới</dt><dd>ORD-11 Danh sách cắt đá</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../ORD-03.html">ORD-03</a> · <a href="../PF-01.html">PF-01</a> · <a href="../ORD-04.html">ORD-04</a></dd></div>
+        <div><dt>Biểu mẫu nguồn</dt><dd><code>BM/QLTC/YCSX</code> · <code>BM/QLTC/DSCĐ</code> — Rev 01.240513</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Đường truy cập</td><td colspan="2"><code>TQT-Shopdrawing → Đơn hàng</code></td></tr>
+          <tr><td>Nguyên văn yêu cầu</td><td>Bảng nhập thông tin đơn hàng chưa đúng</td><td>Cần nhập hai loại bảng như sheet <code>4.Donhang</code> và <code>4.Donhangchitiet</code>. Đây là hai bảng không thể tách rời của một đơn hàng hoàn thiện</td></tr>
+          <tr><td>Bảng dòng đơn</td><td><a href="../ORD-03.html">ORD-03</a> có <code>lines[]</code>: sản phẩm, quy cách, ĐVT, khối lượng, ngày cần hàng, nơi nhận, nguồn cung ứng, ghi chú</td><td>Bảng tổng hợp theo <b>hạng mục</b> với năm cột khối lượng và các cột công đoạn gia công, cộng tự động từ Danh sách cắt đá</td></tr>
+          <tr><td>Chi tiết từng viên</td><td>Không có</td><td>Màn hình riêng: từng viên đá với kích thước, sai số, số lượng cấu kiện, vị trí, ký hiệu layout, số bản vẽ và 47 công đoạn gia công</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Lưu đồ</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:480px;margin:0 auto"><svg role="img" aria-label="Hình YC-09.1 Danh sách cắt đá được lập trước, phiếu yêu cầu sản xuất là bản cộng dồn của nó theo hạng mục. Người lập không nhập số hai lần; phiếu chỉ mở được khi danh sách cắt đá đã có dòng." viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="yc09a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#55606b"/></marker></defs>
+<g font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a" text-anchor="middle">
+  <rect x="40" y="8" width="380" height="40" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="230" y="26">Đợt trình shop đã phát hành</text><text x="230" y="41">bảng khối lượng bản vẽ là mốc đối chiếu</text>
+  <path d="M230,48 L230,74" fill="none" stroke="#55606b" marker-end="url(#yc09a)"/>
+
+  <rect x="40" y="78" width="380" height="56" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="230" y="96">ORD-11 · Lập Danh sách cắt đá</text>
+  <text x="230" y="112">từng viên: kích thước · sai số · số lượng cấu kiện</text>
+  <text x="230" y="128">vị trí · ký hiệu layout · số bản vẽ · 47 công đoạn</text>
+  <path d="M230,134 L230,160" fill="none" stroke="#55606b" marker-end="url(#yc09a)"/>
+
+  <rect x="40" y="164" width="380" height="56" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="230" y="182">ORD-03 · Phiếu yêu cầu sản xuất</text>
+  <text x="230" y="198">bảng tổng hợp theo hạng mục cộng tự động</text>
+  <text x="230" y="214">người lập chỉ khai lịch giao, nơi nhận, người nhận</text>
+  <path d="M230,220 L230,246" fill="none" stroke="#55606b" marker-end="url(#yc09a)"/>
+
+  <rect x="40" y="250" width="380" height="42" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="230" y="268">Xem xét → Phê duyệt</text><text x="230" y="283">khóa cả hai bảng, sinh phiên bản</text>
+  <path d="M230,292 L230,318" fill="none" stroke="#55606b" marker-end="url(#yc09a)"/>
+
+  <rect x="40" y="322" width="380" height="56" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="230" y="340">Gửi nhà máy — bộ hồ sơ bốn tài liệu</text>
+  <text x="230" y="356">PYC sản xuất · DSCĐ · bản vẽ đơn hàng</text>
+  <text x="230" y="372">bảng tiến độ giao hàng</text>
+  <path d="M230,378 L230,404" fill="none" stroke="#55606b" marker-end="url(#yc09a)"/>
+
+  <rect x="40" y="408" width="380" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="230" y="427">Nhà máy phản hồi: chấp thuận / đề nghị điều chỉnh</text>
+  <text x="230" y="442">rồi mới sang ORD-04 phân luồng SX · CƯ</text>
+</g>
+</svg></div><figcaption><b>Hình YC-09.1</b> Danh sách cắt đá lập trước, phiếu yêu cầu sản xuất là bản cộng dồn của nó theo hạng mục — đúng như trong biểu mẫu Excel, nơi các cột khối lượng của phiếu đều là công thức trỏ sang sheet danh sách cắt đá. Khối <em>Nhà máy phản hồi</em> nằm sẵn ở chân biểu mẫu nên được đưa thành một bước thật, trước khi đơn vào <a href="../ORD-04.html">ORD-04</a>.</figcaption></figure>
+
+    <h4>Phạm vi tác động</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:20%">Trang</th><th style="width:26%">Mục trong trang</th><th>Thay đổi</th></tr></thead>
+        <tbody>
+          <tr><td><a href="../ORD-03.html">ORD-03</a></td><td>Tham số · Mockup · Quy tắc</td><td>Nhận khung phiếu yêu cầu sản xuất: khối định danh mở rộng, bảng tổng hợp theo hạng mục thay cho <code>lines[]</code> phẳng, khối tài liệu kèm theo, khối ký duyệt, khối nhà máy phản hồi</td></tr>
+          <tr><td>ORD-11 <em>(mới)</em></td><td>Toàn trang</td><td>Màn hình <b>Danh sách cắt đá</b> — bảng chi tiết từng viên kèm phần gia công</td></tr>
+          <tr><td><a href="../PF-01.html">PF-01</a></td><td>Danh mục nền</td><td>Thêm danh mục <b>Công đoạn gia công</b> (<code>gc_code</code>) — 47 dòng khởi tạo theo biểu mẫu</td></tr>
+          <tr><td><a href="../PF-01.html">PF-01</a></td><td>Danh mục vật tư</td><td>Chủng loại đá, tính chất bề mặt và sai số chiều dày tra từ danh mục vật tư — biểu mẫu ghi “nhập đúng số liệu từ sheet TT_VT”</td></tr>
+          <tr><td><a href="../ORD-04.html">ORD-04</a></td><td>Đầu vào phân luồng</td><td>Lệnh sản xuất tách theo dòng Danh sách cắt đá, không theo dòng tổng hợp — nhà máy cắt theo viên</td></tr>
+          <tr><td><a href="../ORD-05.html">ORD-05</a></td><td>Cấp hàng theo đợt</td><td>Khối lượng đã cấp đối chiếu được tới từng dòng Danh sách cắt đá</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — ORD-03, khối định danh phiếu yêu cầu sản xuất</h4>
+    <p>Biểu mẫu <code>BM/QLTC/YCSX</code> có một khối “điền thông tin” ở mép phải; những ô đó là dữ liệu của phiếu, phần in bên trái chỉ là cách trình bày lại.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Số phiếu</td><td class="k">afp_no</td><td>Chuỗi</td><td class="c req">✱</td><td>Tự sinh <code>AFP-&lt;mã dự án&gt;-NN</code>. Biểu mẫu giấy ghi “SỐ: AFP 01”.</td></tr>
+          <tr><td>Ngày lập phiếu</td><td class="k">issued_at</td><td>Ngày</td><td class="c req">✱</td><td>Mặc định hôm nay.</td></tr>
+          <tr><td>Phiếu thuộc đợt số</td><td class="k">batch_no</td><td>Số</td><td class="c req">✱</td><td>Đợt giao hàng thứ mấy của dự án. Là cơ sở lập kế hoạch cấp hàng ở <a href="../ORD-05.html">ORD-05</a>.</td></tr>
+          <tr><td>Nơi gửi · nơi nhận</td><td class="k">from_unit, to_unit</td><td>Tham chiếu</td><td class="c req">✱</td><td>Mặc định: nhóm TQT gửi, nhà máy chế biến đá nhận. Chọn từ danh mục đơn vị của <a href="../PF-01.html">PF-01</a>.</td></tr>
+          <tr><td>Loại sản xuất</td><td class="k">prod_type</td><td>Chọn 1</td><td class="c req">✱</td><td><em>Sản xuất chính thức</em> · <em>Sản xuất mẫu</em>. Biểu mẫu để hai ô đánh dấu; đây là hai luồng khác nhau ở nhà máy nên phải là trường, không phải ghi chú.</td></tr>
+          <tr><td>Ngày bắt đầu · kết thúc giao hàng</td><td class="k">deliver_from, deliver_to_date</td><td>Ngày</td><td class="c req">✱</td><td><code>deliver_to_date</code> phải từ <code>deliver_from</code> trở đi.</td></tr>
+          <tr><td>Dự án · Công trình · Hạng mục</td><td class="k">project_id, site_name, wbs_group_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc, đọc từ đợt trình nguồn. Ba dòng này là đầu bảng của cả hai biểu mẫu.</td></tr>
+          <tr><td>Số hợp đồng</td><td class="k">contract_no</td><td>Tham chiếu</td><td class="c">—</td><td>Chỉ đọc, từ <a href="../BID-05.html">BID-05</a>. Chưa có hợp đồng thì hiện “Chưa có HĐ”, không bỏ trống.</td></tr>
+          <tr><td>Địa chỉ giao hàng</td><td class="k">deliver_address</td><td>Chuỗi</td><td class="c req">✱</td><td>Kho dự án hoặc địa điểm công trình. Nạp sẵn từ dự án, sửa được theo đợt.</td></tr>
+          <tr><td>Người lập · SĐT</td><td class="k">issuer, issuer_phone</td><td>Tham chiếu · chuỗi</td><td class="c req">✱</td><td>Nạp từ hồ sơ nhân sự; số điện thoại in xuống khối liên hệ ở chân phiếu.</td></tr>
+          <tr><td>Người nhận hàng · SĐT</td><td class="k">receiver, receiver_phone</td><td>Chuỗi</td><td class="c req">✱</td><td>Người ở đầu nhận. Bắt buộc — biểu mẫu ghi rõ “gọi điện thông báo cho người tiếp nhận”.</td></tr>
+          <tr><td>Tài liệu kèm theo</td><td class="k">attachments[]</td><td>Bảng</td><td class="c req">✱</td><td>Bốn dòng cố định theo biểu mẫu: <em>PYC sản xuất · DSCĐ · Bản vẽ · Bảng tiến độ giao hàng</em>, mỗi dòng ghi số trang và tệp đính kèm. Ba dòng đầu bắt buộc có tệp.</td></tr>
+          <tr><td>Chỉ định / yêu cầu khác</td><td class="k">special_note</td><td>Chuỗi dài</td><td class="c">—</td><td>Ghi chú giao nhận, yêu cầu đóng gói, lưu ý vận chuyển.</td></tr>
+          <tr><td>Khối ký</td><td class="k">approver, reviewer, issuer</td><td>Tham chiếu</td><td class="c req">✱</td><td>Ba ô ký của biểu mẫu: <em>Phê duyệt · Xem xét · Người lập phiếu</em>. Ký điện tử theo <a href="../PF-04.html">PF-04</a>.</td></tr>
+          <tr><td>Nhà máy phản hồi</td><td class="k">factory_ack</td><td>Chọn 1</td><td class="c">—</td><td><em>Chưa phản hồi · Chấp thuận · Đề nghị điều chỉnh</em>, kèm ô nội dung và ngày. Biểu mẫu có sẵn khối này ở chân trang.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Bảng tổng hợp theo hạng mục — ORD-03</h4>
+    <p>Mọi cột khối lượng trong bảng này là <b>cộng dồn từ Danh sách cắt đá</b>, không nhập tay. Trong tệp Excel gốc chúng đúng là công thức trỏ sang sheet chi tiết.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:62px">Cột</th><th style="width:26%">Tiêu đề</th><th style="width:74px">ĐVT</th><th>Nguồn</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>STT</td><td>—</td><td>Thứ tự nhóm trong phiếu</td></tr>
+          <tr><td>2</td><td>Hạng mục</td><td>—</td><td>Nhóm của dòng Danh sách cắt đá</td></tr>
+          <tr><td>3</td><td>Loại đá</td><td>—</td><td>Chủng loại đá — mọi dòng trong nhóm phải cùng một giá trị</td></tr>
+          <tr><td>4</td><td>Tính chất bề mặt</td><td>—</td><td>Như trên</td></tr>
+          <tr><td>5</td><td>Dày / cao</td><td>mm</td><td>Như trên</td></tr>
+          <tr><td>6</td><td>Diện tích</td><td>m²</td><td><code>Σ</code> khối lượng diện tích</td></tr>
+          <tr><td>7</td><td>Thể tích</td><td>m³</td><td><code>Σ</code> khối lượng thể tích</td></tr>
+          <tr><td>8</td><td>Chiều dài</td><td>md</td><td><code>Σ</code> khối lượng chiều dài</td></tr>
+          <tr><td>9</td><td>Cấu kiện</td><td>cái</td><td><code>Σ</code> số cấu kiện</td></tr>
+          <tr><td>10</td><td>Trọng lượng</td><td>kg</td><td><code>Σ</code> trọng lượng — là số nhà máy dùng để bố trí xe</td></tr>
+          <tr><td>11…n</td><td>Các cột công đoạn gia công</td><td>theo GC</td><td><code>Σ</code> khối lượng của đúng mã GC đó. <b>Bộ cột thay đổi theo phiếu</b> — xem quy tắc dưới</td></tr>
+          <tr><td>n+1</td><td>Chống thấm</td><td>Có / Không</td><td>Đánh dấu <code>X</code> nếu nhóm có dòng cần chống thấm (GC.042)</td></tr>
+          <tr><td>n+2</td><td>Ghi chú</td><td>—</td><td>Nhập tay ở cấp nhóm</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>Vì sao bộ cột gia công không cố định</b>
+      <p style="margin:0">Biểu mẫu công ty đang in bảy cột gia công — <em>gia công bề mặt, cắt khoét CNC dày 50mm, dán cặp cạnh, mài bóng cạnh, líp cạnh thô bằng máy, mài cạnh 3–10mm máy, bo tròn máy</em>. Đó không phải bảy công đoạn quan trọng nhất; đó là bảy công đoạn <b>có khối lượng</b> trong chính dự án ấy. Dự án khác sẽ là bảy cột khác. Vì vậy bộ cột gia công của phiếu do hệ thống chọn: mặc định là những mã GC có tổng khác 0 trong Danh sách cắt đá, người lập bật tắt thêm được.</p>
+    </div>
+
+    <h4>Tham số — ORD-11 Danh sách cắt đá</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:62px">Cột</th><th style="width:24%">Tiêu đề</th><th style="width:20%">Mã</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>STT</td><td class="k">seq</td><td>Mã phân cấp, ví dụ <code>D</code> → <code>D.1</code> → <code>D.1.1</code>. Dòng cha là dòng nhóm, không mang số liệu</td></tr>
+          <tr><td>2</td><td>Hạng mục</td><td class="k">wbs_group_id</td><td>Nhóm cha. Biểu mẫu chú thích “ví dụ: phòng Sauna Men, Sauna Women…”</td></tr>
+          <tr><td>3</td><td>Chủng loại đá</td><td class="k">stone_code</td><td>Tra từ danh mục vật tư của <a href="../PF-01.html">PF-01</a>. Danh sách gợi ý <b>không đóng</b> — mỏ đá mới xuất hiện liên tục, đúng như quy tắc đã có ở <a href="../BID-03.html">BID-03</a></td></tr>
+          <tr><td>4</td><td>Tính chất bề mặt</td><td class="k">surface</td><td>Danh mục đóng theo bảng nhà máy: mài bóng · mài hone · băm mặt · khò nhám · xộ mặt · xẻ thô</td></tr>
+          <tr><td>5</td><td>Hình ảnh</td><td class="k">photo</td><td>Ảnh mẫu viên hoặc trích bản vẽ. Không bắt buộc</td></tr>
+          <tr><td>6–8</td><td>Kích thước: Dài · Rộng · Dày/cao</td><td class="k">len_mm, wid_mm, thk_mm</td><td>mm. <b>Bắt buộc nhập đầy đủ</b> — chú thích ngay trên biểu mẫu</td></tr>
+          <tr><td>9</td><td>Sai số chiều dày đá</td><td class="k">tolerance</td><td>mm, dạng ±. Giữ nguyên quy tắc của <a href="../BID-03.html">BID-03</a>: người nhập gõ số, hệ thống gắn dấu ±; ô trống lưu <code>null</code>, không lưu chuỗi rỗng</td></tr>
+          <tr><td>10</td><td>Số lượng / 1 cấu kiện</td><td class="k">qty_per_unit</td><td>viên</td></tr>
+          <tr><td>11</td><td>Số lượng cấu kiện</td><td class="k">unit_count</td><td>cái</td></tr>
+          <tr><td>12</td><td>Tổng số lượng</td><td class="k">qty_total</td><td>viên. Máy chủ tính: cột 10 × cột 11</td></tr>
+          <tr><td>13</td><td>Khối lượng — diện tích</td><td class="k">area_m2</td><td>m². Máy chủ tính từ kích thước và số lượng</td></tr>
+          <tr><td>14</td><td>Khối lượng — thể tích</td><td class="k">volume_m3</td><td>m³. Máy chủ tính</td></tr>
+          <tr><td>15</td><td>Khối lượng — chiều dài</td><td class="k">length_md</td><td>md. Máy chủ tính</td></tr>
+          <tr><td>16</td><td>Khối lượng — cấu kiện</td><td class="k">piece_count</td><td>cái. Máy chủ tính</td></tr>
+          <tr><td>17</td><td>Trọng lượng</td><td class="k">weight_kg</td><td>kg. Máy chủ tính từ thể tích × tỷ trọng của chủng loại đá</td></tr>
+          <tr><td>18</td><td>Vị trí</td><td class="k">position</td><td>Chú thích biểu mẫu: “ví dụ: Diện tường 01, Diện tường 02, Nền…”</td></tr>
+          <tr><td>19</td><td>Layout / ký hiệu viên</td><td class="k">layout_code</td><td>Chú thích biểu mẫu: “Ví dụ: T1, T2, V1, V2…”. Là mã khớp giữa bản vẽ và viên đá thật ngoài công trường</td></tr>
+          <tr><td>20</td><td>Ghi chú</td><td class="k">note</td><td>—</td></tr>
+          <tr><td>21</td><td>Số bản vẽ</td><td class="k">dwg_no</td><td>Số hiệu bản vẽ mà viên này lấy ra</td></tr>
+          <tr><td>22</td><td>Phần gia công</td><td class="k">processes[]</td><td>Bảng con: mỗi dòng gồm mã GC và khối lượng. Thay cho 47 cột cứng của tệp Excel</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Danh mục công đoạn gia công — 47 mã khởi tạo</h4>
+    <p>Đây là bộ mã có sẵn trên biểu mẫu <code>BM/QLTC/DSCĐ</code>, đưa nguyên vào danh mục nền. Mỗi mã có tên, đơn vị tính và đơn giá gia công dùng lại được giữa các dự án; thêm công đoạn mới là thêm một dòng danh mục, không sửa cấu trúc bảng.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:96px">Mã</th><th>Công đoạn</th><th style="width:74px">ĐVT</th></tr></thead>
+        <tbody>
+          <tr><td class="k">GC.001</td><td>Gia công bề mặt</td><td>m2</td></tr>
+          <tr><td class="k">GC.002</td><td>Dán Decal</td><td>m2</td></tr>
+          <tr><td class="k">GC.003</td><td>Cắt Quy cách</td><td>m2</td></tr>
+          <tr><td class="k">GC.004</td><td>Cưa bổ Slap</td><td>m2</td></tr>
+          <tr><td class="k">GC.005</td><td>Cưa bổ Đá khối</td><td>m3</td></tr>
+          <tr><td class="k">GC.006</td><td>Cắt khoét CNC Dày 20mm</td><td>md</td></tr>
+          <tr><td class="k">GC.007</td><td>Cắt khoét CNC DÀY 30mm</td><td>md</td></tr>
+          <tr><td class="k">GC.008</td><td>Cắt khoét CNC DÀY 40mm</td><td>md</td></tr>
+          <tr><td class="k">GC.009</td><td>Cắt khoét CNC DÀY 50mm</td><td>md</td></tr>
+          <tr><td class="k">GC.010</td><td>Dán cặp cạnh</td><td>md</td></tr>
+          <tr><td class="k">GC.011</td><td>Mài bóng cạnh</td><td>md</td></tr>
+          <tr><td class="k">GC.012</td><td>Xẻ rãnh gắn V Inox</td><td>md</td></tr>
+          <tr><td class="k">GC.013</td><td>Chafmer + MB [MB tay nhân hệ số 1,5]</td><td>md</td></tr>
+          <tr><td class="k">GC.014</td><td>Líp cạnh thô bằng máy</td><td>md</td></tr>
+          <tr><td class="k">GC.015</td><td>Líp cạnh + MB cạnh máy</td><td>md</td></tr>
+          <tr><td class="k">GC.016</td><td>Líp cạnh + MB cạnh tay</td><td>md</td></tr>
+          <tr><td class="k">GC.017</td><td>Mài cạnh 3-10mm máy</td><td>md</td></tr>
+          <tr><td class="k">GC.018</td><td>Mài cạnh 3-10mm tay</td><td>md</td></tr>
+          <tr><td class="k">GC.019</td><td>Bo tròn máy</td><td>md</td></tr>
+          <tr><td class="k">GC.020</td><td>Bo tròn tay</td><td>md</td></tr>
+          <tr><td class="k">GC.021</td><td>Mài bóng mặt dưới ≤30mm</td><td>md</td></tr>
+          <tr><td class="k">GC.022</td><td>Chạy rãnh 5x5mm — rãnh thẳng</td><td>md</td></tr>
+          <tr><td class="k">GC.023</td><td>Chạy rãnh 5x5mm — rãnh cong</td><td>md</td></tr>
+          <tr><td class="k">GC.024</td><td>Chạy rãnh &gt;5x5mm bằng tay</td><td>md</td></tr>
+          <tr><td class="k">GC.025</td><td>MB rãnh &gt;5x5mm bằng tay</td><td>md</td></tr>
+          <tr><td class="k">GC.026</td><td>Chạy rãnh &gt;5x5mm bằng máy</td><td>md</td></tr>
+          <tr><td class="k">GC.027</td><td>Chạy rãnh caro chống trượt</td><td>md</td></tr>
+          <tr><td class="k">GC.028</td><td>Mài cạnh đá hạ tầng KT≤150x150</td><td>m2</td></tr>
+          <tr><td class="k">GC.029</td><td>Mài cạnh đá hạ tầng KT&gt;150x150</td><td>m2</td></tr>
+          <tr><td class="k">GC.030</td><td>Khoan lỗ D≤50mm — dày 19mm</td><td>lỗ</td></tr>
+          <tr><td class="k">GC.031</td><td>Khoan lỗ D≤50mm — dày 20mm</td><td>lỗ</td></tr>
+          <tr><td class="k">GC.032</td><td>Khoan lỗ D≤50mm — dày 30mm</td><td>lỗ</td></tr>
+          <tr><td class="k">GC.033</td><td>Khoan lỗ D≤50mm — dày 40mm</td><td>lỗ</td></tr>
+          <tr><td class="k">GC.034</td><td>Khoan lỗ 50&lt;D&lt;100mm — dày 20mm</td><td>lỗ</td></tr>
+          <tr><td class="k">GC.035</td><td>Khoan lỗ 50&lt;D&lt;100mm — dày 30mm</td><td>lỗ</td></tr>
+          <tr><td class="k">GC.036</td><td>Khoan lỗ 50&lt;D&lt;100mm — dày 40mm</td><td>lỗ</td></tr>
+          <tr><td class="k">GC.037</td><td>Chạy phào bằng đầu phào</td><td>md</td></tr>
+          <tr><td class="k">GC.038</td><td>MB cạnh bằng tay</td><td>md</td></tr>
+          <tr><td class="k">GC.039</td><td>MB bằng đầu phào</td><td>md</td></tr>
+          <tr><td class="k">GC.040</td><td>Chạy phào máy nhân hệ số</td><td>md</td></tr>
+          <tr><td class="k">GC.041</td><td>Mài bóng phào nhân hệ số</td><td>md</td></tr>
+          <tr><td class="k">GC.042</td><td>Chống thấm</td><td>m2</td></tr>
+          <tr><td class="k">GC.043</td><td>Đóng kiện</td><td>m2</td></tr>
+          <tr><td class="k">GC.044</td><td>Xộ đá 8cm</td><td>m2</td></tr>
+          <tr><td class="k">GC.045</td><td>Xộ móc lòng chữ L</td><td>m2</td></tr>
+          <tr><td class="k">GC.046</td><td>Xộ móc lòng chân cột 1</td><td>m2</td></tr>
+          <tr><td class="k">GC.047</td><td>Xộ móc lòng chân cột</td><td>m2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Hai bảng, một đơn hàng.</b> Phiếu yêu cầu sản xuất và Danh sách cắt đá dùng chung mã đơn, chung phiên bản, chung vòng duyệt.<span class="then">Đúng câu “hai bảng không thể tách rời của một đơn hàng hoàn thiện”. Không có Danh sách cắt đá thì phiếu không trình duyệt được; duyệt phiếu là khóa cả hai.</span></li>
+      <li><b>Số liệu nhập một lần, ở bảng chi tiết.</b> Mọi cột khối lượng và công đoạn của phiếu là tổng cộng từ Danh sách cắt đá, chỉ đọc.<span class="then">Trong tệp Excel, các cột ấy vốn đã là công thức trỏ sang sheet chi tiết. Cho nhập tay ở bảng tổng hợp là mở đường cho hai con số khác nhau về cùng một khối lượng — và nhà máy sẽ cắt theo con số nào thì không ai đoán được.</span></li>
+      <li><b>Kích thước bắt buộc đủ ba chiều.</b> Dài, rộng, dày/cao đều phải có.<span class="then">Chú thích ngay trên biểu mẫu ghi “bắt buộc nhập đầy đủ các cột”. Thiếu một chiều thì diện tích, thể tích và trọng lượng đều không tính được, và cả ba số đó đều đi thẳng vào phiếu gửi nhà máy.</span></li>
+      <li><b>Khối lượng do máy chủ tính, không nhập tay.</b> Diện tích, thể tích, chiều dài, cấu kiện, trọng lượng và tổng số lượng đều là kết quả.<span class="then">Biểu mẫu Excel ghi “copy công thức xuống” cho đúng năm cột này — nghĩa là chúng vốn đã là công thức, và mỗi lần chép sót một dòng là một lần sai số lọt vào phiếu.</span></li>
+      <li><b>Trọng lượng cần tỷ trọng của chủng loại đá.</b> Chủng loại đá chưa khai tỷ trọng thì ô trọng lượng để trống và dòng bị đánh dấu.<span class="then">Nhà máy dùng cột trọng lượng để bố trí xe và tính chi phí vận chuyển; một con số bịa ra ở đây tốn tiền thật.</span></li>
+      <li><b>Bộ cột gia công của phiếu là tập con động.</b> Mặc định gồm những mã GC có tổng khác 0; người lập bật tắt thêm.<span class="then">Bảy cột in trên biểu mẫu là bảy công đoạn có khối lượng của chính dự án đó, không phải một bộ cột cố định. Bày cả 47 cột thì phiếu không đọc được; cố định bảy cột thì dự án sau thiếu cột.</span></li>
+      <li><b>Một nhóm tổng hợp phải đồng nhất ba thuộc tính.</b> Chủng loại đá, tính chất bề mặt và chiều dày phải giống nhau trong cả nhóm.<span class="then">Ba thuộc tính này là cột của bảng tổng hợp; nhóm trộn hai loại đá sẽ có một ô phải bỏ trống, và nhà máy đọc phiếu không biết cắt loại nào.</span></li>
+      <li><b>Công đoạn ghi bằng mã, không bằng cột.</b> Mỗi dòng chi tiết mang một bảng con (mã GC, khối lượng).<span class="then">47 cột cứng là hình dạng của tệp Excel, không phải của dữ liệu. Thêm một công đoạn mới khi đó là sửa cấu trúc bảng; với danh mục thì chỉ là thêm một dòng.</span></li>
+      <li><b>Đơn hàng vẫn bám đợt trình và vẫn đối chiếu khối lượng.</b> Mọi quy tắc của <a href="../ORD-03.html">ORD-03</a> về khối lượng còn lại, lý do vượt khối lượng và phân luồng nguồn cung ứng giữ nguyên.<span class="then">Đối chiếu bây giờ chạy trên khối lượng cộng dồn từ Danh sách cắt đá so với bảng khối lượng của đợt trình — mịn hơn trước, nhưng cùng một phép tính.</span></li>
+      <li><b>Bộ tài liệu kèm theo là điều kiện gửi.</b> Ba tài liệu đầu — phiếu, danh sách cắt đá, bản vẽ — bắt buộc có tệp.<span class="then">Biểu mẫu liệt kê sẵn bốn dòng kèm ô số trang. Thiếu bản vẽ thì nhà máy không cắt được; thiếu bảng tiến độ giao hàng thì vẫn gửi được nhưng phải ghi lý do.</span></li>
+      <li><b>Nhà máy phản hồi là một bước, không phải một ô ghi chú.</b> Phiếu chỉ sang <a href="../ORD-04.html">ORD-04</a> sau khi nhà máy chấp thuận.<span class="then">Khối “NHÀ MÁY PHẢN HỒI” nằm sẵn ở chân biểu mẫu giấy vì trên thực tế nhà máy vẫn trả lời. “Đề nghị điều chỉnh” đưa phiếu về trạng thái sửa và giữ nguyên phiên bản đã gửi để so sánh.</span></li>
+      <li><b>Duyệt là đóng băng.</b> Phê duyệt phiếu khóa cả hai bảng và sinh phiên bản theo <a href="../PF-05.html">PF-05</a>.<span class="then">Danh sách cắt đá là bản mà nhà máy cắt theo; sửa sau khi duyệt mà không sinh phiên bản mới sẽ khiến bản đang cắt và bản đang xem là hai thứ khác nhau.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">Tình huống</th><th style="width:28%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Trình phiếu khi chưa có chi tiết</td><td>Danh sách cắt đá không có dòng nào</td><td>“Phiếu yêu cầu sản xuất chưa có Danh sách cắt đá. Hai bảng này đi cùng nhau.”</td></tr>
+          <tr><td>Thiếu kích thước</td><td>Một trong ba ô dài / rộng / dày rỗng</td><td>“Dòng {stt} thiếu kích thước {tên chiều}. Không có đủ ba chiều thì không tính được khối lượng.”</td></tr>
+          <tr><td>Sửa ô khối lượng</td><td>Thao tác nhập vào cột do máy chủ tính</td><td>“Khối lượng do hệ thống tính từ kích thước và số lượng. Sửa kích thước thay vì sửa kết quả.”</td></tr>
+          <tr><td>Chủng loại đá chưa có tỷ trọng</td><td>Vật tư thiếu thuộc tính tỷ trọng</td><td>“Chưa khai tỷ trọng cho {chủng loại}. Trọng lượng dòng {stt} để trống — nhà máy dùng cột này để bố trí xe.”</td></tr>
+          <tr><td>Nhóm trộn chủng loại đá</td><td>Nhóm có hơn một <code>stone_code</code></td><td>“Hạng mục {tên} đang có {n} chủng loại đá. Tách thành các nhóm riêng để bảng tổng hợp có một giá trị cho mỗi cột.”</td></tr>
+          <tr><td>Sai số nhập kèm dấu</td><td>Người dùng gõ <code>±3</code> hoặc <code>+3</code></td><td><em>Không báo lỗi</em> — hệ thống chuẩn hoá về <code>±3</code>, kể cả khi dán từ Excel</td></tr>
+          <tr><td>Công đoạn không có trong danh mục</td><td>Mã GC lạ khi nhập khẩu</td><td>“Mã công đoạn {mã} chưa có trong danh mục gia công. Thêm vào danh mục hoặc ánh xạ sang mã đã có.”</td></tr>
+          <tr><td>Công đoạn có mã nhưng khối lượng bằng 0</td><td><code>processes[].qty = 0</code></td><td>“Dòng {stt} khai công đoạn {mã} với khối lượng 0 — bỏ dòng công đoạn này nếu không dùng.”</td></tr>
+          <tr><td>Gửi nhà máy thiếu tài liệu</td><td>Một trong ba tài liệu bắt buộc chưa có tệp</td><td>“Chưa đính kèm {tên tài liệu}. Bộ hồ sơ gửi nhà máy gồm phiếu, danh sách cắt đá và bản vẽ.”</td></tr>
+          <tr><td>Thiếu bảng tiến độ giao hàng</td><td>Tài liệu thứ tư chưa có tệp</td><td>“Chưa có bảng tiến độ giao hàng. Gửi được nhưng ghi lý do để nhà máy biết căn cứ xếp lịch.” <em>(cảnh báo)</em></td></tr>
+          <tr><td>Thiếu người nhận hàng</td><td><code>receiver</code> hoặc <code>receiver_phone</code> rỗng</td><td>“Ghi người nhận hàng và số điện thoại — phiếu yêu cầu gọi điện thông báo trước khi giao.”</td></tr>
+          <tr><td>Ngày kết thúc giao trước ngày bắt đầu</td><td><code>deliver_to_date &lt; deliver_from</code></td><td>“Ngày kết thúc giao hàng phải từ ngày bắt đầu trở đi.”</td></tr>
+          <tr><td>Sửa sau khi duyệt</td><td>Phiếu đã phê duyệt</td><td>“Phiếu đã duyệt và đã khóa. Sửa thì tạo phiên bản mới — nhà máy đang cắt theo bản hiện tại.”</td></tr>
+          <tr><td>Chuyển ORD-04 khi nhà máy chưa phản hồi</td><td><code>factory_ack = Chưa phản hồi</code></td><td>“Nhà máy chưa phản hồi phiếu {số}. Chờ chấp thuận trước khi phân luồng sản xuất.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>Lập đơn hàng mở ra hai bảng nối nhau: danh sách cắt đá để nhập chi tiết, phiếu yêu cầu sản xuất để khai lịch giao và ký duyệt.</li>
+      <li>Bảng tổng hợp của phiếu cộng đúng năm cột khối lượng và các cột công đoạn từ danh sách cắt đá, không có ô nào nhập tay.</li>
+      <li>Bộ cột công đoạn của phiếu tự hiện đúng những công đoạn có khối lượng trong dự án đó.</li>
+      <li>Dán nguyên vùng từ tệp <code>DSCĐ</code> cũ vào màn hình danh sách cắt đá là khớp cột, kể cả phần 47 công đoạn.</li>
+      <li>Thêm một công đoạn gia công mới là thêm một dòng danh mục, không phải sửa cấu trúc bảng.</li>
+      <li>In phiếu ra đúng biểu mẫu <code>BM/QLTC/YCSX</code>: khối định danh, bảng tổng hợp, dòng tổng, khối tài liệu kèm theo, khối liên hệ, ba ô ký và khối nhà máy phản hồi.</li>
+      <li>Nhà máy trả lời “đề nghị điều chỉnh” thì phiếu quay về trạng thái sửa, bản đã gửi vẫn tra được để so sánh.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC09-1</td><td>Đợt trình shop đã phát hành</td><td>Lập đơn hàng mới</td><td>Phiếu sinh số <code>AFP-…</code>; dự án, công trình, hạng mục, số HĐ nạp sẵn chỉ đọc</td></tr>
+          <tr><td>UAT-YC09-2</td><td>Tiếp UAT-1</td><td>Trình duyệt khi chưa nhập danh sách cắt đá</td><td>Bị chặn, nêu rõ hai bảng đi cùng nhau</td></tr>
+          <tr><td>UAT-YC09-3</td><td>Tiếp UAT-1</td><td>Nhập 1 dòng: 600×600×20mm, 4 viên/CK, 216 CK</td><td>Tổng số lượng 864 viên; diện tích, thể tích, trọng lượng tự tính; ô khối lượng khóa không sửa được</td></tr>
+          <tr><td>UAT-YC09-4</td><td>Chủng loại đá chưa khai tỷ trọng</td><td>Nhập dòng dùng chủng loại đó</td><td>Trọng lượng để trống, dòng được đánh dấu, thông điệp nêu lý do</td></tr>
+          <tr><td>UAT-YC09-5</td><td>Tiếp UAT-3</td><td>Khai ba công đoạn GC.001, GC.010, GC.019</td><td>Bảng tổng hợp của phiếu hiện đúng ba cột đó, không hiện 44 cột còn lại</td></tr>
+          <tr><td>UAT-YC09-6</td><td>Tiếp UAT-5</td><td>Bật thêm cột GC.042 dù tổng bằng 0</td><td>Cột hiện ra với giá trị 0; cột Chống thấm vẫn để trống</td></tr>
+          <tr><td>UAT-YC09-7</td><td>Nhóm hạng mục có hai chủng loại đá</td><td>Mở bảng tổng hợp</td><td>Bị chặn, đề nghị tách nhóm</td></tr>
+          <tr><td>UAT-YC09-8</td><td>Có tệp DSCĐ cũ 197 dòng</td><td>Dán nguyên vùng A11:BP197</td><td>Khớp cột; phần 47 công đoạn vào bảng con theo mã GC; dòng nhóm nhận ra và không mang số liệu</td></tr>
+          <tr><td>UAT-YC09-9</td><td>Người nhập gõ <code>+3</code> ở ô sai số</td><td>Rời ô</td><td>Ô hiện <code>±3</code>, không báo lỗi</td></tr>
+          <tr><td>UAT-YC09-10</td><td>Phiếu đủ chi tiết, thiếu tệp bản vẽ</td><td>Bấm gửi nhà máy</td><td>Bị chặn, nêu tên tài liệu còn thiếu</td></tr>
+          <tr><td>UAT-YC09-11</td><td>Phiếu đã duyệt và đã gửi</td><td>Nhà máy chọn “Đề nghị điều chỉnh”, ghi nội dung</td><td>Phiếu về trạng thái sửa; bản đã gửi giữ nguyên để so sánh; chưa vào ORD-04</td></tr>
+          <tr><td>UAT-YC09-12</td><td>Phiếu đã được nhà máy chấp thuận</td><td>Chuyển sang ORD-04</td><td>Lệnh sản xuất tách theo dòng danh sách cắt đá, không theo dòng tổng hợp</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="../ORD-04.html">ORD-04 duyệt &amp; phân luồng SX/CƯ</a><a href="../ORD-05.html">ORD-05 cấp hàng theo đợt</a><a href="../ORD-07.html">ORD-07 cập nhật / hủy đơn</a><a href="../PF-01.html">PF-01 danh mục nền &amp; mã hóa</a><a href="../PF-04.html">PF-04 thông báo &amp; ký duyệt</a><a href="../PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Yêu cầu 9 / 10</span><span><code>2026-09-15/YC-09.html</code></span>
+  <span>ABSMS — Đợt yêu cầu 15/09/2026</span>
+  <span>Nguồn: <code>Google Sheet · dòng 9 · biểu mẫu 4.Donhang &amp; 4.Donhangchitiet</code></span>
+</div>
+</main>
+</div>
+</body></html>
