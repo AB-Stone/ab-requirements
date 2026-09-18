@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-02 Đơn giá chuẩn theo vùng miền &amp; giai đoạn — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 15/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Đợt yêu cầu 15/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Tổng quan 10 yêu cầu</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="YC-01.html"><i>YC-01</i>Chuyển Áp giá doanh thu</a>
+    <a href="YC-03.html"><i>YC-03</i>Đổi tên phiếu rà soát HSMT</a>
+    <a href="YC-04.html"><i>YC-04</i>Mã gói thầu &amp; gộp gói</a>
+    <a href="YC-05.html"><i>YC-05</i>Mẫu bảng đầu việc BOQ</a>
+    <a href="YC-06.html"><i>YC-06</i>Thông tin chung gói thầu</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a class="on" href="YC-02.html"><i>YC-02</i>Đơn giá chuẩn theo vùng</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="YC-07.html"><i>YC-07</i>Hồ sơ bản vẽ thiết kế</a>
+    <a href="YC-08.html"><i>YC-08</i>Cấu trúc hồ sơ Shopdrawing</a>
+    <a href="YC-09.html"><i>YC-09</i>PYCSX &amp; Danh sách cắt đá</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="YC-10.html"><i>YC-10</i>Theo dõi hồ sơ thanh toán</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Đợt yêu cầu 15/09/2026</a> / Dự án — Thi công / <b>YC-02</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-01.html">← YC-01</a><a href="index.html">Mục lục</a><a href="YC-03.html">YC-03 →</a></div>
+</div>
+<section class="sheet solo" id="YC-02">
+  <header class="tb">
+    <div class="tb-id">YC-02</div>
+    <div class="tb-main">
+      <h3>Đơn giá chuẩn theo vùng miền &amp; giai đoạn</h3>
+      <p>Hiện cột đối chiếu của bảng giá khoán lấy giá vốn nhân công của BOQ đã duyệt — nghĩa là mỗi dự án tự mang theo một chuẩn riêng, và không có cách nào so hai Ban chỉ huy với nhau. Yêu cầu này dựng một bộ đơn giá chuẩn cấp công ty làm mốc chung, rồi tách phần chênh lệch thành <em>% hỗ trợ</em> — con số đo được năng lực điều hành của từng BCH.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Thêm màn hình + sửa hai trang</dd></div>
+        <div><dt>Màn hình mới</dt><dd>PF-06 Bảng đơn giá chuẩn</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../PRJ-01.html">PRJ-01</a> · <a href="../RPT-02.html">RPT-02</a> · <a href="../PF-01.html">PF-01</a></dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>Sheet 15/09/2026 · dòng 2</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Đường truy cập</td><td colspan="2"><code>Dự án — Thi công → Giá khoán tổ đội → Bảng giá mới → Cột Đơn giá dự thầu</code></td></tr>
+          <tr><td>Nguồn của cột</td><td>Đang lấy giá vốn nhân công của BOQ duyệt (<code>bid_labor_rate</code>, nạp từ cấu phần nhân công của <a href="../BID-03.html">BID-03</a>)</td><td>Lấy từ <b>bảng đơn giá chuẩn</b> của công ty, tra theo vùng miền của công trình và thời điểm hiệu lực</td></tr>
+          <tr><td>Tên cột</td><td>Đơn giá dự thầu</td><td>Đơn giá chuẩn</td></tr>
+          <tr><td>Phần chênh lệch</td><td>Chỉ là <code>variance_pct</code> — một con số cảnh báo, không lưu ý nghĩa</td><td><b>% hỗ trợ</b> do BCH đề xuất theo điều kiện thi công, tiến độ; nhập theo từng dòng đầu việc; trích xuất được thành báo cáo riêng</td></tr>
+          <tr><td>Mục đích</td><td>—</td><td>Loại trừ phần hỗ trợ ra khỏi chi phí để đánh giá dự án nào hoạt động hiệu quả, năng lực BCH tới đâu</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>Điều kiện gốc</b>
+      <p style="margin:0">“Mỗi công trình ở vùng miền sẽ được áp dụng một đơn giá chuẩn khác nhau, tùy khu vực và khoảng thời gian.” Hai chiều tra cứu — <b>vùng</b> và <b>khoảng thời gian</b> — là thứ quyết định cấu trúc dữ liệu của màn hình mới: một dòng đơn giá luôn thuộc về đúng một cặp (vùng, kỳ hiệu lực).</p>
+    </div>
+
+    <h4>Phạm vi tác động</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:20%">Trang</th><th style="width:26%">Mục trong trang</th><th>Thay đổi</th></tr></thead>
+        <tbody>
+          <tr><td>PF-06 <em>(mới)</em></td><td>Toàn trang</td><td>Màn hình <b>Bảng đơn giá chuẩn</b> — nhập, duyệt và ban hành bảng giá theo vùng và kỳ</td></tr>
+          <tr><td><a href="../PF-01.html">PF-01</a></td><td>Danh mục nền</td><td>Thêm danh mục thứ mười một: <b>Vùng miền</b> (<code>region_id</code>). Hiện PF-01 có mười danh mục và chưa có danh mục này, dù <a href="../RPT-03.html">RPT-03</a> và <a href="../RPT-05.html">RPT-05</a> đều đã dùng “vùng” làm chiều phân tích</td></tr>
+          <tr><td><a href="../PRJ-01.html">PRJ-01</a></td><td>Tham số · Quy tắc nghiệp vụ · Mockup</td><td>Đổi <code>bid_labor_rate</code> thành <code>standard_rate</code>, đổi nhãn cột; thêm <code>support_pct</code> và <code>support_amount</code> theo dòng; đổi công thức <code>variance_pct</code>; thêm quy tắc chặn theo biên độ</td></tr>
+          <tr><td><a href="../RPT-02.html">RPT-02</a></td><td>Thêm một khối</td><td>Khối <b>Hiệu quả điều hành BCH</b>: chi phí nhân công theo đơn giá chuẩn, theo đơn giá khoán thực tế, và phần hỗ trợ tách riêng</td></tr>
+          <tr><td><a href="../BID-03.html">BID-03</a></td><td>Quy tắc gợi ý giá vốn</td><td>Nguồn gợi ý của <code>cost_labor</code> đổi từ “bảng giá khoán tổ đội đã duyệt của dự án tương tự” sang “bảng đơn giá chuẩn đang hiệu lực của vùng”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — PF-06 Bảng đơn giá chuẩn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã bảng giá chuẩn</td><td class="k">std_sheet_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>DGC-&lt;vùng&gt;-&lt;yyyy&gt;-NN</code>, ví dụ <code>DGC-MB-2026-01</code>. Tự sinh, không sửa.</td></tr>
+          <tr><td>Vùng miền</td><td class="k">region_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chọn từ danh mục vùng của <a href="../PF-01.html">PF-01</a>: Miền Bắc · Miền Trung · Miền Nam · Khánh Hòa · <em>Khác</em>. Giá trị <em>Khác</em> mở thêm ô tên vùng tự nhập — mỗi tên tự nhập tạo một dòng danh mục mới chờ duyệt, không lưu thành chuỗi tự do trên bảng giá.</td></tr>
+          <tr><td>Kỳ hiệu lực</td><td class="k">effective_from, effective_to</td><td>Ngày</td><td class="c req">✱</td><td>Ví dụ <code>01/09/2026 – 01/09/2027</code>. <code>effective_to</code> phải sau <code>effective_from</code>. Hai bảng cùng vùng không được chồng kỳ.</td></tr>
+          <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><em>Nháp · Chờ duyệt · Đang hiệu lực · Hết hiệu lực</em>. Chỉ bảng <em>Đang hiệu lực</em> mới được tra cứu ở <a href="../PRJ-01.html">PRJ-01</a>.</td></tr>
+          <tr><td>Dòng đơn giá</td><td class="k">std_rates[]</td><td>Bảng</td><td class="c req">✱</td><td>Bộ chín cột theo biểu mẫu công ty, mô tả ở bảng dưới. Nhập tay, dán từ Excel, hoặc sao chép nguyên bảng của kỳ trước rồi sửa.</td></tr>
+          <tr><td>Người ban hành · ngày</td><td class="k">issued_by, issued_at</td><td>Hệ thống</td><td class="c">—</td><td>Ghi khi bảng chuyển sang <em>Đang hiệu lực</em>.</td></tr>
+          <tr><td>Căn cứ ban hành</td><td class="k">issue_basis</td><td>Chuỗi dài</td><td class="c">—</td><td>Số quyết định, cuộc họp, hoặc khảo sát giá làm căn cứ. Hiển thị cho người tra giá ở PRJ-01.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — dòng đơn giá chuẩn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:74px">Cột</th><th style="width:20%">Tiêu đề</th><th>Mã</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Mã việc</td><td class="k">work_code</td><td>Mã đầu việc chuẩn của công ty. Duy nhất trong một bảng giá. Dùng lại giữa các kỳ để so sánh được theo thời gian.</td></tr>
+          <tr><td>2</td><td>Công việc</td><td class="k">work_name</td><td>Tên đầu việc, tối đa 500 ký tự.</td></tr>
+          <tr><td>3</td><td>Đơn giá</td><td class="k">unit_price</td><td>Đơn giá trước thuế trên một đơn vị khối lượng. Bắt buộc, lớn hơn 0.</td></tr>
+          <tr><td>4</td><td>Đơn vị tính</td><td class="k">uom</td><td>Bắt buộc. Dùng chung hệ ĐVT với BOQ và bảng giá khoán — không quy đổi.</td></tr>
+          <tr><td>5</td><td>Thuế GTGT</td><td class="k">vat_rate</td><td>Phần trăm. Mặc định theo tham số công ty, sửa được theo dòng.</td></tr>
+          <tr><td>6</td><td>Thuế TNCN</td><td class="k">pit_rate</td><td>Phần trăm. Áp cho phần nhân công thuê ngoài; để trống nghĩa là không khấu trừ.</td></tr>
+          <tr><td>7</td><td>Đơn giá sau thuế</td><td class="k">price_after_tax</td><td>Máy chủ tính: <code>unit_price × (1 + vat_rate) × (1 + pit_rate)</code>. Chỉ đọc — không cho nhập tay để bảng không bao giờ có hai con số mâu thuẫn.</td></tr>
+          <tr><td>8</td><td>Biên độ điều chỉnh</td><td class="k">adjust_band_pct</td><td>Phần trăm, dạng ±. Là <b>trần của % hỗ trợ</b> mà BCH được đề xuất cho đầu việc này ở <a href="../PRJ-01.html">PRJ-01</a>. Để trống nghĩa là không cho điều chỉnh.</td></tr>
+          <tr><td>9</td><td>Ghi chú</td><td class="k">note</td><td>Phạm vi công việc, điều kiện đi kèm, căn cứ khảo sát giá.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số bổ sung cho PRJ-01</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Đơn giá chuẩn</td><td class="k">standard_rate</td><td>Số tiền</td><td class="c">—</td><td><b>Thay cho <code>bid_labor_rate</code>.</b> Máy chủ tra từ bảng đơn giá chuẩn <em>Đang hiệu lực</em> của vùng công trình, khớp theo <code>work_code</code>. Chỉ đọc. Không tìm thấy thì để trống và đánh dấu dòng.</td></tr>
+          <tr><td>Bảng giá chuẩn đã tra</td><td class="k">std_sheet_ref</td><td>Tham chiếu</td><td class="c">—</td><td>Ghi lại đúng bảng giá và kỳ đã dùng tại thời điểm lập. Bảng giá chuẩn đổi về sau không làm đổi bảng giá khoán đã duyệt.</td></tr>
+          <tr><td>% hỗ trợ đề xuất</td><td class="k">rates[].support_pct</td><td>Phần trăm</td><td class="c">—</td><td>BCH nhập theo <b>từng dòng đầu việc</b>. Phải nằm trong <code>adjust_band_pct</code> của dòng đơn giá chuẩn tương ứng. Bắt buộc ghi lý do khi khác 0.</td></tr>
+          <tr><td>Lý do hỗ trợ</td><td class="k">rates[].support_reason</td><td>Chuỗi</td><td class="c">—</td><td>Bắt buộc khi <code>support_pct ≠ 0</code>. Điều kiện thi công, tiến độ ép, mặt bằng chật, làm đêm… Đây là nội dung người duyệt đọc để quyết định.</td></tr>
+          <tr><td>Giá trị hỗ trợ</td><td class="k">rates[].support_amount</td><td>Số tiền</td><td class="c">—</td><td>Máy chủ tính: <code>standard_rate × support_pct</code>. Là phần chênh được tách riêng để loại trừ khi đánh giá hiệu quả.</td></tr>
+          <tr><td>Đơn giá khoán</td><td class="k">rates[].khoan_unit_price</td><td>Số tiền</td><td class="c req">✱</td><td>Giữ nguyên ý nghĩa cũ. Khi có đơn giá chuẩn, ô này nạp sẵn <code>standard_rate × (1 + support_pct)</code> và vẫn sửa tay được — sửa tay thì <code>support_pct</code> được tính ngược lại từ hiệu số.</td></tr>
+          <tr><td>Chênh lệch</td><td class="k">rates[].variance_pct</td><td>Phần trăm</td><td class="c">—</td><td>Công thức đổi thành <code>(ĐG khoán − ĐG chuẩn) / ĐG chuẩn</code>. Bằng đúng <code>support_pct</code> khi không sửa tay; lệch nhau là dấu hiệu người lập đã ghi đè.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Một vùng, một kỳ, một bảng giá đang hiệu lực.</b> Hai bảng cùng vùng không được chồng kỳ hiệu lực.<span class="then">Nếu cho chồng, cùng một đầu việc ở cùng một ngày sẽ tra ra hai đơn giá chuẩn khác nhau — và toàn bộ phép đánh giá năng lực BCH mất mốc so sánh. Ban hành bảng mới cho kỳ đang chạy thì bảng cũ tự đóng kỳ về ngày liền trước.</span></li>
+      <li><b>Tra giá theo vùng của công trình, không theo vùng của tổ đội.</b> Vùng lấy từ địa điểm công trình đã khai ở <a href="../BID-01.html">BID-01</a> và mang sang dự án.<span class="then">Đúng điều kiện gốc: “mỗi công trình ở vùng miền sẽ được áp dụng một đơn giá chuẩn khác nhau”. Một tổ đội miền Bắc vào thi công ở Khánh Hòa thì ăn theo đơn giá Khánh Hòa.</span></li>
+      <li><b>Đơn giá chuẩn đóng băng tại thời điểm lập bảng giá khoán.</b> <code>std_sheet_ref</code> ghi lại bảng giá và kỳ đã tra.<span class="then">Bảng đơn giá chuẩn ban hành kỳ mới không làm thay đổi bảng giá khoán đã duyệt, và cũng không làm sai lệch báo cáo của kỳ cũ. Muốn áp giá mới thì lập phụ lục bảng giá khoán.</span></li>
+      <li><b>% hỗ trợ bị chặn bởi biên độ điều chỉnh.</b> Ô <code>support_pct</code> không nhận giá trị ngoài <code>±adjust_band_pct</code> của chính đầu việc đó.<span class="then">Biên độ là quyền mà công ty giao trước cho BCH; vượt biên độ không phải là sửa số mà là xin ngoại lệ — và ngoại lệ đi qua chặng thẩm định của P. Đấu thầu ở PRJ-01 với ô giải trình bắt buộc, không đi qua ô nhập số.</span></li>
+      <li><b>Mỗi phần trăm hỗ trợ phải có lý do đọc được.</b> <code>support_pct ≠ 0</code> thì <code>support_reason</code> bắt buộc.<span class="then">Báo cáo đánh giá BCH đọc chính ô này; để trống nghĩa là số tiền hỗ trợ không giải thích được cho ai, và khi đối chiếu cuối năm nó sẽ bị tính vào phần kém hiệu quả.</span></li>
+      <li><b>Đầu việc không có trong bảng chuẩn vẫn khoán được.</b> Dòng không tra ra <code>standard_rate</code> được đánh dấu “ngoài bảng chuẩn”, nhập thẳng đơn giá khoán.<span class="then">Bảng chuẩn không bao giờ phủ hết đầu việc thực tế; chặn cứng ở đây sẽ chặn luôn dòng đầu tiên của mọi công tác mới. Dòng ngoài bảng chuẩn bị loại khỏi phép so sánh ở RPT-02 và được liệt kê riêng để bổ sung vào kỳ ban hành sau.</span></li>
+      <li><b>Hỗ trợ là chi phí, không phải doanh thu.</b> <code>support_amount</code> không chảy sang giá bán, không làm đổi BOQ hợp đồng.<span class="then">Nó chỉ làm đổi chi phí nhân công thực tế của dự án — nên nó làm mỏng biên lợi nhuận của chính dự án đó, và đó là lý do nó đo được năng lực điều hành.</span></li>
+      <li><b>Đơn giá sau thuế không nhập tay.</b> Cột 7 do máy chủ tính từ cột 3, 5, 6.<span class="then">Bảng giá là tài liệu được nhiều dự án tra cùng lúc; một ô nhập tay lệch công thức sẽ lan ra mọi bảng giá khoán tra phải nó mà không ai phát hiện.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">Tình huống</th><th style="width:28%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Kỳ hiệu lực chồng nhau</td><td>Cùng <code>region_id</code>, khoảng ngày giao với một bảng <em>Đang hiệu lực</em></td><td>“Vùng {vùng} đã có bảng giá {mã} hiệu lực {từ}–{đến}. Chọn kỳ khác, hoặc đóng kỳ bảng cũ về {ngày}.”</td></tr>
+          <tr><td>Kỳ kết thúc trước kỳ bắt đầu</td><td><code>effective_to ≤ effective_from</code></td><td>“Ngày kết thúc phải sau ngày bắt đầu.”</td></tr>
+          <tr><td>Trùng mã việc trong bảng</td><td>Hai dòng cùng <code>work_code</code></td><td>“Mã việc {mã} xuất hiện ở dòng {a} và {b}. Mỗi đầu việc chỉ có một đơn giá chuẩn trong một kỳ.”</td></tr>
+          <tr><td>Đơn giá bằng 0 hoặc âm</td><td><code>unit_price ≤ 0</code></td><td>“Đơn giá dòng {stt} phải lớn hơn 0.”</td></tr>
+          <tr><td>Sửa tay đơn giá sau thuế</td><td>Ô cột 7 nhận thao tác nhập</td><td>“Đơn giá sau thuế do hệ thống tính từ đơn giá, GTGT và TNCN. Sửa ba ô đó thay vì sửa kết quả.”</td></tr>
+          <tr><td>Ban hành bảng chưa có dòng nào</td><td><code>std_rates[]</code> rỗng</td><td>“Bảng giá chưa có dòng đơn giá nào.”</td></tr>
+          <tr><td>% hỗ trợ vượt biên độ</td><td><code>|support_pct| &gt; adjust_band_pct</code></td><td>“Đầu việc {mã} cho phép điều chỉnh tối đa ±{biên}%. Cần mức cao hơn thì để nguyên trong biên và ghi đề nghị vào ô giải trình của bảng giá.”</td></tr>
+          <tr><td>% hỗ trợ không có lý do</td><td><code>support_pct ≠ 0</code> và <code>support_reason</code> rỗng</td><td>“Dòng {stt} có hỗ trợ {x}% nhưng chưa ghi lý do. Báo cáo đánh giá BCH đọc chính ô này.”</td></tr>
+          <tr><td>Đầu việc ngoài bảng chuẩn</td><td>Không tra ra <code>standard_rate</code></td><td>“Đầu việc {mã} chưa có trong bảng đơn giá chuẩn {mã bảng}. Dòng này nhập giá trực tiếp và không tính vào so sánh hiệu quả.”</td></tr>
+          <tr><td>Vùng công trình chưa khai</td><td>Dự án không có <code>region_id</code></td><td>“Dự án chưa xác định vùng miền nên không tra được đơn giá chuẩn. Bổ sung địa điểm công trình ở hồ sơ dự án.”</td></tr>
+          <tr><td>Bảng giá chuẩn hết hiệu lực giữa chừng</td><td>Lập bảng giá khoán với ngày hiệu lực ngoài kỳ của bảng chuẩn</td><td>“Ngày hiệu lực {ngày} nằm ngoài kỳ của bảng đơn giá chuẩn {mã} ({từ}–{đến}). Chọn ngày khác hoặc chờ bảng chuẩn kỳ mới.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Khối báo cáo bổ sung cho RPT-02</h4>
+    <p>Mục đích gốc nói rõ: “dựa vào một bảng đơn giá chuẩn để loại trừ mục hỗ trợ ra thì các dự án hoạt động hiệu quả hay không, đánh giá được năng lực của BCH dự án đó cho chính xác.” Khối báo cáo vì vậy đặt ba con số cạnh nhau cho mỗi dự án, và cho phép xếp hạng theo cột cuối.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:74px">Cột</th><th style="width:26%">Tiêu đề</th><th>Nguồn</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Dự án · BCH phụ trách</td><td>Hồ sơ dự án</td></tr>
+          <tr><td>2</td><td>Vùng · kỳ đơn giá chuẩn</td><td><code>std_sheet_ref</code> của bảng giá khoán đã duyệt</td></tr>
+          <tr><td>3</td><td>Khối lượng đã nghiệm thu</td><td>Sản lượng đã chốt ở <a href="../PRJ-02.html">PRJ-02</a></td></tr>
+          <tr><td>4</td><td>Chi phí nhân công theo đơn giá chuẩn</td><td><code>Σ (standard_rate × khối lượng)</code></td></tr>
+          <tr><td>5</td><td>Chi phí nhân công thực tế</td><td><code>Σ (khoan_unit_price × khối lượng)</code>, đối chiếu với hồ sơ giao khoán đã duyệt ở <a href="../PRJ-03.html">PRJ-03</a></td></tr>
+          <tr><td>6</td><td>Giá trị hỗ trợ</td><td><code>Σ (support_amount × khối lượng)</code> — cột 5 trừ cột 4</td></tr>
+          <tr><td>7</td><td>Tỷ lệ hỗ trợ</td><td>Cột 6 chia cột 4. Đây là cột xếp hạng mặc định</td></tr>
+          <tr><td>8</td><td>Khối lượng ngoài bảng chuẩn</td><td>Phần khối lượng thuộc dòng không tra được đơn giá chuẩn — loại khỏi cột 4, 6, 7 và hiển thị riêng để người đọc biết phép so sánh phủ được bao nhiêu</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>Ban hành được một bảng đơn giá chuẩn cho một vùng và một kỳ, đủ chín cột theo biểu mẫu công ty, sao chép lại được từ kỳ trước.</li>
+      <li>Lập bảng giá khoán ở PRJ-01 thấy cột <b>Đơn giá chuẩn</b> nạp sẵn theo vùng công trình và ngày hiệu lực, kèm mã bảng giá đã tra.</li>
+      <li>Nhập % hỗ trợ theo từng dòng, hệ thống tự tính đơn giá khoán và giá trị hỗ trợ; vượt biên độ thì bị chặn ngay tại ô nhập.</li>
+      <li>Bảng giá khoán đã duyệt không đổi số khi công ty ban hành bảng đơn giá chuẩn kỳ mới.</li>
+      <li>Báo cáo quản trị dự án xếp hạng được các BCH theo tỷ lệ hỗ trợ, và nói rõ phép so sánh phủ được bao nhiêu phần khối lượng.</li>
+      <li>Đầu việc chưa có trong bảng chuẩn vẫn khoán được, được đánh dấu, và xuất ra danh sách đề nghị bổ sung cho kỳ ban hành sau.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC02-1</td><td>Chưa có bảng giá nào cho Miền Bắc</td><td>Ban hành bảng <code>01/09/2026–01/09/2027</code> với 20 dòng</td><td>Bảng chuyển <em>Đang hiệu lực</em>; đơn giá sau thuế tự tính đúng ở cả 20 dòng</td></tr>
+          <tr><td>UAT-YC02-2</td><td>Tiếp UAT-1</td><td>Ban hành bảng Miền Bắc kỳ <code>01/01/2027–31/12/2027</code></td><td>Bị chặn vì chồng kỳ, thông điệp nêu mã bảng cũ và đề nghị ngày đóng kỳ</td></tr>
+          <tr><td>UAT-YC02-3</td><td>Dự án ở Khánh Hòa, có bảng chuẩn Khánh Hòa</td><td>Lập bảng giá khoán mới</td><td>Cột Đơn giá chuẩn nạp theo bảng Khánh Hòa, không phải theo vùng của tổ đội</td></tr>
+          <tr><td>UAT-YC02-4</td><td>Đầu việc có biên độ ±10%</td><td>Nhập % hỗ trợ 15%</td><td>Bị chặn tại ô nhập, nêu rõ biên độ tối đa ±10%</td></tr>
+          <tr><td>UAT-YC02-5</td><td>Đầu việc có biên độ ±10%</td><td>Nhập % hỗ trợ 8%, bỏ trống lý do rồi trình duyệt</td><td>Bị chặn; đếm đúng số dòng thiếu lý do</td></tr>
+          <tr><td>UAT-YC02-6</td><td>Bảng giá khoán đã duyệt tra bảng chuẩn kỳ 2026</td><td>Ban hành bảng chuẩn kỳ 2027 với đơn giá cao hơn 12%</td><td>Bảng giá khoán cũ giữ nguyên mọi con số; <code>std_sheet_ref</code> vẫn trỏ bảng 2026</td></tr>
+          <tr><td>UAT-YC02-7</td><td>Bảng giá khoán có 3 dòng ngoài bảng chuẩn</td><td>Mở khối hiệu quả BCH ở RPT-02</td><td>Ba dòng đó không vào cột 4, 6, 7; cột 8 hiện đúng khối lượng bị loại</td></tr>
+          <tr><td>UAT-YC02-8</td><td>Hai dự án cùng vùng, cùng kỳ, tỷ lệ hỗ trợ 3% và 11%</td><td>Xếp hạng theo cột tỷ lệ hỗ trợ</td><td>Dự án 3% đứng trên; số liệu khớp với hồ sơ giao khoán đã duyệt ở PRJ-03</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../PRJ-01.html">PRJ-01 giá khoán tổ đội</a><a href="../PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="../PRJ-03.html">PRJ-03 giao khoán nhân công</a><a href="../PF-01.html">PF-01 danh mục nền</a><a href="../BID-03.html">BID-03 áp giá &amp; thương thảo</a><a href="../RPT-02.html">RPT-02 báo cáo quản trị dự án</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Yêu cầu 2 / 10</span><span><code>2026-09-15/YC-02.html</code></span>
+  <span>ABSMS — Đợt yêu cầu 15/09/2026</span>
+  <span>Nguồn: <code>Google Sheet · tab Tóm tắt · dòng 2</code></span>
+</div>
+</main>
+</div>
+</body></html>

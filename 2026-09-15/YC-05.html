@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-05 Mẫu bảng đầu việc BOQ — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 15/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Đợt yêu cầu 15/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Tổng quan 10 yêu cầu</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="YC-01.html"><i>YC-01</i>Chuyển Áp giá doanh thu</a>
+    <a href="YC-03.html"><i>YC-03</i>Đổi tên phiếu rà soát HSMT</a>
+    <a href="YC-04.html"><i>YC-04</i>Mã gói thầu &amp; gộp gói</a>
+    <a class="on" href="YC-05.html"><i>YC-05</i>Mẫu bảng đầu việc BOQ</a>
+    <a href="YC-06.html"><i>YC-06</i>Thông tin chung gói thầu</a>
+    <div class="rail-grp">Dự án — Thi công</div>
+    <a href="YC-02.html"><i>YC-02</i>Đơn giá chuẩn theo vùng</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="YC-07.html"><i>YC-07</i>Hồ sơ bản vẽ thiết kế</a>
+    <a href="YC-08.html"><i>YC-08</i>Cấu trúc hồ sơ Shopdrawing</a>
+    <a href="YC-09.html"><i>YC-09</i>PYCSX &amp; Danh sách cắt đá</a>
+    <div class="rail-grp">Báo cáo</div>
+    <a href="YC-10.html"><i>YC-10</i>Theo dõi hồ sơ thanh toán</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Đợt yêu cầu 15/09/2026</a> / Phòng Đấu thầu / <b>YC-05</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-04.html">← YC-04</a><a href="index.html">Mục lục</a><a href="YC-06.html">YC-06 →</a></div>
+</div>
+<section class="sheet solo" id="YC-05">
+  <header class="tb">
+    <div class="tb-id">YC-05</div>
+    <div class="tb-main">
+      <h3>Bảng đầu việc BOQ theo mẫu chuẩn của công ty</h3>
+      <p>Bảng đầu việc hiện dư cột ở chỗ này và thiếu cột ở chỗ kia so với biểu mẫu công ty đang dùng, nên mỗi lần nhận hồ sơ mời thầu vẫn phải chép tay thay vì dán thẳng. Yêu cầu này chốt <b>hai</b> bộ cột chuẩn — một cho bản chủ đầu tư đưa, một cho bản công ty áp giá — cộng khối tổng cộng, thuế và ô ghi chú cho cả bảng.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Chuẩn hoá bộ cột + thêm khối chân bảng</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../BID-01.html">BID-01</a> · <a href="../BID-03.html">BID-03</a></dd></div>
+        <div><dt>Biểu mẫu nguồn</dt><dd><code>3.BOQ_CĐT đưa</code> · <code>3.BOQ</code></dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>Sheet 15/09/2026 · dòng 5</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Đường truy cập</td><td colspan="2"><code>Đấu thầu → Tiếp nhận gói thầu → Bảng đầu việc BOQ</code></td></tr>
+          <tr><td>Bộ cột</td><td>Bảng đầu việc còn dư thiếu cột so với bảng mẫu</td><td>Chỉnh lại theo mẫu biểu BOQ ở sheet <code>3.BOQ</code></td></tr>
+          <tr><td>Chân bảng</td><td>Chỉ có tổng khối lượng theo nhóm đầu việc</td><td>Cuối bảng có dòng <b>tổng cộng</b>, <b>thuế GTGT</b> và <b>thành tiền sau thuế</b></td></tr>
+          <tr><td>Ghi chú</td><td>Ghi chú chỉ có ở cấp dòng</td><td>Thêm ô ghi chú cho <b>cả bảng BOQ</b></td></tr>
+          <tr><td>Nhập liệu</td><td>—</td><td>Form chuẩn để copy dán hoặc nhập khẩu cho dễ; <b>vẫn giữ</b> tính năng tự thêm cột và chọn vị trí chèn cột khi hợp đồng phát sinh cột phụ</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Phạm vi tác động</h4>
+    <p>Hai biểu mẫu trong sheet không phải hai phiên bản của một bảng — chúng là <b>hai giai đoạn</b> của cùng một BOQ, và rơi vào hai màn hình khác nhau.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:20%">Biểu mẫu</th><th style="width:20%">Màn hình</th><th style="width:74px">Số cột</th><th>Vai trò</th></tr></thead>
+        <tbody>
+          <tr><td><code>3.BOQ_CĐT đưa</code></td><td><a href="../BID-01.html">BID-01</a> tiếp nhận</td><td>7</td><td>Bản chủ đầu tư gửi kèm thư mời thầu — có khối lượng, chưa có giá</td></tr>
+          <tr><td><code>3.BOQ</code></td><td><a href="../BID-03.html">BID-03</a> áp giá</td><td>14</td><td>Bản công ty dựng để tính giá — thêm năm cấu phần đơn giá, cột tổng, thành tiền và khối thuế</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:20%">Trang</th><th style="width:26%">Mục trong trang</th><th>Thay đổi</th></tr></thead>
+        <tbody>
+          <tr><td><a href="../BID-01.html">BID-01</a></td><td><code>boq_lines[]</code> · Kết quả mong đợi · Mockup</td><td>Bộ cột chốt theo <code>3.BOQ_CĐT đưa</code>; thêm hai nhóm dòng chuẩn; thêm <code>boq_note</code> cấp bảng; giữ nguyên <code>boq_extra_columns[]</code> và <code>boq_hidden_columns[]</code></td></tr>
+          <tr><td><a href="../BID-03.html">BID-03</a></td><td><code>cost_components[]</code> · Bảng tổng hợp giá trị đơn hàng</td><td>Bộ cấu phần giá vốn mặc định đổi từ ba thành <b>năm</b>: Đá · Vật tư phụ · Nhân công · Vận chuyển · Chống thấm. Thêm khối tổng cộng — VAT — sau thuế ở chân bảng áp giá</td></tr>
+          <tr><td><a href="../PF-01.html">PF-01</a></td><td>Quy tắc mã hóa</td><td>Không đổi — mã hạng mục đã xử lý ở <a href="YC-04.html">YC-04</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Bộ cột — BID-01, theo mẫu <code>3.BOQ_CĐT đưa</code></h4>
+    <p>Phía trên bảng là khối định danh của hồ sơ mời thầu: <b>Dự án · Hạng mục · Gói thầu</b> — ba dòng này lấy từ thông tin chung của gói, không nhập lại.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:62px">Cột</th><th style="width:24%">Tiêu đề</th><th style="width:22%">Mã</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Mã hạng mục phí</td><td class="k">hm_code</td><td>Hệ thống sinh <code>&lt;mã gói&gt;.NN</code>, khóa — xem <a href="YC-04.html">YC-04</a>. Cột <em>Mã HM của CĐT</em> (<code>owner_hm_code</code>) nằm ngay sau, nhập tay hoặc nhập khẩu</td></tr>
+          <tr><td>2</td><td>Nội dung công việc</td><td class="k">name</td><td>Bắt buộc. Tối đa 1.000 ký tự</td></tr>
+          <tr><td>3</td><td>Quy cách kỹ thuật</td><td class="k">spec</td><td>Tối đa 2.000 ký tự — hồ sơ thật thường chép cả đoạn mô tả kỹ thuật vào đây, kể cả bảng tỷ lệ pha màu đá và chỉ định vị trí</td></tr>
+          <tr><td>4</td><td>Yêu cầu khác</td><td class="k">other_req</td><td><b>Cột mới.</b> Yêu cầu ngoài quy cách: chứng chỉ vật liệu, mẫu duyệt, điều kiện bảo hành riêng của đầu việc</td></tr>
+          <tr><td>5</td><td>Đơn vị tính</td><td class="k">unit</td><td>Bắt buộc. Là hệ ĐVT kế thừa nguyên xuống bản vẽ và đơn hàng, không quy đổi</td></tr>
+          <tr><td>6</td><td>Tổng khối lượng</td><td class="k">qty_invited</td><td>Để trống được khi hồ sơ chưa có số liệu, kèm ghi chú “chờ làm rõ”; đã điền thì phải lớn hơn 0. Chốt muộn nhất ở <a href="../BID-02.html">BID-02</a></td></tr>
+          <tr><td>7</td><td>Ghi chú</td><td class="k">note</td><td>Ghi chú cấp dòng</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Bộ cột — BID-03, theo mẫu <code>3.BOQ</code></h4>
+    <p>Bảy cột đầu kế thừa nguyên từ BID-01 và <b>chỉ đọc</b> ở bước áp giá. Bảy cột sau là phần công ty dựng thêm.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:62px">Cột</th><th style="width:24%">Tiêu đề</th><th style="width:22%">Mã</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>1–7</td><td colspan="2">Kế thừa từ BID-01</td><td>Chỉ đọc. Cột khối lượng khóa từ bước này trở đi</td></tr>
+          <tr><td>8</td><td>Đơn giá · Đá</td><td class="k">cost_stone</td><td>Cấu phần giá vốn. Gợi ý từ giá nhập kho bình quân gần nhất của vật tư đá tương ứng</td></tr>
+          <tr><td>9</td><td>Đơn giá · Vật tư phụ</td><td class="k">cost_aux</td><td>Cấu phần giá vốn. Vữa liên kết, keo, thép, inox, phụ kiện neo</td></tr>
+          <tr><td>10</td><td>Đơn giá · Nhân công</td><td class="k">cost_labor</td><td>Cấu phần giá vốn. Gợi ý từ bảng đơn giá chuẩn đang hiệu lực của vùng — xem <a href="YC-02.html">YC-02</a></td></tr>
+          <tr><td>11</td><td>Đơn giá · Vận chuyển</td><td class="k">cost_transport</td><td>Cấu phần giá vốn. Vận chuyển từ nhà máy tới chân công trình và trung chuyển trong công trường</td></tr>
+          <tr><td>12</td><td>Đơn giá · Chống thấm</td><td class="k">cost_waterproof</td><td>Cấu phần giá vốn. Chỉ tính cho dòng có <code>waterproof = Có</code>; dòng không chống thấm để 0</td></tr>
+          <tr><td>13</td><td>Đơn giá · Tổng</td><td class="k">cost_total</td><td>Máy chủ tính: tổng năm cấu phần <b>đang bật</b>, cộng chi phí chung phân bổ. Chỉ đọc</td></tr>
+          <tr><td>14</td><td>Thành tiền</td><td class="k">cost_amount</td><td>Máy chủ tính: <code>cost_total × qty</code>. Chỉ đọc</td></tr>
+          <tr><td>15</td><td>Ghi chú</td><td class="k">note</td><td>Kế thừa từ BID-01, sửa được ở bước áp giá</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>Năm cấu phần này là giá vốn, không phải giá chào</b>
+      <p style="margin:0">Cột <em>Tổng</em> và cột <em>Thành tiền</em> của mẫu <code>3.BOQ</code> là <b>giá vốn</b> — cơ cấu chi phí nội bộ. Đơn giá chào (<code>price_offer</code>) và biên lợi nhuận vẫn là bộ cột riêng của màn hình áp giá, và theo quy tắc đang có ở <a href="../BID-03.html">BID-03</a>, cấu phần giá vốn <b>không có mặt</b> trong bảng tổng hợp giá trị đơn hàng và không có trong tệp báo giá gửi đối tác. Vì vậy bảng dựng theo mẫu này <b>không được phát hành ra ngoài</b> dù tiêu đề biểu mẫu ghi “BẢNG TIÊN LƯỢNG MỜI THẦU (BOQ)”. Điểm này cần chốt lại — xem <a href="../PL-C.html">PL-C</a> và mục <a href="index.html#can-chot">§3 của mục lục đợt</a>.</p>
+    </div>
+
+    <h4>Nhóm dòng &amp; chân bảng</h4>
+    <p>Biểu mẫu chia bảng thành hai nhóm có tiêu đề và đóng lại bằng ba dòng tổng. Cả hai đều thành cấu trúc chính thức, không phải dòng chữ người dùng tự gõ.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">Thành phần</th><th style="width:22%">Mã</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Nhóm “CÔNG VIỆC THEO HSMT”</td><td class="k">line_group = hsmt</td><td>Nhóm mặc định. Mọi dòng nhập khẩu từ BOQ chủ đầu tư đưa vào nhóm này</td></tr>
+          <tr><td>Nhóm “CÔNG VIỆC NHÀ THẦU ĐỀ XUẤT BỔ SUNG (NẾU CÓ)”</td><td class="k">line_group = extra</td><td>Dòng do công ty tự thêm: phụ trội biện pháp, chi phí công trường xanh, phụ trội trung chuyển, rủi ro gãy vỡ… Được đánh dấu riêng để bên mời thầu nhìn ra ngay khi làm rõ hồ sơ</td></tr>
+          <tr><td>Tổng cộng trước thuế</td><td class="k">total_before_vat</td><td>Máy chủ tính: tổng cột Thành tiền của <b>cả hai nhóm</b>. Có thêm một dòng tổng phụ cho từng nhóm</td></tr>
+          <tr><td>Thuế GTGT</td><td class="k">vat_rate, vat_amount</td><td>Tỷ lệ mặc định theo tham số công ty (biểu mẫu đang dùng 8%), sửa được theo gói. <code>vat_amount = total_before_vat × vat_rate</code></td></tr>
+          <tr><td>Tổng cộng sau thuế</td><td class="k">total_after_vat</td><td>Máy chủ tính. Chỉ đọc</td></tr>
+          <tr><td>Ghi chú cả bảng</td><td class="k">boq_note</td><td><b>Trường mới.</b> Chuỗi dài, tối đa 8.000 ký tự, giữ xuống dòng. Nạp sẵn bộ ghi chú chuẩn của công ty (xem dưới), sửa và bổ sung theo gói</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Bộ ghi chú chuẩn nạp sẵn cho ô <code>boq_note</code></h4>
+    <p>Bốn nguyên tắc đo bóc dưới đây lấy nguyên từ biểu mẫu công ty. Chúng quyết định khối lượng nghiệm thu quyết toán ở <a href="../ORD-09.html">ORD-09</a> và <a href="../ORD-10.html">ORD-10</a>, nên phải đi kèm BOQ từ đầu chứ không phải nhớ lại lúc quyết toán.</p>
+    <ul>
+      <li>Vật tư đá ốp lát (chống thấm / không chống thấm), thép, inox, chất chống thấm và vật tư phụ miễn thí nghiệm; riêng vữa liên kết nhà thầu phải thí nghiệm mác vữa.</li>
+      <li>Đầu việc tính theo mét dài (phào, chỉ…): khối lượng tính theo chiều dài nhất / chu vi ngoài / đường kính lớn nhất.</li>
+      <li>Ốp lát đá phẳng tính m²: khối lượng nghiệm thu quyết toán là khối lượng hoàn thiện, <b>không trừ</b> diện tích kết cấu chiếm chỗ, ô thoáng, khoảng trống nhỏ hơn 0,25 m², không trừ diện tích mạch đá, khe hở kỹ thuật và lỗ chờ thiết bị.</li>
+      <li>Lavabo, bàn bếp: tính theo chiều rộng nhất và dài nhất của tấm đá, không trừ diện tích khoét lỗ chậu, lỗ vòi và khe hở khác.</li>
+      <li>Khối lượng “líp mỏ chim” tính bằng tổng chiều dài gia công của hai cạnh đá tạo thành — tức tính hai lần.</li>
+    </ul>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Bộ cột chuẩn là điểm xuất phát, không phải cái lồng.</b> Bảng mở ra với đúng bộ cột của mẫu; cơ chế <code>boq_extra_columns[]</code> và <code>boq_hidden_columns[]</code> đang có ở <a href="../BID-01.html">BID-01</a> giữ nguyên.<span class="then">Yêu cầu gốc nói rõ: “vẫn giữ tính năng tự thêm cột, vị trí chèn cột để có thể tự căn chỉnh nếu gặp hợp đồng phát sinh thêm cột phụ”. Chuẩn hoá ở đây là chuẩn hoá <em>mặc định</em>, không phải khoá bảng lại.</span></li>
+      <li><b>Chèn cột chọn được vị trí.</b> Khi thêm cột tự khai, người lập chỉ định cột mới nằm sau cột nào.<span class="then">Dán từ Excel chỉ dễ khi thứ tự cột trên màn hình khớp thứ tự cột trong tệp; buộc cột mới luôn rơi xuống cuối bảng là buộc người dùng phải cắt dán từng cột.</span></li>
+      <li><b>Dòng tổng không phải dòng dữ liệu.</b> Ba dòng chân bảng do máy chủ tính, không nằm trong <code>boq_lines[]</code>, không xóa và không sửa được.<span class="then">Trong tệp Excel gốc chúng chỉ là dòng có công thức, nên khi dán cả vùng vào hệ thống phải nhận ra và bỏ qua — nếu không, ba dòng tổng sẽ thành ba đầu việc.</span></li>
+      <li><b>Nhóm dòng là thuộc tính, không phải dòng tiêu đề.</b> “CÔNG VIỆC THEO HSMT” và “CÔNG VIỆC NHÀ THẦU ĐỀ XUẤT BỔ SUNG” hiển thị như dải tiêu đề nhưng lưu bằng <code>line_group</code> trên từng dòng.<span class="then">Nhờ vậy đổi một dòng từ nhóm này sang nhóm kia là đổi một giá trị, và tổng phụ của từng nhóm luôn đúng mà không phụ thuộc thứ tự dòng.</span></li>
+      <li><b>Dòng nhà thầu đề xuất bổ sung không được trộn với đầu việc bỏ sót.</b> Đầu việc bên mời thầu bỏ sót vẫn đi qua thao tác “Thêm đầu việc bỏ sót” của <a href="../BID-02.html">BID-02</a> và thuộc nhóm HSMT.<span class="then">Hai thứ khác nhau về bản chất: một bên là công việc lẽ ra phải có trong hồ sơ mời thầu, một bên là chi phí công ty chủ động đề xuất thêm. Trộn lại sẽ làm hỏng phép so sánh v1 ↔ v2 của BOQ.</span></li>
+      <li><b>Cấu phần giá vốn bật tắt được, tổng chỉ cộng phần đang bật.</b> Năm cấu phần là mặc định mới; gói nào không dùng vận chuyển hay chống thấm thì tắt cột đó.<span class="then">Giữ nguyên cơ chế <code>cost_components[]</code> đang có: cấu phần đang tắt không hiện cột và không cộng vào <code>cost_total</code>. Vẫn khai thêm được tối đa tám cấu phần riêng cho gói.</span></li>
+      <li><b>Thuế suất thuộc về gói, không thuộc về dòng.</b> Một BOQ một thuế suất.<span class="then">Biểu mẫu để 8% cố định; hệ thống lấy mặc định từ tham số công ty và cho sửa theo gói, vì thuế suất thay đổi theo chính sách và theo loại hợp đồng.</span></li>
+      <li><b>Ghi chú cả bảng đi theo phiên bản BOQ.</b> <code>boq_note</code> được đóng băng cùng bản BOQ khi chốt ở <a href="../BID-02.html">BID-02</a> và khi ký hợp đồng ở <a href="../BID-05.html">BID-05</a>.<span class="then">Bốn nguyên tắc đo bóc trong ô này là căn cứ nghiệm thu quyết toán; nếu chúng sửa được sau khi ký thì mỗi lần quyết toán sẽ đọc một luật khác.</span></li>
+      <li><b>Bảng theo mẫu <code>3.BOQ</code> không phát hành ra ngoài.</b> Xuất tệp gửi đối tác vẫn đi qua bảng tổng hợp giá trị đơn hàng của <a href="../BID-03.html">BID-03</a>, nơi không có cấu phần giá vốn.<span class="then">Đây là điểm còn phải chốt lại với người dùng, vì chính biểu mẫu công ty đang đặt khối tổng cộng và VAT ngay dưới bảng giá vốn.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">Tình huống</th><th style="width:28%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Dán cả vùng có dòng tổng</td><td>Dòng dán có ô đầu việc khớp “TỔNG CỘNG…”, “VAT…”</td><td>“Đã bỏ qua {n} dòng tổng trong vùng dán — hệ thống tự tính ba dòng này ở chân bảng.”</td></tr>
+          <tr><td>Sửa ô tổng</td><td>Thao tác nhập vào dòng chân bảng</td><td>“Dòng tổng do hệ thống tính từ cột Thành tiền. Sửa dòng đầu việc thay vì sửa kết quả.”</td></tr>
+          <tr><td>Thuế suất ngoài khoảng</td><td><code>vat_rate</code> &lt; 0 hoặc &gt; 20%</td><td>“Thuế suất GTGT nhận giá trị từ 0% đến 20% (hiện {x}%).”</td></tr>
+          <tr><td>Chống thấm có giá nhưng dòng không chống thấm</td><td><code>cost_waterproof &gt; 0</code> và <code>waterproof = Không</code></td><td>“Dòng {stt} không chống thấm nhưng có đơn giá chống thấm. Bật cột ‘Xử lý chống thấm’ hoặc đưa chi phí này về cấu phần khác.”</td></tr>
+          <tr><td>Tắt cấu phần đang có số</td><td>Tắt cột mà một số dòng còn giá trị khác 0</td><td>“{n} dòng đang có đơn giá ở cấu phần {tên}. Tắt cột thì phần này không cộng vào giá vốn nữa — số liệu vẫn giữ để bật lại.”</td></tr>
+          <tr><td>Ghi chú cả bảng quá dài</td><td><code>boq_note</code> &gt; 8.000 ký tự</td><td>“Ghi chú cả bảng tối đa 8.000 ký tự (hiện {n}). Nội dung dài hơn nên đính kèm thành tệp ở mục chứng từ.”</td></tr>
+          <tr><td>Sửa ghi chú sau khi chốt BOQ</td><td>BOQ đã đóng băng ở BID-02 hoặc BID-05</td><td>“Bản BOQ này đã chốt. Ghi chú là căn cứ nghiệm thu quyết toán nên khóa cùng bản — sửa thì phải chốt một bản BOQ mới.”</td></tr>
+          <tr><td>Chèn cột không chọn vị trí</td><td>Thêm cột mà không chỉ định cột đứng trước</td><td>“Chọn cột mà cột mới nằm sau, để thứ tự khớp với tệp Excel đang dán.”</td></tr>
+          <tr><td>Nhóm dòng để trống</td><td><code>line_group</code> rỗng</td><td>“Dòng {stt} chưa thuộc nhóm nào. Mặc định là ‘Công việc theo HSMT’.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>Mở bảng đầu việc ở BID-01 thấy đúng bảy cột của mẫu chủ đầu tư đưa, cộng cột mã HM của CĐT; dán nguyên vùng từ tệp Excel mẫu vào là khớp cột, không phải cắt dán từng cột.</li>
+      <li>Mở bảng áp giá ở BID-03 thấy năm cấu phần đơn giá, cột tổng và cột thành tiền tự tính; bảy cột đầu chỉ đọc.</li>
+      <li>Chân bảng luôn có ba dòng: tổng cộng trước thuế, thuế GTGT theo tỷ lệ của gói, tổng cộng sau thuế — kèm tổng phụ cho từng nhóm.</li>
+      <li>Ô ghi chú cả bảng nạp sẵn năm nguyên tắc đo bóc chuẩn và sửa được cho tới khi BOQ được chốt.</li>
+      <li>Vẫn thêm được cột phụ và chọn được vị trí chèn; cột thêm không phá thứ tự bộ cột chuẩn.</li>
+      <li>Dán vùng có chứa dòng tổng thì hệ thống nhận ra và bỏ qua, không biến chúng thành đầu việc.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC05-1</td><td>Có tệp mẫu <code>3.BOQ_CĐT đưa</code> với 1 đầu việc</td><td>Dán vùng A6:G8 vào bảng đầu việc BID-01</td><td>Bảy cột khớp đúng vị trí; đoạn quy cách dài vào đúng ô Quy cách kỹ thuật, không bị cắt</td></tr>
+          <tr><td>UAT-YC05-2</td><td>Tiếp UAT-1</td><td>Dán thêm vùng chứa ba dòng TỔNG CỘNG / VAT / SAU THUẾ</td><td>Ba dòng bị bỏ qua kèm thông báo; bảng vẫn một đầu việc</td></tr>
+          <tr><td>UAT-YC05-3</td><td>Gói thầu có 1 đầu việc HSMT và 5 dòng phụ trội</td><td>Đặt 5 dòng vào nhóm đề xuất bổ sung</td><td>Hai dải tiêu đề hiện đúng; hai tổng phụ đúng; tổng cộng bằng tổng hai nhóm</td></tr>
+          <tr><td>UAT-YC05-4</td><td>Thuế suất gói để mặc định 8%</td><td>Đổi thành 10%</td><td>Tổng sau thuế tính lại ngay; tổng trước thuế không đổi</td></tr>
+          <tr><td>UAT-YC05-5</td><td>Gói không có công tác chống thấm</td><td>Tắt cấu phần Chống thấm</td><td>Cột ẩn đi; <code>cost_total</code> của mọi dòng giảm đúng phần chống thấm</td></tr>
+          <tr><td>UAT-YC05-6</td><td>Hợp đồng phát sinh cột “Mã màu đá”</td><td>Thêm cột, chọn vị trí sau cột Quy cách kỹ thuật</td><td>Cột mới nằm đúng vị trí; dán lại từ Excel vẫn khớp</td></tr>
+          <tr><td>UAT-YC05-7</td><td>BOQ đã chốt ở BID-02</td><td>Thử sửa ô ghi chú cả bảng</td><td>Bị chặn, nêu rõ ghi chú là căn cứ nghiệm thu quyết toán</td></tr>
+          <tr><td>UAT-YC05-8</td><td>Bảng áp giá đã điền đủ năm cấu phần</td><td>Xuất tệp báo giá gửi đối tác</td><td>Tệp không chứa cột nào trong năm cấu phần, không chứa cột Thành tiền giá vốn</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../BID-01.html">BID-01 tiếp nhận thư chào thầu</a><a href="../BID-02.html">BID-02 thẩm định BOQ liên phòng</a><a href="../BID-03.html">BID-03 áp giá &amp; thương thảo</a><a href="../BID-05.html">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="../ORD-09.html">ORD-09 thanh toán khối lượng HT</a><a href="YC-02.html">YC-02 đơn giá chuẩn</a><a href="YC-04.html">YC-04 mã gói thầu &amp; gộp gói</a><a href="../PL-C.html">PL-C vấn đề cần chốt</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Yêu cầu 5 / 10</span><span><code>2026-09-15/YC-05.html</code></span>
+  <span>ABSMS — Đợt yêu cầu 15/09/2026</span>
+  <span>Nguồn: <code>Google Sheet · tab Tóm tắt · dòng 5 · biểu mẫu 3.BOQ</code></span>
+</div>
+</main>
+</div>
+</body></html>
