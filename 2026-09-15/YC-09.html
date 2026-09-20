@@ -126,7 +126,7 @@
         <tbody>
           <tr><td>Số phiếu</td><td class="k">afp_no</td><td>Chuỗi</td><td class="c req">✱</td><td>Tự sinh <code>AFP-&lt;mã dự án&gt;-NN</code>. Biểu mẫu giấy ghi “SỐ: AFP 01”.</td></tr>
           <tr><td>Ngày lập phiếu</td><td class="k">issued_at</td><td>Ngày</td><td class="c req">✱</td><td>Mặc định hôm nay.</td></tr>
-          <tr><td>Phiếu thuộc đợt số</td><td class="k">batch_no</td><td>Số</td><td class="c req">✱</td><td>Đợt giao hàng thứ mấy của dự án. Là cơ sở lập kế hoạch cấp hàng ở <a href="../ORD-05.html">ORD-05</a>.</td></tr>
+          <tr><td>Phiếu thuộc đợt số</td><td class="k">batch_no</td><td>Số</td><td class="c req">✱</td><td>Đợt giao hàng thứ mấy của dự án. Là cơ sở lập kế hoạch cấp hàng ở <a href="../ORD-05.html">ORD-05</a>. <em>Mã <code>batch_no</code> đã có hai chủ khác — <code>batch_id</code> đợt trình nguồn ở <a href="../ORD-03.html">ORD-03</a> và <code>batch_no</code> đợt cấp ở <a href="../ORD-05.html">ORD-05</a>; bản dựng đặt <code>delivery_round_no</code>, chờ chốt ở <a href="../PL-C.html#Q-42">PL-C · Q-42</a>.</em></td></tr>
           <tr><td>Nơi gửi · nơi nhận</td><td class="k">from_unit, to_unit</td><td>Tham chiếu</td><td class="c req">✱</td><td>Mặc định: nhóm TQT gửi, nhà máy chế biến đá nhận. Chọn từ danh mục đơn vị của <a href="../PF-01.html">PF-01</a>.</td></tr>
           <tr><td>Loại sản xuất</td><td class="k">prod_type</td><td>Chọn 1</td><td class="c req">✱</td><td><em>Sản xuất chính thức</em> · <em>Sản xuất mẫu</em>. Biểu mẫu để hai ô đánh dấu; đây là hai luồng khác nhau ở nhà máy nên phải là trường, không phải ghi chú.</td></tr>
           <tr><td>Ngày bắt đầu · kết thúc giao hàng</td><td class="k">deliver_from, deliver_to_date</td><td>Ngày</td><td class="c req">✱</td><td><code>deliver_to_date</code> phải từ <code>deliver_from</code> trở đi.</td></tr>
@@ -328,7 +328,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="../ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="../ORD-04.html">ORD-04 duyệt &amp; phân luồng SX/CƯ</a><a href="../ORD-05.html">ORD-05 cấp hàng theo đợt</a><a href="../ORD-07.html">ORD-07 cập nhật / hủy đơn</a><a href="../PF-01.html">PF-01 danh mục nền &amp; mã hóa</a><a href="../PF-04.html">PF-04 thông báo &amp; ký duyệt</a><a href="../PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+    <p class="links"><a href="../ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="../ORD-04.html">ORD-04 duyệt &amp; phân luồng SX/CƯ</a><a href="../ORD-05.html">ORD-05 cấp hàng theo đợt</a><a href="../ORD-07.html">ORD-07 cập nhật / hủy đơn</a><a href="../PF-01.html">PF-01 danh mục nền &amp; mã hóa</a><a href="../PF-04.html">PF-04 thông báo &amp; ký duyệt</a><a href="../PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a><a href="../PL-C.html#Q-42">PL-C · Q-42 mã trường đợt giao hàng</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
   </div>
 </section>
 <div class="filefoot">

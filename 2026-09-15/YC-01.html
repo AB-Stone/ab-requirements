@@ -46,7 +46,7 @@
       <p>Áp giá doanh thu cho đơn hàng là việc định giá bán, không phải việc điều độ sản xuất. Đặt nó dưới nhánh P. TQT — Shopdrawing là đặt sai chủ sở hữu: người nhìn thấy nó hằng ngày không phải người quyết định nó.</p>
       <dl class="tb-meta">
         <div><dt>Loại thay đổi</dt><dd>Đổi mã màn hình &amp; đổi nhóm</dd></div>
-        <div><dt>Trang tác động</dt><dd><a href="../ORD-06.html">ORD-06</a> · <a href="../PL-B.html">PL-B</a></dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../BID-06.html">ORD-06</a> · <a href="../PL-B.html">PL-B</a></dd></div>
         <div><dt>Mã sau khi đổi</dt><dd>BID-06</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>Sheet 15/09/2026 · dòng 1</dd></div>
       </dl>
@@ -72,7 +72,7 @@
       <table>
         <thead><tr><th style="width:22%">Trang</th><th style="width:26%">Mục trong trang</th><th>Thay đổi</th></tr></thead>
         <tbody>
-          <tr><td><a href="../ORD-06.html">ORD-06</a> → BID-06</td><td>Toàn trang</td><td>Đổi tên tệp <code>ORD-06.html</code> → <code>BID-06.html</code>, đổi <code>tb-id</code>, đổi vụn chì (breadcrumb) từ “P. TQT — Shopdrawing” sang “Phòng Đấu thầu”, đổi dòng <em>Thực hiện</em> trong <code>tb-meta</code></td></tr>
+          <tr><td><a href="../BID-06.html">ORD-06</a> → BID-06</td><td>Toàn trang</td><td>Đổi tên tệp <code>ORD-06.html</code> → <code>BID-06.html</code>, đổi <code>tb-id</code>, đổi vụn chì (breadcrumb) từ “P. TQT — Shopdrawing” sang “Phòng Đấu thầu”, đổi dòng <em>Thực hiện</em> trong <code>tb-meta</code></td></tr>
           <tr><td>Rail của 45 trang</td><td>Khối <code>rail-grp</code></td><td>Gỡ mục ORD-06 khỏi nhóm “P. TQT — Shopdrawing”, chèn BID-06 vào cuối nhóm “Phòng Đấu thầu”, sau BID-05</td></tr>
           <tr><td><a href="../index.html">index.html</a></td><td>Rail · danh mục thẻ · bảng truy vết</td><td>Chuyển thẻ sang nhóm BID; đổi số đếm “5 đặc tả” của BID thành 6 và “10 đặc tả” của ORD thành 9</td></tr>
           <tr><td><code>ABSMS-GD1-full.html</code></td><td>Khối ORD-06</td><td>Di chuyển nguyên khối lên sau BID-05</td></tr>
@@ -96,10 +96,10 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Đổi nhóm không đổi luồng.</b> Áp giá doanh thu vẫn là luồng chạy song song, không chặn sản xuất và cấp hàng — đúng ràng buộc gốc của <a href="../ORD-06.html">ORD-06</a>.<span class="then">Đơn hàng vẫn đi tiếp qua <a href="../ORD-04.html">ORD-04</a> và <a href="../ORD-05.html">ORD-05</a> khi chưa có giá doanh thu; nhãn <code>has_price</code> vẫn là dấu hiệu duy nhất mà luồng tác nghiệp nhìn thấy.</span></li>
+      <li><b>Đổi nhóm không đổi luồng.</b> Áp giá doanh thu vẫn là luồng chạy song song, không chặn sản xuất và cấp hàng — đúng ràng buộc gốc của <a href="../BID-06.html">ORD-06</a>.<span class="then">Đơn hàng vẫn đi tiếp qua <a href="../ORD-04.html">ORD-04</a> và <a href="../ORD-05.html">ORD-05</a> khi chưa có giá doanh thu; nhãn <code>has_price</code> vẫn là dấu hiệu duy nhất mà luồng tác nghiệp nhìn thấy.</span></li>
       <li><b>P. TQT mất quyền ghi, giữ quyền đọc.</b> Người lập đơn hàng vẫn cần nhìn thấy đơn nào đã có giá để biết hồ sơ đã khép hay chưa.<span class="then">Trên danh sách đơn hàng của P. TQT, nhãn “đã có giá doanh thu” vẫn hiện; bấm vào mở bảng áp giá ở chế độ chỉ đọc.</span></li>
       <li><b>Biên lợi nhuận đơn vẫn giới hạn người xem.</b> <code>order_margin</code> chỉ hiển thị cho Ban lãnh đạo và P. Kế toán, không mở thêm cho P. Đấu thầu dù họ là người lập.<span class="then">Người lập thấy đơn giá doanh thu và giá trị doanh thu; phần so với giá vốn vẫn thuộc phạm vi hẹp như quy định gốc.</span></li>
-      <li><b>Đổi mã là một lần, không giữ mã cũ song song.</b> Không tạo trang chuyển hướng <code>ORD-06.html</code>.<span class="then">Mã màn hình là từ vựng chung giữa bảng yêu cầu, đặc tả, backlog và mã nguồn; để hai mã cùng sống sẽ sinh ra hai cách gọi cho một thứ. Việc rà tham chiếu phải xong trước khi merge — xem <a href="../PL-C.html">PL-C</a>.</span></li>
+      <li><b>Đổi mã là một lần, không giữ mã cũ song song.</b> Không tạo trang chuyển hướng <code>ORD-06.html</code>.<span class="then">Mã màn hình là từ vựng chung giữa bảng yêu cầu, đặc tả, backlog và mã nguồn; để hai mã cùng sống sẽ sinh ra hai cách gọi cho một thứ. Việc rà tham chiếu phải xong trước khi merge — xem <a href="../PL-C.html#Q-39">PL-C · Q-39</a>.</span></li>
     </ol>
 
     <h4>Kết quả mong đợi</h4>
@@ -124,7 +124,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="../ORD-06.html">ORD-06 áp giá doanh thu đơn</a><a href="../ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="../BID-03.html">BID-03 áp giá &amp; thương thảo</a><a href="../PL-B.html">PL-B ma trận phân quyền</a><a href="../PL-C.html">PL-C vấn đề cần chốt</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+    <p class="links"><a href="../BID-06.html">ORD-06 áp giá doanh thu đơn</a><a href="../ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="../BID-03.html">BID-03 áp giá &amp; thương thảo</a><a href="../PL-B.html">PL-B ma trận phân quyền</a><a href="../PL-C.html#Q-39">PL-C · Q-39 phạm vi đổi mã ORD-06</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
   </div>
 </section>
 <div class="filefoot">

@@ -18,23 +18,25 @@
     <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
     <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
     <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <a href="PF-06.html"><i>PF-06</i>Bảng đơn giá chuẩn</a>
     <div class="rail-grp">Phòng Đấu thầu</div>
     <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
     <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
     <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
     <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
     <a class="on" href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
     <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
-    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
     <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
     <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
+    <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
@@ -90,6 +92,7 @@
     <h4>Mục tiêu</h4>
     <p>Sau khi lãnh đạo duyệt, đơn hàng phải được chia đúng địa chỉ thực hiện. Quy tắc phân luồng lấy từ ghi chú gốc: đá do nhà máy sản xuất thì về Nhà máy; vật tư mua ngoài thì về Phòng Cung ứng; đá nhỏ lẻ công trình mua để nhà máy sản xuất thì thuộc luồng làm việc của Nhà máy. Một đơn hàng có thể tách thành hai lệnh thực hiện.</p>
     <p><b>Nguồn cung ứng không còn được chọn ở màn hình này.</b> Người lập đơn đã ghi nguồn trên từng dòng ở <a href="ORD-03.html">ORD-03</a> — kho, nhà cung cấp, hoặc để trống nghĩa là Nhà máy sản xuất. ORD-04 đọc cột đó, gom dòng thành lệnh và sinh lệnh; việc còn lại ở đây là phê duyệt và theo dõi. Muốn đổi nguồn thì trả đơn về cho người lập sửa, vì đổi nguồn là đổi nội dung đơn chứ không phải một quyết định điều phối.</p>
+    <p><b>Đơn tới được đây là đơn nhà máy đã chấp thuận.</b> Phiếu yêu cầu sản xuất ở <a href="ORD-03.html">ORD-03</a> có khối <code>factory_ack</code>; đơn còn ở trạng thái “chưa phản hồi” hoặc “đề nghị điều chỉnh” thì không xuất hiện trong hàng chờ phân luồng (<a href="2026-09-15/YC-09.html">YC-09</a>). Và <b>lệnh sản xuất tách theo dòng <a href="ORD-11.html">Danh sách cắt đá</a></b>, không theo dòng tổng hợp của phiếu: nhà máy cắt theo viên, mỗi viên có kích thước, ký hiệu layout và bộ công đoạn gia công riêng.</p>
 
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:700px;margin:0 auto"><svg role="img" aria-label="Hình ORD-04.1 Một đơn hàng có thể sinh ra hai lệnh thực hiện chạy song song. Hai nhánh nét đứt là hai ranh giới phạm vi mà bảng yêu cầu nhấn mạnh: áp giá không chặn luồng, và vật tư phụ không đi qua đây."
@@ -241,6 +244,8 @@
           <tr><td>Đơn hàng gốc</td><td class="k">order_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Nhiều lệnh có thể trỏ về một đơn.</td></tr>
           <tr><td>Đơn vị thực hiện</td><td class="k">exec_unit</td><td>Tham chiếu</td><td class="c req">✱</td><td>Nhà máy cụ thể hoặc P. Cung ứng.</td></tr>
           <tr><td>Dòng thuộc lệnh</td><td class="k">line_refs[]</td><td>Danh sách</td><td class="c req">✱</td><td>Mỗi dòng đơn hàng chỉ thuộc đúng một lệnh.</td></tr>
+          <tr><td>Dòng cắt đá thuộc lệnh</td><td class="k">cutlist_refs[]</td><td>Danh sách</td><td class="c req">✱</td><td>Các <code>row_id</code> của <a href="ORD-11.html">Danh sách cắt đá</a> nằm trong lệnh này — đơn vị thực hiện của nhà máy là <b>viên đá</b>, không phải dòng tổng hợp. Sinh tự động: mọi dòng cắt đá trỏ về một dòng đơn hàng thì theo dòng đó vào cùng một lệnh.</td></tr>
+          <tr><td>Bộ công đoạn của lệnh</td><td class="k">gc_summary[]</td><td>Bảng</td><td class="c">—</td><td>Chỉ đọc. Tổng khối lượng theo từng mã <code>GC</code> của các dòng thuộc lệnh — là căn cứ nhà máy xếp máy và bố trí tổ. Cộng từ <code>processes[]</code>, không nhập tay.</td></tr>
           <tr><td>Ngày tiếp nhận</td><td class="k">accepted_at</td><td>Ngày</td><td class="c">—</td><td>Do đơn vị thực hiện xác nhận; chưa xác nhận thì lệnh nằm ở hàng chờ.</td></tr>
           <tr><td>Kế hoạch cấp</td><td class="k">plan[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi đợt: ngày dự kiến, khối lượng — chi tiết tại <a href="ORD-05.html">ORD-05</a>.</td></tr>
           <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>chờ tiếp nhận</code> · <code>đang thực hiện</code> · <code>cấp một phần</code> · <code>hoàn thành</code> · <code>tạm dừng</code>.</td></tr>
@@ -258,6 +263,9 @@
       <li>Người xem đơn hàng thấy được đơn đang nằm ở Nhà máy hay Cung ứng, đã tiếp nhận chưa.</li>
       <li>Đề xuất vật tư phụ không xuất hiện trong luồng này; thử tạo sẽ được dẫn sang <a href="ACC-01.html">ACC-01</a>.</li>
       <li>Việc áp giá doanh thu chạy song song không làm thay đổi trạng thái hay chặn tiến trình của lệnh thực hiện.</li>
+      <li>Đơn mà nhà máy chưa chấp thuận không xuất hiện trong hàng chờ phân luồng; màn hình nói rõ đang chờ phản hồi của phiếu nào.</li>
+      <li>Lệnh sản xuất mang theo danh sách từng viên đá kèm bộ công đoạn gia công, không chỉ một dòng khối lượng gộp.</li>
+      <li>Từ một lệnh sản xuất mở ra được đúng những dòng <a href="ORD-11.html">Danh sách cắt đá</a> thuộc lệnh đó, và ngược lại.</li>
     </ol>
 
     <h4>Mockup UI — Đơn hàng › Phân luồng thực hiện</h4>
@@ -308,7 +316,9 @@
       <li><b>Vật tư phụ không đi luồng này.</b> Màn hình phân luồng không cho tạo lệnh cho vật tư phụ, vật tư khác.<span class="then">Thử thêm sẽ được dẫn sang <a href="ACC-01.html">ACC-01</a> — đúng ranh giới mà yêu cầu gốc đặt ra.</span></li>
       <li><b>Đơn hoàn thành khi mọi lệnh hoàn thành.</b> Trạng thái đơn hàng là hàm của trạng thái các lệnh con.<span class="then">Một lệnh xong, một lệnh dở thì đơn ở trạng thái “cấp một phần”, không phải “hoàn thành”.</span></li>
       <li><b>Chưa tiếp nhận thì nhắc.</b> Lệnh chưa được đơn vị thực hiện xác nhận sau 2 ngày làm việc sẽ nhắc trưởng đơn vị đó.<span class="then">Lệnh chưa tiếp nhận vẫn hiện trong hàng chờ và tính vào chỉ số phản hồi của đơn vị.</span></li>
-      <li><b>Áp giá không chạm luồng này.</b> Trạng thái áp giá ở <a href="ORD-06.html">ORD-06</a> không phải điều kiện của bất kỳ bước nào tại đây.<span class="then">Kiểm chứng được bằng cách chạy hết vòng cấp hàng cho một đơn chưa áp giá.</span></li>
+      <li><b>Áp giá không chạm luồng này.</b> Trạng thái áp giá ở <a href="BID-06.html">BID-06</a> không phải điều kiện của bất kỳ bước nào tại đây.<span class="then">Kiểm chứng được bằng cách chạy hết vòng cấp hàng cho một đơn chưa áp giá.</span></li>
+      <li><b>Chỉ phân luồng đơn nhà máy đã chấp thuận.</b> Hàng chờ phân luồng chỉ nhận đơn có <code>factory_ack = Chấp thuận</code> ở <a href="ORD-03.html">ORD-03</a>.<span class="then">Khối “nhà máy phản hồi” của biểu mẫu <code>BM/QLTC/YCSX</code> là một bước thật, không phải một ô ghi chú (<a href="2026-09-15/YC-09.html">YC-09</a>). Sinh lệnh trước khi nhà máy trả lời là sinh lệnh cho một phiếu có thể sắp bị sửa.</span></li>
+      <li><b>Lệnh sản xuất tách theo dòng Danh sách cắt đá.</b> Đơn vị nhỏ nhất của lệnh là <code>row_id</code> của <a href="ORD-11.html">ORD-11</a>, không phải dòng tổng hợp của phiếu.<span class="then">Nhà máy cắt theo viên: mỗi dòng cắt đá có kích thước, sai số, ký hiệu layout và bộ công đoạn riêng. Gộp chúng lại thành một dòng khối lượng là bỏ mất đúng phần thông tin mà nhà máy cần để cắt. Nhóm dòng theo lệnh vẫn đi qua <code>order_line_id</code>: dòng cắt đá theo dòng đơn hàng, dòng đơn hàng theo nguồn cung ứng.</span><span class="then">Lệnh mang kèm <code>gc_summary[]</code> — tổng khối lượng theo từng mã công đoạn — để nhà máy xếp máy mà không phải tự cộng lại 197 dòng.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -321,6 +331,8 @@
           <tr><td>Thêm vật tư phụ</td><td>Nhóm vật tư là phụ trợ</td><td>“Vật tư phụ đi theo luồng đề xuất mua sắm. Mở ACC-01 để lập đề xuất.”</td></tr>
           <tr><td>Chốt phân luồng lần hai</td><td>Đã có lệnh thực hiện</td><td>“Đơn này đã phân luồng ngày {ngày}. Muốn đổi phải hủy lệnh chưa tiếp nhận trước.”</td></tr>
           <tr><td>Đơn vị thực hiện ngừng hoạt động</td><td>Đơn vị bị vô hiệu</td><td>“{tên đơn vị} đang ngừng hoạt động. Chọn đơn vị khác.”</td></tr>
+          <tr><td>Phân luồng khi nhà máy chưa phản hồi</td><td><code>factory_ack ≠ Chấp thuận</code></td><td>“Nhà máy chưa chấp thuận phiếu {số}. Chờ phản hồi trước khi sinh lệnh thực hiện.”</td></tr>
+          <tr><td>Dòng đơn hàng không có dòng cắt đá</td><td>Dòng <code>lines[]</code> không có <code>row_id</code> nào trỏ về</td><td>“Dòng {stt} chưa có dòng nào trong Danh sách cắt đá. Nhà máy không cắt được theo một dòng khối lượng gộp.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -337,16 +349,19 @@
           <tr><td>UAT-ORD04-4</td><td>LCU gửi 2 ngày làm việc chưa tiếp nhận</td><td>Chờ tới mốc</td><td>Trưởng P. Cung ứng nhận nhắc việc</td></tr>
           <tr><td>UAT-ORD04-5</td><td>Đơn chưa được áp giá doanh thu</td><td>Chạy hết vòng cấp hàng</td><td>Mọi bước chạy bình thường; không bước nào bị chặn vì thiếu giá</td></tr>
           <tr><td>UAT-ORD04-6</td><td>Đang ở màn hình phân luồng</td><td>Thử thêm dòng “vật tư phụ thi công”</td><td>Bị chặn và có liên kết dẫn sang ACC-01</td></tr>
+          <tr><td>UAT-ORD04-7</td><td>Đơn đã lãnh đạo duyệt, đã gửi nhà máy, <code>factory_ack</code> còn “Chưa phản hồi”</td><td>Mở hàng chờ phân luồng</td><td>Đơn không xuất hiện; mở đơn thì thông điệp nêu đang chờ nhà máy chấp thuận phiếu nào</td></tr>
+          <tr><td>UAT-ORD04-8</td><td>Đơn nhà máy đã chấp thuận; dòng 1a có 42 dòng Danh sách cắt đá, dòng 1b có 18 dòng</td><td>Bấm “Sinh lệnh thực hiện”</td><td>LSX nhận đúng 42 dòng cắt đá của dòng 1a kèm kích thước, layout và bộ công đoạn; LCU nhận 18 dòng của dòng 1b</td></tr>
+          <tr><td>UAT-ORD04-9</td><td>Tiếp UAT-8</td><td>Mở LSX-2026-088</td><td>Có bảng tổng khối lượng theo từng mã GC của riêng lệnh đó, chỉ đọc; mở ngược được về <a href="ORD-11.html">ORD-11</a></td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-03.html">ORD-03 trình đơn hàng</a><a href="ORD-05.html">ORD-05 cấp hàng</a><a href="ORD-06.html">ORD-06 áp giá</a><a href="ACC-01.html">ACC-01 đề xuất vật tư phụ</a><a href="ACC-04.html">ACC-04 xuất kho nhà máy</a></p>
+    <p class="links"><a href="ORD-03.html">ORD-03 trình đơn hàng</a><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ORD-05.html">ORD-05 cấp hàng</a><a href="BID-06.html">BID-06 áp giá</a><a href="ACC-01.html">ACC-01 đề xuất vật tư phụ</a><a href="ACC-04.html">ACC-04 xuất kho nhà máy</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 14 / 42</span><span><code>ORD-04.html</code></span>
+  <span>Đặc tả 16 / 47</span><span><code>ORD-04.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

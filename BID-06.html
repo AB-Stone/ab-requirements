@@ -2,7 +2,7 @@
 <html lang="vi"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ORD-06 Áp giá doanh thu đơn — ABSMS GĐ1</title>
+<title>BID-06 Áp giá doanh thu đơn — ABSMS GĐ1</title>
 <link rel="stylesheet" href="assets/spec.css">
 </head><body>
 <div class="app">
@@ -18,23 +18,25 @@
     <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
     <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
     <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <a href="PF-06.html"><i>PF-06</i>Bảng đơn giá chuẩn</a>
     <div class="rail-grp">Phòng Đấu thầu</div>
     <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
     <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
     <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <a class="on" href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
     <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
     <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
     <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
-    <a class="on" href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
     <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
     <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
+    <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
@@ -69,19 +71,19 @@
 </aside>
 <main class="main">
 <div class="pagehead">
-  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / P. TQT — Shopdrawing / <b>ORD-06</b></div><div class="sp"></div>
-  <div class="pnav"><a href="ORD-05.html">← ORD-05</a><a href="index.html">Mục lục</a><a href="ORD-07.html">ORD-07 →</a></div>
+  <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Phòng Đấu thầu / <b>BID-06</b></div><div class="sp"></div>
+  <div class="pnav"><a href="BID-05.html">← BID-05</a><a href="index.html">Mục lục</a><a href="ORD-01.html">ORD-01 →</a></div>
 </div>
-<section class="sheet solo" id="ORD-06">
+<section class="sheet solo" id="BID-06">
   <header class="tb">
-    <div class="tb-id">ORD-06</div>
+    <div class="tb-id">BID-06</div>
     <div class="tb-main">
       <h3>Áp giá doanh thu cho đơn hàng</h3>
       <p>“P. Đấu thầu áp giá doanh thu cho từng đơn hàng trình LĐ duyệt. Ghi chú: bước này không nằm trong luồng công việc, không cản trở / ảnh hưởng các bước công việc đang thực hiện.”</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu</dd></div>
         <div><dt>Phê duyệt</dt><dd>Ban lãnh đạo</dd></div>
-        <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · P. Kế toán</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · P. Kế toán · P. TQT <em>(chỉ đọc)</em></dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 7.4A</dd></div>
       </dl>
     </div>
@@ -91,7 +93,7 @@
     <p>Đây là mắt xích cuối cùng để tính được lãi lỗ dự án: đơn hàng cho biết <em>chi phí</em> đã bỏ ra, bảng áp giá cho biết <em>doanh thu</em> tương ứng. Ràng buộc thiết kế quan trọng nhất nằm ở ghi chú gốc — luồng này chạy song song và <b>không được chặn</b> các bước sản xuất, cấp hàng.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1244px;margin:0 auto"><svg role="img" aria-label="Hình ORD-06.1 Hai luồng chạy độc lập, chỉ gặp nhau ở báo cáo lãi lỗ. Nhãn “đã có giá doanh thu” là dấu hiệu duy nhất mà luồng tác nghiệp nhìn thấy từ luồng áp giá."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1244px;margin:0 auto"><svg role="img" aria-label="Hình BID-06.1 Hai luồng chạy độc lập, chỉ gặp nhau ở báo cáo lãi lỗ. Nhãn “đã có giá doanh thu” là dấu hiệu duy nhất mà luồng tác nghiệp nhìn thấy từ luồng áp giá."
  viewBox="0.00 0.00 1244.00 277.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 263.96)">
 <title>G</title>
@@ -220,7 +222,7 @@
 <text xml:space="preserve" text-anchor="middle" x="1028.41" y="-140.8" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">doanh thu ghi nhận</text>
 </g>
 </g>
-</svg></div><figcaption><b>Hình ORD-06.1</b> Hai luồng chạy độc lập, chỉ gặp nhau ở báo cáo lãi lỗ. Nhãn “đã có giá doanh thu” là dấu hiệu duy nhất mà luồng tác nghiệp nhìn thấy từ luồng áp giá.</figcaption></figure>
+</svg></div><figcaption><b>Hình BID-06.1</b> Hai luồng chạy độc lập, chỉ gặp nhau ở báo cáo lãi lỗ. Nhãn “đã có giá doanh thu” là dấu hiệu duy nhất mà luồng tác nghiệp nhìn thấy từ luồng áp giá.</figcaption></figure>
 
     <h4>Tham số</h4>
     <div class="tw">
@@ -303,6 +305,7 @@
       <li><b>Biên lợi nhuận có kiểm soát quyền.</b> Cột giá vốn và biên lợi nhuận chỉ hiện với Ban lãnh đạo và P. Kế toán.<span class="then">Nhân viên P. TQT mở cùng màn hình sẽ không thấy khối này — đúng cột quyền truy cập của yêu cầu gốc.</span></li>
       <li><b>Giá vốn theo thực tế nếu có.</b> Nếu đơn đã cấp hàng thì giá vốn lấy theo giá xuất kho thực tế; chưa cấp thì lấy giá vốn dự toán từ <a href="BID-03.html">BID-03</a>.<span class="then">Nguồn của con số luôn hiển thị bên cạnh để người duyệt biết đang so với gì.</span></li>
       <li><b>Duyệt giá là điểm ghi nhận doanh thu.</b> Bảng áp giá được duyệt thì doanh thu của đơn vào sổ và vào báo cáo lãi lỗ.<span class="then">Trước đó, đơn hàng chỉ đóng góp chi phí — nên dự án chưa áp giá sẽ hiện lỗ giả, và hệ thống cảnh báo điều này ở <a href="RPT-03.html">RPT-03</a>.</span></li>
+      <li><b>P. Đấu thầu ghi, P. TQT đọc.</b> Bảng áp giá do P. Đấu thầu lập và sửa; P. TQT mở được nhưng mọi ô đều khóa.<span class="then">Người lập đơn hàng vẫn cần nhìn thấy đơn nào đã có giá để biết hồ sơ đã khép hay chưa — nhãn “đã có giá doanh thu” trên danh sách đơn mở thẳng sang bảng áp giá ở chế độ chỉ đọc. Theo <a href="2026-09-15/YC-01.html">YC-01</a>; chủ sở hữu thao tác khai ở <a href="PL-B.html">PL-B</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -323,22 +326,23 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-ORD06-1</td><td>Có 14 đơn đã duyệt chưa áp giá</td><td>Mở bộ lọc “chưa có giá”</td><td>Hiện đúng 14 đơn; đơn nháp và đơn bị từ chối không có mặt</td></tr>
-          <tr><td>UAT-ORD06-2</td><td>Đơn DH-2026-155 đang cấp hàng đợt 2/3</td><td>Áp giá và trình duyệt</td><td>Trạng thái cấp hàng không đổi; đợt 3 vẫn lập được bình thường</td></tr>
-          <tr><td>UAT-ORD06-3</td><td>Đơn giá BOQ 4.100.000, nhập 3.750.000</td><td>Rời khỏi ô nhập</td><td>Cột lệch hiện −8,5%; ô lý do bật lên và bắt buộc</td></tr>
-          <tr><td>UAT-ORD06-4</td><td>Đăng nhập bằng tài khoản nhân viên P. TQT</td><td>Mở màn hình áp giá</td><td>Không thấy cột giá vốn và biên lợi nhuận</td></tr>
-          <tr><td>UAT-ORD06-5</td><td>Bảng áp giá được Ban lãnh đạo duyệt</td><td>Mở danh sách đơn hàng</td><td>Đơn hiện nhãn “đã có giá doanh thu”; doanh thu vào báo cáo lãi lỗ</td></tr>
-          <tr><td>UAT-ORD06-6</td><td>Dự án có đơn hàng nhưng chưa đơn nào áp giá</td><td>Mở báo cáo lãi lỗ dự án</td><td>Doanh thu bằng 0 kèm cảnh báo “chưa áp giá đơn hàng”, không hiển thị lỗ như số thật</td></tr>
+          <tr><td>UAT-BID06-1</td><td>Có 14 đơn đã duyệt chưa áp giá</td><td>Mở bộ lọc “chưa có giá”</td><td>Hiện đúng 14 đơn; đơn nháp và đơn bị từ chối không có mặt</td></tr>
+          <tr><td>UAT-BID06-2</td><td>Đơn DH-2026-155 đang cấp hàng đợt 2/3</td><td>Áp giá và trình duyệt</td><td>Trạng thái cấp hàng không đổi; đợt 3 vẫn lập được bình thường</td></tr>
+          <tr><td>UAT-BID06-3</td><td>Đơn giá BOQ 4.100.000, nhập 3.750.000</td><td>Rời khỏi ô nhập</td><td>Cột lệch hiện −8,5%; ô lý do bật lên và bắt buộc</td></tr>
+          <tr><td>UAT-BID06-4</td><td>Đăng nhập bằng tài khoản nhân viên P. TQT</td><td>Mở màn hình áp giá</td><td>Không thấy cột giá vốn và biên lợi nhuận</td></tr>
+          <tr><td>UAT-BID06-5</td><td>Bảng áp giá được Ban lãnh đạo duyệt</td><td>Mở danh sách đơn hàng</td><td>Đơn hiện nhãn “đã có giá doanh thu”; doanh thu vào báo cáo lãi lỗ</td></tr>
+          <tr><td>UAT-BID06-6</td><td>Dự án có đơn hàng nhưng chưa đơn nào áp giá</td><td>Mở báo cáo lãi lỗ dự án</td><td>Doanh thu bằng 0 kèm cảnh báo “chưa áp giá đơn hàng”, không hiển thị lỗ như số thật</td></tr>
+          <tr><td>UAT-BID06-7</td><td>Đăng nhập bằng tài khoản P. TQT, đơn đã có bảng áp giá</td><td>Bấm nhãn “đã có giá doanh thu” trên danh sách đơn</td><td>Bảng áp giá mở ở chế độ chỉ đọc; không có nút lưu, không có nút trình duyệt giá</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-03.html">ORD-03 đơn hàng</a><a href="BID-05.html">BID-05 đơn giá BOQ hợp đồng</a><a href="ACC-09.html">ACC-09 giá thành &amp; lãi lỗ</a><a href="RPT-03.html">RPT-03 báo cáo lãi lỗ</a></p>
+    <p class="links"><a href="ORD-03.html">ORD-03 đơn hàng</a><a href="BID-03.html">BID-03 áp giá &amp; thương thảo</a><a href="BID-05.html">BID-05 đơn giá BOQ hợp đồng</a><a href="ACC-09.html">ACC-09 giá thành &amp; lãi lỗ</a><a href="RPT-03.html">RPT-03 báo cáo lãi lỗ</a><a href="PL-B.html">PL-B ma trận phân quyền</a><a href="2026-09-15/YC-01.html">YC-01 chuyển sang nhánh Đấu thầu</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 16 / 42</span><span><code>ORD-06.html</code></span>
+  <span>Đặc tả 12 / 47</span><span><code>BID-06.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

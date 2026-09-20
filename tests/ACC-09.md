@@ -39,4 +39,4 @@
 
 - BR-01…BR-13 đều có kịch bản nhóm B; bút toán 154 và ranh giới chi phí chung (Q-23) kiểm ở UAT-ACC09-17, -19.
 - 7 dòng bảng *Kiểm tra dữ liệu & thông điệp* kiểm ở UAT-ACC09-13, -23, -8, -14, -22, -7 (chốt kỳ vượt thứ tự), và -21 (kỳ đã kết chuyển).
-- Liên màn hình đầu vào: **PRJ-02** (sản lượng), **PRJ-03** (nhân công), **PRJ-04** (vật tư), **ACC-06** (khấu hao), **ACC-08** (phân bổ chung), **ACC-03** (mua không qua kho), **ORD-06 / ORD-09** (doanh thu). Đầu ra: **RPT-03** (báo cáo lãi lỗ), **BID-03** (đối chiếu biên dự thầu).
+- Liên màn hình đầu vào: **PRJ-02** (sản lượng), **PRJ-03** (nhân công), **PRJ-04** (vật tư), **ACC-06** (khấu hao), **ACC-08** (phân bổ chung), **ACC-03** (mua không qua kho), **BID-06 / ORD-09** (doanh thu). Đầu ra: **RPT-03** (báo cáo lãi lỗ), **BID-03** (đối chiếu biên dự thầu).

@@ -18,23 +18,25 @@
     <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
     <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
     <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <a href="PF-06.html"><i>PF-06</i>Bảng đơn giá chuẩn</a>
     <div class="rail-grp">Phòng Đấu thầu</div>
     <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
     <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
     <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
     <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
     <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
     <a class="on" href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
-    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
     <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
     <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
+    <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
@@ -70,7 +72,7 @@
 <main class="main">
 <div class="pagehead">
   <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / P. TQT — Shopdrawing / <b>ORD-05</b></div><div class="sp"></div>
-  <div class="pnav"><a href="ORD-04.html">← ORD-04</a><a href="index.html">Mục lục</a><a href="ORD-06.html">ORD-06 →</a></div>
+  <div class="pnav"><a href="ORD-04.html">← ORD-04</a><a href="index.html">Mục lục</a><a href="ORD-07.html">ORD-07 →</a></div>
 </div>
 <section class="sheet solo" id="ORD-05">
   <header class="tb">
@@ -90,6 +92,7 @@
     <h4>Mục tiêu</h4>
     <p>Một đơn hàng hiếm khi giao một lần. Đặc tả tách rõ ba lớp số liệu: <em>kế hoạch cấp</em> (dự kiến), <em>đã cấp</em> (thực tế theo phiếu xuất), và <em>còn lại</em>. Ba lớp này là nguồn của cột tiến độ đơn hàng và của báo cáo sản lượng cấp.</p>
     <p>Ngày cần hàng và nơi nhận nằm ở <em>từng dòng đơn hàng</em> (<a href="ORD-03.html">ORD-03</a>), không còn ở đầu đơn. Kế hoạch cấp vì vậy không chia đợt cho cả đơn nữa: hệ thống gom dòng theo cặp <b>(ngày cần hàng · nơi nhận)</b> và mỗi cặp là một đợt dự kiến. Một đơn có ba dòng về ba nơi vào ba ngày thì mở sẵn ba đợt, người lập kế hoạch chỉ điều chỉnh thay vì gõ từ đầu.</p>
+    <p>Dưới dòng đơn hàng còn một lớp nữa: <b>khối lượng đã cấp đối chiếu được tới từng dòng <a href="ORD-11.html">Danh sách cắt đá</a></b> (<a href="2026-09-15/YC-09.html">YC-09</a>). Hàng ra khỏi nhà máy là những viên đá có ký hiệu layout cụ thể, và biên bản giao hàng liệt kê đúng những ký hiệu đó. Nhờ vậy câu hỏi “viên T2 của diện tường 02 đã về công trường chưa” trả lời được bằng số liệu, thay vì phải mở lại phiếu xuất và đếm tay.</p>
 
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:539px;margin:0 auto"><svg role="img" aria-label="Hình ORD-05.1 Vòng lặp cấp hàng chỉ đóng khi lũy kế đã cấp bằng khối lượng đơn. Nhánh trả hàng lỗi đưa phiếu xuất quay về nơi cấp để chỉnh sửa rồi duyệt lại — đúng mô tả tại yêu cầu KT·3."
@@ -272,6 +275,7 @@
           <tr><td>Khối lượng kế hoạch</td><td class="k">qty_plan</td><td>Số</td><td class="c req">✱</td><td>Tổng các đợt của một dòng phải bằng khối lượng <em>dòng</em> đó, không phải của cả đơn.</td></tr>
           <tr><td>Khối lượng đã cấp</td><td class="k">qty_issued</td><td>Số</td><td class="c">—</td><td>Lấy từ phiếu xuất kho đã duyệt, không nhập tay.</td></tr>
           <tr><td>Khối lượng đã nhận</td><td class="k">qty_received</td><td>Số</td><td class="c">—</td><td>Do dự án xác nhận; chênh với đã cấp thì sinh sai lệch.</td></tr>
+          <tr><td>Dòng cắt đá của đợt</td><td class="k">cutlist_rows[]</td><td>Bảng</td><td class="c">—</td><td>Từng <code>row_id</code> của <a href="ORD-11.html">Danh sách cắt đá</a> kèm số lượng cấp trong đợt. Nạp sẵn từ lệnh thực hiện (<a href="ORD-04.html">ORD-04</a>); là nội dung in trên biên bản giao hàng theo ký hiệu layout.</td></tr>
           <tr><td>Phiếu xuất kho</td><td class="k">issue_note_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một đợt gắn một phiếu xuất; in kèm biên bản giao hàng.</td></tr>
           <tr><td>Sai lệch</td><td class="k">discrepancy</td><td>Bảng</td><td class="c">—</td><td>Loại (thiếu / vỡ / sai quy cách), khối lượng, ảnh chụp, hướng xử lý.</td></tr>
           <tr><td>Người xác nhận nhận hàng</td><td class="k">receiver</td><td>Tham chiếu</td><td class="c">—</td><td>Thuộc dự án; ký điện tử theo <a href="PF-04.html">PF-04</a>.</td></tr>
@@ -289,6 +293,9 @@
       <li>Xác nhận nhận hàng trên ứng dụng di động thay cho ký tay trên biên bản giấy.</li>
       <li>Sai lệch khi kiểm nhận được ghi nhận kèm ảnh và tự sinh việc xử lý cho nơi cấp.</li>
       <li>Kế hoạch cấp so với thực tế cấp xuất được thành báo cáo tiến độ cấp hàng theo dự án.</li>
+      <li>Mỗi đợt cấp tra được tới từng dòng <a href="ORD-11.html">Danh sách cắt đá</a>: viên nào, ký hiệu layout nào, đã cấp bao nhiêu trên tổng bao nhiêu.</li>
+      <li>Mở một dòng cắt đá là thấy ngay nó đã được cấp bao nhiêu và còn lại bao nhiêu, không phải cộng ngược từ các phiếu xuất.</li>
+      <li>Biên bản giao hàng in theo ký hiệu layout, nên người nhận ở công trường đối chiếu được với bản vẽ ngay tại chỗ.</li>
     </ol>
 
     <h4>Mockup UI — Đơn hàng › Cấp hàng</h4>
@@ -350,6 +357,8 @@
       <li><b>Ảnh bắt buộc khi có sai lệch.</b> Mọi bản ghi sai lệch cần ít nhất một ảnh kiểm nhận.<span class="then">Ảnh chụp từ ứng dụng tự gắn ngày giờ và vị trí, không sửa được.</span></li>
       <li><b>Trễ cấp tính theo đợt.</b> Chênh giữa ngày thực tế và ngày dự kiến của từng đợt là số ngày trễ.<span class="then">Trễ tổng hợp được thành báo cáo tiến độ cấp hàng theo dự án và theo đơn vị thực hiện.</span></li>
       <li><b>Đợt trễ hơn ngày cần hàng thì cảnh báo ngay khi lập.</b> Đặt <code>plan_date</code> sau <code>required_date</code> của dòng không bị chặn nhưng phải hiện cảnh báo.<span class="then">Người lập kế hoạch biết ngay mình đang hứa muộn hơn cam kết, thay vì phát hiện lúc dự án gọi hỏi.</span></li>
+      <li><b>Khối lượng đã cấp đối chiếu tới từng dòng Danh sách cắt đá.</b> Mỗi đợt cấp ghi số lượng theo <code>row_id</code> của <a href="ORD-11.html">ORD-11</a>, không chỉ theo dòng đơn hàng.<span class="then">Nhà máy cắt theo viên và giao theo viên; một dòng đơn hàng 1.100 m² thực ra là mấy chục quy cách khác nhau. Cộng gộp ở cấp dòng đơn thì “còn lại 440 m²” không nói được còn thiếu <em>viên nào</em>, và công trường không biết diện tường nào chưa ốp được.</span><span class="then">Tổng số lượng đã cấp của một dòng cắt đá không vượt được tổng số lượng của dòng đó; vượt thì phải sửa Danh sách cắt đá qua <a href="ORD-07.html">ORD-07</a>, không phải cấp thêm rồi giải trình sau.</span></li>
+      <li><b>Biên bản giao hàng in theo ký hiệu layout.</b> Danh sách hàng của một đợt liệt kê ký hiệu layout và số bản vẽ của từng dòng cắt đá.<span class="then">Đó là mã khớp giữa bản vẽ và viên đá thật ngoài công trường (<a href="ORD-11.html">ORD-11</a>, cột 19). Người nhận đối chiếu được ngay tại chỗ thay vì ký nhận một con số mét vuông rồi phát hiện thiếu viên lúc ốp.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -362,6 +371,8 @@
           <tr><td>Xác nhận nhận nhiều hơn đã cấp</td><td><code>qty_received &gt; qty_issued</code></td><td>“Số nhận lớn hơn số cấp trên phiếu {mã}. Kiểm tra lại hoặc lập phiếu xuất bổ sung.”</td></tr>
           <tr><td>Sai lệch không chọn hướng xử lý</td><td><code>surplus_action</code> rỗng</td><td>“Chọn hướng xử lý phần sai lệch: trả hàng, cấp bù, hay chấp nhận điều chỉnh.”</td></tr>
           <tr><td>Ghi sai lệch không có ảnh</td><td>Ảnh rỗng</td><td>“Đính kèm ít nhất một ảnh kiểm nhận làm bằng chứng.”</td></tr>
+          <tr><td>Cấp vượt số lượng của một dòng cắt đá</td><td>Σ đã cấp của <code>row_id</code> &gt; <code>qty_total</code> của dòng đó</td><td>“Dòng {stt} của Danh sách cắt đá chỉ còn {số} viên chưa cấp. Sửa Danh sách cắt đá qua ORD-07 nếu cần cấp thêm.”</td></tr>
+          <tr><td>Đợt cấp không ghi dòng cắt đá</td><td><code>cutlist_rows[]</code> rỗng khi lập phiếu xuất</td><td>“Chọn những dòng Danh sách cắt đá thuộc đợt này — biên bản giao hàng in theo ký hiệu layout.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -381,16 +392,19 @@
           <tr><td>UAT-ORD05-5</td><td>Sai lệch chọn “trả hàng”</td><td>Xác nhận</td><td>Phiếu xuất về nơi cấp ở trạng thái sửa được; phải duyệt lại từ đầu</td></tr>
           <tr><td>UAT-ORD05-6</td><td>Lũy kế đã nhận đạt 1.100 m²</td><td>Dự án xác nhận đợt cuối</td><td>Lệnh và đơn hàng tự chuyển “hoàn thành”, không cần thao tác khác</td></tr>
           <tr><td>UAT-ORD05-7</td><td>Kỹ sư đang ở công trường, có mạng</td><td>Xác nhận nhận hàng trên điện thoại</td><td>Ký điện tử thành công; phiếu in ra hiện dấu ký thay chữ ký tay</td></tr>
+          <tr><td>UAT-ORD05-8</td><td>Dòng 1a gồm 42 dòng Danh sách cắt đá; đợt 1 cấp 400 m²</td><td>Lập phiếu xuất đợt 1</td><td>Phiếu liệt kê đúng những dòng cắt đá thuộc đợt kèm ký hiệu layout và số bản vẽ; biên bản giao hàng in theo danh sách đó</td></tr>
+          <tr><td>UAT-ORD05-9</td><td>Tiếp UAT-8, dòng cắt đá D.1.1 có 864 viên, đã cấp 400</td><td>Mở dòng D.1.1 ở <a href="ORD-11.html">ORD-11</a></td><td>Hiện “đã cấp 400 / 864 viên”; không phải cộng ngược từ các phiếu xuất</td></tr>
+          <tr><td>UAT-ORD05-10</td><td>Dòng cắt đá D.1.2 có 240 viên, đã cấp 240</td><td>Lập phiếu xuất thêm 20 viên của D.1.2</td><td>Bị chặn kèm thông điệp dẫn sang <a href="ORD-07.html">ORD-07</a> để sửa Danh sách cắt đá</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-04.html">ORD-04 lệnh thực hiện</a><a href="ACC-04.html">ACC-04 phiếu xuất kho</a><a href="PRJ-04.html">PRJ-04 nhập kho dự án</a><a href="ORD-07.html">ORD-07 xử lý hàng đã sản xuất khi giảm đơn</a></p>
+    <p class="links"><a href="ORD-04.html">ORD-04 lệnh thực hiện</a><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ACC-04.html">ACC-04 phiếu xuất kho</a><a href="PRJ-04.html">PRJ-04 nhập kho dự án</a><a href="ORD-07.html">ORD-07 xử lý hàng đã sản xuất khi giảm đơn</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 15 / 42</span><span><code>ORD-05.html</code></span>
+  <span>Đặc tả 17 / 47</span><span><code>ORD-05.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

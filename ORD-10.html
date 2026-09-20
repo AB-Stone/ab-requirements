@@ -18,23 +18,25 @@
     <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
     <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
     <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <a href="PF-06.html"><i>PF-06</i>Bảng đơn giá chuẩn</a>
     <div class="rail-grp">Phòng Đấu thầu</div>
     <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
     <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
     <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
     <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
     <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
     <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
-    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
     <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
     <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a class="on" href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
+    <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
@@ -70,7 +72,7 @@
 <main class="main">
 <div class="pagehead">
   <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / P. TQT — Shopdrawing / <b>ORD-10</b></div><div class="sp"></div>
-  <div class="pnav"><a href="ORD-09.html">← ORD-09</a><a href="index.html">Mục lục</a><a href="PRJ-01.html">PRJ-01 →</a></div>
+  <div class="pnav"><a href="ORD-09.html">← ORD-09</a><a href="index.html">Mục lục</a><a href="ORD-11.html">ORD-11 →</a></div>
 </div>
 <section class="sheet solo" id="ORD-10">
   <header class="tb">
@@ -95,7 +97,7 @@
       <table>
         <thead><tr><th style="width:180px">Khía cạnh</th><th>ORD-09 · Thanh toán đợt</th><th>ORD-10 · Quyết toán hợp đồng</th></tr></thead>
         <tbody>
-          <tr><td>Bản vẽ</td><td>Sơ họa hoàn công, chỉnh nhẹ từ Shopdrawing</td><td><b>Bản vẽ hoàn công đầy đủ</b>, bắt buộc</td></tr>
+          <tr><td>Bản vẽ</td><td>Sơ họa hoàn công, chỉnh nhẹ từ đợt trình shopdrawing đã được chấp thuận</td><td><b>Bản vẽ hoàn công đầy đủ</b>, bắt buộc — dựng từ các đợt trình đã được chấp thuận của mọi hạng mục</td></tr>
           <tr><td>Phạm vi khối lượng</td><td>Khối lượng của một đợt</td><td>Lũy kế toàn hợp đồng, trừ các đợt đã thanh toán</td></tr>
           <tr><td>Chứng từ kèm theo</td><td>Bảng khối lượng, biên bản nghiệm thu đợt</td><td>Hồ sơ quyết toán, biên bản báo cáo tiến độ, biên bản nghiệm thu hoàn thành đưa vào sử dụng</td></tr>
           <tr><td>Xử lý chênh lệch</td><td>Cảnh báo nhẹ trên hồ sơ, giải trình, treo sang quyết toán</td><td><b>Phát cảnh báo tới Ban lãnh đạo, P. TQT và dự án liên quan</b>; giải trình; lưu vết thiệt hại và khoản phạt (nếu có)</td></tr>
@@ -258,7 +260,8 @@
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Bản vẽ hoàn công</td><td class="k">asbuilt_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Bắt buộc, gồm DWG và PDF. Không có thì không trình duyệt được.</td></tr>
+          <tr><td>Bản vẽ hoàn công</td><td class="k">asbuilt_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Bắt buộc, gồm DWG và PDF. Không có thì không trình duyệt được. Dựng từ các <b>đợt trình shopdrawing đã được CĐT chấp thuận</b> của từng hạng mục (<a href="ORD-02.html">ORD-02</a> cấp 3, <a href="2026-09-15/YC-08.html">YC-08</a>) cộng với điều chỉnh thực tế thi công — không dựng từ bản vẽ đơn hàng.</td></tr>
+          <tr><td>Đợt trình nguồn của bản vẽ hoàn công</td><td class="k">asbuilt_src_batches[]</td><td>Tham chiếu</td><td class="c">—</td><td>Danh sách đợt trình đã chấp thuận mà bộ bản vẽ hoàn công dựa trên, gom theo hạng mục. Hệ thống đối chiếu với hồ sơ Shopdrawing của dự án và nêu hạng mục nào chưa có đợt trình nào được chấp thuận — đó là phần bản vẽ hoàn công đang thiếu căn cứ.</td></tr>
           <tr><td>Biên bản nghiệm thu hoàn thành</td><td class="k">handover_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Biên bản nghiệm thu hoàn thành đưa vào sử dụng và biên bản báo cáo tiến độ.</td></tr>
           <tr><td>Lũy kế thu từ CĐT</td><td class="k">total_claimed</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn các hồ sơ <a href="ORD-09.html">ORD-09</a> đã thanh toán cộng hồ sơ quyết toán này. Chỉ đọc.</td></tr>
           <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ giao khoán nhân công đã duyệt (<a href="PRJ-03.html">PRJ-03</a>). Chỉ đọc.</td></tr>
@@ -273,6 +276,7 @@
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
       <li>Không trình duyệt được hồ sơ quyết toán khi thiếu bản vẽ hoàn công hoặc biên bản nghiệm thu hoàn thành.</li>
+      <li>Bản vẽ hoàn công tra ngược được về các đợt trình shopdrawing đã được chấp thuận đã sinh ra nó; hạng mục thiếu căn cứ hiện thành danh sách, không phải đi tìm bằng mắt.</li>
       <li>Hồ sơ quyết toán tự nạp phần chênh lệch còn treo từ các đợt thanh toán trước, không phải nhớ thủ công.</li>
       <li>Hai con số lũy kế — thu từ chủ đầu tư và trả tổ đội — hiển thị cạnh nhau ngay đầu hồ sơ.</li>
       <li>Lũy kế thu nhỏ hơn lũy kế trả thì hệ thống phát cảnh báo tới Ban lãnh đạo, P. TQT và dự án liên quan, kèm giá trị thiệt hại và nguyên nhân.</li>
@@ -333,6 +337,7 @@
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Bản vẽ hoàn công là điều kiện cứng.</b> Thiếu bản vẽ hoàn công hoặc biên bản nghiệm thu hoàn thành đưa vào sử dụng thì không trình duyệt được.<span class="then">Khác hẳn <a href="ORD-09.html">ORD-09</a>, nơi chỉ cần bản sơ họa.</span></li>
+      <li><b>Bản vẽ hoàn công dẫn xuất từ đợt trình đã được chấp thuận.</b> Bộ bản vẽ hoàn công ghi rõ nó dựng từ những đợt trình nào ở <a href="ORD-02.html">ORD-02</a>; hạng mục chưa có đợt trình nào được CĐT chấp thuận thì hiện trong danh sách thiếu căn cứ.<span class="then">Hồ sơ shopdrawing tách ba cấp nên “bản vẽ đã duyệt” luôn là một <em>đợt trình</em> cụ thể của một hạng mục. Đối chiếu ở mức đó mới phát hiện được hạng mục đã thi công nhưng shop chưa bao giờ được ký — đúng phần rủi ro mà quyết toán phải chốt lại.</span></li>
       <li><b>Tự gom chênh lệch còn treo.</b> Hồ sơ quyết toán nạp sẵn phần chênh lệch từ mọi đợt thanh toán trước.<span class="then">Người lập không phải rà lại từng đợt; danh sách hiện rõ chênh đến từ đợt nào, hạng mục nào.</span></li>
       <li><b>Cảnh báo có địa chỉ.</b> Lũy kế thu từ chủ đầu tư nhỏ hơn lũy kế trả tổ đội thì phát cảnh báo tới Ban lãnh đạo, P. TQT và dự án liên quan.<span class="then">Đây là cảnh báo bắt buộc, không tắt được, và gửi ngay khi phát hiện chứ không chờ hồ sơ được duyệt.</span></li>
       <li><b>Thiệt hại quy ra tiền.</b> Phần chênh khối lượng quy đổi theo đơn giá hợp đồng thành giá trị thiệt hại.<span class="then">Có con số cụ thể thì mới đánh giá được mức độ và mới đối chiếu được với lãi lỗ dự án.</span></li>
@@ -348,6 +353,7 @@
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
           <tr><td>Thiếu bản vẽ hoàn công</td><td><code>asbuilt_files</code> rỗng</td><td>“Hồ sơ quyết toán cần bản vẽ hoàn công đầy đủ (DWG và PDF).”</td></tr>
+          <tr><td>Hạng mục chưa có đợt trình được chấp thuận</td><td>Hạng mục có khối lượng quyết toán nhưng không có đợt trình <code>approved</code> nào</td><td>“Hạng mục {tên} có khối lượng quyết toán nhưng chưa có đợt trình shopdrawing nào được chủ đầu tư chấp thuận. Xác nhận nếu bản vẽ được ký ngoài hệ thống.” <em>(cảnh báo)</em></td></tr>
           <tr><td>Thiếu biên bản nghiệm thu hoàn thành</td><td><code>handover_files</code> rỗng</td><td>“Cần biên bản nghiệm thu hoàn thành đưa vào sử dụng trước khi trình quyết toán.”</td></tr>
           <tr><td>Lũy kế thu nhỏ hơn lũy kế trả</td><td><code>total_claimed &lt; total_paid_crew</code></td><td>“Thiệt hại {giá trị}: đã trả tổ đội {giá trị} nhưng chỉ thu được {giá trị}. Cảnh báo đã gửi Ban lãnh đạo, P. TQT và dự án.”</td></tr>
           <tr><td>Có thiệt hại nhưng thiếu nguyên nhân</td><td><code>loss_amount &gt; 0</code>, lý do rỗng</td><td>“Nhập nguyên nhân — nội dung này hiển thị nguyên văn trong cảnh báo gửi Ban lãnh đạo.”</td></tr>
@@ -375,11 +381,11 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-09.html">ORD-09 thanh toán đợt</a><a href="ORD-01.html">ORD-01 khung theo dõi hồ sơ</a><a href="ORD-08.html">ORD-08 vật tư tồn cuối dự án</a><a href="PRJ-03.html">PRJ-03 lũy kế trả tổ đội</a><a href="PF-04.html">PF-04 cảnh báo đa bên</a><a href="RPT-02.html">RPT-02 báo cáo quyết toán &amp; đánh giá</a></p>
+    <p class="links"><a href="ORD-09.html">ORD-09 thanh toán đợt</a><a href="ORD-01.html">ORD-01 khung theo dõi hồ sơ</a><a href="ORD-08.html">ORD-08 vật tư tồn cuối dự án</a><a href="PRJ-03.html">PRJ-03 lũy kế trả tổ đội</a><a href="PF-04.html">PF-04 cảnh báo đa bên</a><a href="ORD-02.html">ORD-02 hồ sơ Shopdrawing ba cấp</a><a href="RPT-02.html">RPT-02 báo cáo quyết toán &amp; đánh giá</a><a href="2026-09-15/YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 20 / 42</span><span><code>ORD-10.html</code></span>
+  <span>Đặc tả 21 / 47</span><span><code>ORD-10.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

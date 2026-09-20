@@ -47,7 +47,7 @@
       <dl class="tb-meta">
         <div><dt>Loại thay đổi</dt><dd>Sửa quy tắc mã hóa + thêm chức năng</dd></div>
         <div><dt>Trang tác động</dt><dd><a href="../BID-01.html">BID-01</a> · <a href="../PF-01.html">PF-01</a> · <a href="../PL-A.html">PL-A</a></dd></div>
-        <div><dt>Giai đoạn gộp</dt><dd>Chỉ khi gói còn Nháp hoặc Đang thẩm định</dd></div>
+        <div><dt>Giai đoạn gộp</dt><dd>Chỉ khi gói chưa ký hợp đồng</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>Sheet 15/09/2026 · dòng 4</dd></div>
       </dl>
     </div>
@@ -67,8 +67,8 @@
       </table>
     </div>
     <div class="note">
-      <b>Mâu thuẫn phải giải trước</b>
-      <p style="margin:0"><a href="../BID-01.html">BID-01</a> đang yêu cầu “nhập BOQ từ Excel giữ nguyên thứ tự dòng và <b>mã hạng mục gốc của bên mời thầu</b> để đối chiếu về sau”, và <a href="../BID-02.html">BID-02</a> dùng chính mã đó trên bảng đối chiếu từng dòng. Nếu mã HM chuyển sang tự sinh thì mã gốc mất chỗ đứng. Cách giải: <b>hai cột song song</b> — cột <em>Mã HM</em> do hệ thống sinh và khóa, cột <em>Mã HM của CĐT</em> để nhập và nhập khẩu từ Excel.</p>
+      <b>Mã hạng mục của bên mời thầu thường để trống</b>
+      <p style="margin:0">Thoạt nhìn tưởng là mâu thuẫn: <a href="../BID-01.html">BID-01</a> yêu cầu “nhập BOQ từ Excel giữ nguyên thứ tự dòng và <b>mã hạng mục gốc của bên mời thầu</b> để đối chiếu về sau”, và <a href="../BID-02.html">BID-02</a> dùng chính mã đó trên bảng đối chiếu từng dòng. Thực tế thì <b>hồ sơ mời thầu phần lớn không đánh mã hạng mục</b> — ô đó bỏ trống — nên mã HM tự sinh <b>không tranh chỗ với mã nào cả</b>. Hai cột song song vẫn giữ, chỉ đổi cách hiểu: cột <em>Mã HM</em> do hệ thống sinh và khóa, luôn có giá trị; cột <em>Mã HM của CĐT</em> mặc định trống và chỉ điền ở những gói mà bên mời thầu thực sự có đánh mã. Bảng đối chiếu của <a href="../BID-02.html">BID-02</a> hiện mã của CĐT khi có, ngược lại dùng mã hệ thống.</p>
     </div>
 
     <h4>Phạm vi tác động</h4>
@@ -86,7 +86,7 @@
     </div>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:480px;margin:0 auto"><svg role="img" aria-label="Hình YC-04.1 Gộp gói thầu chỉ xảy ra khi các gói nguồn còn ở trạng thái Nháp hoặc Đang thẩm định. Gói nguồn không bị xóa mà chuyển sang trạng thái Đã gộp, chỉ đọc, và trỏ sang gói đích." viewBox="0 0 460 412" xmlns="http://www.w3.org/2000/svg">
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:480px;margin:0 auto"><svg role="img" aria-label="Hình YC-04.1 Gộp gói thầu xảy ra khi các gói nguồn chưa ký hợp đồng. Gói nguồn không bị xóa mà chuyển sang trạng thái Đã gộp, chỉ đọc, và trỏ sang gói đích." viewBox="0 0 460 412" xmlns="http://www.w3.org/2000/svg">
 <defs><marker id="yc04a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#55606b"/></marker></defs>
 <g font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a" text-anchor="middle">
   <rect x="8" y="8" width="136" height="42" fill="#dde3e9" stroke="#5d6b7a"/>
@@ -94,7 +94,7 @@
   <rect x="162" y="8" width="136" height="42" fill="#dde3e9" stroke="#5d6b7a"/>
   <text x="230" y="26">Gói KH_0002</text><text x="230" y="41">Nháp</text>
   <rect x="316" y="8" width="136" height="42" fill="#dde3e9" stroke="#5d6b7a"/>
-  <text x="384" y="26">Gói KH_0003</text><text x="384" y="41">Đang thẩm định</text>
+  <text x="384" y="26">Gói KH_0003</text><text x="384" y="41">Đang áp giá</text>
 
   <path d="M76,50 L150,86" fill="none" stroke="#55606b" marker-end="url(#yc04a)"/>
   <path d="M230,50 L230,86" fill="none" stroke="#55606b" marker-end="url(#yc04a)"/>
@@ -124,7 +124,7 @@
   <rect x="236" y="350" width="216" height="56" fill="#dde3e9" stroke="#5d6b7a"/>
   <text x="344" y="368">Gói đích KH_0004 → “Nháp”</text><text x="344" y="383">đi tiếp theo luồng thường</text><text x="344" y="398">BID-02 → BID-03 → BID-05</text>
 </g>
-</svg></div><figcaption><b>Hình YC-04.1</b> Gộp gói thầu chỉ xảy ra khi các gói nguồn còn ở trạng thái Nháp hoặc Đang thẩm định. Gói nguồn không bị xóa mà chuyển sang trạng thái <em>Đã gộp</em>, chỉ đọc, và trỏ sang gói đích — nhờ vậy hồ sơ mời thầu bản gốc của từng gói vẫn tra cứu được sau này.</figcaption></figure>
+</svg></div><figcaption><b>Hình YC-04.1</b> Gộp gói thầu xảy ra khi các gói nguồn chưa ký hợp đồng — từ Nháp đến Chốt giá, kể cả gói đã áp giá như KH_0003. Gói nguồn không bị xóa mà chuyển sang trạng thái <em>Đã gộp</em>, chỉ đọc, và trỏ sang gói đích — nhờ vậy hồ sơ mời thầu bản gốc của từng gói vẫn tra cứu được sau này.</figcaption></figure>
 
     <h4>Tham số — mã gói thầu</h4>
     <div class="tw">
@@ -143,7 +143,7 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Là gói gộp?</td><td class="k">is_merge</td><td>Có / Không</td><td class="c req">✱</td><td>Ô hỏi ngay trên form tiếp nhận. Mặc định <em>Không</em>. Chọn <em>Có</em> mới mở khối chọn gói nguồn.</td></tr>
-          <tr><td>Gói nguồn</td><td class="k">merged_from[]</td><td>Danh sách tham chiếu</td><td class="c">—</td><td>Bắt buộc khi <code>is_merge = Có</code>; ít nhất <b>hai</b> gói. Chỉ chọn được gói ở trạng thái <em>Nháp</em> hoặc <em>Đang thẩm định</em>, chưa từng bị gộp, và không phải chính gói đang lập.</td></tr>
+          <tr><td>Gói nguồn</td><td class="k">merged_from[]</td><td>Danh sách tham chiếu</td><td class="c">—</td><td>Bắt buộc khi <code>is_merge = Có</code>; ít nhất <b>hai</b> gói. Chỉ chọn được gói <b>chưa ký hợp đồng</b> — từ <em>Nháp</em> đến <em>Chốt giá</em> — chưa từng bị gộp, chưa bị hủy, và không phải chính gói đang lập.</td></tr>
           <tr><td>Gói đích</td><td class="k">merged_into</td><td>Tham chiếu</td><td class="c">—</td><td>Ghi trên <em>gói nguồn</em>, trỏ về gói đích. Chỉ đọc, do hệ thống ghi khi gộp.</td></tr>
           <tr><td>Lý do gộp</td><td class="k">merge_note</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Bắt buộc khi gộp. Hiển thị trên cả gói đích và các gói nguồn — đây là thứ người đọc hồ sơ ba tháng sau cần để hiểu vì sao ba gói biến thành một.</td></tr>
           <tr><td>Người gộp · thời điểm</td><td class="k">merged_by, merged_at</td><td>Hệ thống</td><td class="c">—</td><td>Ghi tự động.</td></tr>
@@ -168,7 +168,7 @@
       <li><b>Mã tự nhập nhưng vẫn duy nhất.</b> Hệ thống kiểm trùng ngay khi rời ô, không đợi tới lúc lưu.<span class="then">Mã gói thầu là khóa tra cứu của toàn bộ chuỗi dữ liệu sau đó — BOQ, báo giá, hợp đồng, dự án, đơn hàng. Hai gói trùng mã sẽ làm hỏng mọi phép đối chiếu ở hạ nguồn, và lúc phát hiện thì đã muộn.</span></li>
       <li><b>Gợi ý vẫn theo mẫu cũ.</b> Ô mã điền sẵn <code>&lt;ĐĐ&gt;_NNNN</code> theo địa điểm công trình vừa khai.<span class="then">Đổi sang tự nhập là để cởi trói cho trường hợp đặc biệt, không phải để bỏ nền nếp mã hóa. Người lập bình thường chỉ việc bấm tiếp; người có lý do riêng mới sửa.</span></li>
       <li><b>Mã khóa khi rời trạng thái Nháp.</b> Từ lúc chuyển thẩm định, mã gói không sửa được nữa.<span class="then">Trước đó gói mới chỉ tồn tại trong Phòng Đấu thầu; sau đó nó đã xuất hiện trong hàng chờ việc của P. TQT và Ban dự án, trong thông báo đã phát, và trong tên tệp báo giá. Đổi mã ở giai đoạn đó là đổi một cái tên mà nhiều nơi đã chép lại.</span></li>
-      <li><b>Chỉ gộp gói chưa qua áp giá.</b> Gói nguồn phải đang ở <em>Nháp</em> hoặc <em>Đang thẩm định</em>.<span class="then">Từ <a href="../BID-03.html">BID-03</a> trở đi, mỗi gói đã có vòng báo giá riêng, giá đã gửi đối tác, có thể đã có phản hồi. Gộp ở giai đoạn đó buộc phải hợp nhất nhiều lịch sử thương thảo thành một — việc đó là thương thảo lại, không phải gộp hồ sơ.</span></li>
+      <li><b>Chỉ gộp gói chưa ký hợp đồng.</b> Gói nguồn ở bất kỳ trạng thái nào từ <em>Nháp</em> đến <em>Chốt giá</em> đều gộp được; từ <em>Đã ký HĐ</em> thì không.<span class="then">Ký hợp đồng là mốc gói thầu thôi là hồ sơ dự thầu và trở thành cam kết đã sinh ra dự án. Gộp sau mốc đó là gộp hai hợp đồng và hai dự án — việc khác hẳn, không làm ở màn hình tiếp nhận gói thầu. Trước mốc đó, gộp vẫn chỉ là sắp xếp lại hồ sơ: bên mời thầu quyết định gộp ba gói thành một thì bên dự thầu phải theo, kể cả khi đã áp giá xong.</span><span class="then">Gói nguồn đã có vòng báo giá riêng thì lịch sử báo giá ở lại gói nguồn, chỉ đọc; gói đích bắt đầu lại từ <em>Nháp</em> và áp giá một lần cho toàn bộ khối lượng đã nối. Đây chính là lý do <code>merge_note</code> bắt buộc — người đọc hồ sơ về sau cần biết mấy lần chào giá cũ đã được thay bằng một lần chào giá mới.</span></li>
       <li><b>Gộp ít nhất hai gói.</b> Chọn một gói rồi bấm gộp là thao tác vô nghĩa.<span class="then">Muốn đổi mã một gói đơn lẻ thì sửa thẳng ô mã khi gói còn Nháp, không đi qua chức năng gộp.</span></li>
       <li><b>Gộp không xóa gói nguồn.</b> Gói nguồn chuyển sang trạng thái <b>Đã gộp</b>: chỉ đọc, rời hàng chờ việc, giữ nguyên BOQ và tệp hồ sơ mời thầu bản gốc, và mang một liên kết trỏ sang gói đích.<span class="then">Thư mời thầu, BOQ gốc và mọi trao đổi ban đầu vẫn thuộc về gói cũ; xóa chúng đi là mất căn cứ pháp lý của phần khối lượng tương ứng trong gói mới.</span></li>
       <li><b>Bảng đầu việc gộp theo nhóm, giữ vết nguồn.</b> Dòng BOQ của các gói nguồn nối lại theo thứ tự chọn, mỗi gói thành một nhóm có tiêu đề, và mỗi dòng ghi <code>source_tender_id</code>.<span class="then">Nhờ vậy khi bên mời thầu hỏi “dòng này thuộc gói nào ban đầu” thì trả lời được ngay, và khi cần tách lại thì biết tách theo đường nào.</span></li>
@@ -188,7 +188,7 @@
           <tr><td>Mã quá ngắn hoặc quá dài</td><td>Ngoài 3–32 ký tự</td><td>“Mã gói thầu dài từ 3 đến 32 ký tự (hiện {n}).”</td></tr>
           <tr><td>Sửa mã sau khi chuyển thẩm định</td><td>Trạng thái khác <em>Nháp</em></td><td>“Gói thầu đã chuyển thẩm định nên mã không sửa được. Mã này đã xuất hiện trong hàng chờ việc của {bộ phận}.”</td></tr>
           <tr><td>Gộp chỉ một gói</td><td><code>merged_from[]</code> có 1 phần tử</td><td>“Chọn ít nhất hai gói để gộp. Nếu chỉ cần đổi mã một gói, sửa trực tiếp ô mã khi gói còn ở trạng thái Nháp.”</td></tr>
-          <tr><td>Gộp gói đã áp giá</td><td>Gói nguồn ở trạng thái từ <em>Đang áp giá</em> trở đi</td><td>“Gói {mã} đã sang bước áp giá nên không gộp được. Hủy gói ở BID-04 rồi lập lại, hoặc gộp phần còn lại.”</td></tr>
+          <tr><td>Gộp gói đã hủy</td><td>Gói nguồn ở <em>Đã hủy</em></td><td>“Gói {mã} đã hủy ở BID-04 nên không gộp được. Mở lại gói đó trước nếu vẫn cần phần việc của nó.”</td></tr>
           <tr><td>Gộp gói đã ký hợp đồng</td><td>Gói nguồn ở <em>Đã ký HĐ</em></td><td>“Gói {mã} đã ký hợp đồng và đã sinh dự án. Gộp dự án là việc khác, không làm ở màn hình tiếp nhận gói thầu.”</td></tr>
           <tr><td>Gộp gói đã gộp</td><td>Gói nguồn ở <em>Đã gộp</em></td><td>“Gói {mã} đã được gộp vào {mã đích}. Chọn gói đích đó nếu muốn gộp tiếp.”</td></tr>
           <tr><td>Gộp mà không ghi lý do</td><td><code>merge_note</code> rỗng</td><td>“Ghi lý do gộp — nội dung này hiện trên cả gói mới và các gói cũ.”</td></tr>
@@ -204,7 +204,7 @@
     <ul>
       <li>Mở form tiếp nhận thấy ô mã đã điền sẵn theo mẫu cũ, con trỏ đặt trong ô, sửa được ngay.</li>
       <li>Nhập mã trùng bị báo ngay khi rời ô, không đợi tới lúc bấm lưu.</li>
-      <li>Chọn “gói thầu được gộp” mở khối chọn gói nguồn, chỉ liệt kê gói còn ở Nháp hoặc Đang thẩm định.</li>
+      <li>Chọn “gói thầu được gộp” mở khối chọn gói nguồn, liệt kê mọi gói chưa ký hợp đồng và chưa từng bị gộp — kể cả gói đang áp giá hoặc đã chốt giá.</li>
       <li>Sau khi gộp, bảng đầu việc của gói mới chia nhóm theo gói nguồn, mã HM chạy liên tục theo mã gói mới, mã của chủ đầu tư giữ nguyên từng dòng.</li>
       <li>Ba gói cũ rời hàng chờ việc, mang trạng thái <em>Đã gộp</em>, mở ra vẫn thấy đủ BOQ và tệp hồ sơ mời thầu bản gốc, kèm liên kết sang gói mới.</li>
       <li>Thêm, xóa hoặc đảo thứ tự dòng BOQ thì mã HM đánh lại liên tục, không để lại số trống.</li>
@@ -218,10 +218,10 @@
           <tr><td>UAT-YC04-1</td><td>Địa điểm công trình đã khai là Khánh Hòa, đã có KH_0001…KH_0003</td><td>Mở form tiếp nhận gói mới</td><td>Ô mã điền sẵn <code>KH_0004</code>, sửa được</td></tr>
           <tr><td>UAT-YC04-2</td><td>Đã có gói KH_0002</td><td>Nhập mã <code>KH_0002</code> rồi rời ô</td><td>Báo trùng ngay tại ô, nêu tên gói và ngày tiếp nhận của gói cũ</td></tr>
           <tr><td>UAT-YC04-3</td><td>Gói đã chuyển thẩm định</td><td>Mở hồ sơ, thử sửa ô mã</td><td>Ô khóa; chú thích nêu lý do</td></tr>
-          <tr><td>UAT-YC04-4</td><td>Ba gói KH_0001, KH_0002, KH_0003 ở Nháp / Đang thẩm định</td><td>Lập gói mới, chọn gộp cả ba, nhập mã KH_0004, ghi lý do</td><td>Gói KH_0004 sinh ra ở Nháp; ba gói cũ chuyển <em>Đã gộp</em>, chỉ đọc, có liên kết sang KH_0004</td></tr>
+          <tr><td>UAT-YC04-4</td><td>Ba gói KH_0001, KH_0002, KH_0003 ở Nháp / Đang thẩm định / Đang áp giá</td><td>Lập gói mới, chọn gộp cả ba, nhập mã KH_0004, ghi lý do</td><td>Gói KH_0004 sinh ra ở Nháp; ba gói cũ chuyển <em>Đã gộp</em>, chỉ đọc, có liên kết sang KH_0004</td></tr>
           <tr><td>UAT-YC04-5</td><td>Tiếp UAT-4</td><td>Mở bảng đầu việc của KH_0004</td><td>Ba nhóm dòng theo ba gói nguồn; mã HM chạy <code>KH_0004.01</code>… liên tục; cột mã CĐT giữ nguyên giá trị cũ từng dòng</td></tr>
           <tr><td>UAT-YC04-6</td><td>Tiếp UAT-4</td><td>Mở gói KH_0001</td><td>Trạng thái <em>Đã gộp</em>; BOQ và tệp hồ sơ mời thầu bản gốc còn nguyên, chỉ đọc; lý do gộp hiển thị</td></tr>
-          <tr><td>UAT-YC04-7</td><td>Gói KH_0005 đã sang bước áp giá</td><td>Thử chọn KH_0005 làm gói nguồn</td><td>Không xuất hiện trong danh sách chọn; tìm bằng ô tra cứu thì báo lý do</td></tr>
+          <tr><td>UAT-YC04-7</td><td>Gói KH_0005 đã chốt giá, gói KH_0006 đã ký hợp đồng</td><td>Mở khối chọn gói nguồn</td><td>KH_0005 chọn được; KH_0006 không xuất hiện, tra bằng ô tìm thì báo đã ký hợp đồng và đã sinh dự án</td></tr>
           <tr><td>UAT-YC04-8</td><td>Tiếp UAT-4, KH_0004 còn Nháp</td><td>Bấm “Bỏ gộp”</td><td>Ba gói cũ về đúng trạng thái trước đó; KH_0004 bị xóa</td></tr>
           <tr><td>UAT-YC04-9</td><td>BOQ có 12 dòng</td><td>Xóa dòng thứ 5</td><td>Mã HM đánh lại liên tục từ .01 đến .11, không để trống số</td></tr>
           <tr><td>UAT-YC04-10</td><td>Tệp Excel có cột “Mã HM” điền sẵn</td><td>Nhập khẩu vào bảng đầu việc</td><td>Giá trị vào cột mã CĐT; cột mã HM do hệ thống sinh; hiện thông báo giải thích</td></tr>
