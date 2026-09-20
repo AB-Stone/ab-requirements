@@ -18,23 +18,25 @@
     <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
     <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
     <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <a href="PF-06.html"><i>PF-06</i>Bảng đơn giá chuẩn</a>
     <div class="rail-grp">Phòng Đấu thầu</div>
     <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
     <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
     <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
     <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
     <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
     <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
-    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
     <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
     <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
     <a class="on" href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
+    <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
@@ -89,7 +91,7 @@
   <div class="sb">
     <div class="note">
       <b>Bổ sung tạm thời — sẽ điều chỉnh dần khi thử nghiệm</b>
-      <p style="margin:0">Đặc tả này dựng theo đúng phạm vi hai dòng bổ sung để kịp tiến độ. Trong quá trình chạy thử, phần đối chiếu khối lượng và cách ghi nhận doanh thu sẽ được tinh chỉnh — xem thêm <a href="PL-C.html">Q-11</a> về ranh giới doanh thu giữa đặc tả này và <a href="ORD-06.html">ORD-06</a>.</p>
+      <p style="margin:0">Đặc tả này dựng theo đúng phạm vi hai dòng bổ sung để kịp tiến độ. Trong quá trình chạy thử, phần đối chiếu khối lượng và cách ghi nhận doanh thu sẽ được tinh chỉnh — xem thêm <a href="PL-C.html">Q-11</a> về ranh giới doanh thu giữa đặc tả này và <a href="BID-06.html">BID-06</a>.</p>
     </div>
 
     <h4>Mục tiêu</h4>
@@ -264,7 +266,7 @@
       <table>
         <thead><tr><th style="width:190px">Tuyến</th><th>Nội dung theo dõi</th><th>Các trạng thái</th></tr></thead>
         <tbody>
-          <tr><td><b>Bản vẽ sơ họa hoàn công</b></td><td>Bản vẽ thể hiện khối lượng đã thi công của đợt, chỉnh từ Shopdrawing được duyệt</td><td>Chưa lập → Đang chỉnh → Đã trình BQL → BQL chấp thuận → Cần chỉnh lại</td></tr>
+          <tr><td><b>Bản vẽ sơ họa hoàn công</b></td><td>Bản vẽ thể hiện khối lượng đã thi công của đợt, chỉnh từ <b>đợt trình shopdrawing đã được CĐT chấp thuận</b> — cấp 3 của hồ sơ Shopdrawing ở <a href="ORD-02.html">ORD-02</a> (<a href="2026-09-15/YC-08.html">YC-08</a>), không phải từ “bản vẽ” chung chung</td><td>Chưa lập → Đang chỉnh → Đã trình BQL → BQL chấp thuận → Cần chỉnh lại</td></tr>
           <tr><td><b>Hồ sơ giá trị</b></td><td>Bảng khối lượng, đơn giá hợp đồng, biên bản nghiệm thu khối lượng, phụ lục (nếu có)</td><td>Chưa lập → Đang ghép → Đủ thành phần → Thiếu / sai → Đã nộp</td></tr>
         </tbody>
       </table>
@@ -283,6 +285,7 @@
           <tr><td>Khối lượng đề nghị CĐT</td><td class="k">qty_claim</td><td>Bảng</td><td class="c req">✱</td><td>Mặc định bằng khối lượng đã thi công; sửa được khi chủ đầu tư chỉ chấp nhận một phần.</td></tr>
           <tr><td>Chênh lệch bất lợi</td><td class="k">qty_gap</td><td>Số</td><td class="c">—</td><td>Tính tự động: <code>qty_paid_crew − qty_claim</code>. Lớn hơn 0 là công ty đang trả cho đội nhiều hơn thu được.</td></tr>
           <tr><td>Giải trình chênh lệch</td><td class="k">gap_note</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi <code>qty_gap &gt; 0</code>; hiển thị trên màn hình duyệt nội bộ.</td></tr>
+          <tr><td>Đợt trình nguồn của bản vẽ sơ họa</td><td class="k">asbuilt_src_batches[]</td><td>Tham chiếu</td><td class="c req">✱</td><td>Các đợt trình đã được CĐT chấp thuận (<code>result</code> = <code>approved</code> / <code>approved_as_noted</code>) phủ khối lượng của đợt thanh toán này. Hệ thống gợi ý sẵn từ các đầu việc có khối lượng trong <code>qty_claim</code>; đợt chưa được chấp thuận không chọn được. Chỉ đọc sau khi nộp CĐT.</td></tr>
           <tr><td>Tình trạng bản vẽ sơ họa</td><td class="k">asbuilt_sketch_status</td><td>Chọn 1</td><td class="c req">✱</td><td>Theo bảng hai tuyến ở trên.</td></tr>
           <tr><td>Tình trạng hồ sơ giá trị</td><td class="k">value_dossier_status</td><td>Chọn 1</td><td class="c req">✱</td><td>Theo bảng hai tuyến ở trên.</td></tr>
           <tr><td>Giá trị đề nghị · đã nhận</td><td class="k">amount_claim, amount_received</td><td>Số tiền</td><td class="c req">✱</td><td>Cơ chế nhận nhiều lần giống <a href="ORD-01.html">ORD-01</a>.</td></tr>
@@ -313,7 +316,7 @@
               <div class="cur"><b>Bản vẽ sơ họa hoàn công</b>Đã trình BQL · chờ chấp thuận</div>
               <div class="done"><b>Hồ sơ giá trị</b>Đủ thành phần</div>
             </div>
-            <p style="margin:7px 0 0;font-size:11.5px;color:var(--ink-3)">Chưa cần bản vẽ hoàn công đầy đủ ở đợt này — chỉ điều chỉnh nhẹ từ Shopdrawing đã duyệt.</p>
+            <p style="margin:7px 0 0;font-size:11.5px;color:var(--ink-3)">Chưa cần bản vẽ hoàn công đầy đủ ở đợt này — chỉ điều chỉnh nhẹ từ đợt trình shopdrawing đã được CĐT chấp thuận (<code>SD-…-Đn</code>).</p>
           </div></div>
           <div class="wf-c" style="flex:0 1 230px"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">4</span> Tình trạng thanh toán</div>
@@ -356,7 +359,8 @@
       <li><b>Chênh lệch bất lợi cảnh báo nhưng không chặn.</b> Khối lượng đề nghị nhỏ hơn khối lượng đã trả tổ đội thì hiện cảnh báo mức nhẹ và bắt buộc giải trình.<span class="then">Hồ sơ vẫn lập và nộp được — chặn ở đây sẽ làm chậm thanh toán với chủ đầu tư, tức là hại thêm.</span></li>
       <li><b>Chênh lệch được treo, không bị quên.</b> Phần chênh tự vào danh sách chờ xử lý của đợt quyết toán.<span class="then">Tới <a href="ORD-10.html">ORD-10</a> nếu vẫn chưa thu được thì nó thành thiệt hại có địa chỉ.</span></li>
       <li><b>Hai tuyến tình trạng độc lập.</b> Bản vẽ sơ họa hoàn công và hồ sơ giá trị có trạng thái riêng, cùng phải sẵn sàng mới nộp được.<span class="then">Danh sách hồ sơ hiện cả hai để biết đang mắc ở bản vẽ hay ở phần giá trị.</span></li>
-      <li><b>Chưa cần bản vẽ hoàn công.</b> Ở đợt thanh toán chỉ cần chỉnh nhẹ Shopdrawing đã duyệt theo yêu cầu Ban quản lý xây dựng.<span class="then">Bản vẽ hoàn công đầy đủ là việc của <a href="ORD-10.html">ORD-10</a>; ràng buộc sớm sẽ làm nghẽn thanh toán từng đợt.</span></li>
+      <li><b>Chưa cần bản vẽ hoàn công.</b> Ở đợt thanh toán chỉ cần chỉnh nhẹ bản vẽ của đợt trình shopdrawing đã duyệt theo yêu cầu Ban quản lý xây dựng.<span class="then">Bản vẽ hoàn công đầy đủ là việc của <a href="ORD-10.html">ORD-10</a>; ràng buộc sớm sẽ làm nghẽn thanh toán từng đợt.</span></li>
+      <li><b>Bản vẽ sơ họa dẫn xuất từ đợt trình đã được chấp thuận.</b> Mỗi bản sơ họa ghi rõ nó chỉnh từ (các) đợt trình nào ở <a href="ORD-02.html">ORD-02</a>; chỉ chọn được đợt CĐT đã chấp thuận.<span class="then">Từ khi hồ sơ shopdrawing tách ba cấp, “Shopdrawing đã duyệt” không còn là một chứng từ đơn lẻ mà là một <em>đợt trình</em> cụ thể của một hạng mục — ghi đúng mã đợt thì người duyệt hồ sơ thanh toán tra ngược được sang bảng khối lượng và vòng duyệt đã sinh ra bản vẽ đó. Đợt bị từ chối hoặc còn đang chờ CĐT không phải là căn cứ hoàn công.</span></li>
       <li><b>Đề nghị vượt khối lượng đã thi công thì chặn.</b> Không đề nghị chủ đầu tư thanh toán phần chưa làm.<span class="then">Khác với chiều ngược lại — đề nghị ít hơn chỉ là cảnh báo.</span></li>
       <li><b>Số liệu vào thẳng lãi lỗ.</b> Giá trị đã nhận thanh toán là doanh thu thi công của dự án trong kỳ.<span class="then">Đây là lý do trạng thái nhận / chưa nhận phải chính xác, không chỉ để theo dõi hành chính.</span></li>
       <li><b>Kế thừa khung ORD-01.</b> Chuỗi trạng thái, sổ vướng mắc, phối hợp phòng ban, đối chiếu ngân hàng và báo cáo tổng hợp dùng chung.<span class="then">Không định nghĩa lại; sửa ở <a href="ORD-01.html">ORD-01</a> là có hiệu lực ở đây.</span></li>
@@ -386,6 +390,7 @@
           <tr><td>UAT-ORD09-3</td><td>Tiếp UAT-2, đã nhập giải trình</td><td>Trình duyệt và nộp CĐT</td><td>Cho nộp bình thường; phần chênh 68 m² vào danh sách chờ của ORD-10</td></tr>
           <tr><td>UAT-ORD09-4</td><td>HM-01 đã thi công 1.680 m²</td><td>Nhập đề nghị 1.800 m²</td><td>Bị chặn kèm thông điệp nêu khối lượng đã thi công</td></tr>
           <tr><td>UAT-ORD09-5</td><td>Bản vẽ sơ họa đang chờ BQL chấp thuận</td><td>Bấm “Nộp chủ đầu tư”</td><td>Bị chặn, nêu rõ tuyến bản vẽ chưa sẵn sàng</td></tr>
+          <tr><td>UAT-ORD09-6</td><td>Hạng mục có đợt trình Đ1 đã được CĐT chấp thuận và đợt Đ2 đang chờ CĐT</td><td>Chọn đợt trình nguồn cho bản vẽ sơ họa</td><td>Chỉ Đ1 chọn được; Đ2 hiện mờ kèm lý do “CĐT chưa chấp thuận”</td></tr>
           <tr><td>UAT-ORD09-6</td><td>Hồ sơ nhận đủ tiền</td><td>Ghi nhận thanh toán</td><td>Doanh thu đợt vào lãi lỗ dự án; công nợ phải thu giảm</td></tr>
           <tr><td>UAT-ORD09-7</td><td>Có 5 hồ sơ nhiều trạng thái</td><td>Mở danh sách hồ sơ</td><td>Mỗi dòng hiện cả tình trạng bản vẽ lẫn tình trạng hồ sơ giá trị</td></tr>
         </tbody>
@@ -393,11 +398,11 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-01.html">ORD-01 khung theo dõi hồ sơ</a><a href="ORD-02.html">ORD-02 bản vẽ Shopdrawing</a><a href="ORD-10.html">ORD-10 quyết toán hợp đồng</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="PRJ-03.html">PRJ-03 khối lượng đã trả tổ đội</a><a href="ACC-05.html">ACC-05 công nợ phải thu</a><a href="RPT-03.html">RPT-03 lãi lỗ dự án</a></p>
+    <p class="links"><a href="ORD-01.html">ORD-01 khung theo dõi hồ sơ</a><a href="ORD-02.html">ORD-02 hồ sơ Shopdrawing ba cấp</a><a href="ORD-10.html">ORD-10 quyết toán hợp đồng</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="PRJ-03.html">PRJ-03 khối lượng đã trả tổ đội</a><a href="ACC-05.html">ACC-05 công nợ phải thu</a><a href="RPT-03.html">RPT-03 lãi lỗ dự án</a><a href="2026-09-15/YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 19 / 42</span><span><code>ORD-09.html</code></span>
+  <span>Đặc tả 20 / 47</span><span><code>ORD-09.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

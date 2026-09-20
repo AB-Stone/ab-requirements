@@ -18,23 +18,25 @@
     <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
     <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
     <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <a href="PF-06.html"><i>PF-06</i>Bảng đơn giá chuẩn</a>
     <div class="rail-grp">Phòng Đấu thầu</div>
     <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
     <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
     <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
     <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
     <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
     <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
-    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
     <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
     <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
+    <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
@@ -98,6 +100,7 @@
           <tr><td>4</td><td>Báo cáo sản lượng thi công</td><td>Sản lượng theo tuần và theo đợt, theo tổ đội, lũy kế so với BOQ hợp đồng</td><td class="k"><a href="PRJ-02.html">PRJ-02</a></td></tr>
           <tr><td>5</td><td>Báo cáo tiến độ dự án theo kế toán</td><td>% doanh thu ghi nhận và % chi phí đã tập hợp so với giá trị hợp đồng — góc nhìn tài chính của tiến độ</td><td class="k"><a href="ACC-09.html">ACC-09</a></td></tr>
           <tr><td>6</td><td>Báo cáo phân loại nhân công</td><td><b>Ba nhóm theo yêu cầu gốc: sản lượng, công nhật sản lượng, công nhật khác — theo từng dự án</b></td><td class="k"><a href="PRJ-03.html">PRJ-03</a></td></tr>
+          <tr><td>7</td><td>Hiệu quả điều hành BCH</td><td>Chi phí nhân công theo đơn giá chuẩn đặt cạnh chi phí thực tế, phần chênh tách thành giá trị hỗ trợ; xếp hạng các Ban chỉ huy theo tỷ lệ hỗ trợ (<a href="2026-09-15/YC-02.html">YC-02</a>)</td><td class="k"><a href="PF-06.html">PF-06</a>, <a href="PRJ-01.html">PRJ-01</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -215,8 +218,45 @@
           <tr><td>Mốc tiến độ</td><td class="k">milestone_id</td><td>Tham chiếu</td><td class="c">—</td><td>Nhóm các hạng mục thành mốc để báo cáo cấp lãnh đạo.</td></tr>
           <tr><td>Kế hoạch tiến độ</td><td class="k">plan_pct</td><td>Phần trăm</td><td class="c">—</td><td>Đường cong kế hoạch để so với thực tế; nhập khi khởi tạo dự án.</td></tr>
           <tr><td>Tuổi hồ sơ</td><td class="k">dossier_age</td><td>Hệ thống</td><td class="c">—</td><td>Số ngày kể từ khi hồ sơ vào trạng thái hiện tại.</td></tr>
+          <tr><td>Tỷ lệ hỗ trợ</td><td class="k">support_ratio</td><td>Hệ thống</td><td class="c">—</td><td>Giá trị hỗ trợ chia chi phí nhân công theo đơn giá chuẩn. Là cột xếp hạng mặc định của khối hiệu quả điều hành BCH.</td></tr>
+          <tr><td>Khối lượng ngoài bảng chuẩn</td><td class="k">qty_out_of_std</td><td>Hệ thống</td><td class="c">—</td><td>Phần khối lượng thuộc dòng giá khoán không tra được đơn giá chuẩn ở <a href="PRJ-01.html">PRJ-01</a>. Bị loại khỏi phép so sánh và hiển thị riêng.</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <h4>Khối Hiệu quả điều hành BCH</h4>
+    <p>Mục đích gốc của khối này nói rõ: dựa vào một bảng đơn giá chuẩn để <b>loại trừ phần hỗ trợ</b> ra thì mới thấy dự án nào hoạt động hiệu quả và năng lực Ban chỉ huy tới đâu (<a href="2026-09-15/YC-02.html">YC-02</a>). Khối vì vậy đặt ba con số cạnh nhau cho mỗi dự án — chi phí theo chuẩn, chi phí thực tế, phần hỗ trợ — rồi xếp hạng theo tỷ lệ giữa chúng.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:56px">Cột</th><th style="width:26%">Tiêu đề</th><th>Nguồn</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Dự án · BCH phụ trách</td><td>Hồ sơ dự án</td></tr>
+          <tr><td>2</td><td>Vùng · kỳ đơn giá chuẩn</td><td><code>std_sheet_ref</code> của bảng giá khoán đã duyệt ở <a href="PRJ-01.html">PRJ-01</a>, trỏ về bảng <a href="PF-06.html">PF-06</a></td></tr>
+          <tr><td>3</td><td>Khối lượng đã nghiệm thu</td><td>Sản lượng đã chốt ở <a href="PRJ-02.html">PRJ-02</a></td></tr>
+          <tr><td>4</td><td>Chi phí nhân công theo đơn giá chuẩn</td><td><code>Σ (standard_rate × khối lượng)</code></td></tr>
+          <tr><td>5</td><td>Chi phí nhân công thực tế</td><td><code>Σ (khoan_unit_price × khối lượng)</code>, đối chiếu với hồ sơ giao khoán đã duyệt ở <a href="PRJ-03.html">PRJ-03</a></td></tr>
+          <tr><td>6</td><td>Giá trị hỗ trợ</td><td><code>Σ (support_amount × khối lượng)</code> — bằng cột 5 trừ cột 4</td></tr>
+          <tr><td>7</td><td>Tỷ lệ hỗ trợ</td><td>Cột 6 chia cột 4. <b>Đây là cột xếp hạng mặc định</b> của khối, xếp tăng dần — tỷ lệ càng thấp càng đứng trên</td></tr>
+          <tr><td>8</td><td>Khối lượng ngoài bảng chuẩn</td><td>Phần khối lượng thuộc dòng không tra được đơn giá chuẩn. <b>Loại khỏi cột 4, 6 và 7</b>, hiển thị riêng ở cột này để người đọc biết phép so sánh phủ được bao nhiêu</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>Phần khối lượng bị loại khỏi phép so sánh</b>
+      <p style="margin:0">Đầu việc không có trong bảng đơn giá chuẩn vẫn khoán được ở <a href="PRJ-01.html">PRJ-01</a>, nhưng khối lượng của nó <b>không vào</b> cột 4, 6 và 7 — không có mốc chuẩn thì không có phần chênh để gọi là hỗ trợ. Cột 8 vì vậy không phải một con số phụ: hai dự án cùng tỷ lệ hỗ trợ 3% nhưng một bên phủ 98% khối lượng còn bên kia chỉ phủ 60% là hai kết luận khác nhau. Danh sách đầu việc bị loại xuất được thành đề nghị bổ sung cho kỳ ban hành sau của <a href="PF-06.html">PF-06</a>.</p>
+    </div>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Báo cáo ›</span><b>Hiệu quả điều hành BCH</b><span class="sp"></span><span class="wf-btn">Quý 3/2026 <em>▾</em></span><span class="wf-btn">Xuất Excel</span></div>
+      <div class="wf-body">
+        <div class="wf-sec">
+          <div class="wf-lg">Xếp hạng theo tỷ lệ hỗ trợ — tăng dần</div>
+          <table><thead><tr><th>Dự án · BCH</th><th>Vùng · kỳ ĐG chuẩn</th><th class="num">KL nghiệm thu</th><th class="num">CP theo ĐG chuẩn</th><th class="num">CP thực tế</th><th class="num">Giá trị hỗ trợ</th><th class="num">Tỷ lệ hỗ trợ</th><th class="num">KL ngoài chuẩn</th></tr></thead>
+          <tbody>
+            <tr><td>DA-2026-014 · Phạm Văn An</td><td>Miền Nam · DGC-MN-2026-01</td><td class="num">9.240 m²</td><td class="num">3.511.200.000</td><td class="num">3.616.536.000</td><td class="num">105.336.000</td><td class="num">3,0%</td><td class="num">180 m²</td></tr>
+            <tr><td>DA-2026-011 · Ngô Đức Thịnh</td><td>Miền Trung · DGC-MT-2026-01</td><td class="num">5.100 m²</td><td class="num">1.938.000.000</td><td class="num">2.151.180.000</td><td class="num">213.180.000</td><td class="num">11,0%</td><td class="num">640 m²</td></tr>
+          </tbody></table>
+        </div>
+      </div>
     </div>
 
     <h4>Kết quả mong đợi</h4>
@@ -227,13 +267,15 @@
       <li>Báo cáo hồ sơ nghiệm thu liệt kê hồ sơ đang mắc, tuổi hồ sơ và vướng mắc chưa đóng.</li>
       <li>Bảng kê hợp đồng nêu được tình trạng bảo lãnh sắp hết hạn.</li>
       <li>Mọi báo cáo lọc được theo dự án, vùng miền và kỳ; xuất Excel và PDF.</li>
+      <li>Khối hiệu quả điều hành BCH xếp hạng được các Ban chỉ huy theo tỷ lệ hỗ trợ, mặc định tăng dần, trên cùng một mốc đơn giá chuẩn.</li>
+      <li>Khối này nói rõ phép so sánh phủ được bao nhiêu phần khối lượng: phần ngoài bảng chuẩn tách ra cột riêng và không lẫn vào ba cột chi phí.</li>
     </ol>
 
     <h4>Mockup UI — Báo cáo › Quản trị dự án</h4>
     <div class="wf">
       <div class="wf-bar"><span class="wf-crumb">Báo cáo ›</span><b>Tiến độ dự án</b><span class="sp"></span><span class="wf-btn"><span class="pin">1</span> Quý 3/2026 <em>▾</em></span><span class="wf-btn">Xuất Excel</span></div>
       <div class="wf-body">
-        <div class="wf-chips"><span class="wf-chip">Bảng kê hợp đồng</span><span class="wf-chip on">Tiến độ thi công</span><span class="wf-chip">Hồ sơ nghiệm thu</span><span class="wf-chip">Sản lượng</span><span class="wf-chip">Tiến độ theo kế toán</span><span class="wf-chip">Phân loại nhân công</span></div>
+        <div class="wf-chips"><span class="wf-chip">Bảng kê hợp đồng</span><span class="wf-chip on">Tiến độ thi công</span><span class="wf-chip">Hồ sơ nghiệm thu</span><span class="wf-chip">Sản lượng</span><span class="wf-chip">Tiến độ theo kế toán</span><span class="wf-chip">Phân loại nhân công</span><span class="wf-chip">Hiệu quả điều hành BCH</span></div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">2</span> Tiến độ thi công so với kế hoạch</div>
           <table><thead><tr><th>Dự án</th><th>Mốc tiến độ</th><th class="num">Kế hoạch</th><th class="num">Thực tế</th><th class="num">Chênh</th><th class="num">Ngày trễ</th><th>Trạng thái</th></tr></thead>
@@ -284,6 +326,9 @@
       <li><b>Tuổi hồ sơ theo trạng thái.</b> Báo cáo hồ sơ nghiệm thu tính tuổi từ lúc vào trạng thái hiện tại.<span class="then">Nhìn ra được khâu nào đang là nút thắt, không chỉ tổng thời gian.</span></li>
       <li><b>Bảng kê hợp đồng nêu bảo lãnh.</b> Cột tình trạng bảo lãnh cảnh báo trước hạn 15 ngày.<span class="then">Bảo lãnh hết hạn mà chưa gia hạn thì gắn cờ đỏ.</span></li>
       <li><b>Ngưỡng cảnh báo cấu hình được.</b> Ngưỡng chậm tiến độ và ngưỡng lệch hai góc nhìn khai ở tham số công ty.<span class="then">Đổi ngưỡng không cần sửa phần mềm; nhãn trạng thái đổi theo ngay.</span></li>
+      <li><b>So hiệu quả điều hành trên cùng một mốc.</b> Chi phí nhân công theo đơn giá chuẩn lấy từ bảng <a href="PF-06.html">PF-06</a> mà bảng giá khoán đã tra (<code>std_sheet_ref</code>), không lấy bảng đang hiệu lực tại thời điểm chạy báo cáo.<span class="then">Bảng giá khoán đã duyệt đóng băng đơn giá chuẩn của nó, nên báo cáo của một kỳ giữ nguyên số kể cả khi công ty ban hành bảng chuẩn kỳ mới. Hai Ban chỉ huy chỉ đặt cạnh nhau được khi cả hai cột 4 đều tính trên mốc đã đóng băng.</span></li>
+      <li><b>Khối lượng ngoài bảng chuẩn bị loại khỏi phép so sánh.</b> Dòng giá khoán không tra ra đơn giá chuẩn thì khối lượng của nó không vào cột 4, 6 và 7, chỉ hiện ở cột 8.<span class="then">Không có mốc chuẩn thì không có phần chênh để gọi là hỗ trợ; nhét nó vào sẽ làm tỷ lệ hỗ trợ sai theo cả hai chiều. Cột 8 là thước đo độ phủ của phép so sánh và phải đọc cùng cột 7, không đọc rời.</span></li>
+      <li><b>Xếp hạng mặc định theo tỷ lệ hỗ trợ.</b> Khối hiệu quả điều hành BCH mở ra là đã xếp theo cột 7 tăng dần.<span class="then">Đây là con số đo năng lực điều hành: cùng một khối lượng và cùng một mốc chuẩn, Ban chỉ huy cần ít hỗ trợ hơn là Ban chỉ huy vận hành tốt hơn. Đổi cột xếp hạng được, nhưng thứ tự mặc định không đổi.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -295,6 +340,9 @@
           <tr><td>Lệch hai góc nhìn lớn</td><td>&gt; ngưỡng cấu hình</td><td>“{dự án}: thi công {a}% nhưng kế toán {b}%. Khối lượng đã làm chưa nghiệm thu — rủi ro dòng tiền.”</td></tr>
           <tr><td>Bảo lãnh sắp hết hạn</td><td>Còn ≤ 15 ngày</td><td>“Bảo lãnh {loại} của HĐ {số} hết hạn ngày {ngày}. Liên hệ ngân hàng gia hạn.”</td></tr>
           <tr><td>Hồ sơ đứng quá lâu</td><td>&gt; 30 ngày một trạng thái</td><td>“Hồ sơ {mã} đứng ở ‘{trạng thái}’ đã {n} ngày.”</td></tr>
+          <tr><td>Dự án chưa tra đơn giá chuẩn</td><td>Bảng giá khoán không có <code>std_sheet_ref</code></td><td>“Dự án {mã} lập bảng giá khoán trước khi có bảng đơn giá chuẩn cho vùng. Dự án này không vào xếp hạng hiệu quả điều hành.”</td></tr>
+          <tr><td>Độ phủ so sánh thấp</td><td>Khối lượng ngoài bảng chuẩn &gt; 20% tổng khối lượng</td><td>“{dự án}: {x}% khối lượng nằm ngoài bảng đơn giá chuẩn {mã}. Tỷ lệ hỗ trợ chỉ phản ánh phần còn lại.”</td></tr>
+          <tr><td>So hai dự án khác vùng</td><td>Hai dòng có <code>std_sheet_ref</code> khác vùng</td><td>“Hai dự án đang tra hai bảng đơn giá chuẩn khác vùng. Tỷ lệ hỗ trợ vẫn so được, nhưng chi phí tuyệt đối thì không.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -309,16 +357,19 @@
           <tr><td>UAT-RPT02-3</td><td>Mốc “Ốp lát khối đế” kế hoạch 85%, thực tế 80%</td><td>Xem bảng tiến độ</td><td>Chênh −5 điểm phần trăm, nhãn “Chậm nhẹ”, số ngày trễ 6</td></tr>
           <tr><td>UAT-RPT02-4</td><td>Bảo lãnh thực hiện hết hạn sau 10 ngày</td><td>Mở bảng kê hợp đồng</td><td>Cột bảo lãnh gắn cờ cảnh báo</td></tr>
           <tr><td>UAT-RPT02-5</td><td>Có 5 hồ sơ nghiệm thu nhiều trạng thái</td><td>Mở báo cáo hồ sơ</td><td>Tuổi tính theo trạng thái hiện tại; hồ sơ &gt; 30 ngày được đánh dấu</td></tr>
+          <tr><td>UAT-RPT02-6</td><td>Hai dự án cùng vùng, cùng kỳ, tỷ lệ hỗ trợ 3% và 11%</td><td>Mở khối hiệu quả điều hành BCH</td><td>Dự án 3% đứng trên không cần thao tác xếp hạng; số liệu khớp với hồ sơ giao khoán đã duyệt ở <a href="PRJ-03.html">PRJ-03</a></td></tr>
+          <tr><td>UAT-RPT02-7</td><td>Bảng giá khoán của DA-2026-011 có 3 dòng ngoài bảng chuẩn</td><td>Mở khối hiệu quả điều hành BCH</td><td>Khối lượng của ba dòng đó không vào cột 4, 6, 7; cột 8 hiện đúng phần bị loại</td></tr>
+          <tr><td>UAT-RPT02-8</td><td>Công ty vừa ban hành bảng đơn giá chuẩn kỳ mới cao hơn 12%</td><td>Chạy lại khối hiệu quả điều hành của quý trước</td><td>Mọi con số giữ nguyên; cột 2 vẫn hiện bảng chuẩn kỳ cũ đã tra</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PRJ-02.html">PRJ-02 sản lượng</a><a href="PRJ-03.html">PRJ-03 nhân công</a><a href="ORD-01.html">ORD-01 hồ sơ</a><a href="BID-05.html">BID-05 bảng kê hợp đồng</a><a href="ACC-09.html">ACC-09 tiến độ kế toán</a></p>
+    <p class="links"><a href="PRJ-02.html">PRJ-02 sản lượng</a><a href="PRJ-03.html">PRJ-03 nhân công</a><a href="ORD-01.html">ORD-01 hồ sơ</a><a href="BID-05.html">BID-05 bảng kê hợp đồng</a><a href="ACC-09.html">ACC-09 tiến độ kế toán</a><a href="PF-06.html">PF-06 bảng đơn giá chuẩn</a><a href="PRJ-01.html">PRJ-01 % hỗ trợ theo dòng</a><a href="2026-09-15/YC-02.html">YC-02 đơn giá chuẩn theo vùng miền</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 35 / 42</span><span><code>RPT-02.html</code></span>
+  <span>Đặc tả 39 / 47</span><span><code>RPT-02.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

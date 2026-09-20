@@ -127,7 +127,7 @@
     </div>
     <div class="note">
       <b>Năm cấu phần này là giá vốn, không phải giá chào</b>
-      <p style="margin:0">Cột <em>Tổng</em> và cột <em>Thành tiền</em> của mẫu <code>3.BOQ</code> là <b>giá vốn</b> — cơ cấu chi phí nội bộ. Đơn giá chào (<code>price_offer</code>) và biên lợi nhuận vẫn là bộ cột riêng của màn hình áp giá, và theo quy tắc đang có ở <a href="../BID-03.html">BID-03</a>, cấu phần giá vốn <b>không có mặt</b> trong bảng tổng hợp giá trị đơn hàng và không có trong tệp báo giá gửi đối tác. Vì vậy bảng dựng theo mẫu này <b>không được phát hành ra ngoài</b> dù tiêu đề biểu mẫu ghi “BẢNG TIÊN LƯỢNG MỜI THẦU (BOQ)”. Điểm này cần chốt lại — xem <a href="../PL-C.html">PL-C</a> và mục <a href="index.html#can-chot">§3 của mục lục đợt</a>.</p>
+      <p style="margin:0">Cột <em>Tổng</em> và cột <em>Thành tiền</em> của mẫu <code>3.BOQ</code> là <b>giá vốn</b> — cơ cấu chi phí nội bộ. Đơn giá chào (<code>price_offer</code>) và biên lợi nhuận vẫn là bộ cột riêng của màn hình áp giá, và theo quy tắc đang có ở <a href="../BID-03.html">BID-03</a>, cấu phần giá vốn <b>không có mặt</b> trong bảng tổng hợp giá trị đơn hàng và không có trong tệp báo giá gửi đối tác. Vì vậy bảng dựng theo mẫu này <b>không được phát hành ra ngoài</b> dù tiêu đề biểu mẫu ghi “BẢNG TIÊN LƯỢNG MỜI THẦU (BOQ)”. Điểm này cần chốt lại — xem <a href="../PL-C.html#Q-38">PL-C · Q-38</a> và mục <a href="index.html#can-chot">§3 của mục lục đợt</a>.</p>
     </div>
 
     <h4>Nhóm dòng &amp; chân bảng</h4>
@@ -147,7 +147,7 @@
     </div>
 
     <h4>Bộ ghi chú chuẩn nạp sẵn cho ô <code>boq_note</code></h4>
-    <p>Bốn nguyên tắc đo bóc dưới đây lấy nguyên từ biểu mẫu công ty. Chúng quyết định khối lượng nghiệm thu quyết toán ở <a href="../ORD-09.html">ORD-09</a> và <a href="../ORD-10.html">ORD-10</a>, nên phải đi kèm BOQ từ đầu chứ không phải nhớ lại lúc quyết toán.</p>
+    <p>Năm nguyên tắc đo bóc dưới đây lấy nguyên từ biểu mẫu công ty. Chúng quyết định khối lượng nghiệm thu quyết toán ở <a href="../ORD-09.html">ORD-09</a> và <a href="../ORD-10.html">ORD-10</a>, nên phải đi kèm BOQ từ đầu chứ không phải nhớ lại lúc quyết toán.</p>
     <ul>
       <li>Vật tư đá ốp lát (chống thấm / không chống thấm), thép, inox, chất chống thấm và vật tư phụ miễn thí nghiệm; riêng vữa liên kết nhà thầu phải thí nghiệm mác vữa.</li>
       <li>Đầu việc tính theo mét dài (phào, chỉ…): khối lượng tính theo chiều dài nhất / chu vi ngoài / đường kính lớn nhất.</li>
@@ -178,7 +178,7 @@
           <tr><td>Sửa ô tổng</td><td>Thao tác nhập vào dòng chân bảng</td><td>“Dòng tổng do hệ thống tính từ cột Thành tiền. Sửa dòng đầu việc thay vì sửa kết quả.”</td></tr>
           <tr><td>Thuế suất ngoài khoảng</td><td><code>vat_rate</code> &lt; 0 hoặc &gt; 20%</td><td>“Thuế suất GTGT nhận giá trị từ 0% đến 20% (hiện {x}%).”</td></tr>
           <tr><td>Chống thấm có giá nhưng dòng không chống thấm</td><td><code>cost_waterproof &gt; 0</code> và <code>waterproof = Không</code></td><td>“Dòng {stt} không chống thấm nhưng có đơn giá chống thấm. Bật cột ‘Xử lý chống thấm’ hoặc đưa chi phí này về cấu phần khác.”</td></tr>
-          <tr><td>Tắt cấu phần đang có số</td><td>Tắt cột mà một số dòng còn giá trị khác 0</td><td>“{n} dòng đang có đơn giá ở cấu phần {tên}. Tắt cột thì phần này không cộng vào giá vốn nữa — số liệu vẫn giữ để bật lại.”</td></tr>
+          <tr><td>Tắt cấu phần đang có số</td><td>Tắt cột mà một số dòng còn giá trị khác 0</td><td>“{n} dòng đang có đơn giá ở cấu phần {tên}. Tắt cột thì phần này không cộng vào giá vốn nữa — số liệu vẫn giữ để bật lại.”<br><em><a href="../BID-03.html">BID-03</a> hiện <b>chặn</b> thao tác này (“Xóa số ở các dòng đó trước khi tắt cột”, có <code>UAT-BID03-11</code>). Chặn hay cảnh báo — chờ chốt ở <a href="../PL-C.html#Q-41">PL-C · Q-41</a>.</em></td></tr>
           <tr><td>Ghi chú cả bảng quá dài</td><td><code>boq_note</code> &gt; 8.000 ký tự</td><td>“Ghi chú cả bảng tối đa 8.000 ký tự (hiện {n}). Nội dung dài hơn nên đính kèm thành tệp ở mục chứng từ.”</td></tr>
           <tr><td>Sửa ghi chú sau khi chốt BOQ</td><td>BOQ đã đóng băng ở BID-02 hoặc BID-05</td><td>“Bản BOQ này đã chốt. Ghi chú là căn cứ nghiệm thu quyết toán nên khóa cùng bản — sửa thì phải chốt một bản BOQ mới.”</td></tr>
           <tr><td>Chèn cột không chọn vị trí</td><td>Thêm cột mà không chỉ định cột đứng trước</td><td>“Chọn cột mà cột mới nằm sau, để thứ tự khớp với tệp Excel đang dán.”</td></tr>
@@ -215,7 +215,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="../BID-01.html">BID-01 tiếp nhận thư chào thầu</a><a href="../BID-02.html">BID-02 thẩm định BOQ liên phòng</a><a href="../BID-03.html">BID-03 áp giá &amp; thương thảo</a><a href="../BID-05.html">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="../ORD-09.html">ORD-09 thanh toán khối lượng HT</a><a href="YC-02.html">YC-02 đơn giá chuẩn</a><a href="YC-04.html">YC-04 mã gói thầu &amp; gộp gói</a><a href="../PL-C.html">PL-C vấn đề cần chốt</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+    <p class="links"><a href="../BID-01.html">BID-01 tiếp nhận thư chào thầu</a><a href="../BID-02.html">BID-02 thẩm định BOQ liên phòng</a><a href="../BID-03.html">BID-03 áp giá &amp; thương thảo</a><a href="../BID-05.html">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="../ORD-09.html">ORD-09 thanh toán khối lượng HT</a><a href="YC-02.html">YC-02 đơn giá chuẩn</a><a href="YC-04.html">YC-04 mã gói thầu &amp; gộp gói</a><a href="../PL-C.html#Q-38">PL-C · Q-38 phát hành mẫu 3.BOQ</a><a href="../PL-C.html#Q-41">PL-C · Q-41 tắt cấu phần đang có số</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
   </div>
 </section>
 <div class="filefoot">

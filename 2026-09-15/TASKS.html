@@ -160,7 +160,7 @@
         </tbody>
       </table>
     </div>
-    <p><b>Description.</b> Ba màn hình <a href="../ACC-10.html">ACC-10</a>, <a href="../PRJ-05.html">PRJ-05</a> và <a href="../RPT-05.html">RPT-05</a> được thêm sau khi bộ đặc tả đã dựng xong, và rail điều hướng chỉ được cập nhật ở một phần các trang. Hiện <b>18 trang</b> có rail không chứa cả ba, và <code>ABSMS-GD1-full.html</code> vừa thiếu cả ba trong rail dạng neo, vừa <b>không có khối nội dung</b> của cả ba. Người đọc đi từ những trang đó sẽ không bao giờ tới được ba màn hình này, và bản đặc tả đầy đủ đang thiếu ba phần.</p>
+    <p><b>Description.</b> Ba màn hình <a href="../ACC-10.html">ACC-10</a>, <a href="../PRJ-05.html">PRJ-05</a> và <a href="../RPT-05.html">RPT-05</a> được thêm sau khi bộ đặc tả đã dựng xong, và rail điều hướng chỉ được cập nhật ở một phần các trang. Hiện <b>19 trang</b> có rail không chứa cả ba, và <code>ABSMS-GD1-full.html</code> vừa thiếu cả ba trong rail dạng neo, vừa <b>không có khối nội dung</b> của cả ba. Người đọc đi từ những trang đó sẽ không bao giờ tới được ba màn hình này, và bản đặc tả đầy đủ đang thiếu ba phần.</p>
     <p>Mười tám trang cần vá: <code>ACC-02</code>, <code>ACC-06</code>, <code>ACC-08</code>, <code>ACC-09</code>, <code>ACC-10</code>, <code>BID-01</code>, <code>BID-02</code>, <code>BID-03</code>, <code>BID-04</code>, <code>BID-05</code>, <code>PF-01</code>, <code>PL-A</code>, <code>PL-C</code>, <code>PRJ-01</code>, <code>PRJ-02</code>, <code>PRJ-03</code>, <code>PRJ-04</code>, <code>PRJ-05</code>.</p>
     <p>Task này đứng đầu epic vì bốn task khác đều thêm hoặc đổi mục trong rail của mọi trang. Làm chúng trên nền rail đang lệch nghĩa là mỗi lần lại phải quyết định “trang này thiếu sẵn rồi, có vá luôn không” — nhân đôi công và để lại kết quả không đều.</p>
     <p><b>Acceptance Criteria.</b></p>
@@ -218,14 +218,14 @@
         </tbody>
       </table>
     </div>
-    <p><b>Description.</b> Đổi “Thẩm định kỹ thuật” thành “Rà soát, kiểm tra HSMT”. Từ “thẩm định” trong đặc tả đang gánh ba nghĩa; chỉ nghĩa <em>tên phiếu do P. TQT lập</em> và <em>tên bước trong luồng</em> bị đổi. Tên màn hình <a href="../BID-02.html">BID-02</a> “Thẩm định BOQ liên phòng” giữ nguyên vì màn hình chứa cả hai phiếu; trạng thái “Chuyển thẩm định” và “Đang thẩm định” cũng giữ nguyên vì đó là trạng thái của <em>gói thầu</em>, đang chờ cả hai phiếu chứ không riêng phiếu nào.</p>
-    <p>Số chỗ đã đếm trong BID-02: 5 lần “Phiếu kỹ thuật”, 3 lần “phiếu kỹ thuật”, 1 lần “thẩm định kỹ thuật” ở tiêu đề mục tham số, 2 lần “Người thẩm định” và 2 lần “người thẩm định”.</p>
+    <p><b>Description.</b> Đổi “Thẩm định kỹ thuật” thành “Rà soát, kiểm tra Hồ sơ mời thầu”. Từ “thẩm định” trong đặc tả đang gánh ba nghĩa; chỉ nghĩa <em>tên phiếu do P. TQT lập</em> và <em>tên bước trong luồng</em> bị đổi. Tên màn hình <a href="../BID-02.html">BID-02</a> “Thẩm định BOQ liên phòng” giữ nguyên vì màn hình chứa cả hai phiếu; trạng thái “Chuyển thẩm định” và “Đang thẩm định” cũng giữ nguyên vì đó là trạng thái của <em>gói thầu</em>, đang chờ cả hai phiếu chứ không riêng phiếu nào.</p>
+    <p>Số chỗ đã đếm trong BID-02: 5 lần “Phiếu kỹ thuật”, 3 lần “phiếu kỹ thuật”, 1 lần “thẩm định kỹ thuật” ở tiêu đề mục tham số, 2 lần “Người thẩm định” và 3 lần “người thẩm định”.</p>
     <p><b>Acceptance Criteria.</b></p>
     <ol class="br">
       <li>Tên phiếu, tiêu đề mục tham số, nhãn tab, nhãn nút nộp, nhãn trong lưu đồ và dòng hàng chờ việc đều mang tên mới.</li>
       <li>Nhãn trường <code>reviewer</code> đổi thành “Người rà soát”; <b>mã trường giữ nguyên</b>, không đổi <code>reviewer</code>, <code>line_check[]</code>, <code>extra_lines[]</code>, <code>qty_proposed</code>.</li>
       <li>Tên màn hình BID-02 không đổi; trạng thái ở PL-A không đổi.</li>
-      <li>PL-B đổi tên thao tác “Lập phiếu thẩm định kỹ thuật” thành “Lập phiếu rà soát, kiểm tra HSMT”.</li>
+      <li>PL-B đổi tên thao tác “Lập phiếu thẩm định kỹ thuật” thành “Lập phiếu rà soát, kiểm tra Hồ sơ mời thầu”.</li>
       <li><code>ABSMS-GD1-full.html</code> đổi đồng bộ, 9 chỗ.</li>
       <li>Phiếu khảo sát hiện trường của Ban dự án không bị đổi tên.</li>
     </ol>
@@ -245,7 +245,7 @@
         </tbody>
       </table>
     </div>
-    <p><b>Description.</b> Ba thay đổi đi liền nhau vì cùng động vào quy tắc mã hóa của gói thầu: mã gói chuyển từ tự sinh sang tự nhập có gợi ý; thêm chức năng gộp nhiều gói cũ thành một gói mới khi các gói còn ở Nháp hoặc Đang thẩm định; và tách mã hạng mục thành hai cột — mã hệ thống <code>&lt;mã gói&gt;.NN</code> do hệ thống sinh và khóa, mã của chủ đầu tư để nhập và đối chiếu.</p>
+    <p><b>Description.</b> Ba thay đổi đi liền nhau vì cùng động vào quy tắc mã hóa của gói thầu: mã gói chuyển từ tự sinh sang tự nhập có gợi ý; thêm chức năng gộp nhiều gói cũ thành một gói mới khi các gói chưa ký hợp đồng; và tách mã hạng mục thành hai cột — mã hệ thống <code>&lt;mã gói&gt;.NN</code> do hệ thống sinh và khóa, mã của chủ đầu tư để nhập và đối chiếu.</p>
     <p>Điểm phải giải trước: <a href="../BID-01.html">BID-01</a> đang yêu cầu giữ nguyên mã hạng mục gốc của bên mời thầu, và <a href="../BID-02.html">BID-02</a> dùng chính mã đó trên bảng đối chiếu từng dòng. Hai cột song song là cách giữ được cả hai yêu cầu.</p>
     <p><b>Acceptance Criteria.</b></p>
     <ol class="br">
@@ -698,12 +698,12 @@
         </tbody>
       </table>
     </div>
-    <p><b>Description.</b> Cho phép gộp từ hai gói thầu trở lên thành một gói mới, khi các gói nguồn còn ở trạng thái Nháp hoặc Đang thẩm định. Gói nguồn <b>không bị xóa</b> mà chuyển sang trạng thái <em>Đã gộp</em>: chỉ đọc, rời hàng chờ việc, giữ nguyên BOQ và tệp hồ sơ mời thầu bản gốc, mang một liên kết trỏ sang gói đích. Thư mời thầu và BOQ gốc vẫn là căn cứ pháp lý của phần khối lượng tương ứng trong gói mới.</p>
+    <p><b>Description.</b> Cho phép gộp từ hai gói thầu trở lên thành một gói mới, khi các gói nguồn chưa ký hợp đồng. Gói nguồn <b>không bị xóa</b> mà chuyển sang trạng thái <em>Đã gộp</em>: chỉ đọc, rời hàng chờ việc, giữ nguyên BOQ và tệp hồ sơ mời thầu bản gốc, mang một liên kết trỏ sang gói đích. Thư mời thầu và BOQ gốc vẫn là căn cứ pháp lý của phần khối lượng tương ứng trong gói mới.</p>
     <p>Bảng đầu việc của gói đích nối theo thứ tự chọn, mỗi gói nguồn thành một nhóm có tiêu đề, mỗi dòng ghi gói nguồn của nó. Toàn bộ thao tác gộp chạy trong một giao dịch: nối BOQ, sinh lại mã hạng mục, đổi trạng thái ba gói nguồn — hỏng giữa chừng thì không được để lại trạng thái nửa vời.</p>
     <p><b>Acceptance Criteria.</b></p>
     <ol class="br">
       <li>Migration thêm quan hệ gộp, trạng thái <em>Đã gộp</em>, và cột gói nguồn trên dòng BOQ.</li>
-      <li>Chỉ liệt kê gói ở Nháp hoặc Đang thẩm định, chưa từng bị gộp, và không phải gói đang lập; gói không hợp lệ tra bằng ô tìm thì báo đúng lý do.</li>
+      <li>Chỉ liệt kê gói chưa ký hợp đồng, chưa từng bị gộp, và không phải gói đang lập; gói không hợp lệ tra bằng ô tìm thì báo đúng lý do.</li>
       <li>Chặn gộp một gói, gộp gói đã áp giá, gộp gói đã ký hợp đồng, gộp gói đã gộp.</li>
       <li>Lý do gộp bắt buộc, hiển thị trên cả gói đích và các gói nguồn.</li>
       <li>Toàn bộ thao tác gộp nằm trong một giao dịch do service sở hữu qua <code>TxManager</code>.</li>
@@ -815,7 +815,7 @@
         </tbody>
       </table>
     </div>
-    <p><b>Description.</b> Đổi nhãn hiển thị của phiếu và của bước trong luồng, từ “Thẩm định kỹ thuật” sang “Rà soát, kiểm tra HSMT”. Thuần giao diện và chuỗi dịch — <b>không đổi mã trường, không đổi mã trạng thái</b>. Trạng thái gói thầu “Đang thẩm định” giữ nguyên vì đó là trạng thái của gói, đang chờ cả hai phiếu.</p>
+    <p><b>Description.</b> Đổi nhãn hiển thị của phiếu và của bước trong luồng, từ “Thẩm định kỹ thuật” sang “Rà soát, kiểm tra Hồ sơ mời thầu”. Thuần giao diện và chuỗi dịch — <b>không đổi mã trường, không đổi mã trạng thái</b>. Trạng thái gói thầu “Đang thẩm định” giữ nguyên vì đó là trạng thái của gói, đang chờ cả hai phiếu.</p>
     <p><b>Acceptance Criteria.</b></p>
     <ol class="br">
       <li>Nhãn đổi ở: tiêu đề tab, nhãn nút nộp, dòng hàng chờ việc, nội dung thông báo nhắc hạn, tiêu đề hộp thoại chặn.</li>

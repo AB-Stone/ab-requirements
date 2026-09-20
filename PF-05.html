@@ -18,23 +18,25 @@
     <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
     <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
     <a class="on" href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <a href="PF-06.html"><i>PF-06</i>Bảng đơn giá chuẩn</a>
     <div class="rail-grp">Phòng Đấu thầu</div>
     <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
     <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
     <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
     <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
     <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
     <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
-    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
     <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
     <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
+    <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
@@ -70,7 +72,7 @@
 <main class="main">
 <div class="pagehead">
   <div class="crumb"><a href="index.html">ABSMS GĐ1</a> / Nền tảng / <b>PF-05</b></div><div class="sp"></div>
-  <div class="pnav"><a href="PF-04.html">← PF-04</a><a href="index.html">Mục lục</a><a href="BID-01.html">BID-01 →</a></div>
+  <div class="pnav"><a href="PF-04.html">← PF-04</a><a href="index.html">Mục lục</a><a href="PF-06.html">PF-06 →</a></div>
 </div>
 <section class="sheet solo" id="PF-05">
   <header class="tb">
@@ -219,7 +221,7 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Chứng từ chủ</td><td class="k">owner_doc</td><td>Tham chiếu</td><td class="c req">✱</td><td>Tệp không tồn tại độc lập; luôn gắn một chứng từ.</td></tr>
-          <tr><td>Loại tài liệu</td><td class="k">doc_kind</td><td>Chọn 1</td><td class="c req">✱</td><td>BOQ mời thầu · BOQ cập nhật · BOQ báo giá · hợp đồng · bản vẽ shop · bản vẽ sản xuất · phiếu xuất · phiếu nhập · hóa đơn · biên bản nghiệm thu · bảng công nhật · khác.</td></tr>
+          <tr><td>Loại tài liệu</td><td class="k">doc_kind</td><td>Chọn 1</td><td class="c req">✱</td><td>BOQ mời thầu · BOQ cập nhật · BOQ báo giá · hợp đồng · <b>bản vẽ thiết kế</b> · bản vẽ shop · bản vẽ đơn hàng · phiếu xuất · phiếu nhập · hóa đơn · biên bản nghiệm thu · <b>hồ sơ nghiệm thu vật liệu đầu vào</b> · <b>hồ sơ nghiệm thu chất lượng</b> · <b>nhật ký công trường</b> · <b>biên bản bàn giao đưa vào sử dụng</b> · bảng công nhật · khác. <em>Bản vẽ thiết kế</em> là hồ sơ đầu vào do CĐT hoặc đơn vị thiết kế cấp cho dự án (<a href="ORD-02.html">ORD-02</a>), nhận <code>.dwg</code> · <code>.dxf</code> · <code>.pdf</code>; <em>bản vẽ đơn hàng</em> là tệp đính kèm của đơn ở <a href="ORD-03.html">ORD-03</a>, trước đây gọi là “bản vẽ sản xuất”. Bốn loại <em>hồ sơ nghiệm thu vật liệu đầu vào</em>, <em>hồ sơ nghiệm thu chất lượng</em>, <em>nhật ký công trường</em> và <em>biên bản bàn giao đưa vào sử dụng</em> là bốn thành phần của nhóm hồ sơ chất lượng ở <a href="RPT-05.html">RPT-05</a>, tách riêng khỏi <em>biên bản nghiệm thu</em> vì mỗi loại có chuỗi phiên bản riêng (<a href="2026-09-15/YC-10.html">YC-10</a>).</td></tr>
           <tr><td>Phiên bản</td><td class="k">version</td><td>Số</td><td class="c req">✱</td><td>Tự tăng theo cặp (chứng từ chủ, loại tài liệu).</td></tr>
           <tr><td>Ghi chú phiên bản</td><td class="k">version_note</td><td>Chuỗi</td><td class="c">—</td><td>Bắt buộc từ v2 trở đi — buộc người tải nói rõ đã sửa gì.</td></tr>
           <tr><td>Định dạng &amp; dung lượng</td><td class="k">mime, size</td><td>Hệ thống</td><td class="c req">✱</td><td>Cho phép PDF, Excel, DWG, ảnh. Trần 50 MB / tệp, 28 MB với bản vẽ đã nén.</td></tr>
@@ -272,7 +274,7 @@
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Tệp luôn có chủ.</b> Không tồn tại tệp độc lập; mọi tệp gắn với đúng một chứng từ chủ.<span class="then">Quyền xem tệp kế thừa hoàn toàn quyền xem chứng từ chủ, kể cả khi truy cập bằng đường dẫn trực tiếp.</span></li>
-      <li><b>Phiên bản theo cặp.</b> Số phiên bản tăng theo cặp (chứng từ chủ, loại tài liệu).<span class="then">BOQ báo giá và bản vẽ shop của cùng một gói thầu có hai chuỗi phiên bản độc lập.</span></li>
+      <li><b>Phiên bản theo cặp.</b> Số phiên bản tăng theo cặp (chứng từ chủ, loại tài liệu).<span class="then">BOQ báo giá và bản vẽ shop của cùng một gói thầu có hai chuỗi phiên bản độc lập. Hồ sơ bản vẽ thiết kế của một dự án cũng vậy: CĐT phát hành bản mới là v2 của cùng hồ sơ, bản cũ giữ nguyên vì shop đã trình dựa trên bản cũ vẫn phải tra lại được.</span></li>
       <li><b>Không ghi đè.</b> Tải lên tệp trùng tên sẽ tạo phiên bản mới, không thay thế tệp cũ.<span class="then">Bản cũ vẫn tải xuống được từ lịch sử phiên bản.</span></li>
       <li><b>Bắt buộc ghi chú từ v2.</b> Từ phiên bản thứ hai trở đi, ô ghi chú thay đổi là bắt buộc.<span class="then">Buộc người tải nói rõ đã sửa gì — đây là dữ liệu để đọc lại quá trình thương thảo về sau.</span></li>
       <li><b>Đóng băng sau khi duyệt.</b> Chứng từ chủ được duyệt thì mọi tệp của nó chuyển sang chỉ đọc.<span class="then">Không xóa được kể cả bởi Admin; muốn thay đổi phải lập chứng từ điều chỉnh mới.</span></li>
@@ -310,11 +312,11 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-01.html">BID-01 BOQ mời thầu</a><a href="BID-03.html">BID-03 các bản BOQ báo giá</a><a href="ORD-02.html">ORD-02 bản vẽ shop</a><a href="ORD-08.html">ORD-08 hồ sơ thanh toán</a></p>
+    <p class="links"><a href="BID-01.html">BID-01 BOQ mời thầu</a><a href="BID-03.html">BID-03 các bản BOQ báo giá</a><a href="ORD-02.html">ORD-02 bản vẽ shop</a><a href="ORD-03.html">ORD-03 bản vẽ đơn hàng</a><a href="ORD-08.html">ORD-08 hồ sơ thanh toán</a><a href="2026-09-15/YC-07.html">YC-07 hồ sơ bản vẽ thiết kế</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 5 / 42</span><span><code>PF-05.html</code></span>
+  <span>Đặc tả 5 / 47</span><span><code>PF-05.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

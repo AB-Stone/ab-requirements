@@ -73,7 +73,7 @@
       <table>
         <thead><tr><th style="width:20%">Loại</th><th style="width:16%">Mã</th><th style="width:20%">Ai đưa vào</th><th style="width:20%">Gắn với</th><th>Dùng để</th></tr></thead>
         <tbody>
-          <tr><td><b>Bản vẽ thiết kế</b></td><td class="k">design_dossier</td><td>Chủ đầu tư hoặc đơn vị thiết kế</td><td>Dự án</td><td>Căn cứ để P. TQT triển khai shopdrawing. Là đầu vào, công ty không sửa</td></tr>
+          <tr><td><b>Bản vẽ thiết kế</b></td><td class="k">design_dossier</td><td><b>P. TQT</b> tải lên — bản nhận từ chủ đầu tư hoặc đơn vị thiết kế</td><td>Dự án</td><td>Căn cứ để P. TQT triển khai shopdrawing. Là đầu vào, công ty không sửa nội dung</td></tr>
           <tr><td><b>Bản vẽ shopdrawing</b></td><td class="k">shop_dossier</td><td>P. TQT lập</td><td>Dự án → hạng mục → đợt trình</td><td>Trình chủ đầu tư duyệt; căn cứ để lập đơn hàng. Cấu trúc ở <a href="YC-08.html">YC-08</a></td></tr>
           <tr><td><b>Bản vẽ đơn hàng</b></td><td class="k">order_dwg</td><td>P. TQT</td><td>Từng đơn hàng</td><td>Bản vẽ gửi kèm phiếu yêu cầu sản xuất cho nhà máy. Là tệp đính kèm của đơn, <b>không phải</b> chính đơn hàng</td></tr>
         </tbody>
@@ -89,7 +89,7 @@
       <table>
         <thead><tr><th style="width:20%">Trang</th><th style="width:26%">Mục trong trang</th><th>Thay đổi</th></tr></thead>
         <tbody>
-          <tr><td><a href="../ORD-02.html">ORD-02</a></td><td>Thêm mục <em>Hồ sơ bản vẽ thiết kế</em></td><td>Khối hồ sơ cấp dự án: tệp, phiên bản, đơn vị thiết kế, ngày nhận; cộng bảng theo dõi tình trạng shop theo hạng mục</td></tr>
+          <tr><td><a href="../ORD-02.html">ORD-02</a></td><td>Thêm mục <em>Hồ sơ bản vẽ thiết kế</em></td><td>Khối hồ sơ cấp dự án <b>nằm trong hồ sơ Shopdrawing</b> (cấp 1 của <a href="YC-08.html">YC-08</a>): ô tải tệp, phiên bản, đơn vị thiết kế, ngày nhận; cộng bảng theo dõi tình trạng shop theo hạng mục</td></tr>
           <tr><td><a href="../ORD-02.html">ORD-02</a></td><td>Danh sách bản vẽ</td><td>Thêm cột <b>Bản vẽ thiết kế</b> — hiện trạng thái tổng hợp, bấm vào mở bảng theo dõi</td></tr>
           <tr><td><a href="../ORD-03.html">ORD-03</a></td><td><code>files[]</code></td><td>Đổi nhãn “Bản vẽ sản xuất” → “Bản vẽ đơn hàng”; bổ sung câu phân biệt với hồ sơ shopdrawing</td></tr>
           <tr><td><a href="../PF-05.html">PF-05</a></td><td>Danh mục loại chứng từ</td><td>Thêm loại tệp <em>Bản vẽ thiết kế</em> để hồ sơ này có phiên bản và đóng băng như mọi chứng từ khác</td></tr>
@@ -146,7 +146,8 @@
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Một dự án, một hồ sơ mỗi loại.</b> Hồ sơ bản vẽ thiết kế và hồ sơ shopdrawing đều sinh sẵn khi dự án được khởi tạo, ở trạng thái rỗng.<span class="then">Không bắt người dùng “tạo hồ sơ” — chỗ để tệp phải có sẵn từ lúc dự án ra đời, nếu không bản vẽ đầu tiên nhận được sẽ nằm trong hộp thư của ai đó.</span></li>
-      <li><b>Bản vẽ thiết kế là đầu vào, không phải sản phẩm.</b> Công ty không sửa, chỉ nhận và ghi phiên bản.<span class="then">Chủ đầu tư phát hành bản vẽ thiết kế mới thì đó là phiên bản mới của cùng một hồ sơ; bản cũ giữ nguyên vì shop đã trình dựa trên bản cũ vẫn cần tra lại được.</span></li>
+      <li><b>Bản vẽ thiết kế là đầu vào, không phải sản phẩm.</b> Công ty không sửa nội dung, chỉ nhận và ghi phiên bản.<span class="then">Chủ đầu tư phát hành bản vẽ thiết kế mới thì đó là phiên bản mới của cùng một hồ sơ; bản cũ giữ nguyên vì shop đã trình dựa trên bản cũ vẫn cần tra lại được.</span></li>
+      <li><b>P. TQT là bộ phận đưa bản vẽ thiết kế vào hệ thống.</b> Chủ đầu tư và đơn vị thiết kế không có tài khoản; họ gửi bản vẽ ra ngoài hệ thống, P. TQT nhận và tải lên, ghi đơn vị thiết kế cùng ngày nhận.<span class="then">Quyền ghi của hồ sơ này vì vậy nằm ở P. TQT như mọi hồ sơ khác của <a href="YC-08.html">YC-08</a> — xem dòng thao tác ở <a href="../PL-B.html">PL-B</a>. Ô tải tệp đặt ngay trong hồ sơ Shopdrawing của dự án, cạnh danh sách hạng mục: đó là màn hình P. TQT mở hằng ngày, và bản vẽ thiết kế là thứ đầu tiên họ cần trước khi lập shop.</span></li>
       <li><b>Bản vẽ thiết kế mới làm dấy lên rà soát.</b> Khi thêm phiên bản mới, hệ thống hỏi hạng mục nào bị ảnh hưởng và đánh dấu những hạng mục đó.<span class="then">Đây là nguồn gốc của hầu hết việc làm lại shop. Yêu cầu gốc của một gói thầu thật ghi thẳng vào ô ghi chú BOQ: “Cập nhật lại độ dày và tỉ lệ đá theo BVPH…”. Không đánh dấu thì shop cũ đi tiếp và sai lệch chỉ lộ ra lúc sản xuất.</span></li>
       <li><b>Bảng theo dõi sinh từ danh mục hạng mục, không gõ tay.</b> Mỗi hạng mục của dự án là một dòng.<span class="then">Nếu để gõ tay thì tên hạng mục ở bảng theo dõi sẽ trôi khỏi tên hạng mục trong BOQ hợp đồng, và đối chiếu hai bên thành việc đọc bằng mắt.</span></li>
       <li><b>Số thứ tự giữ nguyên số gốc.</b> Bảng không đánh lại số liên tục theo dòng hiển thị.<span class="then">Biểu mẫu thật có dãy 8.1, 9, 10, 13, 14, 15, 24, 27… — khoảng trống chính là thông tin: những hạng mục chưa tới lượt. Đánh lại số sẽ xóa mất điều đó.</span></li>
@@ -181,6 +182,7 @@
       <li>Số thứ tự giữ nguyên số gốc của hạng mục, kể cả khi dãy số ngắt quãng.</li>
       <li>Chủ đầu tư phát hành bản vẽ thiết kế mới thì hạng mục bị ảnh hưởng được đánh dấu để rà soát lại shop.</li>
       <li>Tệp đính kèm của đơn hàng mang tên “Bản vẽ đơn hàng” và không xuất hiện trong hồ sơ shopdrawing của dự án.</li>
+      <li>Mở hồ sơ Shopdrawing của dự án thấy ngay khối <b>Hồ sơ bản vẽ thiết kế</b> với nút tải bản vẽ — P. TQT không phải đi tìm màn hình khác để đưa bản vẽ nhận được vào hệ thống.</li>
     </ul>
 
     <h4>Kịch bản kiểm thử</h4>
@@ -189,7 +191,8 @@
         <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
           <tr><td>UAT-YC07-1</td><td>Dự án vừa khởi tạo từ BID-05</td><td>Mở danh sách bản vẽ</td><td>Cột Bản vẽ thiết kế hiện “0/{n} hạng mục · chưa có bản vẽ”</td></tr>
-          <tr><td>UAT-YC07-2</td><td>Tiếp UAT-1</td><td>Tải lên bản vẽ thiết kế phiên bản 1 gồm 3 tệp DWG và 3 PDF</td><td>Hồ sơ hiện phiên bản 1, ngày nhận, đủ 6 tệp</td></tr>
+          <tr><td>UAT-YC07-2</td><td>Tiếp UAT-1, đăng nhập bằng tài khoản P. TQT</td><td>Mở hồ sơ Shopdrawing của dự án, bấm tải bản vẽ thiết kế phiên bản 1 gồm 3 tệp DWG và 3 PDF</td><td>Nút tải nằm ngay trong hồ sơ Shopdrawing; hồ sơ hiện phiên bản 1, ngày nhận, đủ 6 tệp</td></tr>
+          <tr><td>UAT-YC07-2b</td><td>Đăng nhập bằng tài khoản Ban dự án</td><td>Mở cùng màn hình</td><td>Đọc được hồ sơ và bảng theo dõi; không thấy nút tải bản vẽ thiết kế — quyền ghi thuộc P. TQT</td></tr>
           <tr><td>UAT-YC07-3</td><td>Dự án có 37 hạng mục</td><td>Mở bảng theo dõi</td><td>Đủ 37 dòng sinh sẵn từ danh mục hạng mục, chia đúng hai nhóm, số thứ tự giữ nguyên số gốc</td></tr>
           <tr><td>UAT-YC07-4</td><td>Hạng mục “Sân nền Bảo Tháp”</td><td>Chọn tình trạng <em>Đã in trình bản cứng</em>, bỏ trống ngày</td><td>Bị chặn, nêu lý do liên quan tới đếm ngày ở phía chủ đầu tư</td></tr>
           <tr><td>UAT-YC07-5</td><td>Tiếp UAT-4</td><td>Nhập ngày 05/09/2026</td><td>Ô hiện “Đã in trình bản cứng ngày 05/09/2026”</td></tr>

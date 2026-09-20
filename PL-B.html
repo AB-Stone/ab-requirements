@@ -18,23 +18,25 @@
     <a href="PF-03.html"><i>PF-03</i>Trung tâm phê duyệt</a>
     <a href="PF-04.html"><i>PF-04</i>Thông báo &amp; ký duyệt</a>
     <a href="PF-05.html"><i>PF-05</i>Chứng từ &amp; phiên bản</a>
+    <a href="PF-06.html"><i>PF-06</i>Bảng đơn giá chuẩn</a>
     <div class="rail-grp">Phòng Đấu thầu</div>
     <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
     <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
     <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
+    <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
     <a href="ORD-03.html"><i>ORD-03</i>Lập &amp; trình đơn hàng</a>
     <a href="ORD-04.html"><i>ORD-04</i>Duyệt &amp; phân luồng SX/CƯ</a>
     <a href="ORD-05.html"><i>ORD-05</i>Cấp hàng theo đợt</a>
-    <a href="ORD-06.html"><i>ORD-06</i>Áp giá doanh thu đơn</a>
     <a href="ORD-07.html"><i>ORD-07</i>Cập nhật / hủy đơn</a>
     <a href="ORD-08.html"><i>ORD-08</i>Hồ sơ thanh toán vật tư</a>
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
+    <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
@@ -107,9 +109,24 @@
       </tbody>
     </table>
   </div>
+  <p style="font-size:13px;color:var(--ink-2);max-width:74ch">Một số thao tác nằm gọn trong một màn hình nhưng chủ sở hữu của chúng không suy ra được từ phân hệ — bảng dưới đây khai riêng từng thao tác đó: bộ phận nào <b>ghi</b>, bộ phận nào chỉ <b>đọc</b>. Bảng này bổ sung cho ma trận phân hệ ở trên, không thay thế nó.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:30%">Thao tác</th><th style="width:14%">Màn hình</th><th style="width:16%">Quyền ghi</th><th style="width:22%">Quyền đọc</th><th>Ghi chú</th></tr></thead>
+      <tbody>
+        <tr><td>Lập phiếu rà soát, kiểm tra Hồ sơ mời thầu</td><td><a href="BID-02.html">BID-02</a></td><td>P. TQT</td><td>P. Đấu thầu · Ban dự án · Ban lãnh đạo</td><td>Kết luận theo dòng, khối lượng đề xuất, đầu việc bổ sung và người rà soát của phiếu do P. TQT lập. Phiếu khảo sát hiện trường trên cùng màn hình thuộc Ban dự án, không dùng chung quyền ghi. Trạng thái gói thầu “Chuyển thẩm định” / “Đang thẩm định” ở <a href="PL-A.html">PL-A</a> không đổi theo tên phiếu. Theo <a href="2026-09-15/YC-03.html">YC-03</a>.</td></tr>
+        <tr><td>Lập bảng áp giá doanh thu</td><td><a href="BID-06.html">BID-06</a></td><td>P. Đấu thầu</td><td>Ban lãnh đạo · P. Kế toán · P. TQT</td><td>Đơn giá doanh thu theo dòng, căn cứ áp giá và lý do lệch giá của bảng áp giá đơn hàng. Thao tác này trước đây thuộc P. TQT vì màn hình nằm dưới nhánh P. TQT — Shopdrawing; định giá bán là việc của Phòng Đấu thầu nên quyền ghi chuyển theo. P. TQT giữ quyền đọc để biết đơn nào đã khép hồ sơ giá — mở từ nhãn “đã có giá doanh thu” trên danh sách đơn, mọi ô đều khóa. Cột giá vốn và biên lợi nhuận đơn vẫn chỉ hiện với Ban lãnh đạo và P. Kế toán, không mở thêm cho người lập. Theo <a href="2026-09-15/YC-01.html">YC-01</a>.</td></tr>
+        <tr><td>Cập nhật tình trạng shop theo hạng mục</td><td><a href="ORD-02.html">ORD-02</a></td><td>P. TQT</td><td>Ban dự án · Ban lãnh đạo</td><td>Ô tình trạng, cán bộ phụ trách, ngày in trình bản cứng và ghi chú của bảng theo dõi. Cán bộ phụ trách gán được cho người thuộc P. TQT; sửa tay một ô đang do bản vẽ điều khiển thì ô bị đánh dấu kèm tên người sửa. Theo <a href="2026-09-15/YC-07.html">YC-07</a>.</td></tr>
+        <tr><td>Tải phiên bản mới hồ sơ bản vẽ thiết kế</td><td><a href="ORD-02.html">ORD-02</a></td><td>P. TQT</td><td>Ban dự án · Ban lãnh đạo · P. Đấu thầu</td><td>Kèm bước chọn hạng mục bị ảnh hưởng để đánh dấu rà soát lại shop. Bản cũ không xóa được, theo <a href="PF-05.html">PF-05</a>.</td></tr>
+        <tr><td>Cập nhật hồ sơ theo dõi thanh toán</td><td><a href="RPT-05.html">RPT-05</a></td><td>P. TQT</td><td>Ban lãnh đạo · P. Kế toán · Ban dự án</td><td>Trạng thái mười thành phần của ba nhóm hồ sơ, tệp đính kèm, cán bộ phụ trách và dòng hạng mục ngoài phạm vi Phòng Đấu thầu. Mỗi lần đổi trạng thái hoặc tải tệp đều ghi người cập nhật và ngày cập nhật — đây là lý do quyền ghi giữ hẹp. Trạng thái chảy hai chiều với <a href="ORD-08.html">ORD-08</a> / <a href="ORD-09.html">ORD-09</a> / <a href="ORD-10.html">ORD-10</a> / <a href="PRJ-03.html">PRJ-03</a>, nên quyền ghi ở đây tương đương quyền ghi trên hồ sơ nguồn. Phần cột cũ của RPT-05 — bảo hành, công nợ, ghi chú theo dõi — vẫn thuộc P. Kế toán. Theo <a href="2026-09-15/YC-10.html">YC-10</a>.</td></tr>
+        <tr><td>Gửi bộ hồ sơ yêu cầu sản xuất cho nhà máy</td><td><a href="ORD-03.html">ORD-03</a></td><td>P. TQT</td><td>Ban lãnh đạo · Ban dự án · P. Kế toán</td><td>Thao tác “Gửi nhà máy” trên phiếu đã phê duyệt: chốt bộ bốn tài liệu kèm theo — phiếu, Danh sách cắt đá (<a href="ORD-11.html">ORD-11</a>), bản vẽ đơn hàng, bảng tiến độ giao hàng — chọn nơi nhận và ghi lý do khi thiếu tài liệu thứ tư. Đây là thao tác đưa đơn sang chặng “Đã gửi nhà máy” của <a href="PL-A.html">PL-A</a>, nên chỉ người thuộc P. TQT được bấm và mỗi lần gửi đều ghi người gửi cùng ngày gửi. Phê duyệt phiếu vẫn là việc của TP TQT và Ban lãnh đạo theo <a href="PF-03.html">PF-03</a>; gửi không phải một cấp duyệt nữa mà là bước phát hành ra ngoài. Theo <a href="2026-09-15/YC-09.html">YC-09</a>.</td></tr>
+        <tr><td>Ghi nhận phản hồi của nhà máy</td><td><a href="ORD-03.html">ORD-03</a></td><td>P. TQT <em>(tạm định)</em></td><td>Ban lãnh đạo · Ban dự án</td><td><b>Chủ sở hữu quyền ghi ở đây là tạm định, chờ <a href="PL-C.html#Q-43">Q-43</a>.</b> Khối <code>factory_ack</code> — trạng thái <em>Chưa phản hồi · Chấp thuận · Đề nghị điều chỉnh</em>, nội dung phản hồi, người trả lời và ngày trả lời — là thứ mở lối vào <a href="ORD-04.html">ORD-04</a>, nên nó phải có một chủ ghi rõ ràng chứ không nằm chung “theo luồng trình”. Cho tới khi <a href="PL-C.html#Q-43">Q-43</a> chốt, bản dựng để P. TQT <b>chép lại</b> lời nhà máy và bắt đính kèm văn bản trả lời gốc: ô “người trả lời” ghi tên người bên nhà máy, còn nhật ký ghi tên người chép — hai thứ khác nhau và không được trộn. Nếu Q-43 chọn đường cấp tài khoản cho nhà máy thì dòng này đổi thành một vai trò ngoài công ty với phạm vi dữ liệu riêng, và ma trận phân hệ ở đầu trang phải thêm một cột. Theo <a href="2026-09-15/YC-09.html">YC-09</a>.</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 40 / 42</span><span><code>PL-B.html</code></span>
+  <span>Đặc tả 45 / 47</span><span><code>PL-B.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>
