@@ -331,11 +331,11 @@
         <div class="wf-chips"><span class="wf-chip">Tất cả nhóm</span><span class="wf-chip">Đề xuất mua sắm</span><span class="wf-chip">Đơn hàng</span><span class="wf-chip">Kho</span><span class="wf-chip">Thanh toán</span><span class="wf-chip">Khoán &amp; nhân công</span></div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">2</span> Danh sách lệnh chờ xử lý của tôi</div>
-          <table><thead><tr><th>Loại</th><th>Mã CT</th><th>Nội dung tóm tắt</th><th>Dự án</th><th>Giá trị</th><th>Bước</th></tr></thead>
+          <table><thead><tr><th>Phê duyệt</th><th>Nội dung tóm tắt</th><th>Giá trị</th><th>Bước</th></tr></thead>
           <tbody>
-            <tr><td>Đơn bán hàng</td><td>SO-2026-041</td><td>Đơn đá granite — ốp lát tháp A</td><td>DA-2026-014</td><td class="num">2.376.000.000</td><td><span class="tag t-warn">Cấp 2/3</span></td></tr>
-            <tr><td>Phiếu chi</td><td>PC-2026-233</td><td>Tạm ứng vật tư — The Maris</td><td>DA-2025-032</td><td class="num">450.000.000</td><td><span class="tag t-warn">Cấp 3/3</span></td></tr>
-            <tr><td>Đề xuất mua</td><td>PR-2026-097</td><td>Đá block mỏ Phú Yên — kế hoạch Q3</td><td>CHUNG</td><td class="num">1.850.000.000</td><td><span class="tag t-crit">Quá hạn 52 giờ</span></td></tr>
+            <tr><td>Bán hàng › Đơn hàng › <b>SO-2026-041</b></td><td>Đơn đá granite — ốp lát tháp A · DA-2026-014</td><td class="num">2.376.000.000</td><td><span class="tag t-warn">Cấp 2/3</span></td></tr>
+            <tr><td>Kế toán › Phiếu chi › <b>PC-2026-233</b></td><td>Tạm ứng vật tư — The Maris · DA-2025-032</td><td class="num">450.000.000</td><td><span class="tag t-warn">Cấp 3/3</span></td></tr>
+            <tr><td>Kế toán › Đề xuất mua sắm › <b>PR-2026-097</b></td><td>Đá block mỏ Phú Yên — kế hoạch Q3 · CHUNG</td><td class="num">1.850.000.000</td><td><span class="tag t-crit">Quá hạn 52 giờ</span></td></tr>
           </tbody></table>
         </div>
       </div>
@@ -392,6 +392,8 @@
       <li><b>Từ chối là điểm dừng.</b> Từ chối đóng phiên duyệt và đóng chứng từ, bắt buộc kèm lý do.<span class="then">Muốn trình lại phải lập chứng từ mới; chứng từ mới tự trích dẫn chứng từ bị từ chối để giữ mạch truy vết.</span></li>
       <li><b>Đếm quá hạn theo giờ làm việc.</b> Thời hạn xử lý tính theo giờ hành chính, bỏ qua ngày nghỉ đã khai trong lịch công ty.<span class="then">Quá hạn thì nhắc lần 1 khi hết hạn, lần 2 sau nửa hạn nữa, rồi báo lên cấp trên của người duyệt.</span></li>
       <li><b>Chỉ thấy việc của mình.</b> Danh sách và số đếm trên tab đều lọc theo tên người đang đăng nhập.<span class="then">Riêng Admin thấy toàn bộ, nhưng vẫn phân biệt rõ “lệnh của tôi” và “toàn hệ thống” bằng hai bộ lọc tách nhau.</span></li>
+      <li><b>Mỗi dòng mở đầu bằng đường dẫn phân hệ.</b> Cột đầu của danh sách là chuỗi <i>Phân hệ › Màn hình › Mã chứng từ</i>, thay cho một cột “Loại” phẳng.<span class="then">Trung tâm phê duyệt gom chứng từ của mọi phòng ban vào một bảng, nên người duyệt cần biết ngay việc này thuộc phần nào của hệ thống trước khi mở nó. Tên dự án đi kèm trong cột Nội dung, không tách thành cột riêng.</span></li>
+      <li><b>Bấm mã chứng từ là sang màn hình xử lý.</b> Cấp cuối của đường dẫn là liên kết tới chính màn hình sở hữu chứng từ — <a href="ORD-03.html">ORD-03</a> cho đơn hàng, <a href="ACC-05.html">ACC-05</a> cho đề nghị thanh toán, <a href="PRJ-01.html">PRJ-01</a> cho bảng giá khoán…<span class="then">Quyết định duyệt cần nhìn đủ nội dung chứng từ, mà danh sách chỉ có một dòng tóm tắt. Chứng từ chưa có màn hình chi tiết riêng thì liên kết trỏ về danh sách chứa nó — xem <a href="PL-C.html">Q-47</a>.</span></li>
       <li><b>Hành động hậu duyệt chạy trong cùng giao dịch.</b> Duyệt bước cuối sẽ kích hoạt các hành động hậu duyệt của chứng từ.<span class="then">Nếu một hành động thất bại thì toàn bộ việc duyệt được hoàn tác và người duyệt nhận thông báo lỗi cụ thể — không để chứng từ ở trạng thái nửa vời.</span></li>
       <li><b>Ký kèm mã băm.</b> Mỗi lần duyệt sinh một dấu ký gắn mã băm nội dung chứng từ tại thời điểm ký.<span class="then">Chứng từ bị sửa sau đó thì dấu ký hiển thị cảnh báo “nội dung đã thay đổi sau khi ký”.</span></li>
     </ol>
