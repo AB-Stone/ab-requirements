@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đợt yêu cầu 22/09/2026 — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 22/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Đợt yêu cầu 22/09/2026</div>
+    <a class="on" href="index.html"><i>MỤC LỤC</i>Tổng quan 4 yêu cầu</a>
+    <a href="TASKS.html"><i>TASKS</i>Danh sách công việc</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="YC-11.html"><i>YC-11</i>Khoản phạt của chủ đầu tư</a>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="YC-12.html"><i>YC-12</i>Trung tâm phê duyệt</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="YC-13.html"><i>YC-13</i>Hồ sơ Shopdrawing v2</a>
+    <div class="rail-grp">Toàn hệ thống</div>
+    <a href="YC-14.html"><i>YC-14</i>Bộ lọc khoảng thời gian</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="../index.html">ABSMS GĐ1</a> / <b>Đợt yêu cầu 22/09/2026</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-11.html">YC-11 →</a></div>
+</div>
+<header class="masthead">
+  <div class="eyebrow">Công ty CP Đá An Bình · Hệ thống ABSMS</div>
+  <h1>Đợt yêu cầu<br>22/09/2026</h1>
+  <p class="lede">Bốn yêu cầu mới do các phòng ban bổ sung vào bảng yêu cầu sau khi <a href="../2026-09-15/index.html">đợt 15/09</a> đã được áp vào đặc tả, kèm một tab biểu mẫu mới của P. TQT. Mỗi yêu cầu được làm rõ tới mức đặc tả — tham số, quy tắc nghiệp vụ, thông điệp kiểm tra, kịch bản kiểm thử — để chốt nội dung trước khi sửa vào 47 trang đặc tả gốc.</p>
+  <dl class="stamp">
+    <div><dt>Nguồn yêu cầu</dt><dd>Google Sheet · tab <em>Tóm tắt</em> · dòng 14 – 21</dd></div>
+    <div><dt>Biểu mẫu kèm theo</dt><dd>Tab <em>Shopdrawing</em> — bảng theo dõi bảy cột</dd></div>
+    <div><dt>Số yêu cầu</dt><dd>4 yêu cầu · 2 việc sửa nhỏ · 1 điểm phải hỏi lại</dd></div>
+    <div><dt>Phân rã công việc</dt><dd><a href="TASKS.html">2 epic · 28 task · 178 điểm</a></dd></div>
+    <div><dt>Trạng thái</dt><dd>Đã làm rõ — chờ duyệt trước khi merge</dd></div>
+    <div><dt>Phiên bản</dt><dd>Bản thảo 1.0</dd></div>
+  </dl>
+</header>
+
+<section class="block" id="cach-doc">
+  <h2><em>§0</em>Cách đọc tập tài liệu này</h2>
+  <p class="intro">Giống <a href="../2026-09-15/index.html">đợt trước</a>: mỗi trang <code>YC-nn</code> mô tả <em>một thay đổi</em> so với đặc tả Giai đoạn 1 đang có, mở đầu bằng <b>Hiện trạng → Mong muốn</b> chép nguyên văn từ bảng yêu cầu và <b>Phạm vi tác động</b> chỉ đúng trang nào, mục nào phải sửa. Đánh số <code>YC</code> nối tiếp dãy của đợt trước, không bắt đầu lại từ 1.</p>
+  <div class="note">
+    <b>Đợt này bắt đầu từ dòng 14 của bảng yêu cầu</b>
+    <p style="margin:0">Dòng 1 – 10 đã thành <a href="../2026-09-15/index.html">YC-01 … YC-10</a> và đã được áp vào đặc tả. Dòng 11 – 13 không tồn tại trong bảng. Dòng 8 và dòng 10 có thay đổi trong bảng nhưng chỉ ở hai cột hành chính <em>Địa chỉ truy cập</em> và <em>Hiện trạng</em> — nội dung yêu cầu không đổi, <b>không phát sinh việc</b>. Dòng 18, 20 và 22 – 39 là dòng trống.</p>
+  </div>
+  <div class="note">
+    <b>Hai việc không cần trang đặc tả</b>
+    <p style="margin:0">Dòng 16 (không cuộn được danh sách nhân viên khi gán nhân sự) và dòng 17 (độ rộng cột <em>quy cách</em> / <em>đầu việc</em> trên bảng đầu việc BOQ) là lỗi giao diện thuần, không đụng nghiệp vụ. Chúng đi thẳng vào <a href="TASKS.html#D-01">D-01</a> và <a href="TASKS.html#D-02">D-02</a>, không chờ đặc tả.</p>
+  </div>
+  <div class="note">
+    <b>Phân rã công việc</b>
+    <p style="margin:0">Bốn yêu cầu chia thành <b>2 epic và 28 công việc</b> theo định dạng Jira — đủ trường để nhập thẳng, kèm mô tả, tiêu chí nghiệm thu và ràng buộc phụ thuộc. Xem <a href="TASKS.html">Danh sách công việc</a>.</p>
+  </div>
+</section>
+
+<section class="block" id="danh-muc">
+  <h2><em>§1</em>Danh mục yêu cầu</h2>
+  <p class="intro">Thứ tự giữ đúng dòng của bảng yêu cầu gốc; nhóm hiển thị theo bộ phận chịu tác động chính.</p>
+
+  <div class="grpband"><em>BID</em><h3>Phòng Đấu thầu</h3><span>1 yêu cầu</span></div>
+  <div class="cards">
+    <a href="YC-11.html"><i>YC-11</i><b>Cập nhật khoản phạt của chủ đầu tư</b><span>Màn hình mới BID-07: biên bản phạt, phân bổ về tổ đội, hệ số cho phần không phân bổ</span></a>
+  </div>
+
+  <div class="grpband"><em>PF</em><h3>Nền tảng</h3><span>1 yêu cầu</span></div>
+  <div class="cards">
+    <a href="YC-12.html"><i>YC-12</i><b>Trung tâm phê duyệt theo mẫu</b><span>Tách cột loại yêu cầu và mã chứng từ, thêm cột người tạo; bốn thẻ vốn đã có trong đặc tả</span></a>
+  </div>
+
+  <div class="grpband"><em>ORD</em><h3>P. TQT — Shopdrawing</h3><span>1 yêu cầu</span></div>
+  <div class="cards">
+    <a href="YC-13.html"><i>YC-13</i><b>Hồ sơ Shopdrawing v2</b><span>Bảng theo dõi bảy cột, vòng phân công — nộp — duyệt nội bộ, đổi tiền tố mã hồ sơ</span></a>
+  </div>
+
+  <div class="grpband"><em>ALL</em><h3>Toàn hệ thống</h3><span>1 yêu cầu</span></div>
+  <div class="cards">
+    <a href="YC-14.html"><i>YC-14</i><b>Bộ lọc khoảng thời gian dùng chung</b><span>Một bộ điều khiển chung, mỗi màn hình khai báo mốc lọc riêng của mình</span></a>
+  </div>
+</section>
+
+<section class="block" id="truy-vet">
+  <h2><em>§2</em>Bảng truy vết — yêu cầu ↔ đặc tả gốc</h2>
+  <p class="intro">Cột <em>Loại</em> quyết định chi phí merge: <b>Sửa</b> chỉ đụng một trang; <b>Thêm trang</b> đụng sáu nơi — tệp mới, rail của mọi trang có rail, dải <code>pnav</code> hai trang kề, <code>index.html</code>, <code>ABSMS-GD1-full.html</code>, và số thứ tự ở chân <b>mọi</b> trang; <b>Quét ngang</b> chạm rải rác cả bộ.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:74px">Yêu cầu</th><th style="width:24%">Trang đặc tả tác động</th><th style="width:96px">Loại</th><th>Nội dung thay đổi</th></tr></thead>
+      <tbody>
+        <tr><td><a href="YC-11.html">YC-11</a></td><td>BID-07 <em>(mới)</em><br><a href="../PRJ-03.html">PRJ-03</a> · <a href="../RPT-02.html">RPT-02</a> · <a href="../ORD-10.html">ORD-10</a> · <a href="../RPT-05.html">RPT-05</a> · <a href="../ACC-07.html">ACC-07</a> · <a href="../PF-01.html">PF-01</a> · <a href="../PL-A.html">PL-A</a> · <a href="../PL-B.html">PL-B</a></td><td><span class="tag t-warn">Thêm trang</span></td><td>Biên bản phạt của chủ đầu tư, phân bổ về tổ đội theo mã tổ đội + mã hợp đồng, hệ số cho phần không phân bổ; nối vào bảng khấu trừ của PRJ-03 và khối đánh giá BCH của RPT-02</td></tr>
+        <tr><td><a href="YC-12.html">YC-12</a></td><td><a href="../PF-03.html">PF-03</a></td><td><span class="tag t-neu">Sửa</span></td><td>Thêm tham số người tạo và nhãn loại yêu cầu; tách cột đường dẫn thành loại yêu cầu và mã chứng từ; mô tả phạm vi nhìn thấy của bốn thẻ</td></tr>
+        <tr><td><a href="YC-13.html">YC-13</a></td><td><a href="../ORD-02.html">ORD-02</a> · <a href="../PF-04.html">PF-04</a> · <a href="../PF-01.html">PF-01</a> · <a href="../PL-A.html">PL-A</a> · <a href="../PL-B.html">PL-B</a> · <a href="../ORD-03.html">ORD-03</a> · <a href="../ORD-09.html">ORD-09</a></td><td><span class="tag t-warn">Viết lại</span></td><td>Bảng theo dõi năm cột thành bảy; vòng phân công — nộp — duyệt nội bộ của P. TQT; cặp ngày thực hiện của đợt trình; hai sự kiện thông báo mới; đổi tiền tố mã hồ sơ</td></tr>
+        <tr><td><a href="YC-14.html">YC-14</a></td><td>Mọi trang có danh sách hoặc báo cáo · <a href="../PF-01.html">PF-01</a></td><td><span class="tag t-crit">Quét ngang</span></td><td>Quy ước bộ lọc khoảng thời gian; mỗi màn hình khai báo mốc lọc; ranh giới màn hình nào không có bộ lọc</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="can-chot">
+  <h2><em>§3</em>Điểm cần chốt trước khi merge</h2>
+  <p class="intro">Bốn điểm dưới đây chưa quyết được trong đợt làm rõ này. Khi merge vào đặc tả gốc, mỗi điểm thành một mục trong <a href="../PL-C.html">PL-C · Vấn đề cần chốt</a> — xem <a href="TASKS.html#C-09">C-09</a>.</p>
+  <ol class="br">
+    <li><b>Q-50 · Cách đánh số đợt trình sau khi đổi tiền tố mã.</b> Bảng yêu cầu viết <code>SD.HN_0001.01</code> cho “lần 1, 2, 3”, tức đánh số tuần tự theo hồ sơ. <a href="../PF-01.html">PF-01</a> lại quy định <code>&lt;hồ sơ&gt;.&lt;NN hạng mục&gt;-Đ&lt;n&gt;</code> với <code>n</code> chạy riêng trong từng hạng mục.<span class="then">Hai cách đọc số khác hẳn nhau, mà mã đã sinh trong dữ liệu thật nên đổi sai là đổi hai lần. Đáng chú ý: <a href="../2026-09-15/YC-08.html">YC-08</a> đang dùng dạng thứ ba <code>SD-KH_0004.HM03-Đ2</code> — đặc tả đã lệch sẵn trước khi đổi tiền tố. Người chốt: P. TQT. Xem <a href="YC-13.html">YC-13</a>.</span></li>
+    <li><b>Q-51 · Hệ số phạt khi không phân bổ cho tổ đội.</b> Ai được đặt hệ số, đặt theo từng biên bản hay theo một cấu hình chung, và con số sau khi nhân có đi vào sổ kế toán hay chỉ sống trong báo cáo đánh giá.<span class="then">Con số này ảnh hưởng trực tiếp tới xếp hạng Ban chỉ huy, nên cách đặt nó phải rõ trước khi có kỳ đánh giá đầu tiên. Người chốt: Ban lãnh đạo. Xem <a href="YC-11.html">YC-11</a>.</span></li>
+    <li><b>Q-52 · Ranh giới “mọi phân hệ có tính theo thời gian”.</b> Yêu cầu viết một câu quét ngang cả hệ thống.<span class="then">Phải chốt bằng cách duyệt chính bảng màn hình ↔ mốc lọc trong <a href="YC-14.html">YC-14</a>, nếu không mỗi lần review danh sách lại nở thêm. Người chốt: P. Đấu thầu + Ban lãnh đạo.</span></li>
+    <li><b>Dòng 19 — “bỏ bảng KL bản vẽ” chỉ vào khối nào?</b> Rà soát bản dựng cho thấy khối mang tên đó chỉ tồn tại ở cấp đợt trình, không có bản nào ở cấp hồ sơ để bỏ; mà bảng ở cấp đợt trình thì <a href="../ORD-02.html">ORD-02</a> và <a href="../ORD-03.html">ORD-03</a> đang dựa vào.<span class="then">Đợt này <b>không xóa gì</b>. Cần mở màn hình thật cùng P. TQT để họ chỉ đích danh — xem <a href="TASKS.html#D-03">D-03</a>. Người chốt: P. TQT.</span></li>
+  </ol>
+</section>
+<div class="filefoot">
+  <span>Đợt yêu cầu 22/09/2026</span><span><code>2026-09-22/index.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn yêu cầu: <code>Google Sheet · tab Tóm tắt</code></span>
+</div>
+</main>
+</div>
+</body></html>
