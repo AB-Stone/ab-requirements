@@ -29,6 +29,7 @@ Mỗi tệp chia làm hai nhóm:
 | [BID-04.md](BID-04.md) | Huỷ gói thầu & thông báo các bộ phận | 7 + 11 |
 | [BID-05.md](BID-05.md) | Ký hợp đồng & khởi tạo dự án | 14 + 42 |
 | [BID-06.md](BID-06.md) | Áp giá doanh thu cho đơn hàng | 12 + 15 |
+| [BID-07.md](BID-07.md) | Biên bản phạt của chủ đầu tư | 12 + 24 |
 
 ## Danh mục — Phòng Kế toán (ACC)
 

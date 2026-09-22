@@ -26,6 +26,7 @@
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
     <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
+    <a href="BID-07.html"><i>BID-07</i>Biên bản phạt CĐT</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
@@ -254,7 +255,7 @@
           <tr><td>Giá trị đã xuất hoá đơn theo năm</td><td class="k">invoiced_by_year[]</td><td>Bảng</td><td class="c">—</td><td>Luỹ kế từng năm, rollup <a href="ACC-04.html">ACC-04</a>. Chỉ đọc.</td></tr>
           <tr><td>Giá trị còn phải xuất hoá đơn</td><td class="k">remaining_to_invoice</td><td>Số tiền</td><td class="c">—</td><td>Tính tự động = giá trị đã hoàn thành luỹ kế − đã xuất hoá đơn. Chỉ đọc.</td></tr>
           <tr><td>Tiện ích</td><td class="k">utility_deduction</td><td>Số tiền</td><td class="c">—</td><td>Vật tư mượn của CĐT hoặc nhà thầu khác, bị trừ ra khỏi giá trị hợp đồng.</td></tr>
-          <tr><td>Phạt</td><td class="k">penalty</td><td>Số tiền</td><td class="c">—</td><td>Chậm tiến độ / sai quy cách / vi phạm an toàn lao động.</td></tr>
+          <tr><td>Phạt</td><td class="k">penalty</td><td>Số tiền</td><td class="c">—</td><td>Chậm tiến độ / sai quy cách / vi phạm an toàn lao động. <b>Chỉ đọc</b> — tổng các biên bản phạt của hợp đồng ở <a href="BID-07.html">BID-07</a>, cùng một con số với <a href="ORD-10.html">ORD-10</a>.</td></tr>
           <tr><td>Khác</td><td class="k">other_adjustment</td><td>Số tiền</td><td class="c">—</td><td>Bù trừ thanh toán giữa các hợp đồng; ghi rõ hợp đồng đối ứng.</td></tr>
           <tr><td>Giữ lại % bảo hành</td><td class="k">retention_rate</td><td>Phần trăm</td><td class="c req">✱</td><td>Mặc định 5%, có thể khác theo từng hợp đồng.</td></tr>
           <tr><td>Giá trị giữ lại bảo hành</td><td class="k">retention_value</td><td>Số tiền</td><td class="c">—</td><td>Tự tính = <code>settlement_value</code> × <code>retention_rate</code>. Chỉ đọc.</td></tr>
@@ -535,7 +536,7 @@
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 42 / 47</span><span><code>RPT-05.html</code></span>
+  <span>Đặc tả 43 / 48</span><span><code>RPT-05.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>Van de can sua_05.09.26.xlsx (sheet "Theo dõi tiến độ")</code></span>
 </div>
