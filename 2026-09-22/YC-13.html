@@ -184,9 +184,14 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Thời gian thực hiện — từ</td><td class="k">plan_from</td><td>Ngày</td><td class="c req">✱</td><td><b>Mới.</b> Ngày bắt đầu làm đợt này. Mặc định là ngày mở đợt.</td></tr>
-          <tr><td>Thời gian thực hiện — đến</td><td class="k">plan_to</td><td>Ngày</td><td class="c req">✱</td><td><b>Mới.</b> Ngày dự kiến nộp cho trưởng phòng. Không nhỏ hơn <code>plan_from</code>. Quá hạn mà chưa nộp thì hạng mục hiện cờ trễ và phát nhắc theo <a href="../PF-04.html">PF-04</a>.</td></tr>
+          <tr><td>Thời gian thực hiện — đến</td><td class="k">plan_to</td><td>Ngày</td><td class="c req">✱</td><td><b>Mới.</b> Ngày dự kiến kết thúc đợt. Không nhỏ hơn <code>plan_from</code>. <b>Không</b> mang cờ trễ — xem ghi chú bên dưới.</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="note">
+      <b>Hai hạn, đừng lẫn</b>
+      <p style="margin:0"><code>draft_due_at</code> là <b>hạn nộp cho trưởng phòng</b>, do lệnh phân công mang theo và nằm trên dòng theo dõi (cấp 2) — nó là thứ cờ trễ đếm, và là <code>{ngày}</code> trong thông báo giao việc. <code>plan_from</code> / <code>plan_to</code> là <b>khoảng thời gian làm một đợt trình</b> (cấp 3), và đợt trình chỉ mở được <em>sau</em> khi hạng mục đã <em>Đã duyệt nội bộ</em> — tới lúc đó bản vẽ đã nộp rồi, nên cặp ngày này không thể “quá hạn mà chưa nộp”. Bản thảo đầu của trang này gộp hai thứ vào <code>plan_to</code>; phát hiện khi dựng phần backend.</p>
     </div>
 
     <h4>Hai sự kiện thông báo mới</h4>
@@ -239,7 +244,7 @@
       <li><b>Đã duyệt nội bộ mới mở được đợt trình.</b> Nút “Thêm đợt trình” của một hạng mục bị khóa khi <code>draft_status</code> chưa phải <em>Đã duyệt nội bộ</em>.<span class="then">Đây là chỗ hai vòng nối vào nhau. Gửi bản chưa qua trưởng phòng cho chủ đầu tư là cách nhanh nhất để tăng số vòng gửi–trả mà <a href="../ORD-02.html">ORD-02</a> đang đếm.</span></li>
       <li><b>Hai cột trạng thái không suy ra nhau.</b> <code>draft_status</code> do vòng nội bộ điều khiển, <code>shop_status</code> do đợt trình điều khiển.<span class="then">Một hạng mục <em>Đã duyệt nội bộ</em> vẫn có thể <em>Chưa triển khai</em> ở cột 3 nếu chưa ai mở đợt trình. Ràng hai cột vào nhau sẽ làm mất khoảng thời gian bản vẽ nằm chờ gửi.</span></li>
       <li><b>In ra ký tươi không phải một trạng thái.</b> Nó là hành động sau khi đã duyệt nội bộ, ghi vào ghi chú kèm ngày.<span class="then">Yêu cầu viết “ok → đi tiếp / in ra ký tươi” — hai nhánh của cùng một kết quả duyệt, không phải hai kết quả khác nhau. Trạng thái “Đã in trình bản cứng” của cột 3 mới là nơi ghi nhận việc trình bản cứng cho chủ đầu tư.</span></li>
-      <li><b>Quá hạn nộp thì nhắc, không chặn.</b> Qua <code>plan_to</code> mà chưa nộp thì hạng mục gắn cờ trễ và phát nhắc cho cả kỹ sư lẫn trưởng phòng.<span class="then">Chặn thì người ta sẽ dời hạn cho xong việc; nhắc và để lại vết thì số ngày trễ còn dùng được khi rà soát tiến độ.</span></li>
+      <li><b>Quá hạn nộp thì nhắc, không chặn.</b> Qua <code>draft_due_at</code> — hạn nộp mà <em>lệnh phân công</em> mang theo — mà chưa nộp thì hạng mục gắn cờ trễ và phát nhắc cho cả kỹ sư lẫn trưởng phòng.<span class="then">Chặn thì người ta sẽ dời hạn cho xong việc; nhắc và để lại vết thì số ngày trễ còn dùng được khi rà soát tiến độ.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -251,7 +256,7 @@
           <tr><td>Phân công người ngoài P. TQT</td><td><code>owner_user</code> không thuộc P. TQT</td><td>“Cán bộ phụ trách shop phải thuộc P. TQT.”</td></tr>
           <tr><td>Trả lại không ghi ý kiến</td><td>Chuyển sang <em>Trả lại — nộp lại</em> mà ý kiến rỗng</td><td>“Ghi ý kiến để người làm biết phải sửa gì — ý kiến sẽ hiện cạnh bản vẽ đã nộp.”</td></tr>
           <tr><td>Mở đợt trình khi chưa duyệt nội bộ</td><td><code>draft_status</code> khác <em>Đã duyệt nội bộ</em></td><td>“Hạng mục {tên} chưa được trưởng phòng duyệt nội bộ. Duyệt xong mới mở được đợt trình gửi chủ đầu tư.”</td></tr>
-          <tr><td>Hạn nộp trước ngày bắt đầu</td><td><code>plan_to &lt; plan_from</code></td><td>“Ngày nộp không nằm trước ngày bắt đầu.”</td></tr>
+          <tr><td>Ngày kết thúc đợt trước ngày bắt đầu</td><td><code>plan_to &lt; plan_from</code></td><td>“Ngày kết thúc không nằm trước ngày bắt đầu.”</td></tr>
           <tr><td>Tệp nộp không phải bản vẽ</td><td>Phần mở rộng ngoài <code>.dwg</code> · <code>.dxf</code> · <code>.pdf</code></td><td>“Bản vẽ nộp nhận tệp .dwg, .dxf và .pdf.”</td></tr>
           <tr><td>Duyệt nội bộ khi chưa có tệp nào</td><td><code>submitted_files[]</code> rỗng</td><td>“Chưa có bản vẽ nào được nộp cho hạng mục này.”</td></tr>
           <tr><td>Sửa tay tình trạng bản vẽ thiết kế</td><td>Đổi <code>draft_status</code> không qua hành động nộp / duyệt / trả lại</td><td>“Ô này do vòng phân công điều khiển. Dùng nút Nộp, Duyệt hoặc Trả lại để đổi trạng thái.”</td></tr>
