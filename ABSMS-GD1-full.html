@@ -1650,6 +1650,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tbody>
           <tr><td>Mã phiên</td><td class="k">approval_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>PD-NNNN</code>, tự sinh.</td></tr>
           <tr><td>Chứng từ gốc</td><td class="k">doc_code</td><td>Tham chiếu</td><td class="c req">✱</td><td>Mã chứng từ, ví dụ <code>SO-2026-041</code>.</td></tr>
+          <tr><td>Nhãn loại yêu cầu</td><td class="k">doc_type_label</td><td>Chuỗi</td><td class="c req">✱</td><td>Tên đọc được của loại chứng từ — “Đơn bán hàng”, “Phiếu chi”, “Đơn đặt mua”… Lấy từ danh mục loại chứng từ, không gõ tay ở từng phiên. Đây là cột <em>Loại yêu cầu</em> của danh sách (<a href="2026-09-22/YC-12.html">YC-12</a>).</td></tr>
+          <tr><td>Người tạo</td><td class="k">created_by</td><td>Tham chiếu</td><td class="c req">✱</td><td>Người bấm <em>Trình duyệt</em> — không phải người soạn chứng từ nếu hai người khác nhau. Chép vào phiên lúc sinh phiên và <b>không đổi</b> kể cả khi chứng từ bị trả về qua “Yêu cầu bổ sung” rồi trình lại: lần trình lại sinh vòng mới trong cùng phiên, không sinh người tạo mới.</td></tr>
           <tr><td>Tóm tắt hiển thị</td><td class="k">summary</td><td>Chuỗi</td><td class="c req">✱</td><td>Bắt buộc chứa: dự án, nội dung, nơi cung cấp — đúng yêu cầu KT·1 “giao diện phê duyệt cần có tóm tắt các thông tin”.</td></tr>
           <tr><td>Giá trị</td><td class="k">amount</td><td>Số tiền</td><td class="c">—</td><td>Dùng để chọn quy trình theo hạn mức.</td></tr>
           <tr><td>Bước hiện tại</td><td class="k">step_idx</td><td>Số</td><td class="c req">✱</td><td>Hiển thị dạng “Cấp 2/3”.</td></tr>
@@ -1668,6 +1670,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Với bước kiểu <code>any_of</code>, một người duyệt là đủ để chuyển bước — mô phỏng đúng “GĐ dự án hoặc Kế toán trưởng được phép duyệt”.</li>
       <li>Chứng từ quá hạn xử lý được đánh dấu và đếm ngược hiển thị trên dashboard điều hành.</li>
       <li>Mỗi phiên duyệt xuất được bản PDF gồm nội dung chứng từ, chuỗi chữ ký và toàn bộ ý kiến — dùng thay biên bản giấy.</li>
+      <li>Bốn thẻ Chờ duyệt · Đã duyệt · Từ chối · Tất cả lịch sử đọc chung một danh sách phiên duyệt; đổi thẻ không làm số đếm trên thẻ <em>Chờ duyệt</em> lệch khỏi chuông thông báo.</li>
+      <li>Ba thẻ lịch sử chỉ hiện hồ sơ người xem từng duyệt một bước hoặc là người tạo; Admin thấy toàn bộ. Không thẻ nào cho xem thêm so với <a href="#PL-B">PL-B</a>.</li>
+      <li>Danh sách có sáu cột, trong đó <em>Loại yêu cầu</em> và <em>Mã chứng từ</em> là hai cột riêng lọc và sắp xếp được, còn <em>Người tạo</em> hiện tên người trình và không đổi qua các lần trình lại — theo <a href="2026-09-22/YC-12.html">YC-12</a>.</li>
     </ol>
 
     <h4>Mockup UI — Phê duyệt › Danh sách &amp; chi tiết</h4>
@@ -1678,11 +1683,11 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <div class="wf-chips"><span class="wf-chip">Tất cả nhóm</span><span class="wf-chip">Đề xuất mua sắm</span><span class="wf-chip">Đơn hàng</span><span class="wf-chip">Kho</span><span class="wf-chip">Thanh toán</span><span class="wf-chip">Khoán &amp; nhân công</span></div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">2</span> Danh sách lệnh chờ xử lý của tôi</div>
-          <table><thead><tr><th>Phê duyệt</th><th>Nội dung tóm tắt</th><th>Giá trị</th><th>Bước</th></tr></thead>
+          <table><thead><tr><th>Loại yêu cầu</th><th>Mã chứng từ</th><th>Nội dung tóm tắt</th><th>Người tạo</th><th>Giá trị</th><th>Bước</th></tr></thead>
           <tbody>
-            <tr><td>Bán hàng › Đơn hàng › <b>SO-2026-041</b></td><td>Đơn đá granite — ốp lát tháp A · DA-2026-014</td><td class="num">2.376.000.000</td><td><span class="tag t-warn">Cấp 2/3</span></td></tr>
-            <tr><td>Kế toán › Phiếu chi › <b>PC-2026-233</b></td><td>Tạm ứng vật tư — The Maris · DA-2025-032</td><td class="num">450.000.000</td><td><span class="tag t-warn">Cấp 3/3</span></td></tr>
-            <tr><td>Kế toán › Đề xuất mua sắm › <b>PR-2026-097</b></td><td>Đá block mỏ Phú Yên — kế hoạch Q3 · CHUNG</td><td class="num">1.850.000.000</td><td><span class="tag t-crit">Quá hạn 52 giờ</span></td></tr>
+            <tr><td>Đơn bán hàng</td><td><b>SO-2026-041</b></td><td>Đơn đá granite — ốp lát tháp A · DA-2026-014</td><td>Lê Minh Tú</td><td class="num">2.376.000.000</td><td><span class="tag t-warn">Cấp 2/3</span></td></tr>
+            <tr><td>Phiếu chi</td><td><b>PC-2026-233</b></td><td>Tạm ứng vật tư — The Maris · DA-2025-032</td><td>Đặng Thu Hà</td><td class="num">450.000.000</td><td><span class="tag t-warn">Cấp 3/3</span></td></tr>
+            <tr><td>Đề xuất mua sắm</td><td><b>PR-2026-097</b></td><td>Đá block mỏ Phú Yên — kế hoạch Q3 · CHUNG</td><td>Hoàng Nam Sơn</td><td class="num">1.850.000.000</td><td><span class="tag t-crit">Quá hạn 52 giờ</span></td></tr>
           </tbody></table>
         </div>
       </div>
@@ -1719,8 +1724,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Tab trạng thái + bộ lọc nhóm</td><td>Hai tầng lọc: trạng thái xử lý × nhóm chứng từ. Số trong ngoặc là số lệnh <em>của riêng người đang đăng nhập</em>.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Danh sách lệnh</td><td>Sắp xếp mặc định theo mức quá hạn rồi tới giá trị. Dòng quá hạn tô nhãn đỏ.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Bốn thẻ trạng thái + bộ lọc nhóm</td><td>Hai tầng lọc: trạng thái xử lý × nhóm chứng từ. Bốn thẻ <em>Chờ duyệt · Đã duyệt · Từ chối · Tất cả lịch sử</em> đọc chung một nguồn, khác nhau ở điều kiện lọc — xem bảng phạm vi ngay dưới. Số trong ngoặc là số lệnh <em>của riêng người đang đăng nhập</em>.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Danh sách lệnh</td><td>Sáu cột: <em>Loại yêu cầu · Mã chứng từ · Nội dung tóm tắt · Người tạo · Giá trị · Bước</em>. Sắp xếp mặc định theo mức quá hạn rồi tới giá trị. Dòng quá hạn tô nhãn đỏ.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Tiến trình duyệt</td><td>Hiển thị đủ N cấp với người phụ trách, thời điểm ký. Bước đang chờ được làm nổi.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Phê duyệt</td><td>Xác nhận bằng chữ ký điện tử (<a href="#PF-04">PF-04</a>) rồi chuyển bước kế tiếp; nếu là bước cuối thì chạy hành động hậu duyệt.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Từ chối</td><td>Bắt buộc nhập lý do. Chứng từ đóng, người lập phải tạo chứng từ mới nếu muốn trình lại.</td></tr>
@@ -1728,6 +1733,24 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td class="c"><span class="pin">7</span></td><td>Trao đổi liên phòng ban</td><td>Ý kiến gắn theo bước duyệt; nhắc tên người bằng <code>@</code> sẽ đẩy thông báo cho người đó.</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <h4>Phạm vi nhìn thấy của bốn thẻ</h4>
+    <p>Bốn thẻ ở đầu danh sách là bốn bộ lọc trên <b>cùng một nguồn phiên duyệt</b>, không phải bốn màn hình. Thẻ đổi <em>lọc gì</em>, không đổi <em>ai được thấy gì</em> — theo <a href="2026-09-22/YC-12.html">YC-12</a>.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:20%">Thẻ</th><th style="width:34%">Lọc phiên nào</th><th>Người xem thấy gì</th></tr></thead>
+        <tbody>
+          <tr><td><b>Chờ duyệt</b></td><td>Phiên đang mở, bước hiện tại có tên người xem</td><td>Chỉ hồ sơ đang chờ chính mình. Là thẻ duy nhất mang số đếm, và số đó phải khớp chuông thông báo <a href="#PF-04">PF-04</a></td></tr>
+          <tr><td><b>Đã duyệt</b></td><td>Phiên đã kết thúc, trạng thái <em>Đã duyệt</em></td><td>Hồ sơ mình từng duyệt ở một bước bất kỳ, hoặc mình là <code>created_by</code></td></tr>
+          <tr><td><b>Từ chối</b></td><td>Phiên đã kết thúc, trạng thái <em>Từ chối</em></td><td>Như trên. Lý do từ chối hiện ngay trên dòng, không phải mở chứng từ mới đọc được</td></tr>
+          <tr><td><b>Tất cả lịch sử</b></td><td>Mọi phiên đã kết thúc, không phân biệt kết quả</td><td>Như trên — là tất cả <em>của tôi</em>, không phải của công ty. Riêng Admin thấy toàn bộ, đúng dòng <em>Quyền truy cập</em> ở đầu trang này</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>Ba thẻ lịch sử là việc của dữ liệu, không phải của giao diện</b>
+      <p style="margin:0">Bản ghi danh sách phê duyệt hiện nay chỉ trả về <b>hàng chờ của chính người đăng nhập</b>: không có <code>created_by</code>, không có trạng thái kết thúc của phiên, và lịch sử duyệt chỉ tra được theo từng chứng từ một. Ba thẻ <em>Đã duyệt · Từ chối · Tất cả lịch sử</em> cùng cột <em>Người tạo</em> vì vậy đòi mở rộng dữ liệu trả về trước, rồi mới dựng được thẻ. Ghi ra đây để phần việc này không bị ước lượng như một việc front-end nửa ngày — xem <a href="2026-09-22/YC-12.html">YC-12</a>.</p>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
@@ -1739,8 +1762,12 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Từ chối là điểm dừng.</b> Từ chối đóng phiên duyệt và đóng chứng từ, bắt buộc kèm lý do.<span class="then">Muốn trình lại phải lập chứng từ mới; chứng từ mới tự trích dẫn chứng từ bị từ chối để giữ mạch truy vết.</span></li>
       <li><b>Đếm quá hạn theo giờ làm việc.</b> Thời hạn xử lý tính theo giờ hành chính, bỏ qua ngày nghỉ đã khai trong lịch công ty.<span class="then">Quá hạn thì nhắc lần 1 khi hết hạn, lần 2 sau nửa hạn nữa, rồi báo lên cấp trên của người duyệt.</span></li>
       <li><b>Chỉ thấy việc của mình.</b> Danh sách và số đếm trên tab đều lọc theo tên người đang đăng nhập.<span class="then">Riêng Admin thấy toàn bộ, nhưng vẫn phân biệt rõ “lệnh của tôi” và “toàn hệ thống” bằng hai bộ lọc tách nhau.</span></li>
-      <li><b>Mỗi dòng mở đầu bằng đường dẫn phân hệ.</b> Cột đầu của danh sách là chuỗi <i>Phân hệ › Màn hình › Mã chứng từ</i>, thay cho một cột “Loại” phẳng.<span class="then">Trung tâm phê duyệt gom chứng từ của mọi phòng ban vào một bảng, nên người duyệt cần biết ngay việc này thuộc phần nào của hệ thống trước khi mở nó. Tên dự án đi kèm trong cột Nội dung, không tách thành cột riêng.</span></li>
-      <li><b>Bấm mã chứng từ là sang màn hình xử lý.</b> Cấp cuối của đường dẫn là liên kết tới chính màn hình sở hữu chứng từ — <a href="ORD-03.html">ORD-03</a> cho đơn hàng, <a href="ACC-05.html">ACC-05</a> cho đề nghị thanh toán, <a href="PRJ-01.html">PRJ-01</a> cho bảng giá khoán…<span class="then">Quyết định duyệt cần nhìn đủ nội dung chứng từ, mà danh sách chỉ có một dòng tóm tắt. Chứng từ chưa có màn hình chi tiết riêng thì liên kết trỏ về danh sách chứa nó — xem <a href="PL-C.html">Q-47</a>.</span></li>
+      <li><b>Loại yêu cầu và mã chứng từ là hai cột riêng.</b> Cột đầu của danh sách là nhãn loại chứng từ, cột thứ hai là mã chứng từ — thay cho một ô gộp <i>Phân hệ › Màn hình › Mã chứng từ</i>.<span class="then">Trung tâm phê duyệt gom chứng từ của mọi phòng ban vào một bảng, nên người duyệt cần biết ngay việc này thuộc loại nào trước khi mở nó — mà một ô gộp thì không lọc và không sắp xếp theo loại được. Tên dự án vẫn đi kèm trong cột Nội dung, không tách thành cột riêng. Theo <a href="2026-09-22/YC-12.html">YC-12</a>.</span></li>
+      <li><b>Bấm mã chứng từ là sang màn hình xử lý.</b> Cột <em>Mã chứng từ</em> là liên kết tới chính màn hình sở hữu chứng từ — <a href="#ORD-03">ORD-03</a> cho đơn hàng, <a href="#ACC-05">ACC-05</a> cho đề nghị thanh toán, <a href="#PRJ-01">PRJ-01</a> cho bảng giá khoán…<span class="then">Quyết định duyệt cần nhìn đủ nội dung chứng từ, mà danh sách chỉ có một dòng tóm tắt. Chứng từ chưa có màn hình chi tiết riêng thì liên kết trỏ về danh sách chứa nó — xem <a href="#PL-C">Q-47</a>.</span></li>
+      <li><b>Bốn thẻ đọc chung một nguồn.</b> Chờ duyệt · Đã duyệt · Từ chối · Tất cả lịch sử là bốn điều kiện lọc trên cùng một danh sách phiên duyệt, không phải bốn truy vấn dựng riêng.<span class="then">Số đếm trên thẻ <em>Chờ duyệt</em> đã phải khớp với chuông thông báo <a href="#PF-04">PF-04</a>; dựng mỗi thẻ một nguồn là thêm ba chỗ để bốn con số trôi khỏi nhau.</span></li>
+      <li><b>Phạm vi nhìn thấy không nới ra theo thẻ.</b> Ba thẻ lịch sử chỉ hiện hồ sơ người xem có dính líu: từng duyệt một bước, hoặc là người tạo.<span class="then">“Tất cả lịch sử” là tất cả <em>của tôi</em>, không phải của công ty. <a href="#PL-B">PL-B</a> đặt quyền truy cập của trung tâm phê duyệt là “chỉ chứng từ có tên mình, Admin xem toàn bộ” — thêm thẻ không được lặng lẽ mở rộng quyền đó.</span></li>
+      <li><b>Người tạo là người trình, ghi một lần.</b> <code>created_by</code> là người bấm <em>Trình duyệt</em> lúc sinh phiên; chứng từ bị trả về rồi trình lại vẫn giữ nguyên người tạo của phiên.<span class="then">Lối “Yêu cầu bổ sung” trả chứng từ về mà giữ nguyên số hiệu và toàn bộ lịch sử. Ghi đè người tạo theo lần trình cuối sẽ làm mất dấu người khởi xướng — đúng thứ mà cột này sinh ra để trả lời.</span></li>
+      <li><b>Loại yêu cầu là nhãn của danh mục, không phải chuỗi tự do.</b> Mọi phiên cùng một <code>doc_type</code> hiện đúng một nhãn, lấy từ danh mục loại chứng từ.<span class="then">Cột này dùng để lọc. Nhãn gõ tay ở từng nơi sẽ sinh ra “Đơn bán hàng”, “Đơn BH” và “Don ban hang” cùng nằm trong một bộ lọc.</span></li>
       <li><b>Hành động hậu duyệt chạy trong cùng giao dịch.</b> Duyệt bước cuối sẽ kích hoạt các hành động hậu duyệt của chứng từ.<span class="then">Nếu một hành động thất bại thì toàn bộ việc duyệt được hoàn tác và người duyệt nhận thông báo lỗi cụ thể — không để chứng từ ở trạng thái nửa vời.</span></li>
       <li><b>Ký kèm mã băm.</b> Mỗi lần duyệt sinh một dấu ký gắn mã băm nội dung chứng từ tại thời điểm ký.<span class="then">Chứng từ bị sửa sau đó thì dấu ký hiển thị cảnh báo “nội dung đã thay đổi sau khi ký”.</span></li>
     </ol>
@@ -1794,12 +1821,19 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-PF03-5</td><td>Đề nghị thanh toán 1,4 tỷ, KT trưởng hạn mức 1 tỷ</td><td>KT trưởng bấm Duyệt</td><td>Ghi nhận duyệt cấp 1 và tự đẩy lên Tổng GĐ, kèm thông điệp giải thích</td></tr>
           <tr><td>UAT-PF03-6</td><td>Đề xuất trình lúc 16:00 thứ Sáu, hạn 24 giờ, thứ Bảy–CN nghỉ</td><td>Chờ tới 10:00 thứ Hai</td><td>Chưa tính quá hạn; mốc quá hạn rơi vào 16:00 thứ Hai</td></tr>
           <tr><td>UAT-PF03-7</td><td>Chứng từ đã ký ở cấp 1</td><td>Sửa nội dung bằng đường “Yêu cầu bổ sung” rồi xem lại dấu ký cũ</td><td>Dấu ký cấp 1 hiển thị cảnh báo nội dung đã thay đổi sau khi ký</td></tr>
+          <tr><td>UAT-PF03-8</td><td>Thẻ <em>Chờ duyệt</em> có ít nhất một dòng</td><td>Đọc một dòng bất kỳ</td><td>Đủ sáu cột; <em>Loại yêu cầu</em> và <em>Mã chứng từ</em> nằm ở hai ô riêng; cột <em>Người tạo</em> hiện tên người trình</td></tr>
+          <tr><td>UAT-PF03-9</td><td><code>SO-2026-041</code> do Lê Minh Tú trình, bị “Yêu cầu bổ sung”, Trần Quốc Bảo sửa và trình lại</td><td>Xem lại cột Người tạo của dòng đó</td><td>Vẫn là “Lê Minh Tú”; mã đơn và lịch sử hai lần trình giữ nguyên</td></tr>
+          <tr><td>UAT-PF03-10</td><td>Người dùng đã duyệt 1 hồ sơ và bị từ chối 1 hồ sơ trong tháng</td><td>Mở thẻ <em>Đã duyệt</em> rồi thẻ <em>Từ chối</em></td><td>Mỗi thẻ đúng một dòng; thẻ Từ chối hiện lý do ngay trên dòng</td></tr>
+          <tr><td>UAT-PF03-11</td><td>Hồ sơ của phòng khác mà người dùng chưa từng duyệt và không phải người tạo</td><td>Mở thẻ <em>Tất cả lịch sử</em></td><td>Không thấy hồ sơ đó — thẻ không nới phạm vi so với <a href="#PL-B">PL-B</a></td></tr>
+          <tr><td>UAT-PF03-12</td><td>Tiếp UAT-PF03-11, đăng nhập bằng tài khoản Admin</td><td>Mở cùng thẻ <em>Tất cả lịch sử</em></td><td>Thấy hồ sơ đó</td></tr>
+          <tr><td>UAT-PF03-13</td><td>Người duyệt có 3 lệnh đang chờ</td><td>Mở lần lượt bốn thẻ rồi quay lại <em>Chờ duyệt</em></td><td>Số trên thẻ vẫn là 3 và khớp chuông thông báo <a href="#PF-04">PF-04</a></td></tr>
+          <tr><td>UAT-PF03-14</td><td>Danh sách có đủ tám nhóm chứng từ</td><td>Bấm một giá trị ở cột <em>Loại yêu cầu</em></td><td>Danh sách lọc theo đúng loại đó; dải lọc theo nhóm vẫn hoạt động song song</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#PF-02">PF-02 quyền duyệt &amp; hạn mức</a><a href="#PF-04">PF-04 thông báo &amp; chữ ký</a><a href="#ACC-01">ACC-01 đề xuất 1 cấp / 2 cấp</a><a href="#PRJ-03">PRJ-03 luồng 5 bước</a><a href="#MOB-01">MOB-01 duyệt trên điện thoại</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a></p>
+    <p class="links"><a href="#PF-02">PF-02 quyền duyệt &amp; hạn mức</a><a href="#PF-04">PF-04 thông báo &amp; chữ ký</a><a href="#ACC-01">ACC-01 đề xuất 1 cấp / 2 cấp</a><a href="#PRJ-03">PRJ-03 luồng 5 bước</a><a href="#MOB-01">MOB-01 duyệt trên điện thoại</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a><a href="2026-09-22/YC-12.html">YC-12 trung tâm phê duyệt theo mẫu</a></p>
   </div>
 </section>
 <section class="sheet" id="PF-04">
@@ -1969,9 +2003,14 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Hồ sơ vướng mắc quá hạn</td><td>Người phụ trách hồ sơ + trưởng bộ phận</td><td>“Hồ sơ {mã} đứng ở bước {bước} quá {n} ngày”</td><td class="k"><a href="#ORD-01">ORD-01</a>, <a href="#ORD-08">ORD-08</a></td></tr>
           <tr><td>Công nợ quá hạn</td><td>Kế toán công nợ, Ban lãnh đạo</td><td>“{đối tác} quá hạn {n} ngày, dư nợ {giá trị}”</td><td class="k"><a href="#ACC-05">ACC-05</a></td></tr>
           <tr><td>Tồn kho dưới định mức</td><td>Thủ kho, P. Cung ứng</td><td>“{vật tư} tại {kho} còn {klg}, dưới định mức {min}”</td><td class="k"><a href="#ACC-02">ACC-02</a></td></tr>
+          <tr><td>Được phân công hạng mục shop</td><td>Cán bộ được giao</td><td>“Bạn được giao hạng mục {hạng mục} của {dự án} — hạn nộp {ngày}”</td><td class="k"><a href="#ORD-02">ORD-02</a></td></tr>
+          <tr><td>Nộp bản vẽ chờ duyệt</td><td>Trưởng phòng TQT</td><td>“{người nộp} đã nộp bản vẽ hạng mục {hạng mục} — {dự án} · lần nộp thứ {n}”</td><td class="k"><a href="#ORD-02">ORD-02</a></td></tr>
         </tbody>
       </table>
     </div>
+
+    <p>Hai dòng cuối thuộc vòng làm việc nội bộ của P. TQT theo <a href="2026-09-22/YC-13.html">YC-13</a>: trưởng phòng phân công hạng mục ngay trên bảng theo dõi của <a href="#ORD-02">ORD-02</a>, người được giao nộp bản vẽ lên chính hạng mục đó, trưởng phòng mở xem rồi duyệt hoặc trả lại kèm ý kiến — trả lại thì người làm nộp lại và sinh phiên bản mới. Vì vậy số lần nộp phải nằm ngay trên dòng thông báo: nó là chỉ số chất lượng của khâu lập shop, không phải một con số chờ mở chứng từ mới biết.</p>
+    <p><b>Luật gộp thông báo lặp áp được, nhưng không kín.</b> Quy tắc <em>“Một sự kiện, một thông báo”</em> ở mục Quy tắc nghiệp vụ phủ đúng trường hợp kỹ sư nộp nhiều tệp liên tiếp cho <b>cùng một hạng mục</b>: các lượt nộp trong 5 phút gộp về một dòng có bộ đếm và chuông của trưởng phòng không bị ngập. Khoảng trống nằm ở chỗ khác: luật gộp theo cặp (sự kiện, người nhận) chứ không theo đối tượng, nên hai hạng mục khác nhau nộp trong cùng 5 phút cũng bị gộp chung một dòng, mà dòng gộp thì không còn chỗ cho {hạng mục} lẫn {lần nộp thứ n} — đúng hai tham số khiến dòng thông báo này đáng đọc. Trang này ghi nhận khoảng trống thay vì sửa luật cũ; việc có gộp theo hạng mục hay không cần chốt trước khi lập trình.</p>
 
     <h4>Tham số</h4>
     <div class="tw">
@@ -2103,12 +2142,15 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-PF04-9</td><td>Một thiết bị có khoá đẩy đã hết hiệu lực</td><td>Gửi một thông báo tới người đó</td><td>Lượt gửi không báo lỗi; khoá chết bị xoá khỏi thiết bị; các thiết bị còn lại vẫn nhận được</td></tr>
           <tr><td>UAT-PF04-10</td><td>Máy tính đặt tiếng Việt, điện thoại đặt tiếng Anh</td><td>Gửi một thông báo tới người dùng đó</td><td>Mỗi thiết bị nhận đúng ngôn ngữ của mình, từ cùng một bản ghi thông báo</td></tr>
           <tr><td>UAT-PF04-11</td><td>Từ chối quyền thông báo của trình duyệt</td><td>Gửi một thông báo tới người đó</td><td>Không có thông báo đẩy, nhưng chuông trong ứng dụng vẫn tăng và mở ra đọc được</td></tr>
+          <tr><td>UAT-PF04-12</td><td>Trưởng phòng TQT vừa gán hạng mục Ốp lát mặt đứng tháp A cho kỹ sư A, hạn nộp 30/09/2026</td><td>Kỹ sư A mở chuông thông báo</td><td>Dòng thông báo nêu đủ tên hạng mục, dự án và hạn nộp; bấm vào mở đúng bảng theo dõi của <a href="#ORD-02">ORD-02</a> tại dòng hạng mục đó</td></tr>
+          <tr><td>UAT-PF04-13</td><td>Tiếp UAT-12, trưởng phòng đã trả lại bản nộp lần 1 kèm ý kiến</td><td>Kỹ sư A nộp lại bản đã sửa</td><td>Trưởng phòng nhận thông báo ghi đủ người nộp, hạng mục, dự án và <em>lần nộp thứ 2</em></td></tr>
+          <tr><td>UAT-PF04-14</td><td>Kỹ sư A nộp bản vẽ cho hai hạng mục khác nhau, cách nhau 3 phút</td><td>Trưởng phòng mở chuông</td><td>Theo luật gộp hiện tại, hai lượt về một dòng có bộ đếm và tên hạng mục không còn hiện — ghi nhận là khoảng trống đang chờ chốt, không phải kết quả mong muốn</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#PF-03">PF-03 phê duyệt</a><a href="#BID-05">BID-05 ký số hợp đồng</a><a href="#ACC-04">ACC-04 xác nhận nhận hàng</a><a href="#MOB-01">MOB-01 ứng dụng di động</a></p>
+    <p class="links"><a href="#PF-03">PF-03 phê duyệt</a><a href="#BID-05">BID-05 ký số hợp đồng</a><a href="#ACC-04">ACC-04 xác nhận nhận hàng</a><a href="#MOB-01">MOB-01 ứng dụng di động</a><a href="#ORD-02">ORD-02 bản vẽ Shopdrawing</a><a href="2026-09-22/YC-13.html">YC-13 hồ sơ Shopdrawing v2</a></p>
   </div>
 </section>
 <section class="sheet" id="PF-05">
@@ -5556,7 +5598,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
   <div class="sb">
     <h4>Mục tiêu</h4>
     <p>Một hạng mục thi công gồm nhiều đầu việc và <b>không triển khai hết một lần</b>: trình A trước, B và C sau. Hồ sơ Shopdrawing của một dự án vì vậy không phải một chồng chứng từ rời mà là <b>ba cấp lồng nhau</b> — hồ sơ của dự án chứa các <em>hạng mục</em>, mỗi hạng mục chứa các <em>đợt trình</em> (<a href="2026-09-15/YC-08.html">YC-08</a>). Đợt trình chính là “mục con để theo dõi” mà P. TQT mô tả, và là cấp mang mọi thứ trước đây gắn vào một bản vẽ đơn lẻ: nhóm đầu việc, bảng khối lượng, vòng gửi–trả CĐT, tệp bản vẽ, mốc phát hành sang đơn hàng.</p>
-    <p>Chia ba cấp vì mỗi cấp trả lời đúng một câu hỏi. <b>Cấp hồ sơ</b> trả lời “dự án này có hồ sơ shop nào” — chỉ mã, tiêu đề, dự án, không một ô nhập nào khác. <b>Cấp hạng mục</b> trả lời “hạng mục nào đã có shop, ai phụ trách, đang mắc ở đâu” — chính là bảng theo dõi năm cột mô tả bên dưới, cùng một dữ liệu chứ không phải bản sao. <b>Cấp đợt trình</b> trả lời “lần trình này gồm những đầu việc nào, đang ở vòng thứ mấy, nằm ở phía ai bao nhiêu ngày”.</p>
+    <p>Chia ba cấp vì mỗi cấp trả lời đúng một câu hỏi. <b>Cấp hồ sơ</b> trả lời “dự án này có hồ sơ shop nào” — chỉ mã, tiêu đề, dự án, không một ô nhập nào khác. <b>Cấp hạng mục</b> trả lời “hạng mục nào đã có shop, ai phụ trách, đang mắc ở đâu” — chính là bảng theo dõi bảy cột mô tả bên dưới, cùng một dữ liệu chứ không phải bản sao. <b>Cấp đợt trình</b> trả lời “lần trình này gồm những đầu việc nào, đang ở vòng thứ mấy, nằm ở phía ai bao nhiêu ngày”.</p>
     <p>Đợt trình được phát hành là điều kiện bắt buộc để lập đơn hàng (<a href="#ORD-03">ORD-03</a>). Vì vậy tiến trình duyệt shop chính là đường găng của tiến độ sản xuất. Đặc tả yêu cầu theo dõi từng vòng gửi–trả, đếm số vòng và số ngày nằm ở phía CĐT — và cộng dồn được các con số đó theo hạng mục và theo dự án, chứ không chỉ theo từng lần gửi.</p>
     <p>Bảng khối lượng là phần việc của <b>kỹ sư phụ trách</b> và được nhập <b>ngay khi lập đợt trình</b>, trước mọi bước duyệt: đó chính là nội dung trưởng phòng kiểm tra và CĐT xem xét, nên không thể chờ có kết quả duyệt rồi mới nhập. Trưởng phòng duyệt hai lần và hai lần đó khác nhau về ý nghĩa — <b>duyệt nội bộ</b> là điều kiện để gửi CĐT, <b>phát hành</b> là điều kiện để đợt trình xuất hiện ở màn hình lập đơn hàng.</p>
     <p>Bốn từ phải gọi đúng tên vì người dùng đếm khối lượng theo chúng. <b>Hạng mục</b> là nhóm cha trong BOQ hợp đồng (<a href="#BID-05">BID-05</a>); <b>đầu việc</b> là dòng BOQ hợp đồng; <b>đợt trình</b> là một nhóm đầu việc của cùng hạng mục được đem trình một lần — nó thường phủ nhiều đầu việc, và mỗi dòng khối lượng phải chỉ rõ nó thuộc đầu việc nào, đó là căn cứ để <a href="#ORD-03">ORD-03</a> đối chiếu đơn hàng với BOQ; <b>vòng gửi</b> là một lần gửi CĐT <em>bên trong</em> một đợt, không phải một đợt mới.</p>
@@ -5726,7 +5768,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Mã hồ sơ</td><td class="k">shop_dossier_id</td><td>Chuỗi</td><td class="c req">✱</td><td><b>Tự sinh, cập nhật theo Phòng Đấu thầu:</b> <code>SD-&lt;mã gói thầu&gt;</code> — gói <code>KH_0004</code> sinh hồ sơ <code>SD-KH_0004</code>. Mã gói thầu là mã tự nhập có gợi ý (<a href="#PF-01">PF-01</a>, <a href="2026-09-15/YC-04.html">YC-04</a>): còn ở <em>Nháp</em> mà P. Đấu thầu sửa mã hoặc gộp gói thì mã hồ sơ đổi theo; từ khi ký hợp đồng, mã khóa.</td></tr>
-          <tr><td>Tiêu đề</td><td class="k">title</td><td>Chuỗi</td><td class="c req">✱</td><td>Nạp sẵn tên dự án + hạng mục mời thầu, sửa được. Đây là dòng chữ P. TQT đọc trên danh sách hồ sơ.</td></tr>
+          <tr><td>Tiêu đề</td><td class="k">title</td><td>Chuỗi</td><td class="c req">✱</td><td>Sinh sẵn dạng <code>Bản vẽ Shop_&lt;mã gói thầu&gt;</code> ngay khi hợp đồng được ký — ví dụ <em>Bản vẽ Shop_HN.0001</em> — rồi sửa được, vì có gói cần tên gọi riêng. Đây là dòng chữ P. TQT đọc trên danh sách hồ sơ. Theo <a href="2026-09-22/YC-13.html">YC-13</a>.</td></tr>
+          <tr><td>Cột tổng hợp trên danh sách</td><td class="k">design_coverage</td><td>Chuỗi</td><td class="c">—</td><td>Không phải ô nhập — tính tự động, không lưu. Hiện dạng <code>{đã duyệt nội bộ}/{tổng} đầu việc</code>: hợp đồng vừa ký thì đọc là <em>0/4 đầu việc</em>, và người mở danh sách biết ngay dự án nào chưa động tới. Đếm đầu việc chứ không đếm tệp — đếm tệp thì con số nhảy mỗi lần ai đó tải thêm một bản nháp. Theo <a href="2026-09-22/YC-13.html">YC-13</a>.</td></tr>
           <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc. Một dự án có đúng <b>một</b> hồ sơ Shopdrawing, sinh sẵn khi dự án được khởi tạo ở <a href="#BID-05">BID-05</a>. Hồ sơ không có trạng thái và không phát hành được — xem <a href="#PL-A">PL-A</a>.</td></tr>
           <tr><td>Hồ sơ bản vẽ thiết kế</td><td class="k">design_dossier</td><td>Khối tệp</td><td class="c">—</td><td><b>Chỗ tải bản vẽ thiết kế, đặt ngay trên màn hình này</b> — phiên bản mới nhất, ngày nhận, đơn vị thiết kế và nút <em>+ Phiên bản mới</em> cho P. TQT; bấm vào mở đủ hồ sơ mô tả ở mục <em>Hồ sơ bản vẽ thiết kế của dự án</em> bên dưới. Cùng một hồ sơ, không phải bản sao.</td></tr>
         </tbody>
@@ -5734,7 +5777,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Tham số — cấp 2: hạng mục</h4>
-    <p>Cấp này <b>không có chứng từ riêng</b>. Nó chính là <em>Bảng theo dõi tình trạng shop theo hạng mục</em> mô tả ngay bên dưới (<a href="2026-09-15/YC-07.html">YC-07</a>), nhìn từ phía hồ sơ Shopdrawing: một dòng hạng mục ở đây và một dòng <code>shop_progress[]</code> của hồ sơ bản vẽ thiết kế là <b>cùng một bản ghi</b> — sửa cán bộ phụ trách hay tình trạng ở màn hình nào cũng đổi ở màn hình kia. Hai màn hình chỉ khác nhau ở cột: bảng theo dõi in ra năm cột của biểu mẫu công ty, còn cấp hạng mục của hồ sơ shop hiện thêm số đợt trình và số đầu việc chưa vào đợt.</p>
+    <p>Cấp này <b>không có chứng từ riêng</b>. Nó chính là <em>Bảng theo dõi tình trạng shop theo hạng mục</em> mô tả ngay bên dưới (<a href="2026-09-15/YC-07.html">YC-07</a>), nhìn từ phía hồ sơ Shopdrawing: một dòng hạng mục ở đây và một dòng <code>shop_progress[]</code> của hồ sơ bản vẽ thiết kế là <b>cùng một bản ghi</b> — sửa cán bộ phụ trách hay tình trạng ở màn hình nào cũng đổi ở màn hình kia. Hai màn hình chỉ khác nhau ở cột: bảng theo dõi in ra bảy cột của biểu mẫu công ty, còn cấp hạng mục của hồ sơ shop hiện thêm số đợt trình và số đầu việc chưa vào đợt.</p>
     <div class="tw">
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
@@ -5757,6 +5800,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tbody>
           <tr><td>Mã đợt trình</td><td class="k">batch_id</td><td>Chuỗi</td><td class="c req">✱</td><td>Tự sinh <code>&lt;mã hồ sơ&gt;.&lt;NN hạng mục&gt;-Đ&lt;n&gt;</code>, ví dụ <code>SD-KH_0004.03-Đ2</code> — phần <code>NN</code> là hai chữ số của mã hạng mục <code>&lt;mã gói&gt;.NN</code> ở <a href="#PF-01">PF-01</a>, <code>n</code> chạy riêng trong từng hạng mục. Không sửa. <b>Thay cho trường <code>shop_id</code> của bản vẽ shop trước đây</b> — <a href="#ORD-03">ORD-03</a> bám vào mã này.</td></tr>
           <tr><td>Đầu việc của đợt</td><td class="k">wbs_ids[]</td><td>Tham chiếu</td><td class="c req">✱</td><td>Ít nhất một đầu việc, <b>tất cả thuộc hạng mục cha</b>. Một đầu việc chỉ thuộc <b>một đợt đang mở</b> — đó chính là cách chia “trình A trước, B và C sau”.</td></tr>
+          <tr><td>Thời gian thực hiện — từ</td><td class="k">plan_from</td><td>Ngày</td><td class="c req">✱</td><td><b>Mới (<a href="2026-09-22/YC-13.html">YC-13</a>).</b> Ngày bắt đầu làm đợt này. Mặc định là ngày mở đợt.</td></tr>
+          <tr><td>Thời gian thực hiện — đến</td><td class="k">plan_to</td><td>Ngày</td><td class="c req">✱</td><td><b>Mới (<a href="2026-09-22/YC-13.html">YC-13</a>).</b> Ngày dự kiến nộp cho trưởng phòng. Không nhỏ hơn <code>plan_from</code>. Quá hạn mà chưa nộp thì hạng mục gắn cờ trễ và phát nhắc cho cả kỹ sư lẫn trưởng phòng (<a href="#PF-04">PF-04</a>) — nhắc chứ không chặn, vì chặn thì người ta sẽ dời hạn cho xong việc và số ngày trễ không còn dùng được khi rà soát tiến độ.</td></tr>
           <tr><td>Kỹ sư phụ trách</td><td class="k">drafter</td><td>Tham chiếu</td><td class="c req">✱</td><td>Người lập bản vẽ và nhập bảng khối lượng của đợt. Mặc định là cán bộ phụ trách hạng mục (<code>owner_user</code>), đổi được theo từng đợt.</td></tr>
           <tr><td>Khối lượng của đợt</td><td class="k">shop_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Kỹ sư phụ trách nhập <b>ngay khi lập đợt</b>, trước mọi bước duyệt. Là dữ liệu đầu vào của đơn hàng.</td></tr>
           <tr><td>— dòng khối lượng</td><td class="k">line_no, wbs_id, work_code, stone_code,<br>uom, qty, spec, note</td><td>Dòng</td><td class="c req">✱</td><td>STT · đầu việc · mã việc · mã đá · đvt · khối lượng · quy cách · ghi chú. <code>wbs_id</code> phải là một trong các đầu việc <em>của đợt</em>. <code>stone_code</code> tra từ danh mục đá của <a href="#PF-01">PF-01</a>; <code>spec</code> là quy cách gia công (dày, bo, mài). <a href="#ORD-03">ORD-03</a> trỏ về đúng dòng này qua <code>lines[].shop_qty_line_id</code>.</td></tr>
@@ -5783,14 +5828,61 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Tệp bản vẽ thiết kế</td><td class="k">design_files[]</td><td>Tệp</td><td class="c">—</td><td>DWG · DXF · PDF, nhiều tệp, theo phiên bản của <a href="#PF-05">PF-05</a> với loại tài liệu <em>bản vẽ thiết kế</em>. CĐT phát hành bản mới là một phiên bản mới của cùng hồ sơ; bản cũ giữ nguyên vì shop đã trình dựa trên bản cũ vẫn phải tra lại được.</td></tr>
           <tr><td>Ngày nhận bản mới nhất</td><td class="k">received_at</td><td>Ngày</td><td class="c">—</td><td>Ngày nhận phiên bản đang dùng. Hiện trên danh sách để thấy hồ sơ có đang cũ đi không.</td></tr>
           <tr><td>Ghi chú hồ sơ</td><td class="k">note</td><td>Chuỗi dài</td><td class="c">—</td><td>Phạm vi bản vẽ, phần còn thiếu, cam kết bổ sung của CĐT.</td></tr>
-          <tr><td>Bảng theo dõi hạng mục</td><td class="k">shop_progress[]</td><td>Bảng</td><td class="c">—</td><td>Năm cột theo biểu mẫu, mô tả ngay dưới. Dòng sinh tự động từ danh mục hạng mục của dự án, không gõ tay. <b>Đây cũng chính là cấp 2 của hồ sơ Shopdrawing</b> — cùng một bản ghi, hai cách nhìn.</td></tr>
+          <tr><td>Bảng theo dõi hạng mục</td><td class="k">shop_progress[]</td><td>Bảng</td><td class="c">—</td><td>Bảy cột theo biểu mẫu, mô tả ngay dưới. Dòng sinh tự động từ danh mục hạng mục của dự án, không gõ tay. <b>Đây cũng chính là cấp 2 của hồ sơ Shopdrawing</b> — cùng một bản ghi, hai cách nhìn.</td></tr>
         </tbody>
       </table>
     </div>
 
+    <h4>Lưu đồ — vòng phân công và nộp bản vẽ trong P. TQT</h4>
+    <p>Vòng này nằm <em>trước</em> vòng gửi–trả chủ đầu tư của Hình ORD-02.2 và hoàn toàn nội bộ phòng (<a href="2026-09-22/YC-13.html">YC-13</a>). Nó là lý do bảng theo dõi cần hai cột trạng thái chứ không phải một.</p>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:360px;margin:0 auto"><svg role="img" aria-label="Hình ORD-02.3 Trưởng phòng TQT phân công hạng mục, hệ thống báo cho kỹ sư, kỹ sư nộp bản vẽ, trưởng phòng duyệt hoặc trả lại. Chỉ khi đã duyệt nội bộ thì hạng mục mới mở được đợt trình gửi chủ đầu tư."
+ viewBox="0 0 360 500" xmlns="http://www.w3.org/2000/svg">
+<g>
+<rect x="40" y="8" width="280" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
+<text xml:space="preserve" text-anchor="middle" x="180" y="27" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">TP TQT phân công hạng mục</text>
+<text xml:space="preserve" text-anchor="middle" x="180" y="42" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chọn cán bộ phụ trách trên bảng theo dõi</text>
+<path fill="none" stroke="#55606b" d="M180,52 L180,68"/>
+<polygon fill="#55606b" stroke="#55606b" points="176.5,66 183.5,66 180,72"/>
+<rect x="55" y="72" width="250" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
+<text xml:space="preserve" text-anchor="middle" x="180" y="91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hệ thống báo cho người được giao</text>
+<text xml:space="preserve" text-anchor="middle" x="180" y="106" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">sự kiện mới của PF-04 · kèm hạn nộp</text>
+<path fill="none" stroke="#55606b" d="M180,116 L180,132"/>
+<polygon fill="#55606b" stroke="#55606b" points="176.5,130 183.5,130 180,136"/>
+<rect x="55" y="136" width="250" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
+<text xml:space="preserve" text-anchor="middle" x="180" y="155" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Kỹ sư nộp bản vẽ lên hạng mục</text>
+<text xml:space="preserve" text-anchor="middle" x="180" y="170" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">cột Bản vẽ nộp · phiên bản theo PF-05</text>
+<path fill="none" stroke="#55606b" d="M180,180 L180,194"/>
+<polygon fill="#55606b" stroke="#55606b" points="176.5,192 183.5,192 180,198"/>
+<polygon fill="#eef2f5" stroke="#5d6b7a" points="180,198 296,238 180,278 64,238"/>
+<text xml:space="preserve" text-anchor="middle" x="180" y="234" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">TP TQT xem</text>
+<text xml:space="preserve" text-anchor="middle" x="180" y="249" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">bản vẽ đạt không?</text>
+<path fill="none" stroke="#55606b" d="M64,238 L20,238 L20,158 L55,158"/>
+<polygon fill="#55606b" stroke="#55606b" points="53,154.5 53,161.5 59,158"/>
+<text xml:space="preserve" text-anchor="middle" x="20" y="200" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Trả lại</text>
+<path fill="none" stroke="#55606b" d="M180,278 L180,296"/>
+<polygon fill="#55606b" stroke="#55606b" points="176.5,294 183.5,294 180,300"/>
+<text xml:space="preserve" text-anchor="middle" x="200" y="292" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đạt</text>
+<rect x="55" y="300" width="250" height="44" fill="#eef2f5" stroke="#5d6b7a"/>
+<text xml:space="preserve" text-anchor="middle" x="180" y="319" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đã duyệt nội bộ</text>
+<text xml:space="preserve" text-anchor="middle" x="180" y="334" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">in ra ký tươi nếu cần</text>
+<path fill="none" stroke="#55606b" d="M180,344 L180,360"/>
+<polygon fill="#55606b" stroke="#55606b" points="176.5,358 183.5,358 180,364"/>
+<rect x="30" y="364" width="300" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
+<text xml:space="preserve" text-anchor="middle" x="180" y="383" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Mở đợt trình gửi chủ đầu tư</text>
+<text xml:space="preserve" text-anchor="middle" x="180" y="398" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">vòng gửi–trả của Hình ORD-02.2</text>
+<path fill="none" stroke="#55606b" d="M180,408 L180,424"/>
+<polygon fill="#55606b" stroke="#55606b" points="176.5,422 183.5,422 180,428"/>
+<rect x="55" y="428" width="250" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
+<text xml:space="preserve" text-anchor="middle" x="180" y="447" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cột Tình trạng shop đổi theo đợt</text>
+<text xml:space="preserve" text-anchor="middle" x="180" y="462" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đây mới là trạng thái phía chủ đầu tư</text>
+</g>
+</svg></div>
+<figcaption><b>Hình ORD-02.3</b> Cột 6 của bảng theo dõi đếm vòng bên trong phòng; cột 3 đếm vòng với chủ đầu tư. Nút mở đợt trình bị khóa cho tới khi vòng này kết thúc ở <em>Đã duyệt nội bộ</em> — đó là chỗ hai lưu đồ nối vào nhau.</figcaption>
+</figure>
+
     <h4>Bảng theo dõi tình trạng shop theo hạng mục</h4>
-    <p>Đây là thứ P. TQT cần nhìn mỗi ngày: hạng mục nào đã có shop, ai phụ trách, đang mắc ở đâu. Đúng <b>năm cột</b> của biểu mẫu công ty đang dùng, chia nhóm theo phân nhóm hạng mục của dự án — biểu mẫu thật có hai nhóm <em>I. Các nhà</em> và <em>II. Hạ tầng</em>. Cột tình trạng kéo theo một ô ngày đi liền nó.</p>
-    <p>Bảng này và <em>cấp 2 — hạng mục</em> của hồ sơ Shopdrawing là <b>một dữ liệu duy nhất</b>, không phải hai bảng đồng bộ với nhau: <code>wbs_group_id</code>, <code>owner_user</code>, <code>shop_status</code> và <code>hardcopy_at</code> chỉ được lưu một lần. Bảng theo dõi in ra năm cột của biểu mẫu; màn hình hồ sơ shop hiện thêm <code>batch_count</code> và <code>wbs_unassigned</code>, và bấm vào một dòng là mở danh sách đợt trình của hạng mục đó.</p>
+    <p>Đây là thứ P. TQT cần nhìn mỗi ngày: hạng mục nào đã có shop, ai phụ trách, đang mắc ở đâu. Đúng <b>bảy cột</b> của biểu mẫu công ty đang dùng (<a href="2026-09-22/YC-13.html">YC-13</a> — biểu mẫu bổ sung hai cột <em>Bản vẽ nộp</em> và <em>Tình trạng bản vẽ thiết kế</em> cho vòng làm việc nội bộ của phòng), chia nhóm theo phân nhóm hạng mục của dự án — biểu mẫu thật có hai nhóm <em>I. Các nhà</em> và <em>II. Hạ tầng</em>. Cột tình trạng kéo theo một ô ngày đi liền nó.</p>
+    <p>Bảng này và <em>cấp 2 — hạng mục</em> của hồ sơ Shopdrawing là <b>một dữ liệu duy nhất</b>, không phải hai bảng đồng bộ với nhau: <code>wbs_group_id</code>, <code>owner_user</code>, <code>shop_status</code> và <code>hardcopy_at</code> chỉ được lưu một lần. Bảng theo dõi in ra bảy cột của biểu mẫu; màn hình hồ sơ shop hiện thêm <code>batch_count</code> và <code>wbs_unassigned</code>, và bấm vào một dòng là mở danh sách đợt trình của hạng mục đó.</p>
     <div class="tw">
       <table>
         <thead><tr><th style="width:52px">Cột</th><th style="width:21%">Tiêu đề</th><th style="width:22%">Mã</th><th>Quy tắc</th></tr></thead>
@@ -5799,10 +5891,31 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>2</td><td>Hạng mục</td><td class="k">shop_progress[].wbs_group_id</td><td>Tham chiếu tới hạng mục của dự án. Chỉ đọc — không gõ tay tên hạng mục ở đây.</td></tr>
           <tr><td>3</td><td>Tình trạng Shop</td><td class="k">shop_progress[].shop_status</td><td>Danh mục đóng năm giá trị ở bảng dưới. Chọn <em>Đã in trình bản cứng</em> thì bắt buộc nhập ngày trình.</td></tr>
           <tr><td>—</td><td>Ngày trình bản cứng</td><td class="k">shop_progress[].hardcopy_at</td><td>Đi liền trạng thái <em>Đã in trình bản cứng</em>, hiển thị ngay trong ô: “Đã in trình bản cứng ngày 05/09/2026”. Là mốc để đếm số ngày hồ sơ nằm ở phía CĐT.</td></tr>
-          <tr><td>4</td><td>Cán bộ phụ trách</td><td class="k">shop_progress[].owner_user</td><td>Tham chiếu tới nhân sự P. TQT. Một người phụ trách nhiều hạng mục là bình thường.</td></tr>
-          <tr><td>5</td><td>Ghi chú</td><td class="k">shop_progress[].note</td><td>Kế hoạch và vướng mắc: “Kế hoạch 15/9 in trình”, “Chưa có bản vẽ thiết kế”.</td></tr>
+          <tr><td>4</td><td>Cán bộ phụ trách</td><td class="k">shop_progress[].owner_user</td><td>Tham chiếu tới nhân sự P. TQT. Một người phụ trách nhiều hạng mục là bình thường. <b>Từ <a href="2026-09-22/YC-13.html">YC-13</a>:</b> đặt ô này là <em>giao việc</em> — trưởng phòng phân công, và hệ thống phát thông báo cho người được giao (<a href="#PF-04">PF-04</a>). Không còn là một ô sửa dữ liệu lặng lẽ.</td></tr>
+          <tr><td>5</td><td>Bản vẽ nộp</td><td class="k">shop_progress[].submitted_files[]</td><td><b>Mới (<a href="2026-09-22/YC-13.html">YC-13</a>).</b> Tệp kỹ sư nộp cho trưởng phòng, <em>trước</em> khi có đợt trình. Hiện dạng “{số tệp} tệp · nộp ngày {ngày}”; rỗng thì hiện “chưa nộp”. Mỗi lần nộp lại là một phiên bản mới theo <a href="#PF-05">PF-05</a>, bản cũ giữ nguyên để trưởng phòng đối chiếu với ý kiến mình đã ghi.</td></tr>
+          <tr><td>6</td><td>Tình trạng bản vẽ thiết kế</td><td class="k">shop_progress[].draft_status</td><td><b>Mới (<a href="2026-09-22/YC-13.html">YC-13</a>).</b> Danh mục đóng năm giá trị ở bảng dưới. Đây là trạng thái <b>nội bộ P. TQT</b> — đừng lẫn với cột 3, vốn là trạng thái phía chủ đầu tư.</td></tr>
+          <tr><td>7</td><td>Ghi chú</td><td class="k">shop_progress[].note</td><td>Kế hoạch và vướng mắc: “Kế hoạch 15/9 in trình”, “Chưa có bản vẽ thiết kế”. Cũng là nơi ghi “đã in ra ký tươi ngày …” — in ký tươi là một hành động sau khi duyệt nội bộ, không phải một trạng thái.</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <h4>Danh mục tình trạng bản vẽ thiết kế <span class="k">draft_status</span></h4>
+    <p>Vòng làm việc này nằm <em>trước</em> vòng gửi–trả chủ đầu tư và hoàn toàn nội bộ P. TQT (<a href="2026-09-22/YC-13.html">YC-13</a>).</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:24%">Giá trị</th><th style="width:18%">Mã</th><th>Ý nghĩa</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag t-neu">Chưa phân công</span></td><td class="k">unassigned</td><td>Trưởng phòng chưa giao hạng mục này cho ai</td></tr>
+          <tr><td><span class="tag t-neu">Đã phân công</span></td><td class="k">assigned</td><td>Đã có cán bộ phụ trách và người đó đã nhận thông báo; chưa nộp bản nào</td></tr>
+          <tr><td><span class="tag t-warn">Đã nộp, chờ duyệt</span></td><td class="k">submitted</td><td>Kỹ sư đã tải bản vẽ lên; đang chờ trưởng phòng xem</td></tr>
+          <tr><td><span class="tag t-crit">Trả lại — nộp lại</span></td><td class="k">returned</td><td>Trưởng phòng từ chối kèm ý kiến; kỹ sư sửa và nộp lại. Đếm số lần trả lại</td></tr>
+          <tr><td><span class="tag t-ok">Đã duyệt nội bộ</span></td><td class="k">approved_internal</td><td>Trưởng phòng đồng ý. Là điều kiện để mở đợt trình gửi chủ đầu tư, hoặc in ra ký tươi</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>Hai cột trạng thái, hai câu hỏi khác nhau</b>
+      <p style="margin:0">Cột 3 trả lời “chủ đầu tư đã ký chưa”. Cột 6 trả lời “bên trong phòng, bản vẽ đã qua tay trưởng phòng chưa”. Một hạng mục có thể <em>Đã duyệt nội bộ</em> ở cột 6 mà vẫn <em>Đang triển khai</em> ở cột 3 — đó là khoảng thời gian bản vẽ đang trên đường tới chủ đầu tư, và cũng là khoảng duy nhất P. TQT tự quản được. Gộp hai cột lại là mất đúng khoảng đó.</p>
     </div>
 
     <h4>Danh mục tình trạng shop</h4>
@@ -5834,10 +5947,15 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Khối lượng kỹ sư nhập từ đầu chảy thẳng sang màn hình lập đơn hàng khi đợt được phát hành, không phải gõ lại.</li>
       <li>Mỗi đợt trình truy được ai lập, ai duyệt nội bộ, ai phát hành và vào thời điểm nào.</li>
       <li>Nhìn theo hợp đồng biết được đầu việc nào đã vào đợt, đầu việc nào chưa, và hạng mục nào còn bao nhiêu phần chưa đụng tới.</li>
-      <li>Danh sách hồ sơ có cột <b>Bản vẽ thiết kế</b> hiện tỷ lệ hạng mục đã ký shop, phiên bản và ngày nhận bản vẽ thiết kế mới nhất; bấm vào mở bảng theo dõi năm cột.</li>
+      <li>Danh sách hồ sơ có cột <b>Bản vẽ thiết kế</b> hiện tỷ lệ hạng mục đã ký shop, phiên bản và ngày nhận bản vẽ thiết kế mới nhất; bấm vào mở bảng theo dõi bảy cột.</li>
       <li>Bảng theo dõi sinh sẵn đủ dòng từ danh mục hạng mục của dự án, chia đúng nhóm, số thứ tự giữ nguyên số gốc kể cả khi dãy số ngắt quãng.</li>
       <li>Trạng thái “Đã in trình bản cứng” luôn hiển thị kèm ngày ngay trong ô.</li>
       <li>CĐT phát hành bản vẽ thiết kế mới thì các hạng mục bị ảnh hưởng được đánh dấu cần rà soát lại shop, và chỉ những đợt dựng trên phiên bản cũ mới bị đánh dấu.</li>
+      <li>Ký hợp đồng xong, hồ sơ có sẵn mã và tiêu đề sinh theo mã gói thầu; cột tổng hợp trên danh sách đọc được ngay dạng “0/4 đầu việc”.</li>
+      <li>Trưởng phòng gán cán bộ phụ trách ngay trên bảng theo dõi, và người được gán nhận thông báo — không ai phải báo lại bằng miệng.</li>
+      <li>Kỹ sư nộp bản vẽ vào cột <em>Bản vẽ nộp</em>; trưởng phòng nhận thông báo, mở xem, duyệt hoặc trả lại kèm ý kiến. Trả lại rồi nộp lại sinh phiên bản mới, bản cũ và ý kiến vẫn tra được, và số lần trả lại đếm được theo hạng mục.</li>
+      <li>Chỉ hạng mục <em>Đã duyệt nội bộ</em> mới mở được đợt trình; khung mở đợt có thêm cặp ngày thực hiện, và quá hạn nộp thì hạng mục gắn cờ trễ mà vẫn nộp được.</li>
+      <li>Hai cột trạng thái đọc độc lập: cột 6 cho vòng nội bộ của phòng, cột 3 cho vòng với chủ đầu tư.</li>
     </ol>
 
     <h4>Mockup UI — Shopdrawing › Theo dõi duyệt</h4>
@@ -5850,7 +5968,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <p style="margin:0;font-size:11.5px;color:var(--ink-3)">Bản <b>v2</b> · nhận 05/09/2026 · đơn vị thiết kế <b>Cty TV Thiết kế Hoàng Gia</b> · 4 hạng mục cần rà soát theo bản mới. Nút <em>+ Phiên bản mới</em> chỉ hiện với P. TQT; Ban dự án và Ban lãnh đạo đọc.</p>
         </div>
         <div class="wf-sec">
-          <div class="wf-lg"><span class="pin">9</span> Cấp 2 — hạng mục của hồ sơ <span class="wf-crumb">cùng dữ liệu với bảng theo dõi năm cột · bấm dòng để mở đợt trình</span></div>
+          <div class="wf-lg"><span class="pin">9</span> Cấp 2 — hạng mục của hồ sơ <span class="wf-crumb">cùng dữ liệu với bảng theo dõi bảy cột · bấm dòng để mở đợt trình</span></div>
           <table><thead><tr><th class="num">STT</th><th>Hạng mục</th><th>Tình trạng Shop</th><th class="num">Đợt trình</th><th class="num">Đầu việc chưa vào đợt</th><th>Cán bộ phụ trách</th></tr></thead>
           <tbody>
             <tr><td class="num">8.1</td><td>HM-01 Nhà Bảo Tháp — mặt đứng</td><td><span class="tag t-warn">Đã in trình bản cứng</span> ngày 18/07</td><td class="num">3</td><td class="num">1</td><td>Nguyễn Văn Hùng</td></tr>
@@ -5881,17 +5999,17 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">8</span> Tình trạng shop theo hạng mục — DA-2026-014 <span class="wf-crumb">cùng dữ liệu với khối <span class="pin">9</span> · bản vẽ thiết kế v2 · nhận 05/09/2026</span></div>
           <div style="margin-bottom:6px"><span class="wf-btn">Tệp bản vẽ thiết kế (6)</span> <span class="wf-btn">+ Phiên bản mới</span></div>
-          <table><thead><tr><th class="num">STT</th><th>Hạng mục</th><th>Tình trạng Shop</th><th>Cán bộ phụ trách</th><th>Ghi chú</th></tr></thead>
+          <table><thead><tr><th class="num">STT</th><th>Hạng mục</th><th>Tình trạng Shop</th><th>Cán bộ phụ trách</th><th>Bản vẽ nộp</th><th>Tình trạng BVTK</th><th>Ghi chú</th></tr></thead>
           <tbody>
-            <tr><td></td><td colspan="4"><b>I. Các nhà</b></td></tr>
-            <tr><td class="num">8.1</td><td>Nhà Bảo Tháp — mặt đứng</td><td><span class="tag t-ok">Đã ký xong</span></td><td>Nguyễn Văn Hùng</td><td>—</td></tr>
-            <tr><td class="num">9</td><td>Nhà Tổ đường</td><td><span class="tag t-warn">Đã in trình bản cứng</span> ngày 05/09/2026</td><td>Nguyễn Văn Hùng</td><td>Chờ ý kiến CĐT</td></tr>
-            <tr><td class="num">10</td><td>Nhà khách</td><td><span class="tag t-warn">Đang triển khai</span></td><td>Trần Thị Mai</td><td>Kế hoạch 15/9 in trình</td></tr>
-            <tr><td class="num">13</td><td>Nhà bia</td><td><span class="tag t-neu">Chưa triển khai</span></td><td>—</td><td>Chờ bố trí người</td></tr>
-            <tr><td></td><td colspan="4"><b>II. Hạ tầng</b></td></tr>
-            <tr><td class="num">14</td><td>Sân nền Bảo Tháp</td><td><span class="tag t-neu">Chưa có bản vẽ</span></td><td>Trần Thị Mai</td><td>CĐT cam kết cấp trước 20/9</td></tr>
-            <tr><td class="num">24</td><td>Đường dạo &amp; bó vỉa</td><td><span class="tag t-warn">Đang triển khai</span></td><td>Lê Quốc Bảo</td><td>Rà soát lại theo BVTK v2</td></tr>
-            <tr><td class="num">27</td><td>Kè đá hồ cảnh</td><td><span class="tag t-neu">Chưa triển khai</span></td><td>Lê Quốc Bảo</td><td>Rà soát lại theo BVTK v2</td></tr>
+            <tr><td></td><td colspan="6"><b>I. Các nhà</b></td></tr>
+            <tr><td class="num">8.1</td><td>Nhà Bảo Tháp — mặt đứng</td><td><span class="tag t-ok">Đã ký xong</span></td><td>Nguyễn Văn Hùng</td><td>3 tệp · nộp 28/08/2026</td><td><span class="tag t-ok">Đã duyệt nội bộ</span></td><td>—</td></tr>
+            <tr><td class="num">9</td><td>Nhà Tổ đường</td><td><span class="tag t-warn">Đã in trình bản cứng</span> ngày 05/09/2026</td><td>Nguyễn Văn Hùng</td><td>2 tệp · nộp 02/09/2026</td><td><span class="tag t-ok">Đã duyệt nội bộ</span></td><td>Chờ ý kiến CĐT</td></tr>
+            <tr><td class="num">10</td><td>Nhà khách</td><td><span class="tag t-warn">Đang triển khai</span></td><td>Trần Thị Mai</td><td>1 tệp · nộp 12/09/2026</td><td><span class="tag t-crit">Trả lại — nộp lại</span> <em>lần 2</em></td><td>Kế hoạch 15/9 in trình</td></tr>
+            <tr><td class="num">13</td><td>Nhà bia</td><td><span class="tag t-neu">Chưa triển khai</span></td><td>—</td><td>chưa nộp</td><td><span class="tag t-neu">Chưa phân công</span></td><td>Chờ bố trí người</td></tr>
+            <tr><td></td><td colspan="6"><b>II. Hạ tầng</b></td></tr>
+            <tr><td class="num">14</td><td>Sân nền Bảo Tháp</td><td><span class="tag t-neu">Chưa có bản vẽ</span></td><td>Trần Thị Mai</td><td>chưa nộp</td><td><span class="tag t-neu">Đã phân công</span> <em>hạn 20/09</em></td><td>CĐT cam kết cấp trước 20/9</td></tr>
+            <tr><td class="num">24</td><td>Đường dạo &amp; bó vỉa</td><td><span class="tag t-warn">Đang triển khai</span></td><td>Lê Quốc Bảo</td><td>2 tệp · nộp 18/09/2026</td><td><span class="tag t-warn">Đã nộp, chờ duyệt</span></td><td>Rà soát lại theo BVTK v2</td></tr>
+            <tr><td class="num">27</td><td>Kè đá hồ cảnh</td><td><span class="tag t-neu">Chưa triển khai</span></td><td>Lê Quốc Bảo</td><td>chưa nộp</td><td><span class="tag t-neu">Chưa phân công</span></td><td>Rà soát lại theo BVTK v2</td></tr>
           </tbody></table>
           <p class="note q" style="margin:8px 0 0;font-size:11.5px"><b>Bản vẽ thiết kế v2 · 4 hạng mục cần rà soát</b> — hạng mục 10, 13, 24 và 27 nằm trong phạm vi bản phát hành ngày 05/09/2026. Mở từng hạng mục để đối chiếu shop đã trình.</p>
         </div>
@@ -5935,7 +6053,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td class="c"><span class="pin">5</span></td><td>Nhập khối lượng của đợt</td><td>Kỹ sư phụ trách nhập ngay khi mở đợt: STT, đầu việc, mã việc, mã đá, đvt, khối lượng, quy cách, ghi chú. Sửa được cho tới khi đợt được phát hành.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Phát hành sang đơn hàng</td><td>TP TQT chọn <em>đợt trình</em> CĐT đã chấp thuận và bấm phát hành. Từ đó đợt mới hiện trong danh sách “Đợt trình nguồn” của <a href="#ORD-03">ORD-03</a> và bảng khối lượng của đợt khóa lại. Không có nút phát hành ở cấp hồ sơ.</td></tr>
           <tr><td class="c"><span class="pin">7</span></td><td>Cột Bản vẽ thiết kế trên danh sách</td><td>Hiện dạng số tổng hợp “{đã ký}/{tổng} hạng mục · bản {phiên bản} ngày {ngày}”, không hiện tên tệp. Bấm vào ô mở bảng theo dõi tình trạng shop của dự án.</td></tr>
-          <tr><td class="c"><span class="pin">8</span></td><td>Bảng theo dõi tình trạng shop</td><td>Năm cột theo biểu mẫu, chia nhóm hạng mục. Sửa được tình trạng, cán bộ phụ trách và ghi chú; nơi tải tệp bản vẽ thiết kế và thêm phiên bản mới của hồ sơ.</td></tr>
+          <tr><td class="c"><span class="pin">8</span></td><td>Bảng theo dõi tình trạng shop</td><td>Bảy cột theo biểu mẫu, chia nhóm hạng mục. Sửa được tình trạng, cán bộ phụ trách và ghi chú; nơi tải tệp bản vẽ thiết kế và thêm phiên bản mới của hồ sơ.</td></tr>
           <tr><td class="c"><span class="pin">9</span></td><td>Mở hồ sơ &amp; chọn hạng mục</td><td>Header chỉ hiện mã, tiêu đề, dự án — không có ô nhập. Bên dưới là danh sách hạng mục sinh từ BOQ hợp đồng kèm tình trạng, số đợt trình và số đầu việc chưa vào đợt; bấm một dòng để xuống cấp 3.</td></tr>
           <tr><td class="c"><span class="pin">10</span></td><td>Tải bản vẽ thiết kế ngay trong hồ sơ</td><td>Khối hồ sơ bản vẽ thiết kế đặt trên danh sách hạng mục: phiên bản hiện hành, ngày nhận, đơn vị thiết kế và nút thêm phiên bản mới — kèm bước chọn hạng mục bị ảnh hưởng. Ghi vào đúng hồ sơ của khối <span class="pin">8</span>, không tạo bản sao. Quyền ghi thuộc P. TQT (<a href="#PL-B">PL-B</a>).</td></tr>
           <tr><td class="c">—</td><td>Xuất file gửi CĐT</td><td>Xuất bộ hồ sơ của đợt (bản vẽ + bảng khối lượng) để gửi mail cho CĐT; ghi ngày gửi và ngày cam kết trả vào vòng gửi.</td></tr>
@@ -5948,7 +6066,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <ol class="br">
       <li><b>Header hồ sơ chỉ ba trường.</b> Mã, tiêu đề, dự án — không một ô nhập nào khác ở cấp hồ sơ.<span class="then">Người mở hồ sơ shop của một dự án cần nhìn thấy ngay danh sách hạng mục và tình trạng của từng hạng mục. Mọi ô nhập đặt ở header đều là một bước chắn giữa họ và thông tin đó.</span></li>
       <li><b>Mã hồ sơ bám mã gói thầu.</b> <code>SD-&lt;mã gói thầu&gt;</code>, sinh tự động và cập nhật theo Phòng Đấu thầu; khóa từ khi ký hợp đồng.<span class="then">Nhờ vậy một hồ sơ shop tra ngược được về gói thầu mà không cần bảng ánh xạ, và khi P. Đấu thầu sửa mã hoặc gộp gói lúc còn <em>Nháp</em> (<a href="2026-09-15/YC-04.html">YC-04</a>) thì hồ sơ shop mang đúng mã mới. Quy tắc mã đầy đủ ở <a href="#PF-01">PF-01</a>.</span></li>
-      <li><b>Hạng mục sinh tự động, không tạo tay.</b> Danh sách hạng mục lấy từ nhóm cha của đầu việc trong BOQ hợp đồng; cấp hạng mục và bảng theo dõi năm cột là <em>cùng một bản ghi</em>.<span class="then">Hạng mục là khái niệm đã tồn tại từ BOQ. Để P. TQT gõ lại tên hạng mục sẽ sinh ra một danh sách thứ hai lệch dần khỏi hợp đồng, và mọi phép đối chiếu doanh thu — chi phí theo hạng mục sẽ hỏng. Cùng lý do, hai màn hình không giữ hai bản sao của <code>shop_status</code> và <code>owner_user</code>.</span></li>
+      <li><b>Hạng mục sinh tự động, không tạo tay.</b> Danh sách hạng mục lấy từ nhóm cha của đầu việc trong BOQ hợp đồng; cấp hạng mục và bảng theo dõi bảy cột là <em>cùng một bản ghi</em>.<span class="then">Hạng mục là khái niệm đã tồn tại từ BOQ. Để P. TQT gõ lại tên hạng mục sẽ sinh ra một danh sách thứ hai lệch dần khỏi hợp đồng, và mọi phép đối chiếu doanh thu — chi phí theo hạng mục sẽ hỏng. Cùng lý do, hai màn hình không giữ hai bản sao của <code>shop_status</code> và <code>owner_user</code>.</span></li>
       <li><b>Một đầu việc thuộc đúng một đợt đang mở.</b> Chọn đầu việc đang nằm trong một đợt chưa đóng thì bị chặn, thông điệp nêu rõ mã đợt đang giữ nó.<span class="then">Đây là ràng buộc làm cho “trình A trước, B và C sau” có nghĩa. Nếu hai đợt cùng phủ đầu việc A thì khối lượng của A nằm trong hai bảng <code>shop_qty[]</code>, và <a href="#ORD-03">ORD-03</a> đếm nó hai lần: “đã yêu cầu” và “còn lại” của đầu việc A sai ngay từ đơn hàng đầu tiên, vì hai con số đó cộng theo dòng khối lượng của đợt nguồn.</span></li>
       <li><b>Kết quả “sửa và trình lại” không đóng đợt.</b> <code>revise_resubmit</code> giữ đợt mở và tăng <code>submission_no</code>; đầu việc vẫn thuộc đợt đó.<span class="then">Vòng gửi–trả nằm <em>trong</em> một đợt: đợt là một nhóm đầu việc, vòng là một lần gửi. Lẫn hai khái niệm này lại thì không đếm được “CĐT giữ hồ sơ bao nhiêu ngày qua mấy vòng”, và mỗi lần bị trả lại sẽ đẻ ra một chứng từ mới không liên hệ gì với lần trước.</span></li>
       <li><b>Đợt bị từ chối đóng lại và giải phóng đầu việc.</b> <code>rejected</code> đóng đợt ở trạng thái từ chối, giữ nguyên tệp và ý kiến; các đầu việc của nó trở lại nhóm chưa vào đợt và chọn được cho một đợt mới.<span class="then">Lịch sử một lần trình hỏng là dữ liệu — nó cho biết CĐT đã bác vì lý do gì. Sửa đè lên đợt cũ sẽ xóa mất lý do ấy. Đây cũng là khác biệt duy nhất về hệ quả giữa <code>rejected</code> và <code>revise_resubmit</code>.</span></li>
@@ -5973,6 +6091,13 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Tình trạng shop tự cập nhật theo đợt trình, vẫn sửa tay được.</b> Đợt trình của hạng mục chuyển bước thì ô tình trạng tính lại theo quy tắc 8; sửa tay được nhưng ô bị đánh dấu và ghi người sửa.<span class="then">Bảng này là cái nhìn tổng quan, nguồn sự thật là từng đợt trình. Vẫn cho sửa tay vì có hạng mục trình bản cứng ngoài hệ thống trước khi kịp mở đợt trong phần mềm.</span></li>
       <li><b>Cột trên danh sách hiện số, không hiện tệp.</b> Cột “Bản vẽ thiết kế” hiện “{đã ký}/{tổng} hạng mục · bản {phiên bản} ngày {ngày}”; tệp nằm sau một cú bấm.<span class="then">Người mở danh sách cần biết dự án nào đang tắc, không cần thấy tên tệp DWG.</span></li>
       <li><b>Bản vẽ đơn hàng không thuộc hồ sơ shopdrawing.</b> Tệp đính kèm đơn hàng ở <a href="#ORD-03">ORD-03</a> là hồ sơ riêng của đơn, không hiện trong hồ sơ shopdrawing của dự án ở bất kỳ cấp nào.<span class="then">Một đơn hàng vẫn phải bám một đợt trình đã phát hành, nhưng tệp gửi nhà máy thường là bản trích xuất phục vụ cắt, không phải bản trình CĐT. Trộn hai thứ vào một chỗ là cách nhanh nhất để gửi nhầm bản cho CĐT.</span></li>
+      <li><b>Phân công là hành động của trưởng phòng và luôn phát thông báo.</b> Đổi <code>owner_user</code> của một hạng mục là giao việc, không phải sửa dữ liệu (<a href="2026-09-22/YC-13.html">YC-13</a>).<span class="then">Yêu cầu nói thẳng: “ai được phân công phần nào sẽ gửi thông báo cho”. Không phát thông báo thì bảng phân công chỉ là một ô chữ, và người được giao vẫn phải nghe bằng miệng — tức là bảng không thay được cái nó định thay.</span></li>
+      <li><b>Nộp bản vẽ là việc của người được giao.</b> Chỉ <code>owner_user</code> của hạng mục mới tải được vào <code>submitted_files[]</code>.<span class="then">Nếu ai cũng nộp được thì cột <em>Bản vẽ nộp</em> không còn trả lời được câu hỏi duy nhất nó sinh ra để trả lời: người tôi giao đã làm xong chưa.</span></li>
+      <li><b>Trả lại phải có ý kiến, và được đếm.</b> Từ chối mà không ghi lý do thì không lưu; mỗi lần trả lại tăng bộ đếm của hạng mục.<span class="then">Số lần trả lại là chỉ số chất lượng của khâu lập shop — nó nói ai đang phải làm lại nhiều, và hạng mục nào có vấn đề từ bản vẽ thiết kế chứ không phải từ người làm. Một con số không đếm thì không ai tra được.</span></li>
+      <li><b>Nộp lại là phiên bản mới, không ghi đè.</b> Bản cũ giữ nguyên theo <a href="#PF-05">PF-05</a>.<span class="then">Trưởng phòng phải đối chiếu được bản mới với ý kiến mình đã ghi trên bản cũ; ghi đè là xóa mất vế thứ hai của phép so sánh đó.</span></li>
+      <li><b>Đã duyệt nội bộ mới mở được đợt trình.</b> Nút mở đợt của một hạng mục bị khóa khi <code>draft_status</code> chưa phải <em>Đã duyệt nội bộ</em>.<span class="then">Đây là chỗ hai vòng nối vào nhau. Gửi bản chưa qua trưởng phòng cho chủ đầu tư là cách nhanh nhất để tăng số vòng gửi–trả mà chính trang này đang đếm — và số vòng đó là đường găng của tiến độ sản xuất.</span></li>
+      <li><b>Hai cột trạng thái không suy ra nhau.</b> <code>draft_status</code> do vòng nội bộ điều khiển, <code>shop_status</code> do đợt trình điều khiển.<span class="then">Một hạng mục <em>Đã duyệt nội bộ</em> vẫn có thể <em>Chưa triển khai</em> ở cột 3 nếu chưa ai mở đợt trình. Ràng hai cột vào nhau sẽ làm mất đúng khoảng thời gian bản vẽ nằm chờ gửi — khoảng duy nhất mà phòng tự quản được.</span></li>
+      <li><b>In ra ký tươi không phải một trạng thái.</b> Nó là hành động sau khi đã duyệt nội bộ, ghi vào ô ghi chú kèm ngày.<span class="then">Yêu cầu viết “ok → đi tiếp / in ra ký tươi” — hai nhánh của cùng một kết quả duyệt, không phải hai kết quả khác nhau. Trạng thái <em>Đã in trình bản cứng</em> ở cột 3 mới là nơi ghi nhận việc trình bản cứng cho chủ đầu tư.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -6042,7 +6167,19 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-ORD02-25</td><td>Một đợt bị CĐT từ chối</td><td>Xem lại hạng mục</td><td>Đợt đóng ở trạng thái từ chối, giữ nguyên tệp và ý kiến; đầu việc của nó trở lại nhóm chưa vào đợt và chọn được cho đợt mới</td></tr>
           <tr><td>UAT-ORD02-26</td><td>Một đợt đã phát hành và đã có 2 đơn hàng</td><td>Thử thu hồi phát hành, rồi thử xóa đợt</td><td>Cả hai đều bị chặn, nêu số đơn hàng đang bám và chỉ sang <a href="#ORD-07">ORD-07</a></td></tr>
           <tr><td>UAT-ORD02-27</td><td>Bản vẽ thiết kế lên phiên bản 2, 4 hạng mục bị ảnh hưởng</td><td>Mở một trong bốn hạng mục</td><td>Các đợt có <code>design_version</code> = v1 được đánh dấu cần rà soát; đợt mở sau khi có v2 thì không</td></tr>
-          <tr><td>UAT-ORD02-28</td><td>Hạng mục “Nhà Tổ đường” đang do Nguyễn Văn Hùng phụ trách</td><td>Đổi cán bộ phụ trách trên bảng theo dõi năm cột, rồi mở cấp hạng mục của hồ sơ Shopdrawing</td><td>Cả hai màn hình hiện người mới — một bản ghi, không đồng bộ hai chiều, không có độ trễ</td></tr>
+          <tr><td>UAT-ORD02-28</td><td>Hạng mục “Nhà Tổ đường” đang do Nguyễn Văn Hùng phụ trách</td><td>Đổi cán bộ phụ trách trên bảng theo dõi bảy cột, rồi mở cấp hạng mục của hồ sơ Shopdrawing</td><td>Cả hai màn hình hiện người mới — một bản ghi, không đồng bộ hai chiều, không có độ trễ</td></tr>
+          <tr><td>UAT-ORD02-29</td><td>Gói thầu <code>HN_0001</code> có 4 đầu việc, vừa ký hợp đồng</td><td>Mở danh sách hồ sơ Shopdrawing</td><td>Hồ sơ có sẵn mã, tiêu đề sinh theo mã gói thầu, và cột tổng hợp đọc “0/4 đầu việc”</td></tr>
+          <tr><td>UAT-ORD02-30</td><td>Tiếp UAT-ORD02-29</td><td>Mở hồ sơ</td><td>Bảng theo dõi đủ <b>bảy cột</b>, một dòng mỗi hạng mục; cột 6 hiện <em>Chưa phân công</em>, cột 5 hiện “chưa nộp”</td></tr>
+          <tr><td>UAT-ORD02-31</td><td>Tiếp UAT-ORD02-30</td><td>Trưởng phòng gán hạng mục đầu tiên cho kỹ sư A, hạn nộp 30/09/2026</td><td>Cột 6 chuyển <em>Đã phân công</em>; kỹ sư A nhận thông báo có tên hạng mục, dự án và hạn nộp</td></tr>
+          <tr><td>UAT-ORD02-32</td><td>Tiếp UAT-ORD02-31, đăng nhập bằng kỹ sư B</td><td>Thử tải bản vẽ cho hạng mục đó</td><td>Bị chặn kèm tên người đang phụ trách — chỉ người được giao mới nộp được</td></tr>
+          <tr><td>UAT-ORD02-33</td><td>Tiếp UAT-ORD02-31, đăng nhập bằng kỹ sư A</td><td>Tải 2 tệp DWG và 1 PDF</td><td>Cột 5 hiện “3 tệp · nộp ngày {hôm nay}”; cột 6 chuyển <em>Đã nộp, chờ duyệt</em>; trưởng phòng nhận thông báo ghi lần nộp thứ 1</td></tr>
+          <tr><td>UAT-ORD02-34</td><td>Tiếp UAT-ORD02-33</td><td>Trưởng phòng bấm Trả lại, bỏ trống ý kiến</td><td>Bị chặn — trả lại phải có ý kiến</td></tr>
+          <tr><td>UAT-ORD02-35</td><td>Tiếp UAT-ORD02-34</td><td>Nhập ý kiến rồi trả lại; kỹ sư A nộp lại bản sửa</td><td>Bộ đếm trả lại của hạng mục bằng 1; sinh phiên bản 2, bản 1 và ý kiến vẫn mở được; thông báo ghi lần nộp thứ 2</td></tr>
+          <tr><td>UAT-ORD02-36</td><td>Tiếp UAT-ORD02-35, cột 6 là <em>Trả lại — nộp lại</em></td><td>Bấm mở đợt trình cho hạng mục đó</td><td>Nút bị khóa kèm lý do chưa duyệt nội bộ</td></tr>
+          <tr><td>UAT-ORD02-37</td><td>Tiếp UAT-ORD02-35</td><td>Trưởng phòng duyệt nội bộ</td><td>Cột 6 chuyển <em>Đã duyệt nội bộ</em>; cột tổng hợp trên danh sách chuyển “1/4 đầu việc”; <b>cột 3 không đổi</b> — chủ đầu tư chưa nhận được gì</td></tr>
+          <tr><td>UAT-ORD02-38</td><td>Tiếp UAT-ORD02-37</td><td>Mở đợt trình mới, nhập ngày đến sớm hơn ngày từ</td><td>Khung mở đợt có cặp ngày thực hiện; bị chặn vì ngày đến nằm trước ngày từ</td></tr>
+          <tr><td>UAT-ORD02-39</td><td>Hạng mục có hạn nộp 30/09/2026, hôm nay 02/10/2026, chưa nộp</td><td>Mở bảng theo dõi</td><td>Hạng mục gắn cờ trễ; kỹ sư và trưởng phòng đều đã nhận nhắc; <b>vẫn nộp được</b> — nhắc chứ không chặn</td></tr>
+          <tr><td>UAT-ORD02-40</td><td>Hạng mục <em>Đã phân công</em>, chưa nộp tệp nào</td><td>Trưởng phòng bấm Duyệt</td><td>Bị chặn: chưa có bản vẽ nào được nộp</td></tr>
         </tbody>
       </table>
     </div>
@@ -13936,7 +14073,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>4</td><td>Báo cáo sản lượng thi công</td><td>Sản lượng theo tuần và theo đợt, theo tổ đội, lũy kế so với BOQ hợp đồng</td><td class="k"><a href="#PRJ-02">PRJ-02</a></td></tr>
           <tr><td>5</td><td>Báo cáo tiến độ dự án theo kế toán</td><td>% doanh thu ghi nhận và % chi phí đã tập hợp so với giá trị hợp đồng — góc nhìn tài chính của tiến độ</td><td class="k"><a href="#ACC-09">ACC-09</a></td></tr>
           <tr><td>6</td><td>Báo cáo phân loại nhân công</td><td><b>Ba nhóm theo yêu cầu gốc: sản lượng, công nhật sản lượng, công nhật khác — theo từng dự án</b></td><td class="k"><a href="#PRJ-03">PRJ-03</a></td></tr>
-          <tr><td>7</td><td>Hiệu quả điều hành BCH</td><td>Chi phí nhân công theo đơn giá chuẩn đặt cạnh chi phí thực tế, phần chênh tách thành giá trị hỗ trợ; xếp hạng các Ban chỉ huy theo tỷ lệ hỗ trợ (<a href="2026-09-15/YC-02.html">YC-02</a>)</td><td class="k"><a href="#PF-06">PF-06</a>, <a href="#PRJ-01">PRJ-01</a></td></tr>
+          <tr><td>7</td><td>Hiệu quả điều hành BCH</td><td>Chi phí nhân công theo đơn giá chuẩn đặt cạnh chi phí thực tế, phần chênh tách thành giá trị hỗ trợ; xếp hạng các Ban chỉ huy theo tỷ lệ hỗ trợ (<a href="2026-09-15/YC-02.html">YC-02</a>). Kèm cột <b>phạt chủ đầu tư không phân bổ được cho tổ đội, đã nhân hệ số quản lý</b>, lấy từ biên bản phạt ở <a href="#BID-07">BID-07</a>; kỳ của khối chọn được quý · 6 tháng · năm (<a href="2026-09-22/YC-11.html">YC-11</a>)</td><td class="k"><a href="#PF-06">PF-06</a>, <a href="#PRJ-01">PRJ-01</a>, <a href="#BID-07">BID-07</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -14055,6 +14192,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Kế hoạch tiến độ</td><td class="k">plan_pct</td><td>Phần trăm</td><td class="c">—</td><td>Đường cong kế hoạch để so với thực tế; nhập khi khởi tạo dự án.</td></tr>
           <tr><td>Tuổi hồ sơ</td><td class="k">dossier_age</td><td>Hệ thống</td><td class="c">—</td><td>Số ngày kể từ khi hồ sơ vào trạng thái hiện tại.</td></tr>
           <tr><td>Tỷ lệ hỗ trợ</td><td class="k">support_ratio</td><td>Hệ thống</td><td class="c">—</td><td>Giá trị hỗ trợ chia chi phí nhân công theo đơn giá chuẩn. Là cột xếp hạng mặc định của khối hiệu quả điều hành BCH.</td></tr>
+          <tr><td>Phạt CĐT quy trách nhiệm BCH</td><td class="k">bch_charged_amount</td><td>Hệ thống</td><td class="c">—</td><td>Tổng <code>bch_charged_amount</code> của các biên bản phạt đã chốt ở <a href="#BID-07">BID-07</a> thuộc kỳ báo cáo. Là cột 9 của khối hiệu quả điều hành BCH; không tham gia xếp hạng mặc định.</td></tr>
+          <tr><td>Kỳ của khối hiệu quả</td><td class="k">period_scope</td><td>Chọn 1</td><td class="c req">✱</td><td><code>quý</code> · <code>6 tháng</code> · <code>năm</code>, theo bộ điều khiển khoảng thời gian dùng chung ở <a href="2026-09-22/YC-14.html">YC-14</a>. Mặc định là quý đang chạy.</td></tr>
           <tr><td>Khối lượng ngoài bảng chuẩn</td><td class="k">qty_out_of_std</td><td>Hệ thống</td><td class="c">—</td><td>Phần khối lượng thuộc dòng giá khoán không tra được đơn giá chuẩn ở <a href="#PRJ-01">PRJ-01</a>. Bị loại khỏi phép so sánh và hiển thị riêng.</td></tr>
         </tbody>
       </table>
@@ -14062,6 +14201,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
     <h4>Khối Hiệu quả điều hành BCH</h4>
     <p>Mục đích gốc của khối này nói rõ: dựa vào một bảng đơn giá chuẩn để <b>loại trừ phần hỗ trợ</b> ra thì mới thấy dự án nào hoạt động hiệu quả và năng lực Ban chỉ huy tới đâu (<a href="2026-09-15/YC-02.html">YC-02</a>). Khối vì vậy đặt ba con số cạnh nhau cho mỗi dự án — chi phí theo chuẩn, chi phí thực tế, phần hỗ trợ — rồi xếp hạng theo tỷ lệ giữa chúng.</p>
+    <p>Đợt yêu cầu 22/09 nối thêm một chiều thứ hai vào chính khối này (<a href="2026-09-22/YC-11.html">YC-11</a>): phần khoản phạt của chủ đầu tư <b>không quy được cho tổ đội nào</b>, đã nhân hệ số quản lý, đọc từ biên bản phạt ở <a href="#BID-07">BID-07</a>. Vì khoản đó chỉ đủ số để đọc sau nửa năm, kỳ của khối cũng mở từ cố định <em>quý</em> sang chọn được <em>quý · 6 tháng · năm</em> theo bộ điều khiển thời gian dùng chung ở <a href="2026-09-22/YC-14.html">YC-14</a>.</p>
     <div class="tw">
       <table>
         <thead><tr><th style="width:56px">Cột</th><th style="width:26%">Tiêu đề</th><th>Nguồn</th></tr></thead>
@@ -14074,6 +14214,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>6</td><td>Giá trị hỗ trợ</td><td><code>Σ (support_amount × khối lượng)</code> — bằng cột 5 trừ cột 4</td></tr>
           <tr><td>7</td><td>Tỷ lệ hỗ trợ</td><td>Cột 6 chia cột 4. <b>Đây là cột xếp hạng mặc định</b> của khối, xếp tăng dần — tỷ lệ càng thấp càng đứng trên</td></tr>
           <tr><td>8</td><td>Khối lượng ngoài bảng chuẩn</td><td>Phần khối lượng thuộc dòng không tra được đơn giá chuẩn. <b>Loại khỏi cột 4, 6 và 7</b>, hiển thị riêng ở cột này để người đọc biết phép so sánh phủ được bao nhiêu</td></tr>
+          <tr><td>9</td><td>Phạt CĐT không phân bổ (đã nhân hệ số)</td><td>Tổng <code>bch_charged_amount</code> của các biên bản phạt đã chốt ở <a href="#BID-07">BID-07</a> thuộc kỳ, tức <code>unallocated_amount × mgmt_factor</code>. <b>Đây không phải tiền ai nộp</b>: phần phân bổ được đã trừ thẳng vào tổ đội ở <a href="#PRJ-03">PRJ-03</a>, còn cột này tồn tại để đo bao nhiêu phần phạt của một hợp đồng <em>không quy được cho tổ đội nào</em> — phần thuộc về điều hành chung. <b>Không tham gia xếp hạng mặc định</b> (<a href="2026-09-22/YC-11.html">YC-11</a>)</td></tr>
         </tbody>
       </table>
     </div>
@@ -14082,14 +14223,14 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <p style="margin:0">Đầu việc không có trong bảng đơn giá chuẩn vẫn khoán được ở <a href="#PRJ-01">PRJ-01</a>, nhưng khối lượng của nó <b>không vào</b> cột 4, 6 và 7 — không có mốc chuẩn thì không có phần chênh để gọi là hỗ trợ. Cột 8 vì vậy không phải một con số phụ: hai dự án cùng tỷ lệ hỗ trợ 3% nhưng một bên phủ 98% khối lượng còn bên kia chỉ phủ 60% là hai kết luận khác nhau. Danh sách đầu việc bị loại xuất được thành đề nghị bổ sung cho kỳ ban hành sau của <a href="#PF-06">PF-06</a>.</p>
     </div>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">Báo cáo ›</span><b>Hiệu quả điều hành BCH</b><span class="sp"></span><span class="wf-btn">Quý 3/2026 <em>▾</em></span><span class="wf-btn">Xuất Excel</span></div>
+      <div class="wf-bar"><span class="wf-crumb">Báo cáo ›</span><b>Hiệu quả điều hành BCH</b><span class="sp"></span><span class="wf-btn">6 tháng đầu 2026 <em>▾</em></span><span class="wf-btn">Xuất Excel</span></div>
       <div class="wf-body">
         <div class="wf-sec">
-          <div class="wf-lg">Xếp hạng theo tỷ lệ hỗ trợ — tăng dần</div>
-          <table><thead><tr><th>Dự án · BCH</th><th>Vùng · kỳ ĐG chuẩn</th><th class="num">KL nghiệm thu</th><th class="num">CP theo ĐG chuẩn</th><th class="num">CP thực tế</th><th class="num">Giá trị hỗ trợ</th><th class="num">Tỷ lệ hỗ trợ</th><th class="num">KL ngoài chuẩn</th></tr></thead>
+          <div class="wf-lg">Xếp hạng theo tỷ lệ hỗ trợ — tăng dần · cột phạt không đổi thứ tự</div>
+          <table><thead><tr><th>Dự án · BCH</th><th>Vùng · kỳ ĐG chuẩn</th><th class="num">KL nghiệm thu</th><th class="num">CP theo ĐG chuẩn</th><th class="num">CP thực tế</th><th class="num">Giá trị hỗ trợ</th><th class="num">Tỷ lệ hỗ trợ</th><th class="num">KL ngoài chuẩn</th><th class="num">Phạt CĐT chưa phân bổ ×hệ số</th></tr></thead>
           <tbody>
-            <tr><td>DA-2026-014 · Phạm Văn An</td><td>Miền Nam · DGC-MN-2026-01</td><td class="num">9.240 m²</td><td class="num">3.511.200.000</td><td class="num">3.616.536.000</td><td class="num">105.336.000</td><td class="num">3,0%</td><td class="num">180 m²</td></tr>
-            <tr><td>DA-2026-011 · Ngô Đức Thịnh</td><td>Miền Trung · DGC-MT-2026-01</td><td class="num">5.100 m²</td><td class="num">1.938.000.000</td><td class="num">2.151.180.000</td><td class="num">213.180.000</td><td class="num">11,0%</td><td class="num">640 m²</td></tr>
+            <tr><td>DA-2026-014 · Phạm Văn An</td><td>Miền Nam · DGC-MN-2026-01</td><td class="num">9.240 m²</td><td class="num">3.511.200.000</td><td class="num">3.616.536.000</td><td class="num">105.336.000</td><td class="num">3,0%</td><td class="num">180 m²</td><td class="num">37.500.000</td></tr>
+            <tr><td>DA-2026-011 · Ngô Đức Thịnh</td><td>Miền Trung · DGC-MT-2026-01</td><td class="num">5.100 m²</td><td class="num">1.938.000.000</td><td class="num">2.151.180.000</td><td class="num">213.180.000</td><td class="num">11,0%</td><td class="num">640 m²</td><td class="num">12.000.000</td></tr>
           </tbody></table>
         </div>
       </div>
@@ -14105,6 +14246,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Mọi báo cáo lọc được theo dự án, vùng miền và kỳ; xuất Excel và PDF.</li>
       <li>Khối hiệu quả điều hành BCH xếp hạng được các Ban chỉ huy theo tỷ lệ hỗ trợ, mặc định tăng dần, trên cùng một mốc đơn giá chuẩn.</li>
       <li>Khối này nói rõ phép so sánh phủ được bao nhiêu phần khối lượng: phần ngoài bảng chuẩn tách ra cột riêng và không lẫn vào ba cột chi phí.</li>
+      <li>Khối hiệu quả điều hành BCH chọn được kỳ <b>quý, 6 tháng hoặc năm</b> trên cùng bộ điều khiển thời gian dùng chung ở <a href="2026-09-22/YC-14.html">YC-14</a>, không còn cố định theo quý.</li>
+      <li>Cột <em>Phạt CĐT không phân bổ (đã nhân hệ số)</em> hiện đúng tổng <code>bch_charged_amount</code> của các biên bản đã chốt ở <a href="#BID-07">BID-07</a> thuộc kỳ, bấm vào mở được danh sách biên bản gốc (<a href="2026-09-22/YC-11.html">YC-11</a>).</li>
+      <li>Đổi kỳ hay đọc cột phạt đều không làm đổi thứ hạng: khối vẫn mở ra xếp theo tỷ lệ hỗ trợ tăng dần.</li>
     </ol>
 
     <h4>Mockup UI — Báo cáo › Quản trị dự án</h4>
@@ -14146,7 +14290,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Chọn kỳ &amp; dự án</td><td>Bộ lọc chuẩn dùng chung với <a href="#RPT-01">RPT-01</a>.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Chọn kỳ &amp; dự án</td><td>Bộ lọc chuẩn dùng chung với <a href="#RPT-01">RPT-01</a>, theo bộ điều khiển khoảng thời gian ở <a href="2026-09-22/YC-14.html">YC-14</a>. Riêng khối hiệu quả điều hành BCH chọn được quý · 6 tháng · năm.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>So kế hoạch với thực tế</td><td>Cột chênh lệch và số ngày trễ tính tự động; nhãn trạng thái theo ngưỡng cấu hình.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Đối chiếu hai góc nhìn tiến độ</td><td>Chênh lệch lớn sinh nhận định cảnh báo tự động, kèm gợi ý nguyên nhân.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Phân loại nhân công</td><td>Ba nhóm theo yêu cầu gốc; bấm nhóm mở danh sách hồ sơ giao khoán tương ứng.</td></tr>
@@ -14165,6 +14309,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>So hiệu quả điều hành trên cùng một mốc.</b> Chi phí nhân công theo đơn giá chuẩn lấy từ bảng <a href="#PF-06">PF-06</a> mà bảng giá khoán đã tra (<code>std_sheet_ref</code>), không lấy bảng đang hiệu lực tại thời điểm chạy báo cáo.<span class="then">Bảng giá khoán đã duyệt đóng băng đơn giá chuẩn của nó, nên báo cáo của một kỳ giữ nguyên số kể cả khi công ty ban hành bảng chuẩn kỳ mới. Hai Ban chỉ huy chỉ đặt cạnh nhau được khi cả hai cột 4 đều tính trên mốc đã đóng băng.</span></li>
       <li><b>Khối lượng ngoài bảng chuẩn bị loại khỏi phép so sánh.</b> Dòng giá khoán không tra ra đơn giá chuẩn thì khối lượng của nó không vào cột 4, 6 và 7, chỉ hiện ở cột 8.<span class="then">Không có mốc chuẩn thì không có phần chênh để gọi là hỗ trợ; nhét nó vào sẽ làm tỷ lệ hỗ trợ sai theo cả hai chiều. Cột 8 là thước đo độ phủ của phép so sánh và phải đọc cùng cột 7, không đọc rời.</span></li>
       <li><b>Xếp hạng mặc định theo tỷ lệ hỗ trợ.</b> Khối hiệu quả điều hành BCH mở ra là đã xếp theo cột 7 tăng dần.<span class="then">Đây là con số đo năng lực điều hành: cùng một khối lượng và cùng một mốc chuẩn, Ban chỉ huy cần ít hỗ trợ hơn là Ban chỉ huy vận hành tốt hơn. Đổi cột xếp hạng được, nhưng thứ tự mặc định không đổi.</span></li>
+      <li><b>Biên bản phạt xếp vào kỳ theo ngày biên bản.</b> Cột 9 gom các biên bản đã chốt ở <a href="#BID-07">BID-07</a> theo <code>issued_at</code>, không theo ngày nhập vào hệ thống và cũng không theo ngày lãnh đạo chốt phân bổ.<span class="then">Biên bản ghi tháng 6 nhập muộn vào tháng 8 vẫn thuộc kỳ 6 tháng đầu năm. Lấy ngày nhập thì mọi kỳ đã công bố sẽ tự đổi số mỗi lần có người nhập chậm, và bảng xếp hạng in ra tháng trước không còn khớp với bảng mở lại hôm nay (<a href="2026-09-22/YC-11.html">YC-11</a>).</span></li>
+      <li><b>Cột phạt không đổi thứ tự sắp xếp mặc định.</b> Thêm cột 9 nhưng khối vẫn mở ra xếp theo cột 7 tăng dần; bấm xếp lại theo cột 9 được, lần mở sau vẫn trở về mặc định.<span class="then">Tỷ lệ hỗ trợ đo chênh lệch đơn giá nhân công trên khối lượng đã nghiệm thu; giá trị quy trách nhiệm đo phần phạt của chủ đầu tư không quy được cho tổ đội nào. Hai chỉ số đo hai thứ khác nhau; trộn chúng vào một thứ hạng là bịa ra một phép cộng không ai định nghĩa.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -14196,12 +14342,16 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-RPT02-6</td><td>Hai dự án cùng vùng, cùng kỳ, tỷ lệ hỗ trợ 3% và 11%</td><td>Mở khối hiệu quả điều hành BCH</td><td>Dự án 3% đứng trên không cần thao tác xếp hạng; số liệu khớp với hồ sơ giao khoán đã duyệt ở <a href="#PRJ-03">PRJ-03</a></td></tr>
           <tr><td>UAT-RPT02-7</td><td>Bảng giá khoán của DA-2026-011 có 3 dòng ngoài bảng chuẩn</td><td>Mở khối hiệu quả điều hành BCH</td><td>Khối lượng của ba dòng đó không vào cột 4, 6, 7; cột 8 hiện đúng phần bị loại</td></tr>
           <tr><td>UAT-RPT02-8</td><td>Công ty vừa ban hành bảng đơn giá chuẩn kỳ mới cao hơn 12%</td><td>Chạy lại khối hiệu quả điều hành của quý trước</td><td>Mọi con số giữ nguyên; cột 2 vẫn hiện bảng chuẩn kỳ cũ đã tra</td></tr>
+          <tr><td>UAT-RPT02-9</td><td>Khối hiệu quả điều hành BCH đang mở ở kỳ quý 3/2026</td><td>Đổi kỳ sang 6 tháng, rồi sang năm</td><td>Bộ chọn kỳ có đủ ba mức quý · 6 tháng · năm theo <a href="2026-09-22/YC-14.html">YC-14</a>; mọi cột tính lại trên khoảng mới</td></tr>
+          <tr><td>UAT-RPT02-10</td><td>Hợp đồng <code>KH_0114</code> có biên bản phạt đã chốt ở <a href="#BID-07">BID-07</a> ngày 10/09/2026, phần không phân bổ 25.000.000, hệ số 1,5</td><td>Mở khối hiệu quả điều hành BCH, chọn kỳ 6 tháng cuối năm 2026</td><td>Cột 9 của Ban chỉ huy dự án đó hiện 37.500.000; bấm vào mở được danh sách biên bản gốc</td></tr>
+          <tr><td>UAT-RPT02-11</td><td>Tiếp UAT-10, biên bản đó được nhập vào hệ thống ngày 05/11/2026</td><td>Đổi kỳ sang quý 4/2026</td><td>Biên bản không còn trong cột 9 — nó thuộc quý 3 theo <code>issued_at</code>, không theo ngày nhập</td></tr>
+          <tr><td>UAT-RPT02-12</td><td>Dự án đứng đầu bảng có tỷ lệ hỗ trợ 3% và cột 9 lớn nhất bảng</td><td>Mở lại khối hiệu quả điều hành BCH</td><td>Thứ tự vẫn theo cột 7 tăng dần; cột 9 không đẩy dự án đó xuống</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#PRJ-02">PRJ-02 sản lượng</a><a href="#PRJ-03">PRJ-03 nhân công</a><a href="#ORD-01">ORD-01 hồ sơ</a><a href="#BID-05">BID-05 bảng kê hợp đồng</a><a href="#ACC-09">ACC-09 tiến độ kế toán</a><a href="#PF-06">PF-06 bảng đơn giá chuẩn</a><a href="#PRJ-01">PRJ-01 % hỗ trợ theo dòng</a><a href="2026-09-15/YC-02.html">YC-02 đơn giá chuẩn theo vùng miền</a></p>
+    <p class="links"><a href="#PRJ-02">PRJ-02 sản lượng</a><a href="#PRJ-03">PRJ-03 nhân công</a><a href="#ORD-01">ORD-01 hồ sơ</a><a href="#BID-05">BID-05 bảng kê hợp đồng</a><a href="#ACC-09">ACC-09 tiến độ kế toán</a><a href="#PF-06">PF-06 bảng đơn giá chuẩn</a><a href="#PRJ-01">PRJ-01 % hỗ trợ theo dòng</a><a href="2026-09-15/YC-02.html">YC-02 đơn giá chuẩn theo vùng miền</a><a href="#BID-07">BID-07 biên bản phạt CĐT</a><a href="2026-09-22/YC-11.html">YC-11 khoản phạt của chủ đầu tư</a><a href="2026-09-22/YC-14.html">YC-14 bộ lọc khoảng thời gian</a></p>
   </div>
 </section>
 <section class="sheet" id="RPT-03">
@@ -15407,6 +15557,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr><td>Biên bản phạt chủ đầu tư</td><td class="k">BBP</td><td>Mới ghi nhận → Đang phân bổ → Chờ lãnh đạo chốt → <span class="tag t-ok">Đã chốt</span></td><td>Khi trình lãnh đạo.<br>Không có trạng thái “bỏ qua”: mọi đồng phạt đều phải đi tới một trong hai chỗ — tổ đội ở <a href="#PRJ-03">PRJ-03</a>, hoặc báo cáo đánh giá Ban chỉ huy ở <a href="#RPT-02">RPT-02</a>. Xem <a href="#BID-07">BID-07</a>.</td></tr>
         <tr><td>Đợt trình shopdrawing</td><td class="k">SD</td><td>Đang lập (nhập khối lượng) → Chờ duyệt nội bộ → Duyệt nội bộ → Chờ CĐT → Revise &amp; resubmit → Approved · Approved as noted → <span class="tag t-ok">Đã phát hành</span> · <span class="tag t-crit">Từ chối</span><br>Đây là chuỗi trạng thái của <b>một đợt trình</b> — cấp 3 của hồ sơ Shopdrawing (dự án → hạng mục → đợt trình, <a href="2026-09-15/YC-08.html">YC-08</a>) — chứ không phải của cả hồ sơ: <b>hồ sơ shop không có trạng thái</b>, nó sống suốt vòng đời dự án và chỉ mang mã, tiêu đề, dự án.<br><b>“Revise &amp; resubmit” không đóng đợt.</b> Nó giữ đợt mở và tăng <code>submission_no</code> — vòng gửi nằm <em>bên trong</em> một đợt, đợt là một nhóm đầu việc còn vòng là một lần gửi. Chỉ “Đã phát hành” và “Từ chối” là trạng thái cuối; “Từ chối” đóng đợt và <b>giải phóng đầu việc</b> của đợt để đưa vào một đợt mới, trong khi tệp và ý kiến của đợt cũ giữ nguyên.<br>“Đã phát hành” là trạng thái riêng do TP TQT bấm ở <a href="#ORD-02">ORD-02</a>: CĐT chấp thuận chưa đưa đợt trình vào <a href="#ORD-03">ORD-03</a>.</td><td>Tệp bản vẽ khóa khi gửi CĐT · bảng khối lượng khóa khi phát hành</td></tr>
         <tr><td>Hạng mục shopdrawing <em>(trạng thái tổng hợp)</em></td><td class="k">—</td><td><span class="tag t-neu">Chưa có bản vẽ</span> → <span class="tag t-neu">Chưa triển khai</span> → <span class="tag t-warn">Đang triển khai</span> → <span class="tag t-warn">Đã in trình bản cứng</span> → <span class="tag t-ok">Đã ký xong</span><br><b>Không phải chứng từ</b>: đây là trạng thái tổng hợp ở <em>cấp hạng mục</em>, lưu trong <code>shop_status</code> và dùng chung với bảng theo dõi tình trạng shop (<a href="#ORD-02">ORD-02</a>, <a href="2026-09-15/YC-07.html">YC-07</a>).<br>Máy chủ tính theo <b>đợt trình còn dang dở đi xa nhất</b> trong hạng mục; chỉ lên “Đã ký xong” khi mọi đầu việc đã vào đợt và mọi đợt đều đã được chấp thuận. Một hạng mục có đợt 1 đã ký và đợt 2 đang chờ CĐT vẫn ở “Đã in trình bản cứng” — phần việc dang dở mới là phần quyết định tiến độ. Sửa tay được nhưng ô bị đánh dấu và ghi người sửa. “Đã in trình bản cứng” luôn đi kèm <code>hardcopy_at</code>.</td><td>Không khóa — là ô tổng hợp, không phải chứng từ</td></tr>
+        <tr><td>Hạng mục shopdrawing <em>(trạng thái nội bộ P. TQT)</em></td><td class="k">—</td><td><span class="tag t-neu">Chưa phân công</span> → <span class="tag t-neu">Đã phân công</span> → <span class="tag t-warn">Đã nộp, chờ duyệt</span> → <span class="tag t-crit">Trả lại — nộp lại</span> → <span class="tag t-ok">Đã duyệt nội bộ</span></td><td>Không khóa chỉnh sửa; đây là vòng làm việc bên trong phòng, chạy <em>trước</em> vòng gửi–trả chủ đầu tư ở dòng trên. Hai chuỗi không suy ra nhau: một hạng mục <em>Đã duyệt nội bộ</em> vẫn có thể <em>Chưa triển khai</em> ở chuỗi kia nếu chưa ai mở đợt trình. Xem <a href="#ORD-02">ORD-02</a> · <a href="2026-09-22/YC-13.html">YC-13</a>.</td></tr>
         <tr><td>Đơn hàng</td><td class="k">DH</td><td>Nháp → Chờ duyệt → Đã duyệt → <span class="tag t-warn">Đã gửi nhà máy</span> → Đang thực hiện → Cấp một phần → <span class="tag t-ok">Hoàn thành</span> · <span class="tag t-neu">Đã hủy</span> · <span class="tag t-crit">Từ chối</span><br><b>“Đã gửi nhà máy” là một chặng thật, không phải một lát cắt của “Đã duyệt”.</b> Phê duyệt phiếu yêu cầu sản xuất khóa cả phiếu lẫn Danh sách cắt đá (<a href="#ORD-11">ORD-11</a>) và sinh phiên bản chung theo <a href="#PF-05">PF-05</a>; chỉ khi bộ hồ sơ bốn tài liệu rời công ty thì đơn mới sang chặng này, và đơn <b>đứng lại ở đây</b> cho tới khi nhà máy trả lời. “Đang thực hiện” bắt đầu ở <a href="#ORD-04">ORD-04</a>, mà lối vào ORD-04 do phản hồi của nhà máy mở — xem dòng dưới. Theo <a href="2026-09-15/YC-09.html">YC-09</a>.</td><td>Khi trình duyệt; mở lại khi “yêu cầu bổ sung” · khóa lần hai khi phê duyệt phiếu yêu cầu sản xuất, sau đó chỉ mở lại bằng “Đề nghị điều chỉnh” của nhà máy</td></tr>
         <tr><td>Phản hồi nhà máy <em>(trạng thái phụ của phiếu YCSX)</em></td><td class="k">—</td><td><span class="tag t-warn">Chưa phản hồi</span> → <span class="tag t-ok">Chấp thuận</span> · <span class="tag t-crit">Đề nghị điều chỉnh</span><br><b>Không phải chứng từ, cũng không phải một trạng thái nữa của DH</b>: đây là một <em>cột riêng</em> của phiếu yêu cầu sản xuất — khối <code>factory_ack</code> ở <a href="#ORD-03">ORD-03</a>, gồm trạng thái, nội dung phản hồi, người trả lời và ngày trả lời. Tách khỏi chuỗi DH vì nó chạy trên một trục khác: đơn vẫn nằm ở “Đã gửi nhà máy” suốt cả ba giá trị, và một đơn có thể đi qua ô này nhiều lần.<br>“Chấp thuận” là <b>điều kiện vào <a href="#ORD-04">ORD-04</a></b>. “Đề nghị điều chỉnh” đưa phiếu về trạng thái sửa và giữ nguyên phiên bản đã gửi để so sánh — khác với “yêu cầu bổ sung” của <a href="#PF-03">PF-03</a>, vốn xảy ra trước khi phiếu rời công ty. Gửi lại đặt ô về “Chưa phản hồi” và giữ nguyên lượt trả lời cũ trong nhật ký.<br><b>Ai được ghi ô này thì chưa chốt</b> — P. TQT chép lại lời nhà máy, hay nhà máy có tài khoản riêng ghi thẳng vào hệ thống: xem <a href="#PL-C">Q-43</a>. Theo <a href="2026-09-15/YC-09.html">YC-09</a>.</td><td>Không khóa — là ô của một phiếu đã khóa; “Đề nghị điều chỉnh” là lối mở lại duy nhất sau khi phiếu rời công ty</td></tr>
         <tr><td>Hồ sơ tạm ứng / thanh toán</td><td class="k">HSTU · HSVT</td><td>Đang lập → Chờ duyệt nội bộ → Đã nộp CĐT → <span class="tag t-crit">Vướng mắc</span> → Chờ thanh toán → <span class="tag t-ok">Đã thanh toán</span> · Đóng không thu được</td><td>Khi nộp chủ đầu tư</td></tr>
@@ -15481,6 +15632,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr><td>Cập nhật tình trạng shop theo hạng mục</td><td><a href="#ORD-02">ORD-02</a></td><td>P. TQT</td><td>Ban dự án · Ban lãnh đạo</td><td>Ô tình trạng, cán bộ phụ trách, ngày in trình bản cứng và ghi chú của bảng theo dõi. Cán bộ phụ trách gán được cho người thuộc P. TQT; sửa tay một ô đang do bản vẽ điều khiển thì ô bị đánh dấu kèm tên người sửa. Theo <a href="2026-09-15/YC-07.html">YC-07</a>.</td></tr>
         <tr><td>Ghi nhận biên bản phạt chủ đầu tư</td><td><a href="#BID-07">BID-07</a></td><td>P. Đấu thầu</td><td>Không giới hạn <em>(chỉ đọc)</em></td><td>Nhập biên bản, tải tệp PDF chủ đầu tư gửi, sửa khi biên bản chưa trình. Chỉ P. Đấu thầu ghi: họ giữ quan hệ hợp đồng nên là bên nhận văn bản, và cho dự án tự nhập là cách cùng một biên bản vào hệ thống hai lần với hai số tiền. Theo <a href="2026-09-22/YC-11.html">YC-11</a>.</td></tr>
         <tr><td>Phân bổ khoản phạt về tổ đội</td><td><a href="#BID-07">BID-07</a></td><td>Ban chỉ huy · GĐ dự án <em>(đề xuất)</em></td><td>Ban lãnh đạo <em>(chốt)</em></td><td>Dòng phân bổ theo mã tổ đội + mã hợp đồng, và hệ số cho phần không phân bổ. Quy tổ đội nào gây ra vi phạm là một phán đoán ở công trường, không phải một câu hỏi hợp đồng; chốt là việc của lãnh đạo và đi qua <a href="#PF-03">PF-03</a> mang theo cả hai nửa. Theo <a href="2026-09-22/YC-11.html">YC-11</a>.</td></tr>
+        <tr><td>Phân công hạng mục shop</td><td><a href="#ORD-02">ORD-02</a></td><td>TP TQT</td><td>Cán bộ được giao <em>(nhận thông báo)</em></td><td>Gán cán bộ phụ trách cho một hạng mục trên bảng theo dõi, kèm hạn nộp. Đây là <em>giao việc</em>, không phải sửa một ô dữ liệu: hệ thống phát thông báo cho người được giao (<a href="#PF-04">PF-04</a>). Theo <a href="2026-09-22/YC-13.html">YC-13</a>.</td></tr>
+        <tr><td>Nộp bản vẽ chờ duyệt</td><td><a href="#ORD-02">ORD-02</a></td><td>Cán bộ được giao hạng mục</td><td>TP TQT <em>(duyệt / trả lại)</em></td><td>Chỉ người đang phụ trách hạng mục mới tải được vào cột <em>Bản vẽ nộp</em>; mỗi lần nộp lại là một phiên bản mới theo <a href="#PF-05">PF-05</a>. Trưởng phòng duyệt nội bộ hoặc trả lại kèm ý kiến — trả lại không có ý kiến thì không lưu. Theo <a href="2026-09-22/YC-13.html">YC-13</a>.</td></tr>
         <tr><td>Tải phiên bản mới hồ sơ bản vẽ thiết kế</td><td><a href="#ORD-02">ORD-02</a></td><td>P. TQT</td><td>Ban dự án · Ban lãnh đạo · P. Đấu thầu</td><td>Kèm bước chọn hạng mục bị ảnh hưởng để đánh dấu rà soát lại shop. Bản cũ không xóa được, theo <a href="#PF-05">PF-05</a>.</td></tr>
         <tr><td>Cập nhật hồ sơ theo dõi thanh toán</td><td><a href="#RPT-05">RPT-05</a></td><td>P. TQT</td><td>Ban lãnh đạo · P. Kế toán · Ban dự án</td><td>Trạng thái mười thành phần của ba nhóm hồ sơ, tệp đính kèm, cán bộ phụ trách và dòng hạng mục ngoài phạm vi Phòng Đấu thầu. Mỗi lần đổi trạng thái hoặc tải tệp đều ghi người cập nhật và ngày cập nhật — đây là lý do quyền ghi giữ hẹp. Trạng thái chảy hai chiều với <a href="#ORD-08">ORD-08</a> / <a href="#ORD-09">ORD-09</a> / <a href="#ORD-10">ORD-10</a> / <a href="#PRJ-03">PRJ-03</a>, nên quyền ghi ở đây tương đương quyền ghi trên hồ sơ nguồn. Phần cột cũ của RPT-05 — bảo hành, công nợ, ghi chú theo dõi — vẫn thuộc P. Kế toán. Theo <a href="2026-09-15/YC-10.html">YC-10</a>.</td></tr>
         <tr><td>Gửi bộ hồ sơ yêu cầu sản xuất cho nhà máy</td><td><a href="#ORD-03">ORD-03</a></td><td>P. TQT</td><td>Ban lãnh đạo · Ban dự án · P. Kế toán</td><td>Thao tác “Gửi nhà máy” trên phiếu đã phê duyệt: chốt bộ bốn tài liệu kèm theo — phiếu, Danh sách cắt đá (<a href="#ORD-11">ORD-11</a>), bản vẽ đơn hàng, bảng tiến độ giao hàng — chọn nơi nhận và ghi lý do khi thiếu tài liệu thứ tư. Đây là thao tác đưa đơn sang chặng “Đã gửi nhà máy” của <a href="#PL-A">PL-A</a>, nên chỉ người thuộc P. TQT được bấm và mỗi lần gửi đều ghi người gửi cùng ngày gửi. Phê duyệt phiếu vẫn là việc của TP TQT và Ban lãnh đạo theo <a href="#PF-03">PF-03</a>; gửi không phải một cấp duyệt nữa mà là bước phát hành ra ngoài. Theo <a href="2026-09-15/YC-09.html">YC-09</a>.</td></tr>
@@ -15550,6 +15703,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr id="Q-51"><td class="k">Q-51</td><td><b>Hệ số phạt khi không phân bổ cho tổ đội</b> — <a href="#BID-07">BID-07</a> nhân phần phạt không quy được cho tổ đội nào với một hệ số (“theo chỉ đạo của LĐ, khoản phạt mà do BCH ko quản lý tốt sẽ bị x1,5 hoặc 2 lần, hoặc cao hơn”). Đặc tả hiện đặt hệ số <em>trên từng biên bản</em>, mặc định 1,0, và bắt nêu lý do khi lớn hơn 1</td><td>Ba điểm chưa ai quyết. (1) <b>Ai được đặt</b> — Ban chỉ huy đề xuất cùng phân bổ, hay lãnh đạo đặt lúc duyệt? Để Ban chỉ huy đề xuất thì người bị đánh giá tự chọn hệ số của chính mình; để lãnh đạo đặt thì màn hình duyệt phải cho sửa, khác mọi chứng từ khác trong <a href="#PF-03">PF-03</a>. (2) <b>Theo từng biên bản hay theo cấu hình chung</b> — một bảng hệ số theo loại vi phạm thì nhất quán nhưng không phản ánh được “chỉ đạo của LĐ” cho từng vụ. (3) <b>Con số sau khi nhân có vào sổ kế toán không</b> — hiện nó chỉ sống trong <a href="#RPT-02">RPT-02</a> như một chỉ số đánh giá, không sinh bút toán và không chảy vào quỹ phạt của <a href="#ACC-07">ACC-07</a>; nếu lãnh đạo muốn nó là tiền thật thì phải nói rõ trừ vào đâu</td><td class="c">Ban lãnh đạo</td><td class="c"><a href="#BID-07">BID-07</a>, <a href="#RPT-02">RPT-02</a></td></tr>
         <tr id="Q-52"><td class="k">Q-52</td><td><b>Phạm vi “mọi phân hệ có tính theo thời gian”</b> — yêu cầu 22/09 dòng 21 viết một câu quét ngang cả hệ thống: “Tất cả các phân hệ nào có tính thực theo thời gian đều để nút lọc thời gian”. <a href="2026-09-22/YC-14.html">YC-14</a> đã liệt kê hai mươi màn hình kèm <em>mốc lọc</em> của từng cái, và để các màn hình danh mục nền ra ngoài</td><td>Phần khó không phải cái điều khiển mà là mốc lọc: cùng một danh sách hợp đồng, lọc theo ngày ký và lọc theo ngày quyết toán cho hai con số khác nhau, và người đọc báo cáo không có cách nào biết mình đang xem cái nào nếu đặc tả không nói. Cần chốt bằng cách <b>duyệt chính bảng màn hình ↔ mốc lọc</b> trong YC-14 thay vì chốt câu chữ: một danh sách mở sẽ nở thêm ở mỗi lần review, và mỗi màn hình thêm vào là một quyết định về mốc lọc mà không ai đang đứng ra quyết</td><td class="c">P. Đấu thầu + Ban lãnh đạo</td><td class="c"><a href="2026-09-22/YC-14.html">YC-14</a></td></tr>
         <tr id="Q-53"><td class="k">Q-53</td><td><b>“Bỏ bảng KL bản vẽ” chỉ vào khối nào</b> — yêu cầu 22/09 dòng 19 ghi <code>TQT-Shopdrawing → Shopdrawing → Khối lượng bản vẽ</code> · <em>Đang có</em> · “Bỏ bảng KL bản vẽ”. Rà soát bản dựng cho thấy khối mang tên đó xuất hiện ở bốn chỗ và <b>cả bốn đều thuộc cấp đợt trình</b>, không có bảng nào ở cấp hồ sơ để bỏ</td><td>Mà bảng khối lượng ở cấp đợt trình thì không bỏ được: <a href="#ORD-02">ORD-02</a> coi nó là nội dung trưởng phòng kiểm và chủ đầu tư xem xét, còn <a href="#ORD-03">ORD-03</a> đối chiếu đơn hàng theo từng dòng khối lượng bản vẽ — bỏ nó là viết lại cả hai trang và xóa luôn mốc chống đặt vượt khối lượng mà <a href="PL-C.html#Q-35">Q-35</a> và <a href="PL-C.html#Q-36">Q-36</a> đang treo trên đó. Hai cách đọc còn lại: hoặc yêu cầu đã được chính việc tái cấu trúc ba cấp của <a href="2026-09-15/YC-08.html">YC-08</a> giải quyết, hoặc P. TQT đang chỉ vào một chỗ khác trên màn hình thật. Cần mở màn hình cùng P. TQT xác nhận — đợt 22/09 <b>không xóa gì</b></td><td class="c">P. TQT</td><td class="c"><a href="#ORD-02">ORD-02</a>, <a href="2026-09-22/YC-13.html">YC-13</a></td></tr>
+        <tr id="Q-54"><td class="k">Q-54</td><td><b>Luật gộp thông báo gộp theo người nhận, không theo đối tượng</b> — <a href="#PF-04">PF-04</a> quy định “một sự kiện lặp trong 5 phút được gộp thành một dòng có bộ đếm”. Vòng phân công mới của <a href="2026-09-22/YC-13.html">YC-13</a> làm lộ ra rằng luật đó gộp theo cặp <em>(sự kiện, người nhận)</em> chứ không theo hạng mục</td><td>Hệ quả cụ thể: một kỹ sư nộp bản vẽ cho <b>hai hạng mục khác nhau</b> cách nhau ba phút, trưởng phòng nhận đúng một dòng gộp — mà dòng gộp thì mất <code>{hạng mục}</code> và <code>{lần nộp thứ n}</code>, đúng hai tham số khiến thông báo này đáng đọc. Với nhiều tệp của <em>cùng</em> một hạng mục thì luật lại áp đúng. Cần chốt: (a) gộp theo bộ ba <em>(sự kiện, người nhận, đối tượng)</em> — đúng ý nghĩa, nhưng đổi một luật nền mà tám sự kiện đang dựa vào; hay (b) miễn gộp cho riêng hai sự kiện của vòng phân công; hay (c) giữ nguyên và chấp nhận dòng gộp thiếu tham số. Phát hiện khi rà PF-04 cho đợt 22/09</td><td class="c">P. TQT + Ban lãnh đạo</td><td class="c"><a href="#PF-04">PF-04</a>, <a href="#ORD-02">ORD-02</a></td></tr>
       </tbody>
     </table>
   </div>

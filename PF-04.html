@@ -242,9 +242,14 @@
           <tr><td>Hồ sơ vướng mắc quá hạn</td><td>Người phụ trách hồ sơ + trưởng bộ phận</td><td>“Hồ sơ {mã} đứng ở bước {bước} quá {n} ngày”</td><td class="k"><a href="ORD-01.html">ORD-01</a>, <a href="ORD-08.html">ORD-08</a></td></tr>
           <tr><td>Công nợ quá hạn</td><td>Kế toán công nợ, Ban lãnh đạo</td><td>“{đối tác} quá hạn {n} ngày, dư nợ {giá trị}”</td><td class="k"><a href="ACC-05.html">ACC-05</a></td></tr>
           <tr><td>Tồn kho dưới định mức</td><td>Thủ kho, P. Cung ứng</td><td>“{vật tư} tại {kho} còn {klg}, dưới định mức {min}”</td><td class="k"><a href="ACC-02.html">ACC-02</a></td></tr>
+          <tr><td>Được phân công hạng mục shop</td><td>Cán bộ được giao</td><td>“Bạn được giao hạng mục {hạng mục} của {dự án} — hạn nộp {ngày}”</td><td class="k"><a href="ORD-02.html">ORD-02</a></td></tr>
+          <tr><td>Nộp bản vẽ chờ duyệt</td><td>Trưởng phòng TQT</td><td>“{người nộp} đã nộp bản vẽ hạng mục {hạng mục} — {dự án} · lần nộp thứ {n}”</td><td class="k"><a href="ORD-02.html">ORD-02</a></td></tr>
         </tbody>
       </table>
     </div>
+
+    <p>Hai dòng cuối thuộc vòng làm việc nội bộ của P. TQT theo <a href="2026-09-22/YC-13.html">YC-13</a>: trưởng phòng phân công hạng mục ngay trên bảng theo dõi của <a href="ORD-02.html">ORD-02</a>, người được giao nộp bản vẽ lên chính hạng mục đó, trưởng phòng mở xem rồi duyệt hoặc trả lại kèm ý kiến — trả lại thì người làm nộp lại và sinh phiên bản mới. Vì vậy số lần nộp phải nằm ngay trên dòng thông báo: nó là chỉ số chất lượng của khâu lập shop, không phải một con số chờ mở chứng từ mới biết.</p>
+    <p><b>Luật gộp thông báo lặp áp được, nhưng không kín.</b> Quy tắc <em>“Một sự kiện, một thông báo”</em> ở mục Quy tắc nghiệp vụ phủ đúng trường hợp kỹ sư nộp nhiều tệp liên tiếp cho <b>cùng một hạng mục</b>: các lượt nộp trong 5 phút gộp về một dòng có bộ đếm và chuông của trưởng phòng không bị ngập. Khoảng trống nằm ở chỗ khác: luật gộp theo cặp (sự kiện, người nhận) chứ không theo đối tượng, nên hai hạng mục khác nhau nộp trong cùng 5 phút cũng bị gộp chung một dòng, mà dòng gộp thì không còn chỗ cho {hạng mục} lẫn {lần nộp thứ n} — đúng hai tham số khiến dòng thông báo này đáng đọc. Trang này ghi nhận khoảng trống thay vì sửa luật cũ; việc có gộp theo hạng mục hay không cần chốt trước khi lập trình.</p>
 
     <h4>Tham số</h4>
     <div class="tw">
@@ -376,12 +381,15 @@
           <tr><td>UAT-PF04-9</td><td>Một thiết bị có khoá đẩy đã hết hiệu lực</td><td>Gửi một thông báo tới người đó</td><td>Lượt gửi không báo lỗi; khoá chết bị xoá khỏi thiết bị; các thiết bị còn lại vẫn nhận được</td></tr>
           <tr><td>UAT-PF04-10</td><td>Máy tính đặt tiếng Việt, điện thoại đặt tiếng Anh</td><td>Gửi một thông báo tới người dùng đó</td><td>Mỗi thiết bị nhận đúng ngôn ngữ của mình, từ cùng một bản ghi thông báo</td></tr>
           <tr><td>UAT-PF04-11</td><td>Từ chối quyền thông báo của trình duyệt</td><td>Gửi một thông báo tới người đó</td><td>Không có thông báo đẩy, nhưng chuông trong ứng dụng vẫn tăng và mở ra đọc được</td></tr>
+          <tr><td>UAT-PF04-12</td><td>Trưởng phòng TQT vừa gán hạng mục Ốp lát mặt đứng tháp A cho kỹ sư A, hạn nộp 30/09/2026</td><td>Kỹ sư A mở chuông thông báo</td><td>Dòng thông báo nêu đủ tên hạng mục, dự án và hạn nộp; bấm vào mở đúng bảng theo dõi của <a href="ORD-02.html">ORD-02</a> tại dòng hạng mục đó</td></tr>
+          <tr><td>UAT-PF04-13</td><td>Tiếp UAT-12, trưởng phòng đã trả lại bản nộp lần 1 kèm ý kiến</td><td>Kỹ sư A nộp lại bản đã sửa</td><td>Trưởng phòng nhận thông báo ghi đủ người nộp, hạng mục, dự án và <em>lần nộp thứ 2</em></td></tr>
+          <tr><td>UAT-PF04-14</td><td>Kỹ sư A nộp bản vẽ cho hai hạng mục khác nhau, cách nhau 3 phút</td><td>Trưởng phòng mở chuông</td><td>Theo luật gộp hiện tại, hai lượt về một dòng có bộ đếm và tên hạng mục không còn hiện — ghi nhận là khoảng trống đang chờ chốt, không phải kết quả mong muốn</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PF-03.html">PF-03 phê duyệt</a><a href="BID-05.html">BID-05 ký số hợp đồng</a><a href="ACC-04.html">ACC-04 xác nhận nhận hàng</a><a href="MOB-01.html">MOB-01 ứng dụng di động</a></p>
+    <p class="links"><a href="PF-03.html">PF-03 phê duyệt</a><a href="BID-05.html">BID-05 ký số hợp đồng</a><a href="ACC-04.html">ACC-04 xác nhận nhận hàng</a><a href="MOB-01.html">MOB-01 ứng dụng di động</a><a href="ORD-02.html">ORD-02 bản vẽ Shopdrawing</a><a href="2026-09-22/YC-13.html">YC-13 hồ sơ Shopdrawing v2</a></p>
   </div>
 </section>
 <div class="filefoot">
