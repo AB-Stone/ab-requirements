@@ -384,6 +384,20 @@
       </table>
     </div>
 
+    <h4>Bộ lọc khoảng thời gian — quy ước dùng chung</h4>
+    <p>Yêu cầu 22/09 dòng 21 viết một câu quét ngang cả hệ thống: “tất cả các phân hệ nào có tính thực theo thời gian đều để nút lọc thời gian”. Quy ước của <b>cái điều khiển</b> viết ở đây, một lần; mỗi màn hình chỉ khai <b>mốc lọc</b> của riêng nó trong mục quy tắc nghiệp vụ của trang đó — xem <a href="2026-09-22/YC-14.html">YC-14</a> để đối chiếu cả danh sách.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:22%">Tham số</th><th style="width:18%">Mã</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Từ ngày</td><td class="k">period_from</td><td>Tính cả ngày này.</td></tr>
+          <tr><td>Đến ngày</td><td class="k">period_to</td><td>Tính cả ngày này. Không nhỏ hơn <code>period_from</code>.</td></tr>
+          <tr><td>Mốc lọc</td><td class="k">period_field</td><td>Do <em>từng màn hình</em> khai báo, không phải người dùng chọn. Chỉ màn hình nào có nhiều hơn một mốc hợp lý mới hiện ô cho chọn — trong Giai đoạn 1 đúng một màn hình như vậy: <a href="ACC-05.html">ACC-05</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Khoảng nhanh gồm <em>Tháng này · Tháng trước · Quý này · 6 tháng · Năm nay · Năm trước</em>. Hai mục cuối có mặt vì khối đánh giá hiệu quả Ban chỉ huy ở <a href="RPT-02.html">RPT-02</a> cần đúng hai kỳ đó (<a href="2026-09-22/YC-11.html">YC-11</a>).</p>
+
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Sinh mã.</b> Mã của mọi danh mục do hệ thống sinh theo mẫu đã khai, người dùng không nhập tay.<span class="then">Số thứ tự chạy riêng theo từng năm và từng loại danh mục; mã đã cấp không tái sử dụng kể cả khi bản ghi bị ngừng sử dụng.</span><span class="then">Ngoại lệ duy nhất là mã gói thầu — xem quy tắc ngay dưới.</span></li>
@@ -404,6 +418,13 @@
       <li><b>Vùng miền là danh mục đóng, giá trị mới đi qua duyệt.</b> Danh mục <code>region_id</code> có năm giá trị — Miền Bắc · Miền Trung · Miền Nam · Khánh Hòa · <em>Khác</em>; chọn <em>Khác</em> thì tên vùng người dùng nhập sinh một dòng danh mục mới ở trạng thái chờ duyệt, không lưu thành chuỗi tự do trên chứng từ (<a href="2026-09-15/YC-02.html">YC-02</a>).<span class="then">Vùng là khóa tra bảng đơn giá chuẩn ở <a href="PF-06.html">PF-06</a> và là chiều phân tích của <a href="RPT-02.html">RPT-02</a>, <a href="RPT-03.html">RPT-03</a> và <a href="RPT-05.html">RPT-05</a>. Nếu lưu tự do thì “Khánh Hoà”, “Khánh Hòa” và “KH” thành ba vùng khác nhau trên báo cáo, và mỗi cái tra ra một bảng đơn giá chuẩn khác.</span><span class="then">Trước đợt này vùng miền chỉ tồn tại như một chiều của <code>stat_id</code>, đủ để lọc báo cáo nhưng không đủ để làm khóa tra giá; dòng danh mục riêng là thứ <a href="PF-06.html">PF-06</a> cần.</span></li>
       <li><b>Công đoạn gia công là danh mục, không phải cột.</b> 47 mã <code>GC.001</code>–<code>GC.047</code> của biểu mẫu <code>BM/QLTC/DSCĐ</code> nằm ở danh mục nền; <a href="ORD-11.html">ORD-11</a> khai công đoạn bằng cặp <code>(mã GC · khối lượng)</code>, <a href="ORD-03.html">ORD-03</a> cộng dồn theo mã (<a href="2026-09-15/YC-09.html">YC-09</a>).<span class="then">47 cột cứng là hình dạng của tệp Excel, không phải của dữ liệu. Với danh mục, thêm một công đoạn là thêm một dòng; với cột, đó là sửa cấu trúc bảng ở hai màn hình và làm hỏng mọi tệp nhập khẩu cũ.</span><span class="then">ĐVT của công đoạn khai một lần tại đây và chỉ đọc ở mọi nơi dùng nó — cùng nguyên tắc một hệ đơn vị đã áp cho vật tư. Mã đã cấp không tái sử dụng; công đoạn không dùng nữa thì <em>ngừng sử dụng</em>, vì các danh sách cắt đá cũ vẫn tham chiếu tới nó.</span></li>
       <li><b>Vật tư nhóm đá khai thêm bốn thuộc tính.</b> Chủng loại, tính chất bề mặt, sai số chiều dày và <b>tỷ trọng</b> là thuộc tính của vật tư, không nhập lại trên từng dòng chứng từ.<span class="then">Biểu mẫu <code>DSCĐ</code> ghi “nhập đúng số liệu từ sheet TT_VT” — tra từ danh mục thì 197 dòng của một đơn hàng không thể có 197 cách viết tên một loại đá. Danh sách gợi ý chủng loại <b>không đóng</b> (mỏ đá mới xuất hiện liên tục, đúng quy tắc của <a href="BID-03.html">BID-03</a>), còn tính chất bề mặt là danh mục <b>đóng</b> theo bảng nhà máy.</span><span class="then">Thiếu tỷ trọng thì <a href="ORD-11.html">ORD-11</a> để trống ô trọng lượng và đánh dấu dòng, chứ không ước lượng: nhà máy dùng cột đó để bố trí xe.</span></li>
+    
+      <li><b>Không chọn khoảng là xem tất cả.</b> Mặc định của mọi màn hình là rỗng, không phải “tháng này”.<span class="then">Mặc định vào một khoảng hẹp là cách chắc chắn để người dùng tưởng dữ liệu bị mất, rồi đi hỏi. Riêng các báo cáo vốn đã có kỳ bắt buộc — <a href="ACC-09.html">ACC-09</a>, <a href="RPT-03.html">RPT-03</a> — giữ mặc định kỳ hiện hành như đang có, vì một báo cáo không có kỳ thì vô nghĩa.</span></li>
+      <li><b>Hai đầu khoảng đều tính cả ngày biên; bỏ trống một đầu là mở về phía đó.</b> Chọn 01/09 đến 30/09 là lấy trọn tháng 9; chỉ có <em>đến ngày</em> nghĩa là tất cả cho tới ngày đó.<span class="then">Quy ước ngầm khác nhau giữa các màn hình là nguồn của những chênh lệch một ngày mà không ai truy ra được. Còn câu hỏi “lũy kế tới cuối tháng 9” là câu thường gặp nhất khi đối chiếu công nợ — bắt nhập cả hai đầu buộc người dùng phải đoán một ngày bắt đầu đủ xa.</span></li>
+      <li><b>Bộ lọc áp lên cả dòng tổng, và khoảng đang chọn nằm trong địa chỉ trang.</b> Mọi số cộng, số đếm và biểu đồ đọc theo đúng khoảng; sao chép địa chỉ gửi cho người khác thì họ mở ra thấy đúng khoảng đó.<span class="then">Một bảng đã lọc mà dòng tổng vẫn là tổng của tất cả thì còn tệ hơn không lọc. Và con số trong báo cáo thường được gửi kèm câu hỏi — không giữ khoảng trong địa chỉ thì mỗi lần trao đổi lại phải mô tả cách chọn bằng lời.</span></li>
+      <li><b>Mốc lọc dùng ngày nghiệp vụ, không dùng ngày nhập liệu.</b> Chứng từ tháng 6 nhập muộn tháng 8 vẫn thuộc kỳ tháng 6.<span class="then">Nếu lọc theo ngày nhập thì mọi kỳ đã công bố sẽ tự đổi số mỗi lần có người nhập chậm — cùng một quy tắc mà <a href="BID-07.html">BID-07</a> áp cho ngày biên bản phạt.</span></li>
+      <li><b>Xuất tệp mang theo khoảng đang chọn.</b> Tệp chứa đúng phần đang nhìn thấy và ghi khoảng lọc lên đầu tệp.<span class="then">Bảng Excel rời khỏi hệ thống là mất ngữ cảnh; ghi khoảng lên đầu tệp thì tháng sau mở lại vẫn biết nó là số của kỳ nào.</span></li>
+      <li><b>Màn hình danh mục nền không có bộ lọc thời gian.</b> Chính <a href="PF-01.html">PF-01</a>, <a href="PF-02.html">PF-02</a>, <a href="PRJ-05.html">PRJ-05</a> và <a href="ACC-10.html">ACC-10</a> nằm ngoài quy ước này.<span class="then">Chúng không có con số nào cộng dồn theo thời gian để mà lọc. Ranh giới đầy đủ đang chờ chốt ở <a href="PL-C.html#Q-52">PL-C · Q-52</a> — chốt bằng cách duyệt chính bảng màn hình ↔ mốc lọc trong <a href="2026-09-22/YC-14.html">YC-14</a>, không chốt bằng câu chữ.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
