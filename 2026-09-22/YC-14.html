@@ -151,7 +151,14 @@
       <li><b>Bỏ trống một đầu là mở về phía đó.</b> Chỉ có <em>đến ngày</em> nghĩa là tất cả cho tới ngày đó.<span class="then">Câu hỏi “lũy kế tới cuối tháng 9” là câu hỏi thường gặp nhất khi đối chiếu công nợ; bắt nhập cả hai đầu buộc người dùng phải đoán một ngày bắt đầu đủ xa.</span></li>
       <li><b>Xuất tệp mang theo khoảng đang chọn.</b> Tệp xuất ra chứa đúng phần đang nhìn thấy, và ghi khoảng lọc lên đầu tệp.<span class="then">Bảng Excel rời khỏi hệ thống là mất ngữ cảnh. Ghi khoảng lên đầu tệp thì tháng sau mở lại vẫn biết nó là số của kỳ nào.</span></li>
       <li><b>Mốc lọc dùng ngày nghiệp vụ, không dùng ngày nhập liệu.</b> Chứng từ tháng 6 nhập muộn tháng 8 vẫn thuộc kỳ tháng 6.<span class="then">Nếu lọc theo ngày nhập thì mọi kỳ đã công bố sẽ tự đổi số mỗi lần có người nhập chậm — xem cùng quy tắc ở <a href="YC-11.html">YC-11</a>.</span></li>
+      <li><b>Lọc theo ngày đến hạn thì khoản chưa có hạn không thuộc kỳ nào.</b> Công nợ của đối tác <em>không có điều khoản thanh toán</em> thì không suy ra được ngày đến hạn, nên khi <a href="../ACC-05.html">ACC-05</a> lọc theo mốc <em>ngày đến hạn</em>, những khoản đó không nằm trong khoảng nào cả.<span class="then">Màn hình phải nói ra điều này ngay khi người dùng chọn mốc đó, chứ không để dòng lặng lẽ biến mất — lọc theo <em>ngày chứng từ</em> thì chúng vẫn ở đó đủ cả. Ngày đến hạn được suy từ ngày chứng từ cộng điều khoản, không phải một cột lưu sẵn, nên “chưa có hạn” là một trạng thái thật chứ không phải dữ liệu thiếu.</span></li>
     </ol>
+
+    <div class="note">
+      <b>Ngày đầu khoảng là chỗ dễ rụng nhất</b>
+      <p style="margin:0 0 8px">Cơ sở dữ liệu chạy theo giờ Việt Nam, còn hai đầu khoảng người dùng nhập là ngày trần. So thẳng một cột <em>ngày</em> với một mốc <em>thời điểm</em> thì máy chủ quy cột về giờ Việt Nam trước, nên <code>ngày ≥ 01/09</code> được hiểu thành <code>31/08 17:00 GMT ≥ 01/09 00:00 GMT</code> — sai, và <b>toàn bộ chứng từ ngày 01/09 biến mất</b> mà không có gì trên màn hình nói ra. Chọn trọn tháng 9 thì ra số của 30 ngày thay vì 30 ngày, nhưng thiếu đúng ngày đầu.</p>
+      <p style="margin:0">Đây không phải chuyện lý thuyết: <a href="../BID-07.html">BID-07</a> — chính màn hình mà các màn hình khác chép quy ước — và phần dòng của sổ quỹ <a href="../ACC-07.html">ACC-07</a> đều đã dựng nhầm kiểu này. Ở <a href="../ACC-07.html">ACC-07</a> hậu quả rõ nhất: phần dòng rụng ngày đầu còn phần số dư đầu kỳ ngay bên cạnh thì không, nên <b>một sổ quỹ tự mâu thuẫn với chính nó</b>. Cả hai đã vá 23/09/2026, và có test ghim để không tái phát. Bất cứ màn hình nào thêm bộ lọc sau này đều phải dùng lại đúng một chỗ so ngày dùng chung, không tự viết lại.</p>
+    </div>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
     <div class="tw">
