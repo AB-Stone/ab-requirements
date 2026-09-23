@@ -190,7 +190,7 @@
     <p><b>Description.</b> Khối <em>Hiệu quả điều hành BCH</em> do <a href="../2026-09-15/YC-02.html">YC-02</a> thêm vào <a href="../RPT-02.html">RPT-02</a> đang chạy theo <b>quý</b>. Yêu cầu mới đòi tổng kết khoản phạt không phân bổ theo kỳ <b>6 tháng hoặc 1 năm</b>, nên khối này phải nhận thêm một cột và một lựa chọn kỳ.</p>
     <p><b>Acceptance Criteria.</b></p>
     <ol class="br">
-      <li>Thêm cột <em>Phạt CĐT không phân bổ (đã nhân hệ số)</em> vào bảng định nghĩa cột của khối, đọc từ <code>bch_charged_amount</code> của <b>BID-07</b>.</li>
+      <li>Thêm cột <em>Phạt CĐT không phân bổ ×hệ số</em> vào bảng định nghĩa cột của khối, đọc từ <code>bch_charged_amount</code> của <b>BID-07</b>.</li>
       <li>Kỳ của khối chuyển từ cố định <em>quý</em> sang chọn được <em>quý · 6 tháng · năm</em>, theo bộ điều khiển chung của <a href="YC-14.html">YC-14</a>.</li>
       <li>Biên bản xếp vào kỳ theo <code>issued_at</code>, không theo ngày nhập — ghi thành một quy tắc nghiệp vụ.</li>
       <li>Danh mục báo cáo đầu trang có dòng mô tả cột mới; dải thẻ lọc có thêm mục tương ứng.</li>
