@@ -119,7 +119,7 @@
 
 <section class="block" id="tien-do">
   <h2><em>§4</em>Tiến độ</h2>
-  <p class="intro">Cập nhật 23/09/2026. Cột <em>Chặn bởi</em> là phần quan trọng hơn cột trạng thái: một việc chưa làm vì chưa tới lượt khác hẳn một việc không làm được vì đang chờ người quyết.</p>
+  <p class="intro">Cập nhật 23/09/2026 (lần 2). Cột <em>Chặn bởi</em> là phần quan trọng hơn cột trạng thái: một việc chưa làm vì chưa tới lượt khác hẳn một việc không làm được vì đang chờ người quyết.</p>
   <div class="tw">
     <table>
       <thead><tr><th style="width:72px">Việc</th><th style="width:30%">Nội dung</th><th style="width:110px">Trạng thái</th><th>Chặn bởi / ghi chú</th></tr></thead>
@@ -145,25 +145,32 @@
         <tr><td><a href="TASKS.html#D-04">D-04</a></td><td>abs-api — biên bản phạt và dòng phân bổ</td><td><span class="tag t-ok">Xong</span></td><td>Migration <code>00036</code> <b>chưa chạy thật</b></td></tr>
         <tr><td><a href="TASKS.html#D-05">D-05</a></td><td>abs-api — đẩy phân bổ vào kỳ giao khoán</td><td><span class="tag t-ok">Xong</span></td><td>Lộ ra <a href="../PL-C.html#Q-55">Q-55</a></td></tr>
         <tr><td><a href="TASKS.html#D-06">D-06</a></td><td>abs-ms — màn hình biên bản phạt</td><td><span class="tag t-ok">Xong</span></td><td>Lộ ra lỗi thiếu đường tải tệp, đã vá</td></tr>
-        <tr><td><a href="TASKS.html#D-07">D-07</a></td><td>abs-ms — cột nguồn ở PRJ-03</td><td><span class="tag t-warn">Đang làm</span></td><td></td></tr>
-        <tr><td><a href="TASKS.html#D-08">D-08</a></td><td>abs-api — mở rộng danh sách phê duyệt</td><td><span class="tag t-neu">Chưa</span></td><td>Chặn <a href="TASKS.html#D-09">D-09</a></td></tr>
-        <tr><td><a href="TASKS.html#D-09">D-09</a></td><td>abs-ms — bốn thẻ Trung tâm phê duyệt</td><td><span class="tag t-neu">Chưa</span></td><td>Chờ D-08</td></tr>
-        <tr><td><a href="TASKS.html#D-10">D-10</a></td><td>abs-api — vòng phân công shop</td><td><span class="tag t-warn">Đang làm</span></td><td></td></tr>
-        <tr><td><a href="TASKS.html#D-11">D-11</a></td><td>abs-ms — bảng bảy cột và vòng nộp – duyệt</td><td><span class="tag t-neu">Chưa</span></td><td>Chờ D-10</td></tr>
+        <tr><td><a href="TASKS.html#D-07">D-07</a></td><td>abs-ms — cột nguồn ở PRJ-03</td><td><span class="tag t-ok">Xong</span></td><td>Cột <em>Nguồn</em> nói thẳng từng dòng khấu trừ viết ra ở đâu</td></tr>
+        <tr><td><a href="TASKS.html#D-08">D-08</a></td><td>abs-api — mở rộng danh sách phê duyệt</td><td><span class="tag t-ok">Xong</span></td><td>Lộ ra <a href="../PL-C.html#Q-56">Q-56</a>, <a href="../PL-C.html#Q-57">Q-57</a>, <a href="../PL-C.html#Q-58">Q-58</a></td></tr>
+        <tr><td><a href="TASKS.html#D-09">D-09</a></td><td>abs-ms — bốn thẻ Trung tâm phê duyệt</td><td><span class="tag t-warn">Đang làm</span></td><td></td></tr>
+        <tr><td><a href="TASKS.html#D-10">D-10</a></td><td>abs-api — vòng phân công shop</td><td><span class="tag t-ok">Xong</span></td><td>Lộ ra chỗ đặc tả lẫn hai hạn nộp, đã sửa</td></tr>
+        <tr><td><a href="TASKS.html#D-11">D-11</a></td><td>abs-ms — bảng bảy cột và vòng nộp – duyệt</td><td><span class="tag t-ok">Xong</span></td><td>Lộ ra ba món nợ: deep link sai, thiếu <code>GET</code> tệp đã nộp, <code>design_coverage</code> đếm sai vế</td></tr>
         <tr><td><a href="TASKS.html#D-12">D-12</a></td><td>Đổi tiền tố mã trong dữ liệu và mã nguồn</td><td><span class="tag t-crit">Chặn</span></td><td><a href="../PL-C.html#Q-50">Q-50</a></td></tr>
         <tr><td><a href="TASKS.html#D-13">D-13</a></td><td>Bộ lọc khoảng thời gian dùng chung</td><td><span class="tag t-ok">Xong</span></td><td>Component promote lên dùng chung khi có màn hình thứ hai cần</td></tr>
         <tr><td><a href="TASKS.html#D-14">D-14</a></td><td>Áp bộ lọc lên các màn hình trong danh sách</td><td><span class="tag t-neu">Chưa</span></td><td>Danh sách màn hình chờ <a href="../PL-C.html#Q-52">Q-52</a> duyệt</td></tr>
-        <tr><td><a href="TASKS.html#D-15">D-15</a></td><td>Mở rộng kỳ báo cáo hiệu quả BCH</td><td><span class="tag t-neu">Chưa</span></td><td></td></tr>
+        <tr><td><a href="TASKS.html#D-15">D-15</a></td><td>Mở rộng kỳ báo cáo hiệu quả BCH</td><td><span class="tag t-warn">Đang làm</span></td><td>Phần backend; phần giao diện làm sau</td></tr>
       </tbody>
     </table>
   </div>
   <div class="note">
-    <b>Bốn điểm đang chờ người chốt</b>
-    <p style="margin:0"><a href="../PL-C.html#Q-50">Q-50</a> cách đánh số đợt trình (chặn C-07 và D-12) · <a href="../PL-C.html#Q-52">Q-52</a> phạm vi bộ lọc thời gian (chặn D-14) · <a href="../PL-C.html#Q-53">Q-53</a> dòng 19 “bỏ bảng KL bản vẽ” (chặn D-03) · <a href="../PL-C.html#Q-55">Q-55</a> đường “mở lại biên bản” mà đặc tả hứa nhưng chưa ai dựng. Thêm <a href="../PL-C.html#Q-51">Q-51</a> về hệ số phạt và <a href="../PL-C.html#Q-54">Q-54</a> về luật gộp thông báo — hai điểm này không chặn việc nào đang chạy.</p>
+    <b>Chín điểm đang chờ người chốt</b>
+    <p style="margin:0 0 8px"><b>Chặn việc đang xếp hàng:</b> <a href="../PL-C.html#Q-50">Q-50</a> cách đánh số đợt trình (chặn C-07 và D-12) · <a href="../PL-C.html#Q-52">Q-52</a> phạm vi bộ lọc thời gian (chặn D-14) · <a href="../PL-C.html#Q-53">Q-53</a> dòng 19 “bỏ bảng KL bản vẽ” (chặn D-03).</p>
+    <p style="margin:0 0 8px"><b>Không chặn việc nào, nhưng là lỗ hổng thật:</b> <a href="../PL-C.html#Q-55">Q-55</a> đường “mở lại biên bản” đặc tả hứa mà chưa ai dựng · <a href="../PL-C.html#Q-56">Q-56</a> ba thẻ lịch sử chỉ phủ được một trong ba nguồn của hàng chờ — bảng giá khoán và báo giá đã duyệt xong <em>không</em> xuất hiện ở đó · <a href="../PL-C.html#Q-58">Q-58</a> báo giá không có người lập nên ô <em>Người tạo</em> rỗng.</p>
+    <p style="margin:0"><b>Cần xác nhận một phán đoán:</b> <a href="../PL-C.html#Q-51">Q-51</a> ai đặt hệ số phạt và nó có vào sổ kế toán không · <a href="../PL-C.html#Q-54">Q-54</a> luật gộp thông báo gộp theo người nhận chứ không theo đối tượng · <a href="../PL-C.html#Q-57">Q-57</a> phiếu bị <em>trả về</em> xếp vào thẻ nào.</p>
+  </div>
+
+  <div class="note">
+    <b>Một món nợ kỹ thuật còn lại</b>
+    <p style="margin:0">Cột tổng hợp trên danh sách hồ sơ Shopdrawing vẫn đếm “{đã ký}/{tổng} hạng mục” theo trạng thái phía chủ đầu tư, trong khi <a href="YC-13.html">YC-13</a> muốn “{đã duyệt nội bộ}/{tổng} đầu việc”. Hai chỗ khác lộ ra cùng lúc đã vá: deep link của thông báo trỏ vào đường dẫn của API thay vì của ứng dụng, và không có <code>GET</code> nào trả danh sách tệp đã nộp nên trưởng phòng phải duyệt một thứ chưa mở ra xem được.</p>
   </div>
   <div class="note">
-    <b>Migration <code>00036</code> chưa chạy thật</b>
-    <p style="margin:0">Máy dựng không bật Docker và tệp cấu hình trỏ tới một endpoint dùng chung, nên bảng biên bản phạt mới chỉ được kiểm bằng các test guard đọc <code>migrations/</code>. Cần chạy xuôi và ngược một lượt trên Postgres cục bộ trước khi merge.</p>
+    <b>Migration <code>00036</code> – <code>00038</code> chưa chạy thật</b>
+    <p style="margin:0">Máy dựng không bật Docker và tệp cấu hình trỏ tới một endpoint dùng chung, nên ba migration mới chỉ được kiểm bằng các test guard đọc <code>migrations/</code>. Cần chạy xuôi và ngược một lượt trên Postgres cục bộ trước khi merge.</p>
   </div>
 </section>
 <div class="filefoot">
