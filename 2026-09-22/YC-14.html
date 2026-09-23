@@ -79,11 +79,16 @@
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Từ ngày</td><td class="k">period_from</td><td>Ngày</td><td class="c">—</td><td>Tính cả ngày này.</td></tr>
-          <tr><td>Đến ngày</td><td class="k">period_to</td><td>Ngày</td><td class="c">—</td><td>Tính cả ngày này. Không nhỏ hơn <code>period_from</code>.</td></tr>
+          <tr><td>Từ ngày</td><td class="k">period_from</td><td>Ngày</td><td class="c">—</td><td>Tính cả ngày này. Trên dây và trên địa chỉ trang tên là <code>from</code> — xem ghi chú dưới bảng.</td></tr>
+          <tr><td>Đến ngày</td><td class="k">period_to</td><td>Ngày</td><td class="c">—</td><td>Tính cả ngày này. Không nhỏ hơn <code>period_from</code>. Trên dây tên là <code>to</code>.</td></tr>
           <tr><td>Mốc lọc</td><td class="k">period_field</td><td>Chọn 1</td><td class="c req">✱</td><td>Do từng màn hình khai báo, không phải người dùng chọn. Màn hình nào có nhiều hơn một mốc hợp lý thì mới hiện ô cho chọn — xem bảng dưới.</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="note">
+      <b>Một khái niệm, một tên</b>
+      <p style="margin:0">Hai đầu khoảng đi trên dây và trên địa chỉ trang với tên <code>from</code> và <code>to</code>, không phải <code>periodFrom</code>/<code>periodTo</code>. Đây không phải chuyện thẩm mỹ: mười màn hình dựng trước đợt này đã dùng sẵn cặp tên đó, nên đặt tên thứ hai cho cùng một thứ là dựng lại đúng cái mớ mà trang này sinh ra để dẹp. Báo cáo nào chọn kỳ theo lịch thì thêm <code>periodScope</code> (<em>quarter · half · year · custom</em>) — tên mới duy nhất, vì kỳ lịch là thứ một khoảng ngày thuần không nói được. Với ba kỳ lịch, <code>from</code> đọc là <b>một ngày bất kỳ nằm trong kỳ</b> và <code>to</code> bị bỏ qua: máy chủ tự nắn hai đầu về biên của lịch, nên không ai gửi được một “quý” dài bốn tháng, và một kỳ đã công bố mở lại lúc nào cũng ra đúng bấy nhiêu tháng.</p>
     </div>
 
     <h4>Mốc lọc của từng màn hình</h4>
