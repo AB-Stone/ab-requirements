@@ -26,6 +26,7 @@
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
     <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
+    <a href="BID-07.html"><i>BID-07</i>Biên bản phạt CĐT</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
@@ -267,7 +268,7 @@
           <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ giao khoán nhân công đã duyệt (<a href="PRJ-03.html">PRJ-03</a>). Chỉ đọc.</td></tr>
           <tr><td>Giá trị thiệt hại</td><td class="k">loss_amount</td><td>Số tiền</td><td class="c">—</td><td>Bằng phần lũy kế trả tổ đội vượt lũy kế thu được, quy ra tiền theo đơn giá hợp đồng.</td></tr>
           <tr><td>Nguyên nhân</td><td class="k">loss_reason</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi có thiệt hại; hiển thị nguyên văn trong cảnh báo gửi Ban lãnh đạo.</td></tr>
-          <tr><td>Khoản phạt của công ty</td><td class="k">penalty_amount</td><td>Số tiền</td><td class="c">—</td><td>Nếu có. Ghi kèm quyết định làm căn cứ.</td></tr>
+          <tr><td>Khoản phạt của công ty</td><td class="k">penalty_amount</td><td>Số tiền</td><td class="c">—</td><td><b>Chỉ đọc</b> — tổng các biên bản phạt của hợp đồng ở <a href="BID-07.html">BID-07</a>, bấm vào mở danh sách biên bản. Trước đây ô này nhập tay; từ khi có bản ghi biên bản thì một con số gõ lại ở đây chỉ có thể lệch khỏi chứng từ nó tóm tắt.</td></tr>
           <tr><td>Cá nhân liên quan</td><td class="k">responsible[]</td><td>Danh sách</td><td class="c">—</td><td>Người và vai trò trong sự việc. <b>Chỉ Ban lãnh đạo và trưởng bộ phận xem được</b> — dữ liệu nhân sự, không hiển thị công khai trên hồ sơ.</td></tr>
         </tbody>
       </table>
@@ -345,6 +346,8 @@
       <li><b>Dữ liệu cá nhân hạn chế quyền xem.</b> Danh sách cá nhân liên quan chỉ hiện với Ban lãnh đạo và trưởng bộ phận.<span class="then">Các vai trò khác vẫn thấy hồ sơ và giá trị thiệt hại nhưng không thấy tên người.</span></li>
       <li><b>Đóng hợp đồng kéo theo dọn tồn.</b> Quyết toán thanh toán xong thì hợp đồng đóng và sinh việc xử lý vật tư tồn cuối dự án.<span class="then">Vật tư tồn đi theo <a href="ORD-08.html">ORD-08</a>; kho dự án chỉ đóng khi tồn bằng 0.</span></li>
       <li><b>Kế thừa khung ORD-01.</b> Chuỗi trạng thái, vướng mắc, đối chiếu ngân hàng dùng chung như mọi hồ sơ khác.<span class="then">Chỉ phần chứng từ bắt buộc và nhánh thiệt hại là riêng.</span></li>
+    
+      <li><b>Bộ lọc khoảng thời gian lọc theo ngày quyết toán.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Hợp đồng quyết toán trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -385,7 +388,7 @@
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 21 / 47</span><span><code>ORD-10.html</code></span>
+  <span>Đặc tả 22 / 48</span><span><code>ORD-10.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

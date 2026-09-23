@@ -26,6 +26,7 @@
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
     <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
+    <a href="BID-07.html"><i>BID-07</i>Biên bản phạt CĐT</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
@@ -254,7 +255,7 @@
           <tr><td>Giá trị đã xuất hoá đơn theo năm</td><td class="k">invoiced_by_year[]</td><td>Bảng</td><td class="c">—</td><td>Luỹ kế từng năm, rollup <a href="ACC-04.html">ACC-04</a>. Chỉ đọc.</td></tr>
           <tr><td>Giá trị còn phải xuất hoá đơn</td><td class="k">remaining_to_invoice</td><td>Số tiền</td><td class="c">—</td><td>Tính tự động = giá trị đã hoàn thành luỹ kế − đã xuất hoá đơn. Chỉ đọc.</td></tr>
           <tr><td>Tiện ích</td><td class="k">utility_deduction</td><td>Số tiền</td><td class="c">—</td><td>Vật tư mượn của CĐT hoặc nhà thầu khác, bị trừ ra khỏi giá trị hợp đồng.</td></tr>
-          <tr><td>Phạt</td><td class="k">penalty</td><td>Số tiền</td><td class="c">—</td><td>Chậm tiến độ / sai quy cách / vi phạm an toàn lao động.</td></tr>
+          <tr><td>Phạt</td><td class="k">penalty</td><td>Số tiền</td><td class="c">—</td><td>Chậm tiến độ / sai quy cách / vi phạm an toàn lao động. <b>Chỉ đọc</b> — tổng các biên bản phạt của hợp đồng ở <a href="BID-07.html">BID-07</a>, cùng một con số với <a href="ORD-10.html">ORD-10</a>.</td></tr>
           <tr><td>Khác</td><td class="k">other_adjustment</td><td>Số tiền</td><td class="c">—</td><td>Bù trừ thanh toán giữa các hợp đồng; ghi rõ hợp đồng đối ứng.</td></tr>
           <tr><td>Giữ lại % bảo hành</td><td class="k">retention_rate</td><td>Phần trăm</td><td class="c req">✱</td><td>Mặc định 5%, có thể khác theo từng hợp đồng.</td></tr>
           <tr><td>Giá trị giữ lại bảo hành</td><td class="k">retention_value</td><td>Số tiền</td><td class="c">—</td><td>Tự tính = <code>settlement_value</code> × <code>retention_rate</code>. Chỉ đọc.</td></tr>
@@ -481,6 +482,8 @@
       <li><b>Bản vẽ hoàn công và biên bản bàn giao chỉ bắt buộc ở đợt quyết toán.</b> Ở các đợt thanh toán giữa chừng, <code>q_asbuilt</code> và <code>q_handover</code> để <em>Chưa có</em> là bình thường và không tính là thiếu.<span class="then">Giữ đúng phân biệt mà <a href="ORD-09.html">ORD-09</a> và <a href="ORD-10.html">ORD-10</a> đã đặt: đợt giữa chừng dùng bản vẽ sơ họa hoàn công, quyết toán mới cần bản vẽ hoàn công đầy đủ. Ngược lại, chuyển <code>settlement_doc_status</code> sang <em>Đã nộp</em> khi hai thành phần này còn <em>Chưa có</em> thì bị chặn.</span></li>
       <li><b>Hồ sơ chưa có thì không chặn, chỉ hiện thiếu.</b> Màn hình theo dõi không phải cổng duyệt; chọn trạng thái <em>Thiếu / sai</em> thì bắt buộc ghi thiếu gì vào <code>reject_note</code>.<span class="then">Cổng duyệt nằm ở chính ORD-09 và ORD-10, nơi có đủ ngữ cảnh của một đợt thanh toán. Ở đây giá trị nằm ở chỗ lọc ra được mười hạng mục nào đang thiếu nhật ký công trường. Trạng thái không có nội dung thì người nhận việc vẫn phải đi hỏi — và màn hình theo dõi mất đúng phần giá trị của nó.</span></li>
       <li><b>Quyền ghi phần hồ sơ thuộc P. TQT.</b> Ban lãnh đạo, P. Kế toán và Ban dự án chỉ đọc; xem <a href="PL-B.html">PL-B</a>.<span class="then">Đây là bảng điều hành hồ sơ của P. TQT; mở quyền ghi rộng hơn sẽ khiến trạng thái đổi mà không ai biết ai đổi. Cột người cập nhật và ngày cập nhật là lý do phải giữ quyền hẹp. Phần cột cũ — bảo hành, công nợ, ghi chú theo dõi — vẫn thuộc P. Kế toán như trước.</span></li>
+    
+      <li><b>Bộ lọc khoảng thời gian lọc theo ngày ký hợp đồng.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Hợp đồng đang theo dõi trong kỳ. Các cột tiến độ, quyết toán và bảo hành vẫn hiện đủ vòng đời của hợp đồng đã lọt vào khoảng — lọc là chọn hợp đồng nào, không phải cắt cụt dòng đời của nó.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -535,7 +538,7 @@
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 42 / 47</span><span><code>RPT-05.html</code></span>
+  <span>Đặc tả 43 / 48</span><span><code>RPT-05.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>Van de can sua_05.09.26.xlsx (sheet "Theo dõi tiến độ")</code></span>
 </div>

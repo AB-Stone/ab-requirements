@@ -26,6 +26,7 @@
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
     <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
+    <a href="BID-07.html"><i>BID-07</i>Biên bản phạt CĐT</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
@@ -303,6 +304,8 @@
         <tbody>
           <tr><td>Mã phiên</td><td class="k">approval_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>PD-NNNN</code>, tự sinh.</td></tr>
           <tr><td>Chứng từ gốc</td><td class="k">doc_code</td><td>Tham chiếu</td><td class="c req">✱</td><td>Mã chứng từ, ví dụ <code>SO-2026-041</code>.</td></tr>
+          <tr><td>Nhãn loại yêu cầu</td><td class="k">doc_type_label</td><td>Chuỗi</td><td class="c req">✱</td><td>Tên đọc được của loại chứng từ — “Đơn bán hàng”, “Phiếu chi”, “Đơn đặt mua”… Lấy từ danh mục loại chứng từ, không gõ tay ở từng phiên. Đây là cột <em>Loại yêu cầu</em> của danh sách (<a href="2026-09-22/YC-12.html">YC-12</a>).</td></tr>
+          <tr><td>Người tạo</td><td class="k">created_by</td><td>Tham chiếu</td><td class="c req">✱</td><td>Người bấm <em>Trình duyệt</em> — không phải người soạn chứng từ nếu hai người khác nhau. Chép vào phiên lúc sinh phiên và <b>không đổi</b> kể cả khi chứng từ bị trả về qua “Yêu cầu bổ sung” rồi trình lại: lần trình lại sinh vòng mới trong cùng phiên, không sinh người tạo mới.</td></tr>
           <tr><td>Tóm tắt hiển thị</td><td class="k">summary</td><td>Chuỗi</td><td class="c req">✱</td><td>Bắt buộc chứa: dự án, nội dung, nơi cung cấp — đúng yêu cầu KT·1 “giao diện phê duyệt cần có tóm tắt các thông tin”.</td></tr>
           <tr><td>Giá trị</td><td class="k">amount</td><td>Số tiền</td><td class="c">—</td><td>Dùng để chọn quy trình theo hạn mức.</td></tr>
           <tr><td>Bước hiện tại</td><td class="k">step_idx</td><td>Số</td><td class="c req">✱</td><td>Hiển thị dạng “Cấp 2/3”.</td></tr>
@@ -321,6 +324,9 @@
       <li>Với bước kiểu <code>any_of</code>, một người duyệt là đủ để chuyển bước — mô phỏng đúng “GĐ dự án hoặc Kế toán trưởng được phép duyệt”.</li>
       <li>Chứng từ quá hạn xử lý được đánh dấu và đếm ngược hiển thị trên dashboard điều hành.</li>
       <li>Mỗi phiên duyệt xuất được bản PDF gồm nội dung chứng từ, chuỗi chữ ký và toàn bộ ý kiến — dùng thay biên bản giấy.</li>
+      <li>Bốn thẻ Chờ duyệt · Đã duyệt · Từ chối · Tất cả lịch sử đọc chung một danh sách phiên duyệt; đổi thẻ không làm số đếm trên thẻ <em>Chờ duyệt</em> lệch khỏi chuông thông báo.</li>
+      <li>Ba thẻ lịch sử chỉ hiện hồ sơ người xem từng duyệt một bước hoặc là người tạo; Admin thấy toàn bộ. Không thẻ nào cho xem thêm so với <a href="PL-B.html">PL-B</a>.</li>
+      <li>Danh sách có sáu cột, trong đó <em>Loại yêu cầu</em> và <em>Mã chứng từ</em> là hai cột riêng lọc và sắp xếp được, còn <em>Người tạo</em> hiện tên người trình và không đổi qua các lần trình lại — theo <a href="2026-09-22/YC-12.html">YC-12</a>.</li>
     </ol>
 
     <h4>Mockup UI — Phê duyệt › Danh sách &amp; chi tiết</h4>
@@ -331,11 +337,11 @@
         <div class="wf-chips"><span class="wf-chip">Tất cả nhóm</span><span class="wf-chip">Đề xuất mua sắm</span><span class="wf-chip">Đơn hàng</span><span class="wf-chip">Kho</span><span class="wf-chip">Thanh toán</span><span class="wf-chip">Khoán &amp; nhân công</span></div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">2</span> Danh sách lệnh chờ xử lý của tôi</div>
-          <table><thead><tr><th>Phê duyệt</th><th>Nội dung tóm tắt</th><th>Giá trị</th><th>Bước</th></tr></thead>
+          <table><thead><tr><th>Loại yêu cầu</th><th>Mã chứng từ</th><th>Nội dung tóm tắt</th><th>Người tạo</th><th>Giá trị</th><th>Bước</th></tr></thead>
           <tbody>
-            <tr><td>Bán hàng › Đơn hàng › <b>SO-2026-041</b></td><td>Đơn đá granite — ốp lát tháp A · DA-2026-014</td><td class="num">2.376.000.000</td><td><span class="tag t-warn">Cấp 2/3</span></td></tr>
-            <tr><td>Kế toán › Phiếu chi › <b>PC-2026-233</b></td><td>Tạm ứng vật tư — The Maris · DA-2025-032</td><td class="num">450.000.000</td><td><span class="tag t-warn">Cấp 3/3</span></td></tr>
-            <tr><td>Kế toán › Đề xuất mua sắm › <b>PR-2026-097</b></td><td>Đá block mỏ Phú Yên — kế hoạch Q3 · CHUNG</td><td class="num">1.850.000.000</td><td><span class="tag t-crit">Quá hạn 52 giờ</span></td></tr>
+            <tr><td>Đơn bán hàng</td><td><b>SO-2026-041</b></td><td>Đơn đá granite — ốp lát tháp A · DA-2026-014</td><td>Lê Minh Tú</td><td class="num">2.376.000.000</td><td><span class="tag t-warn">Cấp 2/3</span></td></tr>
+            <tr><td>Phiếu chi</td><td><b>PC-2026-233</b></td><td>Tạm ứng vật tư — The Maris · DA-2025-032</td><td>Đặng Thu Hà</td><td class="num">450.000.000</td><td><span class="tag t-warn">Cấp 3/3</span></td></tr>
+            <tr><td>Đề xuất mua sắm</td><td><b>PR-2026-097</b></td><td>Đá block mỏ Phú Yên — kế hoạch Q3 · CHUNG</td><td>Hoàng Nam Sơn</td><td class="num">1.850.000.000</td><td><span class="tag t-crit">Quá hạn 52 giờ</span></td></tr>
           </tbody></table>
         </div>
       </div>
@@ -372,8 +378,8 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Tab trạng thái + bộ lọc nhóm</td><td>Hai tầng lọc: trạng thái xử lý × nhóm chứng từ. Số trong ngoặc là số lệnh <em>của riêng người đang đăng nhập</em>.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Danh sách lệnh</td><td>Sắp xếp mặc định theo mức quá hạn rồi tới giá trị. Dòng quá hạn tô nhãn đỏ.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Bốn thẻ trạng thái + bộ lọc nhóm</td><td>Hai tầng lọc: trạng thái xử lý × nhóm chứng từ. Bốn thẻ <em>Chờ duyệt · Đã duyệt · Từ chối · Tất cả lịch sử</em> đọc chung một nguồn, khác nhau ở điều kiện lọc — xem bảng phạm vi ngay dưới. Số trong ngoặc là số lệnh <em>của riêng người đang đăng nhập</em>.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Danh sách lệnh</td><td>Sáu cột: <em>Loại yêu cầu · Mã chứng từ · Nội dung tóm tắt · Người tạo · Giá trị · Bước</em>. Sắp xếp mặc định theo mức quá hạn rồi tới giá trị. Dòng quá hạn tô nhãn đỏ.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Tiến trình duyệt</td><td>Hiển thị đủ N cấp với người phụ trách, thời điểm ký. Bước đang chờ được làm nổi.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Phê duyệt</td><td>Xác nhận bằng chữ ký điện tử (<a href="PF-04.html">PF-04</a>) rồi chuyển bước kế tiếp; nếu là bước cuối thì chạy hành động hậu duyệt.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Từ chối</td><td>Bắt buộc nhập lý do. Chứng từ đóng, người lập phải tạo chứng từ mới nếu muốn trình lại.</td></tr>
@@ -381,6 +387,24 @@
           <tr><td class="c"><span class="pin">7</span></td><td>Trao đổi liên phòng ban</td><td>Ý kiến gắn theo bước duyệt; nhắc tên người bằng <code>@</code> sẽ đẩy thông báo cho người đó.</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <h4>Phạm vi nhìn thấy của bốn thẻ</h4>
+    <p>Bốn thẻ ở đầu danh sách là bốn bộ lọc trên <b>cùng một nguồn phiên duyệt</b>, không phải bốn màn hình. Thẻ đổi <em>lọc gì</em>, không đổi <em>ai được thấy gì</em> — theo <a href="2026-09-22/YC-12.html">YC-12</a>.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:20%">Thẻ</th><th style="width:34%">Lọc phiên nào</th><th>Người xem thấy gì</th></tr></thead>
+        <tbody>
+          <tr><td><b>Chờ duyệt</b></td><td>Phiên đang mở, bước hiện tại có tên người xem</td><td>Chỉ hồ sơ đang chờ chính mình. Là thẻ duy nhất mang số đếm, và số đó phải khớp chuông thông báo <a href="PF-04.html">PF-04</a></td></tr>
+          <tr><td><b>Đã duyệt</b></td><td>Phiên đã kết thúc, trạng thái <em>Đã duyệt</em></td><td>Hồ sơ mình từng duyệt ở một bước bất kỳ, hoặc mình là <code>created_by</code></td></tr>
+          <tr><td><b>Từ chối</b></td><td>Phiên đã kết thúc, trạng thái <em>Từ chối</em></td><td>Như trên. Lý do từ chối hiện ngay trên dòng, không phải mở chứng từ mới đọc được</td></tr>
+          <tr><td><b>Tất cả lịch sử</b></td><td>Mọi phiên đã kết thúc, không phân biệt kết quả</td><td>Như trên — là tất cả <em>của tôi</em>, không phải của công ty. Riêng Admin thấy toàn bộ, đúng dòng <em>Quyền truy cập</em> ở đầu trang này</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>Ba thẻ lịch sử là việc của dữ liệu, không phải của giao diện</b>
+      <p style="margin:0">Bản ghi danh sách phê duyệt hiện nay chỉ trả về <b>hàng chờ của chính người đăng nhập</b>: không có <code>created_by</code>, không có trạng thái kết thúc của phiên, và lịch sử duyệt chỉ tra được theo từng chứng từ một. Ba thẻ <em>Đã duyệt · Từ chối · Tất cả lịch sử</em> cùng cột <em>Người tạo</em> vì vậy đòi mở rộng dữ liệu trả về trước, rồi mới dựng được thẻ. Ghi ra đây để phần việc này không bị ước lượng như một việc front-end nửa ngày — xem <a href="2026-09-22/YC-12.html">YC-12</a>.</p>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
@@ -392,10 +416,16 @@
       <li><b>Từ chối là điểm dừng.</b> Từ chối đóng phiên duyệt và đóng chứng từ, bắt buộc kèm lý do.<span class="then">Muốn trình lại phải lập chứng từ mới; chứng từ mới tự trích dẫn chứng từ bị từ chối để giữ mạch truy vết.</span></li>
       <li><b>Đếm quá hạn theo giờ làm việc.</b> Thời hạn xử lý tính theo giờ hành chính, bỏ qua ngày nghỉ đã khai trong lịch công ty.<span class="then">Quá hạn thì nhắc lần 1 khi hết hạn, lần 2 sau nửa hạn nữa, rồi báo lên cấp trên của người duyệt.</span></li>
       <li><b>Chỉ thấy việc của mình.</b> Danh sách và số đếm trên tab đều lọc theo tên người đang đăng nhập.<span class="then">Riêng Admin thấy toàn bộ, nhưng vẫn phân biệt rõ “lệnh của tôi” và “toàn hệ thống” bằng hai bộ lọc tách nhau.</span></li>
-      <li><b>Mỗi dòng mở đầu bằng đường dẫn phân hệ.</b> Cột đầu của danh sách là chuỗi <i>Phân hệ › Màn hình › Mã chứng từ</i>, thay cho một cột “Loại” phẳng.<span class="then">Trung tâm phê duyệt gom chứng từ của mọi phòng ban vào một bảng, nên người duyệt cần biết ngay việc này thuộc phần nào của hệ thống trước khi mở nó. Tên dự án đi kèm trong cột Nội dung, không tách thành cột riêng.</span></li>
-      <li><b>Bấm mã chứng từ là sang màn hình xử lý.</b> Cấp cuối của đường dẫn là liên kết tới chính màn hình sở hữu chứng từ — <a href="ORD-03.html">ORD-03</a> cho đơn hàng, <a href="ACC-05.html">ACC-05</a> cho đề nghị thanh toán, <a href="PRJ-01.html">PRJ-01</a> cho bảng giá khoán…<span class="then">Quyết định duyệt cần nhìn đủ nội dung chứng từ, mà danh sách chỉ có một dòng tóm tắt. Chứng từ chưa có màn hình chi tiết riêng thì liên kết trỏ về danh sách chứa nó — xem <a href="PL-C.html">Q-47</a>.</span></li>
+      <li><b>Loại yêu cầu và mã chứng từ là hai cột riêng.</b> Cột đầu của danh sách là nhãn loại chứng từ, cột thứ hai là mã chứng từ — thay cho một ô gộp <i>Phân hệ › Màn hình › Mã chứng từ</i>.<span class="then">Trung tâm phê duyệt gom chứng từ của mọi phòng ban vào một bảng, nên người duyệt cần biết ngay việc này thuộc loại nào trước khi mở nó — mà một ô gộp thì không lọc và không sắp xếp theo loại được. Tên dự án vẫn đi kèm trong cột Nội dung, không tách thành cột riêng. Theo <a href="2026-09-22/YC-12.html">YC-12</a>.</span></li>
+      <li><b>Bấm mã chứng từ là sang màn hình xử lý.</b> Cột <em>Mã chứng từ</em> là liên kết tới chính màn hình sở hữu chứng từ — <a href="ORD-03.html">ORD-03</a> cho đơn hàng, <a href="ACC-05.html">ACC-05</a> cho đề nghị thanh toán, <a href="PRJ-01.html">PRJ-01</a> cho bảng giá khoán…<span class="then">Quyết định duyệt cần nhìn đủ nội dung chứng từ, mà danh sách chỉ có một dòng tóm tắt. Chứng từ chưa có màn hình chi tiết riêng thì liên kết trỏ về danh sách chứa nó — xem <a href="PL-C.html">Q-47</a>.</span></li>
+      <li><b>Bốn thẻ đọc chung một nguồn.</b> Chờ duyệt · Đã duyệt · Từ chối · Tất cả lịch sử là bốn điều kiện lọc trên cùng một danh sách phiên duyệt, không phải bốn truy vấn dựng riêng.<span class="then">Số đếm trên thẻ <em>Chờ duyệt</em> đã phải khớp với chuông thông báo <a href="PF-04.html">PF-04</a>; dựng mỗi thẻ một nguồn là thêm ba chỗ để bốn con số trôi khỏi nhau.</span></li>
+      <li><b>Phạm vi nhìn thấy không nới ra theo thẻ.</b> Ba thẻ lịch sử chỉ hiện hồ sơ người xem có dính líu: từng duyệt một bước, hoặc là người tạo.<span class="then">“Tất cả lịch sử” là tất cả <em>của tôi</em>, không phải của công ty. <a href="PL-B.html">PL-B</a> đặt quyền truy cập của trung tâm phê duyệt là “chỉ chứng từ có tên mình, Admin xem toàn bộ” — thêm thẻ không được lặng lẽ mở rộng quyền đó.</span></li>
+      <li><b>Người tạo là người trình, ghi một lần.</b> <code>created_by</code> là người bấm <em>Trình duyệt</em> lúc sinh phiên; chứng từ bị trả về rồi trình lại vẫn giữ nguyên người tạo của phiên.<span class="then">Lối “Yêu cầu bổ sung” trả chứng từ về mà giữ nguyên số hiệu và toàn bộ lịch sử. Ghi đè người tạo theo lần trình cuối sẽ làm mất dấu người khởi xướng — đúng thứ mà cột này sinh ra để trả lời.</span></li>
+      <li><b>Loại yêu cầu là nhãn của danh mục, không phải chuỗi tự do.</b> Mọi phiên cùng một <code>doc_type</code> hiện đúng một nhãn, lấy từ danh mục loại chứng từ.<span class="then">Cột này dùng để lọc. Nhãn gõ tay ở từng nơi sẽ sinh ra “Đơn bán hàng”, “Đơn BH” và “Don ban hang” cùng nằm trong một bộ lọc.</span></li>
       <li><b>Hành động hậu duyệt chạy trong cùng giao dịch.</b> Duyệt bước cuối sẽ kích hoạt các hành động hậu duyệt của chứng từ.<span class="then">Nếu một hành động thất bại thì toàn bộ việc duyệt được hoàn tác và người duyệt nhận thông báo lỗi cụ thể — không để chứng từ ở trạng thái nửa vời.</span></li>
       <li><b>Ký kèm mã băm.</b> Mỗi lần duyệt sinh một dấu ký gắn mã băm nội dung chứng từ tại thời điểm ký.<span class="then">Chứng từ bị sửa sau đó thì dấu ký hiển thị cảnh báo “nội dung đã thay đổi sau khi ký”.</span></li>
+    
+      <li><b>Bộ lọc khoảng thời gian đổi mốc theo thẻ.</b> Thẻ <em>Chờ duyệt</em> lọc theo <b>ngày trình</b>; ba thẻ lịch sử lọc theo <b>ngày kết thúc phiên</b> (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Hai mốc vì hai câu hỏi khác nhau: “hồ sơ nào đang chờ tôi lâu rồi” và “tháng trước tôi đã duyệt những gì”. Dùng chung một mốc cho cả bốn thẻ thì một trong hai câu hỏi không còn trả lời được.</span><span class="then">Quy ước chung của bộ điều khiển viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
 
     <h4>Bảng hạn mức cần chốt</h4>
@@ -447,16 +477,23 @@
           <tr><td>UAT-PF03-5</td><td>Đề nghị thanh toán 1,4 tỷ, KT trưởng hạn mức 1 tỷ</td><td>KT trưởng bấm Duyệt</td><td>Ghi nhận duyệt cấp 1 và tự đẩy lên Tổng GĐ, kèm thông điệp giải thích</td></tr>
           <tr><td>UAT-PF03-6</td><td>Đề xuất trình lúc 16:00 thứ Sáu, hạn 24 giờ, thứ Bảy–CN nghỉ</td><td>Chờ tới 10:00 thứ Hai</td><td>Chưa tính quá hạn; mốc quá hạn rơi vào 16:00 thứ Hai</td></tr>
           <tr><td>UAT-PF03-7</td><td>Chứng từ đã ký ở cấp 1</td><td>Sửa nội dung bằng đường “Yêu cầu bổ sung” rồi xem lại dấu ký cũ</td><td>Dấu ký cấp 1 hiển thị cảnh báo nội dung đã thay đổi sau khi ký</td></tr>
+          <tr><td>UAT-PF03-8</td><td>Thẻ <em>Chờ duyệt</em> có ít nhất một dòng</td><td>Đọc một dòng bất kỳ</td><td>Đủ sáu cột; <em>Loại yêu cầu</em> và <em>Mã chứng từ</em> nằm ở hai ô riêng; cột <em>Người tạo</em> hiện tên người trình</td></tr>
+          <tr><td>UAT-PF03-9</td><td><code>SO-2026-041</code> do Lê Minh Tú trình, bị “Yêu cầu bổ sung”, Trần Quốc Bảo sửa và trình lại</td><td>Xem lại cột Người tạo của dòng đó</td><td>Vẫn là “Lê Minh Tú”; mã đơn và lịch sử hai lần trình giữ nguyên</td></tr>
+          <tr><td>UAT-PF03-10</td><td>Người dùng đã duyệt 1 hồ sơ và bị từ chối 1 hồ sơ trong tháng</td><td>Mở thẻ <em>Đã duyệt</em> rồi thẻ <em>Từ chối</em></td><td>Mỗi thẻ đúng một dòng; thẻ Từ chối hiện lý do ngay trên dòng</td></tr>
+          <tr><td>UAT-PF03-11</td><td>Hồ sơ của phòng khác mà người dùng chưa từng duyệt và không phải người tạo</td><td>Mở thẻ <em>Tất cả lịch sử</em></td><td>Không thấy hồ sơ đó — thẻ không nới phạm vi so với <a href="PL-B.html">PL-B</a></td></tr>
+          <tr><td>UAT-PF03-12</td><td>Tiếp UAT-PF03-11, đăng nhập bằng tài khoản Admin</td><td>Mở cùng thẻ <em>Tất cả lịch sử</em></td><td>Thấy hồ sơ đó</td></tr>
+          <tr><td>UAT-PF03-13</td><td>Người duyệt có 3 lệnh đang chờ</td><td>Mở lần lượt bốn thẻ rồi quay lại <em>Chờ duyệt</em></td><td>Số trên thẻ vẫn là 3 và khớp chuông thông báo <a href="PF-04.html">PF-04</a></td></tr>
+          <tr><td>UAT-PF03-14</td><td>Danh sách có đủ tám nhóm chứng từ</td><td>Bấm một giá trị ở cột <em>Loại yêu cầu</em></td><td>Danh sách lọc theo đúng loại đó; dải lọc theo nhóm vẫn hoạt động song song</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PF-02.html">PF-02 quyền duyệt &amp; hạn mức</a><a href="PF-04.html">PF-04 thông báo &amp; chữ ký</a><a href="ACC-01.html">ACC-01 đề xuất 1 cấp / 2 cấp</a><a href="PRJ-03.html">PRJ-03 luồng 5 bước</a><a href="MOB-01.html">MOB-01 duyệt trên điện thoại</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a></p>
+    <p class="links"><a href="PF-02.html">PF-02 quyền duyệt &amp; hạn mức</a><a href="PF-04.html">PF-04 thông báo &amp; chữ ký</a><a href="ACC-01.html">ACC-01 đề xuất 1 cấp / 2 cấp</a><a href="PRJ-03.html">PRJ-03 luồng 5 bước</a><a href="MOB-01.html">MOB-01 duyệt trên điện thoại</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a><a href="2026-09-22/YC-12.html">YC-12 trung tâm phê duyệt theo mẫu</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 3 / 47</span><span><code>PF-03.html</code></span>
+  <span>Đặc tả 3 / 48</span><span><code>PF-03.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

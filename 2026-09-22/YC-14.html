@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-14 Bộ lọc khoảng thời gian — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 22/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Đợt yêu cầu 22/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Tổng quan 4 yêu cầu</a>
+    <a href="TASKS.html"><i>TASKS</i>Danh sách công việc</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="YC-11.html"><i>YC-11</i>Khoản phạt của chủ đầu tư</a>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="YC-12.html"><i>YC-12</i>Trung tâm phê duyệt</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="YC-13.html"><i>YC-13</i>Hồ sơ Shopdrawing v2</a>
+    <div class="rail-grp">Toàn hệ thống</div>
+    <a class="on" href="YC-14.html"><i>YC-14</i>Bộ lọc khoảng thời gian</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Đợt yêu cầu 22/09/2026</a> / Toàn hệ thống / <b>YC-14</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-13.html">← YC-13</a><a href="index.html">Mục lục</a></div>
+</div>
+<section class="sheet solo" id="YC-14">
+  <header class="tb">
+    <div class="tb-id">YC-14</div>
+    <div class="tb-main">
+      <h3>Bộ lọc khoảng thời gian dùng chung</h3>
+      <p>Yêu cầu là một câu quét ngang cả hệ thống, nên trang này không tả một màn hình mà tả <b>một quy ước</b>: bộ lọc trông như thế nào, mỗi màn hình lọc theo mốc nào, và điều gì xảy ra khi chưa chọn khoảng. Phần khó không phải cái điều khiển — nó là việc chỉ đích danh <em>mốc thời gian</em> của từng màn hình, vì mỗi màn hình có một mốc nghiệp vụ riêng.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Quy ước chung — sửa rải trên nhiều trang</dd></div>
+        <div><dt>Trang tác động</dt><dd>Mọi trang có danh sách hoặc báo cáo — xem bảng bên dưới</dd></div>
+        <div><dt>Đi cùng</dt><dd><a href="YC-11.html">YC-11</a> · <a href="YC-12.html">YC-12</a> — hai màn hình mới cũng theo quy ước này</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>Sheet 22/09/2026 · dòng 21</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Đường truy cập</td><td colspan="2">Toàn hệ thống</td></tr>
+          <tr><td>Nguyên văn yêu cầu</td><td colspan="2">Tất cả các phân hệ nào có tính thực theo thời gian đều để nút lọc thời gian để lọc sản lượng, tiền, số hợp đồng đang thực hiện, … tại một khoảng thời gian</td></tr>
+          <tr><td>Đặc tả</td><td>Một số trang đã có bộ lọc kỳ riêng, mỗi trang một kiểu: <a href="../RPT-02.html">RPT-02</a> chọn quý, <a href="../PRJ-03.html">PRJ-03</a> chọn đợt, <a href="../ACC-09.html">ACC-09</a> chọn kỳ kế toán</td><td>Một bộ điều khiển chung, cùng hình dạng và cùng cách ghi vào địa chỉ trang; mỗi màn hình khai báo mốc lọc của mình</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Một bộ điều khiển, ba cách chọn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:22%">Cách chọn</th><th style="width:30%">Giá trị</th><th>Ghi chú</th></tr></thead>
+        <tbody>
+          <tr><td>Khoảng nhanh</td><td>Tháng này · Tháng trước · Quý này · 6 tháng · Năm nay · Năm trước</td><td>Đây là các khoảng người dùng chọn hằng ngày. <em>6 tháng</em> và <em>Năm</em> có mặt vì <a href="YC-11.html">YC-11</a> cần đúng hai kỳ đó cho báo cáo đánh giá hiệu quả</td></tr>
+          <tr><td>Khoảng tự nhập</td><td>Từ ngày … đến ngày …</td><td>Bỏ trống một đầu là mở về phía đó: chỉ có <em>đến ngày</em> nghĩa là “tất cả cho tới ngày đó”</td></tr>
+          <tr><td>Không chọn</td><td>Rỗng</td><td>Mặc định của mọi màn hình — xem quy tắc 2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Từ ngày</td><td class="k">period_from</td><td>Ngày</td><td class="c">—</td><td>Tính cả ngày này. Trên dây và trên địa chỉ trang tên là <code>from</code> — xem ghi chú dưới bảng.</td></tr>
+          <tr><td>Đến ngày</td><td class="k">period_to</td><td>Ngày</td><td class="c">—</td><td>Tính cả ngày này. Không nhỏ hơn <code>period_from</code>. Trên dây tên là <code>to</code>.</td></tr>
+          <tr><td>Mốc lọc</td><td class="k">period_field</td><td>Chọn 1</td><td class="c req">✱</td><td>Do từng màn hình khai báo, không phải người dùng chọn. Màn hình nào có nhiều hơn một mốc hợp lý thì mới hiện ô cho chọn — xem bảng dưới.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <b>Một khái niệm, một tên</b>
+      <p style="margin:0">Hai đầu khoảng đi trên dây và trên địa chỉ trang với tên <code>from</code> và <code>to</code>, không phải <code>periodFrom</code>/<code>periodTo</code>. Đây không phải chuyện thẩm mỹ: mười màn hình dựng trước đợt này đã dùng sẵn cặp tên đó, nên đặt tên thứ hai cho cùng một thứ là dựng lại đúng cái mớ mà trang này sinh ra để dẹp. Báo cáo nào chọn kỳ theo lịch thì thêm <code>periodScope</code> (<em>quarter · half · year · custom</em>) — tên mới duy nhất, vì kỳ lịch là thứ một khoảng ngày thuần không nói được. Với ba kỳ lịch, <code>from</code> đọc là <b>một ngày bất kỳ nằm trong kỳ</b> và <code>to</code> bị bỏ qua: máy chủ tự nắn hai đầu về biên của lịch, nên không ai gửi được một “quý” dài bốn tháng, và một kỳ đã công bố mở lại lúc nào cũng ra đúng bấy nhiêu tháng.</p>
+    </div>
+
+    <h4>Mốc lọc của từng màn hình</h4>
+    <p>Cột <b>Mốc lọc</b> là phần phải chốt: cùng một danh sách, lọc theo ngày lập hay ngày duyệt sẽ ra hai con số khác nhau, và người đọc báo cáo không có cách nào biết mình đang xem cái nào nếu đặc tả không nói.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:16%">Màn hình</th><th style="width:30%">Mốc lọc</th><th>Lọc cái gì</th></tr></thead>
+        <tbody>
+          <tr><td colspan="3"><b>Phòng Đấu thầu</b></td></tr>
+          <tr><td><a href="../BID-01.html">BID-01</a></td><td>Ngày nhận thư chào thầu</td><td>Gói thầu tiếp nhận trong kỳ</td></tr>
+          <tr><td><a href="../BID-03.html">BID-03</a></td><td>Ngày gửi báo giá</td><td>Báo giá đã gửi, giá trị chào</td></tr>
+          <tr><td><a href="../BID-05.html">BID-05</a></td><td>Ngày ký hợp đồng</td><td><b>Số hợp đồng đang thực hiện</b> và giá trị ký trong kỳ — đúng con số yêu cầu gốc nhắc tới</td></tr>
+          <tr><td><a href="../BID-06.html">BID-06</a></td><td>Ngày duyệt bảng áp giá</td><td>Doanh thu đơn đã áp giá</td></tr>
+          <tr><td><b>BID-07</b></td><td>Ngày biên bản <span class="k">issued_at</span></td><td>Khoản phạt chủ đầu tư phát sinh trong kỳ — không lấy ngày nhập, xem <a href="YC-11.html">YC-11</a></td></tr>
+          <tr><td colspan="3"><b>P. TQT — Shopdrawing</b></td></tr>
+          <tr><td><a href="../ORD-02.html">ORD-02</a></td><td>Ngày gửi chủ đầu tư <span class="k">sent_at</span></td><td>Số đợt trình đã gửi, số vòng gửi–trả, số ngày nằm phía chủ đầu tư</td></tr>
+          <tr><td><a href="../ORD-03.html">ORD-03</a></td><td>Ngày trình đơn</td><td>Đơn hàng lập trong kỳ, khối lượng đã yêu cầu</td></tr>
+          <tr><td><a href="../ORD-05.html">ORD-05</a></td><td>Ngày xuất của phiếu đã duyệt — <code>ord_issue_note.issued_at</code>. Hai vế tách nhau: <em>ngày xuất</em> là thứ khoảng bó, <em>đã duyệt</em> là thứ chọn phiếu nào được đếm. <b>Không</b> lấy ngày kế hoạch: ngày kế hoạch đổi khi ai đó sửa kế hoạch, nên một kỳ đã công bố sẽ tự đổi số về sau.</td><td><b>Sản lượng cấp hàng</b> trong kỳ</td></tr>
+          <tr><td><a href="../ORD-08.html">ORD-08</a> · <a href="../ORD-09.html">ORD-09</a></td><td>Ngày nghiệm thu của hồ sơ — <code>owner_accepted_at</code>, tức ngày chủ đầu tư chấp thuận. <b>Không</b> phải <code>internal_approved_at</code> (duyệt nội bộ, một sự kiện khác trong nhà mình) và không phải ngày lập hồ sơ.</td><td>Giá trị hồ sơ thanh toán trong kỳ</td></tr>
+          <tr><td><a href="../ORD-10.html">ORD-10</a></td><td>Ngày quyết toán — <b>chưa chốt cột nào</b>, xem <a href="../PL-C.html#Q-61">Q-61</a>: bảng hồ sơ không có cột nào mang tên đó, và ba cột có thể hiểu là nó cách nhau hàng tháng.</td><td>Hợp đồng quyết toán trong kỳ</td></tr>
+          <tr><td colspan="3"><b>Dự án — Thi công</b></td></tr>
+          <tr><td><a href="../PRJ-01.html">PRJ-01</a></td><td>Kỳ hiệu lực của bảng giá</td><td>Bảng giá khoán đang áp dụng tại một thời điểm</td></tr>
+          <tr><td><a href="../PRJ-02.html">PRJ-02</a></td><td>Ngày chốt sản lượng</td><td><b>Sản lượng thi công</b> trong kỳ</td></tr>
+          <tr><td><a href="../PRJ-03.html">PRJ-03</a></td><td>Ngày kết thúc đợt giao khoán</td><td>Giá trị giao khoán, khấu trừ, thực trả trong kỳ</td></tr>
+          <tr><td><a href="../PRJ-04.html">PRJ-04</a></td><td>Ngày phiếu — <b>chưa chốt</b> là ngày trên phiếu hay ngày ghi sổ, xem <a href="../PL-C.html#Q-63">Q-63</a>. Lọc theo ngày ghi sổ thì phiếu nháp biến mất khỏi mọi khoảng.</td><td>Xuất nhập kho dự án trong kỳ</td></tr>
+          <tr><td colspan="3"><b>Phòng Kế toán</b></td></tr>
+          <tr><td><a href="../ACC-03.html">ACC-03</a> · <a href="../ACC-04.html">ACC-04</a> · <a href="../ACC-07.html">ACC-07</a></td><td>Ngày chứng từ</td><td>Mua hàng, xuất bán, thu chi trong kỳ</td></tr>
+          <tr><td><a href="../ACC-05.html">ACC-05</a></td><td>Ngày đến hạn <b>và</b> ngày chứng từ</td><td>Công nợ — màn hình này hiện ô chọn mốc, vì “nợ phát sinh trong kỳ” và “nợ đến hạn trong kỳ” là hai câu hỏi khác nhau</td></tr>
+          <tr><td><a href="../ACC-08.html">ACC-08</a> · <a href="../ACC-09.html">ACC-09</a></td><td>Kỳ kế toán</td><td>Phân bổ, giá thành, lãi lỗ. Giữ kỳ kế toán chứ không đổi sang ngày tự do</td></tr>
+          <tr><td colspan="3"><b>Nền tảng &amp; Báo cáo</b></td></tr>
+          <tr><td><a href="../PF-03.html">PF-03</a></td><td>Ngày trình ở thẻ <em>Chờ duyệt</em>; ngày kết thúc phiên ở ba thẻ lịch sử</td><td>Hồ sơ chờ duyệt, đã duyệt, bị từ chối — xem <a href="YC-12.html">YC-12</a></td></tr>
+          <tr><td><a href="../RPT-01.html">RPT-01</a> → <a href="../RPT-05.html">RPT-05</a></td><td>Kỳ báo cáo của từng báo cáo. <a href="../RPT-02.html">RPT-02</a> đã dựng. Mốc của <a href="../RPT-05.html">RPT-05</a> <b>chưa được đặt tên</b> — xem <a href="../PL-C.html#Q-62">Q-62</a>; <a href="../RPT-01.html">RPT-01</a>, <a href="../RPT-03.html">RPT-03</a>, <a href="../RPT-04.html">RPT-04</a> xem <a href="../PL-C.html#Q-64">Q-64</a>.</td><td>Mọi báo cáo. <a href="../RPT-02.html">RPT-02</a> mở rộng từ <em>quý</em> sang <em>quý · 6 tháng · năm</em> theo <a href="YC-11.html">YC-11</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>Danh sách này chưa phải danh sách cuối</b>
+      <p style="margin:0">Bảng trên phủ các màn hình có con số cộng dồn theo thời gian. Những màn hình còn lại — danh mục nền, phân quyền, danh mục tổ đội, bảng tài khoản — không có “tính thực theo thời gian” nên <b>không</b> thêm bộ lọc, vì một bộ lọc không lọc gì chỉ làm người dùng nghi ngờ mình đang xem thiếu dữ liệu. Ranh giới này cần P. Đấu thầu và Ban lãnh đạo xác nhận bằng cách duyệt chính bảng trên; ghi ở <a href="../PL-C.html#Q-52">PL-C · Q-52</a>.</p>
+    </div>
+
+    <div class="note">
+      <b>Bốn chỗ lọc rồi mà lọc nhầm cột</b>
+      <p style="margin:0 0 8px">Đối chiếu bảng trên với bản dựng cho thấy bốn màn hình <em>đã</em> có bộ lọc ngày nhưng bó vào cột khác với mốc ghi ở đây. Đây không phải việc còn thiếu — nó trả về một con số hợp lý cho một câu hỏi không ai đặt, nên không ai nghi ngờ:</p>
+      <ul style="margin:0 0 8px">
+        <li><a href="../ORD-02.html">ORD-02</a> bó theo ngày <em>tạo</em> bản vẽ thay vì ngày gửi chủ đầu tư — trong khi chỉ số “số ngày nằm phía chủ đầu tư” trên cùng báo cáo lại tính từ ngày gửi, tức khoảng lọc và thứ nó lọc đang nói hai ngày khác nhau.</li>
+        <li><a href="../ORD-05.html">ORD-05</a> bó theo <b>ngày kế hoạch</b> — một ngày còn sửa được, nên kỳ đã công bố tự đổi số khi có người dời kế hoạch.</li>
+        <li><a href="../ORD-08.html">ORD-08</a>/<a href="../ORD-09.html">ORD-09</a> bó theo ngày <em>lập</em> hồ sơ thay vì ngày nghiệm thu.</li>
+        <li><a href="../ORD-10.html">ORD-10</a> bó theo <b>năm lập hồ sơ</b>, không phải theo khoảng: hồ sơ lập tháng 12 quyết toán tháng 2 đang bị tính vào năm trước.</li>
+      </ul>
+      <p style="margin:0">Ba chỗ đầu sửa được ngay vì đặc tả đã đặt tên mốc. Chỗ thứ tư chờ <a href="../PL-C.html#Q-61">Q-61</a>.</p>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Một màn hình, một mốc lọc, nói thành lời trên màn hình.</b> Nhãn bộ lọc ghi rõ mốc: “Lọc theo ngày ký hợp đồng”, không phải “Thời gian”.<span class="then">Cùng một danh sách hợp đồng, lọc theo ngày ký và lọc theo ngày quyết toán cho hai con số khác nhau. Người đọc báo cáo phải đọc được mình đang xem cái nào mà không cần mở đặc tả.</span></li>
+      <li><b>Không chọn khoảng là xem tất cả.</b> Mặc định của mọi màn hình là rỗng, không phải “tháng này”.<span class="then">Mặc định vào một khoảng hẹp là cách chắc chắn để người dùng tưởng dữ liệu bị mất. Riêng các báo cáo đã có kỳ bắt buộc — <a href="../ACC-09.html">ACC-09</a>, <a href="../RPT-03.html">RPT-03</a> — thì giữ mặc định kỳ hiện hành như đang có, vì báo cáo không có kỳ thì vô nghĩa.</span></li>
+      <li><b>Bộ lọc áp lên cả dòng tổng.</b> Mọi số cộng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn.<span class="then">Đây chính là điều yêu cầu gốc đòi: “lọc sản lượng, tiền, số hợp đồng đang thực hiện”. Một bảng lọc rồi mà dòng tổng vẫn là tổng của tất cả thì còn tệ hơn không lọc.</span></li>
+      <li><b>Khoảng đang chọn nằm trong địa chỉ trang.</b> Sao chép địa chỉ gửi cho người khác thì họ mở ra thấy đúng khoảng đó.<span class="then">Con số trong báo cáo thường được gửi kèm câu hỏi. Không giữ khoảng trong địa chỉ thì mỗi lần trao đổi lại phải mô tả bằng lời cách chọn.</span></li>
+      <li><b>Hai đầu khoảng đều tính cả ngày biên.</b> Chọn 01/09 đến 30/09 là lấy trọn tháng 9.<span class="then">Quy ước ngầm khác nhau giữa các màn hình là nguồn của những chênh lệch một ngày mà không ai truy ra được.</span></li>
+      <li><b>Bỏ trống một đầu là mở về phía đó.</b> Chỉ có <em>đến ngày</em> nghĩa là tất cả cho tới ngày đó.<span class="then">Câu hỏi “lũy kế tới cuối tháng 9” là câu hỏi thường gặp nhất khi đối chiếu công nợ; bắt nhập cả hai đầu buộc người dùng phải đoán một ngày bắt đầu đủ xa.</span></li>
+      <li><b>Xuất tệp mang theo khoảng đang chọn.</b> Tệp xuất ra chứa đúng phần đang nhìn thấy, và ghi khoảng lọc lên đầu tệp.<span class="then">Bảng Excel rời khỏi hệ thống là mất ngữ cảnh. Ghi khoảng lên đầu tệp thì tháng sau mở lại vẫn biết nó là số của kỳ nào.</span></li>
+      <li><b>Mốc lọc dùng ngày nghiệp vụ, không dùng ngày nhập liệu.</b> Chứng từ tháng 6 nhập muộn tháng 8 vẫn thuộc kỳ tháng 6.<span class="then">Nếu lọc theo ngày nhập thì mọi kỳ đã công bố sẽ tự đổi số mỗi lần có người nhập chậm — xem cùng quy tắc ở <a href="YC-11.html">YC-11</a>.</span></li>
+      <li><b>Lọc theo ngày đến hạn thì khoản chưa có hạn không thuộc kỳ nào.</b> Công nợ của đối tác <em>không có điều khoản thanh toán</em> thì không suy ra được ngày đến hạn, nên khi <a href="../ACC-05.html">ACC-05</a> lọc theo mốc <em>ngày đến hạn</em>, những khoản đó không nằm trong khoảng nào cả.<span class="then">Màn hình phải nói ra điều này ngay khi người dùng chọn mốc đó, chứ không để dòng lặng lẽ biến mất — lọc theo <em>ngày chứng từ</em> thì chúng vẫn ở đó đủ cả. Ngày đến hạn được suy từ ngày chứng từ cộng điều khoản, không phải một cột lưu sẵn, nên “chưa có hạn” là một trạng thái thật chứ không phải dữ liệu thiếu.</span></li>
+    </ol>
+
+    <div class="note">
+      <b>Ngày đầu khoảng là chỗ dễ rụng nhất</b>
+      <p style="margin:0 0 8px">Cơ sở dữ liệu chạy theo giờ Việt Nam, còn hai đầu khoảng người dùng nhập là ngày trần. So thẳng một cột <em>ngày</em> với một mốc <em>thời điểm</em> thì máy chủ quy cột về giờ Việt Nam trước, nên <code>ngày ≥ 01/09</code> được hiểu thành <code>31/08 17:00 GMT ≥ 01/09 00:00 GMT</code> — sai, và <b>toàn bộ chứng từ ngày 01/09 biến mất</b> mà không có gì trên màn hình nói ra. Chọn trọn tháng 9 thì ra số của 30 ngày thay vì 30 ngày, nhưng thiếu đúng ngày đầu.</p>
+      <p style="margin:0">Đây không phải chuyện lý thuyết: <a href="../BID-07.html">BID-07</a> — chính màn hình mà các màn hình khác chép quy ước — và phần dòng của sổ quỹ <a href="../ACC-07.html">ACC-07</a> đều đã dựng nhầm kiểu này. Ở <a href="../ACC-07.html">ACC-07</a> hậu quả rõ nhất: phần dòng rụng ngày đầu còn phần số dư đầu kỳ ngay bên cạnh thì không, nên <b>một sổ quỹ tự mâu thuẫn với chính nó</b>. Cả hai đã vá 23/09/2026, và có test ghim để không tái phát. Bất cứ màn hình nào thêm bộ lọc sau này đều phải dùng lại đúng một chỗ so ngày dùng chung, không tự viết lại.</p>
+    </div>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">Tình huống</th><th style="width:28%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Ngày đến trước ngày từ</td><td><code>period_to &lt; period_from</code></td><td>“Ngày kết thúc không nằm trước ngày bắt đầu.”</td></tr>
+          <tr><td>Khoảng không có dữ liệu</td><td>Danh sách rỗng sau khi lọc</td><td>“Không có dữ liệu trong khoảng {từ} – {đến}. Xóa bộ lọc để xem tất cả.”</td></tr>
+          <tr><td>Khoảng quá rộng ở báo cáo nặng</td><td>Khoảng vượt 24 tháng trên các báo cáo tổng hợp</td><td>“Khoảng {n} tháng sẽ mất thời gian tổng hợp. Tiếp tục hoặc thu hẹp lại?” <em>(cảnh báo, cho đi tiếp)</em></td></tr>
+          <tr><td>Kỳ kế toán chưa mở</td><td>Khoảng chạm vào kỳ chưa khóa sổ ở <a href="../ACC-09.html">ACC-09</a></td><td>“Khoảng đã chọn gồm kỳ {kỳ} chưa khóa sổ — số liệu còn thay đổi.” <em>(cảnh báo)</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>Mọi màn hình trong bảng trên có cùng một bộ điều khiển thời gian, đặt ở cùng vị trí, cùng cách dùng.</li>
+      <li>Nhãn bộ lọc nói rõ mốc lọc của màn hình đó.</li>
+      <li>Danh sách, dòng tổng, số đếm và biểu đồ đều đọc theo khoảng đang chọn.</li>
+      <li>Khoảng nhanh có đủ <em>6 tháng</em> và <em>Năm</em> để báo cáo đánh giá hiệu quả dùng được ngay.</li>
+      <li>Khoảng đang chọn nằm trong địa chỉ trang, gửi đi mở lại vẫn đúng.</li>
+      <li>Tệp xuất ra chứa đúng phần đang nhìn thấy và ghi khoảng lọc lên đầu.</li>
+      <li>Các màn hình danh mục không có bộ lọc thời gian — không thêm cho đủ bộ.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC14-1</td><td>Có hợp đồng ký tháng 8 và tháng 9</td><td>Mở <a href="../BID-05.html">BID-05</a>, chọn <em>Tháng này</em> (tháng 9)</td><td>Chỉ còn hợp đồng ký tháng 9; dòng tổng giá trị ký đổi theo</td></tr>
+          <tr><td>UAT-YC14-2</td><td>Tiếp UAT-1</td><td>Đọc nhãn bộ lọc</td><td>Ghi rõ “Lọc theo ngày ký hợp đồng”</td></tr>
+          <tr><td>UAT-YC14-3</td><td>Tiếp UAT-1</td><td>Sao chép địa chỉ trang, mở ở cửa sổ khác</td><td>Mở ra đúng khoảng tháng 9</td></tr>
+          <tr><td>UAT-YC14-4</td><td>Màn hình bất kỳ trong bảng</td><td>Mở lần đầu</td><td>Bộ lọc rỗng, danh sách hiện tất cả — trừ các báo cáo có kỳ bắt buộc</td></tr>
+          <tr><td>UAT-YC14-5</td><td>Sản lượng chốt các ngày 01/09 và 30/09</td><td>Mở <a href="../PRJ-02.html">PRJ-02</a>, chọn từ 01/09 đến 30/09</td><td>Cả hai bản ghi đều nằm trong kết quả</td></tr>
+          <tr><td>UAT-YC14-6</td><td>Công nợ có hóa đơn lập tháng 8, đến hạn tháng 10</td><td>Mở <a href="../ACC-05.html">ACC-05</a>, chọn tháng 10, mốc <em>ngày đến hạn</em></td><td>Hóa đơn xuất hiện; đổi mốc sang <em>ngày chứng từ</em> thì biến mất</td></tr>
+          <tr><td>UAT-YC14-7</td><td>Chứng từ ngày 20/06 nhập vào hệ thống ngày 15/08</td><td>Lọc tháng 6</td><td>Chứng từ nằm trong kết quả</td></tr>
+          <tr><td>UAT-YC14-8</td><td>Đang lọc một khoảng có dữ liệu</td><td>Xuất tệp</td><td>Tệp chứa đúng số dòng đang nhìn thấy và ghi khoảng lọc ở đầu tệp</td></tr>
+          <tr><td>UAT-YC14-9</td><td>Màn hình <a href="../PRJ-05.html">PRJ-05</a> danh mục tổ đội</td><td>Mở màn hình</td><td>Không có bộ lọc thời gian</td></tr>
+          <tr><td>UAT-YC14-10</td><td>Báo cáo <a href="../RPT-02.html">RPT-02</a></td><td>Mở danh sách khoảng nhanh</td><td>Có đủ <em>Quý này · 6 tháng · Năm nay</em></td></tr>
+          <tr><td>UAT-YC14-11</td><td>Nhập từ 30/09 đến 01/09</td><td>Bấm áp dụng</td><td>Bị chặn kèm thông điệp về thứ tự hai ngày</td></tr>
+          <tr><td>UAT-YC14-12</td><td>Bỏ trống ô từ ngày, nhập đến ngày 30/09</td><td>Bấm áp dụng</td><td>Kết quả gồm tất cả cho tới hết 30/09</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../PF-03.html">PF-03 trung tâm phê duyệt</a><a href="../RPT-02.html">RPT-02 báo cáo quản trị dự án</a><a href="../ACC-05.html">ACC-05 công nợ &amp; thanh toán</a><a href="../ACC-09.html">ACC-09 giá thành &amp; lãi lỗ</a><a href="../PL-C.html#Q-52">PL-C · Q-52 phạm vi áp dụng</a><a href="YC-11.html">YC-11 khoản phạt của chủ đầu tư</a><a href="YC-12.html">YC-12 trung tâm phê duyệt</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Yêu cầu 14 / 14</span><span><code>2026-09-22/YC-14.html</code></span>
+  <span>ABSMS — Đợt yêu cầu 22/09/2026</span>
+  <span>Nguồn: <code>Google Sheet · tab Tóm tắt · dòng 21</code></span>
+</div>
+</main>
+</div>
+</body></html>

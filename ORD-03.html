@@ -26,6 +26,7 @@
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
     <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
+    <a href="BID-07.html"><i>BID-07</i>Biên bản phạt CĐT</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
@@ -519,6 +520,8 @@
       <li><b>Nhà máy phản hồi là một bước, không phải một ô ghi chú.</b> Đơn chỉ sang <a href="ORD-04.html">ORD-04</a> sau khi <code>factory_ack</code> ở trạng thái <em>Chấp thuận</em>.<span class="then">Khối “NHÀ MÁY PHẢN HỒI” nằm sẵn ở chân biểu mẫu giấy vì trên thực tế nhà máy vẫn trả lời. “Đề nghị điều chỉnh” đưa phiếu về trạng thái sửa và giữ nguyên phiên bản đã gửi để so sánh — khác với “yêu cầu bổ sung” của lãnh đạo, vốn xảy ra trước khi phiếu rời công ty.</span></li>
       <li><b>Duyệt là đóng băng cả hai bảng.</b> Phê duyệt phiếu khóa phiếu và khóa Danh sách cắt đá cùng lúc, sinh một phiên bản chung theo <a href="PF-05.html">PF-05</a>.<span class="then">Danh sách cắt đá là bản mà nhà máy cắt theo; sửa sau khi duyệt mà không sinh phiên bản mới sẽ khiến bản đang cắt và bản đang xem là hai thứ khác nhau.</span></li>
       <li><b>Dòng cắt đá gắn về dòng đơn hàng.</b> Mỗi dòng của <a href="ORD-11.html">ORD-11</a> trỏ về đúng một dòng <code>lines[]</code> của phiếu này.<span class="then">Nhờ đường nối đó, hai phép đối chiếu cùng chạy được trên một bộ số: khối lượng đơn so với khối lượng đợt trình ở trang này, và khối lượng đã cấp so với từng viên ở <a href="ORD-05.html">ORD-05</a>. Nó cũng là cách <a href="ORD-04.html">ORD-04</a> biết viên nào đi theo nguồn cung ứng nào.</span></li>
+    
+      <li><b>Bộ lọc khoảng thời gian lọc theo ngày trình đơn.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Đơn hàng lập trong kỳ và khối lượng đã yêu cầu.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -591,7 +594,7 @@
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 15 / 47</span><span><code>ORD-03.html</code></span>
+  <span>Đặc tả 16 / 48</span><span><code>ORD-03.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

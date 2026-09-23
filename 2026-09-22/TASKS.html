@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danh sách công việc — Đợt yêu cầu 22/09/2026 — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 22/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Đợt yêu cầu 22/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Tổng quan 4 yêu cầu</a>
+    <a class="on" href="TASKS.html"><i>TASKS</i>Danh sách công việc</a>
+    <div class="rail-grp">Phòng Đấu thầu</div>
+    <a href="YC-11.html"><i>YC-11</i>Khoản phạt của chủ đầu tư</a>
+    <div class="rail-grp">Nền tảng</div>
+    <a href="YC-12.html"><i>YC-12</i>Trung tâm phê duyệt</a>
+    <div class="rail-grp">P. TQT — Shopdrawing</div>
+    <a href="YC-13.html"><i>YC-13</i>Hồ sơ Shopdrawing v2</a>
+    <div class="rail-grp">Toàn hệ thống</div>
+    <a href="YC-14.html"><i>YC-14</i>Bộ lọc khoảng thời gian</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Đợt yêu cầu 22/09/2026</a> / <b>Danh sách công việc</b></div><div class="sp"></div>
+  <div class="pnav"><a href="index.html">Mục lục</a><a href="YC-11.html">YC-11 →</a></div>
+</div>
+<section class="sheet solo" id="TASKS">
+  <header class="tb">
+    <div class="tb-id">TASKS</div>
+    <div class="tb-main">
+      <h3>Danh sách công việc — đợt yêu cầu 22/09/2026</h3>
+      <p>Phân rã bốn yêu cầu thành 28 công việc theo đúng định dạng và quy ước của <a href="../2026-09-15/TASKS.html">đợt 15/09</a>, chia hai epic: áp đặc tả và triển khai. Ba việc đầu của epic triển khai không phụ thuộc đặc tả và đi được ngay.</p>
+      <dl class="tb-meta">
+        <div><dt>Số công việc</dt><dd>2 epic · 28 task</dd></div>
+        <div><dt>Tổng điểm</dt><dd>70 (đặc tả) + 108 (triển khai)</dd></div>
+        <div><dt>Nguồn</dt><dd><a href="index.html">4 yêu cầu YC-11 … YC-14</a></dd></div>
+        <div><dt>Trạng thái</dt><dd>Chờ duyệt trước khi tạo issue</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Quy ước đọc</h4>
+    <p>Giữ nguyên quy ước của <a href="../2026-09-15/TASKS.html">đợt trước</a>: mỗi công việc có một khối trường Jira và một khối nội dung; <b>External ID</b> (<code>C-01</code>, <code>D-01</code>) là mã đối chứng giữa tài liệu này, tệp nhập Jira và board <code>orgs/AB-Stone/projects/5</code>. Nhãn đợt lần này là <code>batch-2026-09-22</code>.</p>
+
+    <h4>Definition of Done dùng chung</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:22%">Epic</th><th>Định nghĩa hoàn thành</th></tr></thead>
+        <tbody>
+          <tr><td>EPIC-C · Đặc tả</td><td>HTML viết tay theo <code>assets/spec.css</code>, tiếng Việt, không thêm CSS hay JS · Trang mới có mặt đủ ở mọi nơi bắt buộc: tệp riêng, rail của mọi trang có rail, <code>index.html</code>, <code>ABSMS-GD1-full.html</code>, dải <code>pnav</code> hai trang kề và số thứ tự ở <code>filefoot</code> của mọi trang · Không còn liên kết gãy · Mọi mục đã sửa có tham chiếu ngược về trang <code>YC-nn</code> tương ứng · Mở bằng trình duyệt: không tràn ngang, SVG hiển thị đúng, rail đồng nhất</td></tr>
+          <tr><td>EPIC-D · Triển khai</td><td>Migration goose chạy xuôi và ngược · <code>make test</code> và <code>make lint</code> xanh · Giao diện dùng lại component có sẵn, style bằng Tailwind, không hardcode màu · <code>bun run check</code> và <code>bun run typecheck</code> xanh · Thông điệp kiểm tra dữ liệu khớp nguyên văn bảng trong trang <code>YC-nn</code> · Kịch bản <code>UAT-YCnn-x</code> tương ứng chạy được</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Bảng tổng hợp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:72px">ID</th><th style="width:30%">Summary</th><th style="width:88px">Priority</th><th style="width:60px">SP</th><th>Depends on</th></tr></thead>
+        <tbody>
+          <tr><td colspan="5"><b>EPIC-C · Áp đợt yêu cầu 22/09/2026 vào đặc tả Giai đoạn 1</b> — 13 task · 70 điểm</td></tr>
+          <tr><td><a href="#C-01">C-01</a></td><td>Thêm trang BID-07 Biên bản phạt chủ đầu tư</td><td>Highest</td><td>13</td><td>—</td></tr>
+          <tr><td><a href="#C-02">C-02</a></td><td>Nối khoản phạt vào PRJ-03, ORD-10, RPT-05, ACC-07</td><td>High</td><td>5</td><td>C-01</td></tr>
+          <tr><td><a href="#C-03">C-03</a></td><td>Mở rộng khối Hiệu quả điều hành BCH ở RPT-02</td><td>High</td><td>5</td><td>C-01, C-06</td></tr>
+          <tr><td><a href="#C-04">C-04</a></td><td>Sửa mockup và tham số Trung tâm phê duyệt</td><td>Medium</td><td>3</td><td>—</td></tr>
+          <tr><td><a href="#C-05">C-05</a></td><td>Bảng theo dõi bảy cột và vòng phân công ở ORD-02</td><td>Highest</td><td>13</td><td>—</td></tr>
+          <tr><td><a href="#C-06">C-06</a></td><td>Quy ước bộ lọc khoảng thời gian</td><td>High</td><td>5</td><td>—</td></tr>
+          <tr><td><a href="#C-07">C-07</a></td><td>Đổi tiền tố mã hồ sơ Shopdrawing</td><td>Medium</td><td>5</td><td>C-05</td></tr>
+          <tr><td><a href="#C-08">C-08</a></td><td>Hai sự kiện thông báo mới ở PF-04</td><td>Low</td><td>2</td><td>C-05</td></tr>
+          <tr><td><a href="#C-09">C-09</a></td><td>Ghi Q-50, Q-51, Q-52 vào PL-C</td><td>Medium</td><td>2</td><td>—</td></tr>
+          <tr><td><a href="#C-10">C-10</a></td><td>Cập nhật PL-A và PL-B</td><td>Medium</td><td>3</td><td>C-01, C-05</td></tr>
+          <tr><td><a href="#C-11">C-11</a></td><td>Đồng bộ rail, mục lục và bản đầy đủ cho BID-07</td><td>High</td><td>8</td><td>C-01</td></tr>
+          <tr><td><a href="#C-12">C-12</a></td><td>Tệp kịch bản UAT cho BID-07</td><td>Low</td><td>3</td><td>C-01</td></tr>
+          <tr><td><a href="#C-13">C-13</a></td><td>Rà soát toàn vẹn đặc tả sau đợt merge</td><td>High</td><td>3</td><td>C-11</td></tr>
+          <tr><td colspan="5"><b>EPIC-D · Triển khai đợt yêu cầu 22/09/2026</b> — 15 task · 108 điểm</td></tr>
+          <tr><td><a href="#D-01">D-01</a></td><td>Sửa lỗi không cuộn được danh sách nhân viên khi gán nhân sự</td><td>High</td><td>2</td><td>—</td></tr>
+          <tr><td><a href="#D-02">D-02</a></td><td>Cân lại độ rộng cột quy cách và đầu việc trên bảng BOQ</td><td>Medium</td><td>2</td><td>—</td></tr>
+          <tr><td><a href="#D-03">D-03</a></td><td>Xác nhận phạm vi “bỏ bảng khối lượng bản vẽ” với P. TQT</td><td>Medium</td><td>2</td><td>—</td></tr>
+          <tr><td><a href="#D-04">D-04</a></td><td>abs-api — biên bản phạt và dòng phân bổ</td><td>Highest</td><td>13</td><td>C-01</td></tr>
+          <tr><td><a href="#D-05">D-05</a></td><td>abs-api — đẩy dòng phân bổ vào kỳ giao khoán</td><td>High</td><td>8</td><td>D-04</td></tr>
+          <tr><td><a href="#D-06">D-06</a></td><td>abs-ms — màn hình biên bản phạt</td><td>Highest</td><td>13</td><td>D-04</td></tr>
+          <tr><td><a href="#D-07">D-07</a></td><td>abs-ms — khoản phạt chờ khấu trừ và cột nguồn ở PRJ-03</td><td>High</td><td>5</td><td>D-05, D-06</td></tr>
+          <tr><td><a href="#D-08">D-08</a></td><td>abs-api — mở rộng danh sách phê duyệt</td><td>High</td><td>8</td><td>C-04</td></tr>
+          <tr><td><a href="#D-09">D-09</a></td><td>abs-ms — bốn thẻ và sáu cột của Trung tâm phê duyệt</td><td>High</td><td>8</td><td>D-08</td></tr>
+          <tr><td><a href="#D-10">D-10</a></td><td>abs-api — hai cột mới của bảng theo dõi shop và vòng phân công</td><td>High</td><td>8</td><td>C-05</td></tr>
+          <tr><td><a href="#D-11">D-11</a></td><td>abs-ms — bảng theo dõi bảy cột và vòng nộp – duyệt</td><td>High</td><td>13</td><td>D-10</td></tr>
+          <tr><td><a href="#D-12">D-12</a></td><td>Đổi tiền tố mã hồ sơ Shopdrawing trong dữ liệu và mã nguồn</td><td>Medium</td><td>5</td><td>C-07, D-10</td></tr>
+          <tr><td><a href="#D-13">D-13</a></td><td>Bộ lọc khoảng thời gian dùng chung</td><td>High</td><td>8</td><td>C-06</td></tr>
+          <tr><td><a href="#D-14">D-14</a></td><td>Áp bộ lọc lên các màn hình trong danh sách</td><td>Medium</td><td>8</td><td>D-13</td></tr>
+          <tr><td><a href="#D-15">D-15</a></td><td>Mở rộng kỳ báo cáo của khối Hiệu quả điều hành BCH</td><td>Medium</td><td>5</td><td>C-03, D-13</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>EPIC-C · Áp đợt yêu cầu 22/09/2026 vào đặc tả Giai đoạn 1</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Epic</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Bốn yêu cầu của đợt 22/09 đã được làm rõ thành <a href="YC-11.html">YC-11</a> … <a href="YC-14.html">YC-14</a>. Epic này áp chúng vào bộ đặc tả Giai đoạn 1: một trang mới, ba trang viết lại đáng kể và một loạt sửa rải. Ràng buộc quan trọng nhất là <b>thứ tự</b>: trang mới phải xong trước khi đồng bộ điều hướng, vì thêm một trang làm dịch số thứ tự ở chân mọi trang.</p>
+
+    <h4 id="C-01">C-01 · Thêm trang BID-07 Biên bản phạt chủ đầu tư</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>Highest</td></tr>
+          <tr><td>Story Points</td><td>13</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code> <code>module-bid</code> <code>navigation</code></td></tr>
+          <tr><td>Depends on</td><td>—</td></tr>
+          <tr><td>Blocks</td><td>C-02, C-03, C-10, C-11, C-12, D-04</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-11.html">YC-11</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Viết trang <code>BID-07.html</code> — màn hình ghi nhận biên bản phạt của chủ đầu tư và phân bổ khoản phạt về tổ đội. Mã <code>BID-07</code> là mã còn trống kế tiếp của nhóm Đấu thầu. Nội dung nghiệp vụ đã chốt ở <a href="YC-11.html">YC-11</a>; task này chuyển nó thành trang đặc tả đúng khuôn: dải <code>tb-meta</code>, lưu đồ, các bảng tham số, quy tắc nghiệp vụ, kiểm tra dữ liệu, kết quả mong đợi, kịch bản kiểm thử, liên kết.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Tệp <code>BID-07.html</code> theo đúng thứ tự mục của các trang mới nhất: <em>Mục tiêu → Lưu đồ → Tham số → Kết quả mong đợi → Mockup UI → Quy tắc nghiệp vụ → Kiểm tra dữ liệu &amp; thông điệp → Kịch bản kiểm thử → Liên kết</em>.</li>
+      <li>Hai bảng tham số: biên bản phạt (15 trường) và dòng phân bổ (6 trường), khớp từng trường với <a href="YC-11.html">YC-11</a>.</li>
+      <li>Danh mục bốn trạng thái <code>recorded · allocating · pending_approval · settled</code> dùng đúng lớp thẻ màu của <code>spec.css</code>.</li>
+      <li>Mockup UI thể hiện: danh sách biên bản, khối nhập, bảng phân bổ, ô hệ số kèm giá trị sau khi nhân, danh sách khoản phạt chờ khấu trừ.</li>
+      <li>Mọi kịch bản <code>UAT-YC11-x</code> của <a href="YC-11.html">YC-11</a> có kịch bản tương ứng trong mục <em>Kịch bản kiểm thử</em> của trang, đánh mã <code>UAT-BID07-x</code>.</li>
+      <li>Mục <em>Yêu cầu gốc</em> trong <code>tb-meta</code> trỏ về <a href="YC-11.html">YC-11</a> và ghi “Sheet 22/09/2026 · dòng 14”.</li>
+      <li>Chưa đụng rail, <code>index.html</code> hay bản đầy đủ — phần đó thuộc C-11.</li>
+    </ol>
+
+    <h4 id="C-02">C-02 · Nối khoản phạt vào PRJ-03, ORD-10, RPT-05, ACC-07</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>5</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code> <code>module-prj</code></td></tr>
+          <tr><td>Depends on</td><td>C-01</td></tr>
+          <tr><td>Blocks</td><td>D-05</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-11.html">YC-11</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Bốn trang đã nói về khoản phạt theo bốn góc khác nhau và không trang nào giữ bản ghi gốc. Task này nối chúng vào <b>BID-07</b> mà <b>không đẻ thêm bảng nào</b>.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li><a href="../PRJ-03.html">PRJ-03</a>: bảng <code>penalties[]</code> thêm cột <em>Nguồn</em> phân biệt phạt do Ban chỉ huy lập với phạt phân bổ từ biên bản chủ đầu tư; dòng phân bổ là chỉ đọc tại đây.</li>
+      <li>PRJ-03 bổ sung một quy tắc nghiệp vụ: sửa dòng phân bổ phải quay về BID-07, và kỳ giao khoán liên quan bị đánh dấu cần tính lại.</li>
+      <li><a href="../ORD-10.html">ORD-10</a>: <code>penalty_amount</code> chuyển sang chỉ đọc, mô tả là tổng các biên bản của hợp đồng, bấm vào mở danh sách.</li>
+      <li><a href="../RPT-05.html">RPT-05</a>: <code>penalty</code> tương tự, giữ nguyên vị trí cột.</li>
+      <li><a href="../ACC-07.html">ACC-07</a>: bổ sung một câu nói rõ nguồn hợp lệ của quỹ phạt nay có thể bắt nguồn từ biên bản của BID-07; <b>không đổi</b> quy tắc “quỹ phạt chỉ nhận nguồn từ khoản khấu trừ phạt”.</li>
+      <li>Cả bốn trang có liên kết trỏ tới <b>BID-07</b> và tới <a href="YC-11.html">YC-11</a>.</li>
+    </ol>
+
+    <h4 id="C-03">C-03 · Mở rộng khối Hiệu quả điều hành BCH ở RPT-02</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>5</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code> <code>module-rpt</code></td></tr>
+          <tr><td>Depends on</td><td>C-01, C-06</td></tr>
+          <tr><td>Blocks</td><td>D-15</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-11.html">YC-11</a> · <a href="YC-14.html">YC-14</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Khối <em>Hiệu quả điều hành BCH</em> do <a href="../2026-09-15/YC-02.html">YC-02</a> thêm vào <a href="../RPT-02.html">RPT-02</a> đang chạy theo <b>quý</b>. Yêu cầu mới đòi tổng kết khoản phạt không phân bổ theo kỳ <b>6 tháng hoặc 1 năm</b>, nên khối này phải nhận thêm một cột và một lựa chọn kỳ.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Thêm cột <em>Phạt CĐT không phân bổ ×hệ số</em> vào bảng định nghĩa cột của khối, đọc từ <code>bch_charged_amount</code> của <b>BID-07</b>.</li>
+      <li>Kỳ của khối chuyển từ cố định <em>quý</em> sang chọn được <em>quý · 6 tháng · năm</em>, theo bộ điều khiển chung của <a href="YC-14.html">YC-14</a>.</li>
+      <li>Biên bản xếp vào kỳ theo <code>issued_at</code>, không theo ngày nhập — ghi thành một quy tắc nghiệp vụ.</li>
+      <li>Danh mục báo cáo đầu trang có dòng mô tả cột mới; dải thẻ lọc có thêm mục tương ứng.</li>
+      <li>Mockup của khối cập nhật đủ số cột và đổi nhãn kỳ.</li>
+    </ol>
+
+    <h4 id="C-04">C-04 · Sửa mockup và tham số Trung tâm phê duyệt</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>Medium</td></tr>
+          <tr><td>Story Points</td><td>3</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code> <code>module-pf</code></td></tr>
+          <tr><td>Depends on</td><td>—</td></tr>
+          <tr><td>Blocks</td><td>D-08</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-12.html">YC-12</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> <a href="../PF-03.html">PF-03</a> đã mô tả đúng bốn thẻ và dải lọc theo nhóm. Chỉ hai chi tiết là mới. Task nhỏ về đặc tả nhưng <b>chặn một task nặng ở backend</b>, nên làm sớm.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Bảng <em>Tham số — phiên duyệt</em> thêm <code>created_by</code> và <code>doc_type_label</code> với quy tắc như <a href="YC-12.html">YC-12</a> mô tả.</li>
+      <li>Mockup danh sách tách cột <em>Phê duyệt</em> thành <em>Loại yêu cầu</em> + <em>Mã chứng từ</em>, thêm cột <em>Người tạo</em>; giữ <em>Nội dung · Giá trị · Bước</em>.</li>
+      <li>Bổ sung bảng mô tả phạm vi nhìn thấy của bốn thẻ — ba thẻ lịch sử không nới quyền so với <a href="../PL-B.html">PL-B</a>.</li>
+      <li>Thêm quy tắc: người tạo là người trình, không đổi khi chứng từ bị trả về rồi trình lại.</li>
+      <li>Mục <em>Kết quả mong đợi</em> và <em>Kịch bản kiểm thử</em> bổ sung phần cho ba thẻ mới.</li>
+    </ol>
+
+    <h4 id="C-05">C-05 · Bảng theo dõi bảy cột và vòng phân công ở ORD-02</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>Highest</td></tr>
+          <tr><td>Story Points</td><td>13</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code> <code>module-ord</code></td></tr>
+          <tr><td>Depends on</td><td>—</td></tr>
+          <tr><td>Blocks</td><td>C-07, C-08, C-10, D-10</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-13.html">YC-13</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Mở rộng bảng theo dõi tình trạng shop từ năm cột lên bảy và thêm vòng phân công — nộp — duyệt nội bộ của P. TQT vào <a href="../ORD-02.html">ORD-02</a>. Cấu trúc ba cấp của <a href="../2026-09-15/YC-08.html">YC-08</a> giữ nguyên.</p>
+    <p><b>Cạm bẫy.</b> Cụm “năm cột” được khẳng định ở <b>tám chỗ</b> trong ORD-02, hai chỗ trong <a href="../2026-09-15/YC-07.html">YC-07</a> và một chỗ trong <a href="../PL-A.html">PL-A</a>; header của mockup còn in thẳng năm tiêu đề cột. Sót một chỗ là đặc tả tự mâu thuẫn.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Bảng theo dõi có bảy cột; hai cột mới là <code>submitted_files[]</code> và <code>draft_status</code>, nằm trên chính bản ghi <code>shop_progress[]</code>.</li>
+      <li>Danh mục năm giá trị của <code>draft_status</code> có đủ nhãn, mã và thẻ màu.</li>
+      <li>Có một câu giải thích vì sao hai cột trạng thái không suy ra nhau — một cho vòng nội bộ, một cho vòng với chủ đầu tư.</li>
+      <li>Thêm lưu đồ vòng phân công nội bộ, tách khỏi lưu đồ vòng gửi–trả chủ đầu tư đã có.</li>
+      <li>Bảng <em>Tham số — cấp 3</em> thêm <code>plan_from</code> và <code>plan_to</code>.</li>
+      <li>Bảng <em>Tham số — cấp 1</em> bổ sung cách sinh tiêu đề hồ sơ và cột tổng hợp <code>design_coverage</code> dạng “{n}/{m} đầu việc”.</li>
+      <li>Thêm các quy tắc nghiệp vụ: phân công luôn phát thông báo; chỉ người được giao mới nộp được; trả lại phải có ý kiến và được đếm; nộp lại là phiên bản mới; chỉ <em>Đã duyệt nội bộ</em> mới mở được đợt trình; quá hạn thì nhắc chứ không chặn.</li>
+      <li>Không còn chỗ nào trong repo nói bảng theo dõi có năm cột.</li>
+      <li>Mockup cập nhật đủ bảy tiêu đề cột và có chú giải cho hai cột mới.</li>
+    </ol>
+
+    <h4 id="C-06">C-06 · Quy ước bộ lọc khoảng thời gian</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>5</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code></td></tr>
+          <tr><td>Depends on</td><td>—</td></tr>
+          <tr><td>Blocks</td><td>C-03, D-13</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-14.html">YC-14</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Ghi quy ước bộ lọc khoảng thời gian vào đặc tả gốc và bổ sung mốc lọc vào từng trang trong danh sách của <a href="YC-14.html">YC-14</a>. Phần khó là mốc lọc, không phải cái điều khiển.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Mỗi trang trong bảng của <a href="YC-14.html">YC-14</a> có một câu ghi rõ mốc lọc của mình, đặt ở mục <em>Quy tắc nghiệp vụ</em> hoặc cạnh mockup.</li>
+      <li><a href="../ACC-05.html">ACC-05</a> mô tả hai mốc và ô cho người dùng chọn giữa chúng.</li>
+      <li>Các màn hình danh mục nền được ghi rõ là <b>không</b> có bộ lọc thời gian.</li>
+      <li>Quy ước chung — hai đầu tính cả ngày biên, bỏ trống một đầu là mở, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — ghi một lần ở <a href="../PF-01.html">PF-01</a> và các trang khác trỏ về.</li>
+      <li>Ranh giới áp dụng được ghi thành câu hỏi <a href="../PL-C.html">Q-52</a> ở C-09.</li>
+    </ol>
+
+    <h4 id="C-07">C-07 · Đổi tiền tố mã hồ sơ Shopdrawing</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>Medium</td></tr>
+          <tr><td>Story Points</td><td>5</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code> <code>breaking-change</code></td></tr>
+          <tr><td>Depends on</td><td>C-05</td></tr>
+          <tr><td>Blocks</td><td>D-12</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-13.html">YC-13</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Đổi <code>SD-&lt;mã gói thầu&gt;</code> thành <code>SD.&lt;mã gói thầu&gt;</code> theo yêu cầu. Chuỗi <code>SD-</code> xuất hiện ở tám tệp nhưng <b>không phải chỗ nào cũng là mã hồ sơ</b>: <a href="../ORD-11.html">ORD-11</a> dùng <code>SD-03</code>, <code>SD-05</code> làm giá trị cột <em>Số BV</em> trong mockup, hoàn toàn không liên quan.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Sửa ở: <a href="../ORD-02.html">ORD-02</a>, <a href="../PF-01.html">PF-01</a> (bảng quy ước mã, quy tắc nghiệp vụ, hai kịch bản UAT), <a href="../ORD-03.html">ORD-03</a>, <a href="../ORD-09.html">ORD-09</a>, <a href="../2026-09-15/YC-08.html">YC-08</a>, <a href="../2026-09-15/TASKS.html">TASKS đợt 15/09</a> và bản sao trong <code>ABSMS-GD1-full.html</code>.</li>
+      <li><b>Không</b> đụng ba giá trị <code>SD-03</code>, <code>SD-04</code>, <code>SD-05</code> ở mockup của ORD-11.</li>
+      <li>Tên tệp ví dụ trong ORD-02 đổi theo cho khớp mã mới.</li>
+      <li>Thống nhất dạng mã đợt trình theo <a href="../PF-01.html">PF-01</a>; xóa dạng <code>HM03</code> đang dùng lệch ở <a href="../2026-09-15/YC-08.html">YC-08</a>.</li>
+      <li>Ghi rõ trong trang rằng cách đánh số đợt còn chờ <a href="../PL-C.html">Q-50</a>, và mã sẽ đổi lần nữa nếu Q-50 chọn phương án khác.</li>
+    </ol>
+
+    <h4 id="C-08">C-08 · Hai sự kiện thông báo mới ở PF-04</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>Low</td></tr>
+          <tr><td>Story Points</td><td>2</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code> <code>module-pf</code></td></tr>
+          <tr><td>Depends on</td><td>C-05</td></tr>
+          <tr><td>Blocks</td><td>D-10</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-13.html">YC-13</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> <a href="../PF-04.html">PF-04</a> hiện có tám sự kiện và không sự kiện nào cho shopdrawing. Vòng phân công cần đúng hai.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Thêm dòng <em>Được phân công hạng mục shop</em> — người nhận là cán bộ được giao, mẫu nội dung có tên hạng mục, dự án và hạn nộp.</li>
+      <li>Thêm dòng <em>Nộp bản vẽ chờ duyệt</em> — người nhận là trưởng phòng TQT, mẫu nội dung có người nộp và số lần nộp.</li>
+      <li>Cả hai dòng trỏ đặc tả về <a href="../ORD-02.html">ORD-02</a>.</li>
+      <li>Kiểm lại luật gộp burst sẵn có áp đúng cho trường hợp nộp nhiều tệp liên tiếp.</li>
+    </ol>
+
+    <h4 id="C-09">C-09 · Ghi Q-50, Q-51, Q-52 vào PL-C</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>Medium</td></tr>
+          <tr><td>Story Points</td><td>2</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code> <code>decision-needed</code></td></tr>
+          <tr><td>Depends on</td><td>—</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Đặc tả</td><td><a href="index.html">§3 của mục lục đợt</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Ba điểm không quyết được trong đợt làm rõ, cộng một điểm phải hỏi lại P. TQT. Viết theo khuôn các mục <code>Q-xx</code> đang có: bối cảnh, hai hoặc ba phương án, hệ quả của từng phương án, ai là người chốt.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li><b>Q-50</b> — cách đánh số đợt trình sau khi đổi tiền tố: sheet viết <code>SD.HN_0001.01</code> tức đánh số tuần tự theo hồ sơ, <a href="../PF-01.html">PF-01</a> quy định <code>NN</code> là mã hạng mục và <code>Đn</code> chạy riêng trong từng hạng mục. Nêu cả việc <a href="../2026-09-15/YC-08.html">YC-08</a> đang dùng dạng thứ ba.</li>
+      <li><b>Q-51</b> — hệ số phạt khi không phân bổ cho tổ đội: ai được đặt, theo từng biên bản hay theo cấu hình chung, và số sau khi nhân có vào sổ kế toán hay chỉ sống trong báo cáo đánh giá.</li>
+      <li><b>Q-52</b> — ranh giới “mọi phân hệ có tính theo thời gian”: chốt bằng cách duyệt chính bảng trong <a href="YC-14.html">YC-14</a>.</li>
+      <li>Ghi thêm mục cho <b>dòng 19</b> — “bỏ bảng KL bản vẽ”: khối cần bỏ không tồn tại ở cấp hồ sơ trong bản dựng, cần P. TQT chỉ đích danh. Liên kết tới D-03.</li>
+      <li>Bốn mục đánh số tiếp dãy hiện có, không chèn vào giữa; các trang <a href="YC-11.html">YC-11</a>, <a href="YC-13.html">YC-13</a>, <a href="YC-14.html">YC-14</a> có liên kết trỏ đúng mục.</li>
+    </ol>
+
+    <h4 id="C-10">C-10 · Cập nhật PL-A và PL-B</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>Medium</td></tr>
+          <tr><td>Story Points</td><td>3</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code></td></tr>
+          <tr><td>Depends on</td><td>C-01, C-05</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-11.html">YC-11</a> · <a href="YC-13.html">YC-13</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li><a href="../PL-A.html">PL-A</a>: thêm dòng <em>Biên bản phạt chủ đầu tư</em> với chuỗi bốn trạng thái và điểm khóa chỉnh sửa là lúc trình duyệt.</li>
+      <li>PL-A: dòng hồ sơ shopdrawing cập nhật số cột của bảng theo dõi và bổ sung chuỗi <code>draft_status</code>.</li>
+      <li><a href="../PL-B.html">PL-B</a> bảng thao tác: thêm <em>Ghi nhận biên bản phạt chủ đầu tư</em> (P. Đấu thầu ghi), <em>Phân bổ khoản phạt về tổ đội</em> (Ban chỉ huy đề xuất · Ban lãnh đạo chốt), <em>Phân công hạng mục shop</em> (TP TQT) và <em>Nộp bản vẽ chờ duyệt</em> (cán bộ được giao).</li>
+      <li>Mỗi dòng mới kết bằng <code>Theo YC-nn.</code> đúng quy ước của bảng.</li>
+      <li>Ma trận phân hệ cập nhật nếu nhóm Đấu thầu đổi quyền do màn hình mới.</li>
+    </ol>
+
+    <h4 id="C-11">C-11 · Đồng bộ rail, mục lục và bản đầy đủ cho BID-07</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>8</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code> <code>navigation</code></td></tr>
+          <tr><td>Depends on</td><td>C-01</td></tr>
+          <tr><td>Blocks</td><td>C-13</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-11.html">YC-11</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Quy ước của repo là một trang phải có mặt ở mọi nơi, nếu không nó vô hình. Đợt trước ghi “bốn nơi”; rà soát thực tế cho thấy <b>sáu</b>, và chỗ dễ sót nhất là số thứ tự ở chân trang.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Rail của <b>mọi tệp có rail</b> liệt kê <code>BID-07</code> ngay sau <code>BID-06</code>, cùng thứ tự, cùng nhóm. Trong <code>ABSMS-GD1-full.html</code> href là neo <code>#BID-07</code>, không phải tệp.</li>
+      <li>Dải <code>pnav</code> của <a href="../BID-06.html">BID-06</a> và <a href="../ORD-01.html">ORD-01</a> nối lại đúng, đi hết bộ đặc tả không đứt.</li>
+      <li><code>index.html</code>: thẻ mới trong nhóm BID kèm câu mô tả một dòng theo giọng các thẻ hiện có.</li>
+      <li><code>index.html</code>: số đếm nhóm BID tăng một; số tệp đặc tả ở chân trang cập nhật.</li>
+      <li><code>index.html</code>: bảng truy vết có dòng <code>22/09 · YC-11</code> trỏ tới BID-07.</li>
+      <li><code>ABSMS-GD1-full.html</code>: khối <code>&lt;section class="sheet" id="BID-07"&gt;</code> đặt đúng khe trong nhóm <code>grp-bid</code>, href đổi thành neo, bỏ khối <code>filefoot</code>.</li>
+      <li><b>Số thứ tự ở <code>filefoot</code> của mọi trang</b> đánh lại liên tục và mẫu số tăng một trên toàn bộ.</li>
+      <li>Tiện thể sửa giá trị đã cũ ở <code>index.html</code>: câu nói “bảy khối nội dung lặp lại giống nhau ở cả 43 đặc tả”.</li>
+    </ol>
+
+    <h4 id="C-12">C-12 · Tệp kịch bản UAT cho BID-07</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>Low</td></tr>
+          <tr><td>Story Points</td><td>3</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code> <code>module-bid</code></td></tr>
+          <tr><td>Depends on</td><td>C-01</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-11.html">YC-11</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Cả sáu màn hình BID hiện có đều có tệp UAT riêng trong <code>tests/</code>; BID-07 là màn hình BID duy nhất sẽ thiếu nếu bỏ qua. Các nhóm PF, ORD, RPT không có tệp test nên ba trang còn lại của đợt này không cần.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li><code>tests/BID-07.md</code> theo khuôn <code>tests/README.md</code>: hai nhóm <em>A · Luồng giao diện</em> và <em>B · Chức năng &amp; nghiệp vụ</em>, ID dạng <code>UAT-BID-07-n</code>, có cột <b>Nguồn</b> như các tệp BID khác.</li>
+      <li>Phủ đủ: nhập biên bản, thông báo theo mã hợp đồng, chặn trình khi thiếu tệp, phân bổ vượt giá trị, hệ số và lý do, duyệt, khấu trừ ở kỳ giao khoán, danh sách chờ khấu trừ.</li>
+      <li>Bảng chỉ mục trong <code>tests/README.md</code> có dòng cho tệp mới.</li>
+    </ol>
+
+    <h4 id="C-13">C-13 · Rà soát toàn vẹn đặc tả sau đợt merge</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-C</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>3</td></tr>
+          <tr><td>Components</td><td><code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>spec</code></td></tr>
+          <tr><td>Depends on</td><td>C-11</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Chốt chặn cuối của epic. Sau mười hai task sửa rải trên gần năm mươi tệp, cần một lần rà soát máy móc để bắt những thứ mắt người bỏ qua.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Không còn liên kết gãy: mọi <code>href</code> trỏ tới tệp <code>.html</code> trong repo đều có tệp tương ứng.</li>
+      <li>Rail đồng nhất: mọi trang có rail liệt kê đủ số mục, cùng thứ tự, cùng nhóm.</li>
+      <li><code>ABSMS-GD1-full.html</code> có đủ số khối nội dung và số neo, khớp danh sách tệp thật.</li>
+      <li>Chuỗi <code>pnav</code> đi hết bộ đặc tả không đứt.</li>
+      <li><code>filefoot</code> đánh số liên tục và mẫu số giống nhau trên mọi trang.</li>
+      <li>Không còn chỗ nào nói bảng theo dõi tình trạng shop có năm cột.</li>
+      <li>Không còn <code>SD-</code> sót lại ngoài ba giá trị ở mockup của <a href="../ORD-11.html">ORD-11</a>.</li>
+    </ol>
+
+    <h4>EPIC-D · Triển khai đợt yêu cầu 22/09/2026</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Epic</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Components</td><td><code>abs-api</code> <code>abs-ms</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Dựng bốn yêu cầu vào bản chạy được. Ba task đầu là sửa nhỏ ở giao diện, không phụ thuộc đặc tả và đi ngay; phần còn lại chờ epic đặc tả chốt xong nội dung.</p>
+
+    <h4 id="D-01">D-01 · Sửa lỗi không cuộn được danh sách nhân viên khi gán nhân sự</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Bug</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>2</td></tr>
+          <tr><td>Components</td><td><code>abs-ms</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-bid</code></td></tr>
+          <tr><td>Depends on</td><td>—</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Yêu cầu gốc</td><td>Sheet 22/09/2026 · dòng 16</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Đường đi: <code>Đấu thầu → Gói thầu → Gán nhân sự</code>. Màn hình có <b>hai danh sách</b> và phải mở thật để biết người dùng nói cái nào. Danh sách dòng phân công không có vùng cuộn riêng — cả hộp thoại cuộn cùng lúc, kể cả tiêu đề và chân hộp thoại. Ô chọn nhân viên thì cuộn được nhưng mang một class ẩn thanh cuộn <b>không được định nghĩa ở bất kỳ tệp CSS nào trong dự án</b>, nên người dùng không có dấu hiệu nào để biết là cuộn được; danh sách này lấy tới 100 bản ghi nên gần như luôn dài hơn khung.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Mở màn hình cùng người báo lỗi, xác định đúng danh sách nào bị kẹt trước khi sửa.</li>
+      <li>Danh sách được sửa có vùng cuộn riêng và <b>thanh cuộn nhìn thấy được</b>.</li>
+      <li>Tiêu đề và chân hộp thoại đứng yên khi cuộn nội dung.</li>
+      <li>Dùng lại <code>ScrollArea</code> theo đúng tiền lệ của hộp thoại gán tổ đội; <b>không sửa tệp trong <code>src/components/ui/</code></b> — customize tại chỗ dùng.</li>
+      <li>Kiểm với danh sách hơn 50 nhân viên trên cả màn hình rộng và màn hình hẹp.</li>
+    </ol>
+
+    <h4 id="D-02">D-02 · Cân lại độ rộng cột quy cách và đầu việc trên bảng BOQ</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Bug</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>Medium</td></tr>
+          <tr><td>Story Points</td><td>2</td></tr>
+          <tr><td>Components</td><td><code>abs-ms</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-bid</code></td></tr>
+          <tr><td>Depends on</td><td>—</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Yêu cầu gốc</td><td>Sheet 22/09/2026 · dòng 17</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Đường đi: <code>Đấu thầu → Gói thầu → Bảng đầu việc BOQ</code>. Lỗi nằm ở <b>bảng chỉ đọc</b>, không phải lưới sửa: cột đầu việc không có ràng buộc độ rộng nào nên nuốt hết phần còn lại, trong khi cột quy cách bị chốt ở một giá trị hẹp. Lưới sửa đã đúng sẵn — quy cách rộng hơn đầu việc — nên lấy chính cặp số đó làm chuẩn.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Bảng chỉ đọc: cột đầu việc có độ rộng có trần, cột quy cách rộng hơn hiện tại; hai cột khớp cặp số mà lưới sửa đang dùng.</li>
+      <li>Nội dung quy cách dài xuống dòng thay vì bị cắt.</li>
+      <li>Bảng vẫn cuộn ngang khi hẹp, không bị ép co mọi cột.</li>
+      <li>Sửa cùng cặp lệch ở bảng đề xuất giá để hai bảng đọc giống nhau.</li>
+      <li>Không đụng file định nghĩa cột dùng chung — độ rộng thuộc về nơi dựng bảng.</li>
+    </ol>
+
+    <h4 id="D-03">D-03 · Xác nhận phạm vi “bỏ bảng khối lượng bản vẽ” với P. TQT</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>Medium</td></tr>
+          <tr><td>Story Points</td><td>2</td></tr>
+          <tr><td>Components</td><td><code>abs-ms</code> <code>spec</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-ord</code> <code>decision-needed</code></td></tr>
+          <tr><td>Depends on</td><td>—</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Yêu cầu gốc</td><td>Sheet 22/09/2026 · dòng 19</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Yêu cầu ghi “<code>TQT-Shopdrawing → Shopdrawing → Khối lượng bản vẽ</code> · Đang có · Bỏ bảng KL bản vẽ”. Rà soát bản dựng cho thấy khối mang tên đó xuất hiện ở bốn chỗ và <b>cả bốn đều thuộc cấp đợt trình</b> — không có bảng nào ở cấp hồ sơ để bỏ. Mà bảng ở cấp đợt trình thì không bỏ được: <a href="../ORD-02.html">ORD-02</a> coi nó là nội dung trưởng phòng kiểm và chủ đầu tư xem xét, còn <a href="../ORD-03.html">ORD-03</a> đối chiếu đơn hàng theo từng dòng khối lượng bản vẽ.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Mở màn hình thật cùng P. TQT và ghi lại họ đang chỉ vào khối nào.</li>
+      <li>Kết luận ghi vào mục tương ứng ở <a href="../PL-C.html">PL-C</a> (xem C-09).</li>
+      <li>Nếu kết luận là bỏ thật: mở task riêng, kèm đánh giá ảnh hưởng tới ORD-02, ORD-03 và hai câu hỏi <code>Q-35</code>, <code>Q-36</code> đang treo.</li>
+      <li>Nếu kết luận là yêu cầu đã được cấu trúc ba cấp giải quyết: ghi rõ điều đó và đóng, <b>không xóa gì</b>.</li>
+    </ol>
+
+    <h4 id="D-04">D-04 · abs-api — biên bản phạt và dòng phân bổ</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>Highest</td></tr>
+          <tr><td>Story Points</td><td>13</td></tr>
+          <tr><td>Components</td><td><code>abs-api</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-bid</code> <code>migration</code></td></tr>
+          <tr><td>Depends on</td><td>C-01</td></tr>
+          <tr><td>Blocks</td><td>D-05, D-06</td></tr>
+          <tr><td>Đặc tả</td><td><b>BID-07</b> · <a href="YC-11.html">YC-11</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Dựng bản ghi biên bản phạt và bảng dòng phân bổ theo checklist bảy bước của <code>ADD_MODULE.md</code>: migration → entity → DTO → repository → service → controller → route, bottom-up, <code>go build ./...</code> xanh ở mỗi bước.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Migration goose tạo hai bảng: biên bản phạt và dòng phân bổ; chạy xuôi và ngược đều sạch.</li>
+      <li>Mã biên bản sinh theo <code>BBP-&lt;contract_no&gt;-NN</code>, <code>NN</code> chạy riêng trong từng hợp đồng, khóa sau khi tạo.</li>
+      <li>Ràng buộc duy nhất: số biên bản của chủ đầu tư là duy nhất trong phạm vi một hợp đồng.</li>
+      <li>Tổng phân bổ không vượt giá trị biên bản — chặn ở tầng service, có test.</li>
+      <li>Một tổ đội xuất hiện nhiều nhất một dòng trong cùng biên bản.</li>
+      <li>Hệ số mặc định 1,0, không nhỏ hơn 1,0; lớn hơn 1,0 thì bắt buộc có lý do.</li>
+      <li>Giá trị quy trách nhiệm BCH tính ở service, không lưu trùng.</li>
+      <li>Phát thông báo theo mã hợp đồng tới dự án, ban chỉ huy, P. TQT và kế toán khi biên bản được lưu.</li>
+      <li>Nối vào trung tâm phê duyệt: biên bản đi qua một phiên duyệt mang theo cả dòng phân bổ lẫn hệ số.</li>
+      <li>Giữ đúng ranh giới tầng: service không import <code>gin</code> và <code>gorm</code>; controller không import <code>gorm</code>.</li>
+      <li><code>make test</code> và <code>make lint</code> xanh.</li>
+    </ol>
+
+    <h4 id="D-05">D-05 · abs-api — đẩy dòng phân bổ vào kỳ giao khoán</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>8</td></tr>
+          <tr><td>Components</td><td><code>abs-api</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-prj</code></td></tr>
+          <tr><td>Depends on</td><td>D-04</td></tr>
+          <tr><td>Blocks</td><td>D-07</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-11.html">YC-11</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Biên bản được duyệt thì mỗi dòng phân bổ xuất hiện trong bảng khấu trừ của kỳ giao khoán kế tiếp của đúng cặp tổ đội + hợp đồng.</li>
+      <li>Dòng mang cột nguồn trỏ về biên bản và là chỉ đọc ở phía giao khoán.</li>
+      <li>Tổ đội chưa có kỳ giao khoán nào thì dòng nằm chờ, truy vấn được thành danh sách “chờ khấu trừ”.</li>
+      <li>Sửa dòng đã khấu trừ thì kỳ giao khoán liên quan bị đánh dấu cần tính lại; có test cho đường này.</li>
+      <li>Không tự tạo kỳ giao khoán mới chỉ để khấu trừ.</li>
+    </ol>
+
+    <h4 id="D-06">D-06 · abs-ms — màn hình biên bản phạt</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>Highest</td></tr>
+          <tr><td>Story Points</td><td>13</td></tr>
+          <tr><td>Components</td><td><code>abs-ms</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-bid</code></td></tr>
+          <tr><td>Depends on</td><td>D-04</td></tr>
+          <tr><td>Blocks</td><td>D-07</td></tr>
+          <tr><td>Đặc tả</td><td><b>BID-07</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Danh sách biên bản theo hợp đồng, có bộ lọc khoảng thời gian theo ngày biên bản.</li>
+      <li>Khối nhập: chọn hợp đồng từ danh sách, số biên bản của chủ đầu tư, ngày, lý do, diễn giải, giá trị, tải tệp PDF.</li>
+      <li>Bảng phân bổ: chọn tổ đội, giá trị, căn cứ; luôn hiện phần còn lại chưa phân bổ.</li>
+      <li>Ô hệ số kèm giá trị sau khi nhân hiện ngay cạnh và ô lý do bắt buộc khi hệ số lớn hơn 1,0.</li>
+      <li>Danh sách khoản phạt chờ khấu trừ.</li>
+      <li>Mọi thông điệp kiểm tra khớp nguyên văn bảng trong <a href="YC-11.html">YC-11</a>.</li>
+      <li>Dùng lại component sẵn có, style bằng Tailwind, không hardcode màu; <code>bun run check</code> và <code>bun run typecheck</code> xanh.</li>
+    </ol>
+
+    <h4 id="D-07">D-07 · abs-ms — khoản phạt chờ khấu trừ và cột nguồn ở PRJ-03</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>5</td></tr>
+          <tr><td>Components</td><td><code>abs-ms</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-prj</code></td></tr>
+          <tr><td>Depends on</td><td>D-05, D-06</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-11.html">YC-11</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Bảng khấu trừ của kỳ giao khoán có cột nguồn; dòng đến từ biên bản là chỉ đọc và mở được tệp PDF gốc.</li>
+      <li>Ô khoản phạt ở màn hình quyết toán và màn hình theo dõi tiến độ hợp đồng chuyển sang chỉ đọc, bấm vào mở danh sách biên bản.</li>
+      <li>Danh sách chờ khấu trừ hiện trên màn hình biên bản phạt, nhóm theo tổ đội.</li>
+    </ol>
+
+    <h4 id="D-08">D-08 · abs-api — mở rộng danh sách phê duyệt</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>8</td></tr>
+          <tr><td>Components</td><td><code>abs-api</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-pf</code> <code>migration</code></td></tr>
+          <tr><td>Depends on</td><td>C-04</td></tr>
+          <tr><td>Blocks</td><td>D-09</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-12.html">YC-12</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Đây là phần nặng của yêu cầu “sửa trung tâm phê duyệt”. Nguồn dữ liệu hiện tại theo định nghĩa chỉ trả hàng đang chờ chính người đăng nhập, và bản ghi trả về không có người tạo lẫn trạng thái — ba thẻ mới và cột <em>Người tạo</em> không dựng được nếu không mở rộng ở đây trước.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Bản ghi trả về có người tạo và nhãn loại yêu cầu.</li>
+      <li>Danh sách nhận tham số trạng thái: đang chờ · đã duyệt · từ chối · tất cả đã kết thúc.</li>
+      <li>Phạm vi nhìn thấy giữ đúng <a href="../PL-B.html">PL-B</a>: chỉ hồ sơ người gọi có dính líu, Admin thấy toàn bộ. Có test cho ranh giới này.</li>
+      <li>Mốc lọc theo thẻ: ngày trình với thẻ đang chờ, ngày kết thúc phiên với ba thẻ còn lại.</li>
+      <li>Người tạo ghi lúc sinh phiên và không đổi khi chứng từ bị trả về rồi trình lại.</li>
+      <li>Dữ liệu cũ không có người tạo thì trả rỗng, không chặn danh sách.</li>
+    </ol>
+
+    <h4 id="D-09">D-09 · abs-ms — bốn thẻ và sáu cột của Trung tâm phê duyệt</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>8</td></tr>
+          <tr><td>Components</td><td><code>abs-ms</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-pf</code></td></tr>
+          <tr><td>Depends on</td><td>D-08</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-12.html">YC-12</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Tiêu đề màn hình đổi thành <em>Trung tâm phê duyệt</em> kèm phụ đề “Quy trình duyệt đa cấp theo hạn mức”.</li>
+      <li>Bốn thẻ đọc chung một nguồn; thẻ <em>Chờ duyệt</em> có số đếm khớp chuông thông báo.</li>
+      <li>Ô đường dẫn hiện tại tách thành hai cột <em>Loại yêu cầu</em> và <em>Mã chứng từ</em>, dùng lại đúng ba mảnh mà registry của phân hệ đã tách sẵn — không dựng lại cách phân loại.</li>
+      <li>Thêm cột <em>Người tạo</em>.</li>
+      <li>Mã chứng từ vẫn là liên kết thật, mở được ở tab mới; cả dòng vẫn bấm được.</li>
+      <li>Bộ lọc khoảng thời gian dùng chung cho cả bốn thẻ.</li>
+      <li>Khóa dịch đặt trong cùng một namespace, <b>không dùng dấu chấm trong tên khóa</b>.</li>
+      <li>Thẻ rỗng hiện đúng thông điệp của <a href="YC-12.html">YC-12</a>.</li>
+    </ol>
+
+    <h4 id="D-10">D-10 · abs-api — hai cột mới của bảng theo dõi shop và vòng phân công</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>8</td></tr>
+          <tr><td>Components</td><td><code>abs-api</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-ord</code> <code>migration</code></td></tr>
+          <tr><td>Depends on</td><td>C-05, C-08</td></tr>
+          <tr><td>Blocks</td><td>D-11, D-12</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-13.html">YC-13</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Bản ghi theo dõi hạng mục có thêm tệp đã nộp và trạng thái bản vẽ nội bộ.</li>
+      <li>Ba hành động: phân công, nộp, duyệt / trả lại — mỗi hành động là một bước chuyển trạng thái hợp lệ, không cho sửa tay trạng thái.</li>
+      <li>Chỉ người được giao mới nộp được; chỉ trưởng phòng TQT mới duyệt hoặc trả lại.</li>
+      <li>Trả lại bắt buộc có ý kiến; bộ đếm số lần trả lại tăng theo hạng mục.</li>
+      <li>Nộp lại sinh phiên bản mới, bản cũ giữ nguyên.</li>
+      <li>Mở đợt trình bị chặn khi hạng mục chưa ở trạng thái đã duyệt nội bộ.</li>
+      <li>Đợt trình nhận thêm cặp ngày thực hiện; quá hạn thì phát nhắc, không chặn.</li>
+      <li>Hai sự kiện thông báo mới phát đúng người nhận.</li>
+    </ol>
+
+    <h4 id="D-11">D-11 · abs-ms — bảng theo dõi bảy cột và vòng nộp – duyệt</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>13</td></tr>
+          <tr><td>Components</td><td><code>abs-ms</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-ord</code></td></tr>
+          <tr><td>Depends on</td><td>D-10</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-13.html">YC-13</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Bảng theo dõi hiện đủ bảy cột; hai cột trạng thái đọc độc lập nhau.</li>
+      <li>Ô cán bộ phụ trách là hành động phân công, không phải ô sửa dữ liệu; phân công xong người nhận thấy thông báo.</li>
+      <li>Kỹ sư nộp tệp ngay trên dòng hạng mục; trưởng phòng mở xem, duyệt hoặc trả lại kèm ý kiến.</li>
+      <li>Lịch sử nộp và ý kiến tra lại được theo từng phiên bản.</li>
+      <li>Nút mở đợt trình bị khóa kèm lý do khi chưa duyệt nội bộ.</li>
+      <li>Khung mở đợt có thêm cặp ngày thực hiện.</li>
+      <li>Cột tổng hợp trên danh sách hồ sơ hiện “{n}/{m} đầu việc”.</li>
+      <li>Hạng mục quá hạn nộp có cờ trễ nhìn thấy được trên bảng.</li>
+    </ol>
+
+    <h4 id="D-12">D-12 · Đổi tiền tố mã hồ sơ Shopdrawing trong dữ liệu và mã nguồn</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>Medium</td></tr>
+          <tr><td>Story Points</td><td>5</td></tr>
+          <tr><td>Components</td><td><code>abs-api</code> <code>abs-ms</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-ord</code> <code>migration</code> <code>breaking-change</code></td></tr>
+          <tr><td>Depends on</td><td>C-07, D-10</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-13.html">YC-13</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Description.</b> Mã hồ sơ đã sinh trong dữ liệu thật nên đây là việc có migration, không chỉ đổi hằng số. Chỉ làm sau khi <a href="../PL-C.html">Q-50</a> đã chốt cách đánh số, nếu không sẽ phải đổi hai lần.</p>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Hàm sinh mã dùng tiền tố mới; mã đã khóa không tự đổi ngoài migration.</li>
+      <li>Migration đổi mã hồ sơ và mã đợt trình của dữ liệu hiện có, chạy ngược được.</li>
+      <li>Tiêu đề hồ sơ sinh sẵn theo dạng <em>Bản vẽ Shop_&lt;mã gói thầu&gt;</em>, vẫn sửa được.</li>
+      <li>Mọi chỗ hiển thị và tìm kiếm theo mã hoạt động với mã mới.</li>
+      <li>Q-50 chưa chốt thì task này ở trạng thái chờ, không làm nửa vời.</li>
+    </ol>
+
+    <h4 id="D-13">D-13 · Bộ lọc khoảng thời gian dùng chung</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>High</td></tr>
+          <tr><td>Story Points</td><td>8</td></tr>
+          <tr><td>Components</td><td><code>abs-ms</code> <code>abs-api</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code></td></tr>
+          <tr><td>Depends on</td><td>C-06</td></tr>
+          <tr><td>Blocks</td><td>D-14, D-15</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-14.html">YC-14</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Một component lọc thời gian dùng chung, có khoảng nhanh gồm cả <em>6 tháng</em> và <em>Năm</em>, và ô tự nhập hai đầu.</li>
+      <li>Dùng lại component chọn khoảng ngày đã có ở danh sách phê duyệt thay vì dựng cái thứ hai.</li>
+      <li>Khoảng đang chọn ghi vào địa chỉ trang và khôi phục lại khi mở bằng địa chỉ đó.</li>
+      <li>Hai đầu tính cả ngày biên; bỏ trống một đầu là mở về phía đó.</li>
+      <li>Phía API nhận khoảng và mốc lọc như tham số truy vấn thống nhất trên mọi danh sách.</li>
+      <li>Xuất tệp mang theo khoảng đang chọn và ghi khoảng lên đầu tệp.</li>
+    </ol>
+
+    <h4 id="D-14">D-14 · Áp bộ lọc lên các màn hình trong danh sách</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>Medium</td></tr>
+          <tr><td>Story Points</td><td>8</td></tr>
+          <tr><td>Components</td><td><code>abs-ms</code> <code>abs-api</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code></td></tr>
+          <tr><td>Depends on</td><td>D-13</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-14.html">YC-14</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Mỗi màn hình trong bảng của <a href="YC-14.html">YC-14</a> có bộ lọc, đặt cùng vị trí, lọc theo đúng mốc đã khai báo.</li>
+      <li>Nhãn bộ lọc nói rõ mốc lọc của màn hình đó.</li>
+      <li>Dòng tổng, số đếm và biểu đồ đọc theo khoảng đang chọn.</li>
+      <li>Màn hình công nợ có ô chọn giữa hai mốc.</li>
+      <li>Các màn hình danh mục <b>không</b> có bộ lọc.</li>
+      <li>Mặc định là rỗng, trừ các báo cáo vốn đã có kỳ bắt buộc.</li>
+    </ol>
+
+    <h4 id="D-15">D-15 · Mở rộng kỳ báo cáo của khối Hiệu quả điều hành BCH</h4>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td style="width:22%">Issue Type</td><td>Task</td></tr>
+          <tr><td>Epic Link</td><td>EPIC-D</td></tr>
+          <tr><td>Priority</td><td>Medium</td></tr>
+          <tr><td>Story Points</td><td>5</td></tr>
+          <tr><td>Components</td><td><code>abs-ms</code> <code>abs-api</code></td></tr>
+          <tr><td>Labels</td><td><code>batch-2026-09-22</code> <code>module-rpt</code></td></tr>
+          <tr><td>Depends on</td><td>C-03, D-13</td></tr>
+          <tr><td>Blocks</td><td>—</td></tr>
+          <tr><td>Đặc tả</td><td><a href="YC-11.html">YC-11</a> · <a href="YC-14.html">YC-14</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Acceptance Criteria.</b></p>
+    <ol class="br">
+      <li>Khối hiệu quả điều hành BCH chọn được kỳ quý, 6 tháng và năm.</li>
+      <li>Thêm cột phạt chủ đầu tư không phân bổ đã nhân hệ số.</li>
+      <li>Biên bản xếp vào kỳ theo ngày biên bản, không theo ngày nhập — có test cho trường hợp nhập chậm.</li>
+      <li>Xếp hạng Ban chỉ huy vẫn theo tỷ lệ hỗ trợ; cột mới không đổi thứ tự sắp xếp mặc định.</li>
+    </ol>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="index.html">Mục lục đợt yêu cầu 22/09/2026</a><a href="YC-11.html">YC-11</a><a href="YC-12.html">YC-12</a><a href="YC-13.html">YC-13</a><a href="YC-14.html">YC-14</a><a href="../2026-09-15/TASKS.html">Danh sách công việc đợt 15/09</a><a href="../index.html">Mục lục đặc tả GĐ1</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Danh sách công việc</span><span><code>2026-09-22/TASKS.html</code></span>
+  <span>ABSMS — Đợt yêu cầu 22/09/2026</span>
+  <span>Nguồn: <code>Google Sheet · tab Tóm tắt · dòng 14–21</code></span>
+</div>
+</main>
+</div>
+</body></html>

@@ -26,6 +26,7 @@
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
     <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
+    <a href="BID-07.html"><i>BID-07</i>Biên bản phạt CĐT</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
@@ -273,7 +274,7 @@
           <tr><td>Số đề nghị thanh toán</td><td class="k">requested_amount</td><td>Số tiền</td><td class="c">—</td><td><code>thành tiền TT kỳ này + đã tạm ứng + khác</code> — tính tự động.</td></tr>
           <tr><td>Số dư phải trả tổ đội</td><td class="k">retention</td><td>Số tiền</td><td class="c">—</td><td><code>thành tiền − thành tiền TT kỳ này</code>: phần giữ lại chờ quyết toán. Hiện cả số của kỳ và số lũy kế mọi đợt.</td></tr>
           <tr><td>Bảng công nhật</td><td class="k">timesheet[]</td><td>Bảng</td><td class="c">—</td><td>Bắt buộc với hình thức khoán công nhật: người, số công, đơn giá công, xác nhận của các bên.</td></tr>
-          <tr><td>Khoản phạt</td><td class="k">penalties[]</td><td>Bảng</td><td class="c">—</td><td>Lý do, giá trị, chứng từ kèm theo (biên bản vi phạm an toàn, chậm tiến độ, hư hỏng).</td></tr>
+          <tr><td>Khoản phạt</td><td class="k">penalties[]</td><td>Bảng</td><td class="c">—</td><td>Lý do, giá trị, chứng từ kèm theo (biên bản vi phạm an toàn, chậm tiến độ, hư hỏng), và một cột <b>Nguồn</b>: dòng do Ban chỉ huy tự lập, hay dòng phân bổ từ một biên bản phạt của chủ đầu tư ở <a href="BID-07.html">BID-07</a>. Dòng phân bổ là <b>chỉ đọc</b> tại đây — xem quy tắc bên dưới.</td></tr>
           <tr><td>Tiện ích đã cấp</td><td class="k">utilities[]</td><td>Bảng</td><td class="c">—</td><td>Điện, nước, chỗ ở, ăn ca — khấu trừ vào tiền khoán.</td></tr>
           <tr><td>VTTB đã cấp</td><td class="k">materials_issued[]</td><td>Bảng</td><td class="c">—</td><td>Vật tư, thiết bị đã xuất cho tổ đội; lấy từ phiếu xuất kho dự án (<a href="PRJ-04.html">PRJ-04</a>).</td></tr>
           <tr><td>Tạm ứng đã cấp</td><td class="k">advances[]</td><td>Bảng</td><td class="c">—</td><td>Số dư tạm ứng của tổ đội; khấu trừ trước khi thanh toán.</td></tr>
@@ -375,6 +376,7 @@
       <li><b>Số dư phải trả tổ đội.</b> Phần không trả trong kỳ được giữ lại và cộng dồn qua các đợt; màn hình hiện cả số của kỳ lẫn số lũy kế của từng tổ đội.<span class="then">Tiền giữ lại rồi cũng phải trả, nên phải nhìn thấy tổng đang nợ tổ đội chứ không chỉ từng lát cắt một đợt.</span></li>
       <li><b>Đơn giá lấy từ bảng giá đã duyệt.</b> Đầu việc không có trong bảng giá khoán hiệu lực thì không đưa vào hồ sơ được.<span class="then">Phải lập phụ lục bảng giá ở <a href="PRJ-01.html">PRJ-01</a> trước; hệ thống cung cấp liên kết thẳng.</span></li>
       <li><b>Bốn nhóm khấu trừ.</b> Phạt, tiện ích, vật tư thiết bị đã cấp, và tạm ứng đã cấp đều tự cộng vào bảng khấu trừ.<span class="then">Vật tư lấy từ phiếu xuất kho dự án cho tổ đó; tạm ứng lấy từ số dư tạm ứng ở công nợ.</span></li>
+      <li><b>Dòng phạt phân bổ từ biên bản chủ đầu tư là chỉ đọc ở đây.</b> Nó xuất hiện trong bảng khấu trừ của kỳ kế tiếp của đúng cặp <em>tổ đội + hợp đồng</em>, mang cột <em>Nguồn</em> trỏ về biên bản và mở được tệp gốc.<span class="then">Sửa số ở đây thì hệ thống lệch với văn bản của chủ đầu tư — mà đó mới là thứ tổ đội cầm ra đối chiếu. Muốn sửa phải quay về <a href="BID-07.html">BID-07</a>, mở lại biên bản kèm lý do; kỳ giao khoán liên quan được đánh dấu cần tính lại.</span><span class="then">Luật “khoản phạt cần biên bản kèm theo” vì vậy được thỏa sẵn cho nhóm dòng này: <a href="BID-07.html">BID-07</a> không cho trình phân bổ khi chưa tải tệp, nên tới lúc dòng chạm vào kỳ giao khoán thì chứng từ đã tồn tại. Dòng do Ban chỉ huy tự lập vẫn phải tự đính kèm như cũ.</span></li>
       <li><b>Hai cột của bảng ghi thẳng vào bảng khấu trừ.</b> “Đã tạm ứng” vào nhóm tạm ứng, “Khác” vào nhóm khấu trừ khác; chúng nhập số âm trên bảng và hiện là khoản trừ trong hồ sơ.<span class="then">Chặng 3 vẫn đọc một danh sách khấu trừ đủ nhóm, và không có đường nào trừ hai lần: cột nào bảng ghi thì bảng sửa, dòng nào nhập trong hồ sơ thì hồ sơ sửa. Khi bảng đã ghi số tạm ứng thu hồi của kỳ thì hệ thống không tự cộng thêm số dư tạm ứng nữa.</span></li>
       <li><b>Không trả âm.</b> Giá trị thực trả không âm; khấu trừ vượt phần thanh toán kỳ này thì phần dư chuyển sang kỳ sau.<span class="then">Khấu trừ tính trên số đợt thực trả chứ không trên toàn bộ giá trị đã làm — trừ vào phần đang giữ lại là thu của tổ đội một khoản chưa hề trả cho họ. Hệ thống hiện rõ số chuyển kỳ sau để tổ đội đối chiếu.</span></li>
       <li><b>Bảng công nhật cần xác nhận các bên.</b> Phần công nhật bắt buộc có bảng công nhật đính kèm với xác nhận của tổ đội, kỹ thuật và chỉ huy trưởng.<span class="then">Thiếu thì chặn ngay tại bước lập, không để tới chặng kế toán mới phát hiện.</span></li>
@@ -382,6 +384,8 @@
       <li><b>Trả về giữ mã.</b> Bất kỳ chặng nào trả về đều đưa hồ sơ về người lập, giữ nguyên mã và ghi rõ chặng nào trả, lý do gì.<span class="then">Trình lại sẽ đi từ chặng 1, vì số liệu đã thay đổi.</span></li>
       <li><b>Duyệt xong sinh đề nghị thanh toán.</b> Lãnh đạo duyệt thì tự tạo đề nghị thanh toán ở <a href="ACC-05.html">ACC-05</a> với đầy đủ dữ liệu.<span class="then">Kế toán chỉ kiểm và trình, không nhập lại từ đầu.</span></li>
       <li><b>Phụ thuộc danh mục Tổ đội.</b> Danh sách Tổ đội để chọn ở màn hình này lấy từ màn hình danh mục tổ đội — tổ đội phải được tạo ở đó, có đủ thông tin thanh toán (số tài khoản ngân hàng, ngân hàng) trước khi được gán một hồ sơ giao khoán tại đây.<span class="then">Giao khoán nhân công tính ra số tiền phải trả cho tổ đội, nên cần sẵn nơi nhận tiền đã có trên hồ sơ; danh mục tổ đội trống là lý do màn hình này hiện “0 kết quả” ở mọi nơi.</span></li>
+    
+      <li><b>Bộ lọc khoảng thời gian lọc theo ngày kết thúc đợt giao khoán.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Giá trị giao khoán, khấu trừ và thực trả trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -430,7 +434,7 @@
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 25 / 47</span><span><code>PRJ-03.html</code></span>
+  <span>Đặc tả 26 / 48</span><span><code>PRJ-03.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

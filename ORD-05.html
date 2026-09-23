@@ -26,6 +26,7 @@
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
     <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
+    <a href="BID-07.html"><i>BID-07</i>Biên bản phạt CĐT</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
@@ -359,6 +360,8 @@
       <li><b>Đợt trễ hơn ngày cần hàng thì cảnh báo ngay khi lập.</b> Đặt <code>plan_date</code> sau <code>required_date</code> của dòng không bị chặn nhưng phải hiện cảnh báo.<span class="then">Người lập kế hoạch biết ngay mình đang hứa muộn hơn cam kết, thay vì phát hiện lúc dự án gọi hỏi.</span></li>
       <li><b>Khối lượng đã cấp đối chiếu tới từng dòng Danh sách cắt đá.</b> Mỗi đợt cấp ghi số lượng theo <code>row_id</code> của <a href="ORD-11.html">ORD-11</a>, không chỉ theo dòng đơn hàng.<span class="then">Nhà máy cắt theo viên và giao theo viên; một dòng đơn hàng 1.100 m² thực ra là mấy chục quy cách khác nhau. Cộng gộp ở cấp dòng đơn thì “còn lại 440 m²” không nói được còn thiếu <em>viên nào</em>, và công trường không biết diện tường nào chưa ốp được.</span><span class="then">Tổng số lượng đã cấp của một dòng cắt đá không vượt được tổng số lượng của dòng đó; vượt thì phải sửa Danh sách cắt đá qua <a href="ORD-07.html">ORD-07</a>, không phải cấp thêm rồi giải trình sau.</span></li>
       <li><b>Biên bản giao hàng in theo ký hiệu layout.</b> Danh sách hàng của một đợt liệt kê ký hiệu layout và số bản vẽ của từng dòng cắt đá.<span class="then">Đó là mã khớp giữa bản vẽ và viên đá thật ngoài công trường (<a href="ORD-11.html">ORD-11</a>, cột 19). Người nhận đối chiếu được ngay tại chỗ thay vì ký nhận một con số mét vuông rồi phát hiện thiếu viên lúc ốp.</span></li>
+    
+      <li><b>Bộ lọc khoảng thời gian lọc theo ngày xuất của phiếu đã duyệt.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Sản lượng cấp hàng trong kỳ. Phiếu chưa duyệt chưa phải sản lượng, nên không vào con số này.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -404,7 +407,7 @@
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 17 / 47</span><span><code>ORD-05.html</code></span>
+  <span>Đặc tả 18 / 48</span><span><code>ORD-05.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

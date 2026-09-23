@@ -26,6 +26,7 @@
     <a href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
     <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
+    <a href="BID-07.html"><i>BID-07</i>Biên bản phạt CĐT</a>
     <div class="rail-grp">P. TQT — Shopdrawing</div>
     <a href="ORD-01.html"><i>ORD-01</i>Hồ sơ tạm ứng HĐ</a>
     <a href="ORD-02.html"><i>ORD-02</i>Bản vẽ Shopdrawing</a>
@@ -100,7 +101,7 @@
           <tr><td>4</td><td>Báo cáo sản lượng thi công</td><td>Sản lượng theo tuần và theo đợt, theo tổ đội, lũy kế so với BOQ hợp đồng</td><td class="k"><a href="PRJ-02.html">PRJ-02</a></td></tr>
           <tr><td>5</td><td>Báo cáo tiến độ dự án theo kế toán</td><td>% doanh thu ghi nhận và % chi phí đã tập hợp so với giá trị hợp đồng — góc nhìn tài chính của tiến độ</td><td class="k"><a href="ACC-09.html">ACC-09</a></td></tr>
           <tr><td>6</td><td>Báo cáo phân loại nhân công</td><td><b>Ba nhóm theo yêu cầu gốc: sản lượng, công nhật sản lượng, công nhật khác — theo từng dự án</b></td><td class="k"><a href="PRJ-03.html">PRJ-03</a></td></tr>
-          <tr><td>7</td><td>Hiệu quả điều hành BCH</td><td>Chi phí nhân công theo đơn giá chuẩn đặt cạnh chi phí thực tế, phần chênh tách thành giá trị hỗ trợ; xếp hạng các Ban chỉ huy theo tỷ lệ hỗ trợ (<a href="2026-09-15/YC-02.html">YC-02</a>)</td><td class="k"><a href="PF-06.html">PF-06</a>, <a href="PRJ-01.html">PRJ-01</a></td></tr>
+          <tr><td>7</td><td>Hiệu quả điều hành BCH</td><td>Chi phí nhân công theo đơn giá chuẩn đặt cạnh chi phí thực tế, phần chênh tách thành giá trị hỗ trợ; xếp hạng các Ban chỉ huy theo tỷ lệ hỗ trợ (<a href="2026-09-15/YC-02.html">YC-02</a>). Kèm cột <b>phạt chủ đầu tư không phân bổ được cho tổ đội, đã nhân hệ số quản lý</b>, lấy từ biên bản phạt ở <a href="BID-07.html">BID-07</a>; kỳ của khối chọn được quý · 6 tháng · năm (<a href="2026-09-22/YC-11.html">YC-11</a>)</td><td class="k"><a href="PF-06.html">PF-06</a>, <a href="PRJ-01.html">PRJ-01</a>, <a href="BID-07.html">BID-07</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -219,6 +220,8 @@
           <tr><td>Kế hoạch tiến độ</td><td class="k">plan_pct</td><td>Phần trăm</td><td class="c">—</td><td>Đường cong kế hoạch để so với thực tế; nhập khi khởi tạo dự án.</td></tr>
           <tr><td>Tuổi hồ sơ</td><td class="k">dossier_age</td><td>Hệ thống</td><td class="c">—</td><td>Số ngày kể từ khi hồ sơ vào trạng thái hiện tại.</td></tr>
           <tr><td>Tỷ lệ hỗ trợ</td><td class="k">support_ratio</td><td>Hệ thống</td><td class="c">—</td><td>Giá trị hỗ trợ chia chi phí nhân công theo đơn giá chuẩn. Là cột xếp hạng mặc định của khối hiệu quả điều hành BCH.</td></tr>
+          <tr><td>Phạt CĐT không phân bổ ×hệ số</td><td class="k">bch_charged_amount</td><td>Hệ thống</td><td class="c">—</td><td>Tổng <code>bch_charged_amount</code> của các biên bản phạt đã chốt ở <a href="BID-07.html">BID-07</a> thuộc kỳ báo cáo. Là cột 9 của khối hiệu quả điều hành BCH; không tham gia xếp hạng mặc định.</td></tr>
+          <tr><td>Kỳ của khối hiệu quả</td><td class="k">period_scope</td><td>Chọn 1</td><td class="c req">✱</td><td><code>quý</code> · <code>6 tháng</code> · <code>năm</code>, theo bộ điều khiển khoảng thời gian dùng chung ở <a href="2026-09-22/YC-14.html">YC-14</a>. Mặc định là quý đang chạy.</td></tr>
           <tr><td>Khối lượng ngoài bảng chuẩn</td><td class="k">qty_out_of_std</td><td>Hệ thống</td><td class="c">—</td><td>Phần khối lượng thuộc dòng giá khoán không tra được đơn giá chuẩn ở <a href="PRJ-01.html">PRJ-01</a>. Bị loại khỏi phép so sánh và hiển thị riêng.</td></tr>
         </tbody>
       </table>
@@ -226,6 +229,7 @@
 
     <h4>Khối Hiệu quả điều hành BCH</h4>
     <p>Mục đích gốc của khối này nói rõ: dựa vào một bảng đơn giá chuẩn để <b>loại trừ phần hỗ trợ</b> ra thì mới thấy dự án nào hoạt động hiệu quả và năng lực Ban chỉ huy tới đâu (<a href="2026-09-15/YC-02.html">YC-02</a>). Khối vì vậy đặt ba con số cạnh nhau cho mỗi dự án — chi phí theo chuẩn, chi phí thực tế, phần hỗ trợ — rồi xếp hạng theo tỷ lệ giữa chúng.</p>
+    <p>Đợt yêu cầu 22/09 nối thêm một chiều thứ hai vào chính khối này (<a href="2026-09-22/YC-11.html">YC-11</a>): phần khoản phạt của chủ đầu tư <b>không quy được cho tổ đội nào</b>, đã nhân hệ số quản lý, đọc từ biên bản phạt ở <a href="BID-07.html">BID-07</a>. Vì khoản đó chỉ đủ số để đọc sau nửa năm, kỳ của khối cũng mở từ cố định <em>quý</em> sang chọn được <em>quý · 6 tháng · năm</em> theo bộ điều khiển thời gian dùng chung ở <a href="2026-09-22/YC-14.html">YC-14</a>.</p>
     <div class="tw">
       <table>
         <thead><tr><th style="width:56px">Cột</th><th style="width:26%">Tiêu đề</th><th>Nguồn</th></tr></thead>
@@ -238,6 +242,7 @@
           <tr><td>6</td><td>Giá trị hỗ trợ</td><td><code>Σ (support_amount × khối lượng)</code> — bằng cột 5 trừ cột 4</td></tr>
           <tr><td>7</td><td>Tỷ lệ hỗ trợ</td><td>Cột 6 chia cột 4. <b>Đây là cột xếp hạng mặc định</b> của khối, xếp tăng dần — tỷ lệ càng thấp càng đứng trên</td></tr>
           <tr><td>8</td><td>Khối lượng ngoài bảng chuẩn</td><td>Phần khối lượng thuộc dòng không tra được đơn giá chuẩn. <b>Loại khỏi cột 4, 6 và 7</b>, hiển thị riêng ở cột này để người đọc biết phép so sánh phủ được bao nhiêu</td></tr>
+          <tr><td>9</td><td>Phạt CĐT không phân bổ ×hệ số</td><td>Tổng <code>bch_charged_amount</code> của các biên bản phạt đã chốt ở <a href="BID-07.html">BID-07</a> thuộc kỳ, tức <code>unallocated_amount × mgmt_factor</code>. <b>Đây không phải tiền ai nộp</b>: phần phân bổ được đã trừ thẳng vào tổ đội ở <a href="PRJ-03.html">PRJ-03</a>, còn cột này tồn tại để đo bao nhiêu phần phạt của một hợp đồng <em>không quy được cho tổ đội nào</em> — phần thuộc về điều hành chung. <b>Không tham gia xếp hạng mặc định</b> (<a href="2026-09-22/YC-11.html">YC-11</a>)</td></tr>
         </tbody>
       </table>
     </div>
@@ -246,14 +251,14 @@
       <p style="margin:0">Đầu việc không có trong bảng đơn giá chuẩn vẫn khoán được ở <a href="PRJ-01.html">PRJ-01</a>, nhưng khối lượng của nó <b>không vào</b> cột 4, 6 và 7 — không có mốc chuẩn thì không có phần chênh để gọi là hỗ trợ. Cột 8 vì vậy không phải một con số phụ: hai dự án cùng tỷ lệ hỗ trợ 3% nhưng một bên phủ 98% khối lượng còn bên kia chỉ phủ 60% là hai kết luận khác nhau. Danh sách đầu việc bị loại xuất được thành đề nghị bổ sung cho kỳ ban hành sau của <a href="PF-06.html">PF-06</a>.</p>
     </div>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">Báo cáo ›</span><b>Hiệu quả điều hành BCH</b><span class="sp"></span><span class="wf-btn">Quý 3/2026 <em>▾</em></span><span class="wf-btn">Xuất Excel</span></div>
+      <div class="wf-bar"><span class="wf-crumb">Báo cáo ›</span><b>Hiệu quả điều hành BCH</b><span class="sp"></span><span class="wf-btn">6 tháng đầu 2026 <em>▾</em></span><span class="wf-btn">Xuất Excel</span></div>
       <div class="wf-body">
         <div class="wf-sec">
-          <div class="wf-lg">Xếp hạng theo tỷ lệ hỗ trợ — tăng dần</div>
-          <table><thead><tr><th>Dự án · BCH</th><th>Vùng · kỳ ĐG chuẩn</th><th class="num">KL nghiệm thu</th><th class="num">CP theo ĐG chuẩn</th><th class="num">CP thực tế</th><th class="num">Giá trị hỗ trợ</th><th class="num">Tỷ lệ hỗ trợ</th><th class="num">KL ngoài chuẩn</th></tr></thead>
+          <div class="wf-lg">Xếp hạng theo tỷ lệ hỗ trợ — tăng dần · cột phạt không đổi thứ tự</div>
+          <table><thead><tr><th>Dự án · BCH</th><th>Vùng · kỳ ĐG chuẩn</th><th class="num">KL nghiệm thu</th><th class="num">CP theo ĐG chuẩn</th><th class="num">CP thực tế</th><th class="num">Giá trị hỗ trợ</th><th class="num">Tỷ lệ hỗ trợ</th><th class="num">KL ngoài chuẩn</th><th class="num">Phạt CĐT không phân bổ ×hệ số</th></tr></thead>
           <tbody>
-            <tr><td>DA-2026-014 · Phạm Văn An</td><td>Miền Nam · DGC-MN-2026-01</td><td class="num">9.240 m²</td><td class="num">3.511.200.000</td><td class="num">3.616.536.000</td><td class="num">105.336.000</td><td class="num">3,0%</td><td class="num">180 m²</td></tr>
-            <tr><td>DA-2026-011 · Ngô Đức Thịnh</td><td>Miền Trung · DGC-MT-2026-01</td><td class="num">5.100 m²</td><td class="num">1.938.000.000</td><td class="num">2.151.180.000</td><td class="num">213.180.000</td><td class="num">11,0%</td><td class="num">640 m²</td></tr>
+            <tr><td>DA-2026-014 · Phạm Văn An</td><td>Miền Nam · DGC-MN-2026-01</td><td class="num">9.240 m²</td><td class="num">3.511.200.000</td><td class="num">3.616.536.000</td><td class="num">105.336.000</td><td class="num">3,0%</td><td class="num">180 m²</td><td class="num">37.500.000</td></tr>
+            <tr><td>DA-2026-011 · Ngô Đức Thịnh</td><td>Miền Trung · DGC-MT-2026-01</td><td class="num">5.100 m²</td><td class="num">1.938.000.000</td><td class="num">2.151.180.000</td><td class="num">213.180.000</td><td class="num">11,0%</td><td class="num">640 m²</td><td class="num">12.000.000</td></tr>
           </tbody></table>
         </div>
       </div>
@@ -269,6 +274,9 @@
       <li>Mọi báo cáo lọc được theo dự án, vùng miền và kỳ; xuất Excel và PDF.</li>
       <li>Khối hiệu quả điều hành BCH xếp hạng được các Ban chỉ huy theo tỷ lệ hỗ trợ, mặc định tăng dần, trên cùng một mốc đơn giá chuẩn.</li>
       <li>Khối này nói rõ phép so sánh phủ được bao nhiêu phần khối lượng: phần ngoài bảng chuẩn tách ra cột riêng và không lẫn vào ba cột chi phí.</li>
+      <li>Khối hiệu quả điều hành BCH chọn được kỳ <b>quý, 6 tháng hoặc năm</b> trên cùng bộ điều khiển thời gian dùng chung ở <a href="2026-09-22/YC-14.html">YC-14</a>, không còn cố định theo quý.</li>
+      <li>Cột <em>Phạt CĐT không phân bổ ×hệ số</em> hiện đúng tổng <code>bch_charged_amount</code> của các biên bản đã chốt ở <a href="BID-07.html">BID-07</a> thuộc kỳ, bấm vào mở được danh sách biên bản gốc (<a href="2026-09-22/YC-11.html">YC-11</a>).</li>
+      <li>Đổi kỳ hay đọc cột phạt đều không làm đổi thứ hạng: khối vẫn mở ra xếp theo tỷ lệ hỗ trợ tăng dần.</li>
     </ol>
 
     <h4>Mockup UI — Báo cáo › Quản trị dự án</h4>
@@ -310,7 +318,7 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Chọn kỳ &amp; dự án</td><td>Bộ lọc chuẩn dùng chung với <a href="RPT-01.html">RPT-01</a>.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Chọn kỳ &amp; dự án</td><td>Bộ lọc chuẩn dùng chung với <a href="RPT-01.html">RPT-01</a>, theo bộ điều khiển khoảng thời gian ở <a href="2026-09-22/YC-14.html">YC-14</a>. Riêng khối hiệu quả điều hành BCH chọn được quý · 6 tháng · năm.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>So kế hoạch với thực tế</td><td>Cột chênh lệch và số ngày trễ tính tự động; nhãn trạng thái theo ngưỡng cấu hình.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Đối chiếu hai góc nhìn tiến độ</td><td>Chênh lệch lớn sinh nhận định cảnh báo tự động, kèm gợi ý nguyên nhân.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Phân loại nhân công</td><td>Ba nhóm theo yêu cầu gốc; bấm nhóm mở danh sách hồ sơ giao khoán tương ứng.</td></tr>
@@ -329,6 +337,8 @@
       <li><b>So hiệu quả điều hành trên cùng một mốc.</b> Chi phí nhân công theo đơn giá chuẩn lấy từ bảng <a href="PF-06.html">PF-06</a> mà bảng giá khoán đã tra (<code>std_sheet_ref</code>), không lấy bảng đang hiệu lực tại thời điểm chạy báo cáo.<span class="then">Bảng giá khoán đã duyệt đóng băng đơn giá chuẩn của nó, nên báo cáo của một kỳ giữ nguyên số kể cả khi công ty ban hành bảng chuẩn kỳ mới. Hai Ban chỉ huy chỉ đặt cạnh nhau được khi cả hai cột 4 đều tính trên mốc đã đóng băng.</span></li>
       <li><b>Khối lượng ngoài bảng chuẩn bị loại khỏi phép so sánh.</b> Dòng giá khoán không tra ra đơn giá chuẩn thì khối lượng của nó không vào cột 4, 6 và 7, chỉ hiện ở cột 8.<span class="then">Không có mốc chuẩn thì không có phần chênh để gọi là hỗ trợ; nhét nó vào sẽ làm tỷ lệ hỗ trợ sai theo cả hai chiều. Cột 8 là thước đo độ phủ của phép so sánh và phải đọc cùng cột 7, không đọc rời.</span></li>
       <li><b>Xếp hạng mặc định theo tỷ lệ hỗ trợ.</b> Khối hiệu quả điều hành BCH mở ra là đã xếp theo cột 7 tăng dần.<span class="then">Đây là con số đo năng lực điều hành: cùng một khối lượng và cùng một mốc chuẩn, Ban chỉ huy cần ít hỗ trợ hơn là Ban chỉ huy vận hành tốt hơn. Đổi cột xếp hạng được, nhưng thứ tự mặc định không đổi.</span></li>
+      <li><b>Biên bản phạt xếp vào kỳ theo ngày biên bản.</b> Cột 9 gom các biên bản đã chốt ở <a href="BID-07.html">BID-07</a> theo <code>issued_at</code>, không theo ngày nhập vào hệ thống và cũng không theo ngày lãnh đạo chốt phân bổ.<span class="then">Biên bản ghi tháng 6 nhập muộn vào tháng 8 vẫn thuộc kỳ 6 tháng đầu năm. Lấy ngày nhập thì mọi kỳ đã công bố sẽ tự đổi số mỗi lần có người nhập chậm, và bảng xếp hạng in ra tháng trước không còn khớp với bảng mở lại hôm nay (<a href="2026-09-22/YC-11.html">YC-11</a>).</span></li>
+      <li><b>Cột phạt không đổi thứ tự sắp xếp mặc định.</b> Thêm cột 9 nhưng khối vẫn mở ra xếp theo cột 7 tăng dần; bấm xếp lại theo cột 9 được, lần mở sau vẫn trở về mặc định.<span class="then">Tỷ lệ hỗ trợ đo chênh lệch đơn giá nhân công trên khối lượng đã nghiệm thu; giá trị quy trách nhiệm đo phần phạt của chủ đầu tư không quy được cho tổ đội nào. Hai chỉ số đo hai thứ khác nhau; trộn chúng vào một thứ hạng là bịa ra một phép cộng không ai định nghĩa.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -360,16 +370,20 @@
           <tr><td>UAT-RPT02-6</td><td>Hai dự án cùng vùng, cùng kỳ, tỷ lệ hỗ trợ 3% và 11%</td><td>Mở khối hiệu quả điều hành BCH</td><td>Dự án 3% đứng trên không cần thao tác xếp hạng; số liệu khớp với hồ sơ giao khoán đã duyệt ở <a href="PRJ-03.html">PRJ-03</a></td></tr>
           <tr><td>UAT-RPT02-7</td><td>Bảng giá khoán của DA-2026-011 có 3 dòng ngoài bảng chuẩn</td><td>Mở khối hiệu quả điều hành BCH</td><td>Khối lượng của ba dòng đó không vào cột 4, 6, 7; cột 8 hiện đúng phần bị loại</td></tr>
           <tr><td>UAT-RPT02-8</td><td>Công ty vừa ban hành bảng đơn giá chuẩn kỳ mới cao hơn 12%</td><td>Chạy lại khối hiệu quả điều hành của quý trước</td><td>Mọi con số giữ nguyên; cột 2 vẫn hiện bảng chuẩn kỳ cũ đã tra</td></tr>
+          <tr><td>UAT-RPT02-9</td><td>Khối hiệu quả điều hành BCH đang mở ở kỳ quý 3/2026</td><td>Đổi kỳ sang 6 tháng, rồi sang năm</td><td>Bộ chọn kỳ có đủ ba mức quý · 6 tháng · năm theo <a href="2026-09-22/YC-14.html">YC-14</a>; mọi cột tính lại trên khoảng mới</td></tr>
+          <tr><td>UAT-RPT02-10</td><td>Hợp đồng <code>KH_0114</code> có biên bản phạt đã chốt ở <a href="BID-07.html">BID-07</a> ngày 10/09/2026, phần không phân bổ 25.000.000, hệ số 1,5</td><td>Mở khối hiệu quả điều hành BCH, chọn kỳ 6 tháng cuối năm 2026</td><td>Cột 9 của Ban chỉ huy dự án đó hiện 37.500.000; bấm vào mở được danh sách biên bản gốc</td></tr>
+          <tr><td>UAT-RPT02-11</td><td>Tiếp UAT-10, biên bản đó được nhập vào hệ thống ngày 05/11/2026</td><td>Đổi kỳ sang quý 4/2026</td><td>Biên bản không còn trong cột 9 — nó thuộc quý 3 theo <code>issued_at</code>, không theo ngày nhập</td></tr>
+          <tr><td>UAT-RPT02-12</td><td>Dự án đứng đầu bảng có tỷ lệ hỗ trợ 3% và cột 9 lớn nhất bảng</td><td>Mở lại khối hiệu quả điều hành BCH</td><td>Thứ tự vẫn theo cột 7 tăng dần; cột 9 không đẩy dự án đó xuống</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PRJ-02.html">PRJ-02 sản lượng</a><a href="PRJ-03.html">PRJ-03 nhân công</a><a href="ORD-01.html">ORD-01 hồ sơ</a><a href="BID-05.html">BID-05 bảng kê hợp đồng</a><a href="ACC-09.html">ACC-09 tiến độ kế toán</a><a href="PF-06.html">PF-06 bảng đơn giá chuẩn</a><a href="PRJ-01.html">PRJ-01 % hỗ trợ theo dòng</a><a href="2026-09-15/YC-02.html">YC-02 đơn giá chuẩn theo vùng miền</a></p>
+    <p class="links"><a href="PRJ-02.html">PRJ-02 sản lượng</a><a href="PRJ-03.html">PRJ-03 nhân công</a><a href="ORD-01.html">ORD-01 hồ sơ</a><a href="BID-05.html">BID-05 bảng kê hợp đồng</a><a href="ACC-09.html">ACC-09 tiến độ kế toán</a><a href="PF-06.html">PF-06 bảng đơn giá chuẩn</a><a href="PRJ-01.html">PRJ-01 % hỗ trợ theo dòng</a><a href="2026-09-15/YC-02.html">YC-02 đơn giá chuẩn theo vùng miền</a><a href="BID-07.html">BID-07 biên bản phạt CĐT</a><a href="2026-09-22/YC-11.html">YC-11 khoản phạt của chủ đầu tư</a><a href="2026-09-22/YC-14.html">YC-14 bộ lọc khoảng thời gian</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 39 / 47</span><span><code>RPT-02.html</code></span>
+  <span>Đặc tả 40 / 48</span><span><code>RPT-02.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>
