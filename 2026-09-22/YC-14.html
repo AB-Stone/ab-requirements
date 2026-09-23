@@ -106,27 +106,39 @@
           <tr><td colspan="3"><b>P. TQT — Shopdrawing</b></td></tr>
           <tr><td><a href="../ORD-02.html">ORD-02</a></td><td>Ngày gửi chủ đầu tư <span class="k">sent_at</span></td><td>Số đợt trình đã gửi, số vòng gửi–trả, số ngày nằm phía chủ đầu tư</td></tr>
           <tr><td><a href="../ORD-03.html">ORD-03</a></td><td>Ngày trình đơn</td><td>Đơn hàng lập trong kỳ, khối lượng đã yêu cầu</td></tr>
-          <tr><td><a href="../ORD-05.html">ORD-05</a></td><td>Ngày xuất của phiếu đã duyệt</td><td><b>Sản lượng cấp hàng</b> trong kỳ</td></tr>
-          <tr><td><a href="../ORD-08.html">ORD-08</a> · <a href="../ORD-09.html">ORD-09</a></td><td>Ngày nghiệm thu của hồ sơ</td><td>Giá trị hồ sơ thanh toán trong kỳ</td></tr>
-          <tr><td><a href="../ORD-10.html">ORD-10</a></td><td>Ngày quyết toán</td><td>Hợp đồng quyết toán trong kỳ</td></tr>
+          <tr><td><a href="../ORD-05.html">ORD-05</a></td><td>Ngày xuất của phiếu đã duyệt — <code>ord_issue_note.issued_at</code>. Hai vế tách nhau: <em>ngày xuất</em> là thứ khoảng bó, <em>đã duyệt</em> là thứ chọn phiếu nào được đếm. <b>Không</b> lấy ngày kế hoạch: ngày kế hoạch đổi khi ai đó sửa kế hoạch, nên một kỳ đã công bố sẽ tự đổi số về sau.</td><td><b>Sản lượng cấp hàng</b> trong kỳ</td></tr>
+          <tr><td><a href="../ORD-08.html">ORD-08</a> · <a href="../ORD-09.html">ORD-09</a></td><td>Ngày nghiệm thu của hồ sơ — <code>owner_accepted_at</code>, tức ngày chủ đầu tư chấp thuận. <b>Không</b> phải <code>internal_approved_at</code> (duyệt nội bộ, một sự kiện khác trong nhà mình) và không phải ngày lập hồ sơ.</td><td>Giá trị hồ sơ thanh toán trong kỳ</td></tr>
+          <tr><td><a href="../ORD-10.html">ORD-10</a></td><td>Ngày quyết toán — <b>chưa chốt cột nào</b>, xem <a href="../PL-C.html#Q-61">Q-61</a>: bảng hồ sơ không có cột nào mang tên đó, và ba cột có thể hiểu là nó cách nhau hàng tháng.</td><td>Hợp đồng quyết toán trong kỳ</td></tr>
           <tr><td colspan="3"><b>Dự án — Thi công</b></td></tr>
           <tr><td><a href="../PRJ-01.html">PRJ-01</a></td><td>Kỳ hiệu lực của bảng giá</td><td>Bảng giá khoán đang áp dụng tại một thời điểm</td></tr>
           <tr><td><a href="../PRJ-02.html">PRJ-02</a></td><td>Ngày chốt sản lượng</td><td><b>Sản lượng thi công</b> trong kỳ</td></tr>
           <tr><td><a href="../PRJ-03.html">PRJ-03</a></td><td>Ngày kết thúc đợt giao khoán</td><td>Giá trị giao khoán, khấu trừ, thực trả trong kỳ</td></tr>
-          <tr><td><a href="../PRJ-04.html">PRJ-04</a></td><td>Ngày phiếu</td><td>Xuất nhập kho dự án trong kỳ</td></tr>
+          <tr><td><a href="../PRJ-04.html">PRJ-04</a></td><td>Ngày phiếu — <b>chưa chốt</b> là ngày trên phiếu hay ngày ghi sổ, xem <a href="../PL-C.html#Q-63">Q-63</a>. Lọc theo ngày ghi sổ thì phiếu nháp biến mất khỏi mọi khoảng.</td><td>Xuất nhập kho dự án trong kỳ</td></tr>
           <tr><td colspan="3"><b>Phòng Kế toán</b></td></tr>
           <tr><td><a href="../ACC-03.html">ACC-03</a> · <a href="../ACC-04.html">ACC-04</a> · <a href="../ACC-07.html">ACC-07</a></td><td>Ngày chứng từ</td><td>Mua hàng, xuất bán, thu chi trong kỳ</td></tr>
           <tr><td><a href="../ACC-05.html">ACC-05</a></td><td>Ngày đến hạn <b>và</b> ngày chứng từ</td><td>Công nợ — màn hình này hiện ô chọn mốc, vì “nợ phát sinh trong kỳ” và “nợ đến hạn trong kỳ” là hai câu hỏi khác nhau</td></tr>
           <tr><td><a href="../ACC-08.html">ACC-08</a> · <a href="../ACC-09.html">ACC-09</a></td><td>Kỳ kế toán</td><td>Phân bổ, giá thành, lãi lỗ. Giữ kỳ kế toán chứ không đổi sang ngày tự do</td></tr>
           <tr><td colspan="3"><b>Nền tảng &amp; Báo cáo</b></td></tr>
           <tr><td><a href="../PF-03.html">PF-03</a></td><td>Ngày trình ở thẻ <em>Chờ duyệt</em>; ngày kết thúc phiên ở ba thẻ lịch sử</td><td>Hồ sơ chờ duyệt, đã duyệt, bị từ chối — xem <a href="YC-12.html">YC-12</a></td></tr>
-          <tr><td><a href="../RPT-01.html">RPT-01</a> → <a href="../RPT-05.html">RPT-05</a></td><td>Kỳ báo cáo của từng báo cáo</td><td>Mọi báo cáo. <a href="../RPT-02.html">RPT-02</a> mở rộng từ <em>quý</em> sang <em>quý · 6 tháng · năm</em> theo <a href="YC-11.html">YC-11</a></td></tr>
+          <tr><td><a href="../RPT-01.html">RPT-01</a> → <a href="../RPT-05.html">RPT-05</a></td><td>Kỳ báo cáo của từng báo cáo. <a href="../RPT-02.html">RPT-02</a> đã dựng. Mốc của <a href="../RPT-05.html">RPT-05</a> <b>chưa được đặt tên</b> — xem <a href="../PL-C.html#Q-62">Q-62</a>; <a href="../RPT-01.html">RPT-01</a>, <a href="../RPT-03.html">RPT-03</a>, <a href="../RPT-04.html">RPT-04</a> xem <a href="../PL-C.html#Q-64">Q-64</a>.</td><td>Mọi báo cáo. <a href="../RPT-02.html">RPT-02</a> mở rộng từ <em>quý</em> sang <em>quý · 6 tháng · năm</em> theo <a href="YC-11.html">YC-11</a></td></tr>
         </tbody>
       </table>
     </div>
     <div class="note">
       <b>Danh sách này chưa phải danh sách cuối</b>
       <p style="margin:0">Bảng trên phủ các màn hình có con số cộng dồn theo thời gian. Những màn hình còn lại — danh mục nền, phân quyền, danh mục tổ đội, bảng tài khoản — không có “tính thực theo thời gian” nên <b>không</b> thêm bộ lọc, vì một bộ lọc không lọc gì chỉ làm người dùng nghi ngờ mình đang xem thiếu dữ liệu. Ranh giới này cần P. Đấu thầu và Ban lãnh đạo xác nhận bằng cách duyệt chính bảng trên; ghi ở <a href="../PL-C.html#Q-52">PL-C · Q-52</a>.</p>
+    </div>
+
+    <div class="note">
+      <b>Bốn chỗ lọc rồi mà lọc nhầm cột</b>
+      <p style="margin:0 0 8px">Đối chiếu bảng trên với bản dựng cho thấy bốn màn hình <em>đã</em> có bộ lọc ngày nhưng bó vào cột khác với mốc ghi ở đây. Đây không phải việc còn thiếu — nó trả về một con số hợp lý cho một câu hỏi không ai đặt, nên không ai nghi ngờ:</p>
+      <ul style="margin:0 0 8px">
+        <li><a href="../ORD-02.html">ORD-02</a> bó theo ngày <em>tạo</em> bản vẽ thay vì ngày gửi chủ đầu tư — trong khi chỉ số “số ngày nằm phía chủ đầu tư” trên cùng báo cáo lại tính từ ngày gửi, tức khoảng lọc và thứ nó lọc đang nói hai ngày khác nhau.</li>
+        <li><a href="../ORD-05.html">ORD-05</a> bó theo <b>ngày kế hoạch</b> — một ngày còn sửa được, nên kỳ đã công bố tự đổi số khi có người dời kế hoạch.</li>
+        <li><a href="../ORD-08.html">ORD-08</a>/<a href="../ORD-09.html">ORD-09</a> bó theo ngày <em>lập</em> hồ sơ thay vì ngày nghiệm thu.</li>
+        <li><a href="../ORD-10.html">ORD-10</a> bó theo <b>năm lập hồ sơ</b>, không phải theo khoảng: hồ sơ lập tháng 12 quyết toán tháng 2 đang bị tính vào năm trước.</li>
+      </ul>
+      <p style="margin:0">Ba chỗ đầu sửa được ngay vì đặc tả đã đặt tên mốc. Chỗ thứ tư chờ <a href="../PL-C.html#Q-61">Q-61</a>.</p>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
