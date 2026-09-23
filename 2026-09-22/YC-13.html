@@ -70,7 +70,7 @@
         <tbody>
           <tr><td><b>“Bản vẽ thiết kế”</b></td><td>Thứ kỹ sư công ty tự làm theo lần 1, 2, 3, mang mã <code>SD.HN_0001.01</code></td><td>Giữ nguyên định nghĩa của <a href="../2026-09-15/YC-07.html">YC-07</a>: <em>bản vẽ thiết kế</em> là <b>đầu vào từ chủ đầu tư</b>, công ty không sửa. Thứ kỹ sư làm theo lần vẫn là <b>đợt trình</b> của <a href="../2026-09-15/YC-08.html">YC-08</a> — cùng một khái niệm, khác tên gọi. Nút trên bảng theo dõi vì vậy mang nhãn <b>“Thêm đợt trình”</b></td></tr>
           <tr><td><b>Tiền tố mã hồ sơ</b></td><td><code>SD.HN_0001</code></td><td>Theo yêu cầu: đổi <code>SD-&lt;mã gói thầu&gt;</code> thành <code>SD.&lt;mã gói thầu&gt;</code></td></tr>
-          <tr><td><b>Cách đánh số đợt</b></td><td><code>SD.HN_0001.01</code> cho “lần 1, 2, 3” — tức đánh số tuần tự theo hồ sơ</td><td><b>Chưa chốt.</b> <a href="../PF-01.html">PF-01</a> đang quy định <code>&lt;hồ sơ&gt;.&lt;NN hạng mục&gt;-Đ&lt;n&gt;</code>, trong đó <code>n</code> chạy riêng trong từng hạng mục. Hai cách đọc số khác hẳn nhau. Đưa sang <a href="../PL-C.html">PL-C</a> · Q-50; trang này tạm giữ cấu trúc của PF-01 và chỉ đổi tiền tố</td></tr>
+          <tr><td><b>Cách đánh số đợt</b></td><td><code>SD.HN_0001.01</code> cho “lần 1, 2, 3” — tức đánh số tuần tự theo hồ sơ</td><td><b>Chưa chốt.</b> <a href="../PF-01.html">PF-01</a> đang quy định <code>&lt;hồ sơ&gt;.&lt;NN hạng mục&gt;-Đ&lt;n&gt;</code>, trong đó <code>n</code> chạy riêng trong từng hạng mục. Hai cách đọc số khác hẳn nhau. Đưa sang <a href="../PL-C.html#Q-50">PL-C · Q-50</a>; trang này tạm giữ cấu trúc của PF-01 và chỉ đổi tiền tố</td></tr>
         </tbody>
       </table>
     </div>
@@ -79,7 +79,7 @@
     <div class="note">
       <b>Khối cần bỏ không nằm ở chỗ yêu cầu mô tả</b>
       <p style="margin:0 0 8px">Rà soát bản dựng hiện tại: khối “Khối lượng bản vẽ” xuất hiện ở bốn chỗ và <b>cả bốn đều thuộc cấp đợt trình</b> — bảng bảy cột trong trang chi tiết đợt, ô nhập khối lượng trong khung mở đợt (bản máy tính và bản di động), và một ô đếm số dòng. Không có bảng khối lượng nào ở cấp hồ sơ để bỏ.</p>
-      <p style="margin:0">Mà bảng khối lượng ở cấp đợt trình thì <b>không bỏ được</b>: <a href="../ORD-02.html">ORD-02</a> quy định nó là nội dung trưởng phòng kiểm và chủ đầu tư xem xét, còn <a href="../ORD-03.html">ORD-03</a> đối chiếu đơn hàng theo từng dòng khối lượng bản vẽ. Bỏ nó là viết lại cả hai trang và xóa luôn mốc chống đặt vượt khối lượng. Vì vậy <b>đợt này không xóa gì</b> — dòng 19 cần P. TQT chỉ đích danh khối nào trên màn hình thật. Ghi nhận ở <a href="../PL-C.html">PL-C</a> và để mở.</p>
+      <p style="margin:0">Mà bảng khối lượng ở cấp đợt trình thì <b>không bỏ được</b>: <a href="../ORD-02.html">ORD-02</a> quy định nó là nội dung trưởng phòng kiểm và chủ đầu tư xem xét, còn <a href="../ORD-03.html">ORD-03</a> đối chiếu đơn hàng theo từng dòng khối lượng bản vẽ. Bỏ nó là viết lại cả hai trang và xóa luôn mốc chống đặt vượt khối lượng. Vì vậy <b>đợt này không xóa gì</b> — dòng 19 cần P. TQT chỉ đích danh khối nào trên màn hình thật. Ghi nhận ở <a href="../PL-C.html#Q-53">PL-C · Q-53</a> và để mở.</p>
     </div>
 
     <h4>Bảng theo dõi — năm cột thành bảy</h4>
@@ -290,13 +290,13 @@
           <tr><td>UAT-YC13-12</td><td>Tiếp UAT-11</td><td>Nhập ngày đến sớm hơn ngày từ</td><td>Bị chặn</td></tr>
           <tr><td>UAT-YC13-13</td><td>Hạng mục có hạn nộp 30/09/2026, hôm nay 02/10/2026, chưa nộp</td><td>Mở bảng theo dõi</td><td>Hạng mục gắn cờ trễ; kỹ sư và trưởng phòng đều đã nhận nhắc; vẫn nộp được</td></tr>
           <tr><td>UAT-YC13-14</td><td>Hạng mục <em>Đã phân công</em>, chưa nộp tệp nào</td><td>Trưởng phòng bấm Duyệt</td><td>Bị chặn: chưa có bản vẽ nào được nộp</td></tr>
-          <tr><td>UAT-YC13-15</td><td>Hồ sơ <code>SD.HN_0001</code>, hạng mục thứ nhất mã <code>01</code></td><td>Mở đợt trình đầu tiên của hạng mục đó</td><td>Mã đợt theo quy ước đang chốt của <a href="../PF-01.html">PF-01</a>, mang tiền tố <code>SD.</code>; cách đánh số còn chờ Q-50 ở <a href="../PL-C.html">PL-C</a></td></tr>
+          <tr><td>UAT-YC13-15</td><td>Hồ sơ <code>SD.HN_0001</code>, hạng mục thứ nhất mã <code>01</code></td><td>Mở đợt trình đầu tiên của hạng mục đó</td><td>Mã đợt theo quy ước đang chốt của <a href="../PF-01.html">PF-01</a>, mang tiền tố <code>SD.</code>; cách đánh số còn chờ <a href="../PL-C.html#Q-50">PL-C · Q-50</a></td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="../ORD-02.html">ORD-02 bản vẽ Shopdrawing</a><a href="../ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="../PF-01.html">PF-01 danh mục nền &amp; mã hóa</a><a href="../PF-04.html">PF-04 thông báo &amp; ký duyệt</a><a href="../PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="../PL-A.html">PL-A sổ trạng thái chứng từ</a><a href="../PL-B.html">PL-B ma trận phân quyền</a><a href="../PL-C.html">PL-C vấn đề cần chốt</a><a href="../2026-09-15/YC-07.html">YC-07 hồ sơ bản vẽ thiết kế</a><a href="../2026-09-15/YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+    <p class="links"><a href="../ORD-02.html">ORD-02 bản vẽ Shopdrawing</a><a href="../ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="../PF-01.html">PF-01 danh mục nền &amp; mã hóa</a><a href="../PF-04.html">PF-04 thông báo &amp; ký duyệt</a><a href="../PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="../PL-A.html">PL-A sổ trạng thái chứng từ</a><a href="../PL-B.html">PL-B ma trận phân quyền</a><a href="../PL-C.html#Q-50">PL-C · Q-50 cách đánh số đợt trình</a><a href="../2026-09-15/YC-07.html">YC-07 hồ sơ bản vẽ thiết kế</a><a href="../2026-09-15/YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
   </div>
 </section>
 <div class="filefoot">
