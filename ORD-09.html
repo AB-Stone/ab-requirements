@@ -289,7 +289,11 @@
           <tr><td>Đợt trình nguồn của bản vẽ sơ họa</td><td class="k">asbuilt_src_batches[]</td><td>Tham chiếu</td><td class="c req">✱</td><td>Các đợt trình đã được CĐT chấp thuận (<code>result</code> = <code>approved</code> / <code>approved_as_noted</code>) phủ khối lượng của đợt thanh toán này. Hệ thống gợi ý sẵn từ các đầu việc có khối lượng trong <code>qty_claim</code>; đợt chưa được chấp thuận không chọn được. Chỉ đọc sau khi nộp CĐT.</td></tr>
           <tr><td>Tình trạng bản vẽ sơ họa</td><td class="k">asbuilt_sketch_status</td><td>Chọn 1</td><td class="c req">✱</td><td>Theo bảng hai tuyến ở trên.</td></tr>
           <tr><td>Tình trạng hồ sơ giá trị</td><td class="k">value_dossier_status</td><td>Chọn 1</td><td class="c req">✱</td><td>Theo bảng hai tuyến ở trên.</td></tr>
-          <tr><td>Giá trị đề nghị · đã nhận</td><td class="k">amount_claim, amount_received</td><td>Số tiền</td><td class="c req">✱</td><td>Cơ chế nhận nhiều lần giống <a href="ORD-01.html">ORD-01</a>.</td></tr>
+          <tr><td>Giá trị khối lượng đợt</td><td class="k">amount_claim</td><td>Số tiền</td><td class="c req">✱</td><td><code>qty_claim</code> × đơn giá BOQ hợp đồng, cộng theo đầu việc. Đây là giá trị <em>trước</em> thu hồi tạm ứng và giữ lại bảo hành.</td></tr>
+          <tr><td>Thu hồi tạm ứng kỳ này</td><td class="k">advance_recovery</td><td>Số tiền</td><td class="c">—</td><td>Tính theo tỷ lệ thu hồi khai ở hợp đồng (<a href="BID-05.html">BID-05</a>) trên <code>amount_claim</code>. Sửa tay được nhưng phải ghi lý do. Lũy kế không vượt số tạm ứng đã nhận ở <a href="ORD-01.html">ORD-01</a>.</td></tr>
+          <tr><td>Giữ lại bảo hành kỳ này</td><td class="k">retention_withheld</td><td>Số tiền</td><td class="c">—</td><td>Tính theo tỷ lệ giữ lại của bảng đợt thanh toán hợp đồng (<a href="BID-05.html">BID-05</a>). Cộng dồn qua các đợt; chỉ ra khỏi sổ bằng hồ sơ thu hồi ở <a href="ORD-10.html">ORD-10</a>.</td></tr>
+          <tr><td>Số tiền đề nghị chuyển</td><td class="k">amount_net</td><td>Số tiền</td><td class="c req">✱</td><td>Tính tự động: <code>amount_claim − advance_recovery − retention_withheld</code>. Chỉ đọc.</td></tr>
+          <tr><td>Đã nhận</td><td class="k">amount_received</td><td>Số tiền</td><td class="c req">✱</td><td>Cơ chế nhận nhiều lần giống <a href="ORD-01.html">ORD-01</a>; lũy kế đối chiếu với <code>amount_net</code>, không phải với <code>amount_claim</code>.</td></tr>
         </tbody>
       </table>
     </div>
@@ -303,6 +307,8 @@
       <li>Danh sách hồ sơ hiển thị đồng thời tình trạng bản vẽ sơ họa và tình trạng hồ sơ giá trị.</li>
       <li>Không nộp được chủ đầu tư khi một trong hai tuyến chưa sẵn sàng.</li>
       <li>Trạng thái đã nhận / chưa nhận thanh toán hiển thị bằng số tiền, và số liệu này vào thẳng báo cáo tổng hợp và bài toán lãi lỗ dự án.</li>
+      <li>Mỗi đợt tự trừ phần thu hồi tạm ứng và phần giữ lại bảo hành, hiện đủ bốn dòng: giá trị khối lượng — thu hồi tạm ứng — giữ lại bảo hành — số tiền đề nghị chuyển.</li>
+      <li>Lũy kế thu hồi tạm ứng và lũy kế giữ lại bảo hành của cả hợp đồng hiện ngay trên hồ sơ, không phải cộng tay qua từng đợt.</li>
       <li>Hồ sơ dùng chung toàn bộ chuỗi trạng thái, sổ vướng mắc và cơ chế phối hợp phòng ban của <a href="ORD-01.html">ORD-01</a>.</li>
     </ol>
 
@@ -322,10 +328,14 @@
           <div class="wf-c" style="flex:0 1 230px"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">4</span> Tình trạng thanh toán</div>
             <table><tbody>
-              <tr><td>Giá trị đề nghị</td><td class="num">3.870.000.000</td></tr>
+              <tr><td>Giá trị khối lượng</td><td class="num">3.870.000.000</td></tr>
+              <tr><td>− Thu hồi tạm ứng 10%</td><td class="num">387.000.000</td></tr>
+              <tr><td>− Giữ lại bảo hành 5%</td><td class="num">193.500.000</td></tr>
+              <tr><td><b>= Đề nghị chuyển</b></td><td class="num"><b>3.289.500.000</b></td></tr>
               <tr><td>Đã nhận</td><td class="num">0</td></tr>
               <tr><td>Trạng thái</td><td><span class="tag t-warn">Chưa nhận</span></td></tr>
             </tbody></table>
+            <p style="margin:7px 0 0;font-size:11.5px;color:var(--ink-3)">Lũy kế đã thu hồi tạm ứng 1.548.000.000 / 2.800.000.000 · lũy kế giữ lại bảo hành 774.000.000.</p>
           </div></div>
         </div>
         <div class="wf-sec">
@@ -348,7 +358,8 @@
           <tr><td class="c"><span class="pin">1</span></td><td>Theo dõi hai tuyến tình trạng</td><td>Bản vẽ sơ họa và hồ sơ giá trị có trạng thái riêng; cả hai sẵn sàng mới nộp được chủ đầu tư.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Đối chiếu ba khối lượng</td><td>Hai cột đầu chỉ đọc (nạp từ PRJ-02 và PRJ-03); chỉ cột đề nghị CĐT nhập tay. Cột chênh tính tự động.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Cảnh báo &amp; giải trình chênh lệch</td><td>Cảnh báo mức nhẹ, không chặn. Giải trình bắt buộc và phần chênh chuyển sang danh sách chờ của <a href="ORD-10.html">ORD-10</a>.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Ghi nhận thanh toán</td><td>Nhận nhiều lần; đối chiếu báo có ngân hàng như <a href="ORD-01.html">ORD-01</a>.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Cấu thành số tiền đề nghị</td><td>Bốn dòng tính sẵn từ tỷ lệ của hợp đồng; hai ô khấu trừ sửa tay được kèm lý do, dòng cuối chỉ đọc.</td></tr>
+          <tr><td class="c">—</td><td>Ghi nhận thanh toán</td><td>Nhận nhiều lần; đối chiếu báo có ngân hàng như <a href="ORD-01.html">ORD-01</a>. Lũy kế so với số tiền đề nghị chuyển.</td></tr>
           <tr><td class="c">—</td><td>Vướng mắc &amp; phối hợp phòng ban</td><td>Dùng lại nguyên sổ vướng mắc của <a href="ORD-01.html">ORD-01</a>.</td></tr>
         </tbody>
       </table>
@@ -363,7 +374,11 @@
       <li><b>Chưa cần bản vẽ hoàn công.</b> Ở đợt thanh toán chỉ cần chỉnh nhẹ bản vẽ của đợt trình shopdrawing đã duyệt theo yêu cầu Ban quản lý xây dựng.<span class="then">Bản vẽ hoàn công đầy đủ là việc của <a href="ORD-10.html">ORD-10</a>; ràng buộc sớm sẽ làm nghẽn thanh toán từng đợt.</span></li>
       <li><b>Bản vẽ sơ họa dẫn xuất từ đợt trình đã được chấp thuận.</b> Mỗi bản sơ họa ghi rõ nó chỉnh từ (các) đợt trình nào ở <a href="ORD-02.html">ORD-02</a>; chỉ chọn được đợt CĐT đã chấp thuận.<span class="then">Từ khi hồ sơ shopdrawing tách ba cấp, “Shopdrawing đã duyệt” không còn là một chứng từ đơn lẻ mà là một <em>đợt trình</em> cụ thể của một hạng mục — ghi đúng mã đợt thì người duyệt hồ sơ thanh toán tra ngược được sang bảng khối lượng và vòng duyệt đã sinh ra bản vẽ đó. Đợt bị từ chối hoặc còn đang chờ CĐT không phải là căn cứ hoàn công.</span></li>
       <li><b>Đề nghị vượt khối lượng đã thi công thì chặn.</b> Không đề nghị chủ đầu tư thanh toán phần chưa làm.<span class="then">Khác với chiều ngược lại — đề nghị ít hơn chỉ là cảnh báo.</span></li>
-      <li><b>Số liệu vào thẳng lãi lỗ.</b> Giá trị đã nhận thanh toán là doanh thu thi công của dự án trong kỳ.<span class="then">Đây là lý do trạng thái nhận / chưa nhận phải chính xác, không chỉ để theo dõi hành chính.</span></li>
+      <li><b>Mỗi đợt thu hồi một phần tạm ứng.</b> Tỷ lệ thu hồi khai ở hợp đồng (<a href="BID-05.html">BID-05</a>); hệ thống tính trên giá trị khối lượng của đợt và trừ thẳng vào số tiền đề nghị chuyển.<span class="then">Lũy kế thu hồi không vượt quá số tạm ứng đã nhận ở <a href="ORD-01.html">ORD-01</a>, và đợt cuối tự thu hết phần còn lại — tạm ứng là tiền đã chi, không có đường nào để nó tự biến mất khỏi sổ. Hợp đồng chưa khai tỷ lệ thì ô thu hồi để trống kèm nhắc, chứ không lặng lẽ mặc định bằng 0.</span></li>
+      <li><b>Giữ lại phần bảo hành ngay từ mỗi đợt.</b> Tỷ lệ giữ lại đọc từ bảng đợt thanh toán của hợp đồng (<a href="BID-05.html">BID-05</a>); phần giữ cộng dồn qua các đợt và chỉ ra khỏi sổ bằng hồ sơ thu hồi ở <a href="ORD-10.html">ORD-10</a>.<span class="then">Dồn hết vào đợt cuối thì đợt cuối phải gánh phần bảo hành của cả hợp đồng, và khi giá trị đợt cuối nhỏ hơn phần phải giữ thì không còn gì để giữ. Đây cũng chính là số tiền mà <a href="BID-05.html">BID-05</a> hứa sẽ nhắc lập hồ sơ thu hồi khi hết hạn bảo hành.</span></li>
+      <li><b>Thu hồi hết tạm ứng thì giải tỏa bảo lãnh tạm ứng.</b> Khi lũy kế thu hồi bằng số tạm ứng đã nhận, hệ thống sinh việc đề nghị chủ đầu tư giải tỏa bảo lãnh tạm ứng tương ứng trong <code>guarantees[]</code> của hợp đồng (<a href="BID-05.html">BID-05</a>).<span class="then">Bảo lãnh là phí ngân hàng tính theo thời gian: giữ nó sau khi khoản được bảo lãnh đã về hết là trả tiền cho một rủi ro không còn tồn tại. Không ai nhớ mốc này thủ công vì nó rơi vào giữa chuỗi đợt, không trùng mốc nào của hợp đồng.</span></li>
+      <li><b>Số tiền đề nghị chuyển khác giá trị khối lượng.</b> <code>amount_net = amount_claim − advance_recovery − retention_withheld</code>; lũy kế đã nhận đối chiếu với <code>amount_net</code>.<span class="then">Ba con số cùng đứng trên chứng từ thì chủ đầu tư và kế toán đọc cùng một bảng. Đối chiếu nhầm sang giá trị khối lượng sẽ làm mọi hồ sơ có thu hồi tạm ứng đều kẹt vĩnh viễn ở trạng thái “chưa nhận đủ”.</span></li>
+      <li><b>Số liệu vào thẳng lãi lỗ.</b> Giá trị đã nhận thanh toán là doanh thu thi công của dự án trong kỳ.<span class="then">Đây là lý do trạng thái nhận / chưa nhận phải chính xác, không chỉ để theo dõi hành chính.</span><span class="then">Doanh thu là giá trị khối lượng được chủ đầu tư chấp thuận. Thu hồi tạm ứng và giữ lại bảo hành chỉ làm giảm số tiền chuyển trong kỳ — một khoản giảm công nợ tạm ứng, một khoản phải thu chưa tới hạn — chứ không làm giảm doanh thu.</span></li>
       <li><b>Kế thừa khung ORD-01.</b> Chuỗi trạng thái, sổ vướng mắc, phối hợp phòng ban, đối chiếu ngân hàng và báo cáo tổng hợp dùng chung.<span class="then">Không định nghĩa lại; sửa ở <a href="ORD-01.html">ORD-01</a> là có hiệu lực ở đây.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày nghiệm thu của hồ sơ.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Giá trị khối lượng hoàn thành được thanh toán trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
@@ -378,6 +393,9 @@
           <tr><td>Đề nghị vượt khối lượng đã thi công</td><td><code>qty_claim &gt; qty_done</code></td><td>“Không đề nghị thanh toán quá khối lượng đã thi công ({số}). Cập nhật sản lượng ở PRJ-02 nếu số liệu chưa đủ.”</td></tr>
           <tr><td>Nộp khi một tuyến chưa sẵn sàng</td><td>Bản vẽ hoặc hồ sơ giá trị chưa đạt</td><td>“Chưa nộp được: {tên tuyến} đang ở trạng thái ‘{trạng thái}’.”</td></tr>
           <tr><td>Chênh lệch nhưng bỏ trống giải trình</td><td><code>qty_gap &gt; 0</code>, ghi chú rỗng</td><td>“Nhập giải trình cho phần chênh {số} — nội dung này hiện trên màn hình duyệt và ở hồ sơ quyết toán.”</td></tr>
+          <tr><td>Thu hồi vượt số tạm ứng còn lại</td><td><code>Σ advance_recovery &gt; Σ tạm ứng đã nhận</code></td><td>“Thu hồi {số} nhưng tạm ứng còn lại chỉ {số}. Hệ thống đã hạ xuống mức còn lại — kiểm tra trước khi trình.”</td></tr>
+          <tr><td>Hợp đồng chưa khai tỷ lệ thu hồi hoặc tỷ lệ giữ lại</td><td>Bảng đợt của <a href="BID-05.html">BID-05</a> thiếu tỷ lệ tương ứng</td><td>“Hợp đồng chưa khai tỷ lệ {thu hồi tạm ứng / giữ lại bảo hành}. Nhập tay ở đợt này hoặc bổ sung ở hợp đồng.”</td></tr>
+          <tr><td>Số tiền đề nghị chuyển không còn dương</td><td><code>amount_net ≤ 0</code></td><td>“Sau khấu trừ, đợt này không còn số tiền đề nghị chuyển. Giảm mức thu hồi tạm ứng hoặc gộp sang đợt sau.”</td></tr>
           <tr><td>Đợt chưa chốt sản lượng</td><td>Sản lượng đợt còn mở</td><td>“Đợt {n} chưa chốt sản lượng. Chốt tại PRJ-02 trước khi lập hồ sơ thanh toán.”</td></tr>
         </tbody>
       </table>
@@ -396,6 +414,9 @@
           <tr><td>UAT-ORD09-6</td><td>Hạng mục có đợt trình Đ1 đã được CĐT chấp thuận và đợt Đ2 đang chờ CĐT</td><td>Chọn đợt trình nguồn cho bản vẽ sơ họa</td><td>Chỉ Đ1 chọn được; Đ2 hiện mờ kèm lý do “CĐT chưa chấp thuận”</td></tr>
           <tr><td>UAT-ORD09-6</td><td>Hồ sơ nhận đủ tiền</td><td>Ghi nhận thanh toán</td><td>Doanh thu đợt vào lãi lỗ dự án; công nợ phải thu giảm</td></tr>
           <tr><td>UAT-ORD09-7</td><td>Có 5 hồ sơ nhiều trạng thái</td><td>Mở danh sách hồ sơ</td><td>Mỗi dòng hiện cả tình trạng bản vẽ lẫn tình trạng hồ sơ giá trị</td></tr>
+          <tr><td>UAT-ORD09-8</td><td>Hợp đồng khai thu hồi tạm ứng 10% và giữ lại bảo hành 5%; giá trị khối lượng đợt 3.870.000.000</td><td>Lập hồ sơ đợt</td><td>Bốn dòng hiện đủ: 3.870.000.000 − 387.000.000 − 193.500.000 = 3.289.500.000</td></tr>
+          <tr><td>UAT-ORD09-9</td><td>Tiếp UAT-8; nhận về đúng 3.289.500.000</td><td>Ghi nhận thanh toán</td><td>Hồ sơ đóng — lũy kế đã nhận so với số tiền đề nghị chuyển, không so với giá trị khối lượng</td></tr>
+          <tr><td>UAT-ORD09-10</td><td>Tạm ứng còn lại 200.000.000, tỷ lệ thu hồi tính ra 387.000.000</td><td>Lập hồ sơ đợt</td><td>Ô thu hồi tự hạ về 200.000.000 kèm thông điệp; lũy kế thu hồi bằng đúng tổng tạm ứng đã nhận</td></tr>
         </tbody>
       </table>
     </div>
