@@ -266,6 +266,10 @@
           <tr><td>Biên bản nghiệm thu hoàn thành</td><td class="k">handover_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Biên bản nghiệm thu hoàn thành đưa vào sử dụng và biên bản báo cáo tiến độ.</td></tr>
           <tr><td>Lũy kế thu từ CĐT</td><td class="k">total_claimed</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn các hồ sơ <a href="ORD-09.html">ORD-09</a> đã thanh toán cộng hồ sơ quyết toán này. Chỉ đọc.</td></tr>
           <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ giao khoán nhân công đã duyệt (<a href="PRJ-03.html">PRJ-03</a>). Chỉ đọc.</td></tr>
+          <tr><td>Tạm ứng còn phải thu hồi</td><td class="k">advance_outstanding</td><td>Số tiền</td><td class="c">—</td><td>Tạm ứng đã nhận ở <a href="ORD-01.html">ORD-01</a> trừ lũy kế đã thu hồi qua các đợt <a href="ORD-09.html">ORD-09</a>. Chỉ đọc.</td></tr>
+          <tr><td>Lũy kế giữ lại bảo hành</td><td class="k">retention_total</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn <code>retention_withheld</code> của mọi đợt <a href="ORD-09.html">ORD-09</a> cộng phần giữ lại của chính hồ sơ quyết toán. Chỉ đọc.</td></tr>
+          <tr><td>Ngày hết hạn bảo hành</td><td class="k">warranty_due_at</td><td>Ngày</td><td class="c">—</td><td>Tính từ <code>warranty_from</code> và <code>warranty_months</code> của hợp đồng (<a href="BID-05.html">BID-05</a>). Sinh nhắc lập hồ sơ thu hồi trước hạn 15 ngày.</td></tr>
+          <tr><td>Hồ sơ thu hồi bảo hành</td><td class="k">retention_dossier_id</td><td>Tham chiếu</td><td class="c">—</td><td><code>HSBH-&lt;project&gt;-NN</code>. Dùng lại khung theo dõi hồ sơ của <a href="ORD-01.html">ORD-01</a>; lập được sớm nhất từ ngày hết hạn bảo hành.</td></tr>
           <tr><td>Giá trị thiệt hại</td><td class="k">loss_amount</td><td>Số tiền</td><td class="c">—</td><td>Bằng phần lũy kế trả tổ đội vượt lũy kế thu được, quy ra tiền theo đơn giá hợp đồng.</td></tr>
           <tr><td>Nguyên nhân</td><td class="k">loss_reason</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi có thiệt hại; hiển thị nguyên văn trong cảnh báo gửi Ban lãnh đạo.</td></tr>
           <tr><td>Khoản phạt của công ty</td><td class="k">penalty_amount</td><td>Số tiền</td><td class="c">—</td><td><b>Chỉ đọc</b> — tổng các biên bản phạt của hợp đồng ở <a href="BID-07.html">BID-07</a>, bấm vào mở danh sách biên bản. Trước đây ô này nhập tay; từ khi có bản ghi biên bản thì một con số gõ lại ở đây chỉ có thể lệch khỏi chứng từ nó tóm tắt.</td></tr>
@@ -285,6 +289,8 @@
       <li>Danh sách cá nhân liên quan chỉ hiện với Ban lãnh đạo và trưởng bộ phận.</li>
       <li>Hồ sơ quyết toán thanh toán xong thì hợp đồng chuyển trạng thái đóng và kích hoạt xử lý vật tư tồn cuối dự án ở <a href="ORD-08.html">ORD-08</a>.</li>
       <li>Dữ liệu thiệt hại tổng hợp được thành một mục trong báo cáo quản trị dự án phục vụ đánh giá cuối năm.</li>
+      <li>Hồ sơ quyết toán thu hết phần tạm ứng còn lại và hiện rõ số đã thu hồi qua các đợt trước.</li>
+      <li>Phần giữ lại bảo hành lũy kế hiện thành một dòng riêng kèm ngày hết hạn bảo hành và nút lập hồ sơ thu hồi khi tới hạn.</li>
     </ol>
 
     <h4>Mockup UI — Hồ sơ › Quyết toán hợp đồng</h4>
@@ -344,6 +350,10 @@
       <li><b>Thiệt hại quy ra tiền.</b> Phần chênh khối lượng quy đổi theo đơn giá hợp đồng thành giá trị thiệt hại.<span class="then">Có con số cụ thể thì mới đánh giá được mức độ và mới đối chiếu được với lãi lỗ dự án.</span></li>
       <li><b>Lưu vết vĩnh viễn.</b> Thiệt hại, khoản phạt và danh sách cá nhân liên quan không xóa được sau khi hồ sơ đóng.<span class="then">Sửa phải qua bản điều chỉnh có ghi lý do và người sửa.</span></li>
       <li><b>Dữ liệu cá nhân hạn chế quyền xem.</b> Danh sách cá nhân liên quan chỉ hiện với Ban lãnh đạo và trưởng bộ phận.<span class="then">Các vai trò khác vẫn thấy hồ sơ và giá trị thiệt hại nhưng không thấy tên người.</span></li>
+      <li><b>Quyết toán thu hết tạm ứng còn lại.</b> Phần tạm ứng chưa thu hồi qua các đợt <a href="ORD-09.html">ORD-09</a> được trừ toàn bộ vào hồ sơ quyết toán.<span class="then">Không còn đợt nào phía sau để thu dần, nên đây là chỗ cuối cùng khoản tạm ứng có thể quay về. Phần thu hồi lớn hơn giá trị quyết toán thì hiện thành khoản phải thu của chủ đầu tư, không âm hóa hồ sơ.</span></li>
+      <li><b>Đóng hợp đồng không đóng khoản giữ lại.</b> Quyết toán xong thì phần thi công đóng, còn <code>retention_total</code> vẫn mở tới khi hết hạn bảo hành và chỉ ra khỏi sổ bằng hồ sơ thu hồi <code>HSBH-…</code>.<span class="then">Gộp khoản giữ lại vào quyết toán là ghi nhận đã thu một số tiền chưa hề về tài khoản. Tách ra thì công nợ phải thu đọc đúng, và hệ thống có một hồ sơ thật để nhắc khi tới hạn — đúng điều <a href="BID-05.html">BID-05</a> hứa khi bắt khai mốc tính bảo hành.</span></li>
+      <li><b>Bảo lãnh bảo hành đi cùng khoản giữ lại.</b> Hợp đồng có bảo lãnh bảo hành thì hồ sơ <code>HSBH-…</code> theo dõi cả hai: tiền giữ lại và thư bảo lãnh, cùng hạn hiệu lực khai ở <a href="BID-05.html">BID-05</a>.<span class="then">Đóng hồ sơ thu hồi mà quên thư bảo lãnh là để một nghĩa vụ ngân hàng mở vô thời hạn. Ngược lại, chủ đầu tư nhận bảo lãnh thay cho tiền giữ lại thì <code>retention_total</code> bằng 0 mà nghĩa vụ vẫn còn — hai con số phải đứng cạnh nhau mới đọc đúng.</span></li>
+      <li><b>Hồ sơ thu hồi bảo hành dùng chung khung ORD-01.</b> Chuỗi trạng thái, thành phần hồ sơ theo mẫu chủ đầu tư, sổ vướng mắc và đối chiếu ngân hàng không định nghĩa lại.<span class="then">Đây là hồ sơ thứ tư của cùng một khung, sau tạm ứng, vật tư và khối lượng hoàn thành. Khoản giữ lại của <em>tổ đội</em> ở <a href="PRJ-03.html">PRJ-03</a> là một dòng tiền khác và điều kiện chi trả của nó còn chờ chốt — xem <a href="PL-C.html#Q-68">PL-C · Q-68</a>.</span></li>
       <li><b>Đóng hợp đồng kéo theo dọn tồn.</b> Quyết toán thanh toán xong thì hợp đồng đóng và sinh việc xử lý vật tư tồn cuối dự án.<span class="then">Vật tư tồn đi theo <a href="ORD-08.html">ORD-08</a>; kho dự án chỉ đóng khi tồn bằng 0.</span></li>
       <li><b>Kế thừa khung ORD-01.</b> Chuỗi trạng thái, vướng mắc, đối chiếu ngân hàng dùng chung như mọi hồ sơ khác.<span class="then">Chỉ phần chứng từ bắt buộc và nhánh thiệt hại là riêng.</span></li>
     
@@ -361,6 +371,9 @@
           <tr><td>Lũy kế thu nhỏ hơn lũy kế trả</td><td><code>total_claimed &lt; total_paid_crew</code></td><td>“Thiệt hại {giá trị}: đã trả tổ đội {giá trị} nhưng chỉ thu được {giá trị}. Cảnh báo đã gửi Ban lãnh đạo, P. TQT và dự án.”</td></tr>
           <tr><td>Có thiệt hại nhưng thiếu nguyên nhân</td><td><code>loss_amount &gt; 0</code>, lý do rỗng</td><td>“Nhập nguyên nhân — nội dung này hiển thị nguyên văn trong cảnh báo gửi Ban lãnh đạo.”</td></tr>
           <tr><td>Còn hồ sơ đợt chưa thanh toán</td><td>Có hồ sơ ORD-09 đang mở</td><td>“Còn {n} hồ sơ thanh toán đợt chưa đóng. Quyết toán khi chưa xong các đợt sẽ làm lệch lũy kế.”</td></tr>
+          <tr><td>Còn tạm ứng chưa thu hồi</td><td><code>advance_outstanding &gt; 0</code> khi trình duyệt</td><td>“Còn {giá trị} tạm ứng chưa thu hồi. Hồ sơ quyết toán sẽ thu hết phần này — kiểm tra lại số trước khi trình.”</td></tr>
+          <tr><td>Lập hồ sơ thu hồi bảo hành sớm</td><td>Ngày lập &lt; <code>warranty_due_at</code></td><td>“Bảo hành còn tới {ngày}. Lập hồ sơ thu hồi sớm hơn hạn cần lý do và một cấp duyệt của Ban lãnh đạo.”</td></tr>
+          <tr><td>Hợp đồng thiếu mốc tính bảo hành</td><td><code>warranty_from</code> rỗng mà <code>retention_total &gt; 0</code></td><td>“Đang giữ {giá trị} bảo hành nhưng hợp đồng chưa khai mốc tính — không tính được ngày thu hồi. Bổ sung ở BID-05.”</td></tr>
           <tr><td>Xóa bản ghi thiệt hại</td><td>Hồ sơ đã đóng</td><td>“Thiệt hại đã lưu vết, không xóa được. Lập bản điều chỉnh kèm lý do nếu số liệu sai.”</td></tr>
         </tbody>
       </table>
@@ -378,6 +391,9 @@
           <tr><td>UAT-ORD10-5</td><td>Tiếp UAT-3, đăng nhập bằng tài khoản Giám đốc</td><td>Mở hồ sơ quyết toán</td><td>Thấy đủ cá nhân liên quan và vai trò</td></tr>
           <tr><td>UAT-ORD10-6</td><td>Hồ sơ quyết toán đã đóng</td><td>Thử xóa bản ghi thiệt hại</td><td>Bị chặn; chỉ cho lập bản điều chỉnh có lý do</td></tr>
           <tr><td>UAT-ORD10-7</td><td>Quyết toán nhận đủ tiền, kho dự án còn 40 m²</td><td>Đóng hồ sơ</td><td>Hợp đồng chuyển trạng thái đóng; sinh việc xử lý vật tư tồn ở ORD-08</td></tr>
+          <tr><td>UAT-ORD10-9</td><td>Tạm ứng 2,8 tỷ, đã thu hồi 2,1 tỷ qua 6 đợt</td><td>Lập hồ sơ quyết toán</td><td>Dòng thu hồi hiện 700 triệu còn lại; sau khi đóng, tạm ứng còn phải thu hồi bằng 0</td></tr>
+          <tr><td>UAT-ORD10-10</td><td>Lũy kế giữ lại bảo hành 1,4 tỷ; bảo hành 24 tháng từ ngày bàn giao 30/09/2026</td><td>Đóng hồ sơ quyết toán</td><td>Hợp đồng đóng phần thi công; khoản 1,4 tỷ vẫn mở kèm hạn 30/09/2028 và nhắc trước 15 ngày</td></tr>
+          <tr><td>UAT-ORD10-11</td><td>Tiếp UAT-10, ngày hệ thống 20/09/2028</td><td>Bấm “Lập hồ sơ thu hồi bảo hành”</td><td>Sinh hồ sơ <code>HSBH-…</code> theo khung ORD-01, giá trị đề nghị nạp sẵn 1,4 tỷ</td></tr>
           <tr><td>UAT-ORD10-8</td><td>Cuối năm, 2 dự án có thiệt hại</td><td>Mở báo cáo quản trị dự án</td><td>Có mục tổng hợp thiệt hại theo dự án phục vụ đánh giá</td></tr>
         </tbody>
       </table>
