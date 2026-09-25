@@ -384,6 +384,19 @@
       </table>
     </div>
 
+    <h4>Làm tròn tiền — tham số công ty</h4>
+    <p>Hai nơi trong hệ thống làm tròn đơn giá trước khi nhân khối lượng, và cả hai đều phải khai mức ở đây chứ không chôn trong mã nguồn: đơn giá khoán tổ đội (<a href="PRJ-01.html">PRJ-01</a>, vốn đã làm tròn tới 1.000 đ) và đơn giá chào (<a href="BID-03.html">BID-03</a>, <a href="2026-09-25/YC-15.html">YC-15</a>). Giá vốn không nằm trong danh sách này — nó là thước đo biên lợi nhuận và không rời khỏi công ty.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Tham số</th><th>Mã</th><th style="width:96px">Mặc định</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mức làm tròn đơn giá chào</td><td class="k">offer_rounding</td><td class="c">1.000 đ</td><td>Nhận 1 · 100 · 1.000 · 10.000; giá trị 1 nghĩa là không làm tròn. Gói thầu sửa được mức của riêng mình, và mức đã dùng đóng băng cùng phiên bản báo giá — vòng cũ không tính lại theo tham số hôm nay.</td></tr>
+          <tr><td>Hướng làm tròn đơn giá chào</td><td class="k">offer_rounding_mode</td><td class="c">Lên</td><td>Lên · Gần nhất · Xuống. <b>Không</b> đặt theo gói: hai gói làm tròn hai chiều thì không so được biên lợi nhuận giữa chúng. Mức và hướng đang chờ <a href="PL-C.html#Q-74">Q-74</a>.</td></tr>
+          <tr><td>Mức làm tròn đơn giá khoán</td><td class="k">khoan_rounding</td><td class="c">1.000 đ · gần nhất</td><td>Đã dùng sẵn ở <a href="PRJ-01.html">PRJ-01</a> quy tắc 21 dưới dạng con số viết cứng trong đặc tả, với hướng <em>gần nhất, nửa lên</em>; khai thành tham số để hai chỗ làm tròn không trôi khỏi nhau. Hai mức bằng nhau nhưng <b>hai hướng khác nhau</b> — tiền trả đi làm tròn gần nhất, tiền thu về làm tròn lên; đó là chủ ý, không phải bỏ sót.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h4>Bộ lọc khoảng thời gian — quy ước dùng chung</h4>
     <p>Yêu cầu 22/09 dòng 21 viết một câu quét ngang cả hệ thống: “tất cả các phân hệ nào có tính thực theo thời gian đều để nút lọc thời gian”. Quy ước của <b>cái điều khiển</b> viết ở đây, một lần; mỗi màn hình chỉ khai <b>mốc lọc</b> của riêng nó trong mục quy tắc nghiệp vụ của trang đó — xem <a href="2026-09-22/YC-14.html">YC-14</a> để đối chiếu cả danh sách.</p>
     <div class="tw">

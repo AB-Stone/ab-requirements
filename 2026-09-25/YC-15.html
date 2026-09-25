@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-15 Làm tròn đơn giá chào — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đối chiếu 25/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Đối chiếu 25/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Bảng phân loại 29 phát hiện</a>
+    <div class="rail-grp">Lỗ hổng đặc tả</div>
+    <a class="on" href="YC-15.html"><i>YC-15</i>Làm tròn đơn giá chào</a>
+    <a href="YC-16.html"><i>YC-16</i>Tự sinh hồ sơ tạm ứng</a>
+    <a href="YC-17.html"><i>YC-17</i>Khóa bảng theo dõi hạng mục</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Đối chiếu 25/09/2026</a> / Phòng Đấu thầu / <b>YC-15</b></div><div class="sp"></div>
+  <div class="pnav"><a href="index.html">Mục lục</a><a href="YC-16.html">YC-16 →</a></div>
+</div>
+<section class="sheet solo" id="YC-15">
+  <header class="tb">
+    <div class="tb-id">YC-15</div>
+    <div class="tb-main">
+      <h3>Làm tròn đơn giá chào</h3>
+      <p>Bản dựng chào ra <code>2.600.400.004</code> đồng, sau thuế <code>2.808.432.004</code>. Bốn đồng lẻ ở cuối một con số hai nghìn tỷ không phải lỗi số học — nó đúng đến từng đồng. Nó là dấu hiệu rằng <b>không ai từng chốt đơn giá chào được làm tròn tới đâu</b>: đặc tả làm tròn đơn giá khoán tới 1.000 đ (gần nhất, nửa lên) ở <a href="../PRJ-01.html">PRJ-01</a> nhưng bỏ trống đúng câu đó cho đơn giá chào, là con số duy nhất trong hai bảng ấy thực sự rời khỏi công ty.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Sửa — thêm quy tắc vào một trang đã có</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../BID-03.html">BID-03</a> · <a href="../PF-01.html">PF-01</a></dd></div>
+        <div><dt>Điểm chờ chốt</dt><dd><a href="../PL-C.html#Q-74">Q-74</a> — mức và hướng làm tròn</dd></div>
+        <div><dt>Nguồn</dt><dd>Đối chiếu 25/09/2026 · lỗi <code>L-03</code></dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Đường truy cập</td><td colspan="2">Đấu thầu › Áp giá &amp; thương thảo</td></tr>
+          <tr><td>Nguyên văn phát hiện</td><td colspan="2">Giá chào không làm tròn: tổng chào 2.600.400.004, sau thuế 2.808.432.004; vòng 2 là 2.468.734.177</td></tr>
+          <tr><td>Đặc tả</td><td><a href="../BID-03.html">BID-03</a> · <code>price_offer</code> chỉ ghi “nhập tay hoặc sinh từ hệ số lợi nhuận” — không có quy tắc làm tròn nào. <a href="../PRJ-01.html">PRJ-01</a> quy tắc 21 thì đã làm tròn đơn giá khoán tới 1.000 đ theo hướng gần nhất</td><td>Đơn giá chào làm tròn theo một mức khai ở dữ liệu nền; thành tiền và mọi dòng tổng tính từ đơn giá <b>đã làm tròn</b>, không từ số lẻ ẩn phía sau</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <b>Làm tròn đơn giá, không làm tròn thành tiền</b>
+      <p style="margin:0">Hai cách cho hai kết quả khác nhau, và chỉ một cách chịu được phép kiểm tra của bên nhận báo giá. Tệp gửi đi in <em>đơn giá</em> và <em>thành tiền</em> cạnh nhau; người đọc lấy khối lượng nhân đơn giá để soát. Nếu hệ thống giữ đơn giá lẻ và chỉ làm tròn thành tiền, phép nhân của họ ra số khác của ta ở <b>mọi dòng</b> — và không dòng nào giải thích được. Làm tròn ở đơn giá thì phép nhân ấy luôn khớp.</p>
+    </div>
+
+    <h4>Quy tắc làm tròn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:22%">Đại lượng</th><th style="width:30%">Xử lý</th><th>Vì sao</th></tr></thead>
+        <tbody>
+          <tr><td>Đơn giá chào <code>price_offer</code></td><td><b>Làm tròn lên</b> tới bội của <code>offer_rounding</code></td><td>Làm tròn <b>lên</b>, không lấy gần nhất — và ở đây nó <b>khác</b> đơn giá khoán, vốn làm tròn “gần nhất, nửa lên” (<a href="../PRJ-01.html">PRJ-01</a> quy tắc 21). Khác có chủ ý: đơn giá khoán là tiền công ty <em>trả đi</em>, làm tròn gần nhất thì sai số hai chiều triệt tiêu nhau; đơn giá chào là tiền công ty <em>thu về</em>, lấy gần nhất nghĩa là một nửa số dòng bị hạ giá — cắt một phần biên lợi nhuận vừa tính ra, và cắt âm thầm ngay dưới ngưỡng <code>min_margin</code> mà chốt chặn duyệt giá không thấy gì. Chiều làm tròn chờ <a href="../PL-C.html#Q-74">Q-74</a> xác nhận.</td></tr>
+          <tr><td>Thành tiền chào</td><td><code>price_offer</code> đã làm tròn <code>× qty</code>, rồi làm tròn tới <b>đồng</b></td><td>Khối lượng có phần thập phân nên tích vẫn ra số lẻ; cắt ở đồng vì đồng là đơn vị nhỏ nhất của chứng từ.</td></tr>
+          <tr><td>Giá vốn <code>cost_total</code>, <code>cost_amount</code></td><td><b>Không làm tròn</b></td><td>Giá vốn là số nội bộ để đo biên lợi nhuận. Làm tròn nó là bóp méo chính thước đo — và nó không bao giờ rời khỏi công ty (<a href="../BID-03.html">BID-03</a> quy tắc 10).</td></tr>
+          <tr><td>Biên lợi nhuận <code>margin_pct</code></td><td>Tính <b>ngược</b> từ đơn giá đã làm tròn</td><td>Giống cách <a href="../PRJ-01.html">PRJ-01</a> tính ngược <code>support_pct</code> sau khi làm tròn đơn giá khoán. Nếu tính từ số chưa làm tròn thì biên hiển thị khác biên thật, đúng ở chỗ nguy hiểm nhất — sát ngưỡng.</td></tr>
+          <tr><td>Tổng cộng, VAT, sau thuế</td><td>Cộng từ cột Thành tiền, <b>không làm tròn thêm lần nữa</b></td><td>Làm tròn hai lần là cách chắc chắn để dòng tổng không bằng tổng các dòng. <a href="../BID-03.html">BID-03</a> quy tắc 17 đã đặt dòng tổng ra ngoài dữ liệu; quy tắc này giữ nguyên điều đó.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <b>Làm tròn đơn giá không làm cho tổng thành số tròn</b>
+      <p style="margin:0">Cần nói thẳng để không ai kỳ vọng nhầm. Khối lượng thật là <code>125,5 m²</code>, <code>38,74 md</code> — đơn giá tròn nghìn nhân khối lượng lẻ vẫn ra thành tiền lẻ, và tổng vẫn không kết thúc bằng ba số 0. Cái mất đi là <b>đồng lẻ vô nghĩa sinh từ đơn giá lẻ</b>, không phải mọi chữ số lẻ. Muốn chính con số <em>tổng giá trị đơn hàng</em> tròn thì phải làm tròn ở cấp tổng và bù chênh lệch vào một dòng — đó là một quyết định khác, có hệ quả khác, và đợt này không đặt ra.</p>
+    </div>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mức làm tròn đơn giá chào</td><td class="k">offer_rounding</td><td>Số</td><td class="c req">✱</td><td>Tham số công ty ở <a href="../PF-01.html">PF-01</a>, mặc định <b>1.000 đ</b>. Nhận 1 · 100 · 1.000 · 10.000; giá trị 1 nghĩa là không làm tròn. Gói thầu sửa được mức của riêng mình, và mức đã dùng đóng băng cùng phiên bản báo giá — vòng cũ không tính lại theo tham số hôm nay.</td></tr>
+          <tr><td>Hướng làm tròn</td><td class="k">offer_rounding_mode</td><td>Chọn 1</td><td class="c req">✱</td><td>Lên · Gần nhất · Xuống. Mặc định <b>Lên</b>, khác hướng của đơn giá khoán — xem cột <em>Vì sao</em> ở bảng trên. Là tham số công ty, không đặt theo gói: hai gói làm tròn hai chiều thì không so được biên lợi nhuận giữa chúng.</td></tr>
+          <tr><td>Đơn giá trước làm tròn</td><td class="k">price_offer_raw</td><td>Số tiền / ĐVT</td><td class="c">—</td><td>Số máy chủ tính ra từ hệ số lợi nhuận trước khi làm tròn. Chỉ đọc, chỉ hiện khi người dùng mở phần diễn giải. Giữ lại để trả lời “vì sao đơn giá là <code>1.235.000</code> chứ không phải <code>1.234.216</code>” mà không phải tính lại.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ bổ sung cho <a href="../BID-03.html">BID-03</a></h4>
+    <ol class="br">
+      <li><b>Đơn giá chào luôn là bội của mức làm tròn.</b> Dù đến từ hệ số lợi nhuận hay từ tay người lập, <code>price_offer</code> được làm tròn ngay khi rời ô và ô hiện đúng số đã làm tròn.<span class="then">Không giữ một số lẻ phía sau rồi chỉ hiển thị số tròn — đó là cách sinh ra chênh lệch mà không ai tìm được nguồn. Người lập gõ <code>1.234.216</code> thì ô thành <code>1.235.000</code> trước mắt họ, không phải sau lưng họ.</span></li>
+      <li><b>Hệ số lợi nhuận hai chiều tính lại sau khi làm tròn.</b> Nhập hệ số thì đơn giá sinh ra rồi làm tròn, và <code>margin_pct</code> tính ngược từ đơn giá đã làm tròn.<span class="then">Nối tiếp quy tắc 5 của <a href="../BID-03.html">BID-03</a>. Hệ quả là hệ số hiển thị có thể lệch vài phần trăm nghìn so với hệ số vừa gõ — đúng như vậy, vì đơn giá mới là thứ gửi đi. Đây cũng là cách <a href="../PRJ-01.html">PRJ-01</a> xử lý <code>support_pct</code>.</span></li>
+          <li><b>Mức làm tròn đóng băng theo phiên bản báo giá.</b> Mỗi vòng lưu <code>offer_rounding</code> và <code>offer_rounding_mode</code> đã dùng.<span class="then">Nối tiếp quy tắc 7 — mỗi lần gửi là một phiên bản. Đổi tham số công ty giữa hai vòng mà tính lại vòng cũ thì bản đối tác đang cầm khác bản công ty lưu, đúng thứ quy tắc 11 tồn tại để tránh.</span></li>
+      <li><b>Dòng có đơn giá nhỏ hơn mức làm tròn thì cảnh báo.</b> Đơn giá <code>800 đ</code> với mức làm tròn <code>1.000 đ</code> sẽ thành <code>1.000 đ</code> — lệch 25%.<span class="then">Không chặn, vì có đầu việc đơn giá thật sự nhỏ. Nhưng phải nói ra, vì ở bậc giá đó việc làm tròn không còn là làm đẹp con số mà là đổi giá. Thông điệp nêu cả hai số và gợi ý hạ mức làm tròn của gói.</span></li>
+      <li><b>Giá vốn không làm tròn.</b> <code>cost_total</code> và <code>cost_amount</code> giữ nguyên số tính được.<span class="then">Biên lợi nhuận là hiệu của một số đã làm tròn và một số chưa làm tròn — điều đó đúng và có chủ ý: phần làm tròn lên rơi vào biên, không rơi vào chi phí. <a href="../RPT-03.html">RPT-03</a> đối chiếu biên dự thầu với biên thực tế nên cả hai vế phải cùng một cách tính.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">Tình huống</th><th style="width:26%">Điều kiện</th><th>Thông điệp</th></tr></thead>
+        <tbody>
+          <tr><td>Đơn giá nhỏ hơn mức làm tròn</td><td><code>price_offer_raw &lt; offer_rounding</code></td><td>“Dòng {mã} có đơn giá {raw} — làm tròn lên {mức} thành {kết quả}, lệch {tỷ lệ}. Hạ mức làm tròn của gói nếu con số này quan trọng.” <em>(cảnh báo, cho đi tiếp)</em></td></tr>
+          <tr><td>Làm tròn đẩy biên xuống dưới ngưỡng</td><td>Hướng <em>Xuống</em> hoặc <em>Gần nhất</em> khiến <code>margin_pct &lt; min_margin</code></td><td>“Sau khi làm tròn, biên lợi nhuận còn {biên} — dưới ngưỡng {ngưỡng}. Gửi đối tác đang bị khóa.” <em>(chặn — cùng chốt chặn của quy tắc 6)</em></td></tr>
+          <tr><td>Đổi mức làm tròn khi đã có vòng đã gửi</td><td>Sửa <code>offer_rounding</code> của gói · <code>round_no &gt; 1</code></td><td>“Mức làm tròn mới chỉ áp cho vòng đang soạn. {n} vòng đã gửi giữ nguyên mức {mức cũ}.” <em>(thông báo)</em></td></tr>
+          <tr><td>Mức làm tròn ngoài danh sách</td><td><code>offer_rounding</code> không thuộc 1 · 100 · 1.000 · 10.000</td><td>“Mức làm tròn chỉ nhận 1, 100, 1.000 hoặc 10.000 đồng.” <em>(chặn)</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>Mọi đơn giá chào trên bảng áp giá và trên tệp gửi đối tác là bội của mức làm tròn đang hiệu lực.</li>
+      <li>Lấy khối lượng nhân đơn giá in trên báo giá ra đúng thành tiền in cạnh nó, ở mọi dòng.</li>
+      <li>Dòng tổng bằng tổng các dòng — không làm tròn lần thứ hai ở chân bảng.</li>
+      <li>Biên lợi nhuận hiển thị là biên của con số thật sự gửi đi.</li>
+      <li>Vòng báo giá cũ giữ nguyên mức làm tròn tại thời điểm gửi.</li>
+      <li>Giá vốn không bị làm tròn ở bất kỳ đâu.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC15-1</td><td>Gói mới, mức làm tròn mặc định 1.000 đ</td><td>Nhập đơn giá <code>1.234.216</code>, rời ô</td><td>Ô hiện <code>1.235.000</code>; thành tiền tính theo <code>1.235.000</code></td></tr>
+          <tr><td>UAT-YC15-2</td><td>Tiếp UAT-1, khối lượng <code>125,5</code></td><td>Đọc cột Thành tiền</td><td>Hiện <code>154.992.500</code> — đúng bằng <code>125,5 × 1.235.000</code></td></tr>
+          <tr><td>UAT-YC15-3</td><td>Bảng đủ đơn giá mọi dòng</td><td>Cộng tay cột Thành tiền</td><td>Bằng đúng dòng <em>Tổng cộng trước thuế</em>, không lệch một đồng</td></tr>
+          <tr><td>UAT-YC15-4</td><td>Gói có <code>min_margin</code> 12%</td><td>Nhập hệ số lợi nhuận cho ra biên 12,04%</td><td>Đơn giá làm tròn lên; biên hiển thị tính lại từ đơn giá đã làm tròn và <b>không tụt xuống dưới 12%</b></td></tr>
+          <tr><td>UAT-YC15-5</td><td>Dòng có đơn giá <code>800 đ</code></td><td>Rời ô</td><td>Cảnh báo nêu cả <code>800</code> lẫn <code>1.000</code> và tỷ lệ lệch; vẫn lưu được</td></tr>
+          <tr><td>UAT-YC15-6</td><td>Gói đã gửi vòng 1 ở mức 1.000 đ</td><td>Đổi mức gói sang 10.000 đ, mở lại vòng 1</td><td>Vòng 1 giữ nguyên số cũ; thông báo nêu rõ chỉ vòng đang soạn đổi</td></tr>
+          <tr><td>UAT-YC15-7</td><td>Tiếp UAT-6</td><td>Xuất lại tệp báo giá vòng 1</td><td>Trả về đúng tệp đã lưu, số không đổi (quy tắc 11 của <a href="../BID-03.html">BID-03</a>)</td></tr>
+          <tr><td>UAT-YC15-8</td><td>Gói bất kỳ</td><td>Mở bảng áp giá, đọc cột giá vốn</td><td>Giá vốn giữ nguyên số lẻ, không bị làm tròn</td></tr>
+          <tr><td>UAT-YC15-9</td><td>Đặt mức làm tròn của gói là 1</td><td>Nhập đơn giá <code>1.234.216</code></td><td>Giữ nguyên <code>1.234.216</code> — mức 1 nghĩa là không làm tròn</td></tr>
+          <tr><td>UAT-YC15-10</td><td>Gói <code>KH_0003</code>, bảng giá của vòng 1</td><td>Chốt giá, mở BOQ hợp đồng ở <a href="../BID-05.html">BID-05</a></td><td>Đơn giá trong BOQ hợp đồng đúng bằng đơn giá đã làm tròn của vòng đã chốt</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../BID-03.html">BID-03 áp giá &amp; thương thảo</a><a href="../PRJ-01.html">PRJ-01 giá khoán tổ đội</a><a href="../PF-01.html">PF-01 danh mục nền &amp; mã hóa</a><a href="../RPT-03.html">RPT-03 báo cáo lãi lỗ</a><a href="../PL-C.html#Q-74">PL-C · Q-74 mức làm tròn</a><a href="index.html">Mục lục đợt đối chiếu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Lỗ hổng 1 / 3</span><span><code>2026-09-25/YC-15.html</code></span>
+  <span>ABSMS — Đối chiếu bản dựng 25/09/2026</span>
+  <span>Nguồn: <code>lỗi L-03</code></span>
+</div>
+</main>
+</div>
+</body></html>

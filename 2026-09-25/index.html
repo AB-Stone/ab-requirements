@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đối chiếu bản dựng 25/09/2026 — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đối chiếu 25/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Đối chiếu 25/09/2026</div>
+    <a class="on" href="index.html"><i>MỤC LỤC</i>Bảng phân loại 29 phát hiện</a>
+    <div class="rail-grp">Lỗ hổng đặc tả</div>
+    <a href="YC-15.html"><i>YC-15</i>Làm tròn đơn giá chào</a>
+    <a href="YC-16.html"><i>YC-16</i>Tự sinh hồ sơ tạm ứng</a>
+    <a href="YC-17.html"><i>YC-17</i>Khóa bảng theo dõi hạng mục</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="../index.html">ABSMS GĐ1</a> / <b>Đối chiếu bản dựng 25/09/2026</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-15.html">YC-15 →</a></div>
+</div>
+<header class="masthead">
+  <div class="eyebrow">Công ty CP Đá An Bình · Hệ thống ABSMS</div>
+  <h1>Đối chiếu bản dựng<br>25/09/2026</h1>
+  <p class="lede">Đợt này <b>không mang yêu cầu mới</b>. Nó là bản kiểm chứng: chạy trọn luồng <code>ABS.drawio</code> trên <code>dev.absms.site</code> bằng gói thử <code>KH_0003</code>, rồi đặt từng phát hiện cạnh đặc tả đã chốt để trả lời đúng một câu — <em>đặc tả thiếu, hay bản dựng chưa bám đặc tả?</em> Hai mươi chín phát hiện, và câu trả lời nghiêng hẳn về một phía: <b>23 trong số đó là bản dựng chưa bám đặc tả đã có</b>. Chỉ ba hạng mục phải viết mới.</p>
+  <dl class="stamp">
+    <div><dt>Nguồn</dt><dd><code>Doi_chieu_YC_va_loi_ABSMS_KH_0003.xlsx</code> · 3 sheet</dd></div>
+    <div><dt>Bản dựng kiểm tra</dt><dd><code>dev.absms.site</code> · 24 – 25/09/2026 · gói <code>KH_0003</code></dd></div>
+    <div><dt>Số phát hiện</dt><dd>14 mục đối chiếu yêu cầu · 15 lỗi theo luồng</dd></div>
+    <div><dt>Phải viết vào đặc tả</dt><dd><a href="YC-15.html">YC-15</a> · <a href="YC-16.html">YC-16</a> · <a href="YC-17.html">YC-17</a> — ba trang, không trang mới nào</dd></div>
+    <div><dt>Điểm cần chốt</dt><dd><a href="../PL-C.html#Q-74">Q-74</a> · <a href="../PL-C.html#Q-75">Q-75</a></dd></div>
+    <div><dt>Phiên bản</dt><dd>Bản thảo 1.0</dd></div>
+  </dl>
+</header>
+
+<section class="block" id="cach-doc">
+  <h2><em>§0</em>Vì sao đợt này khác hai đợt trước</h2>
+  <p class="intro"><a href="../2026-09-15/index.html">Đợt 15/09</a> và <a href="../2026-09-22/index.html">đợt 22/09</a> đi từ bảng yêu cầu vào đặc tả: mỗi dòng yêu cầu thành một trang <code>YC-nn</code>, làm rõ tới mức đặc tả rồi merge. Đợt này đi ngược chiều — từ <b>bản dựng</b> về đặc tả. Vì vậy sản phẩm chính của nó không phải một tập trang yêu cầu mà là <b>bảng phân loại ở §1</b>.</p>
+  <div class="note">
+    <b>Đặc tả thắng khi xung đột</b>
+    <p style="margin:0">Cột <em>Cần sửa như thế nào</em> của tệp đối chiếu là đề xuất của người kiểm thử, không phải quyết định nghiệp vụ. Ở hai chỗ nó trái với thiết kế đã cân nhắc của đặc tả — xem <a href="#khong-ap-dung">§3</a>. Nguyên tắc của đợt này: <b>giữ đặc tả, ghi lý do</b>, và chỉ đưa lên <a href="../PL-C.html">PL-C</a> khi chính đặc tả cũng chưa chắc.</p>
+  </div>
+  <div class="note">
+    <b>Cột đáng đọc nhất là cột cuối</b>
+    <p style="margin:0">Với một phát hiện thuộc nhóm <span class="tag t-neu">Bản dựng</span>, cột cuối chỉ thẳng <em>mục nào của trang nào</em> đã quy định điều đó. Đó là thứ đội triển khai cần — không phải một bản yêu cầu viết lại lần thứ ba, mà một đường dẫn tới câu đã viết sẵn.</p>
+  </div>
+</section>
+
+<section class="block" id="phan-loai">
+  <h2><em>§1</em>Bảng phân loại 29 phát hiện</h2>
+  <p class="intro">Mã giữ nguyên theo tệp đối chiếu: <code>YC n</code> là dòng của bảng yêu cầu gốc (<b>không phải</b> trang <code>YC-nn</code> của hai đợt trước), <code>L-nn</code> là lỗi phát hiện khi chạy luồng.</p>
+
+  <div class="grpband"><em>YC</em><h3>Đối chiếu yêu cầu</h3><span>14 mục</span></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:78px">Mã</th><th style="width:26%">Phát hiện</th><th style="width:104px">Phân loại</th><th>Đặc tả đã nói ở đâu · việc phải làm</th></tr></thead>
+      <tbody>
+        <tr><td class="k">YC 1</td><td>Áp giá doanh thu đã nằm đúng nhánh Đấu thầu</td><td><span class="tag t-ok">Đạt</span></td><td>Không phát sinh việc.</td></tr>
+        <tr><td class="k">YC 2</td><td>Tạo bảng giá khoán cho <code>KH_0003</code> ra bảng trống, không tự nạp đầu việc hợp đồng; không thấy vùng <em>Khác (tự nhập)</em></td><td><span class="tag t-neu">Bản dựng</span></td><td><a href="../PRJ-01.html">PRJ-01</a> quy tắc <em>Lập dòng giá khoán</em>: “<b>chọn đầu việc từ BOQ hợp đồng, không gõ tự do</b>”, và cột <em>Đơn giá chuẩn</em> “nạp sẵn theo vùng của công trình và ngày hiệu lực”. Vùng <em>Khác</em> đã có ở <a href="../PF-06.html">PF-06</a> · <code>region_id</code>, kèm ô tên vùng sinh dòng danh mục chờ duyệt.</td></tr>
+        <tr><td class="k">YC 3</td><td>Tab thẩm định đã đổi thành <em>Rà soát, kiểm tra hồ sơ mời thầu</em></td><td><span class="tag t-ok">Đạt</span></td><td>Không phát sinh việc.</td></tr>
+        <tr><td class="k">YC 4</td><td>Form tiếp nhận không có ô hỏi “gói gộp từ gói cũ?”; xóa mã gói thì không điền lại được</td><td><span class="tag t-neu">Bản dựng</span><br><span class="tag t-crit">1 phần không áp dụng</span></td><td><a href="../BID-01.html">BID-01</a> · <code>is_merge</code> ghi rõ “<b>ô hỏi ngay trên form tiếp nhận</b>”, kèm <code>merged_from[]</code>, <code>merge_note</code>, <code>merged_into</code>. Phần <em>để ô mã trống</em> không áp dụng — xem <a href="#khong-ap-dung">§3</a>. Lỗi thật chỉ là: xóa mã rồi thì không tự điền lại gợi ý.</td></tr>
+        <tr><td class="k">YC 5 / 17</td><td>Bảng BOQ thiếu hai nhóm dòng HSMT / nhà thầu đề xuất; dòng <em>Tổng cộng</em> ở bảng áp giá cộng dồn đơn giá của các dòng khác ĐVT</td><td><span class="tag t-neu">Bản dựng</span></td><td><a href="../BID-03.html">BID-03</a> § <em>Nhóm dòng và chân bảng</em>: bảng “giữ hai nhóm dòng chuẩn của biểu mẫu”, có tổng phụ từng nhóm, và <code>total_before_vat</code> = “<b>tổng cột Thành tiền của cả hai nhóm</b>” — không phải tổng đơn giá. <a href="../BID-01.html">BID-01</a> · <code>line_group</code> là trục nhóm, độc lập với <code>source_tender_id</code>.</td></tr>
+        <tr><td class="k">YC 6</td><td>Ô <em>Bảo hành</em> ở điều kiện thương mại có placeholder cố định “24 tháng”, trái với 12 tháng khai ở gói</td><td><span class="tag t-neu">Bản dựng</span></td><td><a href="../BID-05.html">BID-05</a> · <code>chk_warranty</code> đối chiếu <code>warranty_months</code> với <code>tender_baseline</code> chụp từ <a href="../BID-01.html">BID-01</a>. Một placeholder cứng là chỗ duy nhất trong luồng đó không đọc từ gói.</td></tr>
+        <tr><td class="k">YC 7 / 8 / 19</td><td><code>KH_0003</code> đã ký HĐ, khởi tạo dự án, nhưng không xuất hiện ở Shopdrawing; form bản vẽ mới vẫn bắt chọn đầu việc và vẫn còn bảng khối lượng; trang hạng mục thiếu cột Ghi chú và nút Khóa; mã đang là <code>SD-HN_0001</code></td><td><span class="tag t-neu">Bản dựng</span><br><span class="tag t-warn">1 phần đặc tả</span><br><span class="tag t-crit">1 phần chờ chốt</span></td><td><a href="../ORD-02.html">ORD-02</a> đã quy định cả ba: “<b>hồ sơ Shopdrawing của một dự án đã có sẵn ngay sau khi khởi tạo dự án</b>”; <code>shop_progress[]</code> “dòng sinh tự động từ danh mục hạng mục của dự án, <b>không gõ tay</b>”; cột 7 là <em>Ghi chú</em>. Cấp hồ sơ “chỉ mã, tiêu đề, dự án, <b>không một ô nhập nào khác</b>”. <b>Nút Khóa</b> thì đặc tả chưa có ở cấp bảng theo dõi → <a href="YC-17.html">YC-17</a>. <b>Tiền tố mã</b> đang chờ <a href="../PL-C.html#Q-50">Q-50</a>, đổi trước là đổi hai lần.</td></tr>
+        <tr><td class="k">YC 9</td><td>Form lập đơn hàng thiếu toàn bộ đầu phiếu YCSX và toàn bộ danh sách cắt đá; đếm “đã đặt lũy kế” không khớp danh sách đơn</td><td><span class="tag t-neu">Bản dựng</span><br><span class="tag t-crit">1 phần không áp dụng</span></td><td><a href="../ORD-03.html">ORD-03</a> § <em>Tham số — khối định danh phiếu yêu cầu sản xuất</em> có đủ mười lăm ô của biểu mẫu <code>BM/QLTC/YCSX</code>: <code>afp_no</code>, nơi gửi – nhận, mốc giao, số HĐ, người lập, khối duyệt và <code>factory_ack</code>. <a href="../ORD-11.html">ORD-11</a> là danh sách cắt đá <code>BM/QLTC/DSCĐ</code> với danh mục 47 mã <code>GC.001</code>–<code>GC.047</code>. Phần <em>47 cột cứng</em> không áp dụng — xem <a href="#khong-ap-dung">§3</a>.</td></tr>
+        <tr><td class="k">YC 10</td><td><code>KH_0003</code> không có dòng nào trong Theo dõi hồ sơ thanh toán; thiếu cột Địa điểm và tên hợp đồng; Tổng GT HĐ lặp ở cả bốn dòng hạng mục</td><td><span class="tag t-neu">Bản dựng</span></td><td><a href="../RPT-05.html">RPT-05</a> bảng cột đã có đủ: cột 5 <code>contract_no_short</code> · <code>contract_no_full</code>, cột 7 <code>site_address</code> rollup từ <a href="../BID-01.html">BID-01</a>, cột 11–12 <code>actual_start</code> · <code>actual_end</code> rollup từ <a href="../PRJ-02.html">PRJ-02</a> đặt ngay cạnh tiến độ theo HĐ. Chuyện tổng lặp thì đặc tả đã giải: “mỗi dòng là một hạng mục của một hợp đồng, bảng vẫn <b>gộp được về cấp hợp đồng bằng một nút chuyển chế độ xem</b>”.</td></tr>
+        <tr><td class="k">YC 14</td><td>Biên bản phạt CĐT — chưa lập thử nên chưa kiểm được upload, thông báo, phân bổ, hệ số</td><td><span class="tag t-neu">Chưa kiểm</span></td><td>Đặc tả đã merge ở đợt trước: <a href="../BID-07.html">BID-07</a>. Việc còn lại là chạy thử, không phải viết đặc tả. Hệ số cho phần không phân bổ vẫn đang chờ <a href="../PL-C.html#Q-51">Q-51</a>.</td></tr>
+        <tr><td class="k">YC 15</td><td>Trung tâm phê duyệt đúng mẫu, nhưng có một dòng rác không mã không nội dung; hợp đồng và duyệt nội bộ bản vẽ không đi qua trung tâm</td><td><span class="tag t-neu">Bản dựng</span></td><td><a href="../PF-03.html">PF-03</a> đã merge ở <a href="../2026-09-22/YC-12.html">YC-12</a>. Dòng rác là dữ liệu thử, không phải lỗ hổng đặc tả. Chuyện hợp đồng chưa vào hàng chờ là hệ quả của <code>L-06</code> — <a href="../BID-05.html">BID-05</a> đã quy định <code>sign_chain[]</code>.</td></tr>
+        <tr><td class="k">YC 16</td><td>Danh sách nhân viên cuộn được; còn ô chọn người trong hộp <em>Chuyển thẩm định</em> chưa gõ tìm được</td><td><span class="tag t-neu">Bản dựng</span></td><td>Phần cuộn đã xong ở <a href="../2026-09-22/TASKS.html#D-01">D-01</a>. Phần còn lại là dùng chung một component combobox có tìm kiếm cho mọi ô chọn nhân viên — việc giao diện, không đụng nghiệp vụ.</td></tr>
+        <tr><td class="k">YC 21</td><td>Thiếu bộ lọc thời gian ở Theo dõi hồ sơ thanh toán, Xuất nhập kho dự án, Tổng quan TQT, Tổng quan Dự án – Thi công</td><td><span class="tag t-neu">Bản dựng</span><br><span class="tag t-crit">1 phần chờ chốt</span></td><td>Quy ước chung đã ở <a href="../PF-01.html">PF-01</a>, bảng màn hình ↔ mốc lọc ở <a href="../2026-09-22/YC-14.html">YC-14</a>. Ba màn hình còn chờ <a href="../PL-C.html#Q-61">Q-61</a>–<a href="../PL-C.html#Q-63">Q-63</a>; bốn màn hình <a href="../PL-C.html#Q-64">Q-64</a> kê mà bản dựng chưa có nên phần đó là <b>dựng màn hình</b>, không phải thêm ô ngày.</td></tr>
+        <tr><td class="k">Sheet 3.BOQ</td><td>Ô Quy cách chỉ nhập một dòng; ở bảng thẩm định bị thu thành chữ nhỏ dưới tên đầu việc</td><td><span class="tag t-neu">Bản dựng</span></td><td><a href="../BID-01.html">BID-01</a> · <code>spec</code>: “<b>tối đa 2.000 ký tự — hồ sơ thật thường chép cả đoạn mô tả kỹ thuật vào đây, kể cả bảng tỷ lệ pha màu đá và chỉ định vị trí</b>”. Một ô một dòng không chứa nổi thứ đặc tả mô tả. Độ rộng cột đã xử ở <a href="../2026-09-22/TASKS.html#D-02">D-02</a>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grpband"><em>L</em><h3>Lỗi theo luồng <code>ABS.drawio</code></h3><span>15 lỗi</span></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:78px">Mã</th><th style="width:26%">Phát hiện</th><th style="width:104px">Phân loại</th><th>Đặc tả đã nói ở đâu · việc phải làm</th></tr></thead>
+      <tbody>
+        <tr><td class="k">L-01</td><td>Nút <em>Chuyển thẩm định</em> bấm được dù chưa đính kèm BOQ mời thầu; đóng hộp thoại thì mất hai người đã chọn</td><td><span class="tag t-neu">Bản dựng</span></td><td>Điều kiện đã có ở <a href="../BID-02.html">BID-02</a>; chỗ sai là <b>thời điểm kiểm</b> — kiểm trước khi mở hộp thoại thay vì sau khi bấm xác nhận. Mất lựa chọn khi đóng là lỗi giữ trạng thái, không đụng nghiệp vụ.</td></tr>
+        <tr><td class="k">L-02</td><td>Dòng <em>Tổng cộng</em> cộng đơn giá của các dòng khác ĐVT (m² + md)</td><td><span class="tag t-neu">Bản dựng</span></td><td>Trùng <code>YC 5/17</code>. <a href="../BID-03.html">BID-03</a> đã ghi tổng lấy theo cột <em>Thành tiền</em>.</td></tr>
+        <tr><td class="k">L-03</td><td>Giá chào không làm tròn: tổng chào <code>2.600.400.004</code>, sau thuế <code>2.808.432.004</code></td><td><span class="tag t-warn">Đặc tả</span></td><td><b>Lỗ hổng thật.</b> <a href="../BID-03.html">BID-03</a> · <code>price_offer</code> không có quy tắc làm tròn nào, trong khi <a href="../PRJ-01.html">PRJ-01</a> quy tắc 21 đã làm tròn đơn giá khoán tới 1.000 đ. → <a href="YC-15.html">YC-15</a>, mức làm tròn chờ <a href="../PL-C.html#Q-74">Q-74</a>.</td></tr>
+        <tr><td class="k">L-04</td><td>Sau khi lưu bảng giá, thứ tự dòng bị đảo (.02, .03, .01)</td><td><span class="tag t-neu">Bản dựng</span></td><td>Mã hạng mục <code>&lt;mã gói&gt;.NN</code> của <a href="../PF-01.html">PF-01</a> vốn là thứ tự tự nhiên của bảng. Sắp theo mã khi đọc, không dựa vào thứ tự trả về của cơ sở dữ liệu.</td></tr>
+        <tr><td class="k">L-05</td><td>Bấm <em>Chốt giá</em> ở vòng 2 ra trang lỗi (React #441); tải lại thì trạng thái đã chốt</td><td><span class="tag t-neu">Bản dựng</span></td><td>Lỗi giao diện sau khi ghi thành công — dữ liệu đã đúng. Không có phần nào của đặc tả liên quan.</td></tr>
+        <tr><td class="k">L-06</td><td><em>Tiến trình xác nhận</em> trống, không có bước ký nào; hợp đồng còn ở Nháp vẫn khởi tạo dự án được</td><td><span class="tag t-neu">Bản dựng</span></td><td><a href="../BID-05.html">BID-05</a> đã quy định đủ: <code>precheck</code> mười mục phân mức <em>chặn</em> / <em>cảnh báo</em> phải đạt mới mở được chuỗi ký, <code>sign_chain[]</code> chạy tuần tự trước khi gửi đối tác, <code>signed_at</code> “lấy theo thời điểm chữ ký cuối cùng”, và “<b>chỉ khi có đủ chữ ký hai bên thì dự án mới được khởi tạo</b>”.</td></tr>
+        <tr><td class="k">L-07</td><td>Báo “còn 1 mục chưa đạt ở mức CHẶN” trong khi mục đó là Bảo lãnh, vốn ở mức CẢNH BÁO</td><td><span class="tag t-neu">Bản dựng</span></td><td>Hai mức đã phân sẵn từng mục ở bảng <code>precheck</code> của <a href="../BID-05.html">BID-05</a> — <code>chk_guarantee</code> là <em>cảnh báo</em>, <code>chk_boq</code> là <em>chặn</em>. Thông điệp gộp hai mức vào một con số là lỗi đếm, không phải thiếu luật.</td></tr>
+        <tr><td class="k">L-08</td><td>Lưu hợp đồng làm mất xác nhận bỏ qua cảnh báo Bảo lãnh, phải xác nhận lại</td><td><span class="tag t-neu">Bản dựng</span></td><td>Xác nhận gắn với <em>trạng thái đã kiểm của một mục</em> chứ không gắn với lần lưu. Giữ xác nhận chừng nào trường liên quan chưa đổi.</td></tr>
+        <tr><td class="k">L-09</td><td>Ô “xác nhận gửi lại dù bảng giá không đổi” vẫn hiện dù bảng giá đã đổi 25% → 21%</td><td><span class="tag t-neu">Bản dựng</span></td><td>Điều kiện hiện ô là “giá không đổi so với vòng trước”; bản dựng đang hiện vô điều kiện.</td></tr>
+        <tr><td class="k">L-10</td><td>Dự án mới không tự vào Shopdrawing; tạo bản vẽ bị chặn vì “chưa duyệt nội bộ” mà không có chỗ duyệt → kẹt Lane 2–5</td><td><span class="tag t-neu">Bản dựng</span></td><td>Trùng <code>YC 7/8/19</code>. <b>Đây là điểm nghẽn thật của cả đợt</b> — nó chặn <code>L-15</code>, tức toàn bộ phần chưa kiểm được. Sửa mục này trước mọi mục khác.</td></tr>
+        <tr><td class="k">L-11</td><td>Sau ký HĐ và khởi tạo, Hồ sơ thanh toán không có gì cho <code>KH_0003</code>, trong khi sơ đồ đòi lập hồ sơ tạm ứng ngay sau ký</td><td><span class="tag t-warn">Đặc tả</span></td><td><b>Lỗ hổng thật.</b> <a href="../ORD-01.html">ORD-01</a> vẽ “hợp đồng có hiệu lực → lập hồ sơ tạm ứng theo đợt 1” như một thao tác người làm; không có luật nào bảo hệ thống <b>tự sinh bản nháp và nhắc</b>. → <a href="YC-16.html">YC-16</a>. Tỷ lệ tạm ứng vẫn đang chờ <a href="../PL-C.html#Q-65">Q-65</a>.</td></tr>
+        <tr><td class="k">L-12</td><td><code>KH_0003</code> không có dòng nào trong Theo dõi hồ sơ thanh toán</td><td><span class="tag t-neu">Bản dựng</span></td><td>Trùng <code>YC 10</code>.</td></tr>
+        <tr><td class="k">L-13</td><td>Tạo bảng giá mới cho <code>KH_0003</code> ra bảng trống</td><td><span class="tag t-neu">Bản dựng</span></td><td>Trùng <code>YC 2</code>.</td></tr>
+        <tr><td class="k">L-14</td><td>Đếm “đã đặt lũy kế” không khớp danh sách đơn; khối lượng đơn này nạp bằng toàn bộ dù còn lại 0</td><td><span class="tag t-neu">Bản dựng</span></td><td>Trùng <code>YC 9</code>.</td></tr>
+        <tr><td class="k">L-15</td><td>Chưa test được <code>b3→b10</code>, <code>c1→c8</code>, <code>k1→k5</code>, <code>f/g/h</code>, <code>pay_q1→q9</code></td><td><span class="tag t-neu">Chưa kiểm</span></td><td>Bị chặn bởi <code>L-10</code>. Không kết luận được gì về phần này — <b>không phải “đạt”, mà là chưa biết</b>: sản xuất, kho nhà máy, vận chuyển, nhập – xuất, chấm khối lượng theo kỳ, giữ lại 10–30%, tiêu hao đá, quyết toán, công nợ, lãi lỗ đều chưa ai mở tới.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="lo-hong">
+  <h2><em>§2</em>Ba hạng mục phải viết vào đặc tả</h2>
+  <p class="intro">Đây là toàn bộ phần đặc tả thiếu thật. Không hạng mục nào cần trang mới — cả ba sửa vào trang đã có, nên không phải đồng bộ rail, mục lục hay số thứ tự ở chân trang.</p>
+  <div class="cards">
+    <a href="YC-15.html"><i>YC-15</i><b>Làm tròn đơn giá chào</b><span>BID-03 — làm tròn đơn giá trước khi nhân khối lượng, mức làm tròn là tham số; đồng bộ với quy tắc 21 của PRJ-01</span></a>
+    <a href="YC-16.html"><i>YC-16</i><b>Tự sinh hồ sơ tạm ứng</b><span>ORD-01 — hợp đồng có hiệu lực thì sinh sẵn bản nháp từ đợt đầu của bảng thanh toán và nhắc cán bộ TQT</span></a>
+    <a href="YC-17.html"><i>YC-17</i><b>Khóa bảng theo dõi hạng mục</b><span>ORD-02 — đặc tả mới chỉ khóa ở cấp đợt trình; biểu mẫu của P. TQT đòi khóa ở cấp bảng theo dõi</span></a>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:74px">Trang</th><th style="width:22%">Trang đặc tả tác động</th><th style="width:96px">Loại</th><th>Nội dung thay đổi</th></tr></thead>
+      <tbody>
+        <tr><td><a href="YC-15.html">YC-15</a></td><td><a href="../BID-03.html">BID-03</a> · <a href="../PF-01.html">PF-01</a></td><td><span class="tag t-neu">Sửa</span></td><td>Quy tắc làm tròn đơn giá chào, tham số mức làm tròn ở dữ liệu nền, và hệ quả lên cột Thành tiền cùng khối tổng cộng — thuế — sau thuế</td></tr>
+        <tr><td><a href="YC-16.html">YC-16</a></td><td><a href="../ORD-01.html">ORD-01</a> · <a href="../BID-05.html">BID-05</a> · <a href="../PF-04.html">PF-04</a></td><td><span class="tag t-neu">Sửa</span></td><td>Sự kiện khởi tạo dự án sinh hồ sơ tạm ứng ở trạng thái nháp, kèm một sự kiện thông báo tới cán bộ TQT phụ trách</td></tr>
+        <tr><td><a href="YC-17.html">YC-17</a></td><td><a href="../ORD-02.html">ORD-02</a> · <a href="../PL-A.html">PL-A</a> · <a href="../PL-B.html">PL-B</a></td><td><span class="tag t-neu">Sửa</span></td><td>Trạng thái khóa của bảng theo dõi hạng mục, ai được khóa và mở khóa, và quan hệ của nó với khóa khối lượng ở cấp đợt trình</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="khong-ap-dung">
+  <h2><em>§3</em>Hai đề xuất không áp dụng</h2>
+  <p class="intro">Cả hai đều là đề xuất hợp lý nếu đọc riêng một màn hình, nhưng trái với một quyết định đặc tả đã cân nhắc và ghi lý do. Giữ đặc tả.</p>
+  <ol class="br">
+    <li><b>“47 cột gia công <code>GC.001</code>–<code>GC.047</code>” trên danh sách cắt đá.</b> <a href="../ORD-11.html">ORD-11</a> cố ý thay 47 cột cứng bằng bảng con <code>processes[]</code> — mỗi dòng một mã công đoạn và khối lượng của nó.<span class="then"><a href="../ORD-03.html">ORD-03</a> đã viết sẵn lý do: bảy cột in trên biểu mẫu giấy của công ty “không phải bảy công đoạn quan trọng nhất trong 47 mã; đó là bảy công đoạn <b>có khối lượng trong chính dự án ấy</b>. Dự án khác sẽ là bảy cột khác, và có dự án chỉ ba cột.” Vì vậy bộ cột của phiếu là tập con động — mặc định gồm các mã có tổng khác 0, người lập bật thêm hoặc tắt bớt. Bày cả 47 cột thì phiếu không đọc nổi; đóng cứng bảy cột thì dự án sau thiếu cột. Thêm một công đoạn mới cũng vì thế là thêm một dòng danh mục ở <a href="../PF-01.html">PF-01</a>, không phải sửa cấu trúc bảng.</span></li>
+    <li><b>“Ô Mã gói thầu để trống, chỉ gợi ý dạng placeholder”.</b> <a href="../BID-01.html">BID-01</a> · <code>tender_id</code> quy định ngược lại: “mở màn hình là ô <b>đã điền sẵn</b> theo mẫu cũ <code>&lt;ĐĐ&gt;_NNNN</code> … và sửa tự do được”.<span class="then">Điền sẵn là chủ ý: mã gói mang quy ước <em>viết tắt địa điểm + số thứ tự kế tiếp của địa điểm đó</em>, thứ mà người lập không tự nhớ được số kế tiếp là bao nhiêu. Để trống thì mỗi người gõ một kiểu và quy ước chết. Lỗi thật trong phát hiện này là chuyện khác và vẫn phải sửa: <b>xóa mã đi thì hệ thống không điền lại gợi ý mà báo lỗi</b> — gợi ý phải sinh lại được, và việc kiểm trùng vẫn chạy khi rời ô đúng như đặc tả.</span></li>
+  </ol>
+</section>
+
+<section class="block" id="can-chot">
+  <h2><em>§4</em>Điểm cần chốt</h2>
+  <p class="intro">Hai câu mới, đã ghi vào <a href="../PL-C.html">PL-C</a>. Ngoài ra đợt này không mở thêm câu nào — phần lớn phát hiện chỉ cần bám lại đặc tả đã có.</p>
+  <ol class="br">
+    <li><b><a href="../PL-C.html#Q-74">Q-74</a> · Mức làm tròn đơn giá chào.</b> <a href="YC-15.html">YC-15</a> lấy 1.000 đ làm mặc định cho đồng bộ với đơn giá khoán, nhưng đơn giá chào và đơn giá khoán không cùng bậc giá trị.<span class="then">Người chốt: P. Đấu thầu. Câu hỏi đi kèm: làm tròn lên, xuống hay lấy gần nhất — với giá chào thì ba cách cho ba con số khác nhau ở cuối bảng, và bên nhận báo giá sẽ cộng lại.</span></li>
+    <li><b><a href="../PL-C.html#Q-75">Q-75</a> · Khóa bảng theo dõi hạng mục khóa cái gì.</b> Biểu mẫu P. TQT có nút <em>Khóa</em> ở đầu bảng nhưng không nói khóa xong thì ai còn sửa được gì.<span class="then">Người chốt: P. TQT. Đây cũng là chỗ dễ lẫn với <a href="../PL-C.html#Q-53">Q-53</a> — hai câu cùng nằm trên bảng theo dõi, nên nên hỏi một lượt khi mở màn hình thật cùng P. TQT.</span></li>
+  </ol>
+  <div class="note">
+    <b>Phát hiện đợt này không mở câu mới, nhưng chạm vào bốn câu đang treo</b>
+    <p style="margin:0"><a href="../PL-C.html#Q-50">Q-50</a> tiền tố mã hồ sơ shop — <code>YC 7</code> gặp đúng chỗ đó và vẫn chưa ai chốt · <a href="../PL-C.html#Q-51">Q-51</a> hệ số phạt — <code>YC 14</code> chưa test tới · <a href="../PL-C.html#Q-64">Q-64</a> bốn màn hình chưa dựng — <code>YC 21</code> gặp lại đúng bốn màn hình ấy · <a href="../PL-C.html#Q-65">Q-65</a> tỷ lệ tạm ứng — <code>L-11</code> chạm vào cùng bước nhưng hỏi chuyện khác.</p>
+  </div>
+</section>
+
+<section class="block" id="thu-tu">
+  <h2><em>§5</em>Thứ tự sửa</h2>
+  <p class="intro">Tệp đối chiếu xếp sáu việc ưu tiên trước khi deploy lại. Thứ tự dưới đây giữ nguyên ý đó, chỉ nói thêm <em>vì sao</em> theo quan hệ chặn nhau.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:52px">#</th><th style="width:30%">Việc</th><th>Lý do đứng ở vị trí này</th></tr></thead>
+      <tbody>
+        <tr><td class="k">1</td><td>Shopdrawing tự sinh khi khởi tạo dự án, và có màn hình duyệt nội bộ <span class="tag t-crit">chặn</span></td><td><code>YC 7/8/19</code>, <code>L-10</code>. Một mình nó chặn <code>L-15</code> — năm băng của sơ đồ chưa ai mở tới. Mọi kết luận về phần sau chỉ có nghĩa sau khi mục này đi qua. Lưu ý: điều kiện “duyệt nội bộ” chỉ nên chặn việc <b>gửi chủ đầu tư</b>, không chặn việc tạo bản vẽ.</td></tr>
+        <tr><td class="k">2</td><td>Bước ký hợp đồng chính thức</td><td><code>L-06</code>. Không có nó thì mọi dự án khởi tạo từ một hợp đồng còn ở trạng thái Nháp, và các mục 4 – 5 dưới đây đều treo vào sự kiện “hợp đồng có hiệu lực”.</td></tr>
+        <tr><td class="k">3</td><td>Crash khi chốt giá</td><td><code>L-05</code>. Dữ liệu vẫn đúng nên không chặn luồng, nhưng đây là thứ người dùng gặp đầu tiên và không có cách nào biết là mình đã thành công.</td></tr>
+        <tr><td class="k">4</td><td>Đơn hàng theo hai biểu mẫu</td><td><code>YC 9</code>, <code>L-14</code>. Khối lượng công việc lớn nhất trong danh sách, và là cửa vào của toàn bộ băng sản xuất.</td></tr>
+        <tr><td class="k">5</td><td>Theo dõi hồ sơ thanh toán tự nhận dự án mới</td><td><code>YC 10</code>, <code>L-12</code>. Cùng một nguyên nhân gốc với mục 1: sự kiện khởi tạo dự án chưa lan sang các phân hệ hạ nguồn. Đáng sửa cùng lượt với mục 1 và với <a href="YC-16.html">YC-16</a>.</td></tr>
+        <tr><td class="k">6</td><td>Các lỗi tính toán</td><td><code>L-02</code>, <code>L-03</code>, <code>L-07</code>. Nhỏ về công sức, lớn về hậu quả — đây là những con số rời khỏi công ty. <code>L-03</code> chờ <a href="../PL-C.html#Q-74">Q-74</a> mới chốt được mức.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Đối chiếu bản dựng 25/09/2026</span><span><code>2026-09-25/index.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn: <code>Doi_chieu_YC_va_loi_ABSMS_KH_0003.xlsx</code></span>
+</div>
+</main>
+</div>
+</body></html>
