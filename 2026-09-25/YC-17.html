@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-17 Khóa bảng theo dõi hạng mục — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đối chiếu 25/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Đối chiếu 25/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Bảng phân loại 29 phát hiện</a>
+    <div class="rail-grp">Lỗ hổng đặc tả</div>
+    <a href="YC-15.html"><i>YC-15</i>Làm tròn đơn giá chào</a>
+    <a href="YC-16.html"><i>YC-16</i>Tự sinh hồ sơ tạm ứng</a>
+    <a class="on" href="YC-17.html"><i>YC-17</i>Khóa bảng theo dõi hạng mục</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Đối chiếu 25/09/2026</a> / P. TQT — Shopdrawing / <b>YC-17</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-16.html">← YC-16</a><a href="index.html">Mục lục</a></div>
+</div>
+<section class="sheet solo" id="YC-17">
+  <header class="tb">
+    <div class="tb-id">YC-17</div>
+    <div class="tb-main">
+      <h3>Khóa bảng theo dõi hạng mục</h3>
+      <p>Biểu mẫu theo dõi shop của P. TQT có một nút <em>Khóa</em> ở đầu bảng; bản dựng không có, và đặc tả cũng không. <a href="../ORD-02.html">ORD-02</a> hiện chỉ khóa ở <b>cấp đợt trình</b> — “phát hành khóa bảng khối lượng của đợt” — còn bảng theo dõi bảy cột thì <a href="../PL-A.html">PL-A</a> ghi rõ “không khóa chỉnh sửa”. Hai cấp, hai chuyện. Trang này viết cấp còn thiếu.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Sửa — thêm một trạng thái và một quyền</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../ORD-02.html">ORD-02</a> · <a href="../PL-A.html">PL-A</a> · <a href="../PL-B.html">PL-B</a></dd></div>
+        <div><dt>Điểm chờ chốt</dt><dd><a href="../PL-C.html#Q-75">Q-75</a> — khóa xong thì ai còn sửa được gì</dd></div>
+        <div><dt>Nguồn</dt><dd>Đối chiếu 25/09/2026 · <code>YC 7</code>, tab <em>Shopdrawing</em></dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Đường truy cập</td><td colspan="2">TQT › Shopdrawing › hồ sơ dự án › bảng theo dõi hạng mục</td></tr>
+          <tr><td>Nguyên văn phát hiện</td><td colspan="2">Trang hạng mục (dossier) của HN_0001 … không thấy nút Khóa</td></tr>
+          <tr><td>Đặc tả</td><td><a href="../ORD-02.html">ORD-02</a> khóa ở cấp đợt trình: phát hành đóng băng bảng khối lượng, thu hồi được nếu chưa có đơn hàng. <a href="../PL-A.html">PL-A</a> nói thẳng trạng thái nội bộ của hạng mục “không khóa chỉnh sửa”</td><td>Một trạng thái khóa ở <b>cấp bảng theo dõi</b>: chốt phần shopdrawing của dự án khi đã xong, để bảng không còn bị sửa sau lưng</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <b>Ba cái khóa, đừng lẫn</b>
+      <p style="margin:0 0 6px"><b>Khóa khối lượng của đợt trình</b> (đã có) — phát hành một đợt thì bảng khối lượng của đợt đó đóng băng, vì <a href="../ORD-03.html">ORD-03</a> lập đơn hàng từ chính bộ số ấy và phải truy ngược được.</p>
+      <p style="margin:0 0 6px"><b>Khóa mã hồ sơ</b> (đã có) — từ khi ký hợp đồng, <code>shop_dossier_id</code> không đổi theo mã gói nữa.</p>
+      <p style="margin:0"><b>Khóa bảng theo dõi</b> (trang này) — chốt danh sách hạng mục và tình trạng của chúng cho cả dự án. Đây là cái khóa duy nhất mà <em>người dùng chủ động bấm</em>; hai cái trên là hệ quả của một hành động khác.</p>
+    </div>
+
+    <h4>Khóa làm gì</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">Sau khi khóa</th><th style="width:16%">Trạng thái</th><th>Ghi chú</th></tr></thead>
+        <tbody>
+          <tr><td>Thêm, xóa dòng hạng mục</td><td><span class="tag t-crit">Chặn</span></td><td>Dòng vốn sinh tự động từ danh mục hạng mục của dự án. Thêm hạng mục sau khi khóa nghĩa là phạm vi hợp đồng đổi — mở khóa trước.</td></tr>
+          <tr><td>Sửa cột 3 <em>Tình trạng shop</em>, cột 6 <em>Tình trạng bản vẽ thiết kế</em></td><td><span class="tag t-crit">Chặn</span></td><td>Đây là phần đóng băng thật sự: tình trạng sau khi khóa là tình trạng cuối cùng của dự án.</td></tr>
+          <tr><td>Phân công lại cột 4 <em>Cán bộ phụ trách</em></td><td><span class="tag t-crit">Chặn</span></td><td>Giao việc mà phần việc đã đóng là giao một việc không tồn tại; hệ thống cũng không phát thông báo nữa.</td></tr>
+          <tr><td>Nộp thêm tệp vào cột 5 <em>Bản vẽ nộp</em></td><td><span class="tag t-crit">Chặn</span></td><td>Phiên bản đã nộp giữ nguyên và vẫn mở xem được — khóa không giấu gì đi.</td></tr>
+          <tr><td>Mở đợt trình mới</td><td><span class="tag t-crit">Chặn</span></td><td>Đợt trình treo vào hạng mục; hạng mục đóng thì không mở thêm vòng gửi chủ đầu tư.</td></tr>
+          <tr><td>Đợt trình <b>đang mở</b> chạy tiếp</td><td><span class="tag t-ok">Cho</span></td><td>Không khóa được khi còn đợt mở — xem điều kiện dưới. Quy định này chỉ để nói rõ: khóa không cắt ngang thứ đang chạy.</td></tr>
+          <tr><td>Sửa cột 7 <em>Ghi chú</em></td><td><span class="tag t-warn">Cho</span></td><td>Ghi chú là chỗ ghi “đã in ra ký tươi ngày …” và các vướng mắc phát sinh sau. Khóa nó là bịt mất đường ghi lại chuyện xảy ra sau khi chốt. Mọi lần sửa sau khi khóa đều vào nhật ký.</td></tr>
+          <tr><td>Đọc, xuất tệp, mở lịch sử đợt trình</td><td><span class="tag t-ok">Cho</span></td><td>Khóa không đổi quyền xem của ai.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Trạng thái khóa</td><td class="k">progress_locked</td><td>Có / Không</td><td class="c req">✱</td><td>Của cả bảng theo dõi, tức của hồ sơ Shopdrawing — không phải của từng dòng hạng mục. Mặc định <em>Không</em>.</td></tr>
+          <tr><td>Người khóa · thời điểm</td><td class="k">locked_by, locked_at</td><td>Hệ thống</td><td class="c">—</td><td>Ghi tự động. Hiện ngay trên đầu bảng: “Đã khóa bởi {người} ngày {ngày}”.</td></tr>
+          <tr><td>Lý do mở khóa</td><td class="k">unlock_note</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Bắt buộc mỗi lần mở khóa. Giữ nguyên qua các lần khóa – mở khóa sau đó, hiển thị thành một danh sách chứ không ghi đè.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ bổ sung cho <a href="../ORD-02.html">ORD-02</a></h4>
+    <ol class="br">
+      <li><b>Chỉ khóa được khi phần việc đã xong.</b> Mọi hạng mục ở <code>approved_internal</code>, và không còn đợt trình nào đang mở với chủ đầu tư.<span class="then">Khóa một bảng còn hạng mục dở là đóng băng đúng thứ đang cần sửa. Điều kiện này cũng biến nút Khóa thành một câu trả lời đọc được: bấm không được nghĩa là còn việc, và thông điệp nói còn việc gì.</span></li>
+      <li><b>Khóa là của trưởng phòng.</b> Chỉ TP TQT khóa và mở khóa; cán bộ phụ trách không.<span class="then">Cùng người đã duyệt nội bộ từng hạng mục. Nếu ai cũng khóa được thì khóa không còn là một quyết định mà là một thao tác.</span></li>
+      <li><b>Mở khóa phải ghi lý do, và để lại vết.</b> Mở khóa ghi <code>unlock_note</code>, vào nhật ký hồ sơ, và phát thông báo cho những người đang phụ trách hạng mục của dự án.<span class="then">Mở khóa nghĩa là một hồ sơ đã chốt sắp đổi. Người từng làm hạng mục đó cần biết, vì bản vẽ họ nộp có thể sắp bị thay.</span></li>
+      <li><b>Khóa không đóng hồ sơ.</b> Hồ sơ Shopdrawing đã khóa vẫn là hồ sơ của dự án đang chạy: <a href="../ORD-03.html">ORD-03</a> vẫn lập đơn hàng từ các đợt đã phát hành, <a href="../ORD-09.html">ORD-09</a> vẫn đọc số.<span class="then">Khóa chỉ dừng việc <em>vẽ và trình</em>, không dừng việc <em>sản xuất và thanh toán</em> vốn chạy từ những đợt trình đã phát hành trước đó.</span></li>
+      <li><b>Gợi ý khóa khi đủ điều kiện.</b> Hạng mục cuối cùng được duyệt nội bộ thì đầu bảng hiện lời mời khóa, không tự khóa.<span class="then">Tự khóa thì một lần duyệt nội bộ bình thường sẽ âm thầm đóng cả hồ sơ, và người ta phải mở khóa để làm tiếp việc lẽ ra vẫn đang làm. Để người quyết, nhưng đừng bắt họ nhớ.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">Tình huống</th><th style="width:26%">Điều kiện</th><th>Thông điệp</th></tr></thead>
+        <tbody>
+          <tr><td>Khóa khi còn hạng mục chưa duyệt nội bộ</td><td>Có dòng <code>draft_status ≠ approved_internal</code></td><td>“Còn {n} hạng mục chưa duyệt nội bộ: {danh sách}. Duyệt xong mới khóa được bảng.” <em>(chặn)</em></td></tr>
+          <tr><td>Khóa khi còn đợt trình đang mở</td><td>Có đợt trình chưa ở trạng thái kết thúc</td><td>“Còn {n} đợt trình đang ở phía chủ đầu tư. Chờ kết quả hoặc đóng đợt trước khi khóa.” <em>(chặn)</em></td></tr>
+          <tr><td>Sửa ô đã khóa</td><td><code>progress_locked = Có</code>, ô không phải cột 7</td><td>“Bảng theo dõi đã khóa bởi {người} ngày {ngày}. Mở khóa để sửa.” <em>(chặn)</em></td></tr>
+          <tr><td>Mở khóa không ghi lý do</td><td><code>unlock_note</code> rỗng</td><td>“Nhập lý do mở khóa — lý do hiện trên hồ sơ và gửi cho cán bộ phụ trách.” <em>(chặn)</em></td></tr>
+          <tr><td>Đủ điều kiện khóa</td><td>Hạng mục cuối vừa được duyệt nội bộ</td><td>“Mọi hạng mục đã duyệt nội bộ. Khóa bảng theo dõi?” <em>(gợi ý trên đầu bảng, bỏ qua được)</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>Đầu bảng theo dõi có nút Khóa, và khi đã khóa thì hiện rõ ai khóa, ngày nào.</li>
+      <li>Bấm khóa lúc còn việc dở thì bị chặn kèm danh sách việc còn lại — nút không im lặng.</li>
+      <li>Bảng đã khóa không sửa được sáu cột đầu; cột Ghi chú vẫn ghi được và mọi lần ghi đều có vết.</li>
+      <li>Chỉ trưởng phòng TQT khóa và mở khóa.</li>
+      <li>Mở khóa luôn kèm lý do, và cán bộ phụ trách nhận được thông báo.</li>
+      <li>Hồ sơ đã khóa vẫn xem được, xuất được, và các đợt trình đã phát hành vẫn chạy tiếp ở đơn hàng.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC17-1</td><td>Hồ sơ có 4 hạng mục, 1 chưa duyệt nội bộ</td><td>TP TQT bấm Khóa</td><td>Bị chặn; thông điệp nêu đúng hạng mục còn lại</td></tr>
+          <tr><td>UAT-YC17-2</td><td>Tiếp UAT-1, duyệt nốt hạng mục cuối</td><td>Nhìn đầu bảng</td><td>Hiện lời mời khóa; bảng <b>chưa</b> tự khóa</td></tr>
+          <tr><td>UAT-YC17-3</td><td>Tiếp UAT-2, còn một đợt trình ở <em>Chờ CĐT</em></td><td>Bấm Khóa</td><td>Bị chặn; thông điệp nêu số đợt đang ở phía chủ đầu tư</td></tr>
+          <tr><td>UAT-YC17-4</td><td>Mọi hạng mục duyệt nội bộ, không còn đợt mở</td><td>TP TQT bấm Khóa</td><td>Khóa thành công; đầu bảng hiện “Đã khóa bởi … ngày …”</td></tr>
+          <tr><td>UAT-YC17-5</td><td>Tiếp UAT-4</td><td>Cán bộ phụ trách đổi tình trạng một hạng mục</td><td>Bị chặn kèm thông điệp nêu người khóa và ngày khóa</td></tr>
+          <tr><td>UAT-YC17-6</td><td>Tiếp UAT-4</td><td>Ghi thêm vào cột Ghi chú</td><td>Ghi được; nhật ký hồ sơ có một dòng ghi rõ sửa sau khi khóa</td></tr>
+          <tr><td>UAT-YC17-7</td><td>Tiếp UAT-4, đăng nhập bằng cán bộ phụ trách</td><td>Tìm nút Mở khóa</td><td>Không có; chỉ TP TQT thấy</td></tr>
+          <tr><td>UAT-YC17-8</td><td>Tiếp UAT-4</td><td>TP TQT mở khóa, bỏ trống lý do</td><td>Bị chặn</td></tr>
+          <tr><td>UAT-YC17-9</td><td>Tiếp UAT-8, nhập lý do rồi mở khóa</td><td>Đăng nhập bằng cán bộ từng phụ trách một hạng mục</td><td>Có thông báo mở khóa kèm lý do</td></tr>
+          <tr><td>UAT-YC17-10</td><td>Tiếp UAT-9, khóa lại lần hai rồi mở lần hai</td><td>Mở lịch sử hồ sơ</td><td>Thấy <b>cả hai</b> lý do, không lý do nào bị ghi đè</td></tr>
+          <tr><td>UAT-YC17-11</td><td>Hồ sơ đã khóa, có đợt trình đã phát hành</td><td>Mở <a href="../ORD-03.html">ORD-03</a> lập đơn hàng từ đợt đó</td><td>Lập được bình thường — khóa không chặn đường sản xuất</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../ORD-02.html">ORD-02 bản vẽ Shopdrawing</a><a href="../ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="../PL-A.html">PL-A sổ trạng thái chứng từ</a><a href="../PL-B.html">PL-B ma trận phân quyền</a><a href="../PL-C.html#Q-75">PL-C · Q-75 phạm vi khóa</a><a href="../PL-C.html#Q-53">PL-C · Q-53 bỏ bảng KL bản vẽ</a><a href="index.html">Mục lục đợt đối chiếu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Lỗ hổng 3 / 3</span><span><code>2026-09-25/YC-17.html</code></span>
+  <span>ABSMS — Đối chiếu bản dựng 25/09/2026</span>
+  <span>Nguồn: <code>YC 7 · tab Shopdrawing</code></span>
+</div>
+</main>
+</div>
+</body></html>

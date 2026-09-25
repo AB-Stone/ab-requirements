@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-16 Tự sinh hồ sơ tạm ứng — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Đối chiếu 25/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Đối chiếu 25/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Bảng phân loại 29 phát hiện</a>
+    <div class="rail-grp">Lỗ hổng đặc tả</div>
+    <a href="YC-15.html"><i>YC-15</i>Làm tròn đơn giá chào</a>
+    <a class="on" href="YC-16.html"><i>YC-16</i>Tự sinh hồ sơ tạm ứng</a>
+    <a href="YC-17.html"><i>YC-17</i>Khóa bảng theo dõi hạng mục</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Đối chiếu 25/09/2026</a> / P. TQT / <b>YC-16</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-15.html">← YC-15</a><a href="index.html">Mục lục</a><a href="YC-17.html">YC-17 →</a></div>
+</div>
+<section class="sheet solo" id="YC-16">
+  <header class="tb">
+    <div class="tb-id">YC-16</div>
+    <div class="tb-main">
+      <h3>Tự sinh hồ sơ tạm ứng khi hợp đồng có hiệu lực</h3>
+      <p>Gói <code>KH_0003</code> đã ký hợp đồng và đã khởi tạo dự án, nhưng màn hình Hồ sơ thanh toán trống trơn. Sơ đồ nghiệp vụ đặt hồ sơ tạm ứng <em>ngay sau bước ký</em>, và <a href="../ORD-01.html">ORD-01</a> cũng vẽ đúng mũi tên ấy — “hợp đồng có hiệu lực → lập hồ sơ tạm ứng theo đợt 1 của bảng thanh toán”. Nhưng mũi tên trên lưu đồ mô tả <b>việc một người phải nhớ làm</b>, không phải việc hệ thống làm. Không có dòng nào trong đặc tả bảo hệ thống sinh sẵn hồ sơ đó, nên bản dựng không sinh — và không sai.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Sửa — thêm một sự kiện và một quy tắc</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../ORD-01.html">ORD-01</a> · <a href="../BID-05.html">BID-05</a> · <a href="../PF-04.html">PF-04</a></dd></div>
+        <div><dt>Liên quan</dt><dd><a href="../PL-C.html#Q-65">Q-65</a> — tỷ lệ tạm ứng, chưa chốt và <b>trang này không chốt thay</b></dd></div>
+        <div><dt>Nguồn</dt><dd>Đối chiếu 25/09/2026 · lỗi <code>L-11</code></dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Đường truy cập</td><td colspan="2">Hồ sơ › Tạm ứng hợp đồng</td></tr>
+          <tr><td>Nguyên văn phát hiện</td><td colspan="2">Sau ký HĐ + khởi tạo, Hồ sơ thanh toán không có gì cho KH_0003; sơ đồ yêu cầu lập hồ sơ tạm ứng 5–10% ngay sau ký HĐ</td></tr>
+          <tr><td>Đặc tả</td><td>Lưu đồ <a href="../ORD-01.html">ORD-01</a> nối “hợp đồng có hiệu lực” sang “lập hồ sơ tạm ứng”, nhưng phần Tham số và Quy tắc nghiệp vụ không có luật nào sinh hồ sơ</td><td>Sự kiện <b>hợp đồng có hiệu lực</b> sinh sẵn một hồ sơ ở trạng thái <em>Đang lập</em>, nạp sẵn những gì hệ thống biết, và nhắc đúng người</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <b>Sinh sẵn bản nháp, không sinh sẵn một đề nghị</b>
+      <p style="margin:0">Ranh giới này là toàn bộ nội dung của trang. Hệ thống biết chắc <em>dự án nào, hợp đồng nào, danh mục thành phần của chủ đầu tư nào</em> — ba thứ đó nạp sẵn được. Hệ thống <b>không</b> biết công ty định đề nghị tạm ứng bao nhiêu: <a href="../ORD-01.html">ORD-01</a> quy tắc 2 đã nói rõ bảng đợt thanh toán “chỉ nạp sẵn để chọn cho nhanh”, còn con số thật do người lập quyết. Vì vậy hồ sơ sinh ra có <code>amount_request</code> <b>để trống</b> và nằm ở trạng thái đang lập — nó là một chỗ trống có sẵn nhãn, không phải một đề nghị chờ bấm gửi.</p>
+    </div>
+
+    <h4>Hồ sơ sinh ra mang sẵn những gì</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:24%">Trường</th><th style="width:26%">Giá trị khi sinh</th><th>Ghi chú</th></tr></thead>
+        <tbody>
+          <tr><td><code>dossier_id</code></td><td><code>HSTU-YYYY-NNN</code></td><td>Sinh ngay, theo đúng quy ước sẵn có.</td></tr>
+          <tr><td><code>project_id</code> · <code>contract_no</code></td><td>Lấy từ hợp đồng vừa có hiệu lực</td><td>Chỉ đọc, như đặc tả đang quy định.</td></tr>
+          <tr><td><code>payment_term_no</code></td><td>Số đợt <b>đầu tiên</b> của <code>payment_terms[]</code></td><td>Là gợi ý, không khóa — giữ nguyên quy tắc 2 của <a href="../ORD-01.html">ORD-01</a>. Bảng đợt trống thì ô này để trống và hồ sơ vẫn sinh.</td></tr>
+          <tr><td><code>amount_request</code></td><td><b>Để trống</b></td><td>Màn hình hiện giá trị của đợt đã chọn ngay cạnh ô, dưới dạng gợi ý đọc được chứ không điền vào ô. Trang này <b>không</b> chốt tỷ lệ 5–10% — xem <a href="../PL-C.html#Q-65">Q-65</a>.</td></tr>
+          <tr><td><code>checklist[]</code></td><td>Mẫu danh mục của chủ đầu tư, mọi dòng ở trạng thái chưa có tệp</td><td>Quy tắc 4 của <a href="../ORD-01.html">ORD-01</a> vốn đã nạp mẫu này khi lập hồ sơ mới; ở đây chỉ là nạp sớm hơn.</td></tr>
+          <tr><td>Cán bộ phụ trách</td><td>Người của P. TQT đã gán vào dự án ở <a href="../BID-05.html">BID-05</a></td><td>Dự án chưa gán ai của P. TQT thì để trống và thông báo đi tới trưởng P. TQT thay vì rơi vào khoảng không.</td></tr>
+          <tr><td>Trạng thái</td><td><em>Đang lập</em></td><td>Trạng thái đầu của chuỗi sẵn có. Không thêm trạng thái mới nào.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Sự kiện thông báo bổ sung cho <a href="../PF-04.html">PF-04</a></h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">Sự kiện</th><th style="width:20%">Người nhận</th><th>Mẫu nội dung</th></tr></thead>
+        <tbody>
+          <tr><td>Hồ sơ tạm ứng đã sẵn sàng để lập</td><td>Cán bộ TQT phụ trách dự án; chưa có thì trưởng P. TQT</td><td>“Hợp đồng {số HĐ} — {dự án} đã có hiệu lực. Hồ sơ tạm ứng {mã} đã sẵn sàng, còn thiếu giá trị đề nghị và {n} thành phần bắt buộc.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ bổ sung cho <a href="../ORD-01.html">ORD-01</a></h4>
+    <ol class="br">
+      <li><b>Hợp đồng có hiệu lực thì hồ sơ tạm ứng có mặt.</b> Sự kiện khởi tạo dự án ở <a href="../BID-05.html">BID-05</a> sinh một hồ sơ tạm ứng ở trạng thái <em>Đang lập</em>, cùng lúc với việc sinh hồ sơ Shopdrawing và các dòng theo dõi của <a href="../RPT-05.html">RPT-05</a>.<span class="then">Ba việc này cùng một bản chất: sự kiện ký hợp đồng mở ra các luồng hạ nguồn. Bản dựng hiện làm hụt cả ba, và lý do chung là sự kiện ấy chưa lan đi đâu cả. Gom vào một quy tắc để khi sửa thì sửa một chỗ.</span></li>
+      <li><b>Sinh một lần, không sinh lại.</b> Hợp đồng đã có hồ sơ tạm ứng — dù đang lập, đã đóng, hay đã thanh toán — thì sự kiện lặp lại không sinh thêm cái thứ hai.<span class="then">Giữ nguyên quy tắc 1 của <a href="../ORD-01.html">ORD-01</a>: một đợt, một hồ sơ đang mở. Hợp đồng ký lại, sửa phụ lục hay chạy lại migration đều không được phép đẻ ra hồ sơ trùng.</span></li>
+      <li><b>Hồ sơ sinh tự động xóa được.</b> Còn ở trạng thái <em>Đang lập</em> và chưa có tệp nào thì cán bộ TQT xóa được, có ghi lý do.<span class="then">Không phải hợp đồng nào cũng tạm ứng. Nếu không xóa được, danh sách hồ sơ sẽ tích lại những bản nháp rỗng không ai đụng tới, và chỉ số <em>tuổi hồ sơ</em> ở quy tắc 6 mất nghĩa vì đếm cả những hồ sơ không bao giờ định lập. Đã có tệp đính kèm thì đóng với lý do chứ không xóa.</span></li>
+      <li><b>Bản nháp rỗng không vào báo cáo hồ sơ chậm.</b> Hồ sơ sinh tự động chưa được người nào mở ra sửa thì không tính tuổi và không sinh cảnh báo quá hạn.<span class="then">Nếu tính, mọi hợp đồng vừa ký sẽ lập tức có một hồ sơ “chậm” — cảnh báo mất giá trị ngay trong tuần đầu. Đồng hồ bắt đầu chạy từ lần sửa đầu tiên, hoặc từ ngày hẹn thanh toán nếu có.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">Tình huống</th><th style="width:26%">Điều kiện</th><th>Thông điệp</th></tr></thead>
+        <tbody>
+          <tr><td>Hợp đồng không khai đợt thanh toán nào</td><td><code>payment_terms[]</code> rỗng khi hợp đồng có hiệu lực</td><td>“Hồ sơ tạm ứng {mã} đã sinh nhưng hợp đồng chưa khai bảng đợt thanh toán — chọn đợt hoặc gõ số đợt khi lập.” <em>(thông báo, không chặn)</em></td></tr>
+          <tr><td>Dự án chưa gán cán bộ TQT</td><td>Không có người P. TQT trong danh sách nhân sự dự án</td><td>“Hồ sơ tạm ứng {mã} chưa có cán bộ phụ trách — thông báo đã gửi tới trưởng P. TQT.” <em>(cảnh báo)</em></td></tr>
+          <tr><td>Xóa bản nháp đã có tệp</td><td>Hồ sơ sinh tự động, <code>checklist[]</code> có ít nhất một tệp</td><td>“Hồ sơ {mã} đã có {n} tệp đính kèm — đóng hồ sơ với lý do thay vì xóa.” <em>(chặn)</em></td></tr>
+          <tr><td>Sự kiện chạy lại cho hợp đồng đã có hồ sơ</td><td>Đã tồn tại hồ sơ tạm ứng của hợp đồng</td><td>Không sinh, không báo cho người dùng; ghi một dòng nhật ký. <em>(im lặng có chủ đích)</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>Ký hợp đồng và khởi tạo dự án xong, mở Hồ sơ tạm ứng thấy ngay một hồ sơ của dự án đó ở trạng thái đang lập.</li>
+      <li>Hồ sơ đã mang sẵn dự án, hợp đồng, số đợt gợi ý và đủ danh mục thành phần của chủ đầu tư.</li>
+      <li>Giá trị đề nghị để trống — người lập điền, hệ thống không đoán.</li>
+      <li>Cán bộ TQT phụ trách nhận được một thông báo nói rõ còn thiếu gì.</li>
+      <li>Chạy lại sự kiện không sinh hồ sơ trùng.</li>
+      <li>Bản nháp chưa ai đụng tới không làm bẩn báo cáo hồ sơ chậm.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC16-1</td><td>Gói <code>KH_0003</code>, hợp đồng đủ chữ ký hai bên</td><td>Khởi tạo dự án, mở Hồ sơ › Tạm ứng</td><td>Có đúng một hồ sơ <code>HSTU-2026-NNN</code> của <code>KH_0003</code>, trạng thái <em>Đang lập</em></td></tr>
+          <tr><td>UAT-YC16-2</td><td>Tiếp UAT-1</td><td>Mở hồ sơ đó</td><td>Dự án, hợp đồng đã điền và chỉ đọc; ô đợt hiện số đợt đầu; <b>ô giá trị đề nghị trống</b>; danh mục thành phần đủ theo mẫu của chủ đầu tư</td></tr>
+          <tr><td>UAT-YC16-3</td><td>Tiếp UAT-1, dự án đã gán một cán bộ P. TQT</td><td>Đăng nhập bằng người đó</td><td>Có thông báo nêu số hợp đồng, mã hồ sơ và số thành phần bắt buộc còn thiếu</td></tr>
+          <tr><td>UAT-YC16-4</td><td>Dự án chưa gán ai của P. TQT</td><td>Khởi tạo dự án</td><td>Hồ sơ vẫn sinh, không có cán bộ phụ trách; thông báo đi tới trưởng P. TQT</td></tr>
+          <tr><td>UAT-YC16-5</td><td>Hợp đồng chưa khai bảng đợt thanh toán</td><td>Khởi tạo dự án</td><td>Hồ sơ vẫn sinh; ô đợt trống; thông điệp nêu rõ và không chặn</td></tr>
+          <tr><td>UAT-YC16-6</td><td>Tiếp UAT-1</td><td>Chạy lại sự kiện khởi tạo cho cùng hợp đồng</td><td>Vẫn chỉ một hồ sơ; có một dòng nhật ký</td></tr>
+          <tr><td>UAT-YC16-7</td><td>Hồ sơ sinh tự động, chưa có tệp nào</td><td>Xóa, nhập lý do</td><td>Xóa được; danh sách không còn dòng đó</td></tr>
+          <tr><td>UAT-YC16-8</td><td>Hồ sơ sinh tự động, đã đính một tệp</td><td>Xóa</td><td>Bị chặn kèm thông điệp gợi ý đóng hồ sơ với lý do</td></tr>
+          <tr><td>UAT-YC16-9</td><td>Hồ sơ sinh 30 ngày trước, chưa ai mở</td><td>Mở báo cáo hồ sơ chậm</td><td>Không có dòng đó; cột tuổi hồ sơ để trống</td></tr>
+          <tr><td>UAT-YC16-10</td><td>Tiếp UAT-9</td><td>Sửa hồ sơ lần đầu, đợi một ngày</td><td>Tuổi hồ sơ bắt đầu đếm từ lần sửa đó, không đếm ngược về ngày sinh</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../ORD-01.html">ORD-01 hồ sơ tạm ứng HĐ</a><a href="../BID-05.html">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="../PF-04.html">PF-04 thông báo &amp; ký duyệt</a><a href="../RPT-05.html">RPT-05 theo dõi tiến độ hợp đồng</a><a href="../PL-C.html#Q-65">PL-C · Q-65 tỷ lệ tạm ứng</a><a href="index.html">Mục lục đợt đối chiếu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Lỗ hổng 2 / 3</span><span><code>2026-09-25/YC-16.html</code></span>
+  <span>ABSMS — Đối chiếu bản dựng 25/09/2026</span>
+  <span>Nguồn: <code>lỗi L-11</code></span>
+</div>
+</main>
+</div>
+</body></html>
