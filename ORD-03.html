@@ -97,6 +97,9 @@
     <p>Hai chữ “đợt” trên trang này chỉ hai thứ khác nhau, nên màn hình phải gọi đủ tên: <b>đợt trình</b> là đơn vị của hồ sơ shopdrawing ở <a href="ORD-02.html">ORD-02</a>, còn <b>đợt cấp hàng</b> là việc của <a href="ORD-05.html">ORD-05</a>. Một đợt trình đã phát hành có thể sinh nhiều đơn hàng, mỗi đơn lại chia thành nhiều đợt cấp hàng.</p>
     <p>Bản thân đơn hàng gửi nhà máy lại là <b>hai bảng không thể tách rời</b> (<a href="2026-09-15/YC-09.html">YC-09</a>): trang này là <b>Phiếu yêu cầu sản xuất</b> — biểu mẫu <code>BM/QLTC/YCSX</code>, tờ lệnh ghi ai gửi, gửi cho ai, giao khi nào, ai ký — còn bản chi tiết từng viên đá nằm ở <a href="ORD-11.html">ORD-11 · Danh sách cắt đá</a> (<code>BM/QLTC/DSCĐ</code>). Quan hệ giữa hai bảng chỉ có một chiều: <b>phiếu là bản cộng dồn của danh sách cắt đá</b>. Trong tệp Excel gốc, mọi cột khối lượng của phiếu đều là công thức trỏ sang sheet chi tiết; ở đây cũng vậy — số liệu nhập đúng một lần tại <a href="ORD-11.html">ORD-11</a>, và bảng tổng hợp của phiếu chỉ đọc, không có ô nào nhập tay.</p>
 
+    <p><b>Tab “Gói thầu có bản vẽ”</b> (hướng dẫn sửa phân hệ TQT 27/09/2026): màn Đơn hàng và sản xuất mở thêm một tab liệt kê <em>toàn bộ</em> gói thầu của phòng Đấu thầu — sáu cột của sổ gói thầu <a href="BID-01.html">BID-01</a> cộng ba cột mới: <b>Bản vẽ Shopdrawing</b>, <b>Bản vẽ thiết kế</b> và <b>Ngày duyệt</b>. Tab trả lời một câu trước khi ai đó lập kế hoạch sản xuất: dự án của gói này đã có đủ bản vẽ được duyệt chưa. Chỉ gói đã duyệt đủ hai cột mới bấm vào được để đi tiếp.</p>
+    <p><b>Bảng kế hoạch sản xuất và mua hàng theo BOQ, và đợt Bản vẽ sản xuất / Đơn hàng</b> (cùng hướng dẫn): bấm một gói đã duyệt đủ hai cột mở ra kế hoạch của dự án — mỗi hạng mục BOQ hợp đồng chia thành phần nhà máy sản xuất và phần cung ứng mua — rồi hai khối đợt dưới nó: <em>Bản vẽ sản xuất</em> gửi nhà máy, <em>Đơn hàng</em> gửi bộ phận cung ứng. Đợt là tờ của P. TQT; TP TQT duyệt thì đợt được chuyển tới nơi nhận, trả lại thì người lập sửa và nộp lại. Kế hoạch và đợt đứng <em>bên cạnh</em> luồng đơn hàng ORD-03 → <a href="ORD-04.html">ORD-04</a> → <a href="ORD-05.html">ORD-05</a>, không thay nó: đơn hàng vẫn là chứng từ nhà máy sản xuất theo; đợt nói mỗi vòng đưa ra bao nhiêu của BOQ (xem <a href="PL-C.html#Q-78">Q-78</a>).</p>
+
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:575px;margin:0 auto"><svg role="img" aria-label="Hình ORD-03.1 Nhánh 7.2 của yêu cầu gốc được tách làm hai lối ra khác nhau: “yêu cầu bổ sung” giữ nguyên mã đơn và quay lại bước lập, “từ chối” đóng hẳn đơn hàng."
  viewBox="0.00 0.00 575.00 837.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -366,6 +369,64 @@
       <p style="margin:0">Biểu mẫu công ty đang in bảy cột gia công — <em>gia công bề mặt, cắt khoét CNC dày 50mm, dán cặp cạnh, mài bóng cạnh, líp cạnh thô bằng máy, mài cạnh 3–10mm máy, bo tròn máy</em>. Đó không phải bảy công đoạn quan trọng nhất trong 47 mã; đó là bảy công đoạn <b>có khối lượng trong chính dự án ấy</b>. Dự án khác sẽ là bảy cột khác, và có dự án chỉ ba cột. Vì vậy bộ cột gia công của phiếu là một <b>tập con động</b> do hệ thống chọn: mặc định gồm những mã GC có tổng khác 0 trong Danh sách cắt đá, người lập bật thêm hoặc tắt bớt được. Bày cả 47 cột thì phiếu không đọc nổi; đóng cứng bảy cột thì dự án sau thiếu cột.</p>
     </div>
 
+    <h4>Tham số — tab “Gói thầu có bản vẽ”</h4>
+    <p>Một dòng mỗi gói thầu, sắp theo hạn nộp như sổ gói thầu. Sáu cột đầu đọc thẳng từ <a href="BID-01.html">BID-01</a> (kể cả nhãn “Quá hạn nộp” / “Còn n ngày” dưới hạn nộp); ba cột sau hệ thống tự tổng hợp từ dự án gắn với gói, người dùng không nhập.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã gói thầu · Tên gói thầu · Bên mời thầu · Vùng miền · Hạn nộp · Giá trị ước tính</td><td class="k">tender.*</td><td>Chỉ đọc</td><td class="c">—</td><td>Đúng sáu cột của <a href="BID-01.html">BID-01</a>, cùng ô hiển thị. Gói chưa thành dự án vẫn có dòng, ghi “Chưa có dự án” dưới tên.</td></tr>
+          <tr><td>Bản vẽ Shopdrawing</td><td class="k">shop_status</td><td>Chưa nộp · Đã nộp V{n} · Đã duyệt</td><td class="c">—</td><td>Gộp từ <b>cột 6 “Tình trạng bản vẽ thiết kế”</b> của bảng theo dõi hạng mục — vòng nội bộ P. TQT (<a href="ORD-02.html">ORD-02</a>, <code>draft_status</code>): <b>Chưa nộp</b> khi không hạng mục nào đã nộp/trả lại/duyệt nội bộ; <b>Đã duyệt</b> khi mọi hạng mục đều <em>Đã duyệt nội bộ</em>; còn lại <b>Đã nộp V{n}</b> với n là số lần nộp lớn nhất giữa các hạng mục (tối thiểu 1).</td></tr>
+          <tr><td>Bản vẽ thiết kế</td><td class="k">design_status</td><td>Chưa nộp · Đã nộp V{n} · Đã duyệt</td><td class="c">—</td><td>Gộp từ hồ sơ bản vẽ thiết kế và chữ ký chủ đầu tư trên từng hạng mục (<code>shop_status</code> = <em>Đã ký xong</em>) (<a href="ORD-02.html">ORD-02</a>): <b>Chưa nộp</b> khi chủ đầu tư chưa giao phiên bản nào; <b>Đã duyệt</b> khi chủ đầu tư đã ký đủ mọi hạng mục; còn lại <b>Đã nộp V{n}</b> với n là số phiên bản hiện hành.</td></tr>
+          <tr><td>Ngày duyệt</td><td class="k">approved_at</td><td>Ngày</td><td class="c">—</td><td>Ngày cả hai cột đạt <em>Đã duyệt</em>: mốc muộn hơn giữa lần duyệt nội bộ cuối và lần ký hạng mục cuối. Rỗng khi một trong hai cột chưa duyệt.</td></tr>
+          <tr><td>Mở kế hoạch</td><td class="k">—</td><td>Hành vi</td><td class="c">—</td><td>Dòng có cả hai cột <em>Đã duyệt</em> bấm được và dẫn sang <em>Bảng kế hoạch sản xuất và mua hàng theo BOQ</em> của dự án; dòng khác không bấm được, di chuột hiện “Cần duyệt đủ Shopdrawing và bản vẽ thiết kế.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — Bảng kế hoạch sản xuất và mua hàng theo BOQ</h4>
+    <p>Mở từ tab “Gói thầu có bản vẽ” khi gói đã duyệt đủ hai cột; cũng mở được thẳng theo dự án, kèm cảnh báo khi bản vẽ chưa duyệt đủ (<a href="PL-C.html#Q-79">Q-79</a>). Một dòng mỗi hạng mục của BOQ hợp đồng (<code>prj_wbs</code>, theo <a href="PRJ-01.html">PRJ-01</a>); sáu cột đầu chỉ đọc, hai cột kế hoạch và ghi chú do P. TQT nhập rồi lưu cả bảng một lần.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>STT · Mã HM · Đầu việc · Quy cách · ĐVT · Khối lượng theo hợp đồng</td><td class="k">wbs.*</td><td>Chỉ đọc</td><td class="c">—</td><td>Đọc từ hạng mục BOQ hợp đồng của dự án theo thứ tự dòng BOQ; <em>Quy cách</em> là cột rộng, giữ nguyên xuống dòng của BOQ. Hạng mục nào cũng in, kể cả chưa lập kế hoạch.</td></tr>
+          <tr><td>Kế hoạch sản xuất</td><td class="k">qty_production</td><td>Số ≥ 0</td><td class="c">—</td><td>Phần nhà máy sẽ làm. Ô trống = hạng mục chưa có kế hoạch; ô 0 = kế hoạch bằng không. Là “Khối lượng kế hoạch” của mọi đợt <em>Bản vẽ sản xuất</em> của hạng mục.</td></tr>
+          <tr><td>Kế hoạch mua hàng</td><td class="k">qty_purchase</td><td>Số ≥ 0</td><td class="c">—</td><td>Phần bộ phận cung ứng sẽ mua. Là “Khối lượng kế hoạch” của mọi đợt <em>Đơn hàng</em> của hạng mục.</td></tr>
+          <tr><td>Ghi chú</td><td class="k">note</td><td>Văn bản</td><td class="c">—</td><td>Ghi chú theo hạng mục.</td></tr>
+          <tr><td>Cảnh báo vượt hợp đồng</td><td class="k">over_contract</td><td>Hệ thống</td><td class="c">—</td><td>Sản xuất + mua hàng &gt; khối lượng hợp đồng → dòng tô đỏ và nêu số vượt, dưới bảng đếm số dòng vượt. <b>Không chặn lưu</b>: kế hoạch cố ý dư cho hao vỡ vẫn là kế hoạch.</td></tr>
+          <tr><td>Lưu kế hoạch</td><td class="k">—</td><td>Hành vi</td><td class="c">—</td><td>Lưu cả tờ một lần (<code>PUT</code> toàn bộ dòng); hạng mục không gửi lên là hạng mục không có kế hoạch. Quyền <code>shopdrawing:update</code>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — Đợt Bản vẽ sản xuất / Đơn hàng</h4>
+    <p>Hai khối dưới bảng kế hoạch, cùng một biểu mẫu in hai lần: <b>Bản vẽ sản xuất</b> (<code>kind = production</code>, nơi nhận là xưởng sản xuất) và <b>Đơn hàng</b> (<code>kind = purchase</code>, nơi nhận là bộ phận cung ứng). Khác nhau ở nơi nhận và tên hai cột khối lượng; số đợt đếm riêng theo từng loại. Trạng thái của đợt ở <a href="PL-A.html">PL-A</a>; quyền ở <a href="PL-B.html">PL-B</a>.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Đợt</td><td class="k">round_no</td><td>Số, tự sinh</td><td class="c">—</td><td>“Đợt 1, Đợt 2, …” theo (dự án, loại), gán khi tạo; đợt bị trả lại vẫn giữ số của nó.</td></tr>
+          <tr><td>Từ ngày · Đến ngày</td><td class="k">from_date · to_date</td><td>Ngày</td><td class="c">✱</td><td>Khoảng thực hiện của đợt; từ ngày không muộn hơn đến ngày.</td></tr>
+          <tr><td>Nơi gửi · Kỹ sư phụ trách</td><td class="k">sender_dept · sender_user</td><td>P. TQT · người</td><td class="c">✱</td><td>Nơi gửi luôn là P. TQT (mã <code>TQT</code>). Kỹ sư mặc định là người đang lập, chọn lại được trong danh sách P. TQT; người ngoài phòng bị từ chối.</td></tr>
+          <tr><td>Nơi nhận · Nhân viên phụ trách</td><td class="k">receiver_dept · receiver_user</td><td>Phòng ban · người</td><td class="c">✱ khi nộp</td><td>Nơi nhận do loại đợt quyết định — mã <code>XSX</code> (xưởng sản xuất) cho Bản vẽ sản xuất, <code>TM</code> (thu mua / cung ứng) cho Đơn hàng — và <b>tên hiện theo danh mục phòng ban</b>, không viết cứng. Nhân viên phụ trách chọn trong người của phòng đó; bắt buộc trước khi nộp vì đây là người nhận thông báo khi đợt được duyệt.</td></tr>
+          <tr><td>Hạn phản hồi</td><td class="k">reply_due</td><td>Ngày</td><td class="c">✱</td><td>Ngày nơi nhận phải trả lời; in trong thông báo chuyển đợt.</td></tr>
+          <tr><td>Ghi chú theo đợt</td><td class="k">note</td><td>Văn bản</td><td class="c">—</td><td>Dưới bảng, cạnh nút nộp.</td></tr>
+          <tr><td>Bản vẽ đính kèm</td><td class="k">app_file_ref · ord_supply_batch</td><td>Tệp, nhiều</td><td class="c">—</td><td>“Tải lên bản vẽ: cho chọn tải lên nhiều tệp” — dwg / dxf / pdf / xlsx qua luồng tải lên chung (<a href="PF-05.html">PF-05</a>). Tệp gắn vào đợt, nên đợt phải được lưu nháp trước; sửa / xoá tệp được khi đợt còn <em>Nháp</em> hoặc <em>Trả lại</em>, khoá khi đã nộp hoặc đã duyệt.</td></tr>
+          <tr><td>Trạng thái</td><td class="k">status</td><td>Nháp → Chờ TP TQT duyệt → Đã duyệt · Trả lại</td><td class="c">—</td><td>Nộp khoá đợt và báo TP TQT; duyệt chuyển đợt tới nơi nhận và khoá hẳn; trả lại kèm ý kiến mở đợt cho người lập sửa, nộp lại tăng <code>submit_count</code> và xoá kết quả duyệt của lần trước — đợt đang chờ không hiện người duyệt hay ý kiến cũ.</td></tr>
+          <tr><td>Dòng: STT · Mã HM · Đầu việc · ĐVT</td><td class="k">line.wbs_id</td><td>Chỉ đọc</td><td class="c">—</td><td>“Thêm dòng” chọn hạng mục BOQ của dự án; mỗi hạng mục một dòng trên một đợt. Tên, ĐVT đọc từ BOQ.</td></tr>
+          <tr><td>Dòng: Mã vật tư · Tên vật tư/Quy cách</td><td class="k">line.material_id · material_text</td><td>Danh mục · văn bản</td><td class="c">—</td><td>Mã vật tư chọn từ danh mục vật tư (<a href="PF-01.html">PF-01</a>), không bắt buộc. Tên vật tư/Quy cách mặc định là Quy cách BOQ của hạng mục, đổi theo vật tư khi chọn, sửa tay được.</td></tr>
+          <tr><td>Dòng: Khối lượng kế hoạch</td><td class="k">line.qty_plan</td><td>Hệ thống</td><td class="c">—</td><td>Kế hoạch sản xuất (hoặc mua hàng) của hạng mục ở bảng kế hoạch, theo loại đợt. Hạng mục chưa có kế hoạch hiện “—” và không tính còn lại.</td></tr>
+          <tr><td>Dòng: KL sản xuất (mua hàng) đợt này</td><td class="k">line.qty_this</td><td>Số &gt; 0</td><td class="c">✱</td><td>Con số duy nhất người lập gõ trên dòng. Vượt “còn lại trước đợt” thì dòng cảnh báo đỏ, <b>không chặn</b> — đợt làm lại hàng hao vỡ là chuyện thường.</td></tr>
+          <tr><td>Dòng: KL sản xuất (mua hàng) lũy kế</td><td class="k">line.qty_cumulative</td><td>Hệ thống</td><td class="c">—</td><td>Σ “đợt này” của các đợt <b>cùng dự án, cùng loại, đã nộp hoặc đã duyệt</b>, có số đợt ≤ đợt đang xem, cộng chính đợt này. Đợt nháp và đợt bị trả lại không tính — trả lại là rút khỏi lũy kế ngay lúc trả.</td></tr>
+          <tr><td>Dòng: Khối lượng còn lại</td><td class="k">line.qty_remaining</td><td>Hệ thống</td><td class="c">—</td><td>= Khối lượng kế hoạch − lũy kế (công thức <code>G − I</code> của biểu mẫu). Âm thì tô đỏ.</td></tr>
+          <tr><td>Dòng: Ghi chú</td><td class="k">line.note</td><td>Văn bản</td><td class="c">—</td><td>Ghi chú dòng, ví dụ lý do vượt còn lại.</td></tr>
+          <tr><td>Nộp bản vẽ sản xuất · Nộp bản vẽ đơn hàng</td><td class="k">—</td><td>Hành vi</td><td class="c">—</td><td>Nút xanh của biểu mẫu. Lưu đợt rồi nộp: đợt sang <em>Chờ TP TQT duyệt</em>, khoá, và TP TQT nhận thông báo (<a href="PF-04.html">PF-04</a>). Quyền <code>shopdrawing:update</code>.</td></tr>
+          <tr><td>Duyệt · Trả lại</td><td class="k">review</td><td>Hành vi</td><td class="c">—</td><td>Của TP TQT (<code>shopdrawing:approve_internal</code>), trên đợt đang chờ. Duyệt → người lập nhận kết quả, nhân viên phụ trách và trưởng đơn vị nơi nhận nhận “đợt mới từ P. TQT”. Trả lại → bắt buộc ý kiến, người lập nhận kèm ý kiến. Không đi qua <a href="PF-03.html">PF-03</a> (<a href="PL-C.html#Q-78">Q-78</a>).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
       <li>Chọn dự án rồi chọn đợt trình là đủ để mở đơn — không phải chọn đầu việc, vì đầu việc đã nằm sẵn trong bảng khối lượng của đợt.</li>
@@ -387,6 +448,9 @@
       <li>Thiếu một trong ba tài liệu bắt buộc thì không gửi nhà máy được; thiếu bảng tiến độ giao hàng thì vẫn gửi được nhưng phải ghi lý do.</li>
       <li>Nhà máy trả lời “đề nghị điều chỉnh” thì phiếu quay về trạng thái sửa, bản đã gửi vẫn tra được để so sánh, và đơn chưa sang <a href="ORD-04.html">ORD-04</a>.</li>
       <li>Phê duyệt phiếu khóa cả hai bảng cùng lúc và sinh một phiên bản chung.</li>
+      <li>Tab “Gói thầu có bản vẽ” liệt kê mọi gói thầu với hai cột bản vẽ đọc được ngay là <em>Chưa nộp</em>, <em>Đã nộp V{n}</em> hay <em>Đã duyệt</em>; chỉ gói đã duyệt đủ hai cột mới mở được kế hoạch sản xuất và mua hàng.</li>
+      <li>Bảng kế hoạch sản xuất và mua hàng in đủ mọi hạng mục của BOQ hợp đồng; hai cột kế hoạch để trống khi chưa lập, tô đỏ và nêu số vượt khi sản xuất + mua hàng vượt hợp đồng nhưng vẫn lưu được.</li>
+      <li>Thêm một dòng vào đợt là thấy ngay ba con số của hạng mục — kế hoạch, lũy kế, còn lại — và chúng đổi theo từng phím gõ; nộp thì TP TQT được báo, duyệt thì nhà máy / cung ứng được báo, trả lại thì người lập được báo kèm ý kiến và đợt mở lại để sửa.</li>
     </ol>
 
     <h4>Mockup UI — Đơn hàng › Lập đơn</h4>
@@ -522,6 +586,10 @@
       <li><b>Dòng cắt đá gắn về dòng đơn hàng.</b> Mỗi dòng của <a href="ORD-11.html">ORD-11</a> trỏ về đúng một dòng <code>lines[]</code> của phiếu này.<span class="then">Nhờ đường nối đó, hai phép đối chiếu cùng chạy được trên một bộ số: khối lượng đơn so với khối lượng đợt trình ở trang này, và khối lượng đã cấp so với từng viên ở <a href="ORD-05.html">ORD-05</a>. Nó cũng là cách <a href="ORD-04.html">ORD-04</a> biết viên nào đi theo nguồn cung ứng nào.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày trình đơn.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Đơn hàng lập trong kỳ và khối lượng đã yêu cầu.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
+      <li><b>Ba giá trị cấp gói thầu là tổng hợp, không nhập tay.</b> “Bản vẽ Shopdrawing” gộp <code>draft_status</code> của các hạng mục: không hạng mục nào rời bàn kỹ sư → <em>Chưa nộp</em>; tất cả <em>Đã duyệt nội bộ</em> → <em>Đã duyệt</em>; còn lại <em>Đã nộp V{n}</em>, n là số lần nộp lớn nhất. “Bản vẽ thiết kế” gộp hồ sơ bản vẽ thiết kế: chưa có phiên bản → <em>Chưa nộp</em>; đủ hạng mục đã ký → <em>Đã duyệt</em>; còn lại <em>Đã nộp V{phiên bản}</em>. “Ngày duyệt” chỉ có khi cả hai cột đã duyệt. Quy ước này do đội kỹ thuật đề xuất từ ba giá trị ghi trong hướng dẫn, chờ chốt ở <a href="PL-C.html#Q-77">PL-C · Q-77</a>.</li>
+      <li><b>Kế hoạch là một tờ, lưu cả tờ.</b> Bảng kế hoạch sản xuất và mua hàng lưu bằng một nút cho cả dự án; hạng mục không có trong lần lưu là hạng mục chưa có kế hoạch, và bảng vẫn in nó với hai ô trống. Sản xuất + mua hàng vượt khối lượng hợp đồng là cảnh báo, không phải lỗi — kế hoạch dư cho hao vỡ là quyết định của P. TQT, hệ thống chỉ nói to số vượt.</li>
+      <li><b>Lũy kế chỉ tính đợt đã nộp hoặc đã duyệt.</b> “Khối lượng lũy kế” của một dòng đợt là tổng “đợt này” của các đợt cùng dự án, cùng loại (sản xuất hay mua hàng), có số đợt không lớn hơn đợt đang xem, cộng chính đợt này; đợt nháp và đợt bị trả lại không tính. Hai loại có kế hoạch riêng, lũy kế riêng và số đợt riêng — một hạng mục có “Đợt 3” bản vẽ sản xuất và “Đợt 1” đơn hàng cùng lúc là bình thường. Con số tính lúc đọc, không lưu, nên trả lại một đợt là rút nó khỏi lũy kế ngay.</li>
+      <li><b>Duyệt đợt là chuyển đợt.</b> Chỉ TP TQT (<code>shopdrawing:approve_internal</code>) duyệt hay trả lại một đợt đang chờ; duyệt thì đợt khoá hẳn và nơi nhận — nhân viên phụ trách đã ghi trên đợt cùng trưởng đơn vị — được báo là “đợt mới từ P. TQT”; trả lại bắt buộc ý kiến, mở đợt cho người lập sửa và báo cho cả người lập lẫn kỹ sư phụ trách ghi ở nơi gửi; nộp lại là lần nộp kế tiếp. Hai người duyệt cùng lúc thì chỉ lượt đến trước được ghi, lượt sau nhận “Chỉ duyệt hoặc trả lại được đợt đang chờ duyệt.” và không gửi thông báo nào. Đợt không đi qua trung tâm phê duyệt <a href="PF-03.html">PF-03</a> vì biểu mẫu chỉ có một người duyệt và một kết quả — điểm cần chốt ở <a href="PL-C.html#Q-78">Q-78</a>. Đợt đứng cạnh đơn hàng chứ không thay: đơn hàng (<a href="ORD-04.html">ORD-04</a>, <a href="ORD-05.html">ORD-05</a>) vẫn là chứng từ nhà máy sản xuất theo.</li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -552,6 +620,17 @@
           <tr><td>Ngày kết thúc giao trước ngày bắt đầu</td><td><code>deliver_to_date &lt; deliver_from</code></td><td>“Ngày kết thúc giao hàng phải từ ngày bắt đầu trở đi.”</td></tr>
           <tr><td>Sửa sau khi duyệt</td><td>Phiếu đã phê duyệt</td><td>“Phiếu đã duyệt và đã khóa. Sửa thì tạo phiên bản mới — nhà máy đang cắt theo bản hiện tại.”</td></tr>
           <tr><td>Chuyển ORD-04 khi nhà máy chưa phản hồi</td><td><code>factory_ack = Chưa phản hồi</code></td><td>“Nhà máy chưa phản hồi phiếu {số}. Chờ chấp thuận trước khi phân luồng sản xuất.”</td></tr>
+          <tr><td>Đợt: thiếu ngày</td><td>Trống <code>from_date</code>, <code>to_date</code> hoặc <code>reply_due</code></td><td>“Nhập đủ Từ ngày, Đến ngày và Hạn phản hồi.”</td></tr>
+          <tr><td>Đợt: từ ngày sau đến ngày</td><td><code>from_date &gt; to_date</code></td><td>“Từ ngày phải không muộn hơn đến ngày.”</td></tr>
+          <tr><td>Đợt: khối lượng dòng bằng 0</td><td><code>qty_this ≤ 0</code></td><td>“Dòng {stt}: khối lượng đợt này phải lớn hơn 0. Xóa dòng nếu không còn cần.”</td></tr>
+          <tr><td>Đợt: hạng mục trùng</td><td>Hai dòng cùng <code>wbs_id</code></td><td>“Dòng {stt}: hạng mục {mã} đã có trên đợt này — gộp khối lượng vào một dòng.”</td></tr>
+          <tr><td>Đợt: nộp khi chưa có dòng</td><td><code>lines[]</code> rỗng</td><td>“Đợt chưa có dòng khối lượng nào. Thêm dòng trước khi nộp.”</td></tr>
+          <tr><td>Đợt: nộp khi chưa chọn kỹ sư</td><td>Trống <code>sender_user</code></td><td>“Chọn kỹ sư phụ trách ở nơi gửi.”</td></tr>
+          <tr><td>Đợt: nộp khi chưa chọn nơi nhận</td><td>Trống <code>receiver_user</code></td><td>“Chọn nhân viên phụ trách ở nơi nhận trước khi nộp — người này nhận thông báo khi đợt được duyệt.”</td></tr>
+          <tr><td>Đợt: người ngoài phòng</td><td>Kỹ sư không thuộc P. TQT · nhân viên không thuộc phòng nhận</td><td>“Kỹ sư phụ trách phải thuộc P. TQT.” · “Nhân viên phụ trách phải thuộc {tên phòng}.”</td></tr>
+          <tr><td>Đợt: trả lại không ý kiến</td><td><code>approve = false</code>, <code>note</code> rỗng</td><td>“Ghi ý kiến để người lập biết phải sửa gì — ý kiến sẽ hiện trên đợt bị trả lại.”</td></tr>
+          <tr><td>Đợt: sửa sau khi nộp</td><td><code>status ∉ {Nháp, Trả lại}</code></td><td>“Đợt đã nộp hoặc đã duyệt thì không sửa được — tạo đợt mới nếu cần thay đổi.”</td></tr>
+          <tr><td>Đợt: vượt còn lại</td><td><code>qty_this &gt; kế hoạch − lũy kế trước đợt</code></td><td><b>Cảnh báo, không chặn.</b> “Vượt còn lại trước đợt ({còn lại} {đvt}).” — dòng tô đỏ.</td></tr>
         </tbody>
       </table>
     </div>
@@ -585,12 +664,15 @@
           <tr><td>UAT-ORD03-22</td><td>Phiếu đã gửi, <code>factory_ack</code> còn “Chưa phản hồi”</td><td>Thử chuyển sang ORD-04</td><td>Bị chặn kèm thông điệp chờ nhà máy chấp thuận</td></tr>
           <tr><td>UAT-ORD03-23</td><td>Phiếu đã được phê duyệt</td><td>Mở <a href="ORD-11.html">ORD-11</a> và sửa một dòng</td><td>Bị chặn; chỉ cho tạo phiên bản mới, và phiên bản sinh cho cả hai bảng</td></tr>
           <tr><td>UAT-ORD03-24</td><td>Phiếu đặt <code>prod_type</code> = Sản xuất mẫu, 20 m²</td><td>Duyệt phiếu rồi xem dòng khối lượng của đợt trình</td><td>“Đã yêu cầu” của dòng đó không tăng thêm 20 m²</td></tr>
+          <tr><td>UAT-ORD03-25</td><td>Dự án của gói KH_0001 có 4 hạng mục đều <em>Đã duyệt nội bộ</em>, bản vẽ thiết kế v1 mới ký 1/4; gói HL_0001 chưa có dự án</td><td>Mở Đơn hàng và sản xuất › tab Gói thầu có bản vẽ</td><td>KH_0001: Bản vẽ Shopdrawing “Đã duyệt”, Bản vẽ thiết kế “Đã nộp V1”, Ngày duyệt rỗng, dòng không bấm được; HL_0001: hai cột “Chưa nộp”, ghi “Chưa có dự án”. Ký đủ 4 hạng mục → cột thiết kế “Đã duyệt”, Ngày duyệt hiện, dòng mở được kế hoạch sản xuất và mua hàng</td></tr>
+          <tr><td>UAT-ORD03-26</td><td>Dự án KH_0001: bảng kế hoạch ghi hạng mục Lát đá vỉa hè sản xuất 1.000 / mua hàng 500 m²; đợt Bản vẽ sản xuất 1 đã duyệt với 100 m²</td><td>Tạo đợt Bản vẽ sản xuất mới, thêm dòng Lát đá vỉa hè, gõ 200, chọn nhân viên xưởng, bấm “Nộp bản vẽ sản xuất”</td><td>Đợt mang số 2; dòng hiện kế hoạch 1.000 · lũy kế 300 · còn lại 700; trạng thái “Chờ TP TQT duyệt”; TP TQT nhận “Bản vẽ sản xuất chờ bạn duyệt … đợt 2 · lần nộp thứ 1”. Mở đợt Đơn hàng mới cho cùng hạng mục: kế hoạch 500, lũy kế 0, số đợt 1</td></tr>
+          <tr><td>UAT-ORD03-27</td><td>Đợt Bản vẽ sản xuất 2 của KH_0001 đang chờ duyệt</td><td>TP TQT bấm “Trả lại” không ghi ý kiến, rồi ghi ý kiến và trả lại; người lập sửa khối lượng, nộp lại; TP TQT duyệt</td><td>Lần đầu bị chặn “Ghi ý kiến…”; lần hai đợt về “Trả lại · lần nộp 1”, người lập nhận thông báo kèm ý kiến, lũy kế của hạng mục quay về 100; nộp lại → lần nộp 2, khung chi tiết không còn dòng “Trả lại” và ý kiến cũ; duyệt → đợt “Đã duyệt”, khoá, người lập nhận “đã được … duyệt và chuyển tới Xưởng sản xuất”, nhân viên xưởng và quản đốc nhận “Bản vẽ sản xuất mới từ P. TQT … hạn phản hồi …”</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ORD-02.html">ORD-02 hồ sơ Shopdrawing ba cấp</a><a href="ORD-04.html">ORD-04 phân luồng</a><a href="ORD-05.html">ORD-05 cấp hàng theo đợt</a><a href="BID-06.html">BID-06 áp giá doanh thu</a><a href="ORD-07.html">ORD-07 cập nhật / hủy</a><a href="ACC-02.html">ACC-02 hệ thống kho</a><a href="PF-03.html">PF-03 phê duyệt</a><a href="PL-C.html#Q-43">PL-C Q-43</a><a href="PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="2026-09-15/YC-07.html">YC-07 hồ sơ bản vẽ thiết kế</a><a href="2026-09-15/YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a></p>
+    <p class="links"><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ORD-02.html">ORD-02 hồ sơ Shopdrawing ba cấp</a><a href="ORD-04.html">ORD-04 phân luồng</a><a href="ORD-05.html">ORD-05 cấp hàng theo đợt</a><a href="BID-06.html">BID-06 áp giá doanh thu</a><a href="ORD-07.html">ORD-07 cập nhật / hủy</a><a href="ACC-02.html">ACC-02 hệ thống kho</a><a href="PF-03.html">PF-03 phê duyệt</a><a href="PL-C.html#Q-43">PL-C Q-43</a><a href="PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="2026-09-15/YC-07.html">YC-07 hồ sơ bản vẽ thiết kế</a><a href="2026-09-15/YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a><a href="BID-01.html">BID-01 sổ gói thầu</a><a href="PL-C.html#Q-77">PL-C · Q-77 quy ước ba giá trị bản vẽ cấp gói</a><a href="PL-A.html">PL-A trạng thái đợt bản vẽ sản xuất / đơn hàng</a><a href="PL-C.html#Q-78">PL-C · Q-78 đợt không qua PF-03</a><a href="PL-C.html#Q-79">PL-C · Q-79 mở kế hoạch khi chưa duyệt đủ</a></p>
   </div>
 </section>
 <div class="filefoot">
