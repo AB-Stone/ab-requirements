@@ -311,6 +311,22 @@
       </table>
     </div>
 
+    <h4>Tham số — theo dõi kho (sổ kho theo kỳ)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Dùng chung ô chọn dự án của màn; sổ đọc theo kho dự án gắn với dự án đó.</td></tr>
+          <tr><td>Từ ngày · Đến ngày</td><td class="k">from, to</td><td>Ngày</td><td class="c req">✱</td><td>Cả hai mốc bắt buộc, <code>from ≤ to</code>, tính cả hai ngày biên; mặc định từ ngày 1 tháng hiện tại đến hôm nay. Khoảng nằm trong địa chỉ trang (<a href="2026-09-22/YC-14.html">YC-14</a>).</td></tr>
+          <tr><td>Mã vật tư · Tên vật tư</td><td class="k">material_code, material_name</td><td>Chuỗi</td><td class="c">—</td><td>Từ danh mục vật tư <a href="PF-01.html">PF-01</a>; ĐVT là đơn vị kế toán của vật tư — đơn vị mà tồn kho đang giữ.</td></tr>
+          <tr><td>Tồn đầu kỳ</td><td class="k">opening</td><td>Số, tự tính</td><td class="c">—</td><td>Σ nhập đã ghi nhận − Σ xuất đã ghi nhận có ngày chứng từ <b>trước</b> <code>from</code>.</td></tr>
+          <tr><td>Nhập trong kỳ</td><td class="k">qty_in</td><td>Số, tự tính</td><td class="c">—</td><td>Σ dòng phiếu nhập đã ghi kho (kể cả phiếu nhập điều chuyển đến mà phiếu xử lý tồn của dự án khác sinh ra) và phần thừa kiểm kê đã xử lý; phiếu tính theo ngày chứng từ, kiểm kê tính theo ngày xử lý chênh lệch (<code>resolved_at</code>), trong <code>[from, to]</code>.</td></tr>
+          <tr><td>Xuất trong kỳ</td><td class="k">qty_out</td><td>Số, tự tính</td><td class="c">—</td><td>Σ dòng phiếu xuất đã giao, phiếu xử lý tồn đã ghi sổ và phần thiếu kiểm kê đã xử lý; phiếu tính theo ngày chứng từ, kiểm kê tính theo ngày xử lý chênh lệch, trong <code>[from, to]</code>.</td></tr>
+          <tr><td>Tồn cuối kỳ</td><td class="k">closing</td><td>Số, tự tính</td><td class="c">—</td><td><code>opening + qty_in − qty_out</code>. Với <code>to</code> = hôm nay, bằng đúng số tồn trên tab Tồn kho.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
       <li>Phiếu xuất không ghi hạng mục hoặc tổ nhận thì không lưu được.</li>
@@ -319,6 +335,7 @@
       <li>Chi phí vật tư xuất kho vào đúng hạng mục trong sổ chi phí công trình ngay sau khi phiếu được duyệt.</li>
       <li>Giá trị vật tư xuất cho tổ đội tự cộng vào bảng khấu trừ VTTB của tổ đó trong kỳ.</li>
       <li>Tồn kho dự án hiển thị theo ba con số: tồn, đang giữ (đã duyệt xuất chưa giao), khả dụng.</li>
+      <li>Tab <b>Theo dõi kho</b> dựng sổ kho theo kỳ cho dự án đang chọn: mỗi vật tư một dòng với Tồn đầu kỳ · Nhập trong kỳ · Xuất trong kỳ · Tồn cuối kỳ, dòng tổng dưới bảng; vật tư không phát sinh trong kỳ vẫn hiện với tồn đầu bằng tồn cuối.</li>
       <li>Phiếu nhập kho hiện chênh lệch giữa số nhận thực tế và số theo chứng từ trên từng dòng; dòng lệch phải có biện pháp xử lý, và phiếu đính được biên bản giao nhận hàng.</li>
       <li>Kiểm kê định kỳ lập được biên bản chênh lệch và bút toán xử lý thừa / thiếu.</li>
       <li>Vật tư tồn cuối dự án đưa được vào hồ sơ thanh toán vật tư ở <a href="ORD-08.html">ORD-08</a> hoặc điều chuyển sang dự án khác.</li>
@@ -363,6 +380,7 @@
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Xem tồn kho dự án</td><td>Ba cột tồn / đang giữ / khả dụng; cảnh báo dưới định mức như kho khác.</td></tr>
+          <tr><td class="c">—</td><td>Theo dõi kho</td><td>Chọn dự án và khoảng thời gian; bảng bảy cột STT · Mã vật tư · Tên vật tư · Tồn đầu kỳ · Nhập trong kỳ · Xuất trong kỳ · Tồn cuối kỳ, có dòng tổng.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Lập phiếu xuất</td><td>Hạng mục và tổ nhận bắt buộc. Không cho xuất quá số khả dụng.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Duyệt xuất &amp; ký nhận</td><td>Duyệt theo <a href="ACC-04.html">ACC-04</a>; tổ nhận ký điện tử; giá xuất tính tự động.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Kiểm kê</td><td>Nhập số đếm thực tế, hệ thống dựng biên bản chênh lệch và bút toán xử lý.</td></tr>
@@ -385,6 +403,7 @@
       <li><b>Kiểm kê sinh bút toán.</b> Chênh lệch kiểm kê lập biên bản và sinh bút toán xử lý thừa hoặc thiếu.<span class="then">Định mức hao hụt cho phép khai theo vật tư (phần trăm của số sổ sách). Thiếu trong định mức thì ghi sổ kèm ghi chú; thiếu quá định mức thì phải đính biên bản quy trách nhiệm trước khi ghi sổ. Ghi sổ đưa số tồn về bằng số đếm thực tế và đẩy giá trị phần thiếu sang sổ chi phí công trình.</span></li>
       <li><b>Tồn cuối dự án có ba lối ra.</b> Điều chuyển sang dự án khác, hoàn nhập về nhà máy, hoặc đưa vào hồ sơ thanh toán vật tư ở <a href="ORD-08.html">ORD-08</a>.<span class="then">Mỗi lối ra là một phiếu xử lý tồn (<code>XLT-&lt;project&gt;-NNNN</code>) ghi sổ theo giá bình quân, trừ vào tồn chứ không sinh chi phí — vật tư chỉ thành chi phí khi xuất cho tổ đội. Điều chuyển đồng thời sinh phiếu nhập “điều chuyển từ dự án khác” bên dự án nhận, giữ nguyên giá vốn. Kho dự án chỉ đóng được khi tồn bằng 0.</span></li>
     
+      <li><b>Sổ kho theo kỳ dựng từ chứng từ đã ghi nhận.</b> Chỉ phiếu nhập đã ghi kho, phiếu xuất đã giao, phiếu xử lý tồn đã ghi sổ, cùng chênh lệch kiểm kê đã xử lý mới vào sổ; phiếu nháp, chờ duyệt hay đã duyệt-đang giữ hàng không tính. Điều chuyển đến kho này vào sổ qua phiếu nhập điều chuyển mà dự án gửi sinh ra, không đọc thêm từ phiếu xử lý tồn bên gửi — nếu không cùng một lô hàng sẽ vào sổ hai lần.<span class="then">Nhờ vậy Tồn cuối kỳ tính đến hôm nay luôn bằng số tồn trên tab Tồn kho — sổ và tồn đọc từ cùng những lần hàng đi qua cửa kho. Phiếu tính theo ngày chứng từ; chênh lệch kiểm kê tính theo ngày xử lý, vì biên bản kiểm kê không có ngày chứng từ riêng và tồn chỉ đổi lúc xử lý. Hai đầu tính cả ngày biên; hai mốc đều bắt buộc vì không có “tồn đầu kỳ” cho một khoảng không có đầu. Dòng Tổng cộng số của mọi vật tư kể cả khác ĐVT — có nên ẩn khi vật tư khác đơn vị đang chờ chốt ở <a href="PL-C.html#Q-76">PL-C · Q-76</a>.</span></li>
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày phiếu.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Xuất nhập kho dự án trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
 
@@ -398,6 +417,7 @@
           <tr><td>Nhận thực tế lệch chứng từ nguồn, chưa ghi cách xử lý</td><td><code>qty_actual ≠ qty_doc</code> và <code>variance_note</code> rỗng</td><td>“Ghi biện pháp xử lý khi có chênh lệch.” — dòng hiện chênh lệch {số}; kèm ảnh vào biên bản giao nhận.</td></tr>
           <tr><td>Vật tư dưới định mức sau khi xuất</td><td>Tồn sau xuất &lt; định mức</td><td>“Sau phiếu này {vật tư} còn {số}, dưới định mức {số}. Đã báo P. Cung ứng.”</td></tr>
           <tr><td>Đóng kho còn tồn</td><td>Tồn &gt; 0</td><td>“Kho còn tồn {giá trị}. Điều chuyển, hoàn nhập hoặc lập hồ sơ thanh toán vật tư trước khi đóng.”</td></tr>
+          <tr><td>Kỳ theo dõi kho không hợp lệ</td><td>Thiếu một mốc, hoặc <code>from &gt; to</code></td><td>“Kỳ theo dõi kho cần cả hai mốc từ ngày và đến ngày.” / “Từ ngày phải không muộn hơn đến ngày.”</td></tr>
           <tr><td>Chênh kiểm kê vượt định mức</td><td>&gt; hao hụt cho phép</td><td>“Chênh lệch {số} vượt định mức hao hụt {số}. Cần biên bản quy trách nhiệm trước khi ghi sổ.”</td></tr>
         </tbody>
       </table>
@@ -421,6 +441,7 @@
           <tr><td>UAT-PRJ04-11</td><td>Vật tư có định mức hao hụt 0,5%; sổ 1.000, đếm 988</td><td>Lưu xử lý chênh lệch không kèm biên bản</td><td>Bị chặn: thiếu 12 vượt định mức 5, cần biên bản quy trách nhiệm</td></tr>
           <tr><td>UAT-PRJ04-12</td><td>Dự án quyết toán, kho còn 20 m²</td><td>Lập phiếu xử lý tồn “điều chuyển” sang dự án khác và ghi sổ</td><td>Tồn giảm 20; dự án nhận có phiếu nhập điều chuyển đúng giá bình quân</td></tr>
           <tr><td>UAT-PRJ04-13</td><td>Phiếu xuất nhà máy ghi 200 m², thủ kho đếm được 180</td><td>Nhập KL chứng từ 200, KL nhập kho 180, để trống biện pháp xử lý rồi Thêm dòng</td><td>Chênh lệch hiện −20; bị chặn kèm “Ghi biện pháp xử lý khi có chênh lệch.”; ghi biện pháp thì thêm được dòng, phiếu mang nhãn “Có chênh lệch”</td></tr>
+          <tr><td>UAT-PRJ04-14</td><td>Kho dự án: phiếu nhập 180 m² ghi kho ngày 27/9, phiếu xuất 30 m² giao ngày 27/9, một phiếu nhập 122 m² còn nháp</td><td>Mở Theo dõi kho, chọn 01/09–27/09; rồi chọn 28/09–30/09</td><td>Kỳ 1: Tồn đầu 0 · Nhập 180 · Xuất 30 · Tồn cuối 150, phiếu nháp không tính. Kỳ 2: Tồn đầu 150 · Nhập 0 · Xuất 0 · Tồn cuối 150, vật tư vẫn hiện dòng</td></tr>
         </tbody>
       </table>
     </div>
