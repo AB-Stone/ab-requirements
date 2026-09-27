@@ -300,7 +300,11 @@
         <tbody>
           <tr><td>Nguồn nhập</td><td class="k">source_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>cấp hàng NM/CƯ</code> · <code>mua tại công trình</code> · <code>hoàn nhập từ tổ đội</code> · <code>điều chuyển từ dự án khác</code>.</td></tr>
           <tr><td>Chứng từ nguồn</td><td class="k">source_ref</td><td>Tham chiếu</td><td class="c req">✱</td><td>Phiếu xuất của nơi cấp, hoặc hóa đơn mua, hoặc phiếu điều chuyển.</td></tr>
-          <tr><td>Số lượng nhận thực tế</td><td class="k">qty_actual</td><td>Số</td><td class="c req">✱</td><td>Lệch so với chứng từ nguồn thì bắt buộc ghi sai lệch (<a href="ORD-05.html">ORD-05</a>).</td></tr>
+          <tr><td>KL chứng từ</td><td class="k">qty_doc</td><td>Số</td><td class="c"></td><td>Khối lượng ghi trên phiếu xuất của nhà máy hoặc đơn mua hàng của đợt. Để trống khi chứng từ nguồn không ghi số lượng.</td></tr>
+          <tr><td>KL nhập kho</td><td class="k">qty_actual</td><td>Số</td><td class="c req">✱</td><td>Khối lượng thủ kho đếm nhận tại công trình — đây là số ghi kho. Lệch so với chứng từ nguồn thì bắt buộc ghi biện pháp xử lý (<a href="ORD-05.html">ORD-05</a>).</td></tr>
+          <tr><td>Chênh lệch</td><td class="k">variance</td><td>Số, tự tính</td><td class="c"></td><td><code>qty_actual − qty_doc</code>; âm là thiếu, dương là thừa. Chỉ hiện khi có <code>qty_doc</code>; không sửa tay.</td></tr>
+          <tr><td>Biện pháp xử lý</td><td class="k">variance_note</td><td>Văn bản</td><td class="c"></td><td>Bắt buộc khi chênh lệch ≠ 0: cập nhật lại bản vẽ sản xuất của đợt, yêu cầu nơi cấp bổ sung phần thiếu, hoặc hoàn hàng về nhà máy gia công lại nếu chưa đạt chất lượng. Bỏ trống khi không lệch.</td></tr>
+          <tr><td>Biên bản giao nhận hàng</td><td class="k">delivery_note_files</td><td>Tệp, nhiều</td><td class="c"></td><td>PDF hoặc ảnh, đính vào phiếu sau khi tạo; có chênh lệch thì kèm ảnh hiện trường.</td></tr>
           <tr><td>Giá nhập</td><td class="k">unit_price</td><td>Số tiền</td><td class="c req">✱</td><td>Trước VAT; với hàng cấp nội bộ thì lấy giá xuất kho của nơi cấp.</td></tr>
           <tr><td>Người kiểm nhận</td><td class="k">inspector</td><td>Tham chiếu</td><td class="c req">✱</td><td>Thủ kho công trình hoặc cán bộ kỹ thuật được ủy quyền.</td></tr>
         </tbody>
@@ -315,6 +319,7 @@
       <li>Chi phí vật tư xuất kho vào đúng hạng mục trong sổ chi phí công trình ngay sau khi phiếu được duyệt.</li>
       <li>Giá trị vật tư xuất cho tổ đội tự cộng vào bảng khấu trừ VTTB của tổ đó trong kỳ.</li>
       <li>Tồn kho dự án hiển thị theo ba con số: tồn, đang giữ (đã duyệt xuất chưa giao), khả dụng.</li>
+      <li>Phiếu nhập kho hiện chênh lệch giữa số nhận thực tế và số theo chứng từ trên từng dòng; dòng lệch phải có biện pháp xử lý, và phiếu đính được biên bản giao nhận hàng.</li>
       <li>Kiểm kê định kỳ lập được biên bản chênh lệch và bút toán xử lý thừa / thiếu.</li>
       <li>Vật tư tồn cuối dự án đưa được vào hồ sơ thanh toán vật tư ở <a href="ORD-08.html">ORD-08</a> hoặc điều chuyển sang dự án khác.</li>
       <li>Mỗi lần xử lý tồn cuối lập một phiếu xử lý tồn ghi sổ theo giá bình quân; điều chuyển làm phát sinh phiếu nhập tương ứng ở dự án nhận.</li>
@@ -376,6 +381,7 @@
       <li><b>Tổ nhận ký điện tử.</b> Đại diện tổ nhận ký trên ứng dụng thay cho ký tay trên phiếu giấy.<span class="then">Phiếu in ra hiển thị dấu ký kèm người, thời điểm và thiết bị.</span></li>
       <li><b>Xuất kho là thời điểm thành chi phí.</b> Vật tư nhập kho dự án chưa phải chi phí; chỉ khi xuất cho tổ đội mới ghi chi phí vào hạng mục.<span class="then">Đây là điểm khác biệt cốt lõi giữa kho dự án và mua không qua kho ở <a href="ACC-03.html">ACC-03</a>.</span></li>
       <li><b>Một lần xuất, hai đích ghi nhận.</b> Giá trị xuất vào sổ chi phí công trình đồng thời vào bảng khấu trừ VTTB của tổ đội trong kỳ.<span class="then">Hai đích này không cộng trùng vì bảng khấu trừ chỉ dùng để trừ tiền khoán, không phải ghi chi phí lần hai.</span></li>
+      <li><b>Nhập kho đối chiếu chứng từ.</b> Mỗi dòng phiếu nhập mang số theo chứng từ nguồn và số nhận thực tế; hệ thống tự tính chênh lệch, không cho sửa tay.<span class="then">Chênh lệch khác 0 thì phải ghi biện pháp xử lý trước khi thêm dòng: cập nhật lại bản vẽ sản xuất của đợt, yêu cầu nơi cấp bổ sung phần thiếu, hoặc hoàn hàng về nhà máy gia công lại. Biên bản giao nhận hàng đính vào phiếu; số ghi kho luôn là số nhận thực tế. Phiếu có dòng lệch mang nhãn “Có chênh lệch” trong danh sách.</span></li>
       <li><b>Kiểm kê sinh bút toán.</b> Chênh lệch kiểm kê lập biên bản và sinh bút toán xử lý thừa hoặc thiếu.<span class="then">Định mức hao hụt cho phép khai theo vật tư (phần trăm của số sổ sách). Thiếu trong định mức thì ghi sổ kèm ghi chú; thiếu quá định mức thì phải đính biên bản quy trách nhiệm trước khi ghi sổ. Ghi sổ đưa số tồn về bằng số đếm thực tế và đẩy giá trị phần thiếu sang sổ chi phí công trình.</span></li>
       <li><b>Tồn cuối dự án có ba lối ra.</b> Điều chuyển sang dự án khác, hoàn nhập về nhà máy, hoặc đưa vào hồ sơ thanh toán vật tư ở <a href="ORD-08.html">ORD-08</a>.<span class="then">Mỗi lối ra là một phiếu xử lý tồn (<code>XLT-&lt;project&gt;-NNNN</code>) ghi sổ theo giá bình quân, trừ vào tồn chứ không sinh chi phí — vật tư chỉ thành chi phí khi xuất cho tổ đội. Điều chuyển đồng thời sinh phiếu nhập “điều chuyển từ dự án khác” bên dự án nhận, giữ nguyên giá vốn. Kho dự án chỉ đóng được khi tồn bằng 0.</span></li>
     
@@ -389,7 +395,7 @@
         <tbody>
           <tr><td>Thiếu hạng mục hoặc tổ nhận</td><td>Trường rỗng</td><td>“Phiếu xuất kho dự án bắt buộc ghi hạng mục và tổ nhận.”</td></tr>
           <tr><td>Xuất quá khả dụng</td><td><code>qty &gt; available</code></td><td>“Chỉ còn {số} {đvt} khả dụng ({tồn} tồn, {giữ} đang giữ). Giảm số lượng hoặc chờ nhập thêm.”</td></tr>
-          <tr><td>Nhận thực tế lệch chứng từ nguồn</td><td>Khác số trên phiếu xuất của nơi cấp</td><td>“Số nhận lệch {số} so với phiếu {mã}. Ghi nhận sai lệch kèm ảnh.”</td></tr>
+          <tr><td>Nhận thực tế lệch chứng từ nguồn, chưa ghi cách xử lý</td><td><code>qty_actual ≠ qty_doc</code> và <code>variance_note</code> rỗng</td><td>“Ghi biện pháp xử lý khi có chênh lệch.” — dòng hiện chênh lệch {số}; kèm ảnh vào biên bản giao nhận.</td></tr>
           <tr><td>Vật tư dưới định mức sau khi xuất</td><td>Tồn sau xuất &lt; định mức</td><td>“Sau phiếu này {vật tư} còn {số}, dưới định mức {số}. Đã báo P. Cung ứng.”</td></tr>
           <tr><td>Đóng kho còn tồn</td><td>Tồn &gt; 0</td><td>“Kho còn tồn {giá trị}. Điều chuyển, hoàn nhập hoặc lập hồ sơ thanh toán vật tư trước khi đóng.”</td></tr>
           <tr><td>Chênh kiểm kê vượt định mức</td><td>&gt; hao hụt cho phép</td><td>“Chênh lệch {số} vượt định mức hao hụt {số}. Cần biên bản quy trách nhiệm trước khi ghi sổ.”</td></tr>
@@ -414,6 +420,7 @@
           <tr><td>UAT-PRJ04-10</td><td>GĐ dự án đã ký phiếu xuất 300 m²</td><td>Xem tồn kho</td><td>“Đang giữ” chưa tăng; chỉ tăng sau chữ ký của Kế toán trưởng</td></tr>
           <tr><td>UAT-PRJ04-11</td><td>Vật tư có định mức hao hụt 0,5%; sổ 1.000, đếm 988</td><td>Lưu xử lý chênh lệch không kèm biên bản</td><td>Bị chặn: thiếu 12 vượt định mức 5, cần biên bản quy trách nhiệm</td></tr>
           <tr><td>UAT-PRJ04-12</td><td>Dự án quyết toán, kho còn 20 m²</td><td>Lập phiếu xử lý tồn “điều chuyển” sang dự án khác và ghi sổ</td><td>Tồn giảm 20; dự án nhận có phiếu nhập điều chuyển đúng giá bình quân</td></tr>
+          <tr><td>UAT-PRJ04-13</td><td>Phiếu xuất nhà máy ghi 200 m², thủ kho đếm được 180</td><td>Nhập KL chứng từ 200, KL nhập kho 180, để trống biện pháp xử lý rồi Thêm dòng</td><td>Chênh lệch hiện −20; bị chặn kèm “Ghi biện pháp xử lý khi có chênh lệch.”; ghi biện pháp thì thêm được dòng, phiếu mang nhãn “Có chênh lệch”</td></tr>
         </tbody>
       </table>
     </div>
