@@ -93,7 +93,8 @@
     <h4>Mục tiêu</h4>
     <p>Sau khi lãnh đạo duyệt, đơn hàng phải được chia đúng địa chỉ thực hiện. Quy tắc phân luồng lấy từ ghi chú gốc: đá do nhà máy sản xuất thì về Nhà máy; vật tư mua ngoài thì về Phòng Cung ứng; đá nhỏ lẻ công trình mua để nhà máy sản xuất thì thuộc luồng làm việc của Nhà máy. Một đơn hàng có thể tách thành hai lệnh thực hiện.</p>
     <p><b>Nguồn cung ứng không còn được chọn ở màn hình này.</b> Người lập đơn đã ghi nguồn trên từng dòng ở <a href="ORD-03.html">ORD-03</a> — kho, nhà cung cấp, hoặc để trống nghĩa là Nhà máy sản xuất. ORD-04 đọc cột đó, gom dòng thành lệnh và sinh lệnh; việc còn lại ở đây là phê duyệt và theo dõi. Muốn đổi nguồn thì trả đơn về cho người lập sửa, vì đổi nguồn là đổi nội dung đơn chứ không phải một quyết định điều phối.</p>
-    <p><b>Đơn tới được đây là đơn nhà máy đã chấp thuận.</b> Phiếu yêu cầu sản xuất ở <a href="ORD-03.html">ORD-03</a> có khối <code>factory_ack</code>; đơn còn ở trạng thái “chưa phản hồi” hoặc “đề nghị điều chỉnh” thì không xuất hiện trong hàng chờ phân luồng (<a href="2026-09-15/YC-09.html">YC-09</a>). Và <b>lệnh sản xuất tách theo dòng <a href="ORD-11.html">Danh sách cắt đá</a></b>, không theo dòng tổng hợp của phiếu: nhà máy cắt theo viên, mỗi viên có kích thước, ký hiệu layout và bộ công đoạn gia công riêng.</p>
+    <p><b>Đơn tới được đây là đơn nhà máy đã chấp thuận</b> — hoặc đơn không có dòng nhà máy nào. Phiếu yêu cầu sản xuất ở <a href="ORD-03.html">ORD-03</a> có khối <code>factory_ack</code>; đơn còn ở trạng thái “chưa phản hồi” hoặc “đề nghị điều chỉnh” thì không xuất hiện trong hàng chờ phân luồng (<a href="2026-09-15/YC-09.html">YC-09</a>). Đơn mà mọi dòng lấy từ nhà cung cấp hoặc kho không gửi nhà máy, nên vào hàng chờ ngay khi lãnh đạo phê duyệt. Và <b>lệnh sản xuất tách theo dòng <a href="ORD-11.html">Danh sách cắt đá</a></b>, không theo dòng tổng hợp của phiếu: nhà máy cắt theo viên, mỗi viên có kích thước, ký hiệu layout và bộ công đoạn gia công riêng.</p>
+    <p><b>Lệnh cung ứng có thêm bước “Nhà cung cấp xác nhận”.</b> Lệnh <code>LCU-…</code> là một đơn mua gửi nhà cung cấp; P. Cung ứng tiếp nhận lệnh chưa có nghĩa là nhà cung cấp đã nhận lời. Sau khi tiếp nhận, P. Cung ứng ghi lại xác nhận của nhà cung cấp — ai bên nhà cung cấp xác nhận, ngày nào, kèm văn bản trả lời của họ — và chỉ khi đó mới lập được kế hoạch giao ở <a href="ORD-05.html">ORD-05</a>. Hiện P. Cung ứng ghi thay; nhà cung cấp có cần một cổng riêng để tự xác nhận hay không còn chờ <a href="PL-C.html#Q-82">Q-82</a>.</p>
 
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:700px;margin:0 auto"><svg role="img" aria-label="Hình ORD-04.1 Một đơn hàng có thể sinh ra hai lệnh thực hiện chạy song song. Hai nhánh nét đứt là hai ranh giới phạm vi mà bảng yêu cầu nhấn mạnh: áp giá không chặn luồng, và vật tư phụ không đi qua đây."
@@ -248,6 +249,12 @@
           <tr><td>Dòng cắt đá thuộc lệnh</td><td class="k">cutlist_refs[]</td><td>Danh sách</td><td class="c req">✱</td><td>Các <code>row_id</code> của <a href="ORD-11.html">Danh sách cắt đá</a> nằm trong lệnh này — đơn vị thực hiện của nhà máy là <b>viên đá</b>, không phải dòng tổng hợp. Sinh tự động: mọi dòng cắt đá trỏ về một dòng đơn hàng thì theo dòng đó vào cùng một lệnh.</td></tr>
           <tr><td>Bộ công đoạn của lệnh</td><td class="k">gc_summary[]</td><td>Bảng</td><td class="c">—</td><td>Chỉ đọc. Tổng khối lượng theo từng mã <code>GC</code> của các dòng thuộc lệnh — là căn cứ nhà máy xếp máy và bố trí tổ. Cộng từ <code>processes[]</code>, không nhập tay.</td></tr>
           <tr><td>Ngày tiếp nhận</td><td class="k">accepted_at</td><td>Ngày</td><td class="c">—</td><td>Do đơn vị thực hiện xác nhận; chưa xác nhận thì lệnh nằm ở hàng chờ.</td></tr>
+          <tr><td>Nhà cung cấp xác nhận</td><td class="k">supplier_confirmation</td><td>Khối</td><td class="c">—</td><td>Chỉ có trên <b>lệnh cung ứng có dòng mua của nhà cung cấp</b>; lệnh sản xuất và lệnh chỉ xuất từ kho không có bước này — không có nhà cung cấp nào để nhận lời. Ghi một lần, sau khi lệnh đã được tiếp nhận và chưa hủy; <b>là điều kiện để lập kế hoạch giao</b> ở <a href="ORD-05.html">ORD-05</a>. Quyền: <code>fulfillment:update</code> của chính đơn vị thực hiện lệnh (<a href="PL-B.html">PL-B</a>). Gồm năm ô dưới đây.</td></tr>
+          <tr><td>— Người xác nhận phía NCC</td><td class="k">supplier_confirmer_name</td><td>Chuỗi</td><td class="c req">✱</td><td>Tên người <em>của nhà cung cấp</em> đứng tên xác nhận, không phải người nhập — cùng hình dạng hai tên như khối nhà máy phản hồi ở <a href="ORD-03.html">ORD-03</a>.</td></tr>
+          <tr><td>— Ngày xác nhận</td><td class="k">supplier_confirmed_at</td><td>Ngày</td><td class="c">—</td><td>Ngày nhà cung cấp xác nhận; bỏ trống là hôm nay; không sau hôm nay.</td></tr>
+          <tr><td>— Văn bản xác nhận</td><td class="k">supplier_confirmation_file</td><td>Tệp</td><td class="c req">✱</td><td>Bản trả lời của nhà cung cấp (thư, email xuất PDF, đơn ký đóng dấu) qua luồng tải lên chung của <a href="PF-05.html">PF-05</a>, gắn vào đúng lệnh này. Là chứng cứ duy nhất của bước — tệp chưa tải xong hoặc tệp của chứng từ khác không được nhận.</td></tr>
+          <tr><td>— Ghi chú</td><td class="k">supplier_confirmation_note</td><td>Chuỗi</td><td class="c">—</td><td>Điều kiện kèm theo của nhà cung cấp: ngày giao cam kết, giao từng phần…</td></tr>
+          <tr><td>— Người ghi · lúc ghi</td><td class="k">recorded_by, recorded_at</td><td>Hệ thống</td><td class="c">—</td><td>Người thao tác ghi nhận và thời điểm ghi, tự lấy từ phiên đăng nhập; không sửa.</td></tr>
           <tr><td>Kế hoạch cấp</td><td class="k">plan[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi đợt: ngày dự kiến, khối lượng — chi tiết tại <a href="ORD-05.html">ORD-05</a>.</td></tr>
           <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>chờ tiếp nhận</code> · <code>đang thực hiện</code> · <code>cấp một phần</code> · <code>hoàn thành</code> · <code>tạm dừng</code>.</td></tr>
         </tbody>
@@ -267,6 +274,8 @@
       <li>Đơn mà nhà máy chưa chấp thuận không xuất hiện trong hàng chờ phân luồng; màn hình nói rõ đang chờ phản hồi của phiếu nào.</li>
       <li>Lệnh sản xuất mang theo danh sách từng viên đá kèm bộ công đoạn gia công, không chỉ một dòng khối lượng gộp.</li>
       <li>Từ một lệnh sản xuất mở ra được đúng những dòng <a href="ORD-11.html">Danh sách cắt đá</a> thuộc lệnh đó, và ngược lại.</li>
+      <li>Đơn mà mọi dòng lấy từ nhà cung cấp hoặc kho vào hàng chờ phân luồng ngay khi được phê duyệt, không chờ phản hồi của nhà máy.</li>
+      <li>Lệnh cung ứng đã tiếp nhận hiện khối “Nhà cung cấp xác nhận”; chưa ghi khối này thì chưa lập được kế hoạch giao, và màn hình nói rõ đang thiếu bước nào.</li>
     </ol>
 
     <h4>Mockup UI — Đơn hàng › Phân luồng thực hiện</h4>
@@ -289,7 +298,7 @@
           </div></div>
           <div class="wf-c"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">4</span> LCU-2026-042 · P. Cung ứng</div>
-            <div class="wf-steps"><div class="cur"><b>Chờ tiếp nhận</b>gửi 27/07</div><div><b>Đang mua</b>—</div><div><b>Hoàn thành</b>—</div></div>
+            <div class="wf-steps"><div class="cur"><b>Chờ tiếp nhận</b>gửi 27/07</div><div><b>NCC xác nhận</b>—</div><div><b>Đang mua</b>—</div><div><b>Hoàn thành</b>—</div></div>
           </div></div>
         </div>
         <div class="note" style="margin:10px 0 0"><b>Ngoài phạm vi luồng này</b><p style="margin:0">Vật tư phụ và vật tư khác đi theo <a href="ACC-01.html">ACC-01 — Đề xuất mua sắm</a>, không tạo lệnh cung ứng từ màn hình này.</p></div>
@@ -302,7 +311,7 @@
           <tr><td class="c"><span class="pin">1</span></td><td>Xem nguồn cung ứng theo dòng</td><td>Chỉ đọc — cột này do người lập đơn ghi ở <a href="ORD-03.html">ORD-03</a>. Trống nghĩa là Nhà máy sản xuất. Mỗi dòng chỉ thuộc một lệnh; dòng đã tách sẵn ở khâu lập đơn.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Sinh lệnh thực hiện</td><td>Gom dòng theo nguồn, sinh lệnh, gửi thông báo kèm bản vẽ tới đơn vị thực hiện. Không có bước chọn luồng nào trước đó.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Theo dõi lệnh sản xuất</td><td>Trạng thái do Nhà máy cập nhật; hiển thị đợt cấp hiện tại.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Theo dõi lệnh cung ứng</td><td>Chưa tiếp nhận quá 2 ngày làm việc thì nhắc trưởng P. Cung ứng.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Theo dõi lệnh cung ứng</td><td>Chưa tiếp nhận quá 2 ngày làm việc thì nhắc trưởng P. Cung ứng. Tiếp nhận xong, bước <em>NCC xác nhận</em> mở hộp ghi nhận: người xác nhận phía nhà cung cấp, ngày, văn bản xác nhận, ghi chú. Bước này xong mới sang <em>Đang mua</em> và mở kế hoạch giao ở <a href="ORD-05.html">ORD-05</a>.</td></tr>
         </tbody>
       </table>
     </div>
@@ -318,8 +327,9 @@
       <li><b>Đơn hoàn thành khi mọi lệnh hoàn thành.</b> Trạng thái đơn hàng là hàm của trạng thái các lệnh con.<span class="then">Một lệnh xong, một lệnh dở thì đơn ở trạng thái “cấp một phần”, không phải “hoàn thành”.</span></li>
       <li><b>Chưa tiếp nhận thì nhắc.</b> Lệnh chưa được đơn vị thực hiện xác nhận sau 2 ngày làm việc sẽ nhắc trưởng đơn vị đó.<span class="then">Lệnh chưa tiếp nhận vẫn hiện trong hàng chờ và tính vào chỉ số phản hồi của đơn vị.</span></li>
       <li><b>Áp giá không chạm luồng này.</b> Trạng thái áp giá ở <a href="BID-06.html">BID-06</a> không phải điều kiện của bất kỳ bước nào tại đây.<span class="then">Kiểm chứng được bằng cách chạy hết vòng cấp hàng cho một đơn chưa áp giá.</span></li>
-      <li><b>Chỉ phân luồng đơn nhà máy đã chấp thuận.</b> Hàng chờ phân luồng chỉ nhận đơn có <code>factory_ack = Chấp thuận</code> ở <a href="ORD-03.html">ORD-03</a>.<span class="then">Khối “nhà máy phản hồi” của biểu mẫu <code>BM/QLTC/YCSX</code> là một bước thật, không phải một ô ghi chú (<a href="2026-09-15/YC-09.html">YC-09</a>). Sinh lệnh trước khi nhà máy trả lời là sinh lệnh cho một phiếu có thể sắp bị sửa.</span></li>
+      <li><b>Chỉ phân luồng đơn nhà máy đã chấp thuận.</b> Hàng chờ phân luồng chỉ nhận đơn có <code>factory_ack = Chấp thuận</code> ở <a href="ORD-03.html">ORD-03</a>.<span class="then">Khối “nhà máy phản hồi” của biểu mẫu <code>BM/QLTC/YCSX</code> là một bước thật, không phải một ô ghi chú (<a href="2026-09-15/YC-09.html">YC-09</a>). Sinh lệnh trước khi nhà máy trả lời là sinh lệnh cho một phiếu có thể sắp bị sửa.</span><span class="then">Ngoại lệ: <b>đơn không có dòng nhà máy</b> (<a href="ORD-03.html">ORD-03</a>) không gửi nhà máy nên không có <code>factory_ack</code> để chờ; lãnh đạo phê duyệt xong là vào hàng chờ, và chỉ sinh lệnh cung ứng. Đơn trộn vẫn phải chờ nhà máy chấp thuận — kể cả phần dòng cung ứng của nó.</span></li>
       <li><b>Lệnh sản xuất tách theo dòng Danh sách cắt đá.</b> Đơn vị nhỏ nhất của lệnh là <code>row_id</code> của <a href="ORD-11.html">ORD-11</a>, không phải dòng tổng hợp của phiếu.<span class="then">Nhà máy cắt theo viên: mỗi dòng cắt đá có kích thước, sai số, ký hiệu layout và bộ công đoạn riêng. Gộp chúng lại thành một dòng khối lượng là bỏ mất đúng phần thông tin mà nhà máy cần để cắt. Nhóm dòng theo lệnh vẫn đi qua <code>order_line_id</code>: dòng cắt đá theo dòng đơn hàng, dòng đơn hàng theo nguồn cung ứng.</span><span class="then">Lệnh mang kèm <code>gc_summary[]</code> — tổng khối lượng theo từng mã công đoạn — để nhà máy xếp máy mà không phải tự cộng lại 197 dòng.</span></li>
+      <li><b>Nhà cung cấp xác nhận trước khi lập kế hoạch giao.</b> Lệnh cung ứng đã tiếp nhận phải có khối <code>supplier_confirmation</code> — tên người xác nhận phía nhà cung cấp và văn bản xác nhận là bắt buộc — thì mới lập được kế hoạch giao ở <a href="ORD-05.html">ORD-05</a>. Chỉ ghi được một lần, trên lệnh chưa hủy, bởi chính đơn vị thực hiện lệnh; lệnh sản xuất và lệnh chỉ xuất từ kho không có bước này. Chỉ <b>kế hoạch giao đầu tiên</b> bị chặn: lệnh đã có đợt giao từ trước khi có bước này vẫn sửa được kế hoạch.<span class="then">Tiếp nhận là việc của P. Cung ứng; nhận lời bán là việc của nhà cung cấp. Lập kế hoạch giao cho một đơn mua nhà cung cấp chưa nhận là hứa với công trường một ngày hàng không ai cam kết. Văn bản trả lời là chứng cứ duy nhất — không có nó thì bước này chỉ là một cú bấm.</span><span class="then">Người đứng tên xác nhận và người thao tác là hai người khác nhau, giữ cả hai như khối nhà máy phản hồi. Nhà cung cấp tự xác nhận qua một cổng riêng thay vì P. Cung ứng ghi thay là câu hỏi mở ở <a href="PL-C.html#Q-82">Q-82</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -332,8 +342,15 @@
           <tr><td>Thêm vật tư phụ</td><td>Nhóm vật tư là phụ trợ</td><td>“Vật tư phụ đi theo luồng đề xuất mua sắm. Mở ACC-01 để lập đề xuất.”</td></tr>
           <tr><td>Chốt phân luồng lần hai</td><td>Đã có lệnh thực hiện</td><td>“Đơn này đã phân luồng ngày {ngày}. Muốn đổi phải hủy lệnh chưa tiếp nhận trước.”</td></tr>
           <tr><td>Đơn vị thực hiện ngừng hoạt động</td><td>Đơn vị bị vô hiệu</td><td>“{tên đơn vị} đang ngừng hoạt động. Chọn đơn vị khác.”</td></tr>
-          <tr><td>Phân luồng khi nhà máy chưa phản hồi</td><td><code>factory_ack ≠ Chấp thuận</code></td><td>“Nhà máy chưa chấp thuận phiếu {số}. Chờ phản hồi trước khi sinh lệnh thực hiện.”</td></tr>
-          <tr><td>Dòng đơn hàng không có dòng cắt đá</td><td>Dòng <code>lines[]</code> không có <code>row_id</code> nào trỏ về</td><td>“Dòng {stt} chưa có dòng nào trong Danh sách cắt đá. Nhà máy không cắt được theo một dòng khối lượng gộp.”</td></tr>
+          <tr><td>Phân luồng khi nhà máy chưa phản hồi</td><td>Đơn có dòng nhà máy và <code>factory_ack ≠ Chấp thuận</code></td><td>“Nhà máy chưa chấp thuận phiếu {số}. Chờ phản hồi trước khi sinh lệnh thực hiện.”</td></tr>
+          <tr><td>Dòng đơn hàng không có dòng cắt đá</td><td>Đơn có dòng nhà máy và dòng <code>lines[]</code> không có <code>row_id</code> nào trỏ về</td><td>“Dòng {stt} chưa có dòng nào trong Danh sách cắt đá. Nhà máy không cắt được theo một dòng khối lượng gộp.”</td></tr>
+          <tr><td>NCC xác nhận thiếu tên người xác nhận</td><td><code>supplier_confirmer_name</code> rỗng</td><td>“Ghi tên người của nhà cung cấp xác nhận đơn — không phải người nhập.”</td></tr>
+          <tr><td>NCC xác nhận thiếu văn bản</td><td>Không có tệp, hoặc tệp chưa tải xong / thuộc chứng từ khác</td><td>“Đính kèm văn bản xác nhận của nhà cung cấp. Bản trả lời gốc là chứng cứ duy nhất của bước này.”</td></tr>
+          <tr><td>Ngày xác nhận ở tương lai</td><td><code>supplier_confirmed_at &gt; hôm nay</code></td><td>“Ngày nhà cung cấp xác nhận không được sau hôm nay.”</td></tr>
+          <tr><td>Ghi xác nhận khi lệnh chưa tiếp nhận</td><td><code>accepted_at</code> rỗng</td><td>“Đơn vị cung ứng chưa tiếp nhận lệnh. Tiếp nhận trước khi ghi nhận xác nhận của nhà cung cấp.”</td></tr>
+          <tr><td>Ghi xác nhận lần hai</td><td>Khối đã có</td><td>“Xác nhận của nhà cung cấp đã được ghi nhận cho lệnh này.”</td></tr>
+          <tr><td>Ghi xác nhận trên lệnh sản xuất</td><td>Lệnh <code>LSX-…</code></td><td>“Lệnh sản xuất của nhà máy không có bước nhà cung cấp xác nhận.”</td></tr>
+          <tr><td>Lập kế hoạch giao khi NCC chưa xác nhận</td><td>Lệnh cung ứng chưa có <code>supplier_confirmation</code>, mở kế hoạch ở <a href="ORD-05.html">ORD-05</a></td><td>“Lệnh cung ứng {mã} chưa có bước ‘Nhà cung cấp duyệt đơn’. Ghi nhận xác nhận của nhà cung cấp trước khi lập kế hoạch giao hàng.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -353,12 +370,17 @@
           <tr><td>UAT-ORD04-7</td><td>Đơn đã lãnh đạo duyệt, đã gửi nhà máy, <code>factory_ack</code> còn “Chưa phản hồi”</td><td>Mở hàng chờ phân luồng</td><td>Đơn không xuất hiện; mở đơn thì thông điệp nêu đang chờ nhà máy chấp thuận phiếu nào</td></tr>
           <tr><td>UAT-ORD04-8</td><td>Đơn nhà máy đã chấp thuận; dòng 1a có 42 dòng Danh sách cắt đá, dòng 1b có 18 dòng</td><td>Bấm “Sinh lệnh thực hiện”</td><td>LSX nhận đúng 42 dòng cắt đá của dòng 1a kèm kích thước, layout và bộ công đoạn; LCU nhận 18 dòng của dòng 1b</td></tr>
           <tr><td>UAT-ORD04-9</td><td>Tiếp UAT-8</td><td>Mở LSX-2026-088</td><td>Có bảng tổng khối lượng theo từng mã GC của riêng lệnh đó, chỉ đọc; mở ngược được về <a href="ORD-11.html">ORD-11</a></td></tr>
+          <tr><td>UAT-ORD04-10</td><td>Đơn 2 dòng đều lấy từ nhà cung cấp, không có Danh sách cắt đá, vừa được lãnh đạo phê duyệt</td><td>Mở hàng chờ phân luồng, bấm “Sinh lệnh thực hiện”</td><td>Đơn có mặt ngay, không chờ nhà máy; chỉ sinh một LCU, không có LSX; không thông điệp nào đòi dòng cắt đá</td></tr>
+          <tr><td>UAT-ORD04-11</td><td>Đơn trộn: dòng 1 để trống nguồn, dòng 2 nhà cung cấp; đã phê duyệt, <code>factory_ack</code> còn “Chưa phản hồi”</td><td>Mở hàng chờ phân luồng</td><td>Đơn không xuất hiện — phần dòng cung ứng cũng chờ nhà máy chấp thuận cùng đơn</td></tr>
+          <tr><td>UAT-ORD04-12</td><td>LCU-2026-042 vừa được P. Cung ứng tiếp nhận</td><td>Mở kế hoạch giao ở <a href="ORD-05.html">ORD-05</a></td><td>Bị chặn kèm thông điệp chưa có bước “Nhà cung cấp duyệt đơn”</td></tr>
+          <tr><td>UAT-ORD04-13</td><td>Tiếp UAT-12</td><td>Ghi nhận NCC xác nhận: bỏ trống tên, rồi bỏ trống tệp, rồi ngày mai; cuối cùng nhập “Trần Minh Khoa”, ngày hôm qua, tải PDF thư xác nhận, ghi chú “giao làm 2 lần”</td><td>Ba lần đầu bị chặn đúng thông điệp; lần cuối lưu, khối hiện tên người xác nhận, ngày, tệp mở được, ghi chú, và “ghi bởi {người nhập} lúc {giờ}”; lệnh sang bước kế tiếp, kế hoạch giao mở được</td></tr>
+          <tr><td>UAT-ORD04-14</td><td>Tiếp UAT-13</td><td>Thử ghi nhận lần hai; thử ghi trên LSX-2026-088; thử ghi trên một LCU chưa tiếp nhận</td><td>Cả ba bị chặn với ba thông điệp riêng</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-03.html">ORD-03 trình đơn hàng</a><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ORD-05.html">ORD-05 cấp hàng</a><a href="BID-06.html">BID-06 áp giá</a><a href="ACC-01.html">ACC-01 đề xuất vật tư phụ</a><a href="ACC-04.html">ACC-04 xuất kho nhà máy</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a></p>
+    <p class="links"><a href="ORD-03.html">ORD-03 trình đơn hàng</a><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ORD-05.html">ORD-05 cấp hàng</a><a href="BID-06.html">BID-06 áp giá</a><a href="ACC-01.html">ACC-01 đề xuất vật tư phụ</a><a href="ACC-04.html">ACC-04 xuất kho nhà máy</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a><a href="PL-B.html">PL-B quyền fulfillment:update</a><a href="PL-C.html#Q-82">PL-C · Q-82 cổng xác nhận cho nhà cung cấp</a></p>
   </div>
 </section>
 <div class="filefoot">

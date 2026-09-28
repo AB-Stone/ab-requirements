@@ -94,6 +94,7 @@
     <p>Một đơn hàng hiếm khi giao một lần. Đặc tả tách rõ ba lớp số liệu: <em>kế hoạch cấp</em> (dự kiến), <em>đã cấp</em> (thực tế theo phiếu xuất), và <em>còn lại</em>. Ba lớp này là nguồn của cột tiến độ đơn hàng và của báo cáo sản lượng cấp.</p>
     <p>Ngày cần hàng và nơi nhận nằm ở <em>từng dòng đơn hàng</em> (<a href="ORD-03.html">ORD-03</a>), không còn ở đầu đơn. Kế hoạch cấp vì vậy không chia đợt cho cả đơn nữa: hệ thống gom dòng theo cặp <b>(ngày cần hàng · nơi nhận)</b> và mỗi cặp là một đợt dự kiến. Một đơn có ba dòng về ba nơi vào ba ngày thì mở sẵn ba đợt, người lập kế hoạch chỉ điều chỉnh thay vì gõ từ đầu.</p>
     <p>Dưới dòng đơn hàng còn một lớp nữa: <b>khối lượng đã cấp đối chiếu được tới từng dòng <a href="ORD-11.html">Danh sách cắt đá</a></b> (<a href="2026-09-15/YC-09.html">YC-09</a>). Hàng ra khỏi nhà máy là những viên đá có ký hiệu layout cụ thể, và biên bản giao hàng liệt kê đúng những ký hiệu đó. Nhờ vậy câu hỏi “viên T2 của diện tường 02 đã về công trường chưa” trả lời được bằng số liệu, thay vì phải mở lại phiếu xuất và đếm tay.</p>
+    <p><b>Hai tuyến giao cho dòng nhà cung cấp / kho.</b> Mỗi dòng đơn mang một tuyến giao (<a href="ORD-03.html">ORD-03</a>): <em>Giao thẳng công trình</em> — mặc định, chạy đúng như trước — hoặc <em>Về nhà máy</em> kèm kho nhà máy đích, khi hàng mua cần tập kết hoặc gia công thêm trước khi ra công trình. Tuyến về nhà máy chạy thành <b>hai chặng</b>: chặng 1 từ nhà cung cấp vào kho nhà máy, do nhân viên kho nhà máy nhận; chặng 2 từ kho nhà máy ra công trình, chỉ trên phần đã về tới nhà máy, do thủ kho dự án nhận. Chỉ chặng 2 đưa dòng tới gần “hoàn thành”. Lệnh cung ứng còn phải qua bước <em>Nhà cung cấp xác nhận</em> ở <a href="ORD-04.html">ORD-04</a> trước khi lập được kế hoạch giao.</p>
 
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:539px;margin:0 auto"><svg role="img" aria-label="Hình ORD-05.1 Vòng lặp cấp hàng chỉ đóng khi lũy kế đã cấp bằng khối lượng đơn. Nhánh trả hàng lỗi đưa phiếu xuất quay về nơi cấp để chỉnh sửa rồi duyệt lại — đúng mô tả tại yêu cầu KT·3."
@@ -104,7 +105,7 @@
 <title>A</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="512.67,-954.92 318.01,-954.92 318.01,-910.52 512.67,-910.52 512.67,-954.92"/>
 <text xml:space="preserve" text-anchor="middle" x="415.34" y="-936.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Lệnh thực hiện đã tiếp nhận</text>
-<text xml:space="preserve" text-anchor="middle" x="415.34" y="-921.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ORD&#45;04</text>
+<text xml:space="preserve" text-anchor="middle" x="415.34" y="-921.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ORD&#45;04 · LCU: NCC đã xác nhận</text>
 </g>
 <g id="node2" class="node">
 <title>B</title>
@@ -261,7 +262,7 @@
 <text xml:space="preserve" text-anchor="middle" x="304.98" y="-64.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đủ</text>
 </g>
 </g>
-</svg></div><figcaption><b>Hình ORD-05.1</b> Vòng lặp cấp hàng chỉ đóng khi lũy kế đã cấp bằng khối lượng đơn. Nhánh trả hàng lỗi đưa phiếu xuất quay về nơi cấp để chỉnh sửa rồi duyệt lại — đúng mô tả tại yêu cầu KT·3.</figcaption></figure>
+</svg></div><figcaption><b>Hình ORD-05.1</b> Vòng lặp cấp hàng chỉ đóng khi lũy kế đã cấp bằng khối lượng đơn. Nhánh trả hàng lỗi đưa phiếu xuất quay về nơi cấp để chỉnh sửa rồi duyệt lại — đúng mô tả tại yêu cầu KT·3. Lệnh cung ứng chỉ vào vòng này sau khi nhà cung cấp đã xác nhận (<a href="ORD-04.html">ORD-04</a>). Hình vẽ tuyến <em>giao thẳng công trình</em>; tuyến <em>về nhà máy</em> chạy vòng này hai lần — chặng 1 vào kho nhà máy, chặng 2 ra công trình — và chỉ chặng 2 được cộng vào ô “Đã cấp đủ”.</figcaption></figure>
 
     <h4>Tham số</h4>
     <div class="tw">
@@ -270,6 +271,11 @@
         <tbody>
           <tr><td>Đợt cấp</td><td class="k">batch_no</td><td>Số</td><td class="c req">✱</td><td>Đánh số trong phạm vi một lệnh thực hiện.</td></tr>
           <tr><td>Dòng đơn của đợt</td><td class="k">order_line_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Đợt cấp thuộc về một dòng đơn hàng cụ thể — dòng mang sẵn ngày cần hàng, nơi nhận và nguồn cung ứng của nó.</td></tr>
+          <tr><td>Chặng</td><td class="k">leg</td><td>Chọn 1</td><td class="c req">✱</td><td><code>direct</code> <em>giao thẳng</em> · <code>to_factory</code> <em>chặng 1 — NCC → kho nhà máy</em> · <code>factory_to_site</code> <em>chặng 2 — kho nhà máy → công trình</em>. Hệ thống gán theo tuyến giao của dòng, không chọn tay: dòng giao thẳng chỉ có đợt <code>direct</code>; dòng về nhà máy chỉ có đợt <code>to_factory</code> và <code>factory_to_site</code>. Bảng giá trị ở <a href="PL-A.html">PL-A</a>.</td></tr>
+          <tr><td>Tuyến giao của dòng</td><td class="k">delivery_route</td><td>Tham chiếu</td><td class="c">—</td><td>Kế thừa từ dòng đơn hàng (<a href="ORD-03.html">ORD-03</a>): <em>Giao thẳng công trình</em> hoặc <em>Về nhà máy</em>. Không sửa ở đây — đổi tuyến là sửa đơn, qua <a href="ORD-07.html">ORD-07</a>.</td></tr>
+          <tr><td>Kho nhà máy đích</td><td class="k">factory_warehouse_id</td><td>Tham chiếu</td><td class="c">—</td><td>Kế thừa từ dòng khi tuyến là <em>Về nhà máy</em>. Là nơi nhận của chặng 1 và nơi xuất của chặng 2.</td></tr>
+          <tr><td>Đã về nhà máy</td><td class="k">qty_at_factory_received</td><td>Số</td><td class="c">—</td><td>Tổng khối lượng chặng 1 đã được kho nhà máy xác nhận nhận. Hiện riêng, <b>không cộng</b> vào đã cấp / đã nhận của dòng.</td></tr>
+          <tr><td>Còn tại nhà máy</td><td class="k">qty_at_factory_available</td><td>Số</td><td class="c">—</td><td>= Đã về nhà máy − đã xuất ở các đợt chặng 2 (kể cả phiếu đang chờ duyệt). Là trần khối lượng của một đợt chặng 2 mới.</td></tr>
           <tr><td>Nơi nhận của đợt</td><td class="k">deliver_to</td><td>Tham chiếu</td><td class="c">—</td><td>Kế thừa từ dòng đơn hàng, không nhập lại. Đổi nơi nhận phải sửa ở đơn (<a href="ORD-07.html">ORD-07</a>).</td></tr>
           <tr><td>Ngày cần hàng của dòng</td><td class="k">required_date</td><td>Ngày</td><td class="c">—</td><td>Mốc để đặt <code>plan_date</code>; đợt dự kiến trễ hơn ngày cần hàng thì cảnh báo ngay khi lập kế hoạch.</td></tr>
           <tr><td>Ngày dự kiến · thực tế</td><td class="k">plan_date, actual_date</td><td>Ngày</td><td class="c req">✱</td><td>Chênh lệch là số ngày trễ cấp hàng.</td></tr>
@@ -279,7 +285,7 @@
           <tr><td>Dòng cắt đá của đợt</td><td class="k">cutlist_rows[]</td><td>Bảng</td><td class="c">—</td><td>Từng <code>row_id</code> của <a href="ORD-11.html">Danh sách cắt đá</a> kèm số lượng cấp trong đợt. Nạp sẵn từ lệnh thực hiện (<a href="ORD-04.html">ORD-04</a>); là nội dung in trên biên bản giao hàng theo ký hiệu layout.</td></tr>
           <tr><td>Phiếu xuất kho</td><td class="k">issue_note_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Một đợt gắn một phiếu xuất; in kèm biên bản giao hàng.</td></tr>
           <tr><td>Sai lệch</td><td class="k">discrepancy</td><td>Bảng</td><td class="c">—</td><td>Loại (thiếu / vỡ / sai quy cách), khối lượng, ảnh chụp, hướng xử lý.</td></tr>
-          <tr><td>Người xác nhận nhận hàng</td><td class="k">receiver</td><td>Tham chiếu</td><td class="c">—</td><td>Thuộc dự án; ký điện tử theo <a href="PF-04.html">PF-04</a>.</td></tr>
+          <tr><td>Người xác nhận nhận hàng</td><td class="k">receiver</td><td>Tham chiếu</td><td class="c">—</td><td>Thuộc dự án; ký điện tử theo <a href="PF-04.html">PF-04</a>. Theo chặng: đợt <code>direct</code> và <code>factory_to_site</code> do thủ kho dự án nhận vào kho công trình (<a href="PRJ-04.html">PRJ-04</a>); đợt <code>to_factory</code> do <b>nhân viên kho nhà máy</b> nhận vào kho nhà máy đích — quyền <code>batch:receive_factory</code> (<a href="PL-B.html">PL-B</a>), không phải <code>batch:receive</code> của dự án.</td></tr>
         </tbody>
       </table>
     </div>
@@ -297,6 +303,10 @@
       <li>Mỗi đợt cấp tra được tới từng dòng <a href="ORD-11.html">Danh sách cắt đá</a>: viên nào, ký hiệu layout nào, đã cấp bao nhiêu trên tổng bao nhiêu.</li>
       <li>Mở một dòng cắt đá là thấy ngay nó đã được cấp bao nhiêu và còn lại bao nhiêu, không phải cộng ngược từ các phiếu xuất.</li>
       <li>Biên bản giao hàng in theo ký hiệu layout, nên người nhận ở công trường đối chiếu được với bản vẽ ngay tại chỗ.</li>
+      <li>Lệnh cung ứng mà nhà cung cấp chưa xác nhận thì chưa mở được kế hoạch giao; màn hình dẫn về bước ghi nhận ở <a href="ORD-04.html">ORD-04</a>.</li>
+      <li>Dòng giao thẳng công trình chạy đúng như trước, không thêm bước nào.</li>
+      <li>Dòng về nhà máy hiện hai tầng số: đã về nhà máy / còn tại nhà máy, và đã cấp / đã nhận ở công trình; chặng 1 nhận xong thì tồn kho nhà máy tăng nhưng tiến độ hoàn thành của dòng chưa đổi.</li>
+      <li>Chặng 2 chỉ lập được trên phần đã về tới nhà máy; xuất chặng 2 làm giảm tồn kho nhà máy, và thủ kho dự án nhận xong mới cộng vào hoàn thành.</li>
     </ol>
 
     <h4>Mockup UI — Đơn hàng › Cấp hàng</h4>
@@ -362,6 +372,10 @@
       <li><b>Biên bản giao hàng in theo ký hiệu layout.</b> Danh sách hàng của một đợt liệt kê ký hiệu layout và số bản vẽ của từng dòng cắt đá.<span class="then">Đó là mã khớp giữa bản vẽ và viên đá thật ngoài công trường (<a href="ORD-11.html">ORD-11</a>, cột 19). Người nhận đối chiếu được ngay tại chỗ thay vì ký nhận một con số mét vuông rồi phát hiện thiếu viên lúc ốp.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày xuất của phiếu đã duyệt.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Sản lượng cấp hàng trong kỳ. Phiếu chưa duyệt chưa phải sản lượng, nên không vào con số này.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
+      <li><b>Lệnh cung ứng chờ nhà cung cấp xác nhận.</b> Kế hoạch giao của một lệnh cung ứng chỉ mở khi lệnh đã có khối <em>Nhà cung cấp xác nhận</em> ở <a href="ORD-04.html">ORD-04</a>; lệnh sản xuất không qua bước này.<span class="then">Kế hoạch giao là lời hứa với công trường; hứa trước khi nhà cung cấp nhận lời bán là hứa thay người khác.</span></li>
+      <li><b>Tuyến giao thuộc về dòng, mặc định giao thẳng.</b> Mỗi dòng đơn mang <code>delivery_route</code>: <em>Giao thẳng công trình</em> (mặc định) hoặc <em>Về nhà máy</em> kèm kho nhà máy đích. Chỉ dòng có nguồn là nhà cung cấp hoặc kho mới chọn được <em>Về nhà máy</em> — dòng nhà máy sản xuất vốn đã xuất phát từ nhà máy.<span class="then">Giao thẳng không đổi gì so với trước: một chặng <code>direct</code>, thủ kho dự án nhận, cộng vào hoàn thành.</span></li>
+      <li><b>Về nhà máy là hai chặng.</b> Chặng 1 (<code>to_factory</code>) đưa hàng từ nhà cung cấp vào kho nhà máy đích: nhân viên kho nhà máy nhận (<code>batch:receive_factory</code>), hàng nhập vào tồn kho nhà máy, và <b>không tính vào hoàn thành</b> của dòng hay của đơn. Chặng 2 (<code>factory_to_site</code>) đưa hàng từ kho nhà máy ra công trình: phiếu xuất <b>làm giảm tồn kho nhà máy</b> (<a href="ACC-04.html">ACC-04</a>), thủ kho dự án nhận vào kho công trình (<a href="PRJ-04.html">PRJ-04</a>), và chỉ chặng này cộng vào đã cấp / đã nhận của dòng.<span class="then">Hàng nằm ở nhà máy vẫn chưa tới nơi thi công; tính nó là hoàn thành thì đơn đóng trong khi công trường còn chờ hàng.</span><span class="then">Mỗi chặng là một đợt riêng với phiếu, người nhận và sai lệch riêng — vỡ ở chặng 1 được ghi và xử lý với nhà cung cấp trước khi hàng lên xe chặng 2.</span></li>
+      <li><b>Chặng 2 chỉ trên phần đã về nhà máy.</b> Khối lượng một đợt chặng 2 không vượt <code>qty_at_factory_available</code> — đã về nhà máy trừ phần đã xuất chặng 2, kể cả phiếu đang chờ duyệt.<span class="then">Kế hoạch chặng 2 lập trước được như mọi kế hoạch; chỉ phiếu xuất mới bị giới hạn bởi hàng thật đang nằm trong kho nhà máy.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -376,6 +390,10 @@
           <tr><td>Ghi sai lệch không có ảnh</td><td>Ảnh rỗng</td><td>“Đính kèm ít nhất một ảnh kiểm nhận làm bằng chứng.”</td></tr>
           <tr><td>Cấp vượt số lượng của một dòng cắt đá</td><td>Σ đã cấp của <code>row_id</code> &gt; <code>qty_total</code> của dòng đó</td><td>“Dòng {stt} của Danh sách cắt đá chỉ còn {số} viên chưa cấp. Sửa Danh sách cắt đá qua ORD-07 nếu cần cấp thêm.”</td></tr>
           <tr><td>Đợt cấp không ghi dòng cắt đá</td><td><code>cutlist_rows[]</code> rỗng khi lập phiếu xuất</td><td>“Chọn những dòng Danh sách cắt đá thuộc đợt này — biên bản giao hàng in theo ký hiệu layout.”</td></tr>
+          <tr><td>Lập kế hoạch giao khi NCC chưa xác nhận</td><td>Lệnh cung ứng chưa có khối Nhà cung cấp xác nhận</td><td>“Lệnh cung ứng {mã} chưa có bước ‘Nhà cung cấp duyệt đơn’. Ghi nhận xác nhận của nhà cung cấp trước khi lập kế hoạch giao hàng.”</td></tr>
+          <tr><td>Chặng 2 vượt hàng đang ở nhà máy</td><td>Khối lượng đợt <code>factory_to_site</code> &gt; <code>qty_at_factory_available</code></td><td>“Kho {tên kho nhà máy} mới nhận {đã về} {đvt} của dòng {stt}, còn {còn tại nhà máy} {đvt} chưa xuất. Chặng 2 chỉ xuất phần đã về nhà máy.”</td></tr>
+          <tr><td>Nhận chặng 1 bằng tài khoản dự án</td><td>Người xác nhận không có <code>batch:receive_factory</code></td><td>“Chặng về nhà máy do kho nhà máy {tên} nhận. Tài khoản của bạn không có quyền nhận hàng vào kho nhà máy.”</td></tr>
+          <tr><td>Lập đợt sai chặng</td><td>Đợt <code>direct</code> trên dòng về nhà máy, hoặc đợt <code>to_factory</code> / <code>factory_to_site</code> trên dòng giao thẳng</td><td>“Dòng {stt} đi tuyến {tuyến}. Đổi tuyến giao là sửa đơn — mở ORD-07.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -398,12 +416,18 @@
           <tr><td>UAT-ORD05-8</td><td>Dòng 1a gồm 42 dòng Danh sách cắt đá; đợt 1 cấp 400 m²</td><td>Lập phiếu xuất đợt 1</td><td>Phiếu liệt kê đúng những dòng cắt đá thuộc đợt kèm ký hiệu layout và số bản vẽ; biên bản giao hàng in theo danh sách đó</td></tr>
           <tr><td>UAT-ORD05-9</td><td>Tiếp UAT-8, dòng cắt đá D.1.1 có 864 viên, đã cấp 400</td><td>Mở dòng D.1.1 ở <a href="ORD-11.html">ORD-11</a></td><td>Hiện “đã cấp 400 / 864 viên”; không phải cộng ngược từ các phiếu xuất</td></tr>
           <tr><td>UAT-ORD05-10</td><td>Dòng cắt đá D.1.2 có 240 viên, đã cấp 240</td><td>Lập phiếu xuất thêm 20 viên của D.1.2</td><td>Bị chặn kèm thông điệp dẫn sang <a href="ORD-07.html">ORD-07</a> để sửa Danh sách cắt đá</td></tr>
+          <tr><td>UAT-ORD05-11</td><td>LCU-2026-042 đã tiếp nhận, chưa có Nhà cung cấp xác nhận</td><td>Mở kế hoạch cấp của lệnh</td><td>Bị chặn, thông điệp nêu mã lệnh và dẫn về bước ghi nhận ở <a href="ORD-04.html">ORD-04</a>; ghi nhận xong thì kế hoạch mở được</td></tr>
+          <tr><td>UAT-ORD05-12</td><td>Dòng 2 (nhà cung cấp, 60 viên) để tuyến mặc định</td><td>Lập kế hoạch, xuất, dự án nhận đủ 60</td><td>Chỉ có đợt <code>direct</code>; thủ kho dự án nhận; dòng lên “hoàn thành” — không khác trước</td></tr>
+          <tr><td>UAT-ORD05-13</td><td>Dòng 1b (Kho trung tâm Bình Dương, 400 m²) tuyến <em>Về nhà máy</em>, kho đích “Kho Nhà máy An Bình 2”</td><td>Lập đợt chặng 1 400 m²; thủ kho dự án thử xác nhận nhận; nhân viên kho nhà máy xác nhận nhận 400</td><td>Thủ kho dự án bị chặn vì thiếu quyền nhận vào kho nhà máy; nhân viên kho nhà máy nhận được; tồn Kho Nhà máy An Bình 2 tăng 400; dòng hiện “đã về nhà máy 400 · còn tại nhà máy 400”, còn <b>đã cấp / đã nhận ở công trình vẫn 0</b>, đơn không đổi trạng thái</td></tr>
+          <tr><td>UAT-ORD05-14</td><td>Tiếp UAT-13, mới về nhà máy 250 m² thay vì 400</td><td>Lập phiếu chặng 2 300 m²; sửa lại 250</td><td>300 bị chặn kèm số đã về và còn tại nhà máy; 250 lưu được</td></tr>
+          <tr><td>UAT-ORD05-15</td><td>Tiếp UAT-14, phiếu chặng 2 250 m² được duyệt</td><td>Thủ kho dự án xác nhận nhận 250 vào kho công trình</td><td>Tồn Kho Nhà máy An Bình 2 giảm 250 khi phiếu duyệt; kho công trình tăng 250; dòng 1b “đã cấp 250 · đã nhận 250 / 400”; chỉ lúc này tiến độ hoàn thành của đơn mới tăng</td></tr>
+          <tr><td>UAT-ORD05-16</td><td>Dòng 1a (nhà máy sản xuất)</td><td>Thử chọn tuyến <em>Về nhà máy</em> ở <a href="ORD-03.html">ORD-03</a></td><td>Không chọn được — tuyến về nhà máy chỉ dành cho dòng nhà cung cấp / kho</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-04.html">ORD-04 lệnh thực hiện</a><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ACC-04.html">ACC-04 phiếu xuất kho</a><a href="PRJ-04.html">PRJ-04 nhập kho dự án</a><a href="ORD-07.html">ORD-07 xử lý hàng đã sản xuất khi giảm đơn</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a></p>
+    <p class="links"><a href="ORD-04.html">ORD-04 lệnh thực hiện</a><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ACC-04.html">ACC-04 phiếu xuất kho</a><a href="PRJ-04.html">PRJ-04 nhập kho dự án</a><a href="ORD-07.html">ORD-07 xử lý hàng đã sản xuất khi giảm đơn</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a><a href="ORD-03.html">ORD-03 tuyến giao của dòng</a><a href="ACC-02.html">ACC-02 kho nhà máy</a><a href="PL-A.html">PL-A chặng giao</a><a href="PL-B.html">PL-B batch:receive_factory</a></p>
   </div>
 </section>
 <div class="filefoot">
