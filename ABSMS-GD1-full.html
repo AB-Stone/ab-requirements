@@ -1711,13 +1711,14 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Bốn thẻ Chờ duyệt · Đã duyệt · Từ chối · Tất cả lịch sử đọc chung một danh sách phiên duyệt; đổi thẻ không làm số đếm trên thẻ <em>Chờ duyệt</em> lệch khỏi chuông thông báo.</li>
       <li>Ba thẻ lịch sử chỉ hiện hồ sơ người xem từng duyệt một bước hoặc là người tạo; Admin thấy toàn bộ. Không thẻ nào cho xem thêm so với <a href="#PL-B">PL-B</a>.</li>
       <li>Danh sách có sáu cột, trong đó <em>Loại yêu cầu</em> và <em>Mã chứng từ</em> là hai cột riêng lọc và sắp xếp được, còn <em>Người tạo</em> hiện tên người trình và không đổi qua các lần trình lại — theo <a href="2026-09-22/YC-12.html">YC-12</a>.</li>
+      <li>Thẻ <em>Việc được giao</em> liệt kê mọi việc đang mở có tên mình là người phụ trách — hạng mục Shopdrawing chờ nộp, phiếu thẩm định BOQ, hồ sơ thanh toán, vướng mắc — việc gần hạn nhất lên đầu; bấm một dòng là sang thẳng màn hình làm việc đó.</li>
     </ol>
 
     <h4>Mockup UI — Phê duyệt › Danh sách &amp; chi tiết</h4>
     <div class="wf">
       <div class="wf-bar"><b>Trung tâm phê duyệt</b><span class="wf-crumb">Quy trình duyệt đa cấp theo hạn mức</span></div>
       <div class="wf-body">
-        <div class="wf-chips"><span class="wf-chip on"><span class="pin">1</span> Chờ duyệt (3)</span><span class="wf-chip">Đã duyệt</span><span class="wf-chip">Từ chối</span><span class="wf-chip">Tất cả lịch sử</span></div>
+        <div class="wf-chips"><span class="wf-chip on"><span class="pin">1</span> Chờ duyệt (3)</span><span class="wf-chip"><span class="pin">8</span> Việc được giao (2)</span><span class="wf-chip">Đã duyệt</span><span class="wf-chip">Từ chối</span><span class="wf-chip">Tất cả lịch sử</span></div>
         <div class="wf-chips"><span class="wf-chip">Tất cả nhóm</span><span class="wf-chip">Đề xuất mua sắm</span><span class="wf-chip">Đơn hàng</span><span class="wf-chip">Kho</span><span class="wf-chip">Thanh toán</span><span class="wf-chip">Khoán &amp; nhân công</span></div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">2</span> Danh sách lệnh chờ xử lý của tôi</div>
@@ -1769,6 +1770,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td class="c"><span class="pin">5</span></td><td>Từ chối</td><td>Bắt buộc nhập lý do. Chứng từ đóng, người lập phải tạo chứng từ mới nếu muốn trình lại.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Yêu cầu bổ sung</td><td>Trả chứng từ về người lập, mở khóa chỉnh sửa, giữ nguyên mã và lịch sử. Đúng nhánh 7.2 của yêu cầu gốc.</td></tr>
           <tr><td class="c"><span class="pin">7</span></td><td>Trao đổi liên phòng ban</td><td>Ý kiến gắn theo bước duyệt; nhắc tên người bằng <code>@</code> sẽ đẩy thông báo cho người đó.</td></tr>
+          <tr><td class="c"><span class="pin">8</span></td><td>Thẻ Việc được giao</td><td>Việc đang mở có tên mình là người phụ trách, không phải bước duyệt. Cột riêng: <em>Loại việc · Mã · Nội dung · Dự án · Hạn · Trạng thái</em>. Số trong ngoặc là số việc đang mở. Xem mục <em>Thẻ Việc được giao</em> ngay dưới.</td></tr>
         </tbody>
       </table>
     </div>
@@ -1791,6 +1793,20 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <p style="margin:0">Bản ghi danh sách phê duyệt hiện nay chỉ trả về <b>hàng chờ của chính người đăng nhập</b>: không có <code>created_by</code>, không có trạng thái kết thúc của phiên, và lịch sử duyệt chỉ tra được theo từng chứng từ một. Ba thẻ <em>Đã duyệt · Từ chối · Tất cả lịch sử</em> cùng cột <em>Người tạo</em> vì vậy đòi mở rộng dữ liệu trả về trước, rồi mới dựng được thẻ. Ghi ra đây để phần việc này không bị ước lượng như một việc front-end nửa ngày — xem <a href="2026-09-22/YC-12.html">YC-12</a>.</p>
     </div>
 
+    <h4>Thẻ Việc được giao</h4>
+    <p>Thẻ thứ năm, đặt ngay sau <em>Chờ duyệt</em> để hai danh sách “đang chờ tôi” nằm cạnh nhau. Nó <b>không</b> đọc nguồn phiên duyệt: mỗi dòng là một việc được <b>phân công đích danh</b> cho người đang đăng nhập, đọc thẳng từ bảng sở hữu việc đó. Mục đích duy nhất là rút ngắn đường từ “được giao” tới thao tác — bấm dòng là sang màn hình làm việc, không qua màn hình trung gian.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:20%">Loại việc</th><th style="width:30%">Được tính là “đang mở” khi</th><th style="width:14%">Cột Hạn</th><th>Bấm dòng mở tới</th></tr></thead>
+        <tbody>
+          <tr><td><b>Lập bản vẽ Shopdrawing</b></td><td>Hạng mục có <em>Cán bộ phụ trách</em> là mình, tình trạng bản vẽ <em>Đã giao</em> hoặc <em>Bị trả lại</em></td><td>Hạn nộp khi giao</td><td>Hồ sơ Shopdrawing của dự án, đúng dòng hạng mục — <a href="#ORD-02">ORD-02</a></td></tr>
+          <tr><td><b>Thẩm định BOQ</b></td><td>Phiếu thẩm định kỹ thuật hoặc khảo sát hiện trường giao cho mình, chưa nộp; gói thầu chưa hủy / chưa gộp</td><td>Hạn nộp phiếu</td><td>Tab thẩm định của gói thầu — <a href="#BID-02">BID-02</a></td></tr>
+          <tr><td><b>Hồ sơ thanh toán</b></td><td>Hồ sơ tạm ứng · TT vật tư · TT khối lượng · quyết toán có người phụ trách là mình, chưa <em>Đã thanh toán / Đóng / Từ chối / Hủy</em></td><td>Ngày CĐT hẹn</td><td>Màn hình chi tiết hồ sơ — <a href="#ORD-01">ORD-01</a>, <a href="#ORD-08">ORD-08</a>, <a href="#ORD-09">ORD-09</a>, <a href="#ORD-10">ORD-10</a></td></tr>
+          <tr><td><b>Vướng mắc</b></td><td>Vướng mắc hồ sơ hoặc sai lệch đợt cấp hàng giao cho mình, chưa đóng</td><td>Hạn xử lý</td><td>Hồ sơ chứa vướng mắc, hoặc tab giao hàng của đơn — <a href="#ORD-05">ORD-05</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Quy trình khớp theo thứ tự.</b> Khi trình duyệt, hệ thống duyệt danh sách quy trình mẫu của loại chứng từ theo thứ tự ưu tiên và chọn <b>quy trình đầu tiên</b> có điều kiện khớp.<span class="then">Không quy trình nào khớp thì chặn trình duyệt và báo cho quản trị viên — không được im lặng bỏ qua bước duyệt.</span></li>
@@ -1810,6 +1826,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Ký kèm mã băm.</b> Mỗi lần duyệt sinh một dấu ký gắn mã băm nội dung chứng từ tại thời điểm ký.<span class="then">Chứng từ bị sửa sau đó thì dấu ký hiển thị cảnh báo “nội dung đã thay đổi sau khi ký”.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian đổi mốc theo thẻ.</b> Thẻ <em>Chờ duyệt</em> lọc theo <b>ngày trình</b>; ba thẻ lịch sử lọc theo <b>ngày kết thúc phiên</b> (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Hai mốc vì hai câu hỏi khác nhau: “hồ sơ nào đang chờ tôi lâu rồi” và “tháng trước tôi đã duyệt những gì”. Dùng chung một mốc cho cả bốn thẻ thì một trong hai câu hỏi không còn trả lời được.</span><span class="then">Quy ước chung của bộ điều khiển viết một lần ở <a href="#PF-01">PF-01</a>.</span></li>
+      <li><b>Việc được giao là việc đích danh, không phải việc của phòng.</b> Thẻ <em>Việc được giao</em> chỉ hiện dòng ghi tên chính người đang đăng nhập là người phụ trách; vướng mắc chỉ giao cho cả phòng mà chưa giao cho ai thì không hiện.<span class="then">Thẻ trả lời “việc nào là của tôi”. Tính cả việc giao cho phòng thì mọi người trong phòng cùng thấy một dòng như việc của mình, và không ai biết ai đang làm. Không có ngoại lệ Admin cho thẻ này.</span></li>
+      <li><b>Việc được giao chỉ gồm việc còn mở.</b> Việc đã nộp, đã đóng hoặc đã kết thúc tự rời khỏi thẻ; thẻ không có lịch sử.<span class="then">Hạng mục Shopdrawing đã nộp nằm trên bàn TP TQT — tức là việc <em>chờ duyệt</em> của người khác, không còn là việc của người lập. Lịch sử một việc tra ở chính màn hình sở hữu nó.</span></li>
+      <li><b>Việc gần hạn lên đầu, quá hạn tô đỏ.</b> Thẻ sắp xếp theo hạn tăng dần, việc không có hạn xếp cuối; dòng đã quá ngày hạn hiện hạn màu đỏ kèm chữ “Quá hạn”.<span class="then">Việc hết hạn hôm nay chưa tính là quá hạn — cùng quy ước với lời nhắc quá hạn của <a href="#PF-04">PF-04</a>. Thẻ không có bộ lọc khoảng thời gian: câu hỏi ở đây là “còn gì phải làm”, không phụ thuộc ngày giao.</span></li>
     </ol>
 
     <h4>Bảng hạn mức cần chốt</h4>
@@ -1868,12 +1887,16 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-PF03-12</td><td>Tiếp UAT-PF03-11, đăng nhập bằng tài khoản Admin</td><td>Mở cùng thẻ <em>Tất cả lịch sử</em></td><td>Thấy hồ sơ đó</td></tr>
           <tr><td>UAT-PF03-13</td><td>Người duyệt có 3 lệnh đang chờ</td><td>Mở lần lượt bốn thẻ rồi quay lại <em>Chờ duyệt</em></td><td>Số trên thẻ vẫn là 3 và khớp chuông thông báo <a href="#PF-04">PF-04</a></td></tr>
           <tr><td>UAT-PF03-14</td><td>Danh sách có đủ tám nhóm chứng từ</td><td>Bấm một giá trị ở cột <em>Loại yêu cầu</em></td><td>Danh sách lọc theo đúng loại đó; dải lọc theo nhóm vẫn hoạt động song song</td></tr>
+          <tr><td>UAT-PF03-15</td><td>TP TQT giao hạng mục <code>HLX_0001.02</code> cho kỹ sư A, hạn 28/09; hôm nay 29/09</td><td>Kỹ sư A mở thẻ <em>Việc được giao</em></td><td>Có dòng “Lập bản vẽ Shopdrawing · HLX_0001.02”, hạn 28/09 màu đỏ kèm “Quá hạn”, trạng thái “Chờ nộp bản vẽ”; số trên thẻ tính cả dòng này</td></tr>
+          <tr><td>UAT-PF03-16</td><td>Tiếp UAT-PF03-15</td><td>Bấm vào dòng</td><td>Mở Hồ sơ Shopdrawing của dự án HLX_0001 tại đúng hạng mục <code>HLX_0001.02</code></td></tr>
+          <tr><td>UAT-PF03-17</td><td>Tiếp UAT-PF03-16, kỹ sư A nộp bản vẽ</td><td>Quay lại thẻ <em>Việc được giao</em></td><td>Dòng biến mất; TP TQT thấy hạng mục này ở luồng duyệt nội bộ, kỹ sư B cùng phòng không thấy dòng nào của kỹ sư A</td></tr>
+          <tr><td>UAT-PF03-18</td><td>Vướng mắc hồ sơ chỉ giao cho P. TQT, chưa giao cho ai</td><td>Thành viên P. TQT mở thẻ <em>Việc được giao</em></td><td>Không thấy vướng mắc đó — thẻ chỉ gồm việc đích danh</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#PF-02">PF-02 quyền duyệt &amp; hạn mức</a><a href="#PF-04">PF-04 thông báo &amp; chữ ký</a><a href="#ACC-01">ACC-01 đề xuất 1 cấp / 2 cấp</a><a href="#PRJ-03">PRJ-03 luồng 5 bước</a><a href="#MOB-01">MOB-01 duyệt trên điện thoại</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a><a href="2026-09-22/YC-12.html">YC-12 trung tâm phê duyệt theo mẫu</a></p>
+    <p class="links"><a href="#PF-02">PF-02 quyền duyệt &amp; hạn mức</a><a href="#PF-04">PF-04 thông báo &amp; chữ ký</a><a href="#ACC-01">ACC-01 đề xuất 1 cấp / 2 cấp</a><a href="#PRJ-03">PRJ-03 luồng 5 bước</a><a href="#MOB-01">MOB-01 duyệt trên điện thoại</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a><a href="2026-09-22/YC-12.html">YC-12 trung tâm phê duyệt theo mẫu</a><a href="#ORD-02">ORD-02 phân công lập Shopdrawing</a><a href="#BID-02">BID-02 phiếu thẩm định</a><a href="#ORD-01">ORD-01 hồ sơ &amp; vướng mắc</a></p>
   </div>
 </section>
 <section class="sheet" id="PF-04">
@@ -2613,6 +2636,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td class="c"><span class="pin">4</span></td><td>Soát trước khi ban hành</td><td>Đếm trùng mã việc, dòng thiếu biên độ và va chạm kỳ; còn lỗi thì nút Ban hành không bật.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Chép từ kỳ trước</td><td>Sao chép nguyên bộ dòng của bảng kỳ liền trước cùng vùng, giữ mã việc, để chỉ phải sửa những dòng thay đổi.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Ban hành</td><td>Đi qua <a href="#PF-03">PF-03</a>; duyệt xong ghi <code>issued_by</code>, <code>issued_at</code> và khóa toàn bộ dòng đơn giá.</td></tr>
+          <tr><td class="c">—</td><td>Chỉnh sửa bảng đang chờ duyệt</td><td>Hỏi xác nhận “bảng sẽ phải duyệt lại” rồi đưa bảng về <em>Nháp</em> để sửa đầu việc, kỳ hiệu lực và căn cứ ban hành. Sửa xong phải bấm Trình duyệt lại; người duyệt không bao giờ thấy một bảng đang sửa dở.</td></tr>
+          <tr><td class="c">—</td><td>Hủy bảng</td><td>Chỉ với bảng chưa ban hành (<em>Nháp</em> hoặc <em>Chờ duyệt</em>). Hỏi xác nhận rồi chuyển bảng sang <em>Hết hiệu lực</em> — không xóa khỏi danh sách, không sửa hay ban hành được nữa. Bảng đã hủy không được chọn làm nguồn “Chép từ kỳ trước” và không được nêu tên trong thông điệp hết hiệu lực ở <a href="PRJ-01.html">PRJ-01</a>, vì nó chưa từng làm mốc giá cho ngày nào.</td></tr>
           <tr><td class="c">—</td><td>Danh sách đầu việc ngoài bảng chuẩn</td><td>Gom các đầu việc mà <a href="#PRJ-01">PRJ-01</a> không tra ra đơn giá chuẩn, xuất Excel làm đề nghị bổ sung cho kỳ ban hành sau.</td></tr>
         </tbody>
       </table>
@@ -2667,6 +2692,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-PF06-6</td><td>Bảng giá khoán đã duyệt tra bảng chuẩn kỳ 2026</td><td>Ban hành bảng chuẩn kỳ 2027 với đơn giá cao hơn 12%</td><td>Bảng giá khoán cũ giữ nguyên mọi con số; <code>std_sheet_ref</code> vẫn trỏ bảng 2026</td></tr>
           <tr><td>UAT-PF06-7</td><td>Đang lập bảng giá cho một vùng chưa có trong danh mục</td><td>Chọn <em>Khác</em>, nhập “Tây Nguyên”, rồi bấm Ban hành</td><td>Danh mục <a href="#PF-01">PF-01</a> có thêm dòng “Tây Nguyên” chờ duyệt; bảng giá bị chặn ban hành cho tới khi dòng đó được duyệt</td></tr>
           <tr><td>UAT-PF06-8</td><td>Bảng Miền Bắc vừa được ban hành</td><td>Mở lại và thử sửa đơn giá một dòng</td><td>Ô đơn giá chỉ đọc; chỉ còn thao tác tạo bảng kỳ mới</td></tr>
+          <tr><td>UAT-PF06-9</td><td>Bảng Miền Bắc kỳ 2027 đang <em>Chờ duyệt</em></td><td>Bấm Chỉnh sửa, xác nhận, đổi ngày kết thúc và sửa đơn giá một dòng</td><td>Bảng về <em>Nháp</em>, nút Ban hành biến mất; bấm Trình duyệt thì bảng trở lại <em>Chờ duyệt</em> với nội dung mới</td></tr>
+          <tr><td>UAT-PF06-10</td><td>Bảng Miền Bắc kỳ 2027 đang <em>Nháp</em>, bảng kỳ 2026 đang hiệu lực</td><td>Bấm Hủy bảng và xác nhận</td><td>Bảng 2027 chuyển <em>Hết hiệu lực</em>, chỉ đọc; bảng 2026 không đổi. Bảng đang hiệu lực không có nút Hủy bảng</td></tr>
         </tbody>
       </table>
     </div>
@@ -6655,13 +6682,13 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Tham số — Bảng kế hoạch sản xuất và mua hàng theo BOQ</h4>
-    <p><b>Từ <a href="2026-09-29/YC-21.html">YC-21</a></b> mở sau bước “Chọn bản vẽ shop cần” và chỉ in đầu việc có trong các bản vẽ đã chọn. Cột theo sheet <em>Banve</em>: STT · Mã HM · Đầu việc · Quy cách · <b>Mã vật tư · Tên vật tư/Quy cách</b> · ĐVT · Khối lượng theo hợp đồng · Kế hoạch sản xuất · Kế hoạch mua hàng · Ghi chú. Kế hoạch vẫn lưu một dòng mỗi đầu việc của BOQ hợp đồng (<code>prj_wbs</code>, theo <a href="#PRJ-01">PRJ-01</a>), nên chọn bộ bản vẽ khác lần sau thì số đã nhập vẫn còn; các cột đọc từ BOQ chỉ đọc, vật tư, hai cột kế hoạch và ghi chú do P. TQT nhập rồi lưu cả bảng một lần.</p>
+    <p><b>Từ <a href="2026-09-29/YC-21.html">YC-21</a></b> mở sau bước “Chọn bản vẽ shop cần” và chỉ in đầu việc có trong các bản vẽ đã chọn. Cột theo sheet <em>Banve</em>: STT · Mã HM · Đầu việc · Quy cách · <b>Mã vật tư · Tên vật tư/Quy cách</b> · ĐVT · Khối lượng theo hợp đồng · Kế hoạch sản xuất · Kế hoạch mua hàng · Ghi chú. Kế hoạch vẫn lưu một dòng mỗi đầu việc của BOQ hợp đồng (<code>prj_wbs</code>, theo <a href="#PRJ-01">PRJ-01</a>), nên chọn bộ bản vẽ khác lần sau thì số đã nhập vẫn còn; các cột đọc từ BOQ chỉ đọc — kể cả Mã vật tư; tên vật tư, hai cột kế hoạch và ghi chú do P. TQT nhập rồi lưu cả bảng một lần. Ô số hiện phân cách hàng ngàn và giãn theo số đã nhập; bảng cuộn ngang khi dòng dài.</p>
     <div class="tw">
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>STT · Mã HM · Đầu việc · Quy cách · ĐVT · Khối lượng theo hợp đồng</td><td class="k">wbs.*</td><td>Chỉ đọc</td><td class="c">—</td><td>Đọc từ hạng mục BOQ hợp đồng của dự án theo thứ tự dòng BOQ; <em>Quy cách</em> là cột rộng, giữ nguyên xuống dòng của BOQ. Chỉ in đầu việc thuộc bản vẽ đã chọn (<a href="2026-09-29/YC-21.html">YC-21</a>).</td></tr>
-          <tr><td>Mã vật tư</td><td class="k">material_id</td><td>Danh mục</td><td class="c">—</td><td><b>Mới (<a href="2026-09-29/YC-21.html">YC-21</a>, sheet <em>Banve</em>).</b> Đứng sau Quy cách. Chọn từ danh mục vật tư (<a href="#PF-01">PF-01</a>), gõ tìm theo mã hoặc tên. Một vật tư chính mỗi dòng; tỷ lệ pha màu ở lại trong Quy cách (<a href="#Q-89">Q-89</a>).</td></tr>
+          <tr><td>Mã vật tư</td><td class="k">material_id</td><td>Chỉ đọc</td><td class="c">—</td><td><b>Mới (<a href="2026-09-29/YC-21.html">YC-21</a>, sheet <em>Banve</em>).</b> Đứng sau Quy cách. Đọc từ cột Mã vật tư của dòng BOQ hợp đồng — <b>chỉ đọc</b>, không chọn hay gõ trên bảng kế hoạch; muốn đổi thì sửa ở BOQ. Hệ thống ghép mã với danh mục vật tư (<a href="#PF-01">PF-01</a>) để đợt sản xuất / mua hàng và phiếu nhập kho dùng được; BOQ chưa có mã thì ô để trống. Một vật tư chính mỗi dòng; tỷ lệ pha màu ở lại trong Quy cách (<a href="#Q-89">Q-89</a>).</td></tr>
           <tr><td>Tên vật tư/Quy cách</td><td class="k">material_text</td><td>Văn bản</td><td class="c">—</td><td><b>Mới.</b> Tự điền tên vật tư khi chọn mã; sửa tay được.</td></tr>
           <tr><td>Kế hoạch sản xuất</td><td class="k">qty_production</td><td>Số ≥ 0</td><td class="c">—</td><td>Phần nhà máy sẽ làm. Ô trống = hạng mục chưa có kế hoạch; ô 0 = kế hoạch bằng không. Là “Khối lượng kế hoạch” của mọi đợt <em>Bản vẽ sản xuất</em> của hạng mục.</td></tr>
           <tr><td>Kế hoạch mua hàng</td><td class="k">qty_purchase</td><td>Số ≥ 0</td><td class="c">—</td><td>Phần bộ phận cung ứng sẽ mua. Là “Khối lượng kế hoạch” của mọi đợt <em>Đơn hàng</em> của hạng mục.</td></tr>
@@ -16017,6 +16044,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr><td>Hồ sơ thanh toán khối lượng</td><td class="k">HSKL</td><td>Đang lập → Chờ duyệt nội bộ → Đã nộp CĐT → <span class="tag t-crit">Vướng mắc</span> → Chờ thanh toán → <span class="tag t-ok">Đã thanh toán</span><br>Hai tuyến phụ chạy song song: bản vẽ sơ họa hoàn công · hồ sơ giá trị</td><td>Khi nộp chủ đầu tư</td></tr>
         <tr><td>Hồ sơ quyết toán hợp đồng</td><td class="k">HSQT</td><td>Như HSKL, thêm điều kiện đủ bản vẽ hoàn công và biên bản nghiệm thu hoàn thành trước khi trình</td><td>Khi nộp chủ đầu tư · bản ghi thiệt hại khóa vĩnh viễn</td></tr>
         <tr><td>Bảng giá khoán</td><td class="k">GK</td><td>Đang lập → Chờ P. Đấu thầu → Chờ lãnh đạo → <span class="tag t-ok">Có hiệu lực</span> → Có phụ lục</td><td>Khi được duyệt</td></tr>
+        <tr><td>Bảng đơn giá chuẩn</td><td class="k">DGC</td><td>Nháp → Chờ duyệt → <span class="tag t-ok">Đang hiệu lực</span> → <span class="tag t-neu">Hết hiệu lực</span><br>Chờ duyệt về lại Nháp theo hai đường: người duyệt <b>trả lại</b> kèm lý do, hoặc người lập bấm <b>Chỉnh sửa</b> — bảng phải trình duyệt lại. Bảng chưa ban hành thì <b>hủy</b> được: Nháp hoặc Chờ duyệt → Hết hiệu lực, phân biệt với bảng hết kỳ ở chỗ không có <code>issued_at</code>. Bảng đã ban hành không hủy, không sửa — chỉ hết hiệu lực khi hết kỳ hoặc bị bảng kỳ sau đóng kỳ. Xem <a href="PF-06.html">PF-06</a>.</td><td>Khi ban hành</td></tr>
         <tr><td>Sản lượng thi công</td><td class="k">SL</td><td>Đang ghi nhận → Chỉ huy trưởng xác nhận → <span class="tag t-ok">Đã chốt đợt</span> → Đã nghiệm thu với CĐT</td><td>Khi chốt đợt</td></tr>
         <tr><td>Hồ sơ giao khoán nhân công</td><td class="k">GKNC</td><td>Đang lập → (Giải trình quá hạn) → TQT → Đấu thầu → Kế toán → Lãnh đạo → Đã duyệt chi → <span class="tag t-ok">Đã chi</span> · <span class="tag t-crit">Trả về</span></td><td>Khi trình chặng 1 · “Đã chi” chỉ do <a href="#ACC-05">ACC-05</a> ghi khi tiền đã ra</td></tr>
         <tr><td>Đề xuất mua sắm</td><td class="k">DX</td><td>Nháp → Chờ duyệt → Đã duyệt → Đang mua → Nhập một phần → <span class="tag t-ok">Hoàn thành</span> · <span class="tag t-crit">Từ chối</span> · <span class="tag t-neu">Hủy</span></td><td>Khi trình duyệt</td></tr>
