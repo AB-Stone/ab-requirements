@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-21 Kế hoạch theo bản vẽ Shop — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 29/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Yêu cầu 29/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Luồng TQT làm lại</a>
+    <div class="rail-grp">Trang yêu cầu</div>
+    <a href="YC-18.html"><i>YC-18</i>Danh mục hồ sơ theo hợp đồng</a>
+    <a href="YC-19.html"><i>YC-19</i>Bảng shop nhập tay</a>
+    <a href="YC-20.html"><i>YC-20</i>Thêm bản vẽ thiết kế</a>
+    <a class="on" href="YC-21.html"><i>YC-21</i>Kế hoạch theo bản vẽ Shop</a>
+    <a href="YC-22.html"><i>YC-22</i>Nhập kho theo đợt</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-25/index.html"><i>25/09</i>Đối chiếu bản dựng 25/09/2026</a>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Yêu cầu 29/09/2026</a> / P. TQT — Đơn hàng và sản xuất / <b>YC-21</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-20.html">← YC-20</a><a href="index.html">Mục lục</a><a href="YC-22.html">YC-22 →</a></div>
+</div>
+<section class="sheet solo" id="YC-21">
+  <header class="tb">
+    <div class="tb-id">YC-21</div>
+    <div class="tb-main">
+      <h3>Kế hoạch theo bản vẽ Shop</h3>
+      <p>Sheet <em>Main</em> dòng 6 viết đường đi từng bước: <b>TQT-Shopdrawing → Đơn hàng và sản xuất → Hồ sơ theo dự án → Chọn Hợp đồng → hiện “Bảng theo dõi thiết kế” → Chọn bản vẽ shop cần</b>, rồi “khi chọn 1 hoặc nhiều bản vẽ shop bất kỳ, sẽ cho lập kế hoạch và tạo bản vẽ sản xuất và bản vẽ đơn hàng tương ứng”, theo mẫu sheet <em>Banve</em>. Điều kiện chỉ có một: <b>“Chỉ khi hợp đồng đã có bản vẽ shop”</b>. Trang này dựng đúng đường đi đó.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Sửa — đổi danh sách đầu vào, thêm bước chọn bản vẽ, thêm hai cột vật tư</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../ORD-03.html">ORD-03</a></dd></div>
+        <div><dt>Điểm tạm chốt</dt><dd><a href="../PL-C.html#Q-86">Q-86</a> · <a href="../PL-C.html#Q-89">Q-89</a></dd></div>
+        <div><dt>Nguồn</dt><dd><code>Deploy lại.xlsx</code> · <em>Main</em> dòng 6 · <em>Banve</em></dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Bước</th><th style="width:41%">Hiện trạng</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>1. Danh sách</td><td>Tab “Gói thầu có bản vẽ”: sáu cột gói thầu · Bản vẽ Shopdrawing · Bản vẽ thiết kế · Ngày duyệt</td><td>Tab <b>“Hồ sơ theo dự án”</b>: đúng các cột của tab Shopdrawing (<a href="YC-18.html">YC-18</a>) <b>+ cột “Trạng thái shop”</b></td></tr>
+          <tr><td>2. Chọn hợp đồng</td><td>Chỉ bấm được khi cả hai cột bản vẽ “Đã duyệt”</td><td>Bấm được khi hợp đồng <b>đã có bản vẽ shop</b></td></tr>
+          <tr><td>3. Chọn bản vẽ</td><td>Không có — vào thẳng bảng kế hoạch toàn BOQ</td><td>Hiện <b>Bảng theo dõi thiết kế</b> của hợp đồng; tích một hoặc nhiều bản vẽ shop</td></tr>
+          <tr><td>4. Kế hoạch</td><td>STT · Mã HM · Đầu việc · Quy cách · ĐVT · KL hợp đồng · KH sản xuất · KH mua hàng · Ghi chú</td><td>Theo <em>Banve</em>: STT · Mã HM · Đầu việc · Quy cách · <b>Mã vật tư · Tên vật tư/Quy cách</b> · ĐVT · KL theo hợp đồng · KH sản xuất · KH mua hàng · Ghi chú — chỉ các đầu việc của bản vẽ đã chọn</td></tr>
+          <tr><td>5. Bản vẽ sản xuất / đơn hàng</td><td>… Đầu việc · ĐVT · Mã vật tư · Tên vật tư …</td><td>Theo <em>Banve</em>: STT · Mã HM · Đầu việc · <b>Mã vật tư · Tên vật tư/Quy cách · ĐVT</b> · KL kế hoạch · KL đợt này · Lũy kế · Còn lại · Ghi chú; phần còn lại giữ nguyên</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — tab “Hồ sơ theo dự án” của Đơn hàng và sản xuất</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Cột</th><th>Mã</th><th>Kiểu</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Trạng thái · Mã dự án · Mã hợp đồng · Tên dự án · Cán bộ phụ trách chính · Ngày bắt đầu HĐ · Ngày kết thúc HĐ</td><td class="k">—</td><td>Chỉ đọc</td><td>Giống hệt tab Shopdrawing (<a href="YC-18.html">YC-18</a>) — cùng thành phần, cùng thứ tự.</td></tr>
+          <tr><td>Trạng thái shop</td><td class="k">shop_state</td><td>Tự hiện</td><td>Ba giá trị của sheet đầu: <em>Chưa nộp</em> — chưa có bản vẽ shop nào được tải lên; <em>Đã nộp V{n}</em> — <code>n</code> bản vẽ shop đã tải lên, còn bản chưa duyệt; <em>Đã duyệt</em> — mọi bản vẽ thiết kế của hợp đồng đã có bản vẽ shop và đã được duyệt.</td></tr>
+          <tr><td>Chọn hợp đồng</td><td class="k">—</td><td>Hành vi</td><td>Dòng <em>Chưa nộp</em> mờ, di chuột: “Hợp đồng chưa có bản vẽ shop.” Dòng khác bấm được.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — bước “Chọn bản vẽ shop cần”</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Bảng theo dõi thiết kế</td><td class="k">—</td><td>Chỉ đọc</td><td class="c">—</td><td>Đúng tám cột như ở Shopdrawing (<a href="YC-20.html">YC-20</a>), thêm ô tích ở đầu dòng. Chỉ dòng <b>đã có bản vẽ Shop</b> mới tích được; dòng chưa có hiện mờ.</td></tr>
+          <tr><td>Bản vẽ đã chọn</td><td class="k">plan_sources[]</td><td>Nhiều</td><td class="c req">✱</td><td>Ít nhất một. Bấm <b>Lập kế hoạch</b> để sang bảng kế hoạch. Mở lại lần sau thì các bản đã chọn được tích sẵn.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — Bảng kế hoạch (phần thay đổi)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Dòng trên bảng</td><td class="k">wbs[]</td><td>Tự động</td><td class="c">—</td><td>Các đầu việc có trong bản vẽ đã chọn, theo thứ tự BOQ. Kế hoạch lưu theo đầu việc (<a href="../PL-C.html#Q-89">Q-89</a>): lần sau chọn bộ bản vẽ khác, đầu việc chung vẫn giữ số đã nhập.</td></tr>
+          <tr><td>Mã vật tư</td><td class="k">material_id</td><td>Danh mục</td><td class="c">—</td><td>Đứng sau Quy cách. Chọn từ danh mục vật tư (<a href="../PF-01.html">PF-01</a>), gõ tìm theo mã hoặc tên. Một vật tư chính mỗi dòng; tỷ lệ pha màu ở lại trong Quy cách.</td></tr>
+          <tr><td>Tên vật tư/Quy cách</td><td class="k">material_text</td><td>Văn bản</td><td class="c">—</td><td>Tự điền tên vật tư khi chọn mã, sửa tay được — ví dụ “Đá granite Hồng Ninh Thuận dày 2cm”.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ bổ sung cho <a href="../ORD-03.html">ORD-03</a></h4>
+    <ol class="br">
+      <li><b>Chỉ hợp đồng đã có bản vẽ shop mới lập được bản vẽ sản xuất và đơn hàng.</b> Kiểm cả ở danh sách (dòng mờ) và ở máy chủ.<span class="then">Nguyên văn sheet <em>Main</em> ô C6. Thay điều kiện cũ “đã duyệt đủ”, vì lập kế hoạch theo từng bản vẽ shop là điều sheet xin.</span></li>
+      <li><b>Chỉ chọn được bản vẽ đã có bản vẽ Shop.</b> Dòng Bảng theo dõi thiết kế chưa tải Shop không tích được. Tình trạng duyệt vẫn hiện trong ô Bản vẽ Shop để người lập thấy.</li>
+      <li><b>Vật tư đi từ kế hoạch xuống đợt.</b> Thêm dòng vào Bản vẽ sản xuất / Đơn hàng thì mã và tên vật tư nạp sẵn từ dòng kế hoạch của đầu việc, vẫn đổi được.<span class="then">Người lập không chọn lại một vật tư ba lần; phiếu nhập kho (<a href="YC-22.html">YC-22</a>) cần mã vật tư để ghi kho.</span></li>
+      <li><b>Không đổi cách tính lũy kế – còn lại, luồng nộp – duyệt của đợt, và “Lập đơn hàng từ đợt này”.</b> Mọi thứ đó giữ như <a href="../ORD-03.html">ORD-03</a>.</li>
+    </ol>
+
+    <h4>Giao diện</h4>
+    <ul>
+      <li>Ba màn hình nối nhau đúng như đường đi của sheet: danh sách → Bảng theo dõi thiết kế có ô tích → bảng kế hoạch và hai khối Bản vẽ sản xuất / Đơn hàng. Đầu mỗi màn hình có đường dẫn “Hồ sơ theo dự án › HN_0001 › Chọn bản vẽ shop” để quay lại.</li>
+      <li>Ở màn hình kế hoạch, dòng trên cùng ghi “Theo bản vẽ: SD.HN_0001.01, SD.HN_0001.03 · <em>Chọn lại</em>”.</li>
+      <li>Nút chính: <em>Lập kế hoạch</em> ở màn hình chọn bản vẽ, <em>Lưu kế hoạch</em> ở màn hình kế hoạch.</li>
+    </ul>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">Tình huống</th><th style="width:26%">Điều kiện</th><th>Thông điệp</th></tr></thead>
+        <tbody>
+          <tr><td>Bấm Lập kế hoạch khi chưa chọn</td><td><code>plan_sources[]</code> rỗng</td><td>“Chọn ít nhất một bản vẽ shop.” <em>(chặn)</em></td></tr>
+          <tr><td>Lập bản vẽ sản xuất / đơn hàng cho hợp đồng chưa có bản vẽ shop</td><td>Gọi thẳng máy chủ</td><td>“Hợp đồng chưa có bản vẽ shop.” <em>(chặn)</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC21-1</td><td>—</td><td>Mở TQT › Đơn hàng và sản xuất</td><td>Tab “Hồ sơ theo dự án” có đúng các cột của tab Shopdrawing và thêm cột Trạng thái shop</td></tr>
+          <tr><td>UAT-YC21-2</td><td><code>HL_0001</code> chưa có bản vẽ shop</td><td>Di chuột lên dòng</td><td>Trạng thái shop “Chưa nộp”; dòng mờ, hiện “Hợp đồng chưa có bản vẽ shop.”</td></tr>
+          <tr><td>UAT-YC21-3</td><td><code>HN_0001</code> có Lần 1 (a, b) và Lần 3 (c) đã có Shop, Lần 2 chưa có Shop</td><td>Chọn hợp đồng</td><td>Hiện Bảng theo dõi thiết kế tám cột có ô tích; Lần 2 không tích được</td></tr>
+          <tr><td>UAT-YC21-4</td><td>Tiếp UAT-3</td><td>Tích Lần 1 và Lần 3, bấm Lập kế hoạch</td><td>Bảng kế hoạch đúng cột <em>Banve</em>, chỉ ba đầu việc a, b, c</td></tr>
+          <tr><td>UAT-YC21-5</td><td>Tiếp UAT-4</td><td>Chọn mã <code>HNT_2</code> cho a, nhập KH SX 1.000, KH mua 500, lưu</td><td>Tên vật tư tự hiện “Đá granite Hồng Ninh Thuận dày 2cm”; lưu được</td></tr>
+          <tr><td>UAT-YC21-6</td><td>Tiếp UAT-5</td><td>Thêm Bản vẽ sản xuất đợt 1, thêm dòng a</td><td>Dòng nạp sẵn <code>HNT_2</code>; thứ tự cột Đầu việc · Mã vật tư · Tên vật tư · ĐVT</td></tr>
+          <tr><td>UAT-YC21-7</td><td>Tiếp UAT-5, mở lại</td><td>Nhìn màn hình chọn bản vẽ</td><td>Lần 1 và Lần 3 đã tích sẵn</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="YC-18.html">YC-18 danh mục hồ sơ theo hợp đồng</a><a href="YC-20.html">YC-20 bảng theo dõi thiết kế</a><a href="YC-22.html">YC-22 nhập kho theo đợt</a><a href="../PF-01.html">PF-01 danh mục vật tư</a><a href="../PL-C.html#Q-86">PL-C · Q-86</a><a href="../PL-C.html#Q-89">PL-C · Q-89</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Trang 4 / 5</span><span><code>2026-09-29/YC-21.html</code></span>
+  <span>ABSMS — Yêu cầu 29/09/2026</span>
+  <span>Nguồn: <code>Deploy lại.xlsx · Main dòng 6 · Banve</code></span>
+</div>
+</main>
+</div>
+</body></html>
