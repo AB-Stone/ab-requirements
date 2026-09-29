@@ -248,6 +248,8 @@
           <tr><td class="c"><span class="pin">4</span></td><td>Soát trước khi ban hành</td><td>Đếm trùng mã việc, dòng thiếu biên độ và va chạm kỳ; còn lỗi thì nút Ban hành không bật.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Chép từ kỳ trước</td><td>Sao chép nguyên bộ dòng của bảng kỳ liền trước cùng vùng, giữ mã việc, để chỉ phải sửa những dòng thay đổi.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Ban hành</td><td>Đi qua <a href="PF-03.html">PF-03</a>; duyệt xong ghi <code>issued_by</code>, <code>issued_at</code> và khóa toàn bộ dòng đơn giá.</td></tr>
+          <tr><td class="c">—</td><td>Chỉnh sửa bảng đang chờ duyệt</td><td>Hỏi xác nhận “bảng sẽ phải duyệt lại” rồi đưa bảng về <em>Nháp</em> để sửa đầu việc, kỳ hiệu lực và căn cứ ban hành. Sửa xong phải bấm Trình duyệt lại; người duyệt không bao giờ thấy một bảng đang sửa dở.</td></tr>
+          <tr><td class="c">—</td><td>Hủy bảng</td><td>Chỉ với bảng chưa ban hành (<em>Nháp</em> hoặc <em>Chờ duyệt</em>). Hỏi xác nhận rồi chuyển bảng sang <em>Hết hiệu lực</em> — không xóa khỏi danh sách, không sửa hay ban hành được nữa. Bảng đã hủy không được chọn làm nguồn “Chép từ kỳ trước” và không được nêu tên trong thông điệp hết hiệu lực ở <a href="PRJ-01.html">PRJ-01</a>, vì nó chưa từng làm mốc giá cho ngày nào.</td></tr>
           <tr><td class="c">—</td><td>Danh sách đầu việc ngoài bảng chuẩn</td><td>Gom các đầu việc mà <a href="PRJ-01.html">PRJ-01</a> không tra ra đơn giá chuẩn, xuất Excel làm đề nghị bổ sung cho kỳ ban hành sau.</td></tr>
         </tbody>
       </table>
@@ -302,6 +304,8 @@
           <tr><td>UAT-PF06-6</td><td>Bảng giá khoán đã duyệt tra bảng chuẩn kỳ 2026</td><td>Ban hành bảng chuẩn kỳ 2027 với đơn giá cao hơn 12%</td><td>Bảng giá khoán cũ giữ nguyên mọi con số; <code>std_sheet_ref</code> vẫn trỏ bảng 2026</td></tr>
           <tr><td>UAT-PF06-7</td><td>Đang lập bảng giá cho một vùng chưa có trong danh mục</td><td>Chọn <em>Khác</em>, nhập “Tây Nguyên”, rồi bấm Ban hành</td><td>Danh mục <a href="PF-01.html">PF-01</a> có thêm dòng “Tây Nguyên” chờ duyệt; bảng giá bị chặn ban hành cho tới khi dòng đó được duyệt</td></tr>
           <tr><td>UAT-PF06-8</td><td>Bảng Miền Bắc vừa được ban hành</td><td>Mở lại và thử sửa đơn giá một dòng</td><td>Ô đơn giá chỉ đọc; chỉ còn thao tác tạo bảng kỳ mới</td></tr>
+          <tr><td>UAT-PF06-9</td><td>Bảng Miền Bắc kỳ 2027 đang <em>Chờ duyệt</em></td><td>Bấm Chỉnh sửa, xác nhận, đổi ngày kết thúc và sửa đơn giá một dòng</td><td>Bảng về <em>Nháp</em>, nút Ban hành biến mất; bấm Trình duyệt thì bảng trở lại <em>Chờ duyệt</em> với nội dung mới</td></tr>
+          <tr><td>UAT-PF06-10</td><td>Bảng Miền Bắc kỳ 2027 đang <em>Nháp</em>, bảng kỳ 2026 đang hiệu lực</td><td>Bấm Hủy bảng và xác nhận</td><td>Bảng 2027 chuyển <em>Hết hiệu lực</em>, chỉ đọc; bảng 2026 không đổi. Bảng đang hiệu lực không có nút Hủy bảng</td></tr>
         </tbody>
       </table>
     </div>
