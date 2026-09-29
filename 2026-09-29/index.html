@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đợt yêu cầu 29/09/2026 — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 29/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Yêu cầu 29/09/2026</div>
+    <a class="on" href="index.html"><i>MỤC LỤC</i>Luồng TQT làm lại</a>
+    <div class="rail-grp">Trang yêu cầu</div>
+    <a href="YC-18.html"><i>YC-18</i>Danh mục hồ sơ theo hợp đồng</a>
+    <a href="YC-19.html"><i>YC-19</i>Bảng shop nhập tay</a>
+    <a href="YC-20.html"><i>YC-20</i>Thêm bản vẽ thiết kế</a>
+    <a href="YC-21.html"><i>YC-21</i>Kế hoạch theo bản vẽ Shop</a>
+    <a href="YC-22.html"><i>YC-22</i>Nhập kho theo đợt</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-25/index.html"><i>25/09</i>Đối chiếu bản dựng 25/09/2026</a>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="../index.html">ABSMS GĐ1</a> / <b>Yêu cầu 29/09/2026</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-18.html">YC-18 →</a></div>
+</div>
+<header class="masthead">
+  <div class="eyebrow">Công ty CP Đá An Bình · Hệ thống ABSMS</div>
+  <h1>Luồng TQT làm lại<br>29/09/2026</h1>
+  <p class="lede">Tệp <code>Deploy lại.xlsx</code> là bản thứ hai của hướng dẫn sửa phân hệ TQT ngày 27/09. Phần lớn sheet đầu đã có trong bản dựng; cái mới nằm ở hai sheet <em>Main</em> và <em>Banve</em>, và chúng nói một câu rất rõ: luồng hiện tại <b>“sai luồng”</b>. Không phải sai số, mà sai <em>đơn vị làm việc</em> — người dùng nghĩ theo <b>từng lần chủ đầu tư gửi bản vẽ thiết kế và từng bản vẽ Shop sửa theo nó</b>, còn màn hình đang bắt họ phân công, nộp và duyệt trên dòng hạng mục. Đợt này <b>bám sát từng chữ của tệp</b>: đúng cột, đúng tên nút, đúng mục nhập, đúng đường đi; chỗ nào sheet đầu và sheet <em>Main</em> nói khác nhau thì theo sheet <em>Main</em> — sheet được viết riêng cho lần deploy lại này.</p>
+  <dl class="stamp">
+    <div><dt>Nguồn</dt><dd><code>Deploy lại.xlsx</code> · sheet <em>Sheet1</em>, <em>Main</em>, <em>Banve</em></dd></div>
+    <div><dt>Trang yêu cầu</dt><dd><a href="YC-18.html">YC-18</a> – <a href="YC-22.html">YC-22</a> · năm trang, không màn hình mới</dd></div>
+    <div><dt>Trang đặc tả tác động</dt><dd><a href="../ORD-02.html">ORD-02</a> · <a href="../ORD-03.html">ORD-03</a> · <a href="../PRJ-04.html">PRJ-04</a> · <a href="../PF-04.html">PF-04</a> · <a href="../PL-A.html">PL-A</a></dd></div>
+    <div><dt>Điểm tạm chốt</dt><dd><a href="../PL-C.html#Q-84">Q-84</a> – <a href="../PL-C.html#Q-89">Q-89</a> · chốt <a href="../PL-C.html#Q-50">Q-50</a></dd></div>
+    <div><dt>Phiên bản</dt><dd>Bản thảo 1.0</dd></div>
+  </dl>
+</header>
+
+<section class="block" id="luong">
+  <h2><em>§0</em>Luồng người dùng mô tả</h2>
+  <p class="intro">Sheet <em>Main</em> kể lại cả chuỗi bằng lời của P. TQT. Đặt cạnh nhau, năm bước dưới đây là toàn bộ đợt này — mỗi bước một trang yêu cầu, không bước nào cần màn hình mới.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:52px">#</th><th style="width:34%">Người dùng nói</th><th style="width:28%">Màn hình</th><th>Trang</th></tr></thead>
+      <tbody>
+        <tr><td class="k">1</td><td>Ký xong hợp đồng thì hợp đồng tự hiện trong danh mục hồ sơ của P. TQT, đọc được mã HĐ, người phụ trách, ngày bắt đầu – kết thúc</td><td>TQT › Shopdrawing › Hồ sơ theo dự án</td><td><a href="YC-18.html">YC-18</a> · <a href="../ORD-02.html">ORD-02</a></td></tr>
+        <tr><td class="k">2</td><td>Bảng theo dõi tình trạng shop ở chế độ nhập tay — luồng “phân công → tải lên → trưởng phòng duyệt” trên bảng này là <b>sai</b></td><td>Hồ sơ Shopdrawing của dự án › bảng hạng mục</td><td><a href="YC-19.html">YC-19</a> · <a href="../ORD-02.html">ORD-02</a></td></tr>
+        <tr><td class="k">3</td><td>Mỗi lần CĐT đổi bản vẽ thiết kế thì kỹ sư tải lên một cặp: bản vẽ thiết kế và bản vẽ Shop sửa theo nó. Hết dự án nhìn một bảng là biết bao nhiêu bản vẽ, sửa bao nhiêu lần</td><td>Cùng màn hình, bảng mới ngay dưới bảng hạng mục</td><td><a href="YC-20.html">YC-20</a> · <a href="../ORD-02.html">ORD-02</a></td></tr>
+        <tr><td class="k">4</td><td>Chọn một hoặc nhiều bản vẽ Shop rồi mới lập kế hoạch sản xuất – mua hàng; bảng kế hoạch có mã và tên vật tư</td><td>TQT › Đơn hàng và sản xuất</td><td><a href="YC-21.html">YC-21</a> · <a href="../ORD-03.html">ORD-03</a></td></tr>
+        <tr><td class="k">5</td><td>Hàng về công trình thì thủ kho bấm vào “Đợt 1” của dự án, thấy đúng bản vẽ sản xuất và đơn hàng đợt 1, lập phiếu nhập từ đó</td><td>Dự án — Thi công › Xuất nhập kho dự án</td><td><a href="YC-22.html">YC-22</a> · <a href="../PRJ-04.html">PRJ-04</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">
+    <b>Đã có, không viết lại</b>
+    <p style="margin:0">Nhãn <em>Nộp V1, V2…</em> và “Đã duyệt bởi {tên}” (chỉ đổi chỗ hiện), bảng kế hoạch theo BOQ, hai loại đợt Bản vẽ sản xuất / Đơn hàng với lũy kế – còn lại, chênh lệch và biện pháp xử lý trên phiếu nhập, biên bản giao nhận, tab <em>Theo dõi kho</em>. Tất cả đã nằm trong <a href="../ORD-02.html">ORD-02</a>, <a href="../ORD-03.html">ORD-03</a>, <a href="../PRJ-04.html">PRJ-04</a> và đã chạy trên bản dựng. Đợt này chỉ đụng vào chúng ở chỗ nối.</p>
+  </div>
+</section>
+
+<section class="block" id="ux">
+  <h2><em>§1</em>Sáu nguyên tắc giao diện của đợt này</h2>
+  <p class="intro">Lý do người dùng gọi luồng cũ là “sai” phần lớn nằm ở giao diện: đúng dữ liệu, nhưng phải biết trước mình đang ở cấp nào mới tìm được nút. Mọi trang YC của đợt này áp sáu nguyên tắc sau, và đội triển khai kiểm lại từng màn hình theo chúng trước khi giao.</p>
+  <ol class="br">
+    <li><b>Một màn hình, một việc chính.</b> Mỗi màn hình có đúng một nút chính (nút đầy màu), đặt ở góc phải trên. Mọi hành động khác là nút phụ hoặc nằm trong dòng.<span class="then">Hồ sơ Shopdrawing: “Thêm bản vẽ thiết kế”. Kế hoạch: “Lưu kế hoạch”. Danh sách công trình ở kho: không có nút chính — việc chính là bấm vào đợt.</span></li>
+    <li><b>Đúng cột, đúng chữ của tệp.</b> Không thêm cột, không đổi tên nút. Việc cần làm nằm ngay trong ô liên quan — nút <em>Tải lên</em> trong ô <em>Bản vẽ Shop</em>, nút <em>Lập phiếu nhập</em> trong khối đợt — và chỉ hiện cho đúng người phải làm.<span class="then">Người dùng đã tự vẽ màn hình họ muốn trong tệp; màn hình giống bản vẽ đó là màn hình họ dùng được ngay.</span></li>
+    <li><b>Điền sẵn mọi thứ hệ thống đã biết.</b> Mã tự sinh, ngày mặc định hôm nay, kỹ sư mặc định là cán bộ phụ trách hạng mục, khối lượng phiếu nhập mặc định bằng khối lượng đợt. Người dùng chỉ gõ phần khác đi.</li>
+    <li><b>Không quá một hộp thoại.</b> Hộp thoại không mở hộp thoại khác. Việc dài (lập phiếu nhập nhiều dòng) mở bảng trượt bên phải, giữ màn hình gốc phía sau.</li>
+    <li><b>Trạng thái viết bằng chữ, không bằng mã.</b> “Chờ duyệt”, “Đã duyệt bởi Vũ Đình Khoa”, “Đã được điều chỉnh bởi lần 3”. Không hiện <code>approved_internal</code>, không hiện UUID. Màu chỉ để nhấn, chữ phải đủ nghĩa khi in đen trắng.</li>
+    <li><b>Bảng trống nói phải làm gì.</b> “Chưa có bản vẽ thiết kế nào — bấm <em>Thêm bản vẽ thiết kế</em> để tải bản đầu tiên chủ đầu tư gửi.” Không để một bảng trắng với dòng “Không có dữ liệu”.</li>
+  </ol>
+</section>
+
+<section class="block" id="trang">
+  <h2><em>§2</em>Năm trang yêu cầu</h2>
+  <div class="cards">
+    <a href="YC-18.html"><i>YC-18</i><b>Danh mục hồ sơ theo hợp đồng</b><span>ORD-02 — thêm Mã HĐ, Cán bộ phụ trách chính, Ngày bắt đầu và kết thúc HĐ vào danh sách hồ sơ theo dự án</span></a>
+    <a href="YC-19.html"><i>YC-19</i><b>Bảng theo dõi tình trạng shop nhập tay</b><span>ORD-02 — đúng bảy cột của sheet Main; ba cột nhập tay, hai cột bản vẽ tự hiện; bỏ phân công – nộp – duyệt trên dòng hạng mục</span></a>
+    <a href="YC-20.html"><i>YC-20</i><b>Thêm bản vẽ thiết kế &amp; Bảng theo dõi thiết kế</b><span>ORD-02 — khung đúng sáu mục, bảng đúng tám cột; mỗi dòng một cặp bản vẽ thiết kế + Shop; kỹ sư tải và trưởng phòng duyệt trên dòng</span></a>
+    <a href="YC-21.html"><i>YC-21</i><b>Kế hoạch theo bản vẽ Shop</b><span>ORD-03 — Hồ sơ theo dự án + cột Trạng thái shop → chọn hợp đồng → chọn bản vẽ shop → kế hoạch theo mẫu Banve</span></a>
+    <a href="YC-22.html"><i>YC-22</i><b>Nhập kho dự án theo đợt</b><span>PRJ-04 — trang đầu là danh sách công trình theo đợt; phiếu nhập nạp sẵn từ đợt Bản vẽ sản xuất / Đơn hàng</span></a>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:74px">Trang</th><th style="width:24%">Trang đặc tả tác động</th><th style="width:96px">Loại</th><th>Nội dung thay đổi</th></tr></thead>
+      <tbody>
+        <tr><td><a href="YC-18.html">YC-18</a></td><td><a href="../ORD-02.html">ORD-02</a></td><td><span class="tag t-neu">Sửa</span></td><td>Bộ cột của tab <em>Hồ sơ theo dự án</em> đúng bảy cột của sheet</td></tr>
+        <tr><td><a href="YC-19.html">YC-19</a></td><td><a href="../ORD-02.html">ORD-02</a></td><td><span class="tag t-neu">Sửa</span></td><td>Bảng theo dõi tình trạng shop bảy cột, nhập tay; bỏ luồng phân công – nộp – duyệt ở cấp hạng mục</td></tr>
+        <tr><td><a href="YC-20.html">YC-20</a></td><td><a href="../ORD-02.html">ORD-02</a> · <a href="../PL-A.html">PL-A</a> · <a href="../PF-04.html">PF-04</a></td><td><span class="tag t-warn">Sửa lớn</span></td><td>Khung “Thêm bản vẽ thiết kế” sáu mục; Bảng theo dõi thiết kế tám cột; loại bản vẽ tự xác định; mã <code>SD.HN_0001.NN</code>; tải Shop và duyệt trên dòng</td></tr>
+        <tr><td><a href="YC-21.html">YC-21</a></td><td><a href="../ORD-03.html">ORD-03</a></td><td><span class="tag t-neu">Sửa</span></td><td>Tab <em>Hồ sơ theo dự án</em> + Trạng thái shop; điều kiện “đã có bản vẽ shop”; bước chọn bản vẽ; cột theo sheet <em>Banve</em></td></tr>
+        <tr><td><a href="YC-22.html">YC-22</a></td><td><a href="../PRJ-04.html">PRJ-04</a> · <a href="../PF-04.html">PF-04</a> · <a href="../PL-A.html">PL-A</a></td><td><span class="tag t-warn">Sửa lớn</span></td><td>Danh sách công trình theo đợt nhập; phiếu nhập gắn đợt Bản vẽ sản xuất / Đơn hàng; ngày giờ, người, địa điểm nhận</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="can-chot">
+  <h2><em>§3</em>Chỗ tệp nói hai cách — đã theo sheet <em>Main</em></h2>
+  <p class="intro">Sheet đầu phần lớn chép lại từ hướng dẫn 27/09; sheet <em>Main</em> viết riêng cho lần deploy lại, có cột <em>Hiện trạng</em> và <em>Mong muốn</em>. Khi hai bên khác nhau, đặc tả theo sheet <em>Main</em>. Mỗi chỗ ghi ở <a href="../PL-C.html">PL-C</a> để P. TQT xác nhận khi xem bản dựng.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:62px">Mã</th><th style="width:34%">Hai cách nói</th><th>Đặc tả theo</th></tr></thead>
+      <tbody>
+        <tr><td class="k"><a href="../PL-C.html#Q-84">Q-84</a></td><td>Sheet đầu: bảng theo dõi tám cột, phân công – tải lên – trưởng phòng xác nhận. <em>Main</em>: bảy cột, “chế độ nhập tay”, luồng kia là “sai”</td><td><em>Main</em>: bảy cột nhập tay; nhãn “Nộp V{n}” / “Đã duyệt” vẫn tự hiện ở cột Tình trạng bản vẽ — <a href="YC-19.html">YC-19</a></td></tr>
+        <tr><td class="k"><a href="../PL-C.html#Q-85">Q-85</a></td><td>Tải bản vẽ ở dòng hạng mục, hay ở “Thêm bản vẽ thiết kế”</td><td><em>Main</em>: tải bản vẽ thiết kế ở khung, bản vẽ Shop trên dòng Bảng theo dõi thiết kế; trưởng phòng duyệt trên dòng đó — <a href="YC-20.html">YC-20</a>. Chốt luôn <a href="../PL-C.html#Q-50">Q-50</a>: <code>SD.HN_0001.01</code></td></tr>
+        <tr><td class="k"><a href="../PL-C.html#Q-86">Q-86</a></td><td>Sheet đầu: danh sách gói thầu, mở khi “đã duyệt đủ”. <em>Main</em>: “giống tab Shopdrawing, thêm cột Trạng thái shop”, mở khi “đã có bản vẽ shop”</td><td><em>Main</em> — <a href="YC-21.html">YC-21</a>. Giá trị cột Trạng thái shop lấy đúng ba chữ của sheet đầu</td></tr>
+        <tr><td class="k"><a href="../PL-C.html#Q-87">Q-87</a></td><td>Danh sách công trình ở kho: cột nào tự tính, cột nào nhập</td><td>Giữ đủ mười cột kể cả Ghi chú 2 – 4; bốn cột đợt tự tính, “Tạm dừng” chọn tay — <a href="YC-22.html">YC-22</a></td></tr>
+        <tr><td class="k"><a href="../PL-C.html#Q-88">Q-88</a></td><td>“Cán bộ phụ trách chính” là ai</td><td>Giám đốc dự án trong thành viên dự án — <a href="YC-18.html">YC-18</a></td></tr>
+        <tr><td class="k"><a href="../PL-C.html#Q-89">Q-89</a></td><td>Chọn nhiều bản vẽ thì kế hoạch gộp hay tách; một đầu việc mấy vật tư</td><td>Gộp theo đầu việc; một vật tư chính mỗi dòng, tỷ lệ pha màu ở lại trong Quy cách — <a href="YC-21.html">YC-21</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="thu-tu">
+  <h2><em>§4</em>Thứ tự triển khai</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:52px">#</th><th style="width:30%">Việc</th><th>Lý do đứng ở vị trí này</th></tr></thead>
+      <tbody>
+        <tr><td class="k">1</td><td><a href="YC-18.html">YC-18</a> · <a href="YC-19.html">YC-19</a></td><td>Nhỏ, độc lập, làm song song được. Là hai thứ người dùng thấy đầu tiên khi mở phân hệ.</td></tr>
+        <tr><td class="k">2</td><td><a href="YC-20.html">YC-20</a> <span class="tag t-crit">chặn</span></td><td>Lần nộp là thứ <a href="YC-21.html">YC-21</a> chọn để lập kế hoạch. Chưa có nó thì bước chọn bản vẽ Shop không có gì để chọn.</td></tr>
+        <tr><td class="k">3</td><td><a href="YC-21.html">YC-21</a></td><td>Sinh ra đợt Bản vẽ sản xuất / Đơn hàng có vật tư — đầu vào của phiếu nhập theo đợt.</td></tr>
+        <tr><td class="k">4</td><td><a href="YC-22.html">YC-22</a></td><td>Cuối chuỗi. Phiếu nhập cần mã vật tư trên dòng đợt mới ghi kho được.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Yêu cầu 29/09/2026</span><span><code>2026-09-29/index.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn: <code>Deploy lại.xlsx</code></span>
+</div>
+</main>
+</div>
+</body></html>

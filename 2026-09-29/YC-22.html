@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-22 Nhập kho dự án theo đợt — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 29/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Yêu cầu 29/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Luồng TQT làm lại</a>
+    <div class="rail-grp">Trang yêu cầu</div>
+    <a href="YC-18.html"><i>YC-18</i>Danh mục hồ sơ theo hợp đồng</a>
+    <a href="YC-19.html"><i>YC-19</i>Bảng shop nhập tay</a>
+    <a href="YC-20.html"><i>YC-20</i>Thêm bản vẽ thiết kế</a>
+    <a href="YC-21.html"><i>YC-21</i>Kế hoạch theo bản vẽ Shop</a>
+    <a class="on" href="YC-22.html"><i>YC-22</i>Nhập kho theo đợt</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-25/index.html"><i>25/09</i>Đối chiếu bản dựng 25/09/2026</a>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Yêu cầu 29/09/2026</a> / Dự án — Thi công / <b>YC-22</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-21.html">← YC-21</a><a href="index.html">Mục lục</a></div>
+</div>
+<section class="sheet solo" id="YC-22">
+  <header class="tb">
+    <div class="tb-id">YC-22</div>
+    <div class="tb-main">
+      <h3>Nhập kho dự án theo đợt</h3>
+      <p>Đầu chuỗi là bản vẽ, cuối chuỗi là hàng nằm trong kho công trình. Sheet đầu viết đoạn cuối ấy bằng một thao tác: thủ kho mở danh sách công trình, bấm “Đợt 1” của dự án, thấy đúng bản vẽ sản xuất và đơn hàng đợt 1 mà P. TQT đã lập, rồi lập phiếu nhập từ đó. Bản dựng hiện có đủ phần phiếu nhập — chênh lệch, biện pháp xử lý, biên bản giao nhận (<a href="../PRJ-04.html">PRJ-04</a>) — nhưng phiếu không biết mình thuộc đợt nào: <em>chứng từ nguồn</em> là một ô chữ tự do. Trang này nối phiếu nhập vào đợt, và dựng trang danh sách mà thủ kho mở đầu tiên.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Sửa lớn — thêm trang đầu, nối phiếu nhập với đợt</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../PRJ-04.html">PRJ-04</a> · <a href="../PF-04.html">PF-04</a> · <a href="../PL-A.html">PL-A</a></dd></div>
+        <div><dt>Điểm tạm chốt</dt><dd><a href="../PL-C.html#Q-87">Q-87</a> — cột nào tự tính, cột nào nhập tay</dd></div>
+        <div><dt>Nguồn</dt><dd><code>Deploy lại.xlsx</code> · <em>Sheet1</em> dòng 77 – 118</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Đường truy cập</td><td colspan="2">Dự án — Thi công › Xuất nhập kho dự án</td></tr>
+          <tr><td>Trang đầu</td><td>Ô chọn dự án phía trên bốn tab Tồn kho · Phiếu nhập · Phiếu xuất · Theo dõi kho</td><td><b>Danh sách công trình</b> theo đợt nhập; bấm tên dự án mới vào bốn tab</td></tr>
+          <tr><td>Phiếu nhập</td><td>Chứng từ nguồn gõ tay; khối lượng chứng từ gõ tay</td><td>Lập từ đợt: đầu phiếu và khối lượng nạp sẵn từ đợt Bản vẽ sản xuất / Đơn hàng</td></tr>
+          <tr><td>Thông tin nhận</td><td>Ngày lập phiếu (ngày), người kiểm nhận</td><td>Thêm <b>ngày giờ nhận hàng</b>, <b>người nhận</b>, <b>địa điểm nhận</b></td></tr>
+          <tr><td>Tab Theo dõi kho</td><td colspan="2">Đã đạt yêu cầu — chọn dự án, chọn thời gian, bảy cột. Không đổi.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — danh sách công trình</h4>
+    <p>Đúng các cột của sheet: Mã gói thầu · Tên gói thầu · Kế hoạch nhập kho · Đang thực hiện · Hiện trạng · Lũy kế đợt · Cán bộ nhận hàng · Ghi chú 2 · Ghi chú 3 · Ghi chú 4. Một dòng mỗi dự án đang chạy. <b>Đợt n</b> ở đây là nhóm các đợt Bản vẽ sản xuất và Đơn hàng mang cùng số <code>n</code> của <a href="../ORD-03.html">ORD-03</a> — “Đợt 1” là Bản vẽ sản xuất đợt 1 cộng Đơn hàng đợt 1, như sheet đầu mô tả.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Cột</th><th>Mã</th><th>Kiểu</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã gói thầu · Tên gói thầu</td><td class="k">project.code · name</td><td>Chỉ đọc</td><td>Bấm tên mở bốn tab của dự án.</td></tr>
+          <tr><td>Kế hoạch nhập kho</td><td class="k">planned_rounds</td><td>Tự tính</td><td>“{n} đợt” — số số-đợt khác nhau trong các đợt Bản vẽ sản xuất / Đơn hàng của dự án, trừ đợt nháp.</td></tr>
+          <tr><td>Đang thực hiện</td><td class="k">current_round</td><td>Tự tính · cờ</td><td>Đợt nhỏ nhất còn ít nhất một đợt <em>Đã duyệt</em> <b>chưa nhận đủ</b> (quy tắc 3 bên dưới) — hiện là nút “Đợt {n}”. Mọi đợt đã nhập thì hiện đợt cuối. Chưa đợt nào được duyệt: “Chưa thực hiện”. Người dùng chọn <em>Tạm dừng</em> ngay trong ô thì ô hiện “Tạm dừng” cho tới khi bỏ chọn.</td></tr>
+          <tr><td>Hiện trạng</td><td class="k">pending_text</td><td>Tự tính</td><td>“Chuẩn bị nhập {a} phiếu từ nhà máy + {b} phiếu từ cung ứng” — <code>a</code>, <code>b</code> đếm đợt đã duyệt của đợt đang thực hiện còn chưa nhận đủ. Không còn gì: “Không có phiếu mới”.</td></tr>
+          <tr><td>Lũy kế đợt</td><td class="k">received_rounds</td><td>Tự tính</td><td>“{k} đợt” — số đợt mà mọi đợt đã duyệt trong đó đều đã nhận đủ hoặc đã đóng.</td></tr>
+          <tr><td>Cán bộ nhận hàng</td><td class="k">receiver_user</td><td>Người</td><td>Chọn người, sửa ngay trên ô; mặc định “Chưa phân công”. Là người nhận mặc định trên phiếu nhập và là người nhận thông báo khi có đợt mới được duyệt.</td></tr>
+          <tr><td>Ghi chú 2 · Ghi chú 3 · Ghi chú 4</td><td class="k">note2 · note3 · note4</td><td>Chữ</td><td>Ba cột nhập tay, đúng như biểu mẫu, sửa ngay trên ô. Ví dụ của sheet: Ghi chú 2 “Tạm dừng thi công theo y/c BCH” cạnh ô Đang thực hiện “Tạm dừng” (<a href="../PL-C.html#Q-87">Q-87</a>).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — phiếu nhập lập từ đợt</h4>
+    <p>Bấm “Đợt {n}” mở bảng trượt bên phải: hai khối <em>Từ nhà máy</em> (Bản vẽ sản xuất đợt n) và <em>Từ cung ứng</em> (Đơn hàng đợt n). Mỗi khối hiện đầu đợt, danh sách dòng và phiếu nhập đã lập; nút <b>Lập phiếu nhập</b> mở phiếu đã nạp sẵn.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Đợt nguồn</td><td class="k">supply_batch_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Đợt <em>Đã duyệt</em> của <a href="../ORD-03.html">ORD-03</a>. Nguồn nhập tự đặt là <code>cấp hàng NM/CƯ</code>; chứng từ nguồn tự ghi “Bản vẽ sản xuất đợt {n}” hoặc “Đơn hàng đợt {n}”.</td></tr>
+          <tr><td>Đầu phiếu lấy lại</td><td class="k">—</td><td>Chỉ đọc</td><td class="c">—</td><td>Đợt · Từ ngày – Đến ngày · Nơi gửi – kỹ sư phụ trách · Nơi nhận – nhân viên phụ trách · Hạn phản hồi — đúng dòng thông tin của đợt.</td></tr>
+          <tr><td>Ngày giờ nhận hàng</td><td class="k">received_at</td><td>Ngày giờ</td><td class="c req">✱</td><td>Mặc định lúc mở phiếu. Không sau thời điểm hiện tại. Là ngày chứng từ của phiếu trên sổ kho.</td></tr>
+          <tr><td>Người nhận</td><td class="k">receiver</td><td>Người</td><td class="c req">✱</td><td>Mặc định là cán bộ nhận hàng của dự án; chưa có thì là người đang lập. Thay cho <em>người kiểm nhận</em> của phiếu thường — cùng một ô.</td></tr>
+          <tr><td>Địa điểm nhận</td><td class="k">receive_location</td><td>Chữ</td><td class="c">—</td><td>Ví dụ “Bãi tập kết cổng 2”. Mặc định là địa điểm của phiếu trước cùng dự án.</td></tr>
+          <tr><td>Dòng: STT · Mã HM · Đầu việc · ĐVT · Mã vật tư · Tên vật tư/Quy cách</td><td class="k">line.*</td><td>Chỉ đọc</td><td class="c">—</td><td>Chép từ dòng đợt. Dòng chưa có mã vật tư thì ô vật tư thành ô chọn, bắt buộc trước khi ghi sổ — kho ghi theo vật tư.</td></tr>
+          <tr><td>Dòng: KL sản xuất (mua hàng) đợt này</td><td class="k">qty_doc</td><td>Chỉ đọc</td><td class="c">—</td><td>Phần còn chờ nhận của dòng đợt: KL đợt này − Σ đã nhập ở các phiếu trước của cùng đợt. Phiếu đầu tiên thì bằng KL đợt này.</td></tr>
+          <tr><td>Dòng: KL nhập kho dự án · Chênh lệch · Biện pháp xử lý · Ghi chú</td><td class="k">qty_actual · variance · variance_note · note</td><td>Như <a href="../PRJ-04.html">PRJ-04</a></td><td class="c">—</td><td>KL nhập kho <b>mặc định bằng KL đợt này</b> — thủ kho chỉ sửa dòng lệch. Chênh lệch tự tính; khác 0 thì bắt buộc biện pháp xử lý.</td></tr>
+          <tr><td>Biên bản giao nhận hàng</td><td class="k">delivery_note_files</td><td>Tệp</td><td class="c">—</td><td>Như <a href="../PRJ-04.html">PRJ-04</a>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ bổ sung cho <a href="../PRJ-04.html">PRJ-04</a></h4>
+    <ol class="br">
+      <li><b>Chỉ lập phiếu từ đợt đã duyệt.</b> Đợt nháp, đang chờ duyệt hay bị trả lại hiện trong bảng trượt nhưng không có nút lập phiếu.<span class="then">Hàng chỉ đi khi trưởng phòng TQT đã duyệt đợt và nơi nhận đã nhận thông báo (<a href="../ORD-03.html">ORD-03</a>).</span></li>
+      <li><b>Một đợt, nhiều phiếu.</b> Hàng của một đợt về nhiều chuyến thì mỗi chuyến một phiếu; phiếu sau nạp phần còn chờ nhận. Phần thiếu được nhà máy bổ sung về sau là một phiếu nữa của cùng đợt, không phải một đợt mới.<span class="then">Đúng biện pháp xử lý mà sheet ghi mẫu: “Yêu cầu nhà máy bổ sung số còn thiếu”.</span></li>
+      <li><b>Nhận đủ là khi mọi dòng hết phần chờ nhận — hoặc được đóng tay.</b> Thủ kho bấm “Đóng đợt nhập” kèm lý do khi phần thiếu sẽ không về (ví dụ đã cập nhật lại bản vẽ sản xuất). Đợt đã đóng tính vào <em>Lũy kế đợt</em>.</li>
+      <li><b>Phiếu nhận hàng từ <a href="../ORD-05.html">ORD-05</a> cũng tính.</b> Phiếu sinh ra khi nhận một chuyến giao của đơn hàng lập từ đợt (<code>supply_batch_id</code> của đơn) được gắn luôn vào đợt đó.<span class="then">Hai lối nhận hàng, một con số “đã nhập” — không lối nào đếm hai lần.</span></li>
+      <li><b>Kỹ sư TQT biết khi hàng đã về.</b> Ghi sổ phiếu nhập từ đợt thì báo kỹ sư phụ trách của đợt, kèm chênh lệch nếu có (<a href="../PF-04.html">PF-04</a>).</li>
+      <li><b>Phiếu thường vẫn lập được.</b> Mua tại công trình, hoàn nhập, điều chuyển đến vẫn đi đường cũ ở tab Phiếu nhập, không cần đợt.</li>
+    </ol>
+
+    <h4>Giao diện</h4>
+    <ul>
+      <li>Trang đầu là bảng danh sách công trình, không có nút chính: việc chính là bấm “Đợt {n}”. Dòng có phiếu chờ nhập đẩy lên đầu.</li>
+      <li>Bảng trượt “Đợt {n}” giữ danh sách phía sau; lập phiếu trong chính bảng trượt, không mở thêm hộp thoại.</li>
+      <li>Trên phiếu, dòng không lệch trông như chữ thường; dòng lệch tự mở ô <em>Biện pháp xử lý</em> ngay dưới — thủ kho không phải đi tìm.</li>
+    </ul>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">Tình huống</th><th style="width:26%">Điều kiện</th><th>Thông điệp</th></tr></thead>
+        <tbody>
+          <tr><td>Ghi sổ khi dòng chưa có vật tư</td><td><code>material_id</code> rỗng</td><td>“Chọn vật tư cho dòng {STT} — kho ghi theo vật tư.” <em>(chặn)</em></td></tr>
+          <tr><td>Lệch mà không ghi biện pháp</td><td><code>variance ≠ 0</code>, <code>variance_note</code> rỗng</td><td>Như <a href="../PRJ-04.html">PRJ-04</a>. <em>(chặn)</em></td></tr>
+          <tr><td>Ngày giờ nhận ở tương lai</td><td><code>received_at</code> &gt; bây giờ</td><td>“Ngày giờ nhận hàng không được sau hiện tại.” <em>(chặn)</em></td></tr>
+          <tr><td>Đóng đợt nhập không ghi lý do</td><td>Lý do rỗng</td><td>“Ghi lý do đóng đợt khi chưa nhận đủ.” <em>(chặn)</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>Thủ kho mở phân hệ là thấy dự án nào đang chờ hàng, đợt mấy, chờ mấy phiếu.</li>
+      <li>Lập phiếu nhập từ đợt chỉ phải sửa những dòng lệch, điền ngày giờ và địa điểm nhận.</li>
+      <li>P. TQT biết hàng của đợt nào đã về, về thiếu bao nhiêu, xử lý thế nào.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC22-1</td><td><code>HN_0001</code> có Bản vẽ sản xuất đợt 1 và Đơn hàng đợt 1 đã duyệt, chưa phiếu nào</td><td>Mở Xuất nhập kho dự án</td><td>Dòng <code>HN_0001</code>: Đang thực hiện “Đợt 1”, Hiện trạng “Chuẩn bị nhập 1 phiếu từ nhà máy + 1 phiếu từ cung ứng”, Lũy kế “0 đợt”</td></tr>
+          <tr><td>UAT-YC22-2</td><td>Tiếp UAT-1</td><td>Bấm “Đợt 1” → khối Từ nhà máy → Lập phiếu nhập</td><td>Đầu phiếu đúng thông tin đợt; ba dòng .01 – .03 với KL 200 / 100 / 150; KL nhập kho mặc định bằng số đó</td></tr>
+          <tr><td>UAT-YC22-3</td><td>Tiếp UAT-2</td><td>Sửa dòng .01 thành 180, không ghi biện pháp, ghi sổ</td><td>Bị chặn; ô Biện pháp xử lý đã mở sẵn dưới dòng</td></tr>
+          <tr><td>UAT-YC22-4</td><td>Tiếp UAT-3</td><td>Ghi “Yêu cầu nhà máy bổ sung”, tải biên bản, ghi sổ</td><td>Ghi sổ được; Chênh lệch −20; kỹ sư phụ trách đợt nhận thông báo kèm chênh lệch; Hiện trạng vẫn “1 phiếu từ nhà máy + 1 phiếu từ cung ứng” vì nhà máy còn thiếu 20</td></tr>
+          <tr><td>UAT-YC22-5</td><td>Tiếp UAT-4</td><td>Lập phiếu thứ hai cho cùng đợt nhà máy</td><td>Chỉ còn dòng .01 với KL chờ nhận 20</td></tr>
+          <tr><td>UAT-YC22-6</td><td>Tiếp UAT-4, lập và ghi sổ phiếu cung ứng</td><td>Nhìn danh sách</td><td>Nhà máy còn chờ 20 nên Lũy kế vẫn “0 đợt”; sau khi thủ kho “Đóng đợt nhập” kèm lý do → “1 đợt”</td></tr>
+          <tr><td>UAT-YC22-7</td><td><code>KH_0001</code> đang có đợt chờ nhập</td><td>Chọn “Tạm dừng” ở ô Đang thực hiện, gõ “Tạm dừng thi công theo y/c BCH” vào Ghi chú 2</td><td>Dòng hiện đúng như ví dụ của sheet; bỏ chọn thì ô trở về đợt đang làm</td></tr>
+          <tr><td>UAT-YC22-8</td><td>Dòng đợt chưa có mã vật tư</td><td>Ghi sổ phiếu</td><td>Bị chặn: “Chọn vật tư cho dòng …”</td></tr>
+          <tr><td>UAT-YC22-9</td><td>Sau UAT-4</td><td>Mở tab Theo dõi kho, kỳ chứa ngày nhận</td><td>Nhập trong kỳ của <code>HNT_2</code> tăng đúng 180</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../PRJ-04.html">PRJ-04 xuất nhập kho dự án</a><a href="../ORD-03.html">ORD-03 đợt bản vẽ sản xuất / đơn hàng</a><a href="../ORD-05.html">ORD-05 giao hàng theo đợt</a><a href="YC-21.html">YC-21 kế hoạch theo bản vẽ Shop</a><a href="../PF-04.html">PF-04 thông báo</a><a href="../PL-C.html#Q-87">PL-C · Q-87</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Trang 5 / 5</span><span><code>2026-09-29/YC-22.html</code></span>
+  <span>ABSMS — Yêu cầu 29/09/2026</span>
+  <span>Nguồn: <code>Deploy lại.xlsx · Sheet1 dòng 77 – 118</code></span>
+</div>
+</main>
+</div>
+</body></html>

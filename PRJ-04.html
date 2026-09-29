@@ -276,6 +276,23 @@
 </g>
 </svg></div><figcaption><b>Hình PRJ-04.1</b> Ba nguồn nhập, một lối xuất. Điểm quan trọng nhất là bước ghi nhận chi phí: nó rẽ đồng thời vào sổ chi phí công trình và vào bảng khấu trừ vật tư của tổ đội, nên một lần xuất kho phục vụ hai mục đích quản trị khác nhau.</figcaption></figure>
 
+    <h4>Tham số — danh sách công trình (trang đầu)</h4>
+    <p><b>Mới (<a href="2026-09-29/YC-22.html">YC-22</a>).</b> Mở phân hệ là thấy danh sách này; bấm tên dự án mới vào bốn tab bên dưới. Đúng các cột của biểu mẫu. <b>Đợt n</b> là nhóm các đợt Bản vẽ sản xuất và Đơn hàng cùng số <code>n</code> của <a href="ORD-03.html">ORD-03</a>. Một đợt <em>nhận đủ</em> khi mọi dòng hết phần chờ nhận, hoặc thủ kho đã “Đóng đợt nhập” kèm lý do.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Cột</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã gói thầu · Tên gói thầu</td><td class="k">project.code · name</td><td>Chỉ đọc</td><td class="c">—</td><td>Bấm tên mở bốn tab của dự án.</td></tr>
+          <tr><td>Kế hoạch nhập kho</td><td class="k">planned_rounds</td><td>Tự tính</td><td class="c">—</td><td>“{n} đợt” — số số-đợt khác nhau của các đợt Bản vẽ sản xuất / Đơn hàng không ở nháp.</td></tr>
+          <tr><td>Đang thực hiện</td><td class="k">current_round</td><td>Tự tính · chọn tay</td><td class="c">—</td><td>Nút “Đợt {n}” — đợt nhỏ nhất còn đợt đã duyệt chưa nhận đủ; nhận đủ hết thì đợt cuối; chưa đợt nào duyệt thì “Chưa thực hiện”. Người dùng chọn “Tạm dừng” ngay trong ô thì ô hiện “Tạm dừng” cho tới khi bỏ chọn.</td></tr>
+          <tr><td>Hiện trạng</td><td class="k">pending_text</td><td>Tự tính</td><td class="c">—</td><td>“Chuẩn bị nhập {a} phiếu từ nhà máy + {b} phiếu từ cung ứng” theo số đợt đã duyệt chưa nhận đủ của đợt đang thực hiện; không còn gì: “Không có phiếu mới”.</td></tr>
+          <tr><td>Lũy kế đợt</td><td class="k">received_rounds</td><td>Tự tính</td><td class="c">—</td><td>“{k} đợt” — số đợt mà mọi đợt đã duyệt đều đã nhận đủ hoặc đã đóng.</td></tr>
+          <tr><td>Cán bộ nhận hàng</td><td class="k">receiver_user</td><td>Người</td><td class="c">—</td><td>Sửa ngay trên ô; mặc định “Chưa phân công”. Là người nhận mặc định trên phiếu nhập từ đợt.</td></tr>
+          <tr><td>Ghi chú 2 · Ghi chú 3 · Ghi chú 4</td><td class="k">note2 · note3 · note4</td><td>Chữ</td><td class="c">—</td><td>Ba cột nhập tay như biểu mẫu, sửa ngay trên ô (<a href="PL-C.html#Q-87">Q-87</a>).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h4>Tham số — phiếu xuất kho dự án</h4>
     <div class="tw">
       <table>
@@ -299,14 +316,17 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Nguồn nhập</td><td class="k">source_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>cấp hàng NM/CƯ</code> · <code>mua tại công trình</code> · <code>hoàn nhập từ tổ đội</code> · <code>điều chuyển từ dự án khác</code>.</td></tr>
-          <tr><td>Chứng từ nguồn</td><td class="k">source_ref</td><td>Tham chiếu</td><td class="c req">✱</td><td>Phiếu xuất của nơi cấp, hoặc hóa đơn mua, hoặc phiếu điều chuyển.</td></tr>
+          <tr><td>Đợt nguồn</td><td class="k">supply_batch_id</td><td>Tham chiếu</td><td class="c">—</td><td><b>Mới (<a href="2026-09-29/YC-22.html">YC-22</a>).</b> Đợt Bản vẽ sản xuất / Đơn hàng <em>Đã duyệt</em> của <a href="ORD-03.html">ORD-03</a>, khi phiếu lập từ nút “Lập phiếu nhập” trong bảng trượt “Đợt {n}” — <em>Phiếu nhập kho từ nhà máy</em> hoặc <em>Phiếu nhập kho từ cung ứng</em>. Có đợt nguồn thì nguồn nhập là <code>cấp hàng NM/CƯ</code>, chứng từ nguồn tự ghi tên đợt, đầu phiếu (đợt, từ – đến, nơi gửi, nơi nhận, hạn phản hồi) lấy lại từ đợt, và dòng phiếu (STT · Mã HM · Đầu việc · ĐVT · Mã vật tư · Tên vật tư/Quy cách · KL đợt này · KL nhập kho dự án · Chênh lệch · Biện pháp xử lý · Ghi chú) chép từ dòng đợt — KL chứng từ là phần còn chờ nhận, KL nhập kho mặc định bằng số đó. Một đợt có thể có nhiều phiếu.</td></tr>
+          <tr><td>Chứng từ nguồn</td><td class="k">source_ref</td><td>Tham chiếu</td><td class="c req">✱</td><td>Phiếu xuất của nơi cấp, hoặc hóa đơn mua, hoặc phiếu điều chuyển. Tự ghi khi phiếu có đợt nguồn.</td></tr>
+          <tr><td>Ngày giờ nhận hàng</td><td class="k">received_at</td><td>Ngày giờ</td><td class="c req">✱</td><td><b>Mới (<a href="2026-09-29/YC-22.html">YC-22</a>).</b> Mặc định lúc mở phiếu; không sau hiện tại. Là ngày chứng từ của phiếu trên sổ kho.</td></tr>
+          <tr><td>Địa điểm nhận</td><td class="k">receive_location</td><td>Chuỗi</td><td class="c">—</td><td><b>Mới.</b> Ví dụ “Bãi tập kết cổng 2”; mặc định theo phiếu trước của dự án.</td></tr>
           <tr><td>KL chứng từ</td><td class="k">qty_doc</td><td>Số</td><td class="c"></td><td>Khối lượng ghi trên phiếu xuất của nhà máy hoặc đơn mua hàng của đợt. Để trống khi chứng từ nguồn không ghi số lượng.</td></tr>
           <tr><td>KL nhập kho</td><td class="k">qty_actual</td><td>Số</td><td class="c req">✱</td><td>Khối lượng thủ kho đếm nhận tại công trình — đây là số ghi kho. Lệch so với chứng từ nguồn thì bắt buộc ghi biện pháp xử lý (<a href="ORD-05.html">ORD-05</a>).</td></tr>
           <tr><td>Chênh lệch</td><td class="k">variance</td><td>Số, tự tính</td><td class="c"></td><td><code>qty_actual − qty_doc</code>; âm là thiếu, dương là thừa. Chỉ hiện khi có <code>qty_doc</code>; không sửa tay.</td></tr>
           <tr><td>Biện pháp xử lý</td><td class="k">variance_note</td><td>Văn bản</td><td class="c"></td><td>Bắt buộc khi chênh lệch ≠ 0: cập nhật lại bản vẽ sản xuất của đợt, yêu cầu nơi cấp bổ sung phần thiếu, hoặc hoàn hàng về nhà máy gia công lại nếu chưa đạt chất lượng. Bỏ trống khi không lệch.</td></tr>
           <tr><td>Biên bản giao nhận hàng</td><td class="k">delivery_note_files</td><td>Tệp, nhiều</td><td class="c"></td><td>PDF hoặc ảnh, đính vào phiếu sau khi tạo; có chênh lệch thì kèm ảnh hiện trường.</td></tr>
           <tr><td>Giá nhập</td><td class="k">unit_price</td><td>Số tiền</td><td class="c req">✱</td><td>Trước VAT; với hàng cấp nội bộ thì lấy giá xuất kho của nơi cấp.</td></tr>
-          <tr><td>Người kiểm nhận</td><td class="k">inspector</td><td>Tham chiếu</td><td class="c req">✱</td><td>Thủ kho công trình hoặc cán bộ kỹ thuật được ủy quyền.</td></tr>
+          <tr><td>Người kiểm nhận</td><td class="k">inspector</td><td>Tham chiếu</td><td class="c req">✱</td><td>Thủ kho công trình hoặc cán bộ kỹ thuật được ủy quyền. Là <em>người nhận</em> của phiếu nhập theo đợt; mặc định là cán bộ nhận hàng của dự án (<a href="2026-09-29/YC-22.html">YC-22</a>).</td></tr>
         </tbody>
       </table>
     </div>
@@ -403,6 +423,7 @@
       <li><b>Kiểm kê sinh bút toán.</b> Chênh lệch kiểm kê lập biên bản và sinh bút toán xử lý thừa hoặc thiếu.<span class="then">Định mức hao hụt cho phép khai theo vật tư (phần trăm của số sổ sách). Thiếu trong định mức thì ghi sổ kèm ghi chú; thiếu quá định mức thì phải đính biên bản quy trách nhiệm trước khi ghi sổ. Ghi sổ đưa số tồn về bằng số đếm thực tế và đẩy giá trị phần thiếu sang sổ chi phí công trình.</span></li>
       <li><b>Tồn cuối dự án có ba lối ra.</b> Điều chuyển sang dự án khác, hoàn nhập về nhà máy, hoặc đưa vào hồ sơ thanh toán vật tư ở <a href="ORD-08.html">ORD-08</a>.<span class="then">Mỗi lối ra là một phiếu xử lý tồn (<code>XLT-&lt;project&gt;-NNNN</code>) ghi sổ theo giá bình quân, trừ vào tồn chứ không sinh chi phí — vật tư chỉ thành chi phí khi xuất cho tổ đội. Điều chuyển đồng thời sinh phiếu nhập “điều chuyển từ dự án khác” bên dự án nhận, giữ nguyên giá vốn. Kho dự án chỉ đóng được khi tồn bằng 0.</span></li>
     
+      <li><b>Nhập theo đợt, từ đợt đã duyệt</b> <em>(<a href="2026-09-29/YC-22.html">YC-22</a>)</em>. Chỉ đợt Bản vẽ sản xuất / Đơn hàng <em>Đã duyệt</em> có nút lập phiếu. Hàng về nhiều chuyến thì nhiều phiếu cho cùng đợt, phiếu sau nạp phần còn chờ; phần thiếu không về nữa thì thủ kho “Đóng đợt nhập” kèm lý do. Phiếu sinh khi nhận chuyến giao của đơn hàng lập từ đợt (<a href="ORD-05.html">ORD-05</a>) cũng tính vào đợt đó. Ghi sổ phiếu từ đợt thì báo kỹ sư phụ trách đợt, kèm chênh lệch (<a href="PF-04.html">PF-04</a>).<span class="then">“Khi hàng tới, thủ kho dự án bấm vô Đợt 1 sẽ hiện ra bản sản xuất và đơn hàng đợt 1” — và P. TQT biết hàng của đợt nào đã về, thiếu bao nhiêu, xử lý thế nào. Dòng không có mã vật tư phải chọn vật tư trước khi ghi sổ, vì kho ghi theo vật tư.</span></li>
       <li><b>Sổ kho theo kỳ dựng từ chứng từ đã ghi nhận.</b> Chỉ phiếu nhập đã ghi kho, phiếu xuất đã giao, phiếu xử lý tồn đã ghi sổ, cùng chênh lệch kiểm kê đã xử lý mới vào sổ; phiếu nháp, chờ duyệt hay đã duyệt-đang giữ hàng không tính. Điều chuyển đến kho này vào sổ qua phiếu nhập điều chuyển mà dự án gửi sinh ra, không đọc thêm từ phiếu xử lý tồn bên gửi — nếu không cùng một lô hàng sẽ vào sổ hai lần.<span class="then">Nhờ vậy Tồn cuối kỳ tính đến hôm nay luôn bằng số tồn trên tab Tồn kho — sổ và tồn đọc từ cùng những lần hàng đi qua cửa kho. Phiếu tính theo ngày chứng từ; chênh lệch kiểm kê tính theo ngày xử lý, vì biên bản kiểm kê không có ngày chứng từ riêng và tồn chỉ đổi lúc xử lý. Hai đầu tính cả ngày biên; hai mốc đều bắt buộc vì không có “tồn đầu kỳ” cho một khoảng không có đầu. Dòng Tổng cộng số của mọi vật tư kể cả khác ĐVT — có nên ẩn khi vật tư khác đơn vị đang chờ chốt ở <a href="PL-C.html#Q-76">PL-C · Q-76</a>.</span></li>
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày phiếu.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Xuất nhập kho dự án trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
@@ -442,12 +463,14 @@
           <tr><td>UAT-PRJ04-12</td><td>Dự án quyết toán, kho còn 20 m²</td><td>Lập phiếu xử lý tồn “điều chuyển” sang dự án khác và ghi sổ</td><td>Tồn giảm 20; dự án nhận có phiếu nhập điều chuyển đúng giá bình quân</td></tr>
           <tr><td>UAT-PRJ04-13</td><td>Phiếu xuất nhà máy ghi 200 m², thủ kho đếm được 180</td><td>Nhập KL chứng từ 200, KL nhập kho 180, để trống biện pháp xử lý rồi Thêm dòng</td><td>Chênh lệch hiện −20; bị chặn kèm “Ghi biện pháp xử lý khi có chênh lệch.”; ghi biện pháp thì thêm được dòng, phiếu mang nhãn “Có chênh lệch”</td></tr>
           <tr><td>UAT-PRJ04-14</td><td>Kho dự án: phiếu nhập 180 m² ghi kho ngày 27/9, phiếu xuất 30 m² giao ngày 27/9, một phiếu nhập 122 m² còn nháp</td><td>Mở Theo dõi kho, chọn 01/09–27/09; rồi chọn 28/09–30/09</td><td>Kỳ 1: Tồn đầu 0 · Nhập 180 · Xuất 30 · Tồn cuối 150, phiếu nháp không tính. Kỳ 2: Tồn đầu 150 · Nhập 0 · Xuất 0 · Tồn cuối 150, vật tư vẫn hiện dòng</td></tr>
+          <tr><td>UAT-PRJ04-15</td><td><code>HN_0001</code> có Bản vẽ sản xuất đợt 1 và Đơn hàng đợt 1 đã duyệt</td><td>Mở Xuất nhập kho dự án</td><td>Trang đầu là danh sách công trình đúng mười cột của biểu mẫu; dòng <code>HN_0001</code> “Đợt 1 · Chuẩn bị nhập 1 phiếu từ nhà máy + 1 phiếu từ cung ứng”</td></tr>
+          <tr><td>UAT-PRJ04-16</td><td>Tiếp UAT-15</td><td>Bấm “Đợt 1” → Phiếu nhập kho từ nhà máy, sửa một dòng lệch, ghi biện pháp, ghi sổ</td><td>Đầu phiếu và dòng lấy lại từ đợt; chỉ dòng lệch phải sửa; kỹ sư phụ trách đợt nhận thông báo kèm chênh lệch — chi tiết <a href="2026-09-29/YC-22.html">UAT-YC22-1…9</a></td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ACC-02.html">ACC-02 hệ thống kho</a><a href="ACC-04.html">ACC-04 duyệt xuất &amp; giá xuất kho</a><a href="ORD-05.html">ORD-05 cấp hàng</a><a href="PRJ-03.html">PRJ-03 khấu trừ VTTB</a><a href="ACC-09.html">ACC-09 sổ chi phí công trình</a></p>
+    <p class="links"><a href="2026-09-29/YC-22.html">YC-22 nhập kho theo đợt</a><a href="ACC-02.html">ACC-02 hệ thống kho</a><a href="ACC-04.html">ACC-04 duyệt xuất &amp; giá xuất kho</a><a href="ORD-05.html">ORD-05 cấp hàng</a><a href="PRJ-03.html">PRJ-03 khấu trừ VTTB</a><a href="ACC-09.html">ACC-09 sổ chi phí công trình</a></p>
   </div>
 </section>
 <div class="filefoot">

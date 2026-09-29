@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-18 Danh mục hồ sơ theo hợp đồng — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 29/09/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Yêu cầu 29/09/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Luồng TQT làm lại</a>
+    <div class="rail-grp">Trang yêu cầu</div>
+    <a class="on" href="YC-18.html"><i>YC-18</i>Danh mục hồ sơ theo hợp đồng</a>
+    <a href="YC-19.html"><i>YC-19</i>Bảng shop nhập tay</a>
+    <a href="YC-20.html"><i>YC-20</i>Thêm bản vẽ thiết kế</a>
+    <a href="YC-21.html"><i>YC-21</i>Kế hoạch theo bản vẽ Shop</a>
+    <a href="YC-22.html"><i>YC-22</i>Nhập kho theo đợt</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-25/index.html"><i>25/09</i>Đối chiếu bản dựng 25/09/2026</a>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Yêu cầu 29/09/2026</a> / P. TQT — Shopdrawing / <b>YC-18</b></div><div class="sp"></div>
+  <div class="pnav"><a href="index.html">Mục lục</a><a href="YC-19.html">YC-19 →</a></div>
+</div>
+<section class="sheet solo" id="YC-18">
+  <header class="tb">
+    <div class="tb-id">YC-18</div>
+    <div class="tb-main">
+      <h3>Danh mục hồ sơ theo hợp đồng</h3>
+      <p>Hợp đồng ký xong đã tự hiện trong danh mục hồ sơ của P. TQT (<a href="../ORD-02.html">ORD-02</a>). Cái thiếu là người mở danh mục <b>không đọc được hợp đồng</b>: không mã HĐ, không ai phụ trách, không biết hợp đồng chạy từ bao giờ tới bao giờ. Sheet <em>Main</em> đòi đúng bảy cột; trang này viết chúng và nói hai cột cũ đi đâu.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Sửa — đổi bộ cột một danh sách</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../ORD-02.html">ORD-02</a></dd></div>
+        <div><dt>Điểm tạm chốt</dt><dd><a href="../PL-C.html#Q-88">Q-88</a> — cán bộ phụ trách chính là ai</dd></div>
+        <div><dt>Nguồn</dt><dd><code>Deploy lại.xlsx</code> · sheet <em>Main</em>, dòng 3</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Đường truy cập</td><td colspan="2">TQT — Shopdrawing › Shopdrawing › Hồ sơ theo dự án</td></tr>
+          <tr><td>Nguyên văn yêu cầu</td><td colspan="2">“Danh mục hồ sơ theo dự án đang có các cột: Trạng thái, Mã dự án, Mã hợp đồng, Tên dự án, Cán bộ phụ trách chính, Ngày bắt đầu hợp đồng, Ngày kết thúc hợp đồng”</td></tr>
+          <tr><td>Cột</td><td>Trạng thái · Mã dự án · Tên dự án · Duyệt nội bộ · Cần rà soát</td><td>Trạng thái · Mã dự án · <b>Mã hợp đồng</b> · Tên dự án · <b>Cán bộ phụ trách chính</b> · <b>Ngày bắt đầu HĐ</b> · <b>Ngày kết thúc HĐ</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Cột</th><th>Mã</th><th>Nguồn</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Trạng thái</td><td class="k">status</td><td>Dự án</td><td>Chữ <em>Đang chạy</em> / <em>Đã đóng</em>. Hai cột cũ <em>Duyệt nội bộ</em>, <em>Cần rà soát</em> bỏ khỏi danh mục — tình trạng bản vẽ đọc ở bảng theo dõi của từng hợp đồng (<a href="YC-19.html">YC-19</a>).</td></tr>
+          <tr><td>Mã dự án</td><td class="k">project.code</td><td><a href="../BID-05.html">BID-05</a></td><td>Như hiện tại.</td></tr>
+          <tr><td>Mã hợp đồng</td><td class="k">contract.code</td><td><a href="../BID-05.html">BID-05</a></td><td>Số hợp đồng của dự án. Dự án chưa gắn hợp đồng hiện “—”.</td></tr>
+          <tr><td>Tên dự án</td><td class="k">project.name</td><td><a href="../BID-05.html">BID-05</a></td><td>Như hiện tại; bấm vào mở hồ sơ Shopdrawing của dự án.</td></tr>
+          <tr><td>Cán bộ phụ trách chính</td><td class="k">project.director</td><td>Thành viên dự án</td><td>Người mang vai trò <em>Giám đốc dự án</em> trong thành viên dự án (<a href="../PL-C.html#Q-88">Q-88</a>). Không có ai thì hiện “Chưa phân công”, chữ nhạt. <b>Không</b> là ô nhập ở màn hình này — đổi người thì đổi ở thành viên dự án.</td></tr>
+          <tr><td>Ngày bắt đầu HĐ · Ngày kết thúc HĐ</td><td class="k">contract.effective_from · effective_to</td><td><a href="../BID-05.html">BID-05</a></td><td>Ngày hiệu lực của hợp đồng, định dạng dd/mm/yyyy.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ bổ sung cho <a href="../ORD-02.html">ORD-02</a></h4>
+    <ol class="br">
+      <li><b>Mọi cột mới đều chỉ đọc.</b> Danh mục là chỗ tìm hồ sơ, không phải chỗ sửa hợp đồng.<span class="then">Sửa mã HĐ hay ngày HĐ ở danh mục TQT là sửa hợp đồng sau lưng P. Đấu thầu — đúng loại dữ liệu hai phòng phải nhìn cùng một bản.</span></li>
+      <li><b>Tìm theo mã HĐ.</b> Ô tìm kiếm tìm cả mã hợp đồng.</li>
+    </ol>
+
+    <h4>Giao diện</h4>
+    <ul>
+      <li>Đúng bảy cột, đúng tên và thứ tự của sheet <em>Main</em> — không thêm cột, không thêm nhãn phụ.</li>
+      <li>Cả dòng bấm được — “Chọn hợp đồng” mở ra bảng theo dõi tình trạng shop của hợp đồng đó (<a href="YC-19.html">YC-19</a>).</li>
+    </ul>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>Mở danh mục là đọc được mã HĐ, người phụ trách chính và khoảng hiệu lực của hợp đồng mà không phải mở hồ sơ.</li>
+          </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC18-1</td><td>Dự án <code>HN_0001</code> có HĐ, GĐ dự án là Nguyễn Văn A</td><td>Mở Hồ sơ theo dự án</td><td>Dòng <code>HN_0001</code> hiện mã HĐ, “Nguyễn Văn A”, đủ hai ngày HĐ</td></tr>
+          <tr><td>UAT-YC18-2</td><td>Dự án chưa có GĐ dự án</td><td>Mở danh mục</td><td>Cột phụ trách hiện “Chưa phân công”</td></tr>
+          <tr><td>UAT-YC18-4</td><td>—</td><td>Gõ mã HĐ vào ô tìm</td><td>Chỉ còn dòng của hợp đồng đó</td></tr>
+          <tr><td>UAT-YC18-3</td><td>—</td><td>Đếm cột</td><td>Đúng bảy cột: Trạng thái · Mã dự án · Mã hợp đồng · Tên dự án · Cán bộ phụ trách chính · Ngày bắt đầu HĐ · Ngày kết thúc HĐ</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../ORD-02.html">ORD-02 bản vẽ Shopdrawing</a><a href="../BID-05.html">BID-05 hợp đồng &amp; khởi tạo dự án</a><a href="../PL-C.html#Q-88">PL-C · Q-88 cán bộ phụ trách chính</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Trang 1 / 5</span><span><code>2026-09-29/YC-18.html</code></span>
+  <span>ABSMS — Yêu cầu 29/09/2026</span>
+  <span>Nguồn: <code>Deploy lại.xlsx · Main dòng 3</code></span>
+</div>
+</main>
+</div>
+</body></html>
