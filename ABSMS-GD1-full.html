@@ -299,6 +299,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <a href="#PRJ-03"><i>PRJ-03</i>Giao khoán nhân công</a>
     <a href="#PRJ-04"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="#PRJ-05"><i>PRJ-05</i>Danh mục tổ đội</a>
+    <a href="#PRJ-06"><i>PRJ-06</i>Timeline dự án</a>
 
     <div class="rail-grp">Phòng Kế toán</div>
     <a href="#ACC-01"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
@@ -333,11 +334,11 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 <header class="masthead">
   <div class="eyebrow">Công ty CP Đá An Bình · Hệ thống ABSMS</div>
   <h1>Đặc tả chức năng<br>Giai đoạn 1</h1>
-  <p class="lede">44 đặc tả chi tiết dựng từ bảng yêu cầu <code>260718_AB_sumary.csv</code>, bám theo bộ khung giao diện mockup <em>ABSMS ERP</em>. Mỗi đặc tả gồm lưu đồ nghiệp vụ, tham số dữ liệu, kết quả mong đợi và mockup màn hình kèm danh mục chức năng.</p>
+  <p class="lede">45 đặc tả chi tiết dựng từ bảng yêu cầu <code>260718_AB_sumary.csv</code>, bám theo bộ khung giao diện mockup <em>ABSMS ERP</em>. Mỗi đặc tả gồm lưu đồ nghiệp vụ, tham số dữ liệu, kết quả mong đợi và mockup màn hình kèm danh mục chức năng.</p>
   <dl class="stamp">
     <div><dt>Nguồn yêu cầu</dt><dd>260718_AB_sumary.csv</dd></div>
     <div><dt>Khung giao diện</dt><dd>ABSMS ERP mockup</dd></div>
-    <div><dt>Số đặc tả</dt><dd>43 + 4 phụ lục</dd></div>
+    <div><dt>Số đặc tả</dt><dd>45 + 4 phụ lục</dd></div>
     <div><dt>Phạm vi</dt><dd>Giai đoạn 1</dd></div>
     <div><dt>Phiên bản</dt><dd>Bản thảo 1.0</dd></div>
   </dl>
@@ -345,7 +346,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 <section class="block" id="muc-tieu">
   <h2><em>§0.1</em>Mục tiêu &amp; phạm vi giai đoạn 1</h2>
   <div class="intro">
-    <p>Bảng yêu cầu đặt bốn mục tiêu cốt lõi cho GĐ1. Toàn bộ 44 đặc tả trong tài liệu này tồn tại để phục vụ một trong bốn mục tiêu đó — không có chức năng nào nằm ngoài.</p>
+    <p>Bảng yêu cầu đặt bốn mục tiêu cốt lõi cho GĐ1. Toàn bộ 45 đặc tả trong tài liệu này tồn tại để phục vụ một trong bốn mục tiêu đó — không có chức năng nào nằm ngoài.</p>
   </div>
   <div class="tw">
     <table>
@@ -595,7 +596,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr><td>Tổng quan</td><td>Dashboard điều hành</td><td><span class="tag t-ok">Giữ nguyên khung</span></td><td><a href="#RPT-04">RPT-04</a></td></tr>
         <tr><td>Bán hàng</td><td>Danh sách + chi tiết đơn</td><td><span class="tag t-warn">Thu hẹp — chỉ áp giá &amp; ghi nhận</span></td><td><a href="#BID-06">BID-06</a></td></tr>
         <tr><td>Phê duyệt</td><td>Trung tâm phê duyệt đa cấp</td><td><span class="tag t-crit">Mở rộng mạnh — 8 nhóm chứng từ</span></td><td><a href="#PF-03">PF-03</a></td></tr>
-        <tr><td>Công trình</td><td>Danh sách + chi tiết 4 tab</td><td><span class="tag t-crit">Mở rộng — thêm BOQ, tổ đội, sản lượng</span></td><td><a href="#BID-05">BID-05</a>, <a href="#PRJ-02">PRJ-02</a></td></tr>
+        <tr><td>Công trình</td><td>Danh sách + chi tiết 4 tab</td><td><span class="tag t-crit">Mở rộng — thêm BOQ, tổ đội, sản lượng</span></td><td><a href="#BID-05">BID-05</a>, <a href="#PRJ-02">PRJ-02</a>, <a href="#PRJ-06">PRJ-06</a></td></tr>
         <tr><td>Kho &amp; tồn kho</td><td>Tồn kho + lịch sử XNK</td><td><span class="tag t-crit">Mở rộng — 3 nhóm kho, giá xuất kho</span></td><td><a href="#ACC-02">ACC-02</a>, <a href="#ACC-04">ACC-04</a></td></tr>
         <tr><td>Tài sản</td><td>Danh sách + hồ sơ tài sản</td><td><span class="tag t-warn">Bổ sung khấu hao &amp; điều chuyển</span></td><td><a href="#ACC-06">ACC-06</a></td></tr>
         <tr><td>Công nợ</td><td>Tuổi nợ phải thu / phải trả</td><td><span class="tag t-warn">Bổ sung đề nghị thanh toán</span></td><td><a href="#ACC-05">ACC-05</a></td></tr>
@@ -657,13 +658,14 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr><td class="k">Theo dõi tiến độ</td><td>File Excel theo dõi thủ công từng hợp đồng — quyết toán, hoá đơn, bảo hành, công nợ</td><td class="k"><a href="#RPT-05">RPT-05</a></td></tr>
         <tr><td class="k">15/09 · YC-02</td><td>Đơn giá chuẩn nhân công theo vùng miền &amp; kỳ hiệu lực — bổ sung đợt 15/09/2026</td><td class="k"><a href="#PF-06">PF-06</a></td></tr>
         <tr><td class="k">15/09 · YC-09</td><td>Danh sách cắt đá đi kèm phiếu yêu cầu sản xuất — biểu mẫu <code>BM/QLTC/DSCĐ</code></td><td class="k"><a href="#ORD-11">ORD-11</a></td></tr>
+        <tr><td class="k">01/10 · Thi công</td><td>Timeline dự án — chọn dự án là thấy cả vòng đời kinh doanh trên một đường mảnh bảy mốc, mỗi mốc dẫn tới màn hình của giai đoạn</td><td class="k"><a href="#PRJ-06">PRJ-06</a></td></tr>
       </tbody>
     </table>
   </div>
 </section>
 <section class="block" id="quy-uoc">
   <h2><em>§0.4</em>Quy ước đọc một đặc tả</h2>
-  <p class="intro">Mỗi đặc tả là một “bản vẽ” có khung tên. Bảy khối nội dung lặp lại giống nhau ở cả 44 đặc tả:</p>
+  <p class="intro">Mỗi đặc tả là một “bản vẽ” có khung tên. Bảy khối nội dung lặp lại giống nhau ở cả 45 đặc tả:</p>
   <div class="tw">
     <table>
       <thead><tr><th style="width:190px">Khối</th><th>Nội dung</th></tr></thead>
@@ -9885,7 +9887,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-05">BID-05 BOQ hợp đồng</a><a href="#PRJ-01">PRJ-01 giá khoán</a><a href="#PRJ-03">PRJ-03 giao khoán nhân công</a><a href="#ORD-09">ORD-09 hồ sơ thanh toán khối lượng</a><a href="#ACC-09">ACC-09 kết chuyển chi phí</a><a href="#MOB-01">MOB-01 nhập từ hiện trường</a></p>
+    <p class="links"><a href="#BID-05">BID-05 BOQ hợp đồng</a><a href="#PRJ-01">PRJ-01 giá khoán</a><a href="#PRJ-03">PRJ-03 giao khoán nhân công</a><a href="#ORD-09">ORD-09 hồ sơ thanh toán khối lượng</a><a href="#ACC-09">ACC-09 kết chuyển chi phí</a><a href="#MOB-01">MOB-01 nhập từ hiện trường</a><a href="#PRJ-06">PRJ-06 timeline dự án</a></p>
   </div>
 </section>
 <section class="sheet" id="PRJ-03">
@@ -10851,6 +10853,202 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
     <h4>Liên kết</h4>
     <p class="links"><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#PRJ-02">PRJ-02 sản lượng thi công</a><a href="#PRJ-03">PRJ-03 giao khoán nhân công</a><a href="#PF-01">PF-01 danh mục nền</a></p>
+  </div>
+</section>
+<section class="sheet" id="PRJ-06">
+  <header class="tb">
+    <div class="tb-id">PRJ-06</div>
+    <div class="tb-main">
+      <h3>Timeline dự án</h3>
+      <p>Chọn một dự án là thấy ngay dự án đang ở đâu trong cả vòng đời kinh doanh: một đường mảnh nằm ngang với bảy mốc cố định, từ đấu thầu tới hết bảo hành. Màn hình không có ô nhập nào — mọi mốc đều đọc từ chứng từ đã có ở các phân hệ khác, và mỗi mốc là một lối tắt sang đúng màn hình đang giữ số liệu của giai đoạn đó.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Hệ thống tự tổng hợp · mọi người được xem dự án</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Không (chỉ đọc)</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Theo phạm vi dự án của người xem (<a href="#PF-02">PF-02</a>)</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>Bổ sung 01/10/2026 · Thi công</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Hôm nay muốn biết một dự án “đang tới đâu” thì phải mở lần lượt gói thầu, hợp đồng, bảng theo dõi shop, đơn hàng, sản lượng, hồ sơ thanh toán rồi tự ghép lại trong đầu. Màn hình này ghép sẵn: một trang thuộc nhóm Thi công, trên cùng là ô <b>chọn dự án</b>, ngay dưới là một <b>đường thời gian mảnh chạy hết bề ngang</b> với <b>bảy mốc theo thứ tự cố định</b> — không phải biểu đồ Gantt co giãn theo ngày. Mỗi mốc mang một trong ba trạng thái <em>Chưa bắt đầu ○</em> · <em>Đang thực hiện ◉</em> · <em>Hoàn thành ●</em>. Các giai đoạn được phép chồng lên nhau, nên nhiều mốc có thể cùng “đang thực hiện” — đúng như thực tế: shop chưa duyệt hết thì đơn hàng đầu tiên đã đi, sản lượng đã chốt đợt thì hồ sơ thanh toán đã lập. Mỗi dòng ở danh sách công trình dẫn thẳng tới trang này với dự án đã chọn sẵn.</p>
+
+    <h4>Lưu đồ</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:820px;margin:0 auto"><svg role="img" aria-label="Hình PRJ-06.1 Bảy mốc trên một đường mảnh, thứ tự cố định. Đấu thầu, Hợp đồng, Shop drawing đã hoàn thành; Đặt hàng, Thi công, Nghiệm thu đang chạy song song; Bảo hành chưa bắt đầu. Rê chuột lên mốc hiện tóm tắt, bấm mốc mở màn hình của giai đoạn đó."
+ viewBox="0.00 0.00 820.00 262.00" xmlns="http://www.w3.org/2000/svg">
+<title>PRJ-06 timeline</title>
+<g id="legend">
+<circle cx="24" cy="18" r="5" fill="#55606b" stroke="#3f4a54"/>
+<text x="34" y="22" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Hoàn thành</text>
+<circle cx="116" cy="18" r="5" fill="#eef2f5" stroke="#3f4a54" stroke-width="1.5"/>
+<circle cx="116" cy="18" r="2" fill="#3f4a54"/>
+<text x="126" y="22" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đang thực hiện</text>
+<circle cx="230" cy="18" r="5" fill="#eef2f5" stroke="#7c8792"/>
+<text x="240" y="22" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Chưa bắt đầu</text>
+<text x="796" y="22" text-anchor="end" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">DA-2026-014 · xem ngày 01/10/2026</text>
+</g>
+<line x1="60" y1="104" x2="756" y2="104" stroke="#55606b" stroke-width="1.5"/>
+<g id="n1" class="node">
+<text text-anchor="middle" x="60" y="66" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">1</text>
+<text text-anchor="middle" x="60" y="84" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đấu thầu</text>
+<circle cx="60" cy="104" r="9" fill="#55606b" stroke="#3f4a54"/>
+<text text-anchor="middle" x="60" y="132" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Hoàn thành</text>
+<text text-anchor="middle" x="60" y="147" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">03/02 → 28/04</text>
+</g>
+<g id="n2" class="node">
+<text text-anchor="middle" x="176" y="66" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">2</text>
+<text text-anchor="middle" x="176" y="84" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hợp đồng</text>
+<circle cx="176" cy="104" r="9" fill="#55606b" stroke="#3f4a54"/>
+<text text-anchor="middle" x="176" y="132" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Hoàn thành</text>
+<text text-anchor="middle" x="176" y="147" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">ký 28/04</text>
+</g>
+<g id="n3" class="node">
+<text text-anchor="middle" x="292" y="66" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">3</text>
+<text text-anchor="middle" x="292" y="84" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Shop drawing</text>
+<circle cx="292" cy="104" r="9" fill="#55606b" stroke="#3f4a54"/>
+<text text-anchor="middle" x="292" y="132" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Hoàn thành</text>
+<text text-anchor="middle" x="292" y="147" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">05/05 → 30/07</text>
+</g>
+<g id="n4" class="node">
+<text text-anchor="middle" x="408" y="50" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">4</text>
+<text text-anchor="middle" x="408" y="68" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đặt hàng &amp;</text>
+<text text-anchor="middle" x="408" y="84" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">cung ứng</text>
+<circle cx="408" cy="104" r="9" fill="#eef2f5" stroke="#3f4a54" stroke-width="1.5"/>
+<circle cx="408" cy="104" r="4" fill="#3f4a54"/>
+<text text-anchor="middle" x="408" y="132" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đang thực hiện</text>
+<text text-anchor="middle" x="408" y="147" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">12/05 → …</text>
+</g>
+<g id="n5" class="node">
+<text text-anchor="middle" x="524" y="66" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">5</text>
+<text text-anchor="middle" x="524" y="84" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Thi công</text>
+<circle cx="524" cy="104" r="9" fill="#eef2f5" stroke="#3f4a54" stroke-width="1.5"/>
+<circle cx="524" cy="104" r="4" fill="#3f4a54"/>
+<text text-anchor="middle" x="524" y="132" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đang thực hiện</text>
+<text text-anchor="middle" x="524" y="147" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">01/06 → …</text>
+</g>
+<g id="n6" class="node">
+<text text-anchor="middle" x="640" y="50" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">6</text>
+<text text-anchor="middle" x="640" y="68" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nghiệm thu &amp;</text>
+<text text-anchor="middle" x="640" y="84" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">thanh toán</text>
+<circle cx="640" cy="104" r="9" fill="#eef2f5" stroke="#3f4a54" stroke-width="1.5"/>
+<circle cx="640" cy="104" r="4" fill="#3f4a54"/>
+<text text-anchor="middle" x="640" y="132" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đang thực hiện</text>
+<text text-anchor="middle" x="640" y="147" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">15/07 → …</text>
+</g>
+<g id="n7" class="node">
+<text text-anchor="middle" x="756" y="66" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">7</text>
+<text text-anchor="middle" x="756" y="84" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Bảo hành</text>
+<circle cx="756" cy="104" r="9" fill="#eef2f5" stroke="#7c8792"/>
+<text text-anchor="middle" x="756" y="132" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Chưa bắt đầu</text>
+<text text-anchor="middle" x="756" y="147" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">—</text>
+</g>
+<g id="tooltip">
+<line x1="524" y1="154" x2="524" y2="172" stroke="#55606b" stroke-dasharray="5,2"/>
+<polygon fill="#dde3e9" stroke="#5d6b7a" points="404,172 644,172 644,248 404,248 404,172"/>
+<text x="416" y="192" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Thi công — Đang thực hiện</text>
+<text x="416" y="209" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">01/06/2026 → —</text>
+<text x="416" y="225" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Sản lượng 62% · 4 tổ đội đang làm</text>
+<text x="416" y="241" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Bấm để mở PRJ&#45;02 của dự án</text>
+</g>
+<text x="60" y="190" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Rê chuột lên mốc: tên · trạng thái · ngày</text>
+<text x="60" y="206" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">bắt đầu → kết thúc · 1–2 con số tóm tắt.</text>
+<text x="60" y="226" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Bấm mốc: mở màn hình của giai đoạn,</text>
+<text x="60" y="242" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">đã lọc sẵn theo dự án.</text>
+</svg></div><figcaption><b>Hình PRJ-06.1</b> Bảy mốc trên một đường mảnh, thứ tự cố định. Ba giai đoạn đầu đã xong; đặt hàng, thi công và nghiệm thu đang chạy song song; bảo hành chưa bắt đầu. Rê chuột lên mốc hiện tóm tắt, bấm mốc mở đúng màn hình của giai đoạn đó.</figcaption></figure>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Ô duy nhất người dùng chọn. Chỉ liệt kê dự án trong phạm vi được xem (<a href="#PF-02">PF-02</a>). Mở từ danh sách công trình thì đã chọn sẵn; dự án đang xem nằm trong địa chỉ trang để gửi đường dẫn cho người khác.</td></tr>
+          <tr><td>Giai đoạn</td><td class="k">phase</td><td>Cố định</td><td class="c">—</td><td>Bảy mốc, thứ tự không đổi: <code>đấu thầu</code> · <code>hợp đồng</code> · <code>shop drawing</code> · <code>đặt hàng &amp; cung ứng</code> · <code>thi công</code> · <code>nghiệm thu &amp; thanh toán</code> · <code>bảo hành</code>. Không thêm, không bớt, không sắp lại.</td></tr>
+          <tr><td>Trạng thái</td><td class="k">phase_state</td><td>Chọn 1</td><td class="c">—</td><td>Hệ thống tính: <code>chưa bắt đầu</code> ○ · <code>đang thực hiện</code> ◉ · <code>hoàn thành</code> ●. Điều kiện của từng giai đoạn ở bảng ngay dưới.</td></tr>
+          <tr><td>Ngày bắt đầu</td><td class="k">started_on</td><td>Ngày</td><td class="c">—</td><td>Ngày của chứng từ mở đầu giai đoạn. Trống khi chưa bắt đầu.</td></tr>
+          <tr><td>Ngày kết thúc</td><td class="k">finished_on</td><td>Ngày</td><td class="c">—</td><td>Ngày của chứng từ cuối cùng làm giai đoạn hoàn thành. Trống khi chưa xong — và <b>luôn trống ở Thi công</b>, vì dữ liệu chưa ghi nhận ngày hoàn thành thi công (<a href="#Q-90">Q-90</a>).</td></tr>
+          <tr><td>Tóm tắt</td><td class="k">summary[]</td><td>Chuỗi</td><td class="c">—</td><td>Một đến hai con số của giai đoạn, hiện trong khung gợi ý khi rê chuột.</td></tr>
+          <tr><td>Đích khi bấm</td><td class="k">target</td><td>Liên kết</td><td class="c">—</td><td>Màn hình của giai đoạn, mở kèm bộ lọc dự án đang xem.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="c">#</th><th>Giai đoạn</th><th>Bắt đầu khi</th><th>Hoàn thành khi</th><th>Tóm tắt khi rê chuột</th><th>Bấm mở</th></tr></thead>
+        <tbody>
+          <tr><td class="c">1</td><td><b>Đấu thầu</b></td><td>Ngày nhận hồ sơ mời thầu (<code>received_at</code>, <a href="#BID-01">BID-01</a>)</td><td>Ngày ký hợp đồng (<code>signed_at</code>, <a href="#BID-05">BID-05</a>)</td><td>Số vòng báo giá (<a href="#BID-03">BID-03</a>) · giá chào trúng</td><td>Hồ sơ gói thầu của dự án — <a href="#BID-01">BID-01</a></td></tr>
+          <tr><td class="c">2</td><td><b>Hợp đồng</b></td><td>Một mốc: ngày ký</td><td>Cùng ngày ký — giai đoạn chỉ có một ngày</td><td>Giá trị hợp đồng sau VAT</td><td>Tab Hợp đồng của gói thầu — <a href="#BID-05">BID-05</a></td></tr>
+          <tr><td class="c">3</td><td><b>Shop drawing</b></td><td>Ngày nhận hồ sơ thiết kế / bản vẽ đầu tiên</td><td>Mọi hạng mục shop của dự án đã duyệt</td><td>{x}/{y} hạng mục đã duyệt</td><td>Bảng theo dõi thiết kế — <a href="#ORD-02">ORD-02</a></td></tr>
+          <tr><td class="c">4</td><td><b>Đặt hàng &amp; cung ứng</b></td><td>Đơn đầu tiên gửi duyệt</td><td>Mọi đơn hợp lệ ở <em>Hoàn thành</em> — không tính Nháp, Đã hủy, Từ chối (<a href="#PL-A">PL-A</a>)</td><td>{x}/{y} đơn hoàn thành</td><td>Kế hoạch &amp; đơn hàng theo dự án — <a href="#ORD-03">ORD-03</a></td></tr>
+          <tr><td class="c">5</td><td><b>Thi công</b></td><td>Ngày tổ đội đầu tiên được giao vào dự án (<a href="#PRJ-05">PRJ-05</a>)</td><td>Sản lượng lũy kế đã xác nhận đạt 100%. <b>Không có ngày hoàn thành</b></td><td>% sản lượng · số tổ đội đang làm</td><td>Sản lượng thi công của dự án — <a href="#PRJ-02">PRJ-02</a></td></tr>
+          <tr><td class="c">6</td><td><b>Nghiệm thu &amp; thanh toán</b></td><td>Đợt nghiệm thu đầu tiên</td><td>Mọi hồ sơ thanh toán khối lượng ở <em>Đã thanh toán</em> (đã thu tiền / đóng)</td><td>{x}/{y} đợt đã nghiệm thu · số tiền đã thu</td><td>Danh sách hồ sơ thanh toán của dự án — <a href="#ORD-09">ORD-09</a></td></tr>
+          <tr><td class="c">7</td><td><b>Bảo hành</b></td><td>Mốc bắt đầu bảo hành theo hợp đồng (<code>warranty_from</code>)</td><td>Đã qua ngày hết bảo hành = mốc bắt đầu + <code>warranty_months</code></td><td>Ngày hết bảo hành · số tháng còn lại</td><td>Theo dõi thanh toán của dự án — <a href="#RPT-05">RPT-05</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Mọi mốc đều suy ra từ chứng từ đã có.</b> Màn hình không có ô nhập, không có ngày kế hoạch, không có nút sửa trạng thái.<span class="then">Một ô “đánh dấu đã xong” trên timeline là con số thứ hai cho cùng một sự việc — và hai con số thì sớm muộn sẽ lệch nhau. Muốn mốc đổi thì đổi chứng từ gốc ở màn hình của giai đoạn đó.</span></li>
+      <li><b>Tính lại mỗi lần xem.</b> Trạng thái, ngày và con số tóm tắt được tính tại thời điểm mở trang, không lưu lại.<span class="then">Không có “bản chụp timeline” nào để cũ đi. Chứng từ vừa duyệt ở màn hình khác thì tải lại trang là thấy.</span></li>
+      <li><b>Thứ tự bảy mốc là cố định, khoảng cách đều nhau.</b> Đường thời gian không co giãn theo ngày.<span class="then">Dự án ba tháng và dự án ba năm trông giống nhau về hình — điều người xem cần là “đang ở mốc nào”, không phải độ dài từng khúc. Ngày cụ thể nằm trong khung gợi ý.</span></li>
+      <li><b>Giai đoạn được phép chồng nhau.</b> Mỗi mốc tính trạng thái độc lập theo chứng từ của riêng nó; không mốc nào phải chờ mốc trước hoàn thành.<span class="then">Vì vậy nhiều mốc có thể cùng ◉. Một mốc sau đã bắt đầu trong khi mốc trước chưa — ví dụ đơn hàng đầu tiên đi trước khi shop duyệt hết — là chuyện bình thường, không cảnh báo.</span></li>
+      <li><b>Ba trạng thái, một luật chung.</b> Chưa có chứng từ mở đầu → <em>Chưa bắt đầu</em>; có chứng từ mở đầu nhưng chưa đạt điều kiện hoàn thành → <em>Đang thực hiện</em>; đạt điều kiện → <em>Hoàn thành</em>.<span class="then">Hoàn thành không khóa giai đoạn: chứng từ mới phát sinh sau đó (thêm một đơn hàng, thêm một hạng mục shop) đưa mốc về Đang thực hiện ở lần xem kế tiếp — đúng với thực tế của dự án.</span></li>
+      <li><b>Chứng từ không hợp lệ không được đếm.</b> Đơn hàng Nháp, Đã hủy, Từ chối không tính vào mẫu số {y} và không mở giai đoạn; trạng thái theo đúng sổ <a href="#PL-A">PL-A</a>.<span class="then">Một đơn nháp lập thử không làm giai đoạn Đặt hàng “bắt đầu”; một đơn đã hủy không giữ giai đoạn mãi ở Đang thực hiện.</span></li>
+      <li><b>Thi công hoàn thành không có ngày kết thúc.</b> Mốc Thi công chuyển ● khi sản lượng lũy kế đã xác nhận ở <a href="#PRJ-02">PRJ-02</a> đạt 100% khối lượng hợp đồng, nhưng ô ngày kết thúc để “—”.<span class="then">Dữ liệu hiện chỉ biết sản lượng, không ghi ngày hoàn thành thi công. Không suy ngày từ ngày chốt đợt cuối — đó là ngày giấy tờ, không phải ngày xong việc. Câu hỏi đã đưa vào <a href="#Q-90">Q-90</a>.</span></li>
+      <li><b>Bảo hành tính từ hợp đồng.</b> Bắt đầu từ mốc <code>warranty_from</code> đã khai ở hợp đồng (<a href="#BID-05">BID-05</a>), kết thúc ở ngày hết bảo hành mà <a href="#RPT-05">RPT-05</a> đã tính bằng mốc đó cộng số tháng bảo hành.<span class="then">Mốc bắt đầu chưa xảy ra thì giai đoạn là Chưa bắt đầu; hợp đồng không có bảo hành (0 tháng) thì ngày hết bảo hành trùng ngày bắt đầu — giai đoạn hoàn thành ngay khi mốc bắt đầu đã qua.</span></li>
+      <li><b>Bấm mốc là mở màn hình của giai đoạn, đã lọc theo dự án.</b> Mốc nào cũng bấm được, kể cả mốc ○.<span class="then">Mốc chưa bắt đầu dẫn tới đúng chỗ lập chứng từ đầu tiên của giai đoạn — timeline vừa là bản đồ, vừa là lối vào. Quyền trên màn hình đích vẫn theo <a href="#PF-02">PF-02</a>: người chỉ có quyền xem thì tới nơi chỉ xem được.</span></li>
+      <li><b>Danh sách công trình dẫn tới timeline.</b> Mỗi dòng ở danh sách công trình có lối mở trang này với dự án đã chọn sẵn.<span class="then">Không thêm cột trạng thái giai đoạn vào danh sách — một chỗ duy nhất trả lời câu “dự án đang ở đâu”.</span></li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Chưa chọn dự án</td><td><code>project_id</code> rỗng</td><td>“Chọn một dự án để xem timeline.”</td></tr>
+          <tr><td>Không tìm thấy dự án</td><td>Mã trong địa chỉ trang không khớp dự án nào</td><td>“Không tìm thấy dự án {mã}. Chọn lại dự án ở ô phía trên.”</td></tr>
+          <tr><td>Không có quyền xem dự án</td><td>Dự án ngoài phạm vi dữ liệu của người xem</td><td>“Bạn không có quyền xem dự án {mã}. Liên hệ {người phụ trách} nếu cần.”</td></tr>
+          <tr><td>Giai đoạn chưa có dữ liệu</td><td>Không có chứng từ hợp lệ nào của giai đoạn</td><td>Khung gợi ý: “{Giai đoạn} — Chưa bắt đầu. Chưa có dữ liệu.”</td></tr>
+          <tr><td>Thi công đạt 100%</td><td>Sản lượng lũy kế đã xác nhận ≥ 100%</td><td>Khung gợi ý: “Thi công — Hoàn thành. {ngày bắt đầu} → —. Chưa ghi nhận ngày hoàn thành.”</td></tr>
+          <tr><td>Hợp đồng không có bảo hành</td><td><code>warranty_months = 0</code></td><td>Khung gợi ý hiện ngày bắt đầu = ngày kết thúc; mốc thành ● khi ngày đó đã qua.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Chọn dự án là đường thời gian hiện ngay với đủ bảy mốc, đúng thứ tự, mỗi mốc đúng một trong ba trạng thái.</li>
+      <li>Nhiều mốc có thể cùng Đang thực hiện; không mốc nào bị chặn vì mốc trước chưa xong.</li>
+      <li>Rê chuột lên mốc hiện tên, trạng thái, ngày bắt đầu → kết thúc và một đến hai con số tóm tắt; giai đoạn chưa có chứng từ hiện “Chưa có dữ liệu”.</li>
+      <li>Bấm bất kỳ mốc nào — kể cả mốc chưa bắt đầu — mở đúng màn hình của giai đoạn, đã lọc theo dự án.</li>
+      <li>Không có ô nhập, nút sửa hay ngày kế hoạch nào trên trang.</li>
+      <li>Chứng từ vừa đổi ở màn hình khác thì lần xem kế tiếp phản ánh ngay — không có số liệu cũ.</li>
+      <li>Thi công đạt 100% hiện Hoàn thành mà không có ngày kết thúc.</li>
+      <li>Từ danh sách công trình mở được timeline của từng dự án bằng một cú bấm.</li>
+    </ol>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-PRJ06-1</td><td>Dự án vừa khởi tạo từ hợp đồng ký ở <a href="#BID-05">BID-05</a>, chưa có chứng từ nào khác</td><td>Mở timeline của dự án</td><td>Đấu thầu ● và Hợp đồng ● (cùng ngày ký); năm mốc còn lại ○, rê chuột lên mốc nào cũng hiện “Chưa có dữ liệu”</td></tr>
+          <tr><td>UAT-PRJ06-2</td><td>Shop duyệt 8/12 hạng mục, 3 đơn đã gửi duyệt, sản lượng đã ghi ở đợt 1</td><td>Mở timeline</td><td>Shop drawing, Đặt hàng &amp; cung ứng và Thi công cùng ◉; khung gợi ý Shop hiện “8/12 hạng mục đã duyệt”</td></tr>
+          <tr><td>UAT-PRJ06-3</td><td>Sản lượng lũy kế đã xác nhận đạt 100% ở <a href="#PRJ-02">PRJ-02</a></td><td>Rê chuột lên mốc Thi công</td><td>Mốc ●; khung gợi ý có ngày bắt đầu, ngày kết thúc để “—” kèm “Chưa ghi nhận ngày hoàn thành”</td></tr>
+          <tr><td>UAT-PRJ06-4</td><td>Hợp đồng bảo hành 12 tháng tính từ nghiệm thu hoàn thành 15/08/2025; hôm nay 01/10/2026</td><td>Mở timeline</td><td>Bảo hành ●, khung gợi ý hiện 15/08/2025 → 15/08/2026</td></tr>
+          <tr><td>UAT-PRJ06-5</td><td>Dự án có 4 đơn: 2 Hoàn thành, 1 Nháp, 1 Đã hủy</td><td>Rê chuột lên mốc Đặt hàng &amp; cung ứng</td><td>Mốc ● với “2/2 đơn hoàn thành” — đơn nháp và đơn hủy không vào mẫu số</td></tr>
+          <tr><td>UAT-PRJ06-6</td><td>Tiếp UAT-5</td><td>Lập và gửi duyệt đơn thứ năm ở <a href="#ORD-03">ORD-03</a>, quay lại timeline</td><td>Mốc chuyển ◉ với “2/3 đơn hoàn thành”, không cần thao tác nào trên timeline</td></tr>
+          <tr><td>UAT-PRJ06-7</td><td>Dự án DA-2026-014</td><td>Lần lượt bấm từng mốc 1 → 7</td><td>Mở đúng <a href="#BID-01">BID-01</a> · <a href="#BID-05">BID-05</a> tab Hợp đồng · <a href="#ORD-02">ORD-02</a> · <a href="#ORD-03">ORD-03</a> · <a href="#PRJ-02">PRJ-02</a> · <a href="#ORD-09">ORD-09</a> · <a href="#RPT-05">RPT-05</a>, mỗi màn hình đã lọc theo DA-2026-014</td></tr>
+          <tr><td>UAT-PRJ06-8</td><td>Mốc Nghiệm thu &amp; thanh toán ○</td><td>Bấm mốc</td><td>Mở danh sách hồ sơ thanh toán của dự án ở trạng thái trống, nút lập hồ sơ đầu tiên dùng được (nếu có quyền)</td></tr>
+          <tr><td>UAT-PRJ06-9</td><td>Đang xem DA-2026-014</td><td>Đổi sang DA-2026-021 ở ô chọn dự án</td><td>Đường thời gian vẽ lại theo dự án mới; địa chỉ trang đổi theo, gửi đường dẫn cho người khác mở ra đúng dự án đó</td></tr>
+          <tr><td>UAT-PRJ06-10</td><td>Người xem không thuộc phạm vi dự án DA-2026-030</td><td>Mở đường dẫn timeline của DA-2026-030</td><td>Không hiện đường thời gian; thông điệp “Bạn không có quyền xem dự án DA-2026-030…”</td></tr>
+          <tr><td>UAT-PRJ06-11</td><td>Danh sách công trình có DA-2026-014</td><td>Bấm vào dòng DA-2026-014</td><td>Mở timeline với DA-2026-014 đã chọn sẵn</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="#BID-01">BID-01 hồ sơ gói thầu</a><a href="#BID-03">BID-03 vòng báo giá</a><a href="#BID-05">BID-05 hợp đồng &amp; khởi tạo dự án</a><a href="#ORD-02">ORD-02 bảng theo dõi thiết kế</a><a href="#ORD-03">ORD-03 kế hoạch &amp; đơn hàng</a><a href="#ORD-05">ORD-05 cấp hàng theo đợt</a><a href="#PRJ-02">PRJ-02 sản lượng thi công</a><a href="#ORD-09">ORD-09 hồ sơ thanh toán khối lượng</a><a href="#RPT-05">RPT-05 theo dõi thanh toán &amp; bảo hành</a><a href="#Q-90">Q-90 ngày hoàn thành thi công</a></p>
   </div>
 </section>
 <section class="block" id="grp-acc">
@@ -16250,6 +16448,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr id="Q-87"><td class="k">Q-87</td><td><b>Danh sách công trình ở kho dự án</b> — biểu mẫu có Kế hoạch nhập kho “n đợt”, Đang thực hiện “Đợt k / Tạm dừng / Chưa thực hiện”, Hiện trạng, Lũy kế đợt, Cán bộ nhận hàng, Ghi chú 2 – 4 nhưng không nói cột nào tính, cột nào nhập</td><td><b>Tạm chốt 29/09/2026:</b> giữ đủ mười cột như biểu mẫu; Kế hoạch nhập kho, Đang thực hiện, Hiện trạng, Lũy kế đợt tự tính từ đợt Bản vẽ sản xuất / Đơn hàng và phiếu nhập gắn đợt; “Tạm dừng” chọn tay ngay trong ô; Cán bộ nhận hàng và ba cột ghi chú nhập tay. Xem <a href="2026-09-29/YC-22.html">YC-22</a></td><td class="c">Chỉ huy trưởng · P. TQT</td><td class="c"><a href="#PRJ-04">PRJ-04</a></td></tr>
         <tr id="Q-88"><td class="k">Q-88</td><td><b>“Cán bộ phụ trách chính” của dự án</b> — cột mới của danh sách hồ sơ theo dự án; dự án chưa có trường người phụ trách chính</td><td><b>Tạm chốt 29/09/2026:</b> người mang vai trò <em>Giám đốc dự án</em> trong thành viên dự án; không thêm trường mới. Xem <a href="2026-09-29/YC-18.html">YC-18</a></td><td class="c">P. TQT</td><td class="c"><a href="#ORD-02">ORD-02</a></td></tr>
         <tr id="Q-89"><td class="k">Q-89</td><td><b>Kế hoạch khi chọn nhiều bản vẽ shop; số vật tư mỗi đầu việc</b> — sheet <em>Banve</em> thêm Mã vật tư, Tên vật tư vào bảng kế hoạch, trong khi quy cách BOQ thường pha nhiều loại đá theo tỷ lệ</td><td><b>Tạm chốt 29/09/2026:</b> kế hoạch lưu theo đầu việc, gộp mọi bản vẽ đã chọn; mỗi dòng một vật tư chính, tỷ lệ pha màu ở lại trong Quy cách. Nhà máy cần tách theo loại đá thì tách ở dòng đợt. Xem <a href="2026-09-29/YC-21.html">YC-21</a></td><td class="c">P. TQT · Nhà máy</td><td class="c"><a href="#ORD-03">ORD-03</a></td></tr>
+        <tr id="Q-90"><td class="k">Q-90</td><td><b>Ngày hoàn thành thi công thực tế</b> — có cần ghi nhận ngày hoàn thành thi công thực tế (hiện chỉ biết sản lượng 100%, không có ngày) để timeline <a href="#PRJ-06">PRJ-06</a> hiện ngày kết thúc giai đoạn Thi công?</td><td><b>Tạm định 01/10/2026:</b> mốc Thi công chuyển Hoàn thành khi sản lượng lũy kế đã xác nhận ở <a href="#PRJ-02">PRJ-02</a> đạt 100%, ngày kết thúc để trống. Không suy từ ngày chốt đợt cuối — đó là ngày giấy tờ, không phải ngày xong việc. Nếu cần ngày thật, phương án gọn nhất là một mốc “Hoàn thành thi công” do chỉ huy trưởng xác nhận cùng lần xác nhận đợt cuối ở <a href="#PRJ-02">PRJ-02</a></td><td class="c">Ban Dự án</td><td class="c"><a href="#PRJ-06">PRJ-06</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -16414,7 +16613,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 <section class="block" id="ket">
   <h2><em>Kết</em>Phạm vi tài liệu</h2>
   <div class="intro">
-    <p>Tài liệu này bao phủ toàn bộ 31 dòng yêu cầu của <code>260718_AB_sumary.csv</code>, chuyển thành 44 đặc tả và 4 phụ lục. Mỗi đặc tả có lưu đồ nghiệp vụ kèm nhánh ngoại lệ, bảng tham số ở mức trường dữ liệu, danh sách kết quả mong đợi dùng được làm kịch bản nghiệm thu, và mockup màn hình bám theo hệ giao diện của bản mockup ABSMS ERP.</p>
+    <p>Tài liệu này bao phủ toàn bộ 31 dòng yêu cầu của <code>260718_AB_sumary.csv</code>, chuyển thành 45 đặc tả và 4 phụ lục. Mỗi đặc tả có lưu đồ nghiệp vụ kèm nhánh ngoại lệ, bảng tham số ở mức trường dữ liệu, danh sách kết quả mong đợi dùng được làm kịch bản nghiệm thu, và mockup màn hình bám theo hệ giao diện của bản mockup ABSMS ERP.</p>
     <p><b>Những gì tài liệu này chưa bao gồm</b>, theo đúng ranh giới mà bảng yêu cầu đặt ra: chiều sâu của phân hệ Bán hàng; quy trình sản xuất chi tiết tại nhà máy; định mức thi công và vật tư phụ để kiểm soát hao hụt; giá thành khai thác của nhà máy. Bốn phần này thuộc giai đoạn sau, và mô hình dữ liệu ở <a href="#PRJ-02">PRJ-02</a>, <a href="#ACC-09">ACC-09</a> đã chừa sẵn chỗ mở rộng.</p>
     <p>Trước khi chuyển sang thiết kế kỹ thuật, cần một buổi làm việc để chốt bốn mươi chín vấn đề ở <a href="#PL-C">Phụ lục C</a> — đặc biệt là Q-08 (bảng hạn mức phê duyệt cho 8 nhóm chứng từ), vì nó ảnh hưởng tới toàn bộ hệ thống chứ không riêng một phân hệ nào.</p>
   </div>
