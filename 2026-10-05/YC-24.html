@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-24 Bản vẽ sản xuất và Bản vẽ đơn hàng theo Đơn hàng — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 05/10/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Yêu cầu 05/10/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Đơn hàng theo bản vẽ Shop</a>
+    <div class="rail-grp">Trang yêu cầu</div>
+    <a href="YC-23.html"><i>YC-23</i>Đơn hàng thay kế hoạch</a>
+    <a class="on" href="YC-24.html"><i>YC-24</i>Bản vẽ SX / ĐH theo Đơn hàng</a>
+    <a href="YC-25.html"><i>YC-25</i>Áp giá doanh thu theo Đơn hàng</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-29/index.html"><i>29/09</i>Luồng TQT làm lại</a>
+    <a href="../2026-09-25/index.html"><i>25/09</i>Đối chiếu bản dựng 25/09/2026</a>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Yêu cầu 05/10/2026</a> / P. TQT — Đơn hàng và sản xuất / <b>YC-24</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-23.html">← YC-23</a><a href="index.html">Mục lục</a><a href="YC-25.html">YC-25 →</a></div>
+</div>
+<section class="sheet solo" id="YC-24">
+  <header class="tb">
+    <div class="tb-id">YC-24</div>
+    <div class="tb-main">
+      <h3>Bản vẽ sản xuất và Bản vẽ đơn hàng theo Đơn hàng</h3>
+      <p>Sheet <em>Sua.10.26</em> dòng 2: “1 Đơn hàng cho lập 1 hoặc nhiều Bản vẽ đơn hàng, bản vẽ sản xuất. <b>Tổng số lượng các lần lập Bản vẽ đơn hàng, bản vẽ sản xuất phải bằng số trên Đơn hàng</b>”, kèm ví dụ “Đơn hàng số 1 có Bản vẽ sản xuất đợt 1, bản vẽ đơn hàng đợt 1, Bản vẽ sản xuất đợt 2…”. Hai khối đợt của <a href="../ORD-03.html">ORD-03</a> đã có đủ biểu mẫu, nộp – duyệt, lũy kế – còn lại; cái đổi là <b>chúng thuộc về một Đơn hàng</b> chứ không thuộc cả dự án. Từ đó đổi theo ba thứ: số đợt, mốc lũy kế, và cách kho dự án gọi tên đợt.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Sửa — gắn đợt vào Đơn hàng, đánh số lại, đổi tên “Đơn hàng” thành “Bản vẽ đơn hàng”</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../ORD-03.html">ORD-03</a> · <a href="../PRJ-04.html">PRJ-04</a> · <a href="../ORD-05.html">ORD-05</a> · <a href="../PL-A.html">PL-A</a> · <a href="../2026-09-29/YC-22.html">YC-22</a></dd></div>
+        <div><dt>Điểm tạm chốt</dt><dd><a href="../PL-C.html#Q-94">Q-94</a> · <a href="../PL-C.html#Q-95">Q-95</a></dd></div>
+        <div><dt>Nguồn</dt><dd><code>Deploy lại_05.10.2026.xlsx</code> · <em>Sua.10.26</em> dòng 2 · trả lời 2.1 – 2.4</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng (<a href="../ORD-03.html">ORD-03</a>)</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Tên hai khối</td><td>Bản vẽ sản xuất · <b>Đơn hàng</b> (đợt mua hàng); nút “Nộp bản vẽ đơn hàng”</td><td>Bản vẽ sản xuất · <b>Bản vẽ đơn hàng</b>. Bản vẽ sản xuất dùng khi yêu cầu nhà máy sản xuất; Bản vẽ đơn hàng dùng để đặt mua bên ngoài từ nhà cung cấp (trả lời 2.3)</td></tr>
+          <tr><td>Thuộc về</td><td>Dự án (<code>ord_supply_batch.project_id</code>)</td><td>Một <b>Đơn hàng số N</b> đã duyệt (<a href="YC-23.html">YC-23</a>); dự án suy ra từ Đơn hàng</td></tr>
+          <tr><td>Số đợt</td><td>“Đợt 1, 2…” đếm theo (dự án, loại)</td><td>Đếm theo (Đơn hàng, loại), <b>đánh lại từ 1 trong mỗi Đơn hàng</b> (trả lời 2.4)</td></tr>
+          <tr><td>KL kế hoạch của dòng đợt</td><td>Kế hoạch sản xuất / mua hàng của đầu việc trên bảng kế hoạch dự án</td><td>SL sản xuất / SL mua hàng của đầu việc trên <b>Đơn hàng đó</b></td></tr>
+          <tr><td>Lũy kế · Còn lại</td><td>Cộng mọi đợt cùng dự án, cùng loại</td><td>Cộng mọi đợt <b>cùng Đơn hàng</b>, cùng loại</td></tr>
+          <tr><td>Vượt</td><td>Đợt vượt còn lại → tô đỏ, vẫn lưu</td><td>Cảnh báo <b>cam</b>, vẫn lưu (trả lời 2.1 “áp dụng tương tự cho các đợt”)</td></tr>
+          <tr><td>Kho dự án</td><td>“Đợt n” = Bản vẽ sản xuất đợt n + Đơn hàng đợt n của dự án (<a href="../2026-09-29/YC-22.html">YC-22</a>)</td><td>“<b>Đơn hàng số N – Đợt n</b>” = Bản vẽ sản xuất đợt n + Bản vẽ đơn hàng đợt n của Đơn hàng số N</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — đợt Bản vẽ sản xuất / Bản vẽ đơn hàng (phần thay đổi)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Đơn hàng</td><td class="k">order_plan_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Mới. Đơn hàng số N mà đợt thuộc về — tự điền theo thẻ Đơn hàng đang mở, chỉ đọc. Đơn hàng phải <b>Đã duyệt</b> lúc tạo, lưu và nộp đợt; máy chủ kiểm cả ba lần.</td></tr>
+          <tr><td>Đợt</td><td class="k">round_no</td><td>Số, tự sinh</td><td class="c">—</td><td>“Đợt 1, 2…” theo <b>(Đơn hàng, loại)</b>. Đơn hàng số 2 bắt đầu lại từ Đợt 1. Đợt bị trả lại vẫn giữ số.</td></tr>
+          <tr><td>Loại</td><td class="k">kind</td><td>production · purchase</td><td class="c">—</td><td>Không đổi mã; đổi chữ hiển thị của <code>purchase</code> thành <b>Bản vẽ đơn hàng</b> ở tiêu đề khối, nút nộp, thông báo, danh sách kho.</td></tr>
+          <tr><td>Dòng: thêm dòng</td><td class="k">line.wbs_id</td><td>Chọn</td><td class="c req">✱</td><td>Chỉ chọn đầu việc có trong Đơn hàng (SL theo Đơn hàng &gt; 0), không còn mọi hạng mục BOQ của dự án. Mã, tên vật tư nạp sẵn từ dòng Đơn hàng như <a href="../2026-09-29/YC-21.html">YC-21</a>.</td></tr>
+          <tr><td>Dòng: Khối lượng kế hoạch</td><td class="k">line.qty_plan</td><td>Hệ thống</td><td class="c">—</td><td>SL sản xuất (đợt Bản vẽ sản xuất) hoặc SL mua hàng (đợt Bản vẽ đơn hàng) của đầu việc trên Đơn hàng. Đơn hàng để trống cột đó thì hiện “—” và không tính còn lại, như hiện nay.</td></tr>
+          <tr><td>Dòng: Lũy kế</td><td class="k">line.qty_cumulative</td><td>Hệ thống</td><td class="c">—</td><td>Σ “đợt này” của các đợt <b>cùng Đơn hàng, cùng loại</b>, đã nộp hoặc đã duyệt, số đợt ≤ đợt đang xem, cộng chính đợt này. Nháp và trả lại không tính — giữ cách tính của <a href="../ORD-03.html">ORD-03</a>.</td></tr>
+          <tr><td>Dòng: Còn lại</td><td class="k">line.qty_remaining</td><td>Hệ thống</td><td class="c">—</td><td>= Khối lượng kế hoạch − lũy kế. Âm → <b>cam</b> “vượt {x}”.</td></tr>
+          <tr><td>Tổng theo Đơn hàng</td><td class="k">order_progress</td><td>Hệ thống</td><td class="c">—</td><td>Mới, một dòng trên đầu hai khối: “Đơn hàng số {N}: {SL} {đvt} · đã lập bản vẽ {a} (sản xuất {b} + đơn hàng {c}) · còn {SL − a} chưa lập” — cho từng đầu việc khi đơn có nhiều đầu việc. Đây là phép so “tổng các đợt = số trên Đơn hàng” của sheet, đếm đợt đã nộp hoặc đã duyệt.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — kho dự án (sửa <a href="../2026-09-29/YC-22.html">YC-22</a>)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Cột / chỗ</th><th>Mã</th><th>Quy tắc mới</th></tr></thead>
+        <tbody>
+          <tr><td>Nhóm đợt nhập</td><td class="k">—</td><td>Một nhóm = Bản vẽ sản xuất đợt n + Bản vẽ đơn hàng đợt n <b>của cùng một Đơn hàng</b>. Nhãn “Đơn hàng số {N} – Đợt {n}”; dưới nhãn, chữ nhỏ mã bản vẽ Shop (“SD.HN_0001.01”) vì hai bản vẽ Shop của cùng dự án đều có thể có “Đơn hàng số 1”.</td></tr>
+          <tr><td>Kế hoạch nhập kho</td><td class="k">planned_rounds</td><td>“{n} đợt” — số nhóm (Đơn hàng, số đợt) khác nhau của dự án, trừ đợt nháp.</td></tr>
+          <tr><td>Đang thực hiện</td><td class="k">current_round</td><td>Mọi nhóm còn ít nhất một đợt Đã duyệt chưa nhận đủ, mỗi nhóm một nút “ĐH {N} – Đợt {n}”, cũ trước mới sau; quá ba nút thì “+{k}” (<a href="../PL-C.html#Q-95">Q-95</a>). “Tạm dừng”, “Chưa thực hiện” giữ như YC-22.</td></tr>
+          <tr><td>Hiện trạng · Lũy kế đợt</td><td class="k">pending_text · received_rounds</td><td>Cùng công thức YC-22, đếm trên nhóm mới.</td></tr>
+          <tr><td>Phiếu nhập lập từ đợt</td><td class="k">receipt.source_doc</td><td>Chứng từ nguồn tự ghi “Đơn hàng số {N} – Bản vẽ sản xuất đợt {n}” hoặc “Đơn hàng số {N} – Bản vẽ đơn hàng đợt {n}”. Phần còn lại của phiếu không đổi.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ bổ sung cho <a href="../ORD-03.html">ORD-03</a> và <a href="../PRJ-04.html">PRJ-04</a></h4>
+    <ol class="br">
+      <li><b>Đợt thuộc về Đơn hàng đã duyệt.</b> Không có đợt nào đứng thẳng dưới dự án nữa. Khối Bản vẽ sản xuất / Bản vẽ đơn hàng chỉ hiện trong thẻ của một Đơn hàng.<span class="then">Sheet: “Bản vẽ đơn hàng và Bản vẽ sản xuất = tập con của tập con”. Điều kiện duyệt: trả lời 2.5.</span></li>
+      <li><b>Bản vẽ sản xuất và Bản vẽ đơn hàng đứng ngang nhau.</b> Cùng biểu mẫu, cùng luồng nộp – TP TQT duyệt, khác nơi nhận (xưởng sản xuất / thu mua) và khác cột SL mốc. Một Đơn hàng có thể có Bản vẽ sản xuất đợt 2 mà chưa có Bản vẽ đơn hàng nào.</li>
+      <li><b>Số đợt đánh lại từ 1 trong mỗi Đơn hàng.</b> Đơn hàng số 1 có Bản vẽ sản xuất đợt 1, 2; Đơn hàng số 2 lại bắt đầu Bản vẽ sản xuất đợt 1.<span class="then">Trả lời 2.4 — phương án A.</span></li>
+      <li><b>Σ các đợt vượt Đơn hàng: cảnh báo cam, vẫn lưu và nộp.</b> Thiếu thì chỉ nhắc “còn {x} chưa lập bản vẽ” — một Đơn hàng giao làm nhiều đợt là bình thường.<span class="then">Trả lời 2.1 và 2.2 áp cho tầng đợt như cho tầng Đơn hàng.</span></li>
+      <li><b>Kho nhận theo “Đơn hàng số N – Đợt n”.</b> Phiếu nhập vẫn gắn vào từng đợt (<code>supply_batch_id</code>) như <a href="../2026-09-29/YC-22.html">YC-22</a>; chỉ cách gom nhóm và cách gọi đổi. Phiếu nhận hàng từ <a href="../ORD-05.html">ORD-05</a> của phiếu trình đơn hàng lập từ đợt vẫn tính vào đợt đó.</li>
+      <li><b>Giữ nguyên</b>: biểu mẫu đợt (Từ ngày – Đến ngày, nơi gửi, nơi nhận, hạn phản hồi, bản vẽ đính kèm), nộp – duyệt – trả lại, thông báo, nút “Lập phiếu trình đơn hàng từ đợt này” (<a href="YC-23.html">YC-23</a>).</li>
+      <li><b>Đợt đã lập trước đợt yêu cầu này</b> chuyển theo <a href="../PL-C.html#Q-94">Q-94</a>.</li>
+    </ol>
+
+    <h4>Giao diện</h4>
+    <ul>
+      <li>Trong thẻ “Đơn hàng số 1”: dòng tổng theo Đơn hàng ở trên, rồi hai khối cạnh nhau “Bản vẽ sản xuất” và “Bản vẽ đơn hàng”, mỗi khối có danh sách “Đợt 1 · Đã duyệt”, “Đợt 2 · Nháp” và nút phụ “+ Thêm đợt”.</li>
+      <li>Thêm đợt: đợt mới nạp sẵn mọi đầu việc của Đơn hàng còn “còn lại” &gt; 0 của loại đó, KL đợt này = phần còn lại; người lập sửa xuống. Nút chính của đợt giữ “Nộp bản vẽ sản xuất” / “Nộp bản vẽ đơn hàng”.</li>
+      <li>Màu cam dùng chung cho mọi cảnh báo “vượt” của đợt này (Đơn hàng so bản vẽ Shop, đợt so Đơn hàng); chữ luôn ghi số vượt để in đen trắng vẫn đọc được.</li>
+      <li>Ở kho dự án, bảng trượt mở từ nút “ĐH 1 – Đợt 2” có tiêu đề “SD.HN_0001.01 · Đơn hàng số 1 – Đợt 2”, hai khối “Từ nhà máy (Bản vẽ sản xuất đợt 2)” và “Từ cung ứng (Bản vẽ đơn hàng đợt 2)”.</li>
+    </ul>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">Tình huống</th><th style="width:26%">Điều kiện</th><th>Thông điệp</th></tr></thead>
+        <tbody>
+          <tr><td>Tạo / nộp đợt dưới Đơn hàng chưa duyệt</td><td>Đơn hàng ≠ Đã duyệt</td><td>“Đơn hàng số {N} chưa được duyệt.” <em>(chặn)</em></td></tr>
+          <tr><td>Thêm dòng đầu việc không có trong Đơn hàng</td><td>Gọi thẳng máy chủ</td><td>“Đầu việc {tên} không có trong Đơn hàng số {N}.” <em>(chặn)</em></td></tr>
+          <tr><td>Đợt vượt phần còn lại của Đơn hàng</td><td><code>qty_remaining</code> &lt; 0</td><td>Ô cam: “Vượt {x} {đvt} so với Đơn hàng số {N} (Đơn hàng {a} · đã lập {b} · đợt này {c}).” <em>(cảnh báo, vẫn nộp)</em></td></tr>
+          <tr><td>Đơn hàng còn chưa lập bản vẽ</td><td>Σ đợt &lt; SL theo Đơn hàng</td><td>“Còn {x} {đvt} {đầu việc} chưa lập Bản vẽ sản xuất / Bản vẽ đơn hàng.” <em>(nhắc)</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>Mỗi đợt nằm dưới đúng một Đơn hàng; mở Đơn hàng là thấy đủ đợt của nó và còn bao nhiêu chưa lập.</li>
+      <li>Đơn hàng số 2 có “Bản vẽ sản xuất đợt 1” của riêng nó; lũy kế của số 2 không cộng đợt của số 1.</li>
+      <li>Không còn khối hay nút nào ghi “Đơn hàng” cho đợt mua hàng — chỉ “Bản vẽ đơn hàng”.</li>
+      <li>Thủ kho thấy “Đơn hàng số 1 – Đợt 2” và lập phiếu nhập từ đó như trước.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC24-1</td><td>Đơn hàng số 1 của SD.HN_0001.01 đã duyệt: Lát đá vỉa hè SX 800, MH 200</td><td>Mở thẻ Đơn hàng số 1</td><td>Hai khối “Bản vẽ sản xuất” và “Bản vẽ đơn hàng”; dòng tổng “Đơn hàng số 1: 1.000 m² · đã lập bản vẽ 0 · còn 1.000 chưa lập”</td></tr>
+          <tr><td>UAT-YC24-2</td><td>Tiếp UAT-1</td><td>Thêm Bản vẽ sản xuất, nhập 500, nộp</td><td>Tên “Đợt 1”; KL kế hoạch 800, lũy kế 500, còn lại 300; dòng tổng “đã lập 500 (sản xuất 500 + đơn hàng 0) · còn 500”</td></tr>
+          <tr><td>UAT-YC24-3</td><td>Tiếp UAT-2</td><td>Thêm Bản vẽ đơn hàng, nhập 250</td><td>Tên “Bản vẽ đơn hàng · Đợt 1”; còn lại −50 ô cam “vượt 50 m²”; vẫn nộp được</td></tr>
+          <tr><td>UAT-YC24-4</td><td>Đơn hàng số 2 vừa được duyệt</td><td>Thêm Bản vẽ sản xuất ở thẻ Đơn hàng số 2</td><td>Đánh số “Đợt 1”; lũy kế chỉ tính đợt của Đơn hàng số 2</td></tr>
+          <tr><td>UAT-YC24-5</td><td>Đơn hàng số 3 chờ duyệt</td><td>Gọi thẳng API tạo đợt cho Đơn hàng số 3</td><td>“Đơn hàng số 3 chưa được duyệt.”</td></tr>
+          <tr><td>UAT-YC24-6</td><td>Đợt 1 của UAT-2 và UAT-3 đã được TP TQT duyệt</td><td>Mở Xuất nhập kho dự án</td><td>HN_0001 Đang thực hiện có nút “ĐH 1 – Đợt 1”; bảng trượt “SD.HN_0001.01 · Đơn hàng số 1 – Đợt 1” có Từ nhà máy và Từ cung ứng</td></tr>
+          <tr><td>UAT-YC24-7</td><td>Tiếp UAT-6, Đơn hàng số 2 – Đợt 1 cũng đã duyệt</td><td>Nhìn ô Đang thực hiện</td><td>Hai nút “ĐH 1 – Đợt 1”, “ĐH 2 – Đợt 1”; Kế hoạch nhập kho “2 đợt”</td></tr>
+          <tr><td>UAT-YC24-8</td><td>Tiếp UAT-6</td><td>Lập phiếu nhập từ khối Từ cung ứng</td><td>Chứng từ nguồn “Đơn hàng số 1 – Bản vẽ đơn hàng đợt 1”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../ORD-03.html">ORD-03 đợt Bản vẽ sản xuất / Bản vẽ đơn hàng</a><a href="YC-23.html">YC-23 Đơn hàng thay kế hoạch</a><a href="../2026-09-29/YC-22.html">YC-22 nhập kho theo đợt</a><a href="../PRJ-04.html">PRJ-04 xuất nhập kho dự án</a><a href="../ORD-05.html">ORD-05 cấp hàng theo đợt</a><a href="../PL-A.html">PL-A sổ trạng thái</a><a href="../PL-C.html#Q-94">PL-C · Q-94</a><a href="../PL-C.html#Q-95">PL-C · Q-95</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Trang 2 / 3</span><span><code>2026-10-05/YC-24.html</code></span>
+  <span>ABSMS — Yêu cầu 05/10/2026</span>
+  <span>Nguồn: <code>Deploy lại_05.10.2026.xlsx · Sua.10.26 dòng 2</code></span>
+</div>
+</main>
+</div>
+</body></html>

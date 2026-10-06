@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-25 Áp giá doanh thu theo Đơn hàng — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 05/10/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Yêu cầu 05/10/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Đơn hàng theo bản vẽ Shop</a>
+    <div class="rail-grp">Trang yêu cầu</div>
+    <a href="YC-23.html"><i>YC-23</i>Đơn hàng thay kế hoạch</a>
+    <a href="YC-24.html"><i>YC-24</i>Bản vẽ SX / ĐH theo Đơn hàng</a>
+    <a class="on" href="YC-25.html"><i>YC-25</i>Áp giá doanh thu theo Đơn hàng</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-09-29/index.html"><i>29/09</i>Luồng TQT làm lại</a>
+    <a href="../2026-09-25/index.html"><i>25/09</i>Đối chiếu bản dựng 25/09/2026</a>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Yêu cầu 05/10/2026</a> / Phòng Đấu thầu — Áp giá doanh thu / <b>YC-25</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-24.html">← YC-24</a><a href="index.html">Mục lục</a></div>
+</div>
+<section class="sheet solo" id="YC-25">
+  <header class="tb">
+    <div class="tb-id">YC-25</div>
+    <div class="tb-main">
+      <h3>Áp giá doanh thu theo Đơn hàng</h3>
+      <p>Sheet <em>Sua.10.26</em> dòng 3: “Khi TQT - Shopdrawing lập 1 Đơn hàng thành công thì Đơn hàng đó chạy qua phần Áp giá doanh thu của phân hệ Đấu thầu để được áp giá. Đơn hàng chạy qua đầy đủ dữ liệu, có thêm cột <b>Đơn giá nội bộ</b> và cột <b>Doanh thu nội bộ</b> để điền… Doanh thu = Số lượng theo Đơn hàng × Đơn giá. Thêm cột <b>Ghi chú</b>.” Hiện trạng ghi “Chưa có link dữ liệu”: <a href="../BID-06.html">BID-06</a> đang áp giá cho phiếu đơn hàng trình duyệt, gợi ý theo BOQ, bắt lý do khi lệch quá 5% và trình Ban lãnh đạo duyệt. Bốn câu trả lời 3.1 – 3.4 gỡ gần hết những thứ đó — màn hình mới đơn giản hơn màn hình cũ.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Sửa lớn — đổi đầu vào sang Đơn hàng số N, đổi bộ cột, bỏ duyệt và quy tắc 5%</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../BID-06.html">BID-06</a> · <a href="../RPT-03.html">RPT-03</a> · <a href="../ACC-09.html">ACC-09</a> · <a href="../PF-04.html">PF-04</a> · <a href="../PL-A.html">PL-A</a> · <a href="../PL-B.html">PL-B</a></dd></div>
+        <div><dt>Điểm tạm chốt</dt><dd><a href="../PL-C.html#Q-96">Q-96</a></dd></div>
+        <div><dt>Nguồn</dt><dd><code>Deploy lại_05.10.2026.xlsx</code> · <em>Sua.10.26</em> dòng 3 · trả lời 3.1 – 3.4</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng (<a href="../BID-06.html">BID-06</a>)</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Áp giá cho</td><td>Phiếu đơn hàng trình duyệt <code>DH-YYYY-NNN</code> đã duyệt</td><td><b>Đơn hàng số N</b> của một bản vẽ Shop, <b>ngay khi TP TQT duyệt</b> (<a href="YC-23.html">YC-23</a>) — trả lời 3.4</td></tr>
+          <tr><td>Bộ cột</td><td>STT · Sản phẩm · KL · Đơn giá BOQ · Đơn giá áp · Lệch · Doanh thu · Biên; khối căn cứ áp giá, giá vốn ước tính, biên lợi nhuận</td><td>Đủ dữ liệu của Đơn hàng + <b>Đơn giá nội bộ</b> · <b>Doanh thu nội bộ</b> · <b>Ghi chú</b></td></tr>
+          <tr><td>Đơn giá</td><td>Gợi ý từ đơn giá BOQ hợp đồng</td><td><b>Để trống</b>, người dùng tự nhập (3.1). Ví dụ BOQ 850.000 đ/m², nhập 720.000</td></tr>
+          <tr><td>Lệch quá 5%</td><td>Bắt buộc ghi lý do</td><td><b>Bỏ</b> (3.2)</td></tr>
+          <tr><td>Duyệt</td><td>Trình Ban lãnh đạo qua <a href="../PF-03.html">PF-03</a>; duyệt xong mới gắn “đã có giá doanh thu”</td><td><b>Không duyệt.</b> Lưu là có hiệu lực; <b>Kế toán trưởng và Giám đốc nhận thông báo</b> (3.3)</td></tr>
+          <tr><td>Người áp giá</td><td>P. Đấu thầu (<a href="../PL-B.html">PL-B</a>)</td><td>Giữ P. Đấu thầu trong đợt này. “Chỉ trưởng phòng Đấu thầu thực hiện” (3.3) <b>chuyển sang đợt phân quyền</b> cùng sheet dòng 4 — chưa đặc tả ở đây</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — hàng chờ Áp giá doanh thu</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Cột</th><th>Mã</th><th>Kiểu</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Dự án · Bản vẽ Shop · Đơn hàng số</td><td class="k">project · shopdrawing · order_no</td><td>Chỉ đọc</td><td>Ví dụ “HN_0001 · SD.HN_0001.01 · Đơn hàng số 1”. Một dòng mỗi Đơn hàng <b>Đã duyệt</b>; đơn nháp, chờ duyệt, trả lại không có mặt.</td></tr>
+          <tr><td>Ngày duyệt Đơn hàng</td><td class="k">approved_at</td><td>Chỉ đọc</td><td>Mốc vào hàng chờ; bộ lọc khoảng thời gian của <a href="../BID-06.html">BID-06</a> (YC-14) lọc theo mốc này cho đơn chưa áp giá, theo ngày áp giá cho đơn đã áp giá.</td></tr>
+          <tr><td>Trạng thái áp giá</td><td class="k">pricing_state</td><td>Tự tính</td><td><em>Chưa áp giá</em> — chưa dòng nào có đơn giá · <em>Đang áp giá</em> — có dòng chưa có · <em>Đã áp giá</em> — mọi dòng có đơn giá. Mặc định lọc “Chưa xong” (hai trạng thái đầu).</td></tr>
+          <tr><td>Doanh thu nội bộ</td><td class="k">revenue_total</td><td>Tự tính</td><td>Σ doanh thu nội bộ các dòng đã có giá.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — bảng áp giá của một Đơn hàng</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Cột</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>STT · Mã HM · Đầu việc · Quy cách · Mã vật tư · Tên vật tư/Quy cách · ĐVT</td><td class="k">line.*</td><td>Chỉ đọc</td><td class="c">—</td><td>Chép nguyên từ dòng Đơn hàng — “Đơn hàng chạy qua đầy đủ dữ liệu”.</td></tr>
+          <tr><td>SL theo Đơn hàng</td><td class="k">line.qty_order</td><td>Chỉ đọc</td><td class="c">—</td><td>= SL sản xuất + SL mua hàng của dòng Đơn hàng (<a href="YC-23.html">YC-23</a>). Không đọc số của các đợt bản vẽ.</td></tr>
+          <tr><td>Đơn giá nội bộ</td><td class="k">line.internal_price</td><td>Số tiền / ĐVT ≥ 0</td><td class="c">—</td><td><b>Trống lúc vào</b>, tự nhập (3.1). Không gợi ý từ BOQ, không so lệch. Hiện phân cách hàng ngàn.</td></tr>
+          <tr><td>Doanh thu nội bộ</td><td class="k">line.internal_revenue</td><td>Tự tính</td><td class="c">—</td><td>= SL theo Đơn hàng × Đơn giá nội bộ; tính lại theo từng phím gõ. Trống khi chưa có đơn giá.</td></tr>
+          <tr><td>Ghi chú</td><td class="k">line.note</td><td>Văn bản</td><td class="c">—</td><td>Cạnh Doanh thu nội bộ, “để ghi chú các điểm cần lưu ý”.</td></tr>
+          <tr><td>Tổng</td><td class="k">revenue_total</td><td>Tự tính</td><td class="c">—</td><td>Dòng cuối: Σ doanh thu nội bộ · “{k}/{n} dòng đã có giá”.</td></tr>
+          <tr><td>Lưu</td><td class="k">—</td><td>Hành vi</td><td class="c">—</td><td>Nút chính duy nhất. Lưu cả bảng một lần; lưu được khi còn dòng trống (đang áp giá dở). Ghi người và lúc lưu.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ thay cho <a href="../BID-06.html">BID-06</a></h4>
+    <ol class="br">
+      <li><b>Đơn hàng đã duyệt tự sang Áp giá doanh thu.</b> Không ai phải chuyển tay. Đơn hàng số 01 của bản vẽ Shop XXX duyệt thì số 01 vào hàng chờ; số 02 duyệt thì số 02 vào tiếp — mỗi Đơn hàng một bảng áp giá.<span class="then">Trả lời 3.4. P. Đấu thầu nhận thông báo lúc đơn được duyệt (<a href="YC-23.html">YC-23</a> quy tắc 6).</span></li>
+      <li><b>Đơn giá nội bộ do người áp giá tự nhập.</b> Không có giá gợi ý, không có căn cứ áp giá, không có quy tắc lệch 5%.<span class="then">Trả lời 3.1 và 3.2. Đơn giá nội bộ là giá P. TQT bán nội bộ cho dự án, khác đơn giá hợp đồng với chủ đầu tư — so với BOQ không có nghĩa.</span></li>
+      <li><b>Doanh thu nội bộ = SL theo Đơn hàng × Đơn giá nội bộ.</b> Ví dụ Lát đá vỉa hè, Đơn hàng số 1 = 1.000 m², đơn giá nội bộ 720.000 đ/m² → 720.000.000 đ.</li>
+      <li><b>Không duyệt — lưu là có hiệu lực, Kế toán trưởng và Giám đốc được báo.</b> Thông báo gửi khi Đơn hàng chuyển sang <em>Đã áp giá</em>, và mỗi lần đơn giá của một Đơn hàng đã áp giá bị sửa; nội dung nêu dự án, bản vẽ Shop, Đơn hàng số, tổng doanh thu nội bộ, và với lần sửa thì số cũ → số mới (<a href="../PF-04.html">PF-04</a>).<span class="then">Trả lời 3.3.</span></li>
+      <li><b>Vẫn không chặn, không bị chặn.</b> Áp giá không đọc và không ghi trạng thái của Đơn hàng, đợt bản vẽ hay phiếu trình đơn hàng — giữ ràng buộc gốc của <a href="../BID-06.html">BID-06</a>.</li>
+      <li><b>Nhãn “Đã áp giá” hiện ở thẻ Đơn hàng bên P. TQT</b>, bấm mở bảng áp giá chỉ đọc — thay nhãn “đã có giá doanh thu” trên danh sách phiếu.</li>
+      <li><b>Bảng áp giá cũ theo phiếu trình đơn hàng</b> và doanh thu đưa vào báo cáo lãi lỗ: tạm chốt ở <a href="../PL-C.html#Q-96">Q-96</a>.</li>
+      <li><b>Quyền:</b> giữ như <a href="../PL-B.html">PL-B</a> hiện hành (P. Đấu thầu ghi; Ban lãnh đạo, P. Kế toán, P. TQT đọc). “Chỉ trưởng phòng Đấu thầu áp giá” và giới hạn ai được vào phân hệ Đấu thầu (sheet dòng 4) <b>để sang đợt phân quyền</b>.</li>
+    </ol>
+
+    <h4>Giao diện</h4>
+    <ul>
+      <li>Đấu thầu › Áp giá doanh thu: một bảng hàng chờ, mặc định lọc “Chưa xong”. Bấm một dòng mở bảng áp giá của Đơn hàng đó ngay trên trang (không hộp thoại).</li>
+      <li>Bảng áp giá: ba cột nhập nằm cuối bên phải, nền ô nhập phân biệt với cột chỉ đọc; con trỏ đặt sẵn ở ô Đơn giá nội bộ đầu tiên còn trống; Enter xuống dòng dưới.</li>
+      <li>Một nút chính <em>Lưu</em>. Không còn nút <em>Trình duyệt giá</em>, khối lý do lệch, khối giá vốn – biên lợi nhuận.</li>
+      <li>Hàng chờ trống: “Chưa có Đơn hàng nào chờ áp giá — Đơn hàng được TP TQT duyệt sẽ tự hiện ở đây.”</li>
+    </ul>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">Tình huống</th><th style="width:26%">Điều kiện</th><th>Thông điệp</th></tr></thead>
+        <tbody>
+          <tr><td>Đơn giá âm</td><td><code>internal_price</code> &lt; 0</td><td>“Đơn giá nội bộ không được âm.” <em>(chặn)</em></td></tr>
+          <tr><td>Đơn giá bằng 0</td><td><code>internal_price</code> = 0</td><td>“Đơn giá bằng 0 ghi doanh thu nội bộ bằng 0 cho dòng {STT}.” <em>(cảnh báo, vẫn lưu)</em></td></tr>
+          <tr><td>Áp giá Đơn hàng chưa duyệt</td><td>Gọi thẳng máy chủ</td><td>“Đơn hàng số {N} chưa được duyệt, chưa áp giá được.” <em>(chặn)</em></td></tr>
+          <tr><td>Rời trang khi chưa lưu</td><td>Có ô đã sửa</td><td>“Còn thay đổi chưa lưu. Lưu trước khi rời?”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>TP TQT duyệt Đơn hàng xong là P. Đấu thầu thấy đơn đó trong hàng chờ, với đúng các dòng và số lượng của Đơn hàng.</li>
+      <li>Nhập đơn giá nội bộ là thấy doanh thu nội bộ ngay; lưu là xong, không chờ ai duyệt.</li>
+      <li>Kế toán trưởng và Giám đốc biết khi một Đơn hàng được áp giá hoặc bị sửa giá.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC25-1</td><td>Đơn hàng số 1 của SD.HN_0001.01 vừa được TP TQT duyệt (Lát đá vỉa hè 1.000 m²)</td><td>Mở Đấu thầu › Áp giá doanh thu</td><td>Dòng “HN_0001 · SD.HN_0001.01 · Đơn hàng số 1”, Chưa áp giá; P. Đấu thầu đã nhận thông báo</td></tr>
+          <tr><td>UAT-YC25-2</td><td>Đơn hàng số 2 đang chờ duyệt</td><td>Nhìn hàng chờ</td><td>Không có Đơn hàng số 2</td></tr>
+          <tr><td>UAT-YC25-3</td><td>Tiếp UAT-1</td><td>Mở bảng áp giá</td><td>Đủ cột của Đơn hàng, SL theo Đơn hàng 1.000; Đơn giá nội bộ trống; không có cột Đơn giá BOQ, Lệch, Biên</td></tr>
+          <tr><td>UAT-YC25-4</td><td>Tiếp UAT-3 (BOQ 850.000)</td><td>Nhập 720.000, ghi chú “Giá nội bộ Q4”, Lưu</td><td>Doanh thu nội bộ 720.000.000; không đòi lý do lệch; không có bước trình; trạng thái Đã áp giá; KTT và GĐ nhận thông báo</td></tr>
+          <tr><td>UAT-YC25-5</td><td>Tiếp UAT-4</td><td>Sửa đơn giá 700.000, Lưu</td><td>Doanh thu 700.000.000; KTT và GĐ nhận thông báo “720.000.000 → 700.000.000”</td></tr>
+          <tr><td>UAT-YC25-6</td><td>Đơn hàng có 3 dòng</td><td>Nhập giá 2 dòng, Lưu</td><td>Lưu được; trạng thái Đang áp giá “2/3 dòng đã có giá”; chưa gửi thông báo KTT, GĐ</td></tr>
+          <tr><td>UAT-YC25-7</td><td>Tiếp UAT-4, đăng nhập kỹ sư P. TQT</td><td>Mở thẻ Đơn hàng số 1, bấm nhãn “Đã áp giá”</td><td>Bảng áp giá mở chỉ đọc</td></tr>
+          <tr><td>UAT-YC25-8</td><td>Đơn hàng số 1 đang có Bản vẽ sản xuất đợt 2 chờ duyệt</td><td>Áp giá và lưu</td><td>Đợt 2 không đổi trạng thái, vẫn duyệt được bình thường</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../BID-06.html">BID-06 áp giá doanh thu</a><a href="YC-23.html">YC-23 Đơn hàng thay kế hoạch</a><a href="../RPT-03.html">RPT-03 báo cáo lãi lỗ</a><a href="../ACC-09.html">ACC-09 giá thành &amp; lãi lỗ</a><a href="../PF-04.html">PF-04 thông báo</a><a href="../PL-B.html">PL-B phân quyền</a><a href="../PL-C.html#Q-96">PL-C · Q-96</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Trang 3 / 3</span><span><code>2026-10-05/YC-25.html</code></span>
+  <span>ABSMS — Yêu cầu 05/10/2026</span>
+  <span>Nguồn: <code>Deploy lại_05.10.2026.xlsx · Sua.10.26 dòng 3</code></span>
+</div>
+</main>
+</div>
+</body></html>
