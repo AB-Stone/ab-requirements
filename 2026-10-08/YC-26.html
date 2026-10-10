@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YC-26 Phân hệ Cung ứng — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 08/10/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Yêu cầu 08/10/2026</div>
+    <a href="index.html"><i>MỤC LỤC</i>Phân hệ Cung ứng</a>
+    <div class="rail-grp">Trang yêu cầu</div>
+    <a class="on" href="YC-26.html"><i>YC-26</i>Phân hệ Cung ứng</a>
+    <a href="YC-27.html"><i>YC-27</i>Tab Đơn hàng của P. TQT</a>
+    <a href="YC-28.html"><i>YC-28</i>Đơn hàng không cần hợp đồng</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-10-05/index.html"><i>05/10</i>Đơn hàng theo bản vẽ Shop</a>
+    <a href="../2026-09-29/index.html"><i>29/09</i>Luồng TQT làm lại</a>
+    <a href="../2026-09-25/index.html"><i>25/09</i>Đối chiếu bản dựng 25/09/2026</a>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="index.html">Yêu cầu 08/10/2026</a> / P. Cung ứng — Đơn hàng và sản xuất / <b>YC-26</b></div><div class="sp"></div>
+  <div class="pnav"><a href="index.html">Mục lục</a><a href="YC-27.html">YC-27 →</a></div>
+</div>
+<section class="sheet solo" id="YC-26">
+  <header class="tb">
+    <div class="tb-id">YC-26</div>
+    <div class="tb-main">
+      <h3>Phân hệ Cung ứng</h3>
+      <p>Sheet <em>Sua08.10.26</em> dòng 1: “Thêm Tab <b>Đơn hàng và Sản xuất</b> giống phân hệ TQT-Shopdrawing vào phân hệ mới <b>Cung Ứng</b>… Phòng Cung Ứng là nơi triển khai kế hoạch theo Đơn hàng của phòng TQT Shopdrawing. Phòng cung ứng có chức năng phân luồng sản xuất / mua ngoài từ nhà cung cấp và process đến khi vật tư / hàng hóa ra tới công trình nhập kho dự án.” Mong muốn: “Chuyển Tab Đơn hàng và Sản xuất của phân hệ TQT-Shopdrawing sang phân hệ Cung Ứng”. Trang này không vẽ màn hình mới — nó dời hai khối đợt của <a href="../2026-10-05/YC-24.html">YC-24</a> và danh sách phiếu trình đơn hàng sang một phân hệ của P. Cung ứng, và đổi người lập đợt.</p>
+      <dl class="tb-meta">
+        <div><dt>Loại thay đổi</dt><dd>Sửa lớn — phân hệ mới; đợt do P. Cung ứng lập và gửi, bỏ bước TP TQT duyệt đợt</dd></div>
+        <div><dt>Trang tác động</dt><dd><a href="../ORD-03.html">ORD-03</a> · <a href="../ORD-04.html">ORD-04</a> · <a href="../ORD-05.html">ORD-05</a> · <a href="../PRJ-04.html">PRJ-04</a> · <a href="../PF-04.html">PF-04</a> · <a href="../PL-A.html">PL-A</a> · <a href="../PL-B.html">PL-B</a></dd></div>
+        <div><dt>Điểm tạm chốt</dt><dd><a href="../PL-C.html#Q-97">Q-97</a> · <a href="../PL-C.html#Q-98">Q-98</a> · <a href="../PL-C.html#Q-99">Q-99</a></dd></div>
+        <div><dt>Nguồn</dt><dd><code>deploy 08.10.2026.xlsx</code> · <em>Sua08.10.26</em> dòng 1 (STT 1)</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+
+    <h4>Hiện trạng → Mong muốn</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:18%">Khía cạnh</th><th style="width:41%">Hiện trạng (<a href="../2026-10-05/YC-24.html">YC-24</a>)</th><th>Mong muốn</th></tr></thead>
+        <tbody>
+          <tr><td>Thanh điều hướng</td><td>Tab “Đơn hàng và sản xuất” nằm trong nhóm <em>TQT — Shopdrawing</em></td><td>Nhóm mới <b>Cung ứng</b>, một tab <b>Đơn hàng và sản xuất</b>. Nhóm TQT giữ tab cùng chỗ nhưng đổi tên “Đơn hàng” (<a href="YC-27.html">YC-27</a>)</td></tr>
+          <tr><td>Người lập đợt Bản vẽ sản xuất / Bản vẽ đơn hàng</td><td>Kỹ sư P. TQT</td><td><b>Nhân viên P. Cung ứng</b></td></tr>
+          <tr><td>Duyệt đợt</td><td>Nộp → TP TQT duyệt / trả lại</td><td><b>Không duyệt.</b> Cung ứng bấm <em>Gửi</em> là đợt đi tới nơi nhận (<a href="../PL-C.html#Q-97">Q-97</a>). TP TQT đã duyệt ở tầng Đơn hàng</td></tr>
+          <tr><td>Nơi đợt hiện ra</td><td>Thẻ Đơn hàng số N trên màn hình của P. TQT</td><td>Thẻ Đơn hàng số N trong phân hệ Cung ứng. Bên P. TQT chỉ còn một dòng tiến độ đọc được (<a href="YC-27.html">YC-27</a>)</td></tr>
+          <tr><td>Phiếu trình đơn hàng (<code>DH-…</code>) và lệnh cung ứng</td><td>Danh sách và chi tiết nằm dưới tab TQT</td><td>Chuyển cùng tab sang Cung ứng; luồng duyệt phiếu, gửi nhà máy, cấp hàng giữ nguyên (<a href="../PL-C.html#Q-98">Q-98</a>)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — hàng chờ “Đơn hàng và sản xuất”</h4>
+    <p>Màn hình đầu của phân hệ Cung ứng là danh sách Đơn hàng chờ triển khai — thay cho “Hồ sơ theo dự án” mà P. Cung ứng không cần đi qua.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Cột</th><th>Mã</th><th>Kiểu</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Dự án · Bản vẽ Shop · Đơn hàng số</td><td class="k">project · shopdrawing · order_no</td><td>Chỉ đọc</td><td>Ví dụ “HN_0001 · SD.HN_0001.01 · Đơn hàng số 1”. Đơn hàng không có bản vẽ Shop ghi “Không có hợp đồng” thay mã bản vẽ (<a href="YC-28.html">YC-28</a>). Một dòng mỗi Đơn hàng <b>Đã duyệt</b>.</td></tr>
+          <tr><td>Ngày duyệt</td><td class="k">approved_at</td><td>Chỉ đọc</td><td>Ngày TP TQT duyệt Đơn hàng. Sắp xếp mặc định: mới trước.</td></tr>
+          <tr><td>Bản vẽ của P. TQT</td><td class="k">files</td><td>Chỉ đọc</td><td>“{a} bản vẽ sản xuất · {b} bản vẽ đơn hàng” — tệp P. TQT tải ở Đơn hàng (<a href="YC-27.html">YC-27</a>).</td></tr>
+          <tr><td>Tiến độ sản xuất / mua hàng</td><td class="k">order_progress</td><td>Tự tính</td><td>“SX {x}/{y} · MH {u}/{v} {đvt}” — Σ đợt đã gửi trên SL sản xuất / SL mua hàng của Đơn hàng, cho đầu việc lớn nhất; nhiều đầu việc thì ghi “{k} đầu việc”. Cùng công thức dòng tổng của <a href="../2026-10-05/YC-24.html">YC-24</a>.</td></tr>
+          <tr><td>Trạng thái triển khai</td><td class="k">supply_state</td><td>Tự tính</td><td><em>Chưa lập đợt</em> · <em>Đang triển khai</em> — có đợt đã gửi, còn phần chưa lập · <em>Đã lập đủ</em> — mọi đầu việc hết “còn lại”. Mặc định lọc “Chưa xong” (hai trạng thái đầu).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — đợt Bản vẽ sản xuất / Bản vẽ đơn hàng (phần thay đổi so với <a href="../2026-10-05/YC-24.html">YC-24</a>)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th>✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Nơi gửi · người phụ trách</td><td class="k">sender_dept · sender_user</td><td>Chọn</td><td>✱</td><td>Điền sẵn <b>P. Cung ứng</b> và người đang đăng nhập; người phụ trách phải thuộc P. Cung ứng. Trước đây là P. TQT – kỹ sư phụ trách.</td></tr>
+          <tr><td>Nơi nhận · người phụ trách</td><td class="k">receiver_dept · receiver_user</td><td>Chọn</td><td>✱</td><td>Không đổi: xưởng sản xuất (nhà máy) cho Bản vẽ sản xuất; bộ phận mua hàng / nhà cung cấp cho Bản vẽ đơn hàng.</td></tr>
+          <tr><td>Bản vẽ đính kèm</td><td class="k">files</td><td>Tệp</td><td>—</td><td>Đợt tự kèm <b>mọi bản vẽ cùng loại</b> P. TQT đã tải ở Đơn hàng (hiện thành khối “Bản vẽ của P. TQT”, không phải chọn); Cung ứng tải thêm tệp riêng của đợt nếu cần (<a href="../PL-C.html#Q-99">Q-99</a>).</td></tr>
+          <tr><td>Trạng thái</td><td class="k">status</td><td>—</td><td>—</td><td><span class="tag t-neu">Nháp</span> → <span class="tag t-ok">Đã gửi</span>. Không còn “Chờ TP TQT duyệt”, “Trả lại” (<a href="../PL-A.html">PL-A</a>). Đợt đã gửi khóa và tính vào lũy kế.</td></tr>
+          <tr><td>Gửi</td><td class="k">send</td><td>Hành vi</td><td>—</td><td>Nút chính của đợt Nháp: “Gửi bản vẽ sản xuất” / “Gửi bản vẽ đơn hàng”. Gửi xong: người phụ trách và trưởng đơn vị nơi nhận nhận thông báo; người lập Đơn hàng bên P. TQT nhận thông báo “Đơn hàng số {N} – {loại} đợt {n} đã gửi” (<a href="../PF-04.html">PF-04</a>).</td></tr>
+          <tr><td>Hủy gửi</td><td class="k">recall</td><td>Hành vi</td><td>—</td><td>Người gửi kéo đợt về Nháp khi <b>chưa có phiếu nhập kho, phiếu trình đơn hàng nào</b> gắn vào đợt; ghi lý do. Thay cho “Trả lại” của TP TQT.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Phân hệ Cung ứng có một tab: “Đơn hàng và sản xuất”.</b> Mở bằng hàng chờ Đơn hàng đã duyệt; bấm một dòng mở thẻ Đơn hàng số N với bảng Đơn hàng chỉ đọc, tệp P. TQT đã tải, rồi hai khối Bản vẽ sản xuất / Bản vẽ đơn hàng.<span class="then">Sheet dòng 1. Tên tab giữ nguyên chữ khách dùng.</span></li>
+      <li><b>Chỉ Đơn hàng Đã duyệt mới có mặt ở Cung ứng.</b> Đơn nháp, chờ duyệt, trả lại không hiện. Máy chủ chặn tạo đợt dưới đơn chưa duyệt — giữ nguyên quy tắc của <a href="../2026-10-05/YC-24.html">YC-24</a>.</li>
+      <li><b>P. Cung ứng lập và gửi đợt, không qua TP TQT.</b> Lũy kế, còn lại, cảnh báo cam khi vượt Đơn hàng, đánh số đợt lại từ 1 trong mỗi Đơn hàng: không đổi so với YC-24, chỉ đổi “đã nộp hoặc đã duyệt” thành “đã gửi”.<span class="then"><a href="../PL-C.html#Q-97">Q-97</a>: Đơn hàng đã được TP TQT duyệt về số lượng; đợt chỉ là chia giao, thêm một cấp duyệt là thêm một chỗ chờ.</span></li>
+      <li><b>Phiếu trình đơn hàng đi theo tab.</b> “Lập phiếu trình đơn hàng từ đợt này” nằm trên đợt đã gửi; danh sách phiếu, chi tiết, lệnh cung ứng, cấp hàng theo đợt (<a href="../ORD-04.html">ORD-04</a>, <a href="../ORD-05.html">ORD-05</a>) mở từ phân hệ Cung ứng. Người duyệt phiếu, mã <code>DH-YYYY-NNN</code>, biểu mẫu công ty không đổi.<span class="then"><a href="../PL-C.html#Q-98">Q-98</a>.</span></li>
+      <li><b>Kho dự án không đổi.</b> Thủ kho vẫn nhận theo “Đơn hàng số N – Đợt n” (<a href="../2026-10-05/YC-24.html">YC-24</a>); “Đang thực hiện” tính trên đợt <em>Đã gửi</em> thay cho đợt <em>Đã duyệt</em>.</li>
+      <li><b>Đường dẫn cũ vẫn mở được.</b> Thông báo đã gửi trước đợt này trỏ vào tab TQT; mở đường dẫn cũ của đợt hoặc phiếu thì chuyển sang trang tương ứng ở Cung ứng, không báo lỗi.</li>
+      <li><b>Đợt đã duyệt trước đợt này giữ nguyên</b> và đọc như <em>Đã gửi</em>; đợt đang chờ TP TQT duyệt lúc chuyển thì về <em>Nháp</em> để P. Cung ứng gửi lại.</li>
+    </ol>
+
+    <h4>Giao diện</h4>
+    <ul>
+      <li>Thanh điều hướng: nhóm <b>Cung ứng</b> đặt ngay dưới nhóm TQT — Shopdrawing, một mục “Đơn hàng và sản xuất”.</li>
+      <li>Hàng chờ: một bảng, bộ lọc dự án và “Chưa xong / Tất cả”. Trống: “Chưa có Đơn hàng nào chờ triển khai — Đơn hàng được TP TQT duyệt sẽ tự hiện ở đây.”</li>
+      <li>Thẻ Đơn hàng: dòng tổng theo Đơn hàng ở trên, bảng Đơn hàng thu gọn (mở được), ô “Bản vẽ của P. TQT” liệt kê tệp, rồi hai khối đợt cạnh nhau như YC-24. Một nút chính mỗi đợt nháp: <em>Gửi</em>.</li>
+      <li>Danh sách phiếu trình đơn hàng là một tab con thứ hai của trang (“Phiếu trình đơn hàng”), cùng bộ lọc như hiện nay.</li>
+    </ul>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:30%">Tình huống</th><th style="width:26%">Điều kiện</th><th>Thông điệp</th></tr></thead>
+        <tbody>
+          <tr><td>Người không thuộc P. Cung ứng tạo / gửi đợt</td><td>Thiếu quyền <code>supply_batch:write</code></td><td>“Chỉ P. Cung ứng được lập đợt Bản vẽ sản xuất / Bản vẽ đơn hàng.” <em>(chặn)</em></td></tr>
+          <tr><td>Gửi đợt không có dòng</td><td>Mọi “đợt này” = 0</td><td>“Nhập khối lượng đợt này cho ít nhất một đầu việc.” <em>(chặn)</em></td></tr>
+          <tr><td>Đợt vượt phần còn lại của Đơn hàng</td><td><code>qty_remaining</code> &lt; 0</td><td>Ô cam như <a href="../2026-10-05/YC-24.html">YC-24</a> <em>(cảnh báo, vẫn gửi)</em></td></tr>
+          <tr><td>Hủy gửi đợt đã có phiếu nhập / phiếu trình</td><td>Có chứng từ gắn đợt</td><td>“Đợt {n} đã có {chứng từ} — không hủy gửi được.” <em>(chặn)</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ul>
+      <li>P. Cung ứng có phân hệ riêng; mở ra là thấy Đơn hàng nào đã duyệt mà chưa chia giao xong.</li>
+      <li>Từ lúc TP TQT duyệt Đơn hàng tới lúc đợt tới nhà máy / nhà cung cấp không còn bước chờ duyệt nào.</li>
+      <li>Thủ kho dự án và P. Đấu thầu không thấy khác biệt gì ngoài việc đợt đến nhanh hơn.</li>
+    </ul>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:92px">Mã</th><th style="width:26%">Tiền đề</th><th style="width:28%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-YC26-1</td><td>Đăng nhập nhân viên P. Cung ứng</td><td>Mở thanh điều hướng</td><td>Có nhóm “Cung ứng” › “Đơn hàng và sản xuất”</td></tr>
+          <tr><td>UAT-YC26-2</td><td>Đơn hàng số 1 của SD.HN_0001.01 vừa được TP TQT duyệt; Đơn hàng số 2 đang chờ duyệt</td><td>Mở hàng chờ</td><td>Có “HN_0001 · SD.HN_0001.01 · Đơn hàng số 1 · Chưa lập đợt”; không có Đơn hàng số 2</td></tr>
+          <tr><td>UAT-YC26-3</td><td>Tiếp UAT-2; P. TQT đã tải 2 bản vẽ sản xuất</td><td>Mở Đơn hàng số 1, “+ Thêm đợt” ở khối Bản vẽ sản xuất</td><td>Nơi gửi điền sẵn P. Cung ứng – người đang đăng nhập; khối “Bản vẽ của P. TQT” liệt kê hai tệp</td></tr>
+          <tr><td>UAT-YC26-4</td><td>Tiếp UAT-3</td><td>Nhập 500, bấm Gửi bản vẽ sản xuất</td><td>Đợt 1 “Đã gửi”, khóa; nhà máy và người lập Đơn hàng bên P. TQT nhận thông báo; TP TQT không nhận yêu cầu duyệt nào</td></tr>
+          <tr><td>UAT-YC26-5</td><td>Đăng nhập kỹ sư P. TQT</td><td>Gọi thẳng API tạo đợt</td><td>“Chỉ P. Cung ứng được lập đợt Bản vẽ sản xuất / Bản vẽ đơn hàng.”</td></tr>
+          <tr><td>UAT-YC26-6</td><td>Tiếp UAT-4, chưa có chứng từ gắn đợt</td><td>Hủy gửi, ghi lý do</td><td>Đợt về Nháp, sửa được, giữ số đợt</td></tr>
+          <tr><td>UAT-YC26-7</td><td>Tiếp UAT-4</td><td>Lập phiếu trình đơn hàng từ đợt; mở thông báo cũ trỏ vào tab TQT</td><td>Phiếu lập được trong phân hệ Cung ứng; đường dẫn cũ chuyển sang trang Cung ứng tương ứng</td></tr>
+          <tr><td>UAT-YC26-8</td><td>Tiếp UAT-4</td><td>Thủ kho mở Xuất nhập kho dự án HN_0001</td><td>Nút “ĐH 1 – Đợt 1” có ở Đang thực hiện như trước</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="../2026-10-05/YC-24.html">YC-24 Bản vẽ SX / ĐH theo Đơn hàng</a><a href="YC-27.html">YC-27 tab Đơn hàng của P. TQT</a><a href="../ORD-03.html">ORD-03 lập &amp; trình đơn hàng</a><a href="../ORD-04.html">ORD-04 duyệt &amp; phân luồng</a><a href="../ORD-05.html">ORD-05 cấp hàng theo đợt</a><a href="../PRJ-04.html">PRJ-04 xuất nhập kho dự án</a><a href="../PL-A.html">PL-A sổ trạng thái</a><a href="../PL-B.html">PL-B phân quyền</a><a href="../PL-C.html#Q-97">PL-C · Q-97 – Q-99</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Trang 1 / 3</span><span><code>2026-10-08/YC-26.html</code></span>
+  <span>ABSMS — Yêu cầu 08/10/2026</span>
+  <span>Nguồn: <code>deploy 08.10.2026.xlsx · Sua08.10.26 dòng 1</code></span>
+</div>
+</main>
+</div>
+</body></html>

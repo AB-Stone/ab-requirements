@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đợt yêu cầu 08/10/2026 — ABSMS GĐ1</title>
+<link rel="stylesheet" href="../assets/spec.css">
+</head><body>
+<div class="app">
+<aside class="rail">
+  <a class="rail-brand" href="index.html" style="border-bottom:1px solid var(--rule)">
+    <div class="mark">AB</div>
+    <div><b>ABSMS</b><span>Yêu cầu 08/10/2026</span></div>
+  </a>
+  <nav>
+    <div class="rail-grp">Yêu cầu 08/10/2026</div>
+    <a class="on" href="index.html"><i>MỤC LỤC</i>Phân hệ Cung ứng</a>
+    <div class="rail-grp">Trang yêu cầu</div>
+    <a href="YC-26.html"><i>YC-26</i>Phân hệ Cung ứng</a>
+    <a href="YC-27.html"><i>YC-27</i>Tab Đơn hàng của P. TQT</a>
+    <a href="YC-28.html"><i>YC-28</i>Đơn hàng không cần hợp đồng</a>
+    <div class="rail-grp">Đợt trước</div>
+    <a href="../2026-10-05/index.html"><i>05/10</i>Đơn hàng theo bản vẽ Shop</a>
+    <a href="../2026-09-29/index.html"><i>29/09</i>Luồng TQT làm lại</a>
+    <a href="../2026-09-25/index.html"><i>25/09</i>Đối chiếu bản dựng 25/09/2026</a>
+    <a href="../2026-09-22/index.html"><i>22/09</i>Đợt yêu cầu 22/09/2026</a>
+    <a href="../2026-09-15/index.html"><i>15/09</i>Đợt yêu cầu 15/09/2026</a>
+    <div class="rail-grp">Đặc tả gốc</div>
+    <a href="../index.html"><i>GĐ1</i>Mục lục đặc tả</a>
+    <a href="../PL-C.html"><i>PL-C</i>Vấn đề cần chốt</a>
+  </nav>
+</aside>
+<main class="main">
+<div class="pagehead">
+  <div class="crumb"><a href="../index.html">ABSMS GĐ1</a> / <b>Yêu cầu 08/10/2026</b></div><div class="sp"></div>
+  <div class="pnav"><a href="YC-26.html">YC-26 →</a></div>
+</div>
+<header class="masthead">
+  <div class="eyebrow">Công ty CP Đá An Bình · Hệ thống ABSMS</div>
+  <h1>Phân hệ Cung ứng<br>08/10/2026</h1>
+  <p class="lede">Tệp <code>deploy 08.10.2026.xlsx</code> giữ nguyên mọi sheet của bản 05/10 và thêm một sheet <em>Sua08.10.26</em>. Sheet mới tách việc của hai phòng: <b>P. TQT – Shopdrawing dừng ở Đơn hàng</b> (lập Đơn hàng, lên kế hoạch chung, tải bản vẽ), còn <b>P. Cung ứng</b> — phân hệ mới — nhận Đơn hàng, phân luồng sản xuất / mua ngoài và theo tới khi vật tư nhập kho dự án. Thêm vào đó, P. TQT được <b>lập Đơn hàng không cần hợp đồng</b>, kèm tạo nhanh một dự án. Đợt này viết trên nền <a href="../2026-10-05/index.html">đợt 05/10</a> (Đơn hàng số N, YC-23 – YC-25): không đổi Đơn hàng là gì, chỉ đổi <b>ai làm phần nào, ở phân hệ nào</b>.</p>
+  <dl class="stamp">
+    <div><dt>Nguồn</dt><dd><code>deploy 08.10.2026.xlsx</code> · <em>Sua08.10.26</em> dòng 1 – 5</dd></div>
+    <div><dt>Trang yêu cầu</dt><dd><a href="YC-26.html">YC-26</a> – <a href="YC-28.html">YC-28</a> · một phân hệ mới, không màn hình nghiệp vụ mới</dd></div>
+    <div><dt>Trang đặc tả tác động</dt><dd><a href="../ORD-03.html">ORD-03</a> · <a href="../ORD-04.html">ORD-04</a> · <a href="../ORD-05.html">ORD-05</a> · <a href="../PRJ-04.html">PRJ-04</a> · <a href="../BID-01.html">BID-01</a> · <a href="../BID-06.html">BID-06</a> · <a href="../PF-04.html">PF-04</a> · <a href="../PL-A.html">PL-A</a> · <a href="../PL-B.html">PL-B</a></dd></div>
+    <div><dt>Điểm tạm chốt</dt><dd><a href="../PL-C.html#Q-97">Q-97</a> – <a href="../PL-C.html#Q-101">Q-101</a></dd></div>
+    <div><dt>Phiên bản</dt><dd>Bản thảo 1.0</dd></div>
+  </dl>
+</header>
+
+<section class="block" id="luong">
+  <h2><em>§0</em>Năm dòng của sheet, ba trang yêu cầu</h2>
+  <p class="intro">Đơn hàng số N của đợt 05/10 vẫn là tầng giữa bản vẽ Shop và các đợt Bản vẽ sản xuất / Bản vẽ đơn hàng. Đợt này cắt đường đi ở đúng tầng đó: phía trên (Đơn hàng) là của P. TQT, phía dưới (đợt, phiếu trình đơn hàng, phân luồng) là của P. Cung ứng.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:52px">#</th><th style="width:38%">Người dùng nói</th><th style="width:24%">Màn hình</th><th>Trang</th></tr></thead>
+      <tbody>
+        <tr><td class="k">1</td><td>Thêm tab “Đơn hàng và Sản xuất” vào phân hệ mới “Cung Ứng” — chuyển tab đó từ TQT – Shopdrawing sang. Cung ứng phân luồng sản xuất / mua ngoài tới khi vật tư ra công trình nhập kho dự án</td><td>Cung ứng › Đơn hàng và sản xuất</td><td><a href="YC-26.html">YC-26</a> · <a href="../ORD-04.html">ORD-04</a></td></tr>
+        <tr><td class="k">1b</td><td>Đổi tên tab của TQT thành “Đơn hàng”; xóa phần nhập chi tiết bản vẽ sản xuất, bản vẽ đơn hàng; chỉ giữ bảng lập kế hoạch và chỗ tải lên BV sản xuất + BV đơn hàng</td><td>TQT › Đơn hàng</td><td><a href="YC-27.html">YC-27</a> · <a href="../ORD-03.html">ORD-03</a></td></tr>
+        <tr><td class="k">2</td><td>Cho tạo mới Đơn hàng không cần hợp đồng đã duyệt; đồng thời khởi tạo nhanh một dự án với thông tin cơ bản như hộp thoại “Tiếp nhận thư chào thầu”</td><td>TQT › Đơn hàng › Lập Đơn hàng</td><td><a href="YC-28.html">YC-28</a> · <a href="../BID-01.html">BID-01</a></td></tr>
+        <tr><td class="k">3</td><td>Đơn hàng phát sinh mới cũng hiện bảng lập kế hoạch như khi chọn bản vẽ Shop rồi lên kế hoạch</td><td>Cùng màn hình</td><td><a href="YC-28.html">YC-28</a></td></tr>
+        <tr><td class="k">16</td><td>Tài khoản cấp 2, 3, 4… cấp n</td><td>Kế toán › Danh mục tài khoản</td><td><em>Đã có</em> — làm ở đợt 05/10 (mục 16), không viết lại</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">
+    <b>Giữ nguyên, không viết lại</b>
+    <p style="margin:0">Đơn hàng số N, cột, cảnh báo cam, TP TQT duyệt từng đơn (<a href="../2026-10-05/YC-23.html">YC-23</a>); đợt thuộc Đơn hàng, đánh lại từ 1, lũy kế theo Đơn hàng, kho nhận theo “Đơn hàng số N – Đợt n” (<a href="../2026-10-05/YC-24.html">YC-24</a>); Áp giá doanh thu theo Đơn hàng (<a href="../2026-10-05/YC-25.html">YC-25</a>). Sáu nguyên tắc giao diện của <a href="../2026-09-29/index.html#ux">đợt 29/09</a> áp nguyên.</p>
+  </div>
+</section>
+
+<section class="block" id="phan-vai">
+  <h2><em>§1</em>Ai làm phần nào — trước và sau đợt này</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:26%">Việc</th><th style="width:30%">Đến 05/10</th><th>Từ 08/10</th></tr></thead>
+      <tbody>
+        <tr><td>Lập Đơn hàng số N, tải bản vẽ sản xuất / bản vẽ đơn hàng</td><td>P. TQT</td><td><b>P. TQT</b> — tab <em>Đơn hàng</em> (<a href="YC-27.html">YC-27</a>); tệp đính ở Đơn hàng</td></tr>
+        <tr><td>Duyệt Đơn hàng số N</td><td>TP TQT</td><td><b>TP TQT</b> — không đổi</td></tr>
+        <tr><td>Lập đợt Bản vẽ sản xuất / Bản vẽ đơn hàng (khối lượng đợt này, nơi nhận, hạn)</td><td>P. TQT lập, TP TQT duyệt</td><td><b>P. Cung ứng lập và gửi</b>; không còn bước TP TQT duyệt đợt (<a href="YC-26.html">YC-26</a>, <a href="../PL-C.html#Q-97">Q-97</a>)</td></tr>
+        <tr><td>Lập phiếu trình đơn hàng từ đợt, theo dõi lệnh cung ứng</td><td>P. TQT · P. Cung ứng</td><td><b>P. Cung ứng</b> — trong phân hệ Cung ứng; luồng duyệt phiếu không đổi (<a href="../PL-C.html#Q-98">Q-98</a>)</td></tr>
+        <tr><td>Áp giá doanh thu</td><td>P. Đấu thầu</td><td>P. Đấu thầu — không đổi, kể cả Đơn hàng không có hợp đồng</td></tr>
+        <tr><td>Nhập kho dự án theo đợt</td><td>Thủ kho dự án</td><td>Thủ kho dự án — không đổi</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="trang">
+  <h2><em>§2</em>Ba trang yêu cầu</h2>
+  <div class="cards">
+    <a href="YC-26.html"><i>YC-26</i><b>Phân hệ Cung ứng</b><span>Phân hệ mới, tab “Đơn hàng và sản xuất”: hàng chờ Đơn hàng đã duyệt; lập và gửi đợt Bản vẽ sản xuất / Bản vẽ đơn hàng; phiếu trình đơn hàng; không còn TP TQT duyệt đợt</span></a>
+    <a href="YC-27.html"><i>YC-27</i><b>Tab Đơn hàng của P. TQT</b><span>Đổi tên tab; trang Đơn hàng chỉ còn bảng Đơn hàng và hai ô tải bản vẽ; hai khối đợt chuyển sang Cung ứng</span></a>
+    <a href="YC-28.html"><i>YC-28</i><b>Đơn hàng không cần hợp đồng</b><span>Nút “Lập Đơn hàng mới”; chọn dự án có sẵn hoặc tạo nhanh dự án; dòng nhập tay, vật tư chọn từ danh mục; cùng bảng, cùng duyệt</span></a>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:74px">Trang</th><th style="width:24%">Trang đặc tả tác động</th><th style="width:96px">Loại</th><th>Nội dung thay đổi</th></tr></thead>
+      <tbody>
+        <tr><td><a href="YC-26.html">YC-26</a></td><td><a href="../ORD-03.html">ORD-03</a> · <a href="../ORD-04.html">ORD-04</a> · <a href="../ORD-05.html">ORD-05</a> · <a href="../PF-04.html">PF-04</a> · <a href="../PL-A.html">PL-A</a> · <a href="../PL-B.html">PL-B</a></td><td><span class="tag t-warn">Sửa lớn</span></td><td>Phân hệ mới trên thanh điều hướng; đợt do P. Cung ứng lập – gửi; chuỗi trạng thái đợt rút còn Nháp → Đã gửi; phiếu trình đơn hàng chuyển phân hệ</td></tr>
+        <tr><td><a href="YC-27.html">YC-27</a></td><td><a href="../ORD-03.html">ORD-03</a> · <a href="../PL-B.html">PL-B</a></td><td><span class="tag t-neu">Sửa</span></td><td>Đổi tên tab; gỡ hai khối đợt; thêm hai ô tải bản vẽ ở Đơn hàng</td></tr>
+        <tr><td><a href="YC-28.html">YC-28</a></td><td><a href="../ORD-03.html">ORD-03</a> · <a href="../BID-01.html">BID-01</a> · <a href="../BID-06.html">BID-06</a> · <a href="../PRJ-04.html">PRJ-04</a> · <a href="../PL-A.html">PL-A</a> · <a href="../PL-B.html">PL-B</a></td><td><span class="tag t-warn">Sửa lớn</span></td><td>Dự án không có hợp đồng (tạo nhanh); Đơn hàng không có bản vẽ Shop; dòng nhập tay</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="can-chot">
+  <h2><em>§3</em>Điểm đội kỹ thuật tạm chốt</h2>
+  <p class="intro">Sheet nói rõ ai làm gì nhưng không nói vài chỗ ghép nối. Mỗi chỗ có phương án tạm chốt theo hướng đơn giản nhất, ghi ở <a href="../PL-C.html">PL-C</a> để P. TQT và P. Cung ứng xác nhận khi xem bản dựng.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:62px">Mã</th><th style="width:34%">Câu hỏi</th><th>Tạm chốt</th></tr></thead>
+      <tbody>
+        <tr><td class="k"><a href="../PL-C.html#Q-97">Q-97</a></td><td>Đợt do Cung ứng lập có còn cần ai duyệt</td><td>Không — Cung ứng lập và gửi; Đơn hàng đã được TP TQT duyệt là đủ — <a href="YC-26.html">YC-26</a></td></tr>
+        <tr><td class="k"><a href="../PL-C.html#Q-98">Q-98</a></td><td>Phiếu trình đơn hàng và lệnh cung ứng thuộc phân hệ nào</td><td>Chuyển cùng tab sang Cung ứng; luồng duyệt phiếu giữ nguyên — <a href="YC-26.html">YC-26</a></td></tr>
+        <tr><td class="k"><a href="../PL-C.html#Q-99">Q-99</a></td><td>Bản vẽ tải ở Đơn hàng và bản vẽ đính ở đợt</td><td>TQT tải ở Đơn hàng; mọi đợt cùng loại tự kèm, Cung ứng đính thêm được — <a href="YC-27.html">YC-27</a></td></tr>
+        <tr><td class="k"><a href="../PL-C.html#Q-100">Q-100</a></td><td>Dự án tạo nhanh về sau ký hợp đồng</td><td>Khởi tạo dự án từ hợp đồng cho chọn “gắn vào dự án đã tạo nhanh”; không tạo gói thầu — <a href="YC-28.html">YC-28</a></td></tr>
+        <tr><td class="k"><a href="../PL-C.html#Q-101">Q-101</a></td><td>Đơn hàng không có bản vẽ Shop: đánh số và mốc so sánh</td><td>Đánh số theo dự án; không có mốc so nên không cảnh báo vượt — <a href="YC-28.html">YC-28</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="thu-tu">
+  <h2><em>§4</em>Thứ tự triển khai</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:52px">#</th><th style="width:30%">Việc</th><th>Lý do đứng ở vị trí này</th></tr></thead>
+      <tbody>
+        <tr><td class="k">0</td><td><a href="../2026-10-05/YC-23.html">YC-23</a> · <a href="../2026-10-05/YC-24.html">YC-24</a> <span class="tag t-crit">chặn</span></td><td>Đơn hàng số N và đợt gắn Đơn hàng chưa có trong bản dựng; cả ba trang dưới đều treo vào đó.</td></tr>
+        <tr><td class="k">1</td><td><a href="YC-27.html">YC-27</a> + <a href="YC-26.html">YC-26</a></td><td>Làm cùng lúc: gỡ hai khối đợt khỏi TQT phải đi kèm chỗ mới của chúng ở Cung ứng, nếu không sẽ có một bản dựng không ai lập được đợt.</td></tr>
+        <tr><td class="k">2</td><td><a href="../2026-10-05/YC-25.html">YC-25</a></td><td>Chỉ cần Đơn hàng đã duyệt; song song với bước 1 được.</td></tr>
+        <tr><td class="k">3</td><td><a href="YC-28.html">YC-28</a></td><td>Mở dự án không có hợp đồng chạm tới mọi chỗ đang giả định dự án luôn có gói thầu và hợp đồng — làm sau cùng, khi luồng chính đã ổn.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<div class="filefoot">
+  <span>Yêu cầu 08/10/2026</span><span><code>2026-10-08/index.html</code></span>
+  <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
+  <span>Nguồn: <code>deploy 08.10.2026.xlsx</code></span>
+</div>
+</main>
+</div>
+</body></html>
