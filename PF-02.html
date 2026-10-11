@@ -337,6 +337,23 @@
       </table>
     </div>
 
+    <h4>Tham số — toàn quyền của TP TQT và Admin trên TQT — Shopdrawing và Dự án thi công</h4>
+    <p><b>Từ yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026 (<a href="PL-C.html#Q-103">Q-103</a>).</b> TP TQT (vai trò <code>ord_manager</code>) và Admin (<code>admin</code>) có cùng một bộ quyền và cùng một giới hạn trên mọi màn hình của hai phân hệ dưới đây: xem, sửa, xóa, khóa — kể cả phân công lại kỹ sư, sửa bản vẽ đã nộp. Mã quyền ở <a href="PL-B.html">PL-B</a>.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Phạm vi — TQT — Shopdrawing</td><td class="k">shopdrawing:manage</td><td>Quyền</td><td class="c">—</td><td>Mọi màn hình của phân hệ: <b>Hộp việc</b> · <b>Bản vẽ Shopdrawing</b> (<a href="ORD-02.html">ORD-02</a>) · <b>Đơn hàng</b> (<a href="ORD-03.html">ORD-03</a>) · <b>Hồ sơ thanh toán</b> (<a href="ORD-01.html">ORD-01</a>, <a href="ORD-08.html">ORD-08</a>, <a href="ORD-09.html">ORD-09</a>, <a href="ORD-10.html">ORD-10</a>) · <b>Theo dõi thanh toán</b> (<a href="RPT-05.html">RPT-05</a>). Hộp việc chưa có trang đặc tả riêng; quyền áp lên các bản ghi nó liệt kê.</td></tr>
+          <tr><td>Phạm vi — Dự án thi công</td><td class="k">prj:manage</td><td>Quyền</td><td class="c">—</td><td>Mọi màn hình của phân hệ: <b>Tổng quan</b> · <b>Đơn giá chuẩn</b> (<a href="PF-06.html">PF-06</a>) · <b>Tổ đội</b> (<a href="PRJ-05.html">PRJ-05</a>) · <b>Bảng giá khoán</b> (<a href="PRJ-01.html">PRJ-01</a>) · <b>Sản lượng</b> (<a href="PRJ-02.html">PRJ-02</a>) · <b>Lương tổ đội</b> (<a href="PRJ-03.html">PRJ-03</a>) · <b>Hiệu suất</b> · <b>Kho công trình</b> (<a href="PRJ-04.html">PRJ-04</a>). Tổng quan và Hiệu suất là màn hình đọc, chưa có trang đặc tả riêng.</td></tr>
+          <tr><td>Xem · sửa</td><td class="k">—</td><td>Quyền</td><td class="c">—</td><td>Xem mọi bản ghi, không giới hạn phạm vi dữ liệu theo dự án. Sửa mọi trường mà người lập sửa được, ở mọi trạng thái chưa khóa và chưa bị phòng sau xử lý — kể cả phân công lại kỹ sư phụ trách, sửa hay thay bản vẽ đã nộp, sửa Đơn hàng. Mỗi lần sửa ghi người, lúc, trường, giá trị cũ, giá trị mới.</td></tr>
+          <tr><td>Khóa · Mở khóa</td><td class="k">record:lock · is_locked · locked_by · locked_at</td><td>Hành vi</td><td class="c">—</td><td>Khóa <b>một bản ghi nghiệp vụ</b> — phân công, bản vẽ, Đơn hàng, hồ sơ… — không phải tài khoản người dùng (tài khoản vẫn đi theo <code>status</code> ở bảng trên). Bản ghi đang khóa thì <b>không ai</b> sửa, hủy hay xóa được, kể cả TP TQT và Admin: phải bấm <em>Mở khóa</em> trước. Khóa và mở khóa đều ghi người, lúc vào lịch sử của bản ghi; ghi chú tùy chọn.</td></tr>
+          <tr><td>Hủy có lý do</td><td class="k">record:cancel · cancel_reason · cancelled_by · cancelled_at</td><td>Hành vi</td><td class="c">✱ lý do</td><td>“Xóa” bản ghi <b>đã có phát sinh nghiệp vụ</b> — đã gửi, đã nộp, đã được thông báo, đã có tệp hay có bản ghi khác trỏ tới — là chuyển sang trạng thái <em>Đã hủy</em>: lý do bắt buộc; lý do, người hủy, lúc hủy hiện trong lịch sử. Bản ghi đã hủy chỉ đọc, ra khỏi mọi hàng chờ, ô chọn và phép cộng, nhưng vẫn tra cứu được.</td></tr>
+          <tr><td>Xóa hẳn</td><td class="k">record:cancel</td><td>Hành vi</td><td class="c">—</td><td>Chỉ với bản nháp <b>chưa có phát sinh nào</b>. Hỏi xác nhận; không để lại bản ghi, chỉ một dòng nhật ký hệ thống.</td></tr>
+          <tr><td>Giới hạn phía sau</td><td class="k">downstream_locked</td><td>Hệ thống</td><td class="c">—</td><td>Khi <b>phòng phía sau đã xử lý</b> bản ghi thì TP TQT và Admin không sửa, không hủy trực tiếp được nữa, phải đi yêu cầu thay đổi <a href="ORD-07.html">ORD-07</a>. Ví dụ: Đơn hàng số N khi P. Cung ứng đã lập đợt; hồ sơ thanh toán khi P. Kế toán đã ghi nhận (hóa đơn, công nợ, báo có); bản vẽ Shop khi đã có Đơn hàng số N gửi P. Cung ứng theo bản vẽ đó; sản lượng, lương tổ đội khi P. Kế toán đã chi; phiếu kho công trình khi đã ghi sổ kế toán.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
       <li>Hai người cùng vai trò “Kế toán” nhưng khác phạm vi dữ liệu thì mở cùng một báo cáo sẽ ra hai tập số liệu khác nhau, không phải thông báo lỗi truy cập.</li>
@@ -345,6 +362,8 @@
       <li>Sửa bộ quyền của vai trò không âm thầm thay đổi quyền của những người đã được tinh chỉnh riêng.</li>
       <li>Mọi thao tác cấp / thu hồi quyền hiện trong nhật ký hệ thống với đủ IP và thời điểm.</li>
       <li>Người dùng bị vô hiệu hóa mất quyền đăng nhập ngay ở phiên đang mở, không cần chờ hết hạn phiên.</li>
+      <li>TP TQT và Admin mở bất kỳ màn hình nào của TQT — Shopdrawing và Dự án thi công là sửa, khóa, hủy được như chủ bản ghi, trừ bản ghi đang khóa và bản ghi phòng phía sau đã xử lý <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em>.</li>
+      <li>Không bản ghi nào có phát sinh nghiệp vụ biến mất khỏi hệ thống: “xóa” nó là <em>Đã hủy</em> kèm lý do, tra lại được ai hủy, lúc nào, vì sao <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em>.</li>
     </ol>
 
     <h4>Mockup UI — Hệ thống › Vai trò &amp; quyền</h4>
@@ -404,6 +423,10 @@
       <li><b>Vô hiệu hóa có hiệu lực tức thì.</b> Chuyển người dùng sang trạng thái <code>disabled</code> sẽ chấm dứt mọi phiên đăng nhập đang mở của họ.<span class="then">Chứng từ họ đang giữ ở bước duyệt tự chuyển sang người ủy quyền hoặc quay về hàng chờ của bước đó.</span></li>
     
       <li><b>Màn hình này <em>không</em> có bộ lọc khoảng thời gian.</b> Vai trò và phân quyền là danh mục nền: nó không có con số nào cộng dồn theo thời gian để mà lọc (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Một bộ lọc không lọc gì chỉ làm người dùng nghi ngờ mình đang xem thiếu dữ liệu, rồi đi hỏi. Ranh giới “màn hình nào có, màn hình nào không” đang chờ chốt ở <a href="PL-C.html#Q-52">PL-C · Q-52</a>.</span></li>
+      <li><b>TP TQT và Admin toàn quyền trên TQT — Shopdrawing và Dự án thi công</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em>. Hai vai trò có quyền xem, sửa, xóa, khóa trên mọi màn hình của hai phân hệ — liệt kê ở bảng “Tham số — toàn quyền…” — kể cả phân công lại kỹ sư và sửa bản vẽ đã nộp.<span class="then">Thay quy tắc cũ “TP TQT chỉ xem, không phân công lại, không sửa bản vẽ đã nộp, không xóa”. Admin có <b>đúng</b> bộ quyền và giới hạn của TP TQT, không hơn: Admin không được miễn khóa, miễn giới hạn phía sau hay miễn ghi lý do.</span><span class="then">Toàn quyền là quyền <em>chức năng</em>; ba lớp quyền ở trên vẫn áp: người được cấp <code>shopdrawing:manage</code> / <code>prj:manage</code> thấy mọi dự án của phân hệ, bất kể phạm vi dữ liệu đã gán.</span></li>
+      <li><b>Khóa là khóa bản ghi, và khóa thắng mọi quyền</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em>. Khóa áp lên một bản ghi nghiệp vụ, không áp lên tài khoản. Bản ghi đang khóa thì không ai sửa, hủy, xóa hay thêm / gỡ tệp của nó — kể cả người vừa khóa; muốn sửa phải Mở khóa trước.<span class="then">Khóa không chặn việc của phòng khác trên bản ghi của họ: P. Cung ứng vẫn lập đợt dưới một Đơn hàng đang khóa, kế toán vẫn ghi nhận một hồ sơ đang khóa. Khóa giữ <em>nội dung</em> bản ghi đứng yên, không dừng luồng.</span><span class="then">Khóa và mở khóa đều vào lịch sử của bản ghi với người, lúc. Khác với khóa tự động theo trạng thái (đơn đã gửi, hồ sơ đã nộp CĐT…, <a href="PL-A.html">PL-A</a>): khóa tay chồng lên trên, mở khóa tay không mở được khóa theo trạng thái. Khóa bảng theo dõi shop của <a href="ORD-02.html">ORD-02</a> giữ luật riêng của nó — mở khóa vẫn bắt buộc lý do.</span></li>
+      <li><b>Xóa là hủy có lý do, trừ bản nháp chưa phát sinh</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em>. Bản ghi đã có phát sinh nghiệp vụ không xóa hẳn: “Xóa” chuyển nó sang <em>Đã hủy</em>, bắt buộc lý do, giữ người hủy và lúc hủy trong lịch sử. Chỉ bản nháp chưa phát sinh gì mới xóa hẳn.<span class="then">Cùng nguyên tắc “không xóa, chỉ ngừng / sinh phiên bản” của <a href="PF-01.html">PF-01</a> và <a href="PF-05.html">PF-05</a>, và cùng quy tắc bất biến số 2 của <a href="PL-A.html">PL-A</a>: hủy là trạng thái, không phải xóa bản ghi.</span><span class="then">“Phát sinh” là bất kỳ điều nào sau: đã từng gửi hay nộp, đã phát thông báo cho người ngoài người lập, đã có tệp đính kèm, hay đã có bản ghi khác trỏ tới. Ví dụ Đơn hàng số N đã gửi một lần rồi bị thu hồi chỉ hủy được, không xóa được (<a href="ORD-03.html">ORD-03</a>).</span></li>
+      <li><b>Phòng phía sau đã xử lý thì đi ORD-07</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em>. Một bản ghi đã được phòng phía sau xử lý — P. Cung ứng đã lập đợt, P. Kế toán đã ghi nhận hồ sơ, đã chi lương, đã ghi sổ phiếu kho — thì TP TQT và Admin không sửa, không hủy trực tiếp được nữa.<span class="then">Thay đổi đi qua yêu cầu cập nhật / hủy của <a href="ORD-07.html">ORD-07</a>, để phòng phía sau thấy và xử lý phần của mình (hàng đã sản xuất, hóa đơn đã xuất, tiền đã chi). Sửa thẳng ở đầu luồng là để phòng sau giữ một con số không còn khớp với ai.</span><span class="then">Máy chủ kiểm giới hạn này ở từng lệnh ghi, không chỉ ẩn nút; danh sách điều kiện “đã xử lý” của từng loại bản ghi ở bảng tham số trên.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -416,6 +439,10 @@
           <tr><td>Thu hồi người duyệt cuối cùng</td><td>Không còn ai đảm nhiệm bước</td><td>“Bước ‘{tên bước}’ sẽ không còn người duyệt. {n} chứng từ đang chờ ở bước này. Chọn người thay trước khi lưu.”</td></tr>
           <tr><td>Ủy quyền cho chính mình</td><td><code>delegate_to = user_id</code></td><td>“Không ủy quyền cho chính mình. Chọn người khác trong danh sách.”</td></tr>
           <tr><td>Khoảng ủy quyền ngược</td><td><code>from &gt; to</code></td><td>“Ngày kết thúc phải sau ngày bắt đầu.”</td></tr>
+          <tr><td>Sửa, hủy hay xóa bản ghi đang khóa <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em></td><td><code>is_locked = true</code>, mọi người dùng kể cả TP TQT, Admin</td><td>“{bản ghi} đang khóa bởi {người khóa} từ {lúc}. Mở khóa trước khi sửa.” <em>(chặn)</em></td></tr>
+          <tr><td>Hủy không lý do <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em></td><td><code>cancel_reason</code> rỗng sau khi bỏ khoảng trắng</td><td>“Nhập lý do hủy — lý do hiện trong lịch sử của bản ghi.” <em>(chặn)</em></td></tr>
+          <tr><td>Xóa hẳn bản ghi đã phát sinh <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em></td><td>Bản ghi đã gửi / nộp, đã thông báo, có tệp hoặc có bản ghi khác trỏ tới</td><td>“{bản ghi} đã có phát sinh nghiệp vụ — không xóa được. Chọn Hủy và ghi lý do.” <em>(chặn)</em></td></tr>
+          <tr><td>Sửa hay hủy bản ghi phòng phía sau đã xử lý <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em></td><td><code>downstream_locked = true</code></td><td>“{phòng} đã xử lý {bản ghi} ({việc đã làm}). Thay đổi qua yêu cầu cập nhật / hủy (ORD-07).” <em>(chặn)</em></td></tr>
         </tbody>
       </table>
     </div>
@@ -431,12 +458,17 @@
           <tr><td>UAT-PF02-4</td><td>E chưa có quyền trên DA-2026-020</td><td>P. Đấu thầu thêm E vào thành phần dự án DA-2026-020</td><td>E nhận thông báo và thấy ngay dữ liệu dự án mà không cần Admin can thiệp</td></tr>
           <tr><td>UAT-PF02-5</td><td>F đang giữ 2 chứng từ chờ duyệt, đã ủy quyền cho G</td><td>Vô hiệu hóa tài khoản F</td><td>Phiên của F đóng ngay; 2 chứng từ chuyển sang hàng chờ của G</td></tr>
           <tr><td>UAT-PF02-6</td><td>Cấp cho H quyền duyệt phiếu chi</td><td>Lưu thay đổi rồi để H mở Trung tâm phê duyệt</td><td>Quyền ở trạng thái “chờ hiệu lực”; H chưa thấy phiếu chi cho tới khi Ban lãnh đạo duyệt</td></tr>
+          <tr><td>UAT-PF02-7</td><td>Hạng mục shop của dự án <code>HN_0001</code> đang giao kỹ sư A, bản vẽ Shop V2 đã nộp <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em></td><td>TP TQT phân công lại cho kỹ sư B, rồi thay tệp bản vẽ V2</td><td>Lưu được; lịch sử ghi người, lúc, giá trị cũ / mới; B nhận thông báo giao việc. Đăng nhập Admin làm lại đúng các bước — kết quả như nhau</td></tr>
+          <tr><td>UAT-PF02-8</td><td>Tiếp UAT-7</td><td>TP TQT khóa bản vẽ; Admin sửa ghi chú bản vẽ; TP TQT tự sửa; rồi mở khóa và sửa</td><td>Admin và chính TP TQT đều bị chặn “… đang khóa bởi … Mở khóa trước khi sửa.”; mở khóa xong sửa được; lịch sử có hai dòng khóa / mở khóa với người, lúc</td></tr>
+          <tr><td>UAT-PF02-9</td><td>Một tổ đội nháp vừa tạo ở <a href="PRJ-05.html">PRJ-05</a>, chưa có gì trỏ tới; một tổ đội khác đã có trong bảng giá khoán</td><td>TP TQT xóa tổ đội nháp; rồi xóa tổ đội thứ hai không ghi lý do; rồi ghi lý do</td><td>Tổ đội nháp mất hẳn, nhật ký hệ thống có một dòng. Tổ đội thứ hai: lần đầu bị chặn đòi lý do; lần sau sang <em>Đã hủy</em>, vẫn đọc được trên bảng giá khoán cũ, không còn ở ô chọn</td></tr>
+          <tr><td>UAT-PF02-10</td><td>Đơn hàng số 1 đã gửi, P. Cung ứng đã lập Đợt 1</td><td>Admin sửa SL sản xuất; hủy đơn</td><td>Cả hai bị chặn kèm “P. Cung ứng đã xử lý … Thay đổi qua yêu cầu cập nhật / hủy (ORD-07).”; yêu cầu thay đổi ở <a href="ORD-07.html">ORD-07</a> lập được</td></tr>
+          <tr><td>UAT-PF02-11</td><td>Người dùng có vai trò TP TQT bị Admin chuyển <code>status = suspended</code></td><td>Kiểm tra khóa bản ghi của các hồ sơ người đó từng khóa</td><td>Tài khoản bị treo không làm bản ghi nào khóa hay mở khóa; “khóa” ở màn hình này và khóa bản ghi là hai việc riêng</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PF-03.html">PF-03 trung tâm phê duyệt</a><a href="BID-05.html">BID-05 gán nhân sự dự án</a><a href="PL-B.html">Phụ lục B — ma trận quyền đề xuất</a></p>
+    <p class="links"><a href="PF-03.html">PF-03 trung tâm phê duyệt</a><a href="BID-05.html">BID-05 gán nhân sự dự án</a><a href="PL-B.html">Phụ lục B — ma trận quyền đề xuất</a><a href="PL-C.html#Q-103">PL-C · Q-103 toàn quyền TP TQT và Admin (đã chốt)</a><a href="ORD-07.html">ORD-07 yêu cầu cập nhật / hủy</a><a href="ORD-02.html">ORD-02</a><a href="ORD-03.html">ORD-03</a><a href="PRJ-01.html">PRJ-01</a><a href="PRJ-02.html">PRJ-02</a><a href="PRJ-03.html">PRJ-03</a><a href="PRJ-04.html">PRJ-04</a><a href="PRJ-05.html">PRJ-05</a><a href="RPT-05.html">RPT-05</a></p>
   </div>
 </section>
 <div class="filefoot">
