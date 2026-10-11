@@ -396,6 +396,7 @@
       <li><b>Sinh một lần, không sinh lại.</b> Hợp đồng đã có hồ sơ tạm ứng — đang lập, đã đóng hay đã thanh toán — thì sự kiện lặp lại không sinh cái thứ hai.<span class="then">Giữ nguyên quy tắc 1: một đợt, một hồ sơ đang mở. Ký lại, sửa phụ lục hay chạy lại migration đều không được phép đẻ hồ sơ trùng; lần chạy lại chỉ ghi một dòng nhật ký, không báo cho người dùng.</span></li>
       <li><b>Hồ sơ sinh tự động xóa được khi còn rỗng.</b> <code>created_source = Hệ thống</code>, trạng thái <em>Đang lập</em> và chưa có tệp nào thì cán bộ TQT xóa được, có ghi lý do.<span class="then">Không phải hợp đồng nào cũng tạm ứng. Nếu không xóa được, danh sách sẽ tích lại những bản nháp rỗng không ai đụng tới và chỉ số tuổi hồ sơ mất nghĩa vì đếm cả thứ không bao giờ định lập. Đã có tệp đính kèm thì đóng với lý do chứ không xóa.</span></li>
       <li><b>Bản nháp chưa ai đụng tới không vào báo cáo hồ sơ chậm.</b> Hồ sơ sinh tự động chưa có <code>first_touched_at</code> thì không tính tuổi và không sinh cảnh báo quá hạn.<span class="then">Nếu tính, mọi hợp đồng vừa ký sẽ lập tức có một hồ sơ “chậm” và cảnh báo mất giá trị ngay trong tuần đầu. Đồng hồ chạy từ lần sửa đầu tiên, hoặc từ ngày hẹn thanh toán nếu có khai.</span></li>
+      <li><b>Lập hồ sơ là báo P. Kế toán</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 10)</em>. Mọi hồ sơ của khung này — tạm ứng ở đây và các hồ sơ kế thừa ở <a href="ORD-08.html">ORD-08</a>, <a href="ORD-09.html">ORD-09</a>, <a href="ORD-10.html">ORD-10</a> — khi được lập, kể cả hồ sơ tạm ứng hệ thống tự sinh, đều phát thông báo <code>payment_dossier_created</code> tới P. Kế toán, liên kết thẳng tới hồ sơ (<a href="PF-04.html">PF-04</a>).<span class="then">Để kế toán theo dõi hồ sơ, xuất hóa đơn tương ứng và theo dõi công nợ phải thu từ lúc hồ sơ có mặt. Phạm vi người nhận chờ <a href="PL-C.html#Q-105">Q-105</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -438,7 +439,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-05.html">BID-05 đợt thanh toán HĐ</a><a href="ORD-09.html">ORD-09 thanh toán khối lượng</a><a href="ORD-08.html">ORD-08 hồ sơ thanh toán vật tư</a><a href="ACC-05.html">ACC-05 công nợ phải thu</a><a href="ACC-07.html">ACC-07 báo có ngân hàng</a><a href="RPT-02.html">RPT-02 báo cáo hồ sơ</a></p>
+    <p class="links"><a href="BID-05.html">BID-05 đợt thanh toán HĐ</a><a href="ORD-09.html">ORD-09 thanh toán khối lượng</a><a href="ORD-08.html">ORD-08 hồ sơ thanh toán vật tư</a><a href="ACC-05.html">ACC-05 công nợ phải thu</a><a href="ACC-07.html">ACC-07 báo có ngân hàng</a><a href="RPT-02.html">RPT-02 báo cáo hồ sơ</a><a href="PF-04.html">PF-04 thông báo hồ sơ cho P. Kế toán</a></p>
   </div>
 </section>
 <div class="filefoot">
