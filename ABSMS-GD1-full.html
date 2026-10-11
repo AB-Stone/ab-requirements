@@ -12244,12 +12244,12 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
   </header>
   <div class="sb">
     <h4>Mục tiêu</h4>
-    <p>Mỗi lần xuất kho phải trả lời hai câu: hàng đi đâu, và giá trị ghi vào tài khoản nào. Đặc tả này quy định giá xuất kho tính theo bình quân gia quyền <em>tại thời điểm ghi nhận</em>, và ánh xạ bốn mục đích xuất sang bốn bộ định khoản mà bảng yêu cầu đã nêu.</p>
+    <p>Mỗi lần xuất kho phải trả lời hai câu: hàng đi đâu, và giá trị ghi vào tài khoản nào. Đặc tả này quy định giá xuất kho tính theo bình quân gia quyền <em>tại thời điểm ghi nhận</em>, và ánh xạ bốn mục đích xuất sang bốn bộ định khoản mà bảng yêu cầu đã nêu. Từ 11/10/2026 các bộ định khoản này chỉ là <b>gợi ý</b>: người lập phiếu tự chọn tài khoản Nợ, Có trên từng dòng, hệ thống không điền sẵn và không khóa.</p>
 
     <h4>Bốn mục đích xuất kho nhà máy</h4>
     <div class="tw">
       <table>
-        <thead><tr><th style="width:110px">Mục đích</th><th>Định khoản</th><th class="c">Cần duyệt xuất</th><th>Ghi chú nghiệp vụ</th></tr></thead>
+        <thead><tr><th style="width:110px">Mục đích</th><th>Định khoản gợi ý</th><th class="c">Cần duyệt xuất</th><th>Ghi chú nghiệp vụ</th></tr></thead>
         <tbody>
           <tr><td><b>Sản xuất</b></td><td><code>Nợ 621 / Có 152, 156</code></td><td class="c"><span class="tag t-neu">Không</span></td><td>Ngoại lệ duy nhất — chọn mục đích “xuất sản xuất” là ghi sổ ngay, không qua phê duyệt.</td></tr>
           <tr><td><b>Bán</b></td><td><code>Nợ 632 / Có 152, 156</code><br>Doanh thu: có hóa đơn <code>Nợ 1311 / Có 5113</code>; chưa xuất hóa đơn <code>Nợ 1312 / Có 5113</code></td><td class="c"><span class="tag t-warn">Có</span></td><td>Hai tài khoản phải thu tách theo tình trạng hóa đơn.</td></tr>
@@ -12450,11 +12450,15 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Mã phiếu</td><td class="k">issue_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>PX-YYYY-NNNN</code>.</td></tr>
-          <tr><td>Kho xuất</td><td class="k">wh_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ hiện kho cho phép nghiệp vụ tương ứng.</td></tr>
+          <tr><td>Kho xuất</td><td class="k">lines[].wh_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Nằm trên <b>từng dòng</b>, không còn ở đầu phiếu (từ 11/10/2026). Chỉ hiện kho cho phép nghiệp vụ tương ứng; dòng mới lấy sẵn kho của dòng trên, sửa được.</td></tr>
           <tr><td>Mục đích xuất</td><td class="k">issue_purpose</td><td>Chọn 1</td><td class="c req">✱</td><td><code>sản xuất</code> · <code>bán</code> · <code>hao hụt</code> · <code>thi công</code> · <code>điều chuyển</code>. Quyết định định khoản và việc có cần duyệt hay không.</td></tr>
           <tr><td>Dự án nhận</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc với mục đích thi công; với bán thì ghi dự án của khách nếu có.</td></tr>
           <tr><td>Đơn hàng nguồn</td><td class="k">order_id</td><td>Tham chiếu</td><td class="c">—</td><td>Với xuất thi công theo đợt cấp hàng (<a href="#ORD-05">ORD-05</a>).</td></tr>
-          <tr><td>Dòng xuất</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Vật tư, ĐVT + số lượng (một hệ duy nhất, theo <a href="#PF-01">PF-01</a>), giá xuất (hệ thống tính), thành tiền.</td></tr>
+          <tr><td>Dòng xuất</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Một bảng duy nhất, không tách thành nhiều hộp hay nhiều tab. Cột theo thứ tự: Mã vật tư · Tên vật tư · Kho · TK Nợ · TK Có · Đối tượng Nợ · Đối tượng Có · Mã thống kê · Khoản mục chi phí · Dự án · Chi phí hợp lý; sau đó ĐVT + số lượng (một hệ duy nhất, theo <a href="#PF-01">PF-01</a>), giá xuất (hệ thống tính), thành tiền.</td></tr>
+          <tr><td>TK Nợ · TK Có</td><td class="k">lines[].debit_acc · credit_acc</td><td>Tham chiếu</td><td class="c req">✱</td><td>Tài khoản chi tiết đang dùng ở <a href="#ACC-10">ACC-10</a>. Để trống khi mở dòng; danh sách chọn đưa tài khoản gợi ý của mục đích xuất lên đầu. Không bắt buộc với thi công, điều chuyển.</td></tr>
+          <tr><td>Đối tượng Nợ · Đối tượng Có</td><td class="k">lines[].debit_party · credit_party</td><td>Tham chiếu</td><td class="c">—</td><td>Đối tác hoặc nhân viên (<a href="#PF-01">PF-01</a>), theo tài khoản có theo dõi chi tiết đối tượng.</td></tr>
+          <tr><td>Mã thống kê · Khoản mục chi phí · Dự án</td><td class="k">lines[].stat_id · cost_item_id · project_id</td><td>Tham chiếu</td><td class="c">—</td><td>Từ danh mục ở <a href="#PF-01">PF-01</a> và danh sách dự án; khoản mục chỉ chọn nút lá.</td></tr>
+          <tr><td>Chi phí hợp lý</td><td class="k">lines[].deductible</td><td>Boolean</td><td class="c">—</td><td>Ô tích trên dòng; mặc định không tích.</td></tr>
           <tr><td>Tình trạng hóa đơn</td><td class="k">has_invoice</td><td>Boolean</td><td class="c">—</td><td>Chỉ với mục đích bán; quyết định dùng TK 1311 hay 1312.</td></tr>
           <tr><td>Biên bản nguyên nhân</td><td class="k">loss_report</td><td>Tệp</td><td class="c">—</td><td>Bắt buộc với mục đích hao hụt.</td></tr>
           <tr><td>Xác nhận nhận hàng</td><td class="k">receipt_confirm</td><td>Đối tượng</td><td class="c">—</td><td>Người xác nhận, thời điểm, chữ ký điện tử, số lượng thực nhận.</td></tr>
@@ -12475,6 +12479,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Trả hàng lỗi đưa phiếu xuất về nhà máy ở trạng thái sửa được, và phải duyệt lại từ đầu sau khi cập nhật.</li>
       <li>Xuất hao hụt không có biên bản nguyên nhân thì không trình duyệt được.</li>
       <li>Giá trị xuất kho phản ánh vào sổ chi phí công trình đúng mã dự án và khoản mục.</li>
+      <li>Chọn bất kỳ mục đích xuất nào, kể cả “sản xuất”, ô TK Nợ, TK Có trên dòng vẫn trống và sửa được; tài khoản gợi ý chỉ đứng đầu danh sách chọn.</li>
+      <li>Mọi thông tin hạch toán của một dòng — kho, tài khoản, đối tượng, mã thống kê, khoản mục, dự án, chi phí hợp lý — nhập trên chính dòng đó, trong một bảng.</li>
     </ol>
 
     <h4>Mockup UI — Kho › Phiếu xuất kho</h4>
@@ -12485,7 +12491,6 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <div class="wf-c"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">1</span> Thông tin phiếu xuất</div>
             <div class="wf-row">
-              <div class="wf-c"><div class="wf-f"><label>Kho xuất ✱</label><div class="in">K-HH Kho hàng hóa NM <em>▾</em></div></div></div>
               <div class="wf-c"><div class="wf-f"><label>Mục đích xuất ✱</label><div class="in">Thi công <em>▾</em></div></div></div>
               <div class="wf-c"><div class="wf-f"><label>Dự án nhận ✱</label><div class="in">DA-2026-014 <em>▾</em></div></div></div>
             </div>
@@ -12499,14 +12504,14 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
               <tr><td>Ghi chi phí</td><td>Khi kho DA xuất cho tổ đội</td></tr>
               <tr><td>Cần duyệt</td><td><span class="tag t-warn">Có</span></td></tr>
             </tbody></table>
-            <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Chọn “sản xuất” thì khối này đổi thành 621/152,156 và bỏ bước duyệt.</p>
+            <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Chỉ là gợi ý — tài khoản thật chọn trên từng dòng. Chọn “sản xuất” thì gợi ý đổi thành 621/152,156 và bỏ bước duyệt.</p>
           </div></div>
         </div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">3</span> Dòng xuất — giá xuất kho do hệ thống tính</div>
-          <table><thead><tr><th>Vật tư</th><th>ĐVT KT</th><th class="num">SL KT</th><th>ĐVT DA</th><th class="num">SL DA</th><th class="num">Giá xuất BQ</th><th class="num">Thành tiền</th></tr></thead>
+          <table><thead><tr><th>Mã VT</th><th>Tên vật tư</th><th>Kho</th><th>TK Nợ</th><th>TK Có</th><th>ĐT Nợ</th><th>ĐT Có</th><th>Mã TK</th><th>KMCP</th><th>Dự án</th><th class="c">CP hợp lý</th><th>ĐVT</th><th class="num">SL</th><th class="num">Giá xuất BQ</th><th class="num">Thành tiền</th></tr></thead>
           <tbody>
-            <tr><td>Đá granite đen 600×600×20</td><td>m²</td><td class="num">280</td><td>tấm</td><td class="num">778</td><td class="num">1.712.400</td><td class="num">479.472.000</td></tr>
+            <tr><td>VT-0412</td><td>Đá granite đen 600×600×20</td><td>K-HH</td><td>1361 ▾</td><td>1561 ▾</td><td>—</td><td>—</td><td>—</td><td>—</td><td>DA-2026-014</td><td class="c">☐</td><td>m²</td><td class="num">280</td><td class="num">1.712.400</td><td class="num">479.472.000</td></tr>
           </tbody></table>
         </div>
         <div class="wf-sec">
@@ -12531,7 +12536,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Lập phiếu xuất</td><td>Kho và mục đích xuất quyết định các trường còn lại và luồng duyệt.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Xem định khoản áp dụng</td><td>Hiển thị trước khi ghi sổ để kế toán kiểm chứng, đổi theo mục đích xuất.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Nhập dòng xuất</td><td>Không cho xuất quá tồn khả dụng. Giá xuất là ô chỉ đọc do hệ thống tính.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Nhập dòng xuất</td><td>Một dòng mang đủ kho, TK Nợ / Có, đối tượng, mã thống kê, khoản mục, dự án, chi phí hợp lý — không tách hộp. Ô tài khoản trống khi mở dòng, chọn tự do. Không cho xuất quá tồn khả dụng. Giá xuất là ô chỉ đọc do hệ thống tính.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>In biên bản giao hàng</td><td>Liên kết trực tiếp từ phiếu xuất, dùng chính ĐVT của vật tư.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Theo dõi vòng kiểm nhận</td><td>Bốn mốc: duyệt xuất, thông báo, kiểm nhận, xác nhận. Dự án thao tác trên web hoặc app.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Trả hàng lỗi</td><td>Đưa phiếu về trạng thái sửa được tại nơi cấp; sửa xong phải duyệt lại.</td></tr>
@@ -12542,7 +12547,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
       <li><b>Xuất sản xuất miễn duyệt.</b> Chọn mục đích “xuất sản xuất” thì ghi sổ ngay, không sinh phiên phê duyệt.<span class="then">Ngoại lệ duy nhất, đúng ghi chú gốc “không cần phê duyệt xuất kho khi chọn xuất kho sản xuất”.</span></li>
-      <li><b>Mục đích quyết định định khoản.</b> Bốn mục đích ứng với bốn bộ bút toán; bảng định khoản hiển thị trước khi ghi sổ để kế toán kiểm chứng.<span class="then">Đổi mục đích thì bảng định khoản đổi theo ngay trên màn hình.</span></li>
+      <li><b>Mục đích chỉ gợi ý định khoản, không khóa tài khoản</b> <em>(yêu cầu thay đổi 11/10/2026 · tạm chốt <a href="#Q-107">Q-107</a>)</em>. Bốn mục đích ứng với bốn bộ bút toán <em>gợi ý</em>. Hệ thống không điền sẵn TK Nợ, TK Có trên dòng — kể cả với mục đích “sản xuất” — và không khóa ô nào; người lập chọn bất kỳ tài khoản chi tiết đang dùng nào ở <a href="#ACC-10">ACC-10</a>. Tài khoản gợi ý chỉ đứng đầu danh sách chọn. Mục đích vẫn quyết định việc có cần duyệt hay không.<span class="then">Thay cho bản cũ “mục đích quyết định định khoản”: bản dựng đang tự điền và khóa 621 / 152 khi chọn “sản xuất”, kế toán không hạch toán được các trường hợp khác.</span><span class="then">Đổi mục đích thì khối gợi ý đổi theo, tài khoản đã chọn trên các dòng giữ nguyên.</span></li>
       <li><b>Bán tách theo tình trạng hóa đơn.</b> Có hóa đơn dùng tài khoản 1311, chưa xuất hóa đơn dùng 1312.<span class="then">Cùng ghi doanh thu 5113 và giá vốn 632; chỉ khác tài khoản phải thu.</span></li>
       <li><b>Hao hụt cần biên bản.</b> Xuất hao hụt không có biên bản xác định nguyên nhân thì không trình duyệt được.<span class="then">Hao hụt vượt định mức của nhóm vật tư còn phải quy trách nhiệm trước khi ghi sổ.</span></li>
       <li><b>Xuất thi công là điều chuyển nội bộ.</b> Không ghi doanh thu, không ghi giá vốn; chi phí phát sinh khi kho dự án xuất cho tổ đội ở <a href="#PRJ-04">PRJ-04</a>.<span class="then">Đây là lý do một lô đá đi từ nhà máy tới công trình không làm tăng chi phí dự án ngay lập tức.</span></li>
@@ -12555,6 +12560,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày chứng từ.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Xuất kho và bán hàng trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="#PF-01">PF-01</a>.</span></li>
       <li><b>Chọn người từ Danh mục nhân viên</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 7 · chốt 11/10/2026)</em>. Người giao, người nhận trên phiếu xuất chọn từ Danh mục nhân viên của <a href="#PF-01">PF-01</a> — kể cả người không có tài khoản; nhân viên đã ngừng không chọn được trên phiếu mới.<span class="then">Chốt ở <a href="#Q-104">Q-104</a>.</span></li>
       <li><b>Phiếu xuất cho sản xuất mang đối tượng tập hợp chi phí</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 6 · chốt 11/10/2026)</em>. Phiếu xuất có mục đích <em>sản xuất</em> bắt buộc chọn một đối tượng <em>Đang dùng</em> từ Danh mục Đối tượng tập hợp chi phí (<a href="#PF-01">PF-01</a>); phiếu mục đích khác không mang đối tượng. Thông điệp ở PF-01.<span class="then">Đặc tả theo bản dựng, chốt ở <a href="#Q-106">Q-106</a>.</span></li>
+      <li><b>Một dòng, đủ thông tin hạch toán</b> <em>(yêu cầu thay đổi 11/10/2026 · tạm chốt <a href="#Q-107">Q-107</a>)</em>. Bảng dòng xuất là bảng duy nhất, cột theo thứ tự: Mã vật tư, Tên vật tư, Kho, TK Nợ, TK Có, Đối tượng Nợ, Đối tượng Có, Mã thống kê, Khoản mục chi phí, Dự án, Chi phí hợp lý (ô tích) — rồi tới ĐVT, số lượng, giá xuất, thành tiền. Không tách thành hộp hay tab riêng cho hạch toán, thống kê.<span class="then">Kho chuyển từ đầu phiếu xuống từng dòng; một phiếu xuất được từ nhiều kho. Đối tượng tập hợp chi phí của phiếu sản xuất vẫn ở đầu phiếu như <a href="#Q-106">Q-106</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -12565,6 +12571,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Hao hụt thiếu biên bản</td><td>Mục đích hao hụt, không có tệp</td><td>“Xuất hao hụt cần biên bản xác định nguyên nhân.”</td></tr>
           <tr><td>Hao hụt vượt định mức</td><td>&gt; định mức nhóm vật tư</td><td>“Hao hụt {x}% vượt định mức {y}%. Cần biên bản quy trách nhiệm trước khi ghi sổ.”</td></tr>
           <tr><td>Xuất bán thiếu tình trạng hóa đơn</td><td><code>has_invoice</code> chưa chọn</td><td>“Chọn đã xuất hóa đơn hay chưa — quyết định dùng tài khoản 1311 hay 1312.”</td></tr>
+          <tr><td>Dòng thiếu tài khoản</td><td>Mục đích sản xuất / bán / hao hụt, <code>debit_acc</code> hoặc <code>credit_acc</code> rỗng</td><td>“Dòng {n}: chọn tài khoản Nợ và tài khoản Có.”</td></tr>
+          <tr><td>Chọn tài khoản tổng hợp hoặc đã ngừng</td><td>Tài khoản có tài khoản con, hoặc trạng thái ngừng (<a href="#ACC-10">ACC-10</a>)</td><td>“Tài khoản {số} không nhận bút toán. Chọn tài khoản chi tiết đang dùng.”</td></tr>
           <tr><td>Xuất thi công thiếu dự án</td><td><code>project_id</code> rỗng</td><td>“Xuất thi công phải chọn dự án nhận hàng.”</td></tr>
           <tr><td>Xuất quá tồn khả dụng</td><td><code>qty &gt; available</code></td><td>“Chỉ còn {số} {đvt} khả dụng tại {kho}.”</td></tr>
           <tr><td>Sửa giá xuất kho</td><td>Thao tác sửa ô giá</td><td>“Giá xuất kho do hệ thống tính theo bình quân gia quyền. Dùng bút toán điều chỉnh nếu cần thay đổi.”</td></tr>
@@ -12577,20 +12585,23 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-ACC04-1</td><td>Kho K-NVL có tồn NVL</td><td>Lập phiếu xuất mục đích “sản xuất” và lưu</td><td>Ghi sổ ngay 621/152; không tạo phiên duyệt nào</td></tr>
-          <tr><td>UAT-ACC04-2</td><td>Kho K-HH có thành phẩm</td><td>Lập phiếu xuất mục đích “bán”, chọn đã xuất hóa đơn</td><td>Bảng định khoản hiện 632/156 và 1311/5113</td></tr>
+          <tr><td>UAT-ACC04-1</td><td>Kho K-NVL có tồn NVL</td><td>Lập phiếu xuất mục đích “sản xuất”, chọn TK Nợ 621, TK Có 152 trên dòng và lưu</td><td>Ghi sổ ngay 621/152; không tạo phiên duyệt nào</td></tr>
+          <tr><td>UAT-ACC04-2</td><td>Kho K-HH có thành phẩm</td><td>Lập phiếu xuất mục đích “bán”, chọn đã xuất hóa đơn</td><td>Khối gợi ý hiện 632/156 và 1311/5113</td></tr>
           <tr><td>UAT-ACC04-3</td><td>Cùng phiếu, đổi sang chưa xuất hóa đơn</td><td>Xem lại bảng định khoản</td><td>Tài khoản phải thu đổi thành 1312</td></tr>
           <tr><td>UAT-ACC04-4</td><td>Phiếu xuất thi công vừa được duyệt</td><td>Kiểm tra thông báo của dự án</td><td>Dự án nhận thông báo có phiếu xuất hàng đi</td></tr>
           <tr><td>UAT-ACC04-5</td><td>Dự án kiểm nhận thấy vỡ 20 m²</td><td>Ghi sai lệch và chọn trả hàng</td><td>Phiếu về nhà máy ở trạng thái sửa được; phải duyệt lại từ đầu</td></tr>
           <tr><td>UAT-ACC04-6</td><td>Phiếu xuất thi công đã duyệt</td><td>Bấm “In biên bản giao hàng”</td><td>Biên bản dùng đúng ĐVT của vật tư, số liệu khớp phiếu xuất, không có cột quy đổi nào</td></tr>
           <tr><td>UAT-ACC04-7</td><td>Kế toán trưởng mở phiếu đã ghi sổ</td><td>Thử sửa giá xuất kho</td><td>Ô chỉ đọc kèm gợi ý dùng bút toán điều chỉnh</td></tr>
           <tr><td>UAT-ACC04-8</td><td>Xuất hao hụt 3% trên định mức 1%</td><td>Trình duyệt</td><td>Yêu cầu biên bản quy trách nhiệm trước khi ghi sổ</td></tr>
+          <tr><td>UAT-ACC04-9</td><td>Phiếu xuất mới, mục đích “sản xuất”</td><td>Thêm một dòng, xem ô TK Nợ / TK Có; chọn TK Nợ 627, TK Có 153 rồi lưu</td><td>Hai ô trống khi mở dòng, 621 / 152 đứng đầu danh sách chọn; lưu được với 627 / 153, ghi sổ đúng tài khoản đã chọn</td></tr>
+          <tr><td>UAT-ACC04-10</td><td>Phiếu xuất có hai dòng ở hai kho</td><td>Nhập đủ đối tượng, mã thống kê, khoản mục, dự án, tích chi phí hợp lý trên dòng 1</td><td>Mọi cột nằm trên cùng một dòng theo đúng thứ tự; không mở hộp hay tab nào khác; dòng 2 giữ kho riêng</td></tr>
+          <tr><td>UAT-ACC04-11</td><td>Phiếu mục đích “bán”</td><td>Chọn TK Nợ là tài khoản tổng hợp 152</td><td>Bị chặn với thông điệp “không nhận bút toán”</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#ACC-02">ACC-02 hệ thống kho</a><a href="#ACC-03">ACC-03 giá nhập kho</a><a href="#ORD-05">ORD-05 cấp hàng theo đợt</a><a href="#PRJ-04">PRJ-04 kho dự án</a><a href="#ACC-09">ACC-09 giá thành</a><a href="#PF-04">PF-04 thông báo &amp; ký nhận</a></p>
+    <p class="links"><a href="#ACC-02">ACC-02 hệ thống kho</a><a href="#ACC-03">ACC-03 giá nhập kho</a><a href="#ORD-05">ORD-05 cấp hàng theo đợt</a><a href="#PRJ-04">PRJ-04 kho dự án</a><a href="#ACC-09">ACC-09 giá thành</a><a href="#PF-04">PF-04 thông báo &amp; ký nhận</a><a href="#ACC-10">ACC-10 danh mục tài khoản</a><a href="#PF-01">PF-01 khoản mục, mã thống kê</a></p>
   </div>
 </section>
 <section class="sheet" id="ACC-05">
@@ -16595,6 +16606,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr id="Q-104"><td class="k">Q-104</td><td><b>Danh mục nhân viên trong nhóm menu Danh mục</b> — tệp deploy, sheet <em>10.10.2026</em> mục 7 xin thêm Danh mục khách hàng, nhà cung cấp và nhân viên. Khách hàng và nhà cung cấp đã có bản ghi Đối tác để dựa vào; nhân viên thì chưa rõ dựa vào đâu</td><td><b>Đã chốt 11/10/2026: phương án (b).</b> Danh mục nhân viên là danh mục <em>riêng</em> trong nhóm menu Danh mục, gồm cả người không đăng nhập; người có tài khoản gắn được với tài khoản. Thuộc tính: Mã, Họ tên, Phòng ban, Chức vụ, SĐT, Email, Trạng thái (đang làm / ngừng) và liên kết tài khoản tùy chọn — không thêm gì khác. Là ô chọn ở chứng từ kế toán (người đề nghị thanh toán, người nộp / nhận tiền, tạm ứng và công nợ nhân viên), phiếu kho (người giao, người nhận) và tổ đội — chỉ đội trưởng / người phụ trách phía công ty; thành viên tổ đội ở lại <a href="#PRJ-05">PRJ-05</a>. Cùng đợt: mã đối tác giữ một dãy chung <code>DT-NNNNNN</code> (thay <code>KH-</code> / <code>NCC-</code>), ai đăng nhập cũng xem được, chỉ Admin sửa; đối tác ngừng ẩn khỏi mọi ô chọn và bị máy chủ từ chối trên chứng từ mới. Xem <a href="#PF-01">PF-01</a>. <em>Tạm định của đội kỹ thuật:</em> mẫu mã nhân viên <code>NV-NNNN</code>, quyền ghi <code>employee:write</code> cho Admin.<br><em>Câu hỏi khi mở:</em> khách hàng và nhà cung cấp đã đưa vào <a href="#PF-01">PF-01</a>, nhân viên chưa hiện trên menu. Cần chốt: (a) Danh mục nhân viên chính là danh sách tài khoản người dùng ở <a href="#PF-02">PF-02</a> — chỉ người có đăng nhập; hay (b) một danh mục riêng gồm cả người không đăng nhập (công nhân, nhân sự công trường, người ký ngoài hệ thống), có hoặc không gắn tài khoản. Nếu (b): cần thuộc tính nào, ai được sửa, và có trùng với nhân sự tổ đội ở <a href="#PRJ-05">PRJ-05</a> không</td><td class="c">Ban lãnh đạo · P. Kế toán</td><td class="c"><a href="#PF-01">PF-01</a>, <a href="#PF-02">PF-02</a>, <a href="#PRJ-05">PRJ-05</a></td></tr>
         <tr id="Q-105"><td class="k">Q-105</td><td><b>Thông báo hồ sơ thanh toán cho P. Kế toán: ai nhận, khi nào</b> — tệp deploy, sheet <em>10.10.2026</em> mục 10 đã chốt: lập bất kỳ hồ sơ thanh toán, tạm ứng hay quyết toán nào thì P. Kế toán được báo để theo dõi, xuất hóa đơn và theo dõi công nợ, thu tiền. Chưa nói người nhận cụ thể và các mốc sau khi lập</td><td><b>Đã chốt 11/10/2026:</b> (a) cả phòng Kế toán — mọi người dùng thuộc phòng mã <code>KT</code>, kể cả Kế toán trưởng, như bản dựng; phòng <code>KT</code> có trên môi trường thật là việc của chủ hệ thống (migration <code>00092</code> tạo khi thiếu). (b) Ngoài lúc lập, báo thêm khi chủ đầu tư chấp thuận hồ sơ, khi chủ đầu tư trả lại hoặc hủy, và nhắc hạn thu tiền — 3 ngày trước ngày hẹn, rồi mỗi tuần khi quá hạn mà chưa thu đủ. (c) Hồ sơ tạm ứng hệ thống sinh báo ngay khi sinh, ghi “chưa có giá trị đề nghị”. Mã sự kiện ở <a href="#PF-04">PF-04</a>.<br><em>Câu hỏi khi mở:</em> đặc tả tạm phát một lần khi lập, tới người dùng thuộc P. Kế toán (<a href="#PF-04">PF-04</a>). Cần chốt: (a) cả phòng, hay chỉ kế toán công nợ phải thu (<a href="#ACC-05">ACC-05</a>) — và Kế toán trưởng có nhận không; (b) có báo thêm khi hồ sơ đổi trạng thái — nộp chủ đầu tư, được chấp thuận, đã thanh toán — hay chỉ lúc lập; (c) hồ sơ tạm ứng hệ thống tự sinh khi chưa có giá trị có báo ngay, hay chờ người lập nhập giá trị</td><td class="c">KT trưởng</td><td class="c"><a href="#PF-04">PF-04</a>, <a href="#ORD-01">ORD-01</a>, <a href="#ORD-08">ORD-08</a>, <a href="#ORD-09">ORD-09</a>, <a href="#ORD-10">ORD-10</a></td></tr>
         <tr id="Q-106"><td class="k">Q-106</td><td><b>Đối tượng tập hợp chi phí và Kỳ kế toán chưa có màn hình danh mục</b> — tệp deploy, sheet <em>10.10.2026</em> mục 6 đưa hai mục này vào nhóm menu Danh mục cùng bảy danh mục đã có. Đặc tả chưa định nghĩa chúng thành danh mục: kỳ hiện chỉ là tham số <code>period</code> của <a href="#ACC-08">ACC-08</a>, <a href="#ACC-09">ACC-09</a> (tháng · quý · 6 tháng, trạng thái đang mở / đã chốt); đối tượng tập hợp chi phí hiện là dự án / công trình và sản phẩm nhà máy trong phép tính giá thành của <a href="#ACC-09">ACC-09</a></td><td><b>Đã chốt 11/10/2026: viết theo bản dựng.</b> Rà bản dựng cho thấy cả hai đã là màn hình chạy thật, nối tới máy chủ và bảng dữ liệu: (a) Kỳ kế toán là danh mục kỳ <em>tháng</em> <code>YYYY-MM</code> — tạo 12 kỳ cho năm, chốt theo thứ tự (không còn phiếu nháp, kỳ trước đã chốt, sinh phiếu kết chuyển), mở lại có lý do (đảo phiếu kết chuyển); (b) Đối tượng tập hợp chi phí là danh mục riêng có mã nhập tay — mã, tên, ghi chú, trạng thái — bắt buộc trên phiếu xuất kho cho sản xuất. Đặc tả hai danh mục ở <a href="#PF-01">PF-01</a>; quyền <code>acc_catalog:*</code>, <code>acc_period:*</code> đã có ở <a href="#PL-B">PL-B</a>. Quan hệ giữa kỳ tháng này và tham số quý · 6 tháng của <a href="#ACC-08">ACC-08</a>, <a href="#ACC-09">ACC-09</a> chưa viết lại trong đợt này.<br><em>Câu hỏi khi mở:</em> hai mục đã có chỗ trên menu (<a href="#PF-01">PF-01</a>) nhưng chưa có nội dung. Cần chốt: (a) dựng danh mục kỳ kế toán — khai kỳ, mở / đóng kỳ một chỗ cho mọi màn hình kế toán — hay để mục menu dẫn tới màn hình chốt kỳ hiện có; (b) đối tượng tập hợp chi phí là danh mục riêng có mã, hay chỉ là cách nhìn trên dự án và sản phẩm đã có. Phát hiện khi ghi mục 6 đợt 10/10/2026</td><td class="c">KT trưởng</td><td class="c"><a href="#PF-01">PF-01</a>, <a href="#ACC-08">ACC-08</a>, <a href="#ACC-09">ACC-09</a></td></tr>
+        <tr id="Q-107"><td class="k">Q-107</td><td><b>Tài khoản Nợ / Có không cố định; một dòng đủ thông tin hạch toán</b> — yêu cầu thay đổi 11/10/2026, Kế toán › Xuất kho và bán hàng › Lập phiếu xuất: “không chọn cố định tài khoản nợ có ở bất cứ phân hệ nào, hoặc chỉ gợi ý tài khoản và cho phép chỉnh sửa lại tùy ý”. Bản dựng đang tự điền và khóa 621 / 152 khi chọn lý do “Sản xuất”. Mong muốn: người lập tự chọn tài khoản; trên một dòng, cột theo thứ tự Mã vật tư, Tên vật tư, Kho, TK Nợ, TK Có, Đối tượng Nợ, Đối tượng Có, Mã thống kê, Mã khoản mục chi phí, Dự án, Chi phí hợp lý (ô tích); không tách nhiều hộp</td><td><b>Tạm chốt 11/10/2026:</b> (a) ô TK Nợ, TK Có để trống khi mở dòng, không khóa; tài khoản gợi ý của mục đích xuất chỉ đứng đầu danh sách chọn; chọn được mọi tài khoản chi tiết đang dùng ở <a href="#ACC-10">ACC-10</a>; mục đích vẫn quyết định việc có cần duyệt. (b) Kho chuyển từ đầu phiếu xuống từng dòng — một phiếu xuất được từ nhiều kho. (c) ĐVT, số lượng, giá xuất (hệ thống tính), thành tiền đứng sau 11 cột trên. (d) Đối tượng tập hợp chi phí của phiếu sản xuất vẫn ở đầu phiếu như <a href="#Q-106">Q-106</a>. (e) Thi công, điều chuyển không sinh bút toán lúc xuất nên cột tài khoản không bắt buộc. (f) Đợt này chỉ viết vào <a href="#ACC-04">ACC-04</a>; nguyên tắc “gợi ý, không khóa” cho các chứng từ có định khoản khác (<a href="#ACC-03">ACC-03</a>, <a href="#ACC-05">ACC-05</a>, <a href="#ACC-07">ACC-07</a>, <a href="#ACC-08">ACC-08</a>) chờ KT trưởng xác nhận rồi rà. Cần KT trưởng xác nhận (a) – (f)</td><td class="c">KT trưởng</td><td class="c"><a href="#ACC-04">ACC-04</a>, <a href="#ACC-10">ACC-10</a></td></tr>
       </tbody>
     </table>
   </div>
