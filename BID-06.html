@@ -244,6 +244,7 @@
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
       <li>Danh sách đơn hàng có bộ lọc “chưa có giá doanh thu” để P. Đấu thầu biết còn đơn nào cần áp giá.</li>
+      <li>Tab <b>Danh mục dự án</b> mở đầu tiên: mỗi dự án một dòng kèm số Đơn hàng đã tạo, số đã áp giá (dạng <code>đã áp giá / đã tạo</code>) và số chờ áp giá; bấm một dự án thì hiện danh sách Đơn hàng của riêng dự án đó, bấm một Đơn hàng chưa áp giá thì mở bảng điền giá.</li>
       <li>Áp giá và duyệt giá không làm đổi trạng thái sản xuất, cấp hàng của đơn — kiểm chứng bằng cách áp giá cho đơn đang cấp dở.</li>
       <li>Đơn hàng đã duyệt giá hiển thị nhãn riêng trên danh sách và trên chi tiết.</li>
       <li>Đơn giá lệch quá 5% so với BOQ hợp đồng bắt buộc ghi lý do và lý do hiện trên màn hình duyệt.</li>
@@ -288,6 +289,7 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
+          <tr><td class="c">—</td><td>Tab Danh mục dự án</td><td>Mặc định khi vào Áp giá doanh thu. Dự án → danh sách Đơn hàng của dự án → bảng áp giá của Đơn hàng được chọn, cả ba trên cùng một trang (<em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-111">Q-111</a>)</em>).</td></tr>
           <tr><td class="c"><span class="pin">1</span></td><td>Lọc đơn chưa có giá</td><td>Hàng chờ việc riêng của P. Đấu thầu, độc lập với hàng chờ sản xuất.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Nhập đơn giá doanh thu</td><td>Nạp sẵn đơn giá BOQ hợp đồng; cột “Lệch” tính tự động.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Giải trình lệch giá</td><td>Bắt buộc khi lệch quá 5%; nội dung hiện trên màn hình phê duyệt.</td></tr>
@@ -299,6 +301,7 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
+      <li><b>Theo dõi theo từng dự án.</b> Áp giá doanh thu có thêm tab <em>Danh mục dự án</em>, đặt đầu và mở mặc định; hai tab hiện có — hàng chờ theo Đơn hàng và lịch sử bảng áp giá cũ — giữ nguyên <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-111">Q-111</a>)</em>.<span class="then">Danh mục liệt kê dự án có ít nhất một Đơn hàng đã tạo. Mỗi dòng: dự án (mã · tên), <b>Đã tạo</b> — mọi Đơn hàng của dự án trừ đã hủy, kể cả nháp và chưa gửi; <b>Đã áp giá</b> — Đơn hàng đã gửi mà mọi dòng có đơn giá nội bộ, hiện dạng <code>3/5</code> so với số đã tạo; <b>Chờ áp giá</b> — đã gửi nhưng chưa áp xong (gồm áp dở). Dự án còn đơn chờ áp giá xếp trước, rồi theo mã dự án; ô tìm theo mã hoặc tên dự án.</span><span class="then">Bấm một dự án thì danh sách Đơn hàng của dự án hiện ngay bên dưới: Đơn hàng số, bản vẽ Shop, trạng thái Đơn hàng, ngày gửi, trạng thái áp giá, doanh thu nội bộ. Đơn hàng chưa gửi có mặt để đếm cho khớp nhưng không bấm được — “Chưa gửi, chưa áp giá được”. Bấm Đơn hàng đã gửi thì bảng áp giá của nó mở bên dưới, giống tab theo Đơn hàng; đơn đã áp giá vẫn mở được để xem, sửa theo quyền như hiện hành. Dự án và Đơn hàng đang chọn nằm trong địa chỉ trang.</span></li>
       <li><b>Chỉ áp giá cho đơn đã duyệt.</b> Đơn ở trạng thái nháp hoặc chờ duyệt không xuất hiện trong hàng chờ áp giá.<span class="then">Đơn bị từ chối hoặc hủy cũng bị loại khỏi danh sách.</span></li>
       <li><b>Không chặn, không bị chặn.</b> Luồng áp giá không đọc và không ghi bất kỳ trường trạng thái nào của luồng tác nghiệp.<span class="then">Nhãn “đã có giá doanh thu” là dữ liệu một chiều: luồng tác nghiệp hiển thị nó nhưng không dùng nó làm điều kiện.</span></li>
       <li><b>Gợi ý theo BOQ hợp đồng.</b> Đơn giá nạp sẵn từ đơn giá BOQ hợp đồng của hạng mục tương ứng.<span class="then">Hạng mục không có trong BOQ (đầu việc phát sinh) thì để trống và yêu cầu chọn căn cứ áp giá khác.</span></li>
@@ -336,6 +339,8 @@
           <tr><td>UAT-BID06-5</td><td>Bảng áp giá được Ban lãnh đạo duyệt</td><td>Mở danh sách đơn hàng</td><td>Đơn hiện nhãn “đã có giá doanh thu”; doanh thu vào báo cáo lãi lỗ</td></tr>
           <tr><td>UAT-BID06-6</td><td>Dự án có đơn hàng nhưng chưa đơn nào áp giá</td><td>Mở báo cáo lãi lỗ dự án</td><td>Doanh thu bằng 0 kèm cảnh báo “chưa áp giá đơn hàng”, không hiển thị lỗ như số thật</td></tr>
           <tr><td>UAT-BID06-7</td><td>Đăng nhập bằng tài khoản P. TQT, đơn đã có bảng áp giá</td><td>Bấm nhãn “đã có giá doanh thu” trên danh sách đơn</td><td>Bảng áp giá mở ở chế độ chỉ đọc; không có nút lưu, không có nút trình duyệt giá</td></tr>
+          <tr><td>UAT-BID06-8</td><td>Dự án DA-2026-014 có 5 Đơn hàng: 1 nháp, 1 đã hủy, 3 đã gửi — 2 đã áp xong, 1 áp dở</td><td>Mở Áp giá doanh thu</td><td>Tab Danh mục dự án mở sẵn; dòng DA-2026-014 hiện Đã tạo 4, Đã áp giá 2/4, Chờ áp giá 1</td></tr>
+          <tr><td>UAT-BID06-9</td><td>Như trên</td><td>Bấm DA-2026-014, rồi bấm Đơn hàng áp dở</td><td>Chỉ hiện 4 Đơn hàng của DA-2026-014; đơn nháp không bấm được; bảng áp giá của đơn áp dở mở bên dưới, lưu xong cột Đã áp giá thành 3/4</td></tr>
         </tbody>
       </table>
     </div>
