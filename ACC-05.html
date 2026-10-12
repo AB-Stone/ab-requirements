@@ -41,7 +41,7 @@
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <div class="rail-grp">Phòng Kế toán</div>
@@ -262,7 +262,7 @@
 <g id="node15" class="node">
 <title>D</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="505.82,-461.6 320.18,-461.6 320.18,-417.2 505.82,-417.2 505.82,-461.6"/>
-<text xml:space="preserve" text-anchor="middle" x="413" y="-443.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hồ sơ giao khoán nhân công</text>
+<text xml:space="preserve" text-anchor="middle" x="413" y="-443.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hồ sơ thanh toán nhân công tổ đội</text>
 <text xml:space="preserve" text-anchor="middle" x="413" y="-428.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;03</text>
 </g>
 <g id="edge15" class="edge">
@@ -280,7 +280,7 @@
         <tbody>
           <tr><td>Mã đề nghị</td><td class="k">payreq_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>DNTT-YYYY-NNNN</code>.</td></tr>
           <tr><td>Đối tượng nhận tiền</td><td class="k">payee</td><td>Tham chiếu</td><td class="c req">✱</td><td>Nhà cung cấp, tổ đội, cá nhân (tạm ứng), hoặc <b>khác</b> — khoản của công ty ngoài dự án, người nhận ghi tên tự do (từ 11/10/2026).</td></tr>
-          <tr><td>Chứng từ gốc</td><td class="k">source_docs[]</td><td>Danh sách</td><td class="c req">✱</td><td>Phiếu nhập, hóa đơn dịch vụ, hồ sơ giao khoán nhân công. Chặn đề nghị trùng chứng từ. Đối tượng <em>khác</em> không chọn chứng từ gốc mà nhập dòng tay: nội dung và số tiền.</td></tr>
+          <tr><td>Chứng từ gốc</td><td class="k">source_docs[]</td><td>Danh sách</td><td class="c req">✱</td><td>Phiếu nhập, hóa đơn dịch vụ, hồ sơ thanh toán nhân công tổ đội. Chặn đề nghị trùng chứng từ. Đối tượng <em>khác</em> không chọn chứng từ gốc mà nhập dòng tay: nội dung và số tiền.</td></tr>
           <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Suy từ chứng từ gốc; nhiều dự án thì tách dòng. Dòng nhập tay của đối tượng <em>khác</em> không mang dự án.</td></tr>
           <tr><td>Giá trị đề nghị</td><td class="k">amount</td><td>Số tiền</td><td class="c req">✱</td><td>Không vượt dư nợ phải trả của các chứng từ đã chọn.</td></tr>
           <tr><td>Hình thức</td><td class="k">pay_method</td><td>Chọn 1</td><td class="c req">✱</td><td><code>tiền mặt</code> · <code>chuyển khoản</code>. Quyết định ghi sổ quỹ hay sổ ngân hàng.</td></tr>
@@ -315,7 +315,7 @@
       <li>Bảng tuổi nợ chia đúng bốn nhóm như dashboard mockup và lọc được theo công trình.</li>
       <li>Sổ chi tiết công nợ hiển thị tên hàng, đơn giá và số lượng, không chỉ số tiền.</li>
       <li>Khách hàng vượt hạn mức công nợ thì cảnh báo hiện ngay trên màn hình duyệt đơn bán hàng.</li>
-      <li>Hồ sơ giao khoán nhân công đã duyệt tạo đề nghị thanh toán sẵn dữ liệu, kế toán chỉ kiểm và trình.</li>
+      <li>Hồ sơ thanh toán nhân công tổ đội đã duyệt tạo đề nghị thanh toán sẵn dữ liệu, kế toán chỉ kiểm và trình.</li>
     </ol>
 
     <h4>Mockup UI — Công nợ › Tuổi nợ &amp; đề nghị thanh toán</h4>

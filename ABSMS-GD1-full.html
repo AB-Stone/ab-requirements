@@ -296,7 +296,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="#PRJ-01"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="#PRJ-02"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="#PRJ-03"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="#PRJ-03"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="#PRJ-04"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="#PRJ-05"><i>PRJ-05</i>Danh mục tổ đội</a>
 
@@ -632,7 +632,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr><td class="k">TQT · 14</td><td>Hoàn thiện bản vẽ hoàn công và lập hồ sơ quyết toán</td><td class="k"><a href="#ORD-10">ORD-10</a></td></tr>
         <tr><td class="k">TQT · 9</td><td>Lập giá khoán tổ đội</td><td class="k"><a href="#PRJ-01">PRJ-01</a></td></tr>
         <tr><td class="k">TQT · 10</td><td>Up sản lượng thi công theo tuần / đợt thanh toán</td><td class="k"><a href="#PRJ-02">PRJ-02</a></td></tr>
-        <tr><td class="k">TQT · 11</td><td>Hồ sơ giao khoán nhân công — 5 bước trình</td><td class="k"><a href="#PRJ-03">PRJ-03</a></td></tr>
+        <tr><td class="k">TQT · 11</td><td>Hồ sơ thanh toán nhân công tổ đội — 5 bước trình</td><td class="k"><a href="#PRJ-03">PRJ-03</a></td></tr>
         <tr><td class="k">TQT · 12</td><td>Xuất nhập kho dự án</td><td class="k"><a href="#PRJ-04">PRJ-04</a></td></tr>
         <tr><td class="k">KT · 1</td><td>Đề xuất nhập TS, CCDC, vật tư, chi phí — 3 loại, 2 cấp duyệt</td><td class="k"><a href="#ACC-01">ACC-01</a></td></tr>
         <tr><td class="k">KT · 1 (II)</td><td>Hệ thống kho: kho tổng, kho dự án, kho NM</td><td class="k"><a href="#ACC-02">ACC-02</a></td></tr>
@@ -1644,7 +1644,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Hợp đồng</td><td>Hợp đồng thi công (ký số nhiều bước)</td><td>TP Đấu thầu → KT trưởng → Tổng GĐ</td><td class="k"><a href="#BID-05">BID-05</a></td></tr>
           <tr><td>Đơn hàng</td><td>Phiếu trình đơn hàng (<code>DH</code>) — đơn hàng sản xuất · đơn cập nhật · đơn hủy. <em>Đơn hàng số N</em> của bản vẽ Shop không vào trung tâm này và từ 11/10/2026 không còn duyệt — người lập gửi thẳng P. Cung ứng (<a href="#Q-102">Q-102</a>)</td><td>TP TQT → Ban lãnh đạo</td><td class="k"><a href="#ORD-03">ORD-03</a>, <a href="#ORD-07">ORD-07</a></td></tr>
           <tr><td>Giá bán</td><td>Bảng áp giá doanh thu đơn hàng</td><td>P. Đấu thầu → Ban lãnh đạo</td><td class="k"><a href="#BID-06">BID-06</a></td></tr>
-          <tr><td>Khoán &amp; nhân công</td><td>Bảng giá khoán tổ đội · hồ sơ giao khoán nhân công</td><td>Dự án → TQT → Đấu thầu → Kế toán → Lãnh đạo</td><td class="k"><a href="#PRJ-01">PRJ-01</a>, <a href="#PRJ-03">PRJ-03</a></td></tr>
+          <tr><td>Khoán &amp; nhân công</td><td>Bảng giá khoán tổ đội · hồ sơ thanh toán nhân công tổ đội</td><td>Dự án → TQT → Đấu thầu → Kế toán → Lãnh đạo</td><td class="k"><a href="#PRJ-01">PRJ-01</a>, <a href="#PRJ-03">PRJ-03</a></td></tr>
           <tr><td>Đề xuất mua sắm</td><td>Đề xuất TS · CCDC · vật tư · chi phí</td><td>Loại 1: GĐ dự án <b>hoặc</b> KT trưởng · Loại 2: GĐ dự án → KTT → Tổng GĐ</td><td class="k"><a href="#ACC-01">ACC-01</a></td></tr>
           <tr><td>Kho</td><td>Phiếu xuất kho · điều chuyển · xác nhận nhận hàng</td><td>GĐ dự án → KT trưởng (xuất SX: miễn duyệt)</td><td class="k"><a href="#ACC-04">ACC-04</a>, <a href="#PRJ-04">PRJ-04</a></td></tr>
           <tr><td>Thanh toán</td><td>Đề nghị thanh toán · phiếu chi · ghi giảm tài sản</td><td>Theo hạn mức: 1 – 3 cấp</td><td class="k"><a href="#ACC-05">ACC-05</a>, <a href="#ACC-06">ACC-06</a></td></tr>
@@ -2002,7 +2002,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Đơn hàng</td><td>Mọi giá trị</td><td>TP TQT → Ban lãnh đạo</td><td class="c">24 giờ / bước</td></tr>
           <tr><td>Áp giá doanh thu</td><td>Mọi giá trị</td><td>Ban lãnh đạo</td><td class="c">72 giờ</td></tr>
           <tr><td>Giá khoán tổ đội</td><td>Mọi giá trị</td><td>P. Đấu thầu → Ban lãnh đạo</td><td class="c">48 giờ / bước</td></tr>
-          <tr><td>Giao khoán nhân công</td><td>Mọi giá trị</td><td>TQT → Đấu thầu → Kế toán → Lãnh đạo</td><td class="c">24 giờ / bước</td></tr>
+          <tr><td>Thanh toán nhân công tổ đội</td><td>Mọi giá trị</td><td>TQT → Đấu thầu → Kế toán → Lãnh đạo</td><td class="c">24 giờ / bước</td></tr>
           <tr><td rowspan="2">Đề nghị thanh toán</td><td>≤ 1 tỷ</td><td>KT trưởng</td><td class="c">24 giờ</td></tr>
           <tr><td>&gt; 1 tỷ</td><td>KT trưởng → Tổng GĐ</td><td class="c">48 giờ / bước</td></tr>
           <tr><td>Phiếu xuất kho</td><td>Xuất sản xuất</td><td><span class="tag t-neu">Miễn duyệt</span></td><td class="c">—</td></tr>
@@ -5515,7 +5515,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-05">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="#PRJ-03">PRJ-03 giao khoán nhân công</a><a href="#PRJ-05">PRJ-05 danh mục tổ đội</a><a href="#ACC-07">ACC-07 thu chi — quỹ &amp; NH</a><a href="#ORD-10">ORD-10 bản vẽ hoàn công &amp; quyết toán</a><a href="#RPT-02">RPT-02 báo cáo quản trị dự án</a><a href="#RPT-05">RPT-05 theo dõi tiến độ hợp đồng</a><a href="#PF-01">PF-01 quy ước mã</a><a href="#PF-03">PF-03 trung tâm phê duyệt</a><a href="#PF-04">PF-04 thông báo</a><a href="#PL-A">PL-A sổ trạng thái chứng từ</a><a href="#PL-B">PL-B ma trận phân quyền</a><a href="#PL-C">PL-C vấn đề cần chốt</a><a href="2026-09-22/YC-11.html">YC-11 yêu cầu gốc</a></p>
+    <p class="links"><a href="#BID-05">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="#PRJ-03">PRJ-03 thanh toán nhân công tổ đội</a><a href="#PRJ-05">PRJ-05 danh mục tổ đội</a><a href="#ACC-07">ACC-07 thu chi — quỹ &amp; NH</a><a href="#ORD-10">ORD-10 bản vẽ hoàn công &amp; quyết toán</a><a href="#RPT-02">RPT-02 báo cáo quản trị dự án</a><a href="#RPT-05">RPT-05 theo dõi tiến độ hợp đồng</a><a href="#PF-01">PF-01 quy ước mã</a><a href="#PF-03">PF-03 trung tâm phê duyệt</a><a href="#PF-04">PF-04 thông báo</a><a href="#PL-A">PL-A sổ trạng thái chứng từ</a><a href="#PL-B">PL-B ma trận phân quyền</a><a href="#PL-C">PL-C vấn đề cần chốt</a><a href="2026-09-22/YC-11.html">YC-11 yêu cầu gốc</a></p>
   </div>
 </section>
 <section class="block" id="grp-ord">
@@ -8767,7 +8767,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Mã hồ sơ</td><td class="k">vol_dossier_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>HSKL-&lt;project&gt;-NN</code>.</td></tr>
           <tr><td>Đợt thanh toán</td><td class="k">batch_no</td><td>Số</td><td class="c req">✱</td><td>Gắn với đợt của bảng thanh toán hợp đồng (<a href="#BID-05">BID-05</a>) nếu hợp đồng chia đợt cố định.</td></tr>
           <tr><td>Khối lượng đã thi công</td><td class="k">qty_done</td><td>Bảng</td><td class="c req">✱</td><td>Nạp từ sản lượng <b>đã xác nhận</b> của <a href="#PRJ-02">PRJ-02</a> — gồm cả sản lượng của đợt đã đóng — theo từng đầu việc BOQ: lũy kế từ đợt đầu tới hết đợt của hồ sơ, trừ phần đã đề nghị ở các hồ sơ khối lượng khác của dự án (bỏ hồ sơ đã hủy, bị từ chối). Đó là phần còn được đề nghị <em>(yêu cầu thay đổi 12/10/2026 — <a href="#Q-113">Q-113</a>)</em>.</td></tr>
-          <tr><td>Khối lượng đã trả tổ đội</td><td class="k">qty_paid_crew</td><td>Bảng</td><td class="c">—</td><td>Nạp từ hồ sơ giao khoán nhân công đã duyệt (<a href="#PRJ-03">PRJ-03</a>), lũy kế theo đầu việc. Chỉ đọc.</td></tr>
+          <tr><td>Khối lượng đã trả tổ đội</td><td class="k">qty_paid_crew</td><td>Bảng</td><td class="c">—</td><td>Nạp từ hồ sơ thanh toán nhân công tổ đội đã duyệt (<a href="#PRJ-03">PRJ-03</a>), lũy kế theo đầu việc. Chỉ đọc.</td></tr>
           <tr><td>Khối lượng đề nghị CĐT</td><td class="k">qty_claim</td><td>Bảng</td><td class="c req">✱</td><td>Mặc định bằng khối lượng đã thi công; sửa được khi chủ đầu tư chỉ chấp nhận một phần.</td></tr>
           <tr><td>Chênh lệch bất lợi</td><td class="k">qty_gap</td><td>Số</td><td class="c">—</td><td>Tính tự động: <code>qty_paid_crew − qty_claim</code>. Lớn hơn 0 là công ty đang trả cho đội nhiều hơn thu được.</td></tr>
           <tr><td>Giải trình chênh lệch</td><td class="k">gap_note</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi <code>qty_gap &gt; 0</code>; hiển thị trên màn hình duyệt nội bộ.</td></tr>
@@ -9105,7 +9105,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Biên bản nghiệm thu hoàn thành</td><td class="k">handover_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Biên bản nghiệm thu hoàn thành đưa vào sử dụng và biên bản báo cáo tiến độ.</td></tr>
           <tr><td>Khối lượng quyết toán</td><td class="k">settle_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Theo từng đầu việc BOQ: cột <em>Đã thi công</em> chỉ đọc — lũy kế mọi sản lượng đã xác nhận của dự án ở <a href="#PRJ-02">PRJ-02</a>, kể cả đợt đã đóng; cột <em>Quyết toán</em> nhập tay, ≤ đã thi công <em>(yêu cầu thay đổi 12/10/2026 — <a href="#Q-113">Q-113</a>)</em>.</td></tr>
           <tr><td>Lũy kế thu từ CĐT</td><td class="k">total_claimed</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn các hồ sơ <a href="#ORD-09">ORD-09</a> đã thanh toán cộng hồ sơ quyết toán này. Chỉ đọc.</td></tr>
-          <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ giao khoán nhân công đã duyệt (<a href="#PRJ-03">PRJ-03</a>). Chỉ đọc.</td></tr>
+          <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ thanh toán nhân công tổ đội đã duyệt (<a href="#PRJ-03">PRJ-03</a>). Chỉ đọc.</td></tr>
           <tr><td>Tạm ứng còn phải thu hồi</td><td class="k">advance_outstanding</td><td>Số tiền</td><td class="c">—</td><td>Tạm ứng đã nhận ở <a href="#ORD-01">ORD-01</a> trừ lũy kế đã thu hồi qua các đợt <a href="#ORD-09">ORD-09</a>. Chỉ đọc.</td></tr>
           <tr><td>Lũy kế giữ lại bảo hành</td><td class="k">retention_total</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn <code>retention_withheld</code> của mọi đợt <a href="#ORD-09">ORD-09</a> cộng phần giữ lại của chính hồ sơ quyết toán. Chỉ đọc.</td></tr>
           <tr><td>Ngày hết hạn bảo hành</td><td class="k">warranty_due_at</td><td>Ngày</td><td class="c">—</td><td>Tính từ <code>warranty_from</code> và <code>warranty_months</code> của hợp đồng (<a href="#BID-05">BID-05</a>). Sinh nhắc lập hồ sơ thu hồi trước hạn 15 ngày.</td></tr>
@@ -9708,7 +9708,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Bảng giá khoán chưa được duyệt thì không lập được hồ sơ giao khoán nhân công ở <a href="#PRJ-03">PRJ-03</a>.</li>
+      <li>Bảng giá khoán chưa được duyệt thì không lập được hồ sơ thanh toán nhân công tổ đội ở <a href="#PRJ-03">PRJ-03</a>.</li>
       <li>Mỗi dòng giá khoán hiển thị đồng thời đơn giá chuẩn của vùng, % hỗ trợ đề xuất, đơn giá khoán và chênh lệch phần trăm.</li>
       <li>Có ít nhất một dòng vượt đơn giá chuẩn thì bắt buộc nhập giải trình mới trình được.</li>
       <li>Ý kiến của P. Đấu thầu là bắt buộc và hiển thị nguyên văn ở màn hình duyệt của lãnh đạo.</li>
@@ -9798,7 +9798,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Khóa đơn giá sau duyệt.</b> Bảng giá được duyệt thì đơn giá khóa vĩnh viễn.<span class="then">Thay đổi chỉ qua phụ lục có hậu tố <code>-PLn</code>, giữ nguyên bản gốc để đối chiếu.</span></li>
       <li><b>Giữ lịch sử khi đổi giá khoán.</b> Đơn giá khoán của một dòng có thể thay đổi trong vòng đời hợp đồng — ví dụ dòng <code>HM-01.1</code> giao tổ TD-004 tăng từ 405.000đ/m² lên 450.000đ/m² sau khi tổ đội phát sinh khó khăn thực tế ngoài dự kiến; hệ thống phải giữ lại giá cũ như lịch sử, không ghi đè, để cả giá gốc và giá đổi cùng hiển thị được, ví dụ cột “Giá khoán L1” và “Giá đổi L2”.<span class="then">Phục vụ đối chiếu, kiểm toán và tính đúng chi phí cho phần khối lượng đã thi công dưới đơn giá cũ. Mức đổi của ví dụ đủ lớn để thấy rõ hệ quả: đơn giá chuẩn vẫn là 420.000 vì <code>std_sheet_ref</code> đóng băng theo quy tắc 18, nên % hỗ trợ của dòng đi từ −3,6% lên +7,1% — 420.000 × 7,1% = 29.820, làm tròn 30.000 = 450.000 − 420.000 — vẫn nằm trong biên ±8% của <code>CV-101</code> nhưng đưa dòng từ dưới lên trên đơn giá chuẩn, nên phụ lục phải có lý do hỗ trợ và giải trình theo quy tắc 8 và quy tắc 17. Khác với khối lượng, vốn xử lý theo hướng ngược lại — xem quy tắc kế tiếp.</span></li>
       <li><b>Khối lượng đã chốt theo giai đoạn không được sửa lùi.</b> Khối lượng thực hiện đã chốt cho một kỳ thanh toán thì khóa lại; mọi điều chỉnh phải lập thành một dòng điều chỉnh mới ở kỳ sau, không sửa trực tiếp số liệu đã chốt.<span class="then">Khối lượng chốt là căn cứ đã dùng để thanh toán cho tổ đội; sửa ngầm sau đó sẽ làm lệch giữa lịch sử thanh toán và số liệu ghi nhận.</span></li>
-      <li><b>Là điều kiện của giao khoán.</b> Không có bảng giá hiệu lực thì không lập được hồ sơ giao khoán nhân công ở <a href="#PRJ-03">PRJ-03</a>.<span class="then">Chặn ngay tại bước tạo hồ sơ kèm liên kết tới bảng giá đang chờ duyệt.</span></li>
+      <li><b>Là điều kiện của giao khoán.</b> Không có bảng giá hiệu lực thì không lập được hồ sơ thanh toán nhân công tổ đội ở <a href="#PRJ-03">PRJ-03</a>.<span class="then">Chặn ngay tại bước tạo hồ sơ kèm liên kết tới bảng giá đang chờ duyệt.</span></li>
       <li><b>Đầu việc lỗ phải được chấp thuận.</b> Đơn giá khoán của một dòng vượt đơn giá bán hợp đồng của chính đầu việc đó thì không trình duyệt được cho tới khi có xác nhận chấp thuận.<span class="then">So theo đơn giá nên phát hiện được ngay lúc nhập, không phải chờ có khối lượng. Cảnh báo kèm xác nhận chứ không chặn cứng: bù chéo giữa các đầu việc là quyết định kinh doanh hợp lệ. Xác nhận ghi rõ người và thời điểm, hiện nguyên văn ở màn hình thẩm định và màn hình duyệt.</span></li>
       <li><b>Là nguồn dự phòng của gợi ý giá vốn nhân công.</b> Gợi ý <code>cost_labor</code> cho gói thầu mới ở <a href="#BID-03">BID-03</a> lấy từ bảng đơn giá chuẩn đang hiệu lực của vùng công trình (<a href="#PF-06">PF-06</a>) trước; <b>vùng chưa có bảng chuẩn đang hiệu lực, hoặc đầu việc không có trong bảng, thì quay về gợi ý theo giá khoán đã duyệt của dự án cùng vùng</b> — đầu việc tương tự của bảng giá khoán màn hình này.<span class="then">Gợi ý dự phòng ưu tiên dự án cùng vùng miền và cùng loại hình công trình. Trước <a href="2026-09-15/YC-02.html">YC-02</a> đây là nguồn gợi ý mặc định; từ khi có bộ đơn giá cấp công ty thì mốc chung phải đến từ <a href="#PF-06">PF-06</a>, còn giá khoán đã duyệt là con số riêng của một dự án — lấy nó làm mặc định là mang cái riêng của dự án cũ đặt giá cho gói thầu mới. Câu điều kiện dự phòng viết đúng một chữ ở cả hai trang (<a href="#BID-03">BID-03</a> · <code>cost_labor</code>, chức năng 10, quy tắc 2) để hai bên không trôi khỏi nhau.</span></li>
       <li><b>% hỗ trợ bị chặn bởi biên độ điều chỉnh.</b> Ô <code>support_pct</code> không nhận giá trị ngoài <code>±adjust_band_pct</code> của chính đầu việc đó trên bảng đơn giá chuẩn; biên độ để trống nghĩa là không cho điều chỉnh.<span class="then">Biên độ là quyền mà công ty giao trước cho Ban chỉ huy; vượt biên độ không phải là sửa số mà là xin ngoại lệ — và ngoại lệ đi qua chặng thẩm định của P. Đấu thầu với ô giải trình bắt buộc, không đi qua ô nhập số.</span></li>
@@ -10192,14 +10192,15 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-05">BID-05 BOQ hợp đồng</a><a href="#PRJ-01">PRJ-01 giá khoán</a><a href="#PRJ-03">PRJ-03 giao khoán nhân công</a><a href="#ORD-09">ORD-09 hồ sơ thanh toán khối lượng</a><a href="#ACC-09">ACC-09 kết chuyển chi phí</a><a href="#MOB-01">MOB-01 nhập từ hiện trường</a></p>
+    <p class="links"><a href="#BID-05">BID-05 BOQ hợp đồng</a><a href="#PRJ-01">PRJ-01 giá khoán</a><a href="#PRJ-03">PRJ-03 thanh toán nhân công tổ đội</a><a href="#ORD-09">ORD-09 hồ sơ thanh toán khối lượng</a><a href="#ACC-09">ACC-09 kết chuyển chi phí</a><a href="#MOB-01">MOB-01 nhập từ hiện trường</a></p>
   </div>
 </section>
 <section class="sheet" id="PRJ-03">
   <header class="tb">
     <div class="tb-id">PRJ-03</div>
     <div class="tb-main">
-      <h3>Hồ sơ giao khoán nhân công</h3>
+      <h3>Hồ sơ thanh toán nhân công tổ đội</h3>
+      <p><em>Đổi tên 12/10/2026 — trước đây “Giao khoán nhân công” (<a href="#Q-114">Q-114</a>). Mã màn hình, mã hồ sơ <code>GKNC-…</code> và dữ liệu không đổi.</em></p>
       <p>Luồng trình dài nhất trong toàn bảng yêu cầu — năm chặng: Dự án → TBP TQT → P. Đấu thầu → P. Kế toán → Lãnh đạo. Kèm ràng buộc riêng: “quá thời hạn thì cần phải giải trình được phê duyệt mới gửi được”.</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>Theo luồng trình — 5 chặng</dd></div>
@@ -10419,7 +10420,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Một lần bấm trình duyệt cả đợt: mỗi tổ đội một hồ sơ, cùng vào luồng 5 chặng, không có trạng thái nửa đợt đã trình nửa chưa.</li>
     </ol>
 
-    <h4>Mockup UI — Công trình › Giao khoán nhân công</h4>
+    <h4>Mockup UI — Công trình › Thanh toán nhân công tổ đội</h4>
     <div class="wf">
       <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>Đợt #7 · 01/07–15/07/2026</b><span class="tag t-info">Đang ghi nhận</span><span class="sp"></span><span class="tag t-crit"><span class="pin">1</span> Nộp muộn 4 ngày</span><span class="wf-btn"><span class="pin">6</span> Xuất bộ hồ sơ</span><span class="wf-btn pri"><span class="pin">7</span> Trình duyệt cả đợt (2 tổ đội)</span></div>
       <div class="wf-body">
@@ -10503,7 +10504,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Trình duyệt cả đợt một lần.</b> Một lần bấm đưa mọi hồ sơ nháp của đợt vào luồng; nếu có hồ sơ không đủ điều kiện thì cả đợt dừng lại và nêu rõ hồ sơ nào.<span class="then">Một đợt nửa đã trình nửa còn mở là trạng thái không ai đọc được trên màn hình. Giải trình quá hạn hỏi một lần cho cả đợt, vì đợt nộp muộn thì muộn với mọi tổ đội và vì cùng một lý do.</span></li>
       <li><b>Trả về giữ mã.</b> Bất kỳ chặng nào trả về đều đưa hồ sơ về người lập, giữ nguyên mã và ghi rõ chặng nào trả, lý do gì.<span class="then">Trình lại sẽ đi từ chặng 1, vì số liệu đã thay đổi.</span></li>
       <li><b>Duyệt xong sinh đề nghị thanh toán.</b> Lãnh đạo duyệt thì tự tạo đề nghị thanh toán ở <a href="#ACC-05">ACC-05</a> với đầy đủ dữ liệu.<span class="then">Kế toán chỉ kiểm và trình, không nhập lại từ đầu.</span></li>
-      <li><b>Phụ thuộc danh mục Tổ đội.</b> Danh sách Tổ đội để chọn ở màn hình này lấy từ màn hình danh mục tổ đội — tổ đội phải được tạo ở đó, có đủ thông tin thanh toán (số tài khoản ngân hàng, ngân hàng) trước khi được gán một hồ sơ giao khoán tại đây.<span class="then">Giao khoán nhân công tính ra số tiền phải trả cho tổ đội, nên cần sẵn nơi nhận tiền đã có trên hồ sơ; danh mục tổ đội trống là lý do màn hình này hiện “0 kết quả” ở mọi nơi.</span></li>
+      <li><b>Phụ thuộc danh mục Tổ đội.</b> Danh sách Tổ đội để chọn ở màn hình này lấy từ màn hình danh mục tổ đội — tổ đội phải được tạo ở đó, có đủ thông tin thanh toán (số tài khoản ngân hàng, ngân hàng) trước khi được gán một hồ sơ giao khoán tại đây.<span class="then">Thanh toán nhân công tổ đội tính ra số tiền phải trả cho tổ đội, nên cần sẵn nơi nhận tiền đã có trên hồ sơ; danh mục tổ đội trống là lý do màn hình này hiện “0 kết quả” ở mọi nơi.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày kết thúc đợt giao khoán.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Giá trị giao khoán, khấu trừ và thực trả trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="#PF-01">PF-01</a>.</span></li>
       <li><b>TP TQT và Admin toàn quyền trên màn hình này</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em>. Hai vai trò xem, sửa, khóa / mở khóa và hủy có lý do mọi bản ghi của màn hình (<code>prj:manage</code>, <code>record:lock</code>, <code>record:cancel</code>); bản ghi đang khóa thì không ai sửa, phòng phía sau đã xử lý thì đi <a href="#ORD-07">ORD-07</a>. Hồ sơ đã được P. Kế toán chi (<em>Đã chi</em>) thì không sửa, không hủy trực tiếp.<span class="then">Quy tắc chung ở <a href="#PF-02">PF-02</a>, mã quyền ở <a href="#PL-B">PL-B</a>, chốt ở <a href="#Q-103">Q-103</a>.</span></li>
@@ -11161,7 +11162,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#PRJ-02">PRJ-02 sản lượng thi công</a><a href="#PRJ-03">PRJ-03 giao khoán nhân công</a><a href="#PF-01">PF-01 danh mục nền</a></p>
+    <p class="links"><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#PRJ-02">PRJ-02 sản lượng thi công</a><a href="#PRJ-03">PRJ-03 thanh toán nhân công tổ đội</a><a href="#PF-01">PF-01 danh mục nền</a></p>
   </div>
 </section>
 <section class="block" id="grp-acc">
@@ -12818,7 +12819,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 <g id="node15" class="node">
 <title>D</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="505.82,-461.6 320.18,-461.6 320.18,-417.2 505.82,-417.2 505.82,-461.6"/>
-<text xml:space="preserve" text-anchor="middle" x="413" y="-443.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hồ sơ giao khoán nhân công</text>
+<text xml:space="preserve" text-anchor="middle" x="413" y="-443.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hồ sơ thanh toán nhân công tổ đội</text>
 <text xml:space="preserve" text-anchor="middle" x="413" y="-428.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;03</text>
 </g>
 <g id="edge15" class="edge">
@@ -12836,7 +12837,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tbody>
           <tr><td>Mã đề nghị</td><td class="k">payreq_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>DNTT-YYYY-NNNN</code>.</td></tr>
           <tr><td>Đối tượng nhận tiền</td><td class="k">payee</td><td>Tham chiếu</td><td class="c req">✱</td><td>Nhà cung cấp, tổ đội, cá nhân (tạm ứng), hoặc <b>khác</b> — khoản của công ty ngoài dự án, người nhận ghi tên tự do (từ 11/10/2026).</td></tr>
-          <tr><td>Chứng từ gốc</td><td class="k">source_docs[]</td><td>Danh sách</td><td class="c req">✱</td><td>Phiếu nhập, hóa đơn dịch vụ, hồ sơ giao khoán nhân công. Chặn đề nghị trùng chứng từ. Đối tượng <em>khác</em> không chọn chứng từ gốc mà nhập dòng tay: nội dung và số tiền.</td></tr>
+          <tr><td>Chứng từ gốc</td><td class="k">source_docs[]</td><td>Danh sách</td><td class="c req">✱</td><td>Phiếu nhập, hóa đơn dịch vụ, hồ sơ thanh toán nhân công tổ đội. Chặn đề nghị trùng chứng từ. Đối tượng <em>khác</em> không chọn chứng từ gốc mà nhập dòng tay: nội dung và số tiền.</td></tr>
           <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Suy từ chứng từ gốc; nhiều dự án thì tách dòng. Dòng nhập tay của đối tượng <em>khác</em> không mang dự án.</td></tr>
           <tr><td>Giá trị đề nghị</td><td class="k">amount</td><td>Số tiền</td><td class="c req">✱</td><td>Không vượt dư nợ phải trả của các chứng từ đã chọn.</td></tr>
           <tr><td>Hình thức</td><td class="k">pay_method</td><td>Chọn 1</td><td class="c req">✱</td><td><code>tiền mặt</code> · <code>chuyển khoản</code>. Quyết định ghi sổ quỹ hay sổ ngân hàng.</td></tr>
@@ -12871,7 +12872,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li>Bảng tuổi nợ chia đúng bốn nhóm như dashboard mockup và lọc được theo công trình.</li>
       <li>Sổ chi tiết công nợ hiển thị tên hàng, đơn giá và số lượng, không chỉ số tiền.</li>
       <li>Khách hàng vượt hạn mức công nợ thì cảnh báo hiện ngay trên màn hình duyệt đơn bán hàng.</li>
-      <li>Hồ sơ giao khoán nhân công đã duyệt tạo đề nghị thanh toán sẵn dữ liệu, kế toán chỉ kiểm và trình.</li>
+      <li>Hồ sơ thanh toán nhân công tổ đội đã duyệt tạo đề nghị thanh toán sẵn dữ liệu, kế toán chỉ kiểm và trình.</li>
     </ol>
 
     <h4>Mockup UI — Công nợ › Tuổi nợ &amp; đề nghị thanh toán</h4>
@@ -14831,7 +14832,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
             <table style="margin-top:6px"><thead><tr><th>Ngày</th><th>Chứng từ</th><th>Diễn giải</th><th>Hạng mục</th><th>KMCP</th><th class="num">Phát sinh</th><th class="num">Lũy kế</th></tr></thead>
             <tbody>
               <tr><td>14/08</td><td>PXDA-014-0188</td><td>Xuất đá granite cho tổ TD-004</td><td>HM-01</td><td>KM-101</td><td class="num">513.600.000</td><td class="num">8.960.000.000</td></tr>
-              <tr><td>20/08</td><td>GKNC-014-202607</td><td>Giao khoán nhân công tổ TD-004</td><td>HM-01</td><td>KM-201</td><td class="num">702.240.000</td><td class="num">4.280.000.000</td></tr>
+              <tr><td>20/08</td><td>GKNC-014-202607</td><td>Thanh toán nhân công tổ đội tổ TD-004</td><td>HM-01</td><td>KM-201</td><td class="num">702.240.000</td><td class="num">4.280.000.000</td></tr>
               <tr><td>31/08</td><td>PKT-2026-0158</td><td>Phân bổ chi phí chung tháng 8</td><td>—</td><td>KM-401</td><td class="num">309.709.000</td><td class="num">960.000.000</td></tr>
             </tbody></table>
             <p style="margin:7px 0 0;font-size:11.5px;color:var(--ink-3)">Bấm vào mã chứng từ để mở chứng từ gốc.</p>
@@ -16067,7 +16068,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#BID-05">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="#ORD-10">ORD-10 bản vẽ hoàn công &amp; quyết toán</a><a href="#ACC-04">ACC-04 xuất kho &amp; bán hàng</a><a href="#ACC-05">ACC-05 công nợ &amp; thanh toán</a><a href="#RPT-02">RPT-02 báo cáo quản trị dự án</a><a href="#BID-01">BID-01 tiếp nhận thư chào thầu</a><a href="#ORD-08">ORD-08 hồ sơ thanh toán vật tư</a><a href="#ORD-09">ORD-09 thanh toán khối lượng HT</a><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#PRJ-02">PRJ-02 sản lượng thi công</a><a href="#PRJ-03">PRJ-03 giao khoán nhân công</a><a href="#PF-05">PF-05 chứng từ &amp; phiên bản</a><a href="#PL-A">PL-A sổ trạng thái chứng từ</a><a href="#PL-B">PL-B ma trận phân quyền</a><a href="2026-09-15/YC-10.html">YC-10 theo dõi hồ sơ thanh toán</a></p>
+    <p class="links"><a href="#BID-05">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="#ORD-10">ORD-10 bản vẽ hoàn công &amp; quyết toán</a><a href="#ACC-04">ACC-04 xuất kho &amp; bán hàng</a><a href="#ACC-05">ACC-05 công nợ &amp; thanh toán</a><a href="#RPT-02">RPT-02 báo cáo quản trị dự án</a><a href="#BID-01">BID-01 tiếp nhận thư chào thầu</a><a href="#ORD-08">ORD-08 hồ sơ thanh toán vật tư</a><a href="#ORD-09">ORD-09 thanh toán khối lượng HT</a><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#PRJ-02">PRJ-02 sản lượng thi công</a><a href="#PRJ-03">PRJ-03 thanh toán nhân công tổ đội</a><a href="#PF-05">PF-05 chứng từ &amp; phiên bản</a><a href="#PL-A">PL-A sổ trạng thái chứng từ</a><a href="#PL-B">PL-B ma trận phân quyền</a><a href="2026-09-15/YC-10.html">YC-10 theo dõi hồ sơ thanh toán</a></p>
   </div>
 </section>
 <section class="block" id="grp-mob">
@@ -16431,7 +16432,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr><td>Bảng giá khoán</td><td class="k">GK</td><td>Đang lập → Chờ P. Đấu thầu → Chờ lãnh đạo → <span class="tag t-ok">Có hiệu lực</span> → Có phụ lục</td><td>Khi được duyệt</td></tr>
         <tr><td>Bảng đơn giá chuẩn</td><td class="k">DGC</td><td>Nháp → Chờ duyệt → <span class="tag t-ok">Đang hiệu lực</span> → <span class="tag t-neu">Đã thay thế</span> | <span class="tag t-neu">Hết hiệu lực</span><br>Chờ duyệt về lại Nháp theo hai đường: người duyệt <b>trả lại</b> kèm lý do, hoặc người lập bấm <b>Chỉnh sửa</b> — bảng phải trình duyệt lại. Bảng chưa ban hành thì <b>hủy</b> được: Nháp hoặc Chờ duyệt → Hết hiệu lực, phân biệt với bảng hết kỳ ở chỗ không có <code>issued_at</code>. Bảng đã ban hành không hủy và không sửa đè: bấm <b>Điều chỉnh</b> sinh version kế tiếp ở Nháp (kèm lý do), đi lại đúng chuỗi trên; ban hành version mới thì version đang hiệu lực chuyển <b>Đã thay thế</b> — không tra giá được nữa nhưng vẫn đọc được. Bảng chỉ hết hiệu lực khi hết kỳ hoặc bị bảng kỳ sau đóng kỳ. Xem <a href="#PF-06">PF-06</a>.</td><td>Khi ban hành</td></tr>
         <tr><td>Sản lượng thi công</td><td class="k">SL</td><td>Đang ghi nhận → Chỉ huy trưởng xác nhận → <span class="tag t-ok">Đã chốt đợt</span> → Đã nghiệm thu với CĐT</td><td>Khi chốt đợt</td></tr>
-        <tr><td>Hồ sơ giao khoán nhân công</td><td class="k">GKNC</td><td>Đang lập → (Giải trình quá hạn) → TQT → Đấu thầu → Kế toán → Lãnh đạo → Đã duyệt chi → <span class="tag t-ok">Đã chi</span> · <span class="tag t-crit">Trả về</span></td><td>Khi trình chặng 1 · “Đã chi” chỉ do <a href="#ACC-05">ACC-05</a> ghi khi tiền đã ra</td></tr>
+        <tr><td>Hồ sơ thanh toán nhân công tổ đội</td><td class="k">GKNC</td><td>Đang lập → (Giải trình quá hạn) → TQT → Đấu thầu → Kế toán → Lãnh đạo → Đã duyệt chi → <span class="tag t-ok">Đã chi</span> · <span class="tag t-crit">Trả về</span></td><td>Khi trình chặng 1 · “Đã chi” chỉ do <a href="#ACC-05">ACC-05</a> ghi khi tiền đã ra</td></tr>
         <tr><td>Đề xuất mua sắm</td><td class="k">DX</td><td>Nháp → Chờ duyệt → Đã duyệt → Đang mua → Nhập một phần → <span class="tag t-ok">Hoàn thành</span> · <span class="tag t-crit">Từ chối</span> · <span class="tag t-neu">Hủy</span></td><td>Khi trình duyệt</td></tr>
         <tr><td>Phiếu nhập kho</td><td class="k">PN</td><td>Nháp → <span class="tag t-warn">Chờ hóa đơn</span> → <span class="tag t-ok">Đã ghi sổ</span></td><td>Khi ghi sổ</td></tr>
         <tr><td>Phiếu xuất kho tổng</td><td class="k">PX</td><td>Nháp → Chờ duyệt → Đã duyệt → Đã giao → <span class="tag t-ok">Đã xác nhận nhận</span> · <span class="tag t-crit">Trả hàng lỗi</span></td><td>Khi duyệt xuất</td></tr>
@@ -16654,6 +16655,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr id="Q-111"><td class="k">Q-111</td><td><b>Áp giá doanh thu theo dõi theo từng dự án</b> — yêu cầu thay đổi 12/10/2026, Đấu thầu › Áp giá doanh thu: “khi vào tab Áp giá doanh thu cần hiện ra danh mục dự án; bên cạnh có một cột số đơn hàng đã tạo của dự án đó và một cột số đơn hàng đã áp giá… click vào sẽ hiện ra list đơn hàng và chọn vào đơn hàng chưa áp giá để điền giá”. Hiện trạng: hàng chờ là một danh sách Đơn hàng của mọi dự án trộn lẫn, không theo dõi được theo dự án. Mong muốn: thêm tab Danh mục dự án, hiện số đơn đã áp giá / số đơn đã tạo</td><td><b>Tạm chốt 12/10/2026:</b> (a) tab <em>Danh mục dự án</em> đặt đầu, mở mặc định; tab theo Đơn hàng (<a href="2026-10-05/YC-25.html">YC-25</a>) và tab lịch sử giữ nguyên; (b) liệt kê dự án có ít nhất một Đơn hàng đã tạo; (c) <em>Đã tạo</em> = mọi Đơn hàng của dự án trừ đã hủy, kể cả nháp và chưa gửi; <em>Đã áp giá</em> = đã gửi và mọi dòng có đơn giá nội bộ — áp dở không tính; thêm cột <em>Chờ áp giá</em> = đã gửi chưa áp xong, để biết dự án nào còn việc; (d) bấm dự án → danh sách Đơn hàng của dự án ngay bên dưới; đơn chưa gửi hiện nhưng không bấm được; bấm đơn đã gửi → bảng áp giá như tab theo Đơn hàng; (e) quy tắc áp giá không đổi. Cần P. Đấu thầu xác nhận (c): “đã tạo” có tính đơn nháp, chưa gửi hay không</td><td class="c">P. Đấu thầu</td><td class="c"><a href="#BID-06">BID-06</a></td></tr>
         <tr id="Q-112"><td class="k">Q-112</td><td><b>Mã HM của Đơn hàng không có bản vẽ Shop tự sinh như BOQ</b> — yêu cầu thay đổi 12/10/2026, TQT – Shopdrawing › Đơn hàng › Lập Đơn hàng mới › Tạo nhanh dự án: “Mã HM của bảng đầu việc chưa tự động đánh số thứ tự như Mã HM của BOQ ở phân hệ Đấu thầu › Tiếp nhận gói thầu”. <a href="2026-10-08/YC-28.html">YC-28</a> để Mã HM gõ tay, trống được. Mong muốn: tự sinh theo quy tắc Mã HM của BOQ</td><td><b>Tạm chốt 12/10/2026:</b> (a) mã <code>{mã dự án}.NN</code> — mã dự án đứng ở chỗ mã gói, vì dự án tạo nhanh không có gói thầu; (b) NN là thứ tự dòng trong Đơn hàng, đánh lại liên tục khi thêm, xóa dòng, hệ thống giữ — ô không gõ được; (c) mỗi Đơn hàng đánh từ .01, không nối tiếp Đơn hàng trước; (d) áp cho mọi Đơn hàng không có bản vẽ Shop, kể cả của dự án có sẵn; (e) Đơn hàng đã gửi giữ mã cũ, Đơn hàng nháp được đánh lại ở lần lưu kế tiếp. Cần P. TQT xác nhận (c) — có muốn mã nối tiếp cả dự án để không trùng giữa hai Đơn hàng — và (d) với dự án đã có BOQ, nơi mã gói có thể trùng mã dự án</td><td class="c">P. TQT</td><td class="c"><a href="2026-10-08/YC-28.html">YC-28</a>, <a href="#BID-01">BID-01</a></td></tr>
         <tr id="Q-113"><td class="k">Q-113</td><td><b>Hồ sơ khối lượng, quyết toán lập theo sản lượng thi công; khối lượng hồ sơ ≤ khối lượng đã thi công</b> — yêu cầu thay đổi 12/10/2026, TQT – Shopdrawing › Hồ sơ thanh toán › Lập hồ sơ › HSKL: “khi một dự án có sản lượng thi công thì được tạo hồ sơ thanh toán KLHT và hồ sơ quyết toán; điều kiện sản lượng hồ sơ ≤ sản lượng thi công — nhiều khi thi công 100 m² nhưng chỉ nghiệm thu được 90 m²”. Hiện trạng: “phức tạp, không lấy được số”. Bản dựng đòi sản lượng đã xác nhận <em>và</em> đợt đã đóng, nhưng đóng đợt chuyển sản lượng sang trạng thái “đã đóng đợt” mà Hồ sơ không đọc — nên đợt đã khai không lập được hồ sơ nào; hồ sơ quyết toán không đối chiếu khối lượng</td><td><b>Tạm chốt 12/10/2026:</b> (a) sản lượng đã xác nhận gồm cả sản lượng của đợt đã đóng; (b) hồ sơ khối lượng lập được cho đợt có sản lượng đã xác nhận, không đòi đóng đợt; (c) khối lượng đề nghị từng đầu việc ≤ lũy kế đã thi công tới hết đợt trừ phần đã đề nghị ở hồ sơ khối lượng khác (bỏ hồ sơ đã hủy, bị từ chối) — phần chưa nghiệm thu đề nghị được ở hồ sơ sau, hai hồ sơ không đề nghị chồng; (d) hồ sơ quyết toán lập được khi dự án có sản lượng đã xác nhận, có bảng khối lượng quyết toán theo đầu việc, quyết toán ≤ lũy kế đã thi công toàn dự án; (e) số tiền hồ sơ quyết toán vẫn nhập tay như hiện nay, chưa tính từ bảng khối lượng. Cần P. TQT xác nhận (b) — bỏ điều kiện đóng đợt — và (e)</td><td class="c">P. TQT</td><td class="c"><a href="#ORD-09">ORD-09</a>, <a href="#ORD-10">ORD-10</a>, <a href="#PRJ-02">PRJ-02</a></td></tr>
+        <tr id="Q-114"><td class="k">Q-114</td><td><b>Đổi tên “Giao khoán nhân công” thành “Thanh toán nhân công tổ đội”</b> — yêu cầu thay đổi 12/10/2026, Dự án thi công › Giao khoán nhân công: đổi tên màn hình. Đã đổi tên màn hình, menu, tiêu đề, nhãn loại hồ sơ trên luồng duyệt và mọi cụm “giao khoán nhân công” trong đặc tả thành “thanh toán nhân công tổ đội” (<a href="#PRJ-03">PRJ-03</a>)</td><td><b>Tạm chốt 12/10/2026:</b> (a) mã màn hình <code>PRJ-03</code>, mã hồ sơ <code>GKNC-…</code>, dữ liệu và đường dẫn không đổi; (b) các thuật ngữ bên trong — “kỳ giao khoán”, “bảng giao khoán”, “hồ sơ giao khoán” viết tắt, “hợp đồng giao khoán” với tổ đội — tạm giữ, vì “giao khoán” vẫn là quan hệ công ty – tổ đội ở <a href="#PRJ-01">PRJ-01</a>; (c) tên tiếng Anh “Crew payroll” giữ nguyên — đã đúng nghĩa thanh toán cho tổ đội. Cần P. TQT xác nhận (b): có đổi luôn các thuật ngữ bên trong không</td><td class="c">P. TQT</td><td class="c"><a href="#PRJ-03">PRJ-03</a></td></tr>
       </tbody>
     </table>
   </div>

@@ -41,7 +41,7 @@
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <div class="rail-grp">Phòng Kế toán</div>
@@ -266,7 +266,7 @@
           <tr><td>Biên bản nghiệm thu hoàn thành</td><td class="k">handover_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Biên bản nghiệm thu hoàn thành đưa vào sử dụng và biên bản báo cáo tiến độ.</td></tr>
           <tr><td>Khối lượng quyết toán</td><td class="k">settle_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Theo từng đầu việc BOQ: cột <em>Đã thi công</em> chỉ đọc — lũy kế mọi sản lượng đã xác nhận của dự án ở <a href="PRJ-02.html">PRJ-02</a>, kể cả đợt đã đóng; cột <em>Quyết toán</em> nhập tay, ≤ đã thi công <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.</td></tr>
           <tr><td>Lũy kế thu từ CĐT</td><td class="k">total_claimed</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn các hồ sơ <a href="ORD-09.html">ORD-09</a> đã thanh toán cộng hồ sơ quyết toán này. Chỉ đọc.</td></tr>
-          <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ giao khoán nhân công đã duyệt (<a href="PRJ-03.html">PRJ-03</a>). Chỉ đọc.</td></tr>
+          <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ thanh toán nhân công tổ đội đã duyệt (<a href="PRJ-03.html">PRJ-03</a>). Chỉ đọc.</td></tr>
           <tr><td>Tạm ứng còn phải thu hồi</td><td class="k">advance_outstanding</td><td>Số tiền</td><td class="c">—</td><td>Tạm ứng đã nhận ở <a href="ORD-01.html">ORD-01</a> trừ lũy kế đã thu hồi qua các đợt <a href="ORD-09.html">ORD-09</a>. Chỉ đọc.</td></tr>
           <tr><td>Lũy kế giữ lại bảo hành</td><td class="k">retention_total</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn <code>retention_withheld</code> của mọi đợt <a href="ORD-09.html">ORD-09</a> cộng phần giữ lại của chính hồ sơ quyết toán. Chỉ đọc.</td></tr>
           <tr><td>Ngày hết hạn bảo hành</td><td class="k">warranty_due_at</td><td>Ngày</td><td class="c">—</td><td>Tính từ <code>warranty_from</code> và <code>warranty_months</code> của hợp đồng (<a href="BID-05.html">BID-05</a>). Sinh nhắc lập hồ sơ thu hồi trước hạn 15 ngày.</td></tr>

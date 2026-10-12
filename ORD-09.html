@@ -41,7 +41,7 @@
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <div class="rail-grp">Phòng Kế toán</div>
@@ -282,7 +282,7 @@
           <tr><td>Mã hồ sơ</td><td class="k">vol_dossier_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>HSKL-&lt;project&gt;-NN</code>.</td></tr>
           <tr><td>Đợt thanh toán</td><td class="k">batch_no</td><td>Số</td><td class="c req">✱</td><td>Gắn với đợt của bảng thanh toán hợp đồng (<a href="BID-05.html">BID-05</a>) nếu hợp đồng chia đợt cố định.</td></tr>
           <tr><td>Khối lượng đã thi công</td><td class="k">qty_done</td><td>Bảng</td><td class="c req">✱</td><td>Nạp từ sản lượng <b>đã xác nhận</b> của <a href="PRJ-02.html">PRJ-02</a> — gồm cả sản lượng của đợt đã đóng — theo từng đầu việc BOQ: lũy kế từ đợt đầu tới hết đợt của hồ sơ, trừ phần đã đề nghị ở các hồ sơ khối lượng khác của dự án (bỏ hồ sơ đã hủy, bị từ chối). Đó là phần còn được đề nghị <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.</td></tr>
-          <tr><td>Khối lượng đã trả tổ đội</td><td class="k">qty_paid_crew</td><td>Bảng</td><td class="c">—</td><td>Nạp từ hồ sơ giao khoán nhân công đã duyệt (<a href="PRJ-03.html">PRJ-03</a>), lũy kế theo đầu việc. Chỉ đọc.</td></tr>
+          <tr><td>Khối lượng đã trả tổ đội</td><td class="k">qty_paid_crew</td><td>Bảng</td><td class="c">—</td><td>Nạp từ hồ sơ thanh toán nhân công tổ đội đã duyệt (<a href="PRJ-03.html">PRJ-03</a>), lũy kế theo đầu việc. Chỉ đọc.</td></tr>
           <tr><td>Khối lượng đề nghị CĐT</td><td class="k">qty_claim</td><td>Bảng</td><td class="c req">✱</td><td>Mặc định bằng khối lượng đã thi công; sửa được khi chủ đầu tư chỉ chấp nhận một phần.</td></tr>
           <tr><td>Chênh lệch bất lợi</td><td class="k">qty_gap</td><td>Số</td><td class="c">—</td><td>Tính tự động: <code>qty_paid_crew − qty_claim</code>. Lớn hơn 0 là công ty đang trả cho đội nhiều hơn thu được.</td></tr>
           <tr><td>Giải trình chênh lệch</td><td class="k">gap_note</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi <code>qty_gap &gt; 0</code>; hiển thị trên màn hình duyệt nội bộ.</td></tr>
