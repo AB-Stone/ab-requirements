@@ -41,7 +41,7 @@
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <div class="rail-grp">Phòng Kế toán</div>
@@ -262,7 +262,7 @@
 <g id="node15" class="node">
 <title>D</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="505.82,-461.6 320.18,-461.6 320.18,-417.2 505.82,-417.2 505.82,-461.6"/>
-<text xml:space="preserve" text-anchor="middle" x="413" y="-443.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hồ sơ giao khoán nhân công</text>
+<text xml:space="preserve" text-anchor="middle" x="413" y="-443.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hồ sơ thanh toán nhân công tổ đội</text>
 <text xml:space="preserve" text-anchor="middle" x="413" y="-428.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;03</text>
 </g>
 <g id="edge15" class="edge">
@@ -279,9 +279,9 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Mã đề nghị</td><td class="k">payreq_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>DNTT-YYYY-NNNN</code>.</td></tr>
-          <tr><td>Đối tượng nhận tiền</td><td class="k">payee</td><td>Tham chiếu</td><td class="c req">✱</td><td>Nhà cung cấp, tổ đội, hoặc cá nhân (tạm ứng).</td></tr>
-          <tr><td>Chứng từ gốc</td><td class="k">source_docs[]</td><td>Danh sách</td><td class="c req">✱</td><td>Phiếu nhập, hóa đơn dịch vụ, hồ sơ giao khoán nhân công. Chặn đề nghị trùng chứng từ.</td></tr>
-          <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Suy từ chứng từ gốc; nhiều dự án thì tách dòng.</td></tr>
+          <tr><td>Đối tượng nhận tiền</td><td class="k">payee</td><td>Tham chiếu</td><td class="c req">✱</td><td>Nhà cung cấp, tổ đội, cá nhân (tạm ứng), hoặc <b>khác</b> — khoản của công ty ngoài dự án, người nhận ghi tên tự do (từ 11/10/2026).</td></tr>
+          <tr><td>Chứng từ gốc</td><td class="k">source_docs[]</td><td>Danh sách</td><td class="c req">✱</td><td>Phiếu nhập, hóa đơn dịch vụ, hồ sơ thanh toán nhân công tổ đội. Chặn đề nghị trùng chứng từ. Đối tượng <em>khác</em> không chọn chứng từ gốc mà nhập dòng tay: nội dung và số tiền.</td></tr>
+          <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Suy từ chứng từ gốc; nhiều dự án thì tách dòng. Dòng nhập tay của đối tượng <em>khác</em> không mang dự án.</td></tr>
           <tr><td>Giá trị đề nghị</td><td class="k">amount</td><td>Số tiền</td><td class="c req">✱</td><td>Không vượt dư nợ phải trả của các chứng từ đã chọn.</td></tr>
           <tr><td>Hình thức</td><td class="k">pay_method</td><td>Chọn 1</td><td class="c req">✱</td><td><code>tiền mặt</code> · <code>chuyển khoản</code>. Quyết định ghi sổ quỹ hay sổ ngân hàng.</td></tr>
           <tr><td>Tài khoản nhận</td><td class="k">bank_account</td><td>Chuỗi</td><td class="c">—</td><td>Bắt buộc với chuyển khoản; đối chiếu với tài khoản đã đăng ký của đối tác.</td></tr>
@@ -315,7 +315,7 @@
       <li>Bảng tuổi nợ chia đúng bốn nhóm như dashboard mockup và lọc được theo công trình.</li>
       <li>Sổ chi tiết công nợ hiển thị tên hàng, đơn giá và số lượng, không chỉ số tiền.</li>
       <li>Khách hàng vượt hạn mức công nợ thì cảnh báo hiện ngay trên màn hình duyệt đơn bán hàng.</li>
-      <li>Hồ sơ giao khoán nhân công đã duyệt tạo đề nghị thanh toán sẵn dữ liệu, kế toán chỉ kiểm và trình.</li>
+      <li>Hồ sơ thanh toán nhân công tổ đội đã duyệt tạo đề nghị thanh toán sẵn dữ liệu, kế toán chỉ kiểm và trình.</li>
     </ol>
 
     <h4>Mockup UI — Công nợ › Tuổi nợ &amp; đề nghị thanh toán</h4>
@@ -374,6 +374,7 @@
       <li><b>Công nợ sinh tự động.</b> Ghi sổ phiếu nhập kho hoặc hóa đơn dịch vụ là ghi nhận công nợ phải trả ngay.<span class="then">Không có bước nhập công nợ thủ công — tránh lệch giữa sổ kho và sổ công nợ.</span></li>
       <li><b>Một chứng từ, một đề nghị.</b> Chứng từ gốc đã nằm trong một đề nghị thanh toán thì không đưa vào đề nghị khác.<span class="then">Hệ thống chặn và chỉ rõ mã đề nghị đã dùng nó.</span></li>
       <li><b>Không vượt dư nợ.</b> Giá trị đề nghị không lớn hơn tổng dư nợ của các chứng từ đã chọn.<span class="then">Muốn trả trước thì lập đề nghị tạm ứng cho nhà cung cấp, là loại chứng từ khác.</span></li>
+      <li><b>Đối tượng nhận “Khác” — khoản của công ty ngoài dự án</b> <em>(yêu cầu thay đổi 11/10/2026 · chốt 11/10/2026)</em>. Hộp chọn loại đối tượng nhận có thêm <em>Khác</em>: chi cho việc của công ty không thuộc dự án nào, ví dụ nhập hàng về kho xử lý. Người nhận ghi tên tự do, không gắn nhà cung cấp, tổ đội hay nhân viên. Đề nghị không chọn chứng từ gốc mà nhập dòng tay — nội dung, số tiền lớn hơn 0 — và không mang dự án.<span class="then">Không có chứng từ gốc nên quy tắc “một chứng từ, một đề nghị” và “không vượt dư nợ” không áp cho dòng nhập tay; cấp duyệt vẫn chọn theo tổng giá trị như mọi đề nghị. Tài khoản đối ứng chọn khi lập phiếu chi ở <a href="ACC-07.html">ACC-07</a>.</span></li>
       <li><b>Hạn mức quyết định số cấp.</b> Cấp duyệt chọn theo giá trị đề nghị, hiển thị trước khi trình.<span class="then">Đổi hạn mức là thao tác cấu hình ở <a href="PF-03.html">PF-03</a>, không sửa phần mềm.</span></li>
       <li><b>Thanh toán ghi ba nơi.</b> Một lần chi ghi đồng thời: giảm công nợ, ghi sổ quỹ hoặc sổ ngân hàng, và ghi sổ chi tiết đối tác.<span class="then">Ba bút toán trong một giao dịch; lỗi một nơi thì hoàn tác cả ba.</span></li>
       <li><b>Tuổi nợ bốn nhóm.</b> Trong hạn, 1–30, 31–60, trên 60 ngày — tính từ hạn thanh toán, không từ ngày phát sinh.<span class="then">Bốn nhóm này khớp với biểu đồ tuổi nợ trên dashboard.</span></li>
@@ -392,6 +393,8 @@
           <tr><td>Chứng từ đã trong đề nghị khác</td><td>Trùng <code>source_docs</code></td><td>“Chứng từ {mã} đã nằm trong đề nghị {mã}. Mở đề nghị đó để kiểm tra.”</td></tr>
           <tr><td>Giá trị vượt dư nợ</td><td><code>amount &gt; dư nợ</code></td><td>“Đề nghị {giá trị} vượt dư nợ {giá trị} của các chứng từ đã chọn.”</td></tr>
           <tr><td>Tài khoản nhận lạ</td><td>Khác tài khoản đã đăng ký</td><td>“Số tài khoản khác với tài khoản đã đăng ký của {đối tác}. Xác nhận trước khi trình duyệt.”</td></tr>
+          <tr><td>Đề nghị “Khác” thiếu dòng</td><td>Đối tượng <em>khác</em>, không có dòng nhập tay nào</td><td>“Nhập ít nhất một dòng: nội dung và số tiền.”</td></tr>
+          <tr><td>Dòng nhập tay thiếu nội dung</td><td>Dòng của đối tượng <em>khác</em>, nội dung rỗng</td><td>“Dòng {n}: nhập nội dung chi.”</td></tr>
           <tr><td>Chuyển khoản thiếu tài khoản</td><td>Hình thức chuyển khoản, TK rỗng</td><td>“Nhập số tài khoản nhận cho hình thức chuyển khoản.”</td></tr>
           <tr><td>Khách vượt hạn mức</td><td>Dư nợ &gt; <code>credit_limit</code></td><td>“{khách hàng} đang vượt hạn mức công nợ {giá trị}. Cân nhắc trước khi duyệt đơn.”</td></tr>
           <tr><td>Nhiều dự án trên một đề nghị</td><td>Chứng từ khác <code>project_id</code></td><td>“Các chứng từ thuộc nhiều dự án. Đề nghị sẽ tách dòng theo dự án khi ghi sổ.”</td></tr>
@@ -412,6 +415,7 @@
           <tr><td>UAT-ACC05-6</td><td>Coteccons vượt hạn mức công nợ</td><td>Duyệt đơn hàng mới của Coteccons</td><td>Cảnh báo hiện trên màn hình duyệt, vẫn cho duyệt</td></tr>
           <tr><td>UAT-ACC05-7</td><td>Có phát sinh nhiều mặt hàng</td><td>Xuất sổ chi tiết công nợ</td><td>Có cột tên hàng, đơn giá, số lượng</td></tr>
           <tr><td>UAT-ACC05-8</td><td>Hồ sơ giao khoán vừa được duyệt</td><td>Mở danh sách đề nghị thanh toán</td><td>Đã có đề nghị tạo sẵn với giá trị thực trả đúng</td></tr>
+          <tr><td>UAT-ACC05-9</td><td>Chi phí nhập hàng về kho xử lý, không thuộc dự án</td><td>Lập đề nghị, chọn đối tượng nhận “Khác”, ghi tên người nhận, nhập hai dòng nội dung + số tiền</td><td>Lưu được không cần chứng từ gốc; tổng bằng hai dòng; cấp duyệt hiện theo tổng; dòng không có dự án</td></tr>
         </tbody>
       </table>
     </div>

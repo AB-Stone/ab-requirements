@@ -41,7 +41,7 @@
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <div class="rail-grp">Phòng Kế toán</div>
@@ -319,12 +319,13 @@
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Mã tài sản</td><td class="k">asset_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>TS-NNNN</code>; sinh mã QR để tra cứu tại hiện trường.</td></tr>
+          <tr><td>Mã tài sản</td><td class="k">asset_id</td><td>Chuỗi</td><td class="c req">✱</td><td>Người ghi tăng gõ được mã riêng (mã dán sẵn trên hiện vật), không trùng; để trống thì hệ thống sinh <code>TS-NNNN</code> cho TSCĐ, <code>CC-NNNN</code> cho CCDC. Không sửa sau khi lưu. Sinh mã QR để tra cứu tại hiện trường.</td></tr>
           <tr><td>Nhóm tài sản</td><td class="k">asset_group</td><td>Chọn 1</td><td class="c req">✱</td><td>TSCĐ hữu hình · TSCĐ vô hình · CCDC.</td></tr>
           <tr><td>Nguyên giá</td><td class="k">original_cost</td><td>Số tiền</td><td class="c req">✱</td><td>Từ phiếu nhập hoặc nhập tay với tài sản cũ.</td></tr>
           <tr><td>Tài sản cũ</td><td class="k">is_secondhand</td><td>Boolean</td><td class="c req">✱</td><td>Bật thì <b>không</b> tính khấu hao, chỉ theo dõi hiện vật — đúng yêu cầu gốc.</td></tr>
           <tr><td>Phương pháp · thời gian KH</td><td class="k">depr_method, useful_life</td><td>Chọn · số</td><td class="c">—</td><td>Đường thẳng; số năm sử dụng.</td></tr>
-          <tr><td>Vị trí hiện tại</td><td class="k">current_location</td><td>Tham chiếu</td><td class="c req">✱</td><td>Kho tổng · nhà máy · dự án cụ thể. Kho tổng có vị trí vật lý riêng.</td></tr>
+          <tr><td>TK phân bổ chi phí</td><td class="k">expense_account</td><td>Tài khoản</td><td class="c req">✱</td><td>Tài khoản Nợ của bút toán trích khấu hao / phân bổ CCDC: tài khoản chi phí loại 6 hoặc 154, chi tiết, đang dùng. Gợi ý theo nhóm, không tự điền. Bắt buộc khi tài sản có khấu hao; ẩn cùng nhóm trường khấu hao khi bật “tài sản cũ”.</td></tr>
+          <tr><td>Vị trí hiện tại</td><td class="k">current_location</td><td>Tham chiếu</td><td class="c req">✱</td><td>Kho tổng · nhà máy · dự án cụ thể. Kho tổng có vị trí vật lý riêng. Chọn trên biểu mẫu ghi tăng, mặc định kho tổng; sau đó chỉ đổi bằng phiếu điều chuyển.</td></tr>
           <tr><td>Dự án đang phục vụ</td><td class="k">current_project</td><td>Tham chiếu</td><td class="c">—</td><td>Rỗng khi ở kho tổng — khi đó khấu hao vào chi phí chung.</td></tr>
           <tr><td>Số ngày tại vị trí</td><td class="k">days_at_location</td><td>Hệ thống</td><td class="c">—</td><td>Tính từ ngày nơi nhận xác nhận; là hệ số phân bổ khấu hao.</td></tr>
           <tr><td>Phiếu điều chuyển</td><td class="k">transfer[]</td><td>Bảng</td><td class="c">—</td><td>Nơi đi, nơi đến, ngày, người duyệt, người xác nhận nhận.</td></tr>
@@ -336,7 +337,7 @@
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Tài sản mua mới mặc định vào kho tổng, không phải chọn tay.</li>
+      <li>Tài sản mua mới mặc định vào kho tổng; người ghi tăng đổi được kho ngay trên biểu mẫu.</li>
       <li>Tài sản đánh dấu “tài sản cũ” không sinh bút toán khấu hao nhưng vẫn theo dõi được vị trí.</li>
       <li>Điều chuyển chỉ có hiệu lực sau khi Giám đốc dự án nơi nhận xác nhận; trước đó tài sản vẫn tính cho nơi cũ.</li>
       <li>Khấu hao kỳ phân bổ theo số ngày tài sản ở từng vị trí, chia đúng giữa các dự án khi tài sản di chuyển giữa kỳ.</li>
@@ -390,7 +391,7 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Ghi tăng &amp; khai báo khấu hao</td><td>Mặc định vào kho tổng. Bật cờ “tài sản cũ” thì ẩn toàn bộ nhóm trường khấu hao.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Ghi tăng &amp; khai báo khấu hao</td><td>Mã tài sản, kho (mặc định kho tổng), TK phân bổ chi phí. Bật cờ “tài sản cũ” thì ẩn toàn bộ nhóm trường khấu hao.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Tra vị trí &amp; lịch sử</td><td>Dòng thời gian vị trí kèm số ngày và khấu hao phân bổ tương ứng từng chặng.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Điều chuyển</td><td>Lập phiếu → duyệt → nơi nhận xác nhận. Chỉ khi xác nhận thì mốc ngày mới bắt đầu.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Trích khấu hao kỳ</td><td>Chạy theo kỳ chọn, tự chia theo số ngày ở từng vị trí và ghi chi phí đúng dự án.</td></tr>
@@ -402,7 +403,9 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Mua mới vào kho tổng.</b> Ghi tăng tài sản mặc định đặt vị trí là kho tổng công ty.<span class="then">Đúng yêu cầu gốc; muốn đưa thẳng ra dự án thì lập phiếu điều chuyển ngay sau đó.</span></li>
+      <li><b>Mua mới mặc định vào kho tổng, đổi được.</b> Ghi tăng tài sản điền sẵn kho tổng công ty; người ghi tăng chọn được kho khác <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-110">Q-110</a>)</em>.<span class="then">Kho dự án thì tài sản phục vụ dự án đó ngay từ chặng đầu — kho dùng chung nhiều dự án phải chọn dự án, như phiếu điều chuyển. Sau khi lưu, vị trí chỉ đổi bằng phiếu điều chuyển.</span></li>
+      <li><b>Mã tài sản, CCDC.</b> Biểu mẫu ghi tăng có ô mã <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-110">Q-110</a>)</em>.<span class="then">Gõ mã riêng thì kiểm tra không trùng; để trống thì sinh <code>TS-NNNN</code> (TSCĐ) hoặc <code>CC-NNNN</code> (CCDC). Mã đã có giữ nguyên.</span></li>
+      <li><b>TK phân bổ chi phí theo từng tài sản.</b> Mỗi tài sản có khấu hao khai tài khoản Nợ của bút toán trích khấu hao / phân bổ <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-110">Q-110</a>)</em>.<span class="then">Áp cho mọi chặng; khoản mục và dự án vẫn theo chặng (dự án hay chi phí chung). Tài sản ghi tăng trước đây chưa khai thì lấy tài khoản mặc định của khoản mục như cũ.</span></li>
       <li><b>Tài sản cũ không khấu hao.</b> Bật cờ <code>is_secondhand</code> thì ẩn toàn bộ nhóm trường khấu hao và không sinh bút toán.<span class="then">Vẫn theo dõi hiện vật và vị trí đầy đủ như tài sản thường.</span></li>
       <li><b>Điều chuyển cần xác nhận nơi nhận.</b> Phiếu điều chuyển được duyệt vẫn chưa có hiệu lực cho tới khi Giám đốc dự án nơi nhận xác nhận.<span class="then">Trước thời điểm xác nhận, tài sản vẫn tính khấu hao cho nơi cũ — tránh tranh chấp chi phí giữa hai dự án.</span></li>
       <li><b>Số ngày là hệ số phân bổ.</b> Khấu hao kỳ chia theo số ngày tài sản ở từng vị trí trong kỳ.<span class="then">Tài sản di chuyển giữa kỳ thì chi phí chia đúng tỷ lệ cho từng dự án, không dồn hết cho nơi cuối kỳ.</span></li>
@@ -421,6 +424,10 @@
           <tr><td>Tài sản cũ nhưng khai khấu hao</td><td><code>is_secondhand</code> và có thời gian KH</td><td>“Tài sản cũ không trích khấu hao theo quy định đã thống nhất. Bỏ cờ nếu muốn tính khấu hao.”</td></tr>
           <tr><td>Điều chuyển chưa xác nhận</td><td>Quá 7 ngày chưa xác nhận</td><td>“Phiếu điều chuyển {mã} chờ {người} xác nhận đã {n} ngày. Tài sản vẫn tính cho {nơi cũ}.”</td></tr>
           <tr><td>Ghi giảm khi đang ở dự án</td><td>Vị trí là dự án đang thi công</td><td>“Tài sản đang phục vụ {dự án}. Điều chuyển về kho tổng trước khi ghi giảm.”</td></tr>
+          <tr><td>Mã tài sản trùng</td><td>Mã gõ tay đã có</td><td>“Mã {mã} đã dùng cho tài sản {tên}.”</td></tr>
+          <tr><td>Thiếu TK phân bổ chi phí</td><td>Tài sản có khấu hao, chưa chọn tài khoản</td><td>“Chọn tài khoản phân bổ chi phí khấu hao.”</td></tr>
+          <tr><td>TK phân bổ không phải chi phí</td><td>Không thuộc loại 6 / 154, là tài khoản tổng hợp hoặc ngưng dùng</td><td>“Tài khoản {mã} không dùng để phân bổ chi phí khấu hao.”</td></tr>
+          <tr><td>Kho dùng chung chưa chọn dự án</td><td>Kho dự án gắn nhiều dự án</td><td>“Kho {mã} dùng chung cho {n} dự án. Chọn dự án tài sản sẽ phục vụ.”</td></tr>
           <tr><td>Thời gian khấu hao ngoài khung</td><td>Ngoài khung quy định của nhóm</td><td>“Thời gian sử dụng {n} năm nằm ngoài khung {a}–{b} năm của nhóm tài sản này.”</td></tr>
           <tr><td>Trích khấu hao kỳ đã chốt</td><td>Kỳ đã khóa</td><td>“Kỳ {kỳ} đã chốt. Khấu hao sẽ ghi vào kỳ hiện tại.”</td></tr>
         </tbody>
@@ -433,6 +440,9 @@
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
           <tr><td>UAT-ACC06-1</td><td>Mua máy cắt mới 2,85 tỷ</td><td>Ghi tăng tài sản</td><td>Vị trí mặc định là kho tổng công ty</td></tr>
+          <tr><td>UAT-ACC06-9</td><td>Máy khoan đã dán nhãn MK-07</td><td>Ghi tăng, gõ mã MK-07; ghi tăng một CCDC để trống mã</td><td>Tài sản mang mã MK-07; CCDC nhận mã <code>CC-NNNN</code>; gõ lại MK-07 bị chặn trùng</td></tr>
+          <tr><td>UAT-ACC06-10</td><td>Máy văn phòng, TK phân bổ 642</td><td>Ghi tăng, chạy khấu hao kỳ</td><td>Bút toán Nợ 642 / Có 214</td></tr>
+          <tr><td>UAT-ACC06-11</td><td>Máy mua về thẳng kho công trường của một dự án</td><td>Ghi tăng, chọn kho công trường</td><td>Chặng đầu ở kho đó, phục vụ dự án đó; không cần phiếu điều chuyển</td></tr>
           <tr><td>UAT-ACC06-2</td><td>Tài sản mua lại đã qua sử dụng</td><td>Bật cờ “tài sản cũ”</td><td>Nhóm trường khấu hao ẩn; không sinh bút toán khấu hao</td></tr>
           <tr><td>UAT-ACC06-3</td><td>Lập phiếu điều chuyển tới DA-2026-014, đã duyệt</td><td>Chưa để GĐ dự án xác nhận, chạy khấu hao kỳ</td><td>Khấu hao vẫn tính cho vị trí cũ</td></tr>
           <tr><td>UAT-ACC06-4</td><td>GĐ dự án xác nhận ngày 12/07</td><td>Chạy khấu hao quý 3</td><td>Chia theo số ngày: trước 12/07 cho nơi cũ, sau đó cho DA-2026-014</td></tr>

@@ -89,11 +89,12 @@
           <tr><td>Bản vẽ Shop</td><td class="k">shopdrawing_id</td><td>—</td><td>—</td><td>Trống; tiêu đề thẻ ghi “{mã dự án} · Không có hợp đồng · Đơn hàng số {N}”.</td></tr>
           <tr><td>Đơn hàng số</td><td class="k">order_no</td><td>Số nguyên ≥ 1</td><td>✱</td><td>Đánh số <b>theo dự án</b> trong nhóm đơn không có bản vẽ Shop (<a href="../PL-C.html#Q-101">Q-101</a>).</td></tr>
           <tr><td>Thêm dòng</td><td class="k">—</td><td>Hành vi</td><td>—</td><td>Nút “+ Thêm dòng” dưới bảng; dòng mới nhận con trỏ ở ô Đầu việc.</td></tr>
-          <tr><td>Mã HM · Đầu việc · Quy cách</td><td class="k">line.item_code · item_name · spec</td><td>Văn bản</td><td>Đầu việc ✱</td><td>Gõ tay. Mã HM để trống được.</td></tr>
+          <tr><td>Mã HM</td><td class="k">line.item_code</td><td>Hệ thống</td><td>—</td><td>Tự sinh <code>{mã dự án}.NN</code> theo thứ tự dòng, cùng quy tắc Mã HM của BOQ ở <a href="../BID-01.html">BID-01</a> (<code>{mã gói}.NN</code>); không gõ tay <em>(yêu cầu thay đổi 12/10/2026 — <a href="../PL-C.html#Q-112">Q-112</a>)</em>.</td></tr>
+          <tr><td>Đầu việc · Quy cách</td><td class="k">line.item_name · spec</td><td>Văn bản</td><td>Đầu việc ✱</td><td>Gõ tay.</td></tr>
           <tr><td>Mã vật tư · Tên vật tư/Quy cách</td><td class="k">line.material_*</td><td>Chọn từ danh mục</td><td>—</td><td>Cùng ô chọn vật tư của bảng Đơn hàng thường (<a href="../2026-09-29/YC-21.html">YC-21</a>); chọn vật tư thì ĐVT điền sẵn theo vật tư.</td></tr>
           <tr><td>ĐVT</td><td class="k">line.unit</td><td>Văn bản</td><td>✱</td><td>Điền sẵn theo vật tư, sửa được.</td></tr>
           <tr><td>SL theo bản vẽ Shop · Còn chưa lập</td><td class="k">—</td><td>—</td><td>—</td><td><b>Không có</b> — không có mốc so (<a href="../PL-C.html#Q-101">Q-101</a>). Không cảnh báo vượt, không nhắc “còn X”.</td></tr>
-          <tr><td>SL sản xuất · SL mua hàng · SL theo Đơn hàng · Ghi chú</td><td class="k">line.*</td><td>Như YC-23</td><td>—</td><td>Giữ nguyên.</td></tr>
+          <tr><td>SL đơn hàng đợt này · Ghi chú</td><td class="k">line.*</td><td>Như YC-23</td><td>—</td><td>Một số lượng, như YC-23; không có cột SL theo BOQ, lũy kế — không có BOQ để so <em>(yêu cầu thay đổi 12/10/2026 — <a href="../PL-C.html#Q-115">Q-115</a>)</em>.</td></tr>
           <tr><td>Bản vẽ sản xuất · Bản vẽ đơn hàng</td><td class="k">files</td><td>Tệp</td><td>—</td><td>Hai ô tải tệp như <a href="YC-27.html">YC-27</a>.</td></tr>
         </tbody>
       </table>
@@ -105,6 +106,7 @@
       <li><b>Dự án tạo nhanh là dự án thật, chỉ thiếu hợp đồng.</b> Có kho dự án, thành viên, dùng được ở Kho dự án, Kế toán, báo cáo như dự án thường; danh sách dự án ghi nhãn <span class="tag t-warn">Chưa có hợp đồng</span>. Không sinh gói thầu — phân hệ Đấu thầu không thấy dự án này.</li>
       <li><b>Ký hợp đồng sau thì gắn vào, không tạo dự án thứ hai.</b> Bước khởi tạo dự án từ hợp đồng (<a href="../BID-05.html">BID-05</a>) có thêm lựa chọn “Gắn vào dự án đã tạo nhanh”; gắn xong nhãn “Chưa có hợp đồng” mất, các Đơn hàng đã lập giữ nguyên.<span class="then"><a href="../PL-C.html#Q-100">Q-100</a>.</span></li>
       <li><b>Cùng bảng, cùng duyệt, cùng đường phía sau.</b> Bảng Đơn hàng giống YC-23 trừ các cột so với bản vẽ Shop; TP TQT duyệt; đơn đã duyệt vào hàng chờ Áp giá doanh thu (<a href="../2026-10-05/YC-25.html">YC-25</a>) và hàng chờ Cung ứng (<a href="YC-26.html">YC-26</a>); đợt, phiếu nhập kho theo “Đơn hàng số N – Đợt n”.<span class="then">Sheet dòng 4.</span></li>
+      <li><b>Mã HM tự sinh như BOQ.</b> Dòng của Đơn hàng không có bản vẽ Shop mang mã <code>{mã dự án}.NN</code>, NN là thứ tự dòng trong Đơn hàng, hai chữ số và dài thêm khi quá 99 <em>(yêu cầu thay đổi 12/10/2026 — <a href="../PL-C.html#Q-112">Q-112</a>)</em>.<span class="then">Thêm, xóa dòng thì mã đánh lại liên tục ngay trên bảng và khi lưu — giống bảng đầu việc BOQ của gói thầu. Đơn hàng đã gửi bị khóa nên mã không đổi nữa. Mỗi Đơn hàng đánh từ .01; chứng từ phía sau luôn nêu kèm “Đơn hàng số N”. Đơn hàng nháp đã lưu mã gõ tay trước đây được đánh lại ở lần lưu kế tiếp; đơn đã gửi giữ mã cũ.</span></li>
       <li><b>Lối thường không đổi.</b> Đơn hàng có bản vẽ Shop vẫn lập từ “Chọn bản vẽ Shop cần lập Đơn hàng”; nút Lập Đơn hàng mới không thay lối đó.</li>
     </ol>
 
@@ -142,6 +144,7 @@
         <tbody>
           <tr><td>UAT-YC28-1</td><td>Kỹ sư P. TQT</td><td>Lập Đơn hàng mới → Tạo nhanh dự án “NT_0001 – Ốp đá sảnh khách sạn Nha Trang”, CĐT mới, lưu</td><td>Mở thẻ “NT_0001 · Không có hợp đồng · Đơn hàng số 1” nháp; Đấu thầu không có gói thầu NT_0001</td></tr>
           <tr><td>UAT-YC28-2</td><td>Tiếp UAT-1</td><td>Thêm dòng “Ốp đá sảnh”, vật tư HNT_2, SL sản xuất 300 m², nộp</td><td>ĐVT điền sẵn m²; SL theo Đơn hàng 300; không có cột SL bản vẽ Shop; nộp được, TP TQT nhận thông báo</td></tr>
+          <tr><td>UAT-YC28-7</td><td>Tiếp UAT-1</td><td>Thêm ba dòng, xóa dòng thứ hai, lưu</td><td>Hai dòng còn lại mang mã NT_0001.01 và NT_0001.02; ô Mã HM không gõ được</td></tr>
           <tr><td>UAT-YC28-3</td><td>Tiếp UAT-2</td><td>TP TQT duyệt</td><td>Đơn có mặt ở Áp giá doanh thu và hàng chờ Cung ứng</td></tr>
           <tr><td>UAT-YC28-4</td><td>Tiếp UAT-3</td><td>Cung ứng lập Bản vẽ sản xuất đợt 1 = 300, gửi; thủ kho mở Kho dự án NT_0001</td><td>Nút “ĐH 1 – Đợt 1”, lập phiếu nhập được</td></tr>
           <tr><td>UAT-YC28-5</td><td>Tiếp UAT-1</td><td>Lập Đơn hàng mới, tạo nhanh với mã NT_0001</td><td>“Mã NT_0001 đã được dùng.”</td></tr>

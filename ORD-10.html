@@ -41,7 +41,7 @@
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <div class="rail-grp">Phòng Kế toán</div>
@@ -264,8 +264,9 @@
           <tr><td>Bản vẽ hoàn công</td><td class="k">asbuilt_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Bắt buộc, gồm DWG và PDF. Không có thì không trình duyệt được. Dựng từ các <b>đợt trình shopdrawing đã được CĐT chấp thuận</b> của từng hạng mục (<a href="ORD-02.html">ORD-02</a> cấp 3, <a href="2026-09-15/YC-08.html">YC-08</a>) cộng với điều chỉnh thực tế thi công — không dựng từ bản vẽ đơn hàng.</td></tr>
           <tr><td>Đợt trình nguồn của bản vẽ hoàn công</td><td class="k">asbuilt_src_batches[]</td><td>Tham chiếu</td><td class="c">—</td><td>Danh sách đợt trình đã chấp thuận mà bộ bản vẽ hoàn công dựa trên, gom theo hạng mục. Hệ thống đối chiếu với hồ sơ Shopdrawing của dự án và nêu hạng mục nào chưa có đợt trình nào được chấp thuận — đó là phần bản vẽ hoàn công đang thiếu căn cứ.</td></tr>
           <tr><td>Biên bản nghiệm thu hoàn thành</td><td class="k">handover_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Biên bản nghiệm thu hoàn thành đưa vào sử dụng và biên bản báo cáo tiến độ.</td></tr>
+          <tr><td>Khối lượng quyết toán</td><td class="k">settle_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Theo từng đầu việc BOQ: cột <em>Đã thi công</em> chỉ đọc — lũy kế mọi sản lượng đã xác nhận của dự án ở <a href="PRJ-02.html">PRJ-02</a>, kể cả đợt đã đóng; cột <em>Quyết toán</em> nhập tay, ≤ đã thi công <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.</td></tr>
           <tr><td>Lũy kế thu từ CĐT</td><td class="k">total_claimed</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn các hồ sơ <a href="ORD-09.html">ORD-09</a> đã thanh toán cộng hồ sơ quyết toán này. Chỉ đọc.</td></tr>
-          <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ giao khoán nhân công đã duyệt (<a href="PRJ-03.html">PRJ-03</a>). Chỉ đọc.</td></tr>
+          <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ thanh toán nhân công tổ đội đã duyệt (<a href="PRJ-03.html">PRJ-03</a>). Chỉ đọc.</td></tr>
           <tr><td>Tạm ứng còn phải thu hồi</td><td class="k">advance_outstanding</td><td>Số tiền</td><td class="c">—</td><td>Tạm ứng đã nhận ở <a href="ORD-01.html">ORD-01</a> trừ lũy kế đã thu hồi qua các đợt <a href="ORD-09.html">ORD-09</a>. Chỉ đọc.</td></tr>
           <tr><td>Lũy kế giữ lại bảo hành</td><td class="k">retention_total</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn <code>retention_withheld</code> của mọi đợt <a href="ORD-09.html">ORD-09</a> cộng phần giữ lại của chính hồ sơ quyết toán. Chỉ đọc.</td></tr>
           <tr><td>Ngày hết hạn bảo hành</td><td class="k">warranty_due_at</td><td>Ngày</td><td class="c">—</td><td>Tính từ <code>warranty_from</code> và <code>warranty_months</code> của hợp đồng (<a href="BID-05.html">BID-05</a>). Sinh nhắc lập hồ sơ thu hồi trước hạn 15 ngày.</td></tr>
@@ -359,6 +360,7 @@
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày quyết toán.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Hợp đồng quyết toán trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
       <li><b>Lập hồ sơ là báo P. Kế toán</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 10)</em>. Hồ sơ quyết toán <code>HSQT</code> và hồ sơ thu hồi bảo hành <code>HSBH</code> mới đều phát <code>dossier_created</code> tới cả phòng <code>KT</code> theo quy tắc chung của <a href="ORD-01.html">ORD-01</a> và <a href="PF-04.html">PF-04</a>; từ 11/10/2026 phòng còn được báo khi chủ đầu tư chấp thuận, trả lại, hủy hồ sơ và được nhắc hạn thu tiền (<em>chốt <a href="PL-C.html#Q-105">Q-105</a></em>).</li>
+      <li><b>Quyết toán theo sản lượng thi công.</b> Dự án có sản lượng đã xác nhận ở <a href="PRJ-02.html">PRJ-02</a> thì lập được hồ sơ quyết toán; khối lượng quyết toán của từng đầu việc ≤ lũy kế đã thi công <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.<span class="then">Lũy kế tính mọi đợt, kể cả đợt đã đóng. Quyết toán là tổng của hợp đồng nên so với toàn bộ phần đã thi công, không trừ phần đã đề nghị ở các hồ sơ khối lượng.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -371,6 +373,8 @@
           <tr><td>Thiếu biên bản nghiệm thu hoàn thành</td><td><code>handover_files</code> rỗng</td><td>“Cần biên bản nghiệm thu hoàn thành đưa vào sử dụng trước khi trình quyết toán.”</td></tr>
           <tr><td>Lũy kế thu nhỏ hơn lũy kế trả</td><td><code>total_claimed &lt; total_paid_crew</code></td><td>“Thiệt hại {giá trị}: đã trả tổ đội {giá trị} nhưng chỉ thu được {giá trị}. Cảnh báo đã gửi Ban lãnh đạo, P. TQT và dự án.”</td></tr>
           <tr><td>Có thiệt hại nhưng thiếu nguyên nhân</td><td><code>loss_amount &gt; 0</code>, lý do rỗng</td><td>“Nhập nguyên nhân — nội dung này hiển thị nguyên văn trong cảnh báo gửi Ban lãnh đạo.”</td></tr>
+          <tr><td>Dự án chưa có sản lượng thi công</td><td>Không có dòng sản lượng đã xác nhận nào <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em></td><td>“Dự án {mã} chưa có sản lượng thi công được xác nhận. Xác nhận sản lượng tại PRJ-02 trước khi lập hồ sơ quyết toán.”</td></tr>
+          <tr><td>Quyết toán vượt khối lượng đã thi công</td><td>Khối lượng quyết toán &gt; lũy kế đã thi công của đầu việc</td><td>“{mã HM}: khối lượng quyết toán {số} vượt khối lượng đã thi công ({lũy kế}).” <em>(chặn khi lưu và khi trình)</em></td></tr>
           <tr><td>Còn hồ sơ đợt chưa thanh toán</td><td>Có hồ sơ ORD-09 đang mở</td><td>“Còn {n} hồ sơ thanh toán đợt chưa đóng. Quyết toán khi chưa xong các đợt sẽ làm lệch lũy kế.”</td></tr>
           <tr><td>Còn tạm ứng chưa thu hồi</td><td><code>advance_outstanding &gt; 0</code> khi trình duyệt</td><td>“Còn {giá trị} tạm ứng chưa thu hồi. Hồ sơ quyết toán sẽ thu hết phần này — kiểm tra lại số trước khi trình.”</td></tr>
           <tr><td>Lập hồ sơ thu hồi bảo hành sớm</td><td>Ngày lập &lt; <code>warranty_due_at</code></td><td>“Bảo hành còn tới {ngày}. Lập hồ sơ thu hồi sớm hơn hạn cần lý do và một cấp duyệt của Ban lãnh đạo.”</td></tr>
@@ -396,6 +400,7 @@
           <tr><td>UAT-ORD10-10</td><td>Lũy kế giữ lại bảo hành 1,4 tỷ; bảo hành 24 tháng từ ngày bàn giao 30/09/2026</td><td>Đóng hồ sơ quyết toán</td><td>Hợp đồng đóng phần thi công; khoản 1,4 tỷ vẫn mở kèm hạn 30/09/2028 và nhắc trước 15 ngày</td></tr>
           <tr><td>UAT-ORD10-11</td><td>Tiếp UAT-10, ngày hệ thống 20/09/2028</td><td>Bấm “Lập hồ sơ thu hồi bảo hành”</td><td>Sinh hồ sơ <code>HSBH-…</code> theo khung ORD-01, giá trị đề nghị nạp sẵn 1,4 tỷ</td></tr>
           <tr><td>UAT-ORD10-8</td><td>Cuối năm, 2 dự án có thiệt hại</td><td>Mở báo cáo quản trị dự án</td><td>Có mục tổng hợp thiệt hại theo dự án phục vụ đánh giá</td></tr>
+          <tr><td>UAT-ORD10-12</td><td>Dự án có 420 m² lát đá đã xác nhận qua ba đợt, hai đợt đã đóng</td><td>Lập hồ sơ quyết toán, nhập 400 m² rồi 430 m²</td><td>Cột đã thi công hiện 420; 400 lưu được; 430 bị chặn</td></tr>
         </tbody>
       </table>
     </div>

@@ -2,7 +2,7 @@
 <html lang="vi"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PRJ-03 Giao khoán nhân công — ABSMS GĐ1</title>
+<title>PRJ-03 Thanh toán nhân công tổ đội — ABSMS GĐ1</title>
 <link rel="stylesheet" href="assets/spec.css">
 </head><body>
 <div class="app">
@@ -41,7 +41,7 @@
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a class="on" href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a class="on" href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <div class="rail-grp">Phòng Kế toán</div>
@@ -79,7 +79,8 @@
   <header class="tb">
     <div class="tb-id">PRJ-03</div>
     <div class="tb-main">
-      <h3>Hồ sơ giao khoán nhân công</h3>
+      <h3>Hồ sơ thanh toán nhân công tổ đội</h3>
+      <p><em>Đổi tên 12/10/2026 — trước đây “Giao khoán nhân công” (<a href="PL-C.html#Q-114">Q-114</a>). Mã màn hình, mã hồ sơ <code>GKNC-…</code> và dữ liệu không đổi.</em></p>
       <p>Luồng trình dài nhất trong toàn bảng yêu cầu — năm chặng: Dự án → TBP TQT → P. Đấu thầu → P. Kế toán → Lãnh đạo. Kèm ràng buộc riêng: “quá thời hạn thì cần phải giải trình được phê duyệt mới gửi được”.</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>Theo luồng trình — 5 chặng</dd></div>
@@ -299,7 +300,7 @@
       <li>Một lần bấm trình duyệt cả đợt: mỗi tổ đội một hồ sơ, cùng vào luồng 5 chặng, không có trạng thái nửa đợt đã trình nửa chưa.</li>
     </ol>
 
-    <h4>Mockup UI — Công trình › Giao khoán nhân công</h4>
+    <h4>Mockup UI — Công trình › Thanh toán nhân công tổ đội</h4>
     <div class="wf">
       <div class="wf-bar"><span class="wf-crumb">DA-2026-014 ›</span><b>Đợt #7 · 01/07–15/07/2026</b><span class="tag t-info">Đang ghi nhận</span><span class="sp"></span><span class="tag t-crit"><span class="pin">1</span> Nộp muộn 4 ngày</span><span class="wf-btn"><span class="pin">6</span> Xuất bộ hồ sơ</span><span class="wf-btn pri"><span class="pin">7</span> Trình duyệt cả đợt (2 tổ đội)</span></div>
       <div class="wf-body">
@@ -383,7 +384,7 @@
       <li><b>Trình duyệt cả đợt một lần.</b> Một lần bấm đưa mọi hồ sơ nháp của đợt vào luồng; nếu có hồ sơ không đủ điều kiện thì cả đợt dừng lại và nêu rõ hồ sơ nào.<span class="then">Một đợt nửa đã trình nửa còn mở là trạng thái không ai đọc được trên màn hình. Giải trình quá hạn hỏi một lần cho cả đợt, vì đợt nộp muộn thì muộn với mọi tổ đội và vì cùng một lý do.</span></li>
       <li><b>Trả về giữ mã.</b> Bất kỳ chặng nào trả về đều đưa hồ sơ về người lập, giữ nguyên mã và ghi rõ chặng nào trả, lý do gì.<span class="then">Trình lại sẽ đi từ chặng 1, vì số liệu đã thay đổi.</span></li>
       <li><b>Duyệt xong sinh đề nghị thanh toán.</b> Lãnh đạo duyệt thì tự tạo đề nghị thanh toán ở <a href="ACC-05.html">ACC-05</a> với đầy đủ dữ liệu.<span class="then">Kế toán chỉ kiểm và trình, không nhập lại từ đầu.</span></li>
-      <li><b>Phụ thuộc danh mục Tổ đội.</b> Danh sách Tổ đội để chọn ở màn hình này lấy từ màn hình danh mục tổ đội — tổ đội phải được tạo ở đó, có đủ thông tin thanh toán (số tài khoản ngân hàng, ngân hàng) trước khi được gán một hồ sơ giao khoán tại đây.<span class="then">Giao khoán nhân công tính ra số tiền phải trả cho tổ đội, nên cần sẵn nơi nhận tiền đã có trên hồ sơ; danh mục tổ đội trống là lý do màn hình này hiện “0 kết quả” ở mọi nơi.</span></li>
+      <li><b>Phụ thuộc danh mục Tổ đội.</b> Danh sách Tổ đội để chọn ở màn hình này lấy từ màn hình danh mục tổ đội — tổ đội phải được tạo ở đó, có đủ thông tin thanh toán (số tài khoản ngân hàng, ngân hàng) trước khi được gán một hồ sơ giao khoán tại đây.<span class="then">Thanh toán nhân công tổ đội tính ra số tiền phải trả cho tổ đội, nên cần sẵn nơi nhận tiền đã có trên hồ sơ; danh mục tổ đội trống là lý do màn hình này hiện “0 kết quả” ở mọi nơi.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày kết thúc đợt giao khoán.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Giá trị giao khoán, khấu trừ và thực trả trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
       <li><b>TP TQT và Admin toàn quyền trên màn hình này</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em>. Hai vai trò xem, sửa, khóa / mở khóa và hủy có lý do mọi bản ghi của màn hình (<code>prj:manage</code>, <code>record:lock</code>, <code>record:cancel</code>); bản ghi đang khóa thì không ai sửa, phòng phía sau đã xử lý thì đi <a href="ORD-07.html">ORD-07</a>. Hồ sơ đã được P. Kế toán chi (<em>Đã chi</em>) thì không sửa, không hủy trực tiếp.<span class="then">Quy tắc chung ở <a href="PF-02.html">PF-02</a>, mã quyền ở <a href="PL-B.html">PL-B</a>, chốt ở <a href="PL-C.html#Q-103">Q-103</a>.</span></li>

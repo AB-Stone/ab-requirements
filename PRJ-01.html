@@ -41,7 +41,7 @@
     <div class="rail-grp">Dự án — Thi công</div>
     <a class="on" href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Giao khoán nhân công</a>
+    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <div class="rail-grp">Phòng Kế toán</div>
@@ -281,7 +281,7 @@
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Bảng giá khoán chưa được duyệt thì không lập được hồ sơ giao khoán nhân công ở <a href="PRJ-03.html">PRJ-03</a>.</li>
+      <li>Bảng giá khoán chưa được duyệt thì không lập được hồ sơ thanh toán nhân công tổ đội ở <a href="PRJ-03.html">PRJ-03</a>.</li>
       <li>Mỗi dòng giá khoán hiển thị đồng thời đơn giá chuẩn của vùng, % hỗ trợ đề xuất, đơn giá khoán và chênh lệch phần trăm.</li>
       <li>Có ít nhất một dòng vượt đơn giá chuẩn thì bắt buộc nhập giải trình mới trình được.</li>
       <li>Ý kiến của P. Đấu thầu là bắt buộc và hiển thị nguyên văn ở màn hình duyệt của lãnh đạo.</li>
@@ -371,7 +371,7 @@
       <li><b>Khóa đơn giá sau duyệt.</b> Bảng giá được duyệt thì đơn giá khóa vĩnh viễn.<span class="then">Thay đổi chỉ qua phụ lục có hậu tố <code>-PLn</code>, giữ nguyên bản gốc để đối chiếu.</span></li>
       <li><b>Giữ lịch sử khi đổi giá khoán.</b> Đơn giá khoán của một dòng có thể thay đổi trong vòng đời hợp đồng — ví dụ dòng <code>HM-01.1</code> giao tổ TD-004 tăng từ 405.000đ/m² lên 450.000đ/m² sau khi tổ đội phát sinh khó khăn thực tế ngoài dự kiến; hệ thống phải giữ lại giá cũ như lịch sử, không ghi đè, để cả giá gốc và giá đổi cùng hiển thị được, ví dụ cột “Giá khoán L1” và “Giá đổi L2”.<span class="then">Phục vụ đối chiếu, kiểm toán và tính đúng chi phí cho phần khối lượng đã thi công dưới đơn giá cũ. Mức đổi của ví dụ đủ lớn để thấy rõ hệ quả: đơn giá chuẩn vẫn là 420.000 vì <code>std_sheet_ref</code> đóng băng theo quy tắc 18, nên % hỗ trợ của dòng đi từ −3,6% lên +7,1% — 420.000 × 7,1% = 29.820, làm tròn 30.000 = 450.000 − 420.000 — vẫn nằm trong biên ±8% của <code>CV-101</code> nhưng đưa dòng từ dưới lên trên đơn giá chuẩn, nên phụ lục phải có lý do hỗ trợ và giải trình theo quy tắc 8 và quy tắc 17. Khác với khối lượng, vốn xử lý theo hướng ngược lại — xem quy tắc kế tiếp.</span></li>
       <li><b>Khối lượng đã chốt theo giai đoạn không được sửa lùi.</b> Khối lượng thực hiện đã chốt cho một kỳ thanh toán thì khóa lại; mọi điều chỉnh phải lập thành một dòng điều chỉnh mới ở kỳ sau, không sửa trực tiếp số liệu đã chốt.<span class="then">Khối lượng chốt là căn cứ đã dùng để thanh toán cho tổ đội; sửa ngầm sau đó sẽ làm lệch giữa lịch sử thanh toán và số liệu ghi nhận.</span></li>
-      <li><b>Là điều kiện của giao khoán.</b> Không có bảng giá hiệu lực thì không lập được hồ sơ giao khoán nhân công ở <a href="PRJ-03.html">PRJ-03</a>.<span class="then">Chặn ngay tại bước tạo hồ sơ kèm liên kết tới bảng giá đang chờ duyệt.</span></li>
+      <li><b>Là điều kiện của giao khoán.</b> Không có bảng giá hiệu lực thì không lập được hồ sơ thanh toán nhân công tổ đội ở <a href="PRJ-03.html">PRJ-03</a>.<span class="then">Chặn ngay tại bước tạo hồ sơ kèm liên kết tới bảng giá đang chờ duyệt.</span></li>
       <li><b>Đầu việc lỗ phải được chấp thuận.</b> Đơn giá khoán của một dòng vượt đơn giá bán hợp đồng của chính đầu việc đó thì không trình duyệt được cho tới khi có xác nhận chấp thuận.<span class="then">So theo đơn giá nên phát hiện được ngay lúc nhập, không phải chờ có khối lượng. Cảnh báo kèm xác nhận chứ không chặn cứng: bù chéo giữa các đầu việc là quyết định kinh doanh hợp lệ. Xác nhận ghi rõ người và thời điểm, hiện nguyên văn ở màn hình thẩm định và màn hình duyệt.</span></li>
       <li><b>Là nguồn dự phòng của gợi ý giá vốn nhân công.</b> Gợi ý <code>cost_labor</code> cho gói thầu mới ở <a href="BID-03.html">BID-03</a> lấy từ bảng đơn giá chuẩn đang hiệu lực của vùng công trình (<a href="PF-06.html">PF-06</a>) trước; <b>vùng chưa có bảng chuẩn đang hiệu lực, hoặc đầu việc không có trong bảng, thì quay về gợi ý theo giá khoán đã duyệt của dự án cùng vùng</b> — đầu việc tương tự của bảng giá khoán màn hình này.<span class="then">Gợi ý dự phòng ưu tiên dự án cùng vùng miền và cùng loại hình công trình. Trước <a href="2026-09-15/YC-02.html">YC-02</a> đây là nguồn gợi ý mặc định; từ khi có bộ đơn giá cấp công ty thì mốc chung phải đến từ <a href="PF-06.html">PF-06</a>, còn giá khoán đã duyệt là con số riêng của một dự án — lấy nó làm mặc định là mang cái riêng của dự án cũ đặt giá cho gói thầu mới. Câu điều kiện dự phòng viết đúng một chữ ở cả hai trang (<a href="BID-03.html">BID-03</a> · <code>cost_labor</code>, chức năng 10, quy tắc 2) để hai bên không trôi khỏi nhau.</span></li>
       <li><b>% hỗ trợ bị chặn bởi biên độ điều chỉnh.</b> Ô <code>support_pct</code> không nhận giá trị ngoài <code>±adjust_band_pct</code> của chính đầu việc đó trên bảng đơn giá chuẩn; biên độ để trống nghĩa là không cho điều chỉnh.<span class="then">Biên độ là quyền mà công ty giao trước cho Ban chỉ huy; vượt biên độ không phải là sửa số mà là xin ngoại lệ — và ngoại lệ đi qua chặng thẩm định của P. Đấu thầu với ô giải trình bắt buộc, không đi qua ô nhập số.</span></li>
