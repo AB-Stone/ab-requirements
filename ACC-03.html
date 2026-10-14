@@ -323,6 +323,7 @@
         <tbody>
           <tr><td>Mã phiếu</td><td class="k">receipt_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>PN-YYYY-NNNN</code>.</td></tr>
           <tr><td>Đề xuất nguồn</td><td class="k">proposal_id</td><td>Tham chiếu</td><td class="c">—</td><td>Tick chọn; một phiếu nhập có thể phục vụ nhiều đề xuất.</td></tr>
+          <tr><td>Lý do không gắn đề xuất</td><td class="k">no_proposal_reason · no_proposal_note</td><td>Danh mục · Chuỗi</td><td class="c">✱ khi không gắn đề xuất</td><td>Chỉ hiện khi không dòng nào gắn đề xuất. Chọn một trong: mua khẩn cấp tại công trình · hàng biếu tặng · hoàn nhập · điều chỉnh kiểm kê · <b>Khác</b>. Chọn <em>Khác</em> thì hiện ô <em>Ghi rõ lý do</em> (bắt buộc, tối đa 255 ký tự); chọn lý do khác thì ô này bỏ trống (yêu cầu sửa 14/10/2026).</td></tr>
           <tr><td>Nhà cung cấp</td><td class="k">partner_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>—</td></tr>
           <tr><td>Lý do mua</td><td class="k">purchase_purpose</td><td>Chọn 1</td><td class="c req">✱</td><td><code>gia công, sản xuất</code> · <code>thi công</code> · <code>khác</code>. Không có giá trị mặc định. Quyết định dòng nhập có bắt buộc dự án hay không (từ 11/10/2026).</td></tr>
           <tr><td>Dòng nhập</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Một bảng duy nhất, không tách hộp hay tab (từ 11/10/2026). Cột theo thứ tự: Mã vật tư · Tên vật tư · Kho · TK Nợ · TK Có · Đối tượng Nợ · Đối tượng Có · Mã thống kê · Khoản mục chi phí · Dự án · Chi phí hợp lý; sau đó ĐVT, số lượng, đơn giá trước VAT, thuế suất, thành tiền.</td></tr>
@@ -428,7 +429,7 @@
       <li><b>Vận chuyển hai đường khác nhau.</b> Vận chuyển ra dự án ghi tài khoản chi phí; vận chuyển về nhà máy phân bổ vào giá vốn nhập hàng theo số lượng của phiếu nhập.<span class="then">Chọn sai loại làm sai giá vốn của toàn bộ lô hàng, nên trường này bắt buộc và không có giá trị mặc định.</span></li>
       <li><b>Giảm giá tính lại giá xuất.</b> Ghi nhận giảm giá hàng mua làm giảm giá trị hàng mua và kích hoạt tính lại giá xuất kho bình quân.<span class="then">Chỉ ảnh hưởng các lần xuất <em>sau</em> thời điểm ghi giảm giá; các phiếu xuất đã ghi sổ giữ nguyên giá vốn cũ.</span></li>
       <li><b>Nhập chưa có hóa đơn vẫn được.</b> Phiếu gắn cờ “chờ hóa đơn” và vào báo cáo theo dõi riêng.<span class="then">Quá 30 ngày chưa nhận hóa đơn thì nhắc kế toán và trưởng bộ phận mua hàng.</span></li>
-      <li><b>Không có đề xuất thì cần lý do và duyệt.</b> Phiếu nhập không gắn đề xuất phải chọn lý do từ danh mục và qua một cấp duyệt của Kế toán trưởng.<span class="then">Các phiếu này gom vào một báo cáo rà soát định kỳ — xem <a href="PL-C.html">Q-05</a>.</span></li>
+      <li><b>Không có đề xuất thì cần lý do và duyệt.</b> Phiếu nhập không gắn đề xuất phải chọn lý do từ danh mục và qua một cấp duyệt của Kế toán trưởng.<span class="then">Danh mục có thêm mục <em>Khác</em> để tự ghi lý do khi trường hợp thực tế không thuộc bốn lý do sẵn có (yêu cầu sửa 14/10/2026). Đây không phải đường tắt bỏ qua duyệt: phiếu chọn <em>Khác</em> vẫn qua Kế toán trưởng như mọi phiếu không gắn đề xuất, và lý do ghi rõ hiện ngay trong yêu cầu duyệt để người ký đọc được.</span><span class="then">Các phiếu này gom vào một báo cáo rà soát định kỳ — xem <a href="PL-C.html">Q-05</a>.</span></li>
       <li><b>Nhập Excel kiểm trước, ghi sau.</b> Nhập thành phẩm hàng loạt phải qua bước đối chiếu cột và kiểm lỗi theo dòng.<span class="then">Chỉ ghi sổ khi không còn dòng lỗi; dòng cảnh báo thì cho chọn bỏ qua từng dòng.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày chứng từ.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Mua hàng và nhập kho trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
@@ -442,6 +443,7 @@
         <tbody>
           <tr><td>Chưa chọn loại vận chuyển</td><td>Có chi phí VC, <code>freight_type</code> rỗng</td><td>“Chọn loại vận chuyển: ra dự án (ghi chi phí) hay về nhà máy (phân bổ vào giá vốn).”</td></tr>
           <tr><td>Phiếu không có đề xuất</td><td><code>proposal_id</code> rỗng</td><td>“Phiếu không gắn đề xuất. Chọn lý do và phiếu sẽ cần Kế toán trưởng duyệt.”</td></tr>
+          <tr><td>Lý do “Khác” chưa ghi rõ</td><td><code>no_proposal_reason = khac</code>, <code>no_proposal_note</code> rỗng</td><td>“Chọn lý do “Khác” thì ghi rõ lý do.”</td></tr>
           <tr><td>Đơn giá lệch giá nhập gần nhất</td><td>Lệch &gt; 20%</td><td>“Đơn giá {giá} lệch {x}% so với lần nhập gần nhất ({giá}). Kiểm tra lại đơn vị tính và quy cách.”</td></tr>
           <tr><td>Chưa chọn lý do mua</td><td><code>purchase_purpose</code> rỗng</td><td>“Chọn lý do mua: gia công, sản xuất · thi công · khác.”</td></tr>
           <tr><td>Mua cho thi công thiếu dự án</td><td>Lý do <em>thi công</em>, <code>project_id</code> của dòng rỗng</td><td>“Dòng {n}: mua cho thi công phải chọn dự án.”</td></tr>
@@ -475,6 +477,7 @@
           <tr><td>UAT-ACC03-11</td><td>Mua đá block về kho nhà máy</td><td>Chọn lý do “Gia công, sản xuất”, để trống dự án, TK Nợ 1521 / Có 331, lưu và ghi sổ</td><td>Lưu và ghi sổ được; bút toán không mang mã dự án</td></tr>
           <tr><td>UAT-ACC03-12</td><td>Phiếu lý do “Thi công”</td><td>Để trống dự án một dòng rồi lưu</td><td>Bị chặn: “Dòng {n}: mua cho thi công phải chọn dự án.”</td></tr>
           <tr><td>UAT-ACC03-13</td><td>Phiếu lý do “Khác”, dòng không dự án</td><td>Chọn TK Nợ 627</td><td>Bị chặn: tài khoản 627 bắt buộc có mã dự án</td></tr>
+          <tr><td>UAT-ACC03-14</td><td>Không có đề xuất phù hợp; lý do thực tế ngoài danh mục</td><td>Chọn lý do “Khác”, để trống ô ghi rõ rồi lưu; sau đó ghi “Mua bổ sung vật tư lẻ cho xưởng” rồi trình duyệt</td><td>Lần đầu bị chặn kèm thông điệp; lần sau lưu được, phiếu vào luồng duyệt của Kế toán trưởng, yêu cầu duyệt hiện “Lý do: Mua bổ sung vật tư lẻ cho xưởng”</td></tr>
         </tbody>
       </table>
     </div>
