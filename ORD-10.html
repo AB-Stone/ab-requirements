@@ -91,16 +91,16 @@
   </header>
   <div class="sb">
     <h4>Mục tiêu</h4>
-    <p>Về cấu trúc, hồ sơ quyết toán vận hành giống hồ sơ thanh toán đợt ở <a href="ORD-09.html">ORD-09</a>. Hai điểm khác biệt quyết định: bản vẽ <b>hoàn công đầy đủ</b> là bắt buộc, và phép đối chiếu khối lượng chuyển từ cảnh báo nhẹ sang <b>cảnh báo có địa chỉ</b> — nếu tới lúc quyết toán mà công ty vẫn thu được ít hơn phần đã trả cho tổ đội thì phần chênh đó là thiệt hại thật, phải lưu vết cùng những cá nhân liên quan.</p>
+    <p>Về cấu trúc, hồ sơ quyết toán vận hành giống hồ sơ thanh toán đợt ở <a href="ORD-09.html">ORD-09</a>. Hai điểm khác biệt quyết định: chứng từ bắt buộc là <b>biên bản nghiệm thu và bàn giao</b> cùng <b>hồ sơ quyết toán</b> (bản vẽ hoàn công đầy đủ có thì kèm, không bắt buộc — yêu cầu sửa 14/10/2026), và phép đối chiếu khối lượng chuyển từ cảnh báo nhẹ sang <b>cảnh báo có địa chỉ</b> — nếu tới lúc quyết toán mà công ty vẫn thu được ít hơn phần đã trả cho tổ đội thì phần chênh đó là thiệt hại thật, phải lưu vết cùng những cá nhân liên quan.</p>
 
     <h4>Khác biệt so với ORD-09</h4>
     <div class="tw">
       <table>
         <thead><tr><th style="width:180px">Khía cạnh</th><th>ORD-09 · Thanh toán đợt</th><th>ORD-10 · Quyết toán hợp đồng</th></tr></thead>
         <tbody>
-          <tr><td>Bản vẽ</td><td>Sơ họa hoàn công, chỉnh nhẹ từ đợt trình shopdrawing đã được chấp thuận</td><td><b>Bản vẽ hoàn công đầy đủ</b>, bắt buộc — dựng từ các đợt trình đã được chấp thuận của mọi hạng mục</td></tr>
+          <tr><td>Bản vẽ</td><td>Sơ họa hoàn công, chỉnh nhẹ từ đợt trình shopdrawing đã được chấp thuận</td><td><b>Bản vẽ hoàn công đầy đủ</b>, không bắt buộc — có thì dựng từ các đợt trình đã được chấp thuận của mọi hạng mục</td></tr>
           <tr><td>Phạm vi khối lượng</td><td>Khối lượng của một đợt</td><td>Lũy kế toàn hợp đồng, trừ các đợt đã thanh toán</td></tr>
-          <tr><td>Chứng từ kèm theo</td><td>Bảng khối lượng, biên bản nghiệm thu đợt</td><td>Hồ sơ quyết toán, biên bản báo cáo tiến độ, biên bản nghiệm thu hoàn thành đưa vào sử dụng</td></tr>
+          <tr><td>Chứng từ kèm theo</td><td>Bảng khối lượng, biên bản nghiệm thu đợt</td><td>Bắt buộc: biên bản nghiệm thu và bàn giao, hồ sơ quyết toán. Không bắt buộc: bản vẽ hoàn công, hóa đơn, biên bản báo cáo tiến độ</td></tr>
           <tr><td>Xử lý chênh lệch</td><td>Cảnh báo nhẹ trên hồ sơ, giải trình, treo sang quyết toán</td><td><b>Phát cảnh báo tới Ban lãnh đạo, P. TQT và dự án liên quan</b>; giải trình; lưu vết thiệt hại và khoản phạt (nếu có)</td></tr>
           <tr><td>Đầu ra quản trị</td><td>Doanh thu đợt</td><td>Doanh thu đợt cuối + dữ liệu đánh giá cá nhân cuối năm</td></tr>
         </tbody>
@@ -261,9 +261,9 @@
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Bản vẽ hoàn công</td><td class="k">asbuilt_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Bắt buộc, gồm DWG và PDF. Không có thì không trình duyệt được. Dựng từ các <b>đợt trình shopdrawing đã được CĐT chấp thuận</b> của từng hạng mục (<a href="ORD-02.html">ORD-02</a> cấp 3, <a href="2026-09-15/YC-08.html">YC-08</a>) cộng với điều chỉnh thực tế thi công — không dựng từ bản vẽ đơn hàng.</td></tr>
+          <tr><td>Bản vẽ hoàn công</td><td class="k">asbuilt_files[]</td><td>Tệp</td><td class="c">—</td><td>Không bắt buộc (yêu cầu sửa 14/10/2026); có thì nên kèm cả DWG và PDF. Dựng từ các <b>đợt trình shopdrawing đã được CĐT chấp thuận</b> của từng hạng mục (<a href="ORD-02.html">ORD-02</a> cấp 3, <a href="2026-09-15/YC-08.html">YC-08</a>) cộng với điều chỉnh thực tế thi công — không dựng từ bản vẽ đơn hàng.</td></tr>
           <tr><td>Đợt trình nguồn của bản vẽ hoàn công</td><td class="k">asbuilt_src_batches[]</td><td>Tham chiếu</td><td class="c">—</td><td>Danh sách đợt trình đã chấp thuận mà bộ bản vẽ hoàn công dựa trên, gom theo hạng mục. Hệ thống đối chiếu với hồ sơ Shopdrawing của dự án và nêu hạng mục nào chưa có đợt trình nào được chấp thuận — đó là phần bản vẽ hoàn công đang thiếu căn cứ.</td></tr>
-          <tr><td>Biên bản nghiệm thu hoàn thành</td><td class="k">handover_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Biên bản nghiệm thu hoàn thành đưa vào sử dụng và biên bản báo cáo tiến độ.</td></tr>
+          <tr><td>Biên bản nghiệm thu và bàn giao</td><td class="k">handover_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Biên bản nghiệm thu hoàn thành và bàn giao đưa vào sử dụng — thiếu thì không trình duyệt được. Biên bản báo cáo tiến độ là ô tải riêng, không bắt buộc.</td></tr>
           <tr><td>Khối lượng quyết toán</td><td class="k">settle_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Theo từng đầu việc BOQ: cột <em>Đã thi công</em> chỉ đọc — lũy kế mọi sản lượng đã xác nhận của dự án ở <a href="PRJ-02.html">PRJ-02</a>, kể cả đợt đã đóng; cột <em>Quyết toán</em> nhập tay, ≤ đã thi công <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.</td></tr>
           <tr><td>Lũy kế thu từ CĐT</td><td class="k">total_claimed</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn các hồ sơ <a href="ORD-09.html">ORD-09</a> đã thanh toán cộng hồ sơ quyết toán này. Chỉ đọc.</td></tr>
           <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ thanh toán nhân công tổ đội đã duyệt (<a href="PRJ-03.html">PRJ-03</a>). Chỉ đọc.</td></tr>
@@ -333,7 +333,7 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Danh mục chứng từ quyết toán</td><td>Bản vẽ hoàn công và biên bản nghiệm thu hoàn thành là bắt buộc; thiếu thì khóa nút trình duyệt.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Danh mục chứng từ quyết toán</td><td>Biên bản nghiệm thu và bàn giao cùng hồ sơ quyết toán là bắt buộc; bản vẽ hoàn công, hóa đơn, báo cáo tiến độ không bắt buộc.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Đối chiếu lũy kế</td><td>Hai con số tính tự động từ các hồ sơ đã thanh toán và hồ sơ giao khoán đã duyệt.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Ghi nhận thiệt hại &amp; phát cảnh báo</td><td>Cảnh báo gửi Ban lãnh đạo, P. TQT và dự án liên quan ngay khi phát hiện chênh lệch bất lợi; nguyên nhân bắt buộc.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Gắn cá nhân liên quan</td><td>Chỉ Ban lãnh đạo và trưởng bộ phận thấy khối này. Dữ liệu chảy vào báo cáo đánh giá cuối năm.</td></tr>
@@ -344,7 +344,7 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Bản vẽ hoàn công là điều kiện cứng.</b> Thiếu bản vẽ hoàn công hoặc biên bản nghiệm thu hoàn thành đưa vào sử dụng thì không trình duyệt được.<span class="then">Khác hẳn <a href="ORD-09.html">ORD-09</a>, nơi chỉ cần bản sơ họa.</span></li>
+      <li><b>Chứng từ bắt buộc là biên bản nghiệm thu và bàn giao cùng hồ sơ quyết toán.</b> Danh mục thành phần mặc định: <em>Bản vẽ hoàn công</em> (không bắt buộc), <em>Biên bản nghiệm thu và bàn giao</em> (bắt buộc), <em>Hồ sơ quyết toán</em> (bắt buộc), <em>Hóa đơn</em> (không bắt buộc). Thiếu biên bản nghiệm thu và bàn giao thì không trình duyệt được (yêu cầu sửa 14/10/2026).<span class="then">Bản vẽ hoàn công không còn là điều kiện cứng, và quyết toán không đòi hồ sơ tạm ứng hay hồ sơ khối lượng nào đi trước — hợp đồng có thể đi thẳng tới quyết toán. Quy tắc còn hồ sơ khối lượng đang mở thì chưa quyết toán vẫn giữ, vì đó là chống lệch lũy kế.</span></li>
       <li><b>Bản vẽ hoàn công dẫn xuất từ đợt trình đã được chấp thuận.</b> Bộ bản vẽ hoàn công ghi rõ nó dựng từ những đợt trình nào ở <a href="ORD-02.html">ORD-02</a>; hạng mục chưa có đợt trình nào được CĐT chấp thuận thì hiện trong danh sách thiếu căn cứ.<span class="then">Hồ sơ shopdrawing tách ba cấp nên “bản vẽ đã duyệt” luôn là một <em>đợt trình</em> cụ thể của một hạng mục. Đối chiếu ở mức đó mới phát hiện được hạng mục đã thi công nhưng shop chưa bao giờ được ký — đúng phần rủi ro mà quyết toán phải chốt lại.</span></li>
       <li><b>Tự gom chênh lệch còn treo.</b> Hồ sơ quyết toán nạp sẵn phần chênh lệch từ mọi đợt thanh toán trước.<span class="then">Người lập không phải rà lại từng đợt; danh sách hiện rõ chênh đến từ đợt nào, hạng mục nào.</span></li>
       <li><b>Cảnh báo có địa chỉ.</b> Lũy kế thu từ chủ đầu tư nhỏ hơn lũy kế trả tổ đội thì phát cảnh báo tới Ban lãnh đạo, P. TQT và dự án liên quan.<span class="then">Đây là cảnh báo bắt buộc, không tắt được, và gửi ngay khi phát hiện chứ không chờ hồ sơ được duyệt.</span></li>
@@ -368,9 +368,9 @@
       <table>
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
-          <tr><td>Thiếu bản vẽ hoàn công</td><td><code>asbuilt_files</code> rỗng</td><td>“Hồ sơ quyết toán cần bản vẽ hoàn công đầy đủ (DWG và PDF).”</td></tr>
+          
           <tr><td>Hạng mục chưa có đợt trình được chấp thuận</td><td>Hạng mục có khối lượng quyết toán nhưng không có đợt trình <code>approved</code> nào</td><td>“Hạng mục {tên} có khối lượng quyết toán nhưng chưa có đợt trình shopdrawing nào được chủ đầu tư chấp thuận. Xác nhận nếu bản vẽ được ký ngoài hệ thống.” <em>(cảnh báo)</em></td></tr>
-          <tr><td>Thiếu biên bản nghiệm thu hoàn thành</td><td><code>handover_files</code> rỗng</td><td>“Cần biên bản nghiệm thu hoàn thành đưa vào sử dụng trước khi trình quyết toán.”</td></tr>
+          <tr><td>Thiếu biên bản nghiệm thu và bàn giao</td><td><code>handover_files</code> rỗng</td><td>“Hồ sơ quyết toán cần biên bản nghiệm thu và bàn giao trước khi trình duyệt nội bộ.”</td></tr>
           <tr><td>Lũy kế thu nhỏ hơn lũy kế trả</td><td><code>total_claimed &lt; total_paid_crew</code></td><td>“Thiệt hại {giá trị}: đã trả tổ đội {giá trị} nhưng chỉ thu được {giá trị}. Cảnh báo đã gửi Ban lãnh đạo, P. TQT và dự án.”</td></tr>
           <tr><td>Có thiệt hại nhưng thiếu nguyên nhân</td><td><code>loss_amount &gt; 0</code>, lý do rỗng</td><td>“Nhập nguyên nhân — nội dung này hiển thị nguyên văn trong cảnh báo gửi Ban lãnh đạo.”</td></tr>
           <tr><td>Dự án chưa có sản lượng thi công</td><td>Không có dòng sản lượng đã xác nhận nào <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em></td><td>“Dự án {mã} chưa có sản lượng thi công được xác nhận. Xác nhận sản lượng tại PRJ-02 trước khi lập hồ sơ quyết toán.”</td></tr>
@@ -401,6 +401,7 @@
           <tr><td>UAT-ORD10-11</td><td>Tiếp UAT-10, ngày hệ thống 20/09/2028</td><td>Bấm “Lập hồ sơ thu hồi bảo hành”</td><td>Sinh hồ sơ <code>HSBH-…</code> theo khung ORD-01, giá trị đề nghị nạp sẵn 1,4 tỷ</td></tr>
           <tr><td>UAT-ORD10-8</td><td>Cuối năm, 2 dự án có thiệt hại</td><td>Mở báo cáo quản trị dự án</td><td>Có mục tổng hợp thiệt hại theo dự án phục vụ đánh giá</td></tr>
           <tr><td>UAT-ORD10-12</td><td>Dự án có 420 m² lát đá đã xác nhận qua ba đợt, hai đợt đã đóng</td><td>Lập hồ sơ quyết toán, nhập 400 m² rồi 430 m²</td><td>Cột đã thi công hiện 420; 400 lưu được; 430 bị chặn</td></tr>
+          <tr><td>UAT-ORD10-13</td><td>Dự án có sản lượng thi công, không có bản vẽ hoàn công, báo cáo tiến độ hay hóa đơn</td><td>Lập hồ sơ quyết toán, tải biên bản nghiệm thu và bàn giao, đánh dấu đủ <em>Hồ sơ quyết toán</em>, trình duyệt</td><td>Trình được; bỏ biên bản nghiệm thu và bàn giao thì bị chặn kèm thông điệp</td></tr>
         </tbody>
       </table>
     </div>
