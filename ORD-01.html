@@ -83,7 +83,7 @@
       <p>Yêu cầu gốc đòi bốn thứ ở bước này: biết hồ sơ đang đi đến đâu, biết đã nhận được thanh toán hay chưa, ghi được vướng mắc, và xuất được báo cáo tổng hợp. Kèm theo là “chức năng phối hợp giữa các phòng ban để xử lý vướng mắc”.</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>P. TQT — Shopdrawing</dd></div>
-        <div><dt>Phê duyệt</dt><dd>Nội bộ 2 cấp trước khi nộp chủ đầu tư</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Một cấp — Trưởng phòng TQT (thay đổi 19/10/2026 · mục 1b)</dd></div>
         <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · trưởng các BP · dự án liên quan</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 5</dd></div>
       </dl>
@@ -269,16 +269,31 @@
 </g>
 </svg></div><figcaption><b>Hình ORD-01.1</b> Hai vòng lặp quyết định thời gian sống của hồ sơ: vòng vướng mắc nội bộ và vòng phản hồi của chủ đầu tư. Cả hai đều quay về cùng một điểm “ghép đủ thành phần”, nhờ đó số lần lặp đếm được và trở thành chỉ số chất lượng hồ sơ.</figcaption></figure>
 
+    <div class="note"><b>Thay đổi 19/10/2026 · mục 1b — Hồ sơ thanh toán</b>Luồng đã rút gọn và áp dụng cho cả bốn loại hồ sơ (tạm ứng, vật tư <a href="ORD-08.html">ORD-08</a>, khối lượng <a href="ORD-09.html">ORD-09</a>, quyết toán <a href="ORD-10.html">ORD-10</a>): lập hồ sơ → đính kèm tệp → “Gửi hồ sơ” → <b>chỉ Trưởng phòng TQT duyệt</b> (xác nhận tệp và số tiền) → hồ sơ sang “Chờ thanh toán”, ghi nhận công nợ phải thu và doanh thu, báo P. Kế toán → kế toán nhập tiền nhận, nhiều lần; đủ tiền thì tự sang “Đã thanh toán”. Việc gửi hồ sơ cho chủ đầu tư làm ngoài hệ thống. Hình ORD-01.1 giữ lại để đối chiếu luồng cũ; Hình ORD-01.2 là luồng đang áp dụng.</div>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:560px;margin:0 auto"><svg role="img" aria-label="Hình ORD-01.2 Luồng hồ sơ thanh toán rút gọn" width="560" height="330" viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Barlow, sans-serif" font-size="12" text-anchor="middle">
+<rect x="20" y="10" width="220" height="40" fill="#dde3e9" stroke="#5d6b7a"/><text x="130" y="35">Lập hồ sơ — 4 trường mặc định</text>
+<rect x="20" y="80" width="220" height="40" fill="#ffffff" stroke="#5d6b7a"/><text x="130" y="105">Đính kèm tệp hồ sơ (≥ 1 tệp)</text>
+<rect x="20" y="150" width="220" height="40" fill="#ffffff" stroke="#5d6b7a"/><text x="130" y="175">Gửi hồ sơ → Trưởng phòng TQT</text>
+<polygon points="130,215 240,245 130,275 20,245" fill="#ffffff" stroke="#5d6b7a"/><text x="130" y="249">TP TQT duyệt?</text>
+<rect x="320" y="225" width="220" height="40" fill="#dde3e9" stroke="#5d6b7a"/><text x="430" y="242">Chờ thanh toán · ghi công nợ,</text><text x="430" y="257">doanh thu · báo P. Kế toán</text>
+<rect x="320" y="150" width="220" height="40" fill="#ffffff" stroke="#5d6b7a"/><text x="430" y="175">Kế toán nhập tiền nhận (nhiều lần)</text>
+<rect x="320" y="80" width="220" height="40" fill="#dde3e9" stroke="#5d6b7a"/><text x="430" y="105">Đủ tiền → Đã thanh toán</text>
+<rect x="20" y="295" width="220" height="30" fill="#ffffff" stroke="#5d6b7a" stroke-dasharray="4 3"/><text x="130" y="315">Yêu cầu bổ sung → Đang lập</text>
+<g stroke="#5d6b7a" fill="none"><path d="M130 50 V80"/><path d="M130 120 V150"/><path d="M130 190 V215"/><path d="M240 245 H320"/><path d="M430 225 V190"/><path d="M430 150 V120"/><path d="M130 275 V295"/><path d="M20 310 H8 V100 H20"/></g>
+<text x="280" y="238" font-size="11">Duyệt</text><text x="150" y="289" font-size="11">Trả về</text>
+</g></svg></div><figcaption><b>Hình ORD-01.2</b> Luồng hồ sơ thanh toán sau thay đổi 19/10/2026: một cấp duyệt (TP TQT), gửi chủ đầu tư ngoài hệ thống, kế toán ghi nhận tiền về cho tới khi đủ.</figcaption></figure>
+
     <h4>Chuỗi trạng thái hồ sơ</h4>
     <div class="tw">
       <table>
         <thead><tr><th>Trạng thái</th><th>Ý nghĩa</th><th>Điều kiện chuyển tiếp</th></tr></thead>
         <tbody>
-          <tr><td><span class="tag t-neu">Đang lập</span></td><td>Đang ghép thành phần hồ sơ</td><td>Đủ danh mục thành phần bắt buộc</td></tr>
-          <tr><td><span class="tag t-warn">Chờ duyệt nội bộ</span></td><td>Đã trình, đang qua các cấp</td><td>Duyệt hết các cấp</td></tr>
-          <tr><td><span class="tag t-warn">Đã nộp CĐT</span></td><td>Đã bàn giao cho chủ đầu tư</td><td>Có phản hồi của chủ đầu tư</td></tr>
-          <tr><td><span class="tag t-crit">Vướng mắc</span></td><td>Bị trả lại hoặc thiếu thành phần</td><td>Đóng toàn bộ vướng mắc đang mở</td></tr>
-          <tr><td><span class="tag t-warn">Chờ thanh toán</span></td><td>CĐT chấp thuận, chờ chuyển tiền</td><td>Khớp báo có ngân hàng</td></tr>
+          <tr><td><span class="tag t-neu">Đang lập</span></td><td>Đang lập, đính kèm tệp hồ sơ</td><td>Có ít nhất một tệp ở dòng “Tệp hồ sơ” rồi bấm “Gửi hồ sơ”</td></tr>
+          <tr><td><span class="tag t-warn">Chờ duyệt nội bộ</span></td><td>Đã gửi, chờ Trưởng phòng TQT</td><td>TP TQT duyệt → “Chờ thanh toán”; yêu cầu bổ sung → “Đang lập”; từ chối → kết thúc</td></tr>
+          <tr><td><span class="tag t-warn">Đã nộp CĐT</span></td><td>Chỉ còn ở hồ sơ cũ (trước 19/10/2026) — việc nộp CĐT nay làm ngoài hệ thống</td><td>Kế toán nhập tiền nhận lần đầu → “Chờ thanh toán”</td></tr>
+          <tr><td><span class="tag t-crit">Từ chối</span></td><td>Trưởng phòng TQT từ chối hồ sơ (lý do không bắt buộc). Hồ sơ cũ: chủ đầu tư trả lại</td><td>Kết thúc — không sửa, không gửi lại; cần đề nghị lại thì lập hồ sơ mới. Muốn người lập sửa rồi gửi lại thì TP TQT chọn “Yêu cầu bổ sung” thay vì “Từ chối” <em>(19/10/2026)</em></td></tr>
+          <tr><td><span class="tag t-warn">Chờ thanh toán</span></td><td>TP TQT đã duyệt, hồ sơ đã gửi chủ đầu tư; đã ghi công nợ phải thu và doanh thu</td><td>Lũy kế tiền nhận ≥ giá trị đề nghị (sau khấu trừ) và không còn vướng mắc mở</td></tr>
           <tr><td><span class="tag t-ok">Đã thanh toán</span></td><td>Đã nhận đủ tiền</td><td>—</td></tr>
           <tr><td><span class="tag t-neu">Đóng — không thu được</span></td><td>Chấm dứt theo quyết định lãnh đạo</td><td>—</td></tr>
         </tbody>
@@ -294,10 +309,10 @@
           <tr><td>Nguồn tạo hồ sơ</td><td class="k">created_source</td><td>Chọn 1</td><td class="c req">✱</td><td>Hệ thống · Người lập. Hồ sơ do sự kiện hợp đồng có hiệu lực sinh ra mang giá trị <em>Hệ thống</em> (<a href="2026-09-25/YC-16.html">YC-16</a>); chỉ hồ sơ như vậy mới xóa được khi còn rỗng, và chỉ hồ sơ như vậy mới được miễn đếm tuổi cho tới lần sửa đầu tiên.</td></tr>
           <tr><td>Lần sửa đầu tiên</td><td class="k">first_touched_at</td><td>Ngày giờ</td><td class="c">—</td><td>Ghi tự động khi có người sửa hồ sơ sinh tự động lần đầu. Là mốc bắt đầu đếm tuổi hồ sơ cho nhóm đó — xem quy tắc tuổi hồ sơ.</td></tr>
           <tr><td>Dự án · hợp đồng</td><td class="k">project_id, contract_no</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc, lấy từ <a href="BID-05.html">BID-05</a>.</td></tr>
-          <tr><td>Đợt thanh toán</td><td class="k">payment_term_no</td><td>Số nguyên</td><td class="c">—</td><td>Số đợt hồ sơ đang đề nghị. Bảng đợt thanh toán của hợp đồng nạp sẵn để chọn cho nhanh; vẫn gõ được số đợt bất kỳ, kể cả số không có trong bảng, hoặc bỏ trống.</td></tr>
-          <tr><td>Giá trị đề nghị</td><td class="k">amount_request</td><td>Số tiền</td><td class="c req">✱</td><td>Nhập theo khối lượng công việc thực tế; màn hình hiện kèm quy đổi % giá trị hợp đồng. Chỉ khi chọn một đợt có trong bảng mới đối chiếu với giá trị đợt đó.</td></tr>
-          <tr><td>Thành phần hồ sơ</td><td class="k">checklist[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: tên thành phần, bắt buộc hay không, tệp đính kèm, trạng thái. Mẫu danh mục cấu hình theo chủ đầu tư.</td></tr>
-          <tr><td>Ngày nộp · người nhận</td><td class="k">submitted_at, receiver</td><td>Ngày · chuỗi</td><td class="c">—</td><td>Bắt buộc khi chuyển sang “Đã nộp CĐT”.</td></tr>
+          <tr><td>Đợt thanh toán</td><td class="k">payment_term_no</td><td>Số nguyên</td><td class="c">—</td><td><b>Không dùng từ 19/10/2026.</b> Màn lập hồ sơ không còn chọn đợt thanh toán của hợp đồng; cột giữ lại cho hồ sơ cũ. Hồ sơ khối lượng vẫn mang số đợt sản lượng (<a href="ORD-09.html">ORD-09</a>).</td></tr>
+          <tr><td>Giá trị đề nghị</td><td class="k">amount_request</td><td>Số tiền</td><td class="c req">✱</td><td>Nhập theo khối lượng công việc thực tế; màn hình hiện kèm quy đổi % giá trị hợp đồng. Không đối chiếu với bảng đợt của hợp đồng.</td></tr>
+          <tr><td>Thành phần hồ sơ</td><td class="k">checklist[]</td><td>Bảng</td><td class="c req">✱</td><td>Mẫu chung một dòng bắt buộc “Tệp hồ sơ”, đủ khi có ít nhất một tệp đính kèm. Mẫu riêng theo chủ đầu tư (nếu đã cấu hình) vẫn dùng được; dòng bắt buộc nào cũng cần ít nhất một tệp.</td></tr>
+          <tr><td>Ngày nộp · người nhận</td><td class="k">submitted_at, receiver</td><td>Ngày · chuỗi</td><td class="c">—</td><td>Chỉ còn ở hồ sơ cũ. Hồ sơ mới ghi mốc duyệt của TP TQT vào <code>owner_accepted_at</code>.</td></tr>
           <tr><td>Ngày hẹn thanh toán</td><td class="k">promised_at</td><td>Ngày</td><td class="c">—</td><td>Cơ sở tính chậm; quá hạn sinh cảnh báo.</td></tr>
           <tr><td>Số tiền đã nhận</td><td class="k">amount_received</td><td>Số tiền</td><td class="c">—</td><td>Cho phép nhận nhiều lần; hồ sơ chỉ đóng khi nhận đủ.</td></tr>
           <tr><td>Vướng mắc</td><td class="k">issues[]</td><td>Bảng</td><td class="c">—</td><td>Mỗi dòng: mô tả, bộ phận phụ trách, người xử lý, hạn, trạng thái, luồng trao đổi.</td></tr>
@@ -383,14 +398,14 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Một đợt, một hồ sơ đang mở.</b> Mỗi đợt thanh toán của hợp đồng chỉ có một hồ sơ ở trạng thái đang xử lý.<span class="then">Đợt đã có hồ sơ chưa đóng thì không lập hồ sơ thứ hai; muốn tách phải đóng hồ sơ cũ với lý do.</span></li>
-      <li><b>Đợt thanh toán là gợi ý, không phải ràng buộc.</b> Bảng đợt thanh toán khai ở <a href="BID-05.html">BID-05</a> phục vụ bản thân hợp đồng — đủ 100% giá trị hợp đồng. Ở màn lập hồ sơ, bảng đó chỉ nạp sẵn để chọn cho nhanh: ô đợt không bắt buộc, không bao giờ khóa, và nhận cả số đợt gõ tay không có trong bảng.<span class="then">Cái quyết định hồ sơ đề nghị bao nhiêu là khối lượng công việc thực tế, không phải bảng đợt của hợp đồng. Ô này có ba lý do không có gì để gợi ý — chưa chọn dự án, hợp đồng chưa khai bảng đợt, hoặc không đọc được bảng đợt — mỗi lý do hiện một câu riêng ngay dưới ô, nhưng cả ba đều chỉ là “chưa có gợi ý”, không chặn lập hồ sơ. Muốn có sẵn danh sách thì khai bảng đợt ở <a href="BID-05.html">BID-05</a>.</span></li>
-      <li><b>Vượt giá trị đợt đã chọn thì phải giải trình.</b> Khi người lập chọn một đợt có thật trong bảng thanh toán hợp đồng, giá trị đề nghị lớn hơn giá trị đợt đó phải kèm lý do.<span class="then">Lệch thì cảnh báo và yêu cầu ghi lý do; lý do hiện trên màn hình duyệt nội bộ. Gõ tay số đợt hoặc bỏ trống thì không có dòng nào để so — giá trị nhập tự do, hệ thống chỉ hiện quy đổi % giá trị hợp đồng để người lập tự đối chiếu.</span></li>
-      <li><b>Danh mục thành phần theo chủ đầu tư.</b> Mỗi chủ đầu tư có một mẫu danh mục thành phần hồ sơ riêng.<span class="then">Lập hồ sơ mới sẽ nạp mẫu của chủ đầu tư tương ứng; thêm bớt dòng được nhưng dòng bắt buộc không xóa được.</span></li>
+      <li><b>[Ngừng áp dụng 19/10/2026] Một đợt, một hồ sơ đang mở.</b> Mỗi đợt thanh toán của hợp đồng chỉ có một hồ sơ ở trạng thái đang xử lý.<span class="then">Đợt đã có hồ sơ chưa đóng thì không lập hồ sơ thứ hai; muốn tách phải đóng hồ sơ cũ với lý do.</span></li>
+      <li><b>[Ngừng áp dụng 19/10/2026] Đợt thanh toán là gợi ý, không phải ràng buộc.</b> Bảng đợt thanh toán khai ở <a href="BID-05.html">BID-05</a> phục vụ bản thân hợp đồng — đủ 100% giá trị hợp đồng. Ở màn lập hồ sơ, bảng đó chỉ nạp sẵn để chọn cho nhanh: ô đợt không bắt buộc, không bao giờ khóa, và nhận cả số đợt gõ tay không có trong bảng.<span class="then">Cái quyết định hồ sơ đề nghị bao nhiêu là khối lượng công việc thực tế, không phải bảng đợt của hợp đồng. Ô này có ba lý do không có gì để gợi ý — chưa chọn dự án, hợp đồng chưa khai bảng đợt, hoặc không đọc được bảng đợt — mỗi lý do hiện một câu riêng ngay dưới ô, nhưng cả ba đều chỉ là “chưa có gợi ý”, không chặn lập hồ sơ. Muốn có sẵn danh sách thì khai bảng đợt ở <a href="BID-05.html">BID-05</a>.</span></li>
+      <li><b>[Ngừng áp dụng 19/10/2026] Vượt giá trị đợt đã chọn thì phải giải trình.</b> Khi người lập chọn một đợt có thật trong bảng thanh toán hợp đồng, giá trị đề nghị lớn hơn giá trị đợt đó phải kèm lý do.<span class="then">Lệch thì cảnh báo và yêu cầu ghi lý do; lý do hiện trên màn hình duyệt nội bộ. Gõ tay số đợt hoặc bỏ trống thì không có dòng nào để so — giá trị nhập tự do, hệ thống chỉ hiện quy đổi % giá trị hợp đồng để người lập tự đối chiếu.</span></li>
+      <li><b>Tệp hồ sơ là điều kiện gửi duyệt.</b> Mẫu chung chỉ còn một dòng bắt buộc “Tệp hồ sơ”; chủ đầu tư nào đã có mẫu riêng thì vẫn nạp mẫu đó.<span class="then">Dòng bắt buộc đủ khi có ít nhất một tệp đính kèm — tick tay không thay được tệp. Thêm bớt dòng được nhưng dòng bắt buộc theo mẫu không xóa được.</span></li>
       <li><b>Vướng mắc chặn đóng hồ sơ.</b> Còn vướng mắc ở trạng thái mở thì không chuyển hồ sơ sang “đã thanh toán”.<span class="then">Đóng vướng mắc cần chính người phụ trách xác nhận, không phải người lập hồ sơ tự đóng.</span></li>
       <li><b>Tuổi hồ sơ đếm theo trạng thái.</b> Tuổi tính từ lúc hồ sơ vào trạng thái hiện tại, không phải từ lúc lập.<span class="then">Nhờ vậy nhìn ra được hồ sơ đang mắc ở khâu nào lâu nhất, thay vì chỉ biết tổng thời gian.</span></li>
-      <li><b>Nhận tiền nhiều lần.</b> Cho phép ghi nhận nhiều lần nhận tiền cho một hồ sơ.<span class="then">Hồ sơ chỉ đóng khi lũy kế đã nhận bằng giá trị đề nghị; thiếu thì vẫn ở trạng thái chờ thanh toán kèm số còn lại.</span></li>
-      <li><b>Đối chiếu tự động với ngân hàng.</b> Báo có ngân hàng khớp theo số tiền và nội dung chuyển khoản sẽ gợi ý hồ sơ tương ứng.<span class="then">Kế toán xác nhận thì hồ sơ tự chuyển trạng thái và công nợ phải thu giảm — không nhập tay hai lần.</span></li>
+      <li><b>Nhận tiền nhiều lần.</b> Kế toán (người có quyền <code>dossier:record_payment</code> — Kế toán trưởng, Kế toán viên) nhập số tiền nhận được, bao nhiêu lần cũng được, chỉ khi hồ sơ đã được TP TQT duyệt.<span class="then">Lũy kế đã nhận đạt giá trị đề nghị (sau khấu trừ) thì hồ sơ tự sang “Đã thanh toán”, không cần bước xác nhận nào thêm; thiếu thì vẫn “Chờ thanh toán” kèm số còn lại.</span></li>
+      <li><b>Đối chiếu với ngân hàng là tùy chọn.</b> Báo có ngân hàng khớp theo số tiền và nội dung chuyển khoản vẫn gợi ý hồ sơ tương ứng ở <a href="ACC-07.html">ACC-07</a>.<span class="then">Từ 19/10/2026 việc xác nhận khớp không còn là bước bắt buộc của hồ sơ: khoản tiền kế toán nhập đã ghi giảm công nợ phải thu và tính vào lũy kế ngay.</span></li>
       <li><b>Nhắc theo ngày hẹn.</b> Quá ngày hẹn thanh toán mà chưa nhận đủ tiền thì sinh cảnh báo hằng ngày.<span class="then">Cảnh báo gửi cho người phụ trách hồ sơ và trưởng bộ phận, đồng thời hồ sơ vào báo cáo hồ sơ chậm.</span></li>
           <li><b>Hợp đồng có hiệu lực thì hồ sơ tạm ứng có mặt.</b> Sự kiện khởi tạo dự án ở <a href="BID-05.html">BID-05</a> sinh một hồ sơ tạm ứng ở trạng thái <em>Đang lập</em>, mang sẵn dự án, hợp đồng, số đợt đầu của bảng thanh toán và đủ danh mục thành phần của chủ đầu tư; <code>amount_request</code> <b>để trống</b> (<a href="2026-09-25/YC-16.html">YC-16</a>).<span class="then">Lưu đồ vốn đã nối “hợp đồng có hiệu lực” sang “lập hồ sơ tạm ứng”, nhưng mũi tên đó mô tả việc một người phải nhớ làm. Hệ thống biết chắc ba thứ — dự án nào, hợp đồng nào, mẫu danh mục của chủ đầu tư nào — nên nạp sẵn được. Nó không biết công ty định đề nghị bao nhiêu: quy tắc 2 đã nói bảng đợt chỉ là gợi ý, và tỷ lệ tạm ứng vẫn đang chờ <a href="PL-C.html#Q-65">Q-65</a>. Vì vậy thứ sinh ra là một chỗ trống có sẵn nhãn, không phải một đề nghị chờ bấm gửi.</span><span class="then">Cùng một sự kiện còn sinh hồ sơ Shopdrawing ở <a href="ORD-02.html">ORD-02</a> và các dòng theo dõi ở <a href="RPT-05.html">RPT-05</a>. Ba việc cùng một bản chất, nên khi thiếu thì thường thiếu cả ba.</span></li>
       <li><b>Sinh một lần, không sinh lại.</b> Hợp đồng đã có hồ sơ tạm ứng — đang lập, đã đóng hay đã thanh toán — thì sự kiện lặp lại không sinh cái thứ hai.<span class="then">Giữ nguyên quy tắc 1: một đợt, một hồ sơ đang mở. Ký lại, sửa phụ lục hay chạy lại migration đều không được phép đẻ hồ sơ trùng; lần chạy lại chỉ ghi một dòng nhật ký, không báo cho người dùng.</span></li>
@@ -398,6 +413,10 @@
       <li><b>Bản nháp chưa ai đụng tới không vào báo cáo hồ sơ chậm.</b> Hồ sơ sinh tự động chưa có <code>first_touched_at</code> thì không tính tuổi và không sinh cảnh báo quá hạn.<span class="then">Nếu tính, mọi hợp đồng vừa ký sẽ lập tức có một hồ sơ “chậm” và cảnh báo mất giá trị ngay trong tuần đầu. Đồng hồ chạy từ lần sửa đầu tiên, hoặc từ ngày hẹn thanh toán nếu có khai.</span></li>
       <li><b>Lập hồ sơ là báo P. Kế toán</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 10)</em>. Mọi hồ sơ của khung này — tạm ứng ở đây và các hồ sơ kế thừa ở <a href="ORD-08.html">ORD-08</a>, <a href="ORD-09.html">ORD-09</a>, <a href="ORD-10.html">ORD-10</a> — khi được lập, kể cả hồ sơ tạm ứng hệ thống tự sinh, đều phát thông báo <code>dossier_created</code> tới P. Kế toán, liên kết thẳng tới hồ sơ (<a href="PF-04.html">PF-04</a>).<span class="then">Để kế toán theo dõi hồ sơ, xuất hóa đơn tương ứng và theo dõi công nợ phải thu từ lúc hồ sơ có mặt. Người nhận là cả phòng <code>KT</code> (<em>chốt 11/10/2026</em>, <a href="PL-C.html#Q-105">Q-105</a>).</span><span class="then"><b>Ba mốc nữa</b> <em>(chốt 11/10/2026)</em>: chủ đầu tư chấp thuận — hồ sơ sang <em>Chờ thanh toán</em>; nhắc hạn thu tiền 3 ngày trước <code>promised_at</code>, rồi mỗi 7 ngày khi quá hạn mà chưa thu đủ; chủ đầu tư trả lại hoặc hủy. Mã sự kiện và lịch ở <a href="PF-04.html">PF-04</a>; cảnh báo quá hạn hằng ngày cho người phụ trách ở quy tắc “Nhắc theo ngày hẹn” giữ nguyên.</span></li>
       <li><b>TP TQT và Admin toàn quyền trên màn hình này</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 9 · chốt 11/10/2026)</em>. Hai vai trò xem, sửa, khóa / mở khóa và hủy có lý do mọi bản ghi của màn hình (<code>shopdrawing:manage</code>, <code>record:lock</code>, <code>record:cancel</code>); bản ghi đang khóa thì không ai sửa, phòng phía sau đã xử lý thì đi <a href="ORD-07.html">ORD-07</a>. Hồ sơ P. Kế toán đã ghi nhận (hóa đơn, công nợ, báo có) thì TP TQT, Admin không sửa, không hủy trực tiếp; hồ sơ tạm ứng hệ thống sinh còn rỗng vẫn xóa được theo quy tắc trên.<span class="then">Quy tắc chung ở <a href="PF-02.html">PF-02</a>, mã quyền ở <a href="PL-B.html">PL-B</a>, chốt ở <a href="PL-C.html#Q-103">Q-103</a>.</span></li>
+      <li><b>Chỉ Trưởng phòng TQT duyệt</b> <em>(thay đổi 19/10/2026 · mục 1b)</em>. “Gửi hồ sơ” đưa hồ sơ vào một cấp duyệt duy nhất: Trưởng phòng TQT xác nhận tệp và số tiền.<span class="then">Kế toán không còn là cấp duyệt. TP TQT duyệt thì hồ sơ sang thẳng “Chờ thanh toán”; yêu cầu bổ sung thì về “Đang lập”; từ chối thì kết thúc.</span></li>
+      <li><b>Gửi chủ đầu tư làm ngoài hệ thống.</b> Duyệt xong là hồ sơ coi như đã gửi chủ đầu tư.<span class="then">Màn hình không còn nút “Nộp CĐT”, “CĐT chấp thuận”, “CĐT trả lại”. Mốc duyệt được ghi vào <code>owner_accepted_at</code>.</span></li>
+      <li><b>Ghi nhận doanh thu khi TP TQT duyệt.</b> Cùng lúc duyệt, hệ thống ghi Nợ 131 / Có doanh thu (hoặc 3387 với hồ sơ tạm ứng, vật tư) theo giá trị đề nghị (<a href="ACC-05.html">ACC-05</a>).<span class="then">Không ghi được bút toán (ví dụ dự án không xác định được chủ đầu tư) thì lần duyệt không thành công — không để hồ sơ “Chờ thanh toán” mà không có công nợ.</span></li>
+      <li><b>Báo P. Kế toán theo dõi nhận tiền.</b> Khi TP TQT duyệt, cả phòng <code>KT</code> nhận thông báo <code>dossier_approved_for_collection</code>: “Hồ sơ thanh toán {mã} đã được gửi — theo dõi nhận tiền” (<a href="PF-04.html">PF-04</a>).</li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -408,14 +427,10 @@
           <tr><td>Hợp đồng không khai đợt thanh toán nào</td><td><code>payment_terms[]</code> rỗng khi hợp đồng có hiệu lực</td><td>“Hồ sơ tạm ứng {mã} đã sinh nhưng hợp đồng chưa khai bảng đợt thanh toán — chọn đợt hoặc gõ số đợt khi lập.” <em>(thông báo, không chặn)</em></td></tr>
           <tr><td>Dự án chưa gán cán bộ TQT</td><td>Không có người P. TQT trong danh sách nhân sự dự án</td><td>“Hồ sơ tạm ứng {mã} chưa có cán bộ phụ trách — thông báo đã gửi tới trưởng P. TQT.” <em>(cảnh báo)</em></td></tr>
           <tr><td>Xóa bản nháp đã có tệp</td><td><code>created_source = Hệ thống</code> · <code>checklist[]</code> có ít nhất một tệp</td><td>“Hồ sơ {mã} đã có {n} tệp đính kèm — đóng hồ sơ với lý do thay vì xóa.” <em>(chặn)</em></td></tr>
-          <tr><td>Lập hồ sơ trùng đợt</td><td>Đợt đã có hồ sơ đang mở</td><td>“Đợt {n} đã có hồ sơ {mã} đang xử lý. Mở hồ sơ đó hoặc đóng trước khi lập hồ sơ mới.”</td></tr>
-          <tr><td>Hợp đồng chưa khai bảng đợt thanh toán</td><td>Đã chọn dự án, bảng đợt của hợp đồng rỗng</td><td>“Hợp đồng của dự án này chưa khai bảng đợt thanh toán nên chưa có gợi ý — gõ thẳng số đợt để lập hồ sơ. Muốn có sẵn danh sách thì khai bảng đợt ở BID-05 của gói thầu tương ứng.” (ghi chú, không chặn)</td></tr>
-          <tr><td>Không đọc được bảng đợt</td><td>Lời gọi lấy bảng đợt lỗi</td><td>“Không đọc được bảng đợt thanh toán nên chưa có gợi ý — gõ thẳng số đợt, hoặc thử lại sau.” (ghi chú, không chặn)</td></tr>
-          <tr><td>Giá trị vượt đợt đã chọn</td><td>Đã chọn một đợt có trong bảng và <code>amount_request &gt; giá trị đợt</code></td><td>“Đề nghị {giá trị} vượt giá trị đợt {giá trị}. Nhập lý do để trình duyệt.”</td></tr>
-          <tr><td>Trình duyệt khi thiếu thành phần</td><td>Còn dòng bắt buộc chưa đủ</td><td>“Còn {n} thành phần bắt buộc chưa đủ: {danh sách}.”</td></tr>
+          <tr><td>Gửi hồ sơ khi chưa có tệp</td><td>Còn dòng bắt buộc chưa có tệp đính kèm</td><td>“Còn {n} thành phần bắt buộc chưa đủ: {danh sách}.”</td></tr>
           <tr><td>Đóng hồ sơ còn vướng mắc</td><td>Có vướng mắc mở</td><td>“Còn {n} vướng mắc chưa đóng. Người phụ trách phải xác nhận đã xử lý xong.”</td></tr>
           <tr><td>Nhận tiền vượt đề nghị</td><td><code>lũy kế &gt; amount_request</code></td><td>“Tổng đã nhận vượt giá trị đề nghị {chênh lệch}. Kiểm tra lại hoặc ghi nhận phần dư sang đợt sau.”</td></tr>
-          <tr><td>Chuyển “đã nộp CĐT” thiếu thông tin</td><td>Ngày nộp hoặc người nhận rỗng</td><td>“Nhập ngày nộp và người nhận của chủ đầu tư — đây là mốc tính tuổi hồ sơ.”</td></tr>
+          <tr><td>Nhập tiền khi hồ sơ chưa duyệt</td><td>Trạng thái “Đang lập” hoặc “Chờ duyệt nội bộ”</td><td>“Hồ sơ chưa được Trưởng phòng TQT duyệt nên chưa nhập tiền nhận được.” <em>(chặn)</em></td></tr>
         </tbody>
       </table>
     </div>
@@ -425,22 +440,22 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-ORD01-1</td><td>Hợp đồng có hiệu lực, đợt 1 chưa có hồ sơ</td><td>Lập hồ sơ tạm ứng đợt 1</td><td>Danh mục thành phần nạp theo mẫu của chủ đầu tư; giá trị nạp sẵn theo đợt</td></tr>
-          <tr><td>UAT-ORD01-1b</td><td>Dự án có hợp đồng chưa khai bảng đợt thanh toán</td><td>Mở “Lập hồ sơ”, chọn loại Tạm ứng và chọn dự án đó, gõ số đợt 1 rồi nhập giá trị</td><td>Ô Đợt thanh toán vẫn nhập được, chỉ hiện ghi chú chưa có gợi ý và dẫn sang <a href="BID-05.html">BID-05</a>; hồ sơ lập được với đợt 1</td></tr>
-          <tr><td>UAT-ORD01-1c</td><td>Hợp đồng khai 3 đợt</td><td>Gõ số đợt 9 (không có trong bảng) rồi nhập giá trị cao hơn giá trị đợt 1</td><td>Hồ sơ lập được, ghi nhận đợt 9; không hỏi lý do vượt đợt vì không có dòng nào để so</td></tr>
+          <tr><td>UAT-ORD01-1</td><td>Dự án có hợp đồng</td><td>Mở “Lập hồ sơ”</td><td>Form chỉ có Loại hồ sơ, Dự án, Số tiền, Tiêu đề; không có ô đợt thanh toán. Chọn loại Vật tư / Khối lượng / Quyết toán mới hiện trường riêng của loại đó</td></tr>
+          <tr><td>UAT-ORD01-1b</td><td>Hồ sơ đang lập, dòng “Tệp hồ sơ” chưa có tệp</td><td>Bấm “Gửi hồ sơ”</td><td>Bị chặn: “Còn 1 thành phần bắt buộc chưa đủ: Tệp hồ sơ.” Đính kèm một tệp rồi gửi lại thì hồ sơ sang “Chờ duyệt nội bộ”, chỉ TP TQT có bước duyệt</td></tr>
+          <tr><td>UAT-ORD01-1c</td><td>Hồ sơ 2 tỷ chờ TP TQT duyệt</td><td>TP TQT duyệt</td><td>Hồ sơ sang “Chờ thanh toán”; công nợ phải thu 2 tỷ ghi nhận; cả P. Kế toán nhận “Hồ sơ thanh toán {mã} đã được gửi — theo dõi nhận tiền”; không còn nút Nộp CĐT / CĐT chấp thuận</td></tr>
           <tr><td>UAT-ORD01-1d</td><td>Hợp đồng 9,5 tỷ sau VAT</td><td>Nhập giá trị đề nghị 2,85 tỷ</td><td>Dưới ô giá trị hiện quy đổi “≈ 30,0% giá trị hợp đồng”; ô % chỉ để đọc, không nhập được</td></tr>
           <tr><td>UAT-ORD01-2</td><td>Hồ sơ bị chủ đầu tư trả lại</td><td>Mở vướng mắc giao P. Kế toán, đặt hạn 3 ngày</td><td>Hồ sơ chuyển nhãn “Vướng mắc”; người phụ trách nhận thông báo</td></tr>
           <tr><td>UAT-ORD01-3</td><td>Vướng mắc quá hạn 1 ngày</td><td>Chờ tới mốc</td><td>Vướng mắc đổi nhãn quá hạn; trưởng bộ phận nhận nhắc</td></tr>
-          <tr><td>UAT-ORD01-4</td><td>Hồ sơ 2 tỷ, đã nhận 1,2 tỷ</td><td>Ghi nhận nhận thêm 800 triệu</td><td>Hồ sơ chuyển “Đã thanh toán”; công nợ phải thu giảm 2 tỷ</td></tr>
-          <tr><td>UAT-ORD01-5</td><td>Báo có 3,2 tỷ nội dung “TT DOT 4 HD 2026-008”</td><td>Mở màn hình đối chiếu</td><td>Hệ thống gợi ý đúng hồ sơ đợt 4; xác nhận thì hồ sơ tự đóng</td></tr>
-          <tr><td>UAT-ORD01-6</td><td>Hồ sơ ở trạng thái “Đã nộp CĐT” từ 18 ngày</td><td>Mở danh sách hồ sơ</td><td>Cột tuổi hiện 18 ngày tính theo trạng thái hiện tại</td></tr>
+          <tr><td>UAT-ORD01-4</td><td>Hồ sơ 2 tỷ, đã nhận 1,2 tỷ</td><td>Kế toán nhập thêm 800 triệu</td><td>Hồ sơ tự chuyển “Đã thanh toán”, không cần xác nhận khớp ngân hàng; công nợ phải thu giảm 2 tỷ</td></tr>
+          <tr><td>UAT-ORD01-5</td><td>Báo có 3,2 tỷ nội dung “TT DOT 4 HD 2026-008”</td><td>Mở màn hình đối chiếu</td><td>Hệ thống gợi ý đúng hồ sơ; xác nhận khớp là tùy chọn, không đổi trạng thái hồ sơ</td></tr>
+          <tr><td>UAT-ORD01-6</td><td>Hồ sơ ở trạng thái “Chờ thanh toán” từ 18 ngày</td><td>Mở danh sách hồ sơ</td><td>Cột tuổi hiện 18 ngày tính theo trạng thái hiện tại</td></tr>
           <tr><td>UAT-ORD01-7</td><td>Có 12 hồ sơ nhiều trạng thái</td><td>Xuất báo cáo theo tuổi hồ sơ</td><td>Excel nhóm theo khoảng tuổi, có tổng giá trị từng nhóm</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-05.html">BID-05 đợt thanh toán HĐ</a><a href="ORD-09.html">ORD-09 thanh toán khối lượng</a><a href="ORD-08.html">ORD-08 hồ sơ thanh toán vật tư</a><a href="ACC-05.html">ACC-05 công nợ phải thu</a><a href="ACC-07.html">ACC-07 báo có ngân hàng</a><a href="RPT-02.html">RPT-02 báo cáo hồ sơ</a><a href="PF-04.html">PF-04 thông báo hồ sơ cho P. Kế toán</a></p>
+    <p class="links"><a href="BID-05.html">BID-05 hợp đồng</a><a href="ORD-09.html">ORD-09 thanh toán khối lượng</a><a href="ORD-08.html">ORD-08 hồ sơ thanh toán vật tư</a><a href="ACC-05.html">ACC-05 công nợ phải thu</a><a href="ACC-07.html">ACC-07 báo có ngân hàng</a><a href="RPT-02.html">RPT-02 báo cáo hồ sơ</a><a href="PF-04.html">PF-04 thông báo hồ sơ cho P. Kế toán</a></p>
   </div>
 </section>
 <div class="filefoot">
