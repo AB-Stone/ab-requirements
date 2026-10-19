@@ -95,7 +95,7 @@
       <table>
         <thead><tr><th style="width:40px">#</th><th>Báo cáo</th><th>Nội dung chính</th><th class="c">Nguồn</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>Bảng kê hợp đồng</td><td>Số hợp đồng, chủ đầu tư, giá trị, hiệu lực, đợt thanh toán, tình trạng bảo lãnh, dự án tương ứng</td><td class="k"><a href="BID-05.html">BID-05</a></td></tr>
+          <tr><td>1</td><td>Bảng kê hợp đồng</td><td>Số hợp đồng, chủ đầu tư, giá trị, dự án tương ứng <em>(19/10/2026: bỏ hiệu lực, đợt thanh toán, bảo lãnh)</em></td><td class="k"><a href="BID-05.html">BID-05</a></td></tr>
           <tr><td>2</td><td>Báo cáo tiến độ dự án — thực tế thi công</td><td>% hoàn thành theo hạng mục và mốc tiến độ, so với kế hoạch, số ngày trễ</td><td class="k"><a href="PRJ-02.html">PRJ-02</a></td></tr>
           <tr><td>3</td><td>Báo cáo hồ sơ nghiệm thu, thanh quyết toán</td><td>Tình trạng từng hồ sơ, tuổi hồ sơ, vướng mắc đang mở, giá trị đã thu / còn lại; kèm mục tổng hợp thiệt hại do chênh lệch khối lượng</td><td class="k"><a href="ORD-01.html">ORD-01</a>, <a href="ORD-09.html">ORD-09</a>, <a href="ORD-10.html">ORD-10</a></td></tr>
           <tr><td>4</td><td>Báo cáo sản lượng thi công</td><td>Sản lượng theo tuần và theo đợt, theo tổ đội, lũy kế so với BOQ hợp đồng</td><td class="k"><a href="PRJ-02.html">PRJ-02</a></td></tr>
@@ -270,7 +270,6 @@
       <li>Báo cáo tiến độ hiển thị đồng thời đường kế hoạch và đường thực tế, nêu rõ số ngày trễ theo mốc.</li>
       <li>Đặt cạnh nhau tiến độ thi công và tiến độ theo kế toán trên cùng một màn hình.</li>
       <li>Báo cáo hồ sơ nghiệm thu liệt kê hồ sơ đang mắc, tuổi hồ sơ và vướng mắc chưa đóng.</li>
-      <li>Bảng kê hợp đồng nêu được tình trạng bảo lãnh sắp hết hạn.</li>
       <li>Mọi báo cáo lọc được theo dự án, vùng miền và kỳ; xuất Excel và PDF.</li>
       <li>Khối hiệu quả điều hành BCH xếp hạng được các Ban chỉ huy theo tỷ lệ hỗ trợ, mặc định tăng dần, trên cùng một mốc đơn giá chuẩn.</li>
       <li>Khối này nói rõ phép so sánh phủ được bao nhiêu phần khối lượng: phần ngoài bảng chuẩn tách ra cột riêng và không lẫn vào ba cột chi phí.</li>
@@ -332,7 +331,6 @@
       <li><b>Hai góc nhìn tiến độ luôn đặt cạnh nhau.</b> Tiến độ thi công theo khối lượng và tiến độ kế toán theo doanh thu, chi phí.<span class="then">Chênh lệch lớn sinh nhận định cảnh báo tự động; đây là chỉ báo rủi ro sớm nhất của một dự án.</span></li>
       <li><b>Kế hoạch tiến độ nhập một lần.</b> Đường cong kế hoạch khai khi khởi tạo dự án và chỉ sửa qua phụ lục hợp đồng.<span class="then">Không cho sửa kế hoạch để làm đẹp chênh lệch với thực tế.</span></li>
       <li><b>Tuổi hồ sơ theo trạng thái.</b> Báo cáo hồ sơ nghiệm thu tính tuổi từ lúc vào trạng thái hiện tại.<span class="then">Nhìn ra được khâu nào đang là nút thắt, không chỉ tổng thời gian.</span></li>
-      <li><b>Bảng kê hợp đồng nêu bảo lãnh.</b> Cột tình trạng bảo lãnh cảnh báo trước hạn 15 ngày.<span class="then">Bảo lãnh hết hạn mà chưa gia hạn thì gắn cờ đỏ.</span></li>
       <li><b>Ngưỡng cảnh báo cấu hình được.</b> Ngưỡng chậm tiến độ và ngưỡng lệch hai góc nhìn khai ở tham số công ty.<span class="then">Đổi ngưỡng không cần sửa phần mềm; nhãn trạng thái đổi theo ngay.</span></li>
       <li><b>So hiệu quả điều hành trên cùng một mốc.</b> Chi phí nhân công theo đơn giá chuẩn lấy từ bảng <a href="PF-06.html">PF-06</a> mà bảng giá khoán đã tra (<code>std_sheet_ref</code>), không lấy bảng đang hiệu lực tại thời điểm chạy báo cáo.<span class="then">Bảng giá khoán đã duyệt đóng băng đơn giá chuẩn của nó, nên báo cáo của một kỳ giữ nguyên số kể cả khi công ty ban hành bảng chuẩn kỳ mới. Hai Ban chỉ huy chỉ đặt cạnh nhau được khi cả hai cột 4 đều tính trên mốc đã đóng băng.</span></li>
       <li><b>Khối lượng ngoài bảng chuẩn bị loại khỏi phép so sánh.</b> Dòng giá khoán không tra ra đơn giá chuẩn thì khối lượng của nó không vào cột 4, 6 và 7, chỉ hiện ở cột 8.<span class="then">Không có mốc chuẩn thì không có phần chênh để gọi là hỗ trợ; nhét nó vào sẽ làm tỷ lệ hỗ trợ sai theo cả hai chiều. Cột 8 là thước đo độ phủ của phép so sánh và phải đọc cùng cột 7, không đọc rời.</span></li>
@@ -348,7 +346,6 @@
         <tbody>
           <tr><td>Chưa khai kế hoạch tiến độ</td><td><code>plan_pct</code> rỗng</td><td>“Dự án {mã} chưa có đường cong kế hoạch. Cột chênh lệch sẽ để trống.”</td></tr>
           <tr><td>Lệch hai góc nhìn lớn</td><td>&gt; ngưỡng cấu hình</td><td>“{dự án}: thi công {a}% nhưng kế toán {b}%. Khối lượng đã làm chưa nghiệm thu — rủi ro dòng tiền.”</td></tr>
-          <tr><td>Bảo lãnh sắp hết hạn</td><td>Còn ≤ 15 ngày</td><td>“Bảo lãnh {loại} của HĐ {số} hết hạn ngày {ngày}. Liên hệ ngân hàng gia hạn.”</td></tr>
           <tr><td>Hồ sơ đứng quá lâu</td><td>&gt; 30 ngày một trạng thái</td><td>“Hồ sơ {mã} đứng ở ‘{trạng thái}’ đã {n} ngày.”</td></tr>
           <tr><td>Dự án chưa tra đơn giá chuẩn</td><td>Bảng giá khoán không có <code>std_sheet_ref</code></td><td>“Dự án {mã} lập bảng giá khoán trước khi có bảng đơn giá chuẩn cho vùng. Dự án này không vào xếp hạng hiệu quả điều hành.”</td></tr>
           <tr><td>Độ phủ so sánh thấp</td><td>Khối lượng ngoài bảng chuẩn &gt; 20% tổng khối lượng</td><td>“{dự án}: {x}% khối lượng nằm ngoài bảng đơn giá chuẩn {mã}. Tỷ lệ hỗ trợ chỉ phản ánh phần còn lại.”</td></tr>
@@ -365,7 +362,6 @@
           <tr><td>UAT-RPT02-1</td><td>Đã duyệt hồ sơ giao khoán 3 tổ đội</td><td>Mở báo cáo phân loại nhân công</td><td>Chia đúng ba nhóm; tổng bằng tổng giá trị các hồ sơ</td></tr>
           <tr><td>UAT-RPT02-2</td><td>DA-2026-011 thi công 42%, kế toán 28%</td><td>Mở báo cáo tiến độ</td><td>Hiện nhận định “đã làm chưa nghiệm thu” kèm cảnh báo</td></tr>
           <tr><td>UAT-RPT02-3</td><td>Mốc “Ốp lát khối đế” kế hoạch 85%, thực tế 80%</td><td>Xem bảng tiến độ</td><td>Chênh −5 điểm phần trăm, nhãn “Chậm nhẹ”, số ngày trễ 6</td></tr>
-          <tr><td>UAT-RPT02-4</td><td>Bảo lãnh thực hiện hết hạn sau 10 ngày</td><td>Mở bảng kê hợp đồng</td><td>Cột bảo lãnh gắn cờ cảnh báo</td></tr>
           <tr><td>UAT-RPT02-5</td><td>Có 5 hồ sơ nghiệm thu nhiều trạng thái</td><td>Mở báo cáo hồ sơ</td><td>Tuổi tính theo trạng thái hiện tại; hồ sơ &gt; 30 ngày được đánh dấu</td></tr>
           <tr><td>UAT-RPT02-6</td><td>Hai dự án cùng vùng, cùng kỳ, tỷ lệ hỗ trợ 3% và 11%</td><td>Mở khối hiệu quả điều hành BCH</td><td>Dự án 3% đứng trên không cần thao tác xếp hạng; số liệu khớp với hồ sơ giao khoán đã duyệt ở <a href="PRJ-03.html">PRJ-03</a></td></tr>
           <tr><td>UAT-RPT02-7</td><td>Bảng giá khoán của DA-2026-011 có 3 dòng ngoài bảng chuẩn</td><td>Mở khối hiệu quả điều hành BCH</td><td>Khối lượng của ba dòng đó không vào cột 4, 6, 7; cột 8 hiện đúng phần bị loại</td></tr>

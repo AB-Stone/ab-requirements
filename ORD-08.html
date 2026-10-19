@@ -83,7 +83,7 @@
       <p>Dòng 8 lặp lại nguyên văn yêu cầu của dòng 5: theo dõi hồ sơ đang đi đến đâu, đã nhận thanh toán chưa, vướng mắc, báo cáo tổng hợp và phối hợp liên phòng ban. Vì vậy đặc tả này <b>dùng lại khung theo dõi của <a href="ORD-01.html">ORD-01</a></b> và chỉ mô tả phần khác biệt.</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>P. TQT — Shopdrawing</dd></div>
-        <div><dt>Phê duyệt</dt><dd>Nội bộ 2 cấp trước khi nộp chủ đầu tư</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Một cấp — Trưởng phòng TQT (thay đổi 19/10/2026 · mục 1b, <a href="ORD-01.html">ORD-01</a>)</dd></div>
         <div><dt>Quyền truy cập</dt><dd>Không giới hạn</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>TQT · dòng 8 · dòng 7.5 (nhập kho CĐT)</dd></div>
       </dl>
@@ -312,6 +312,7 @@
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày nghiệm thu của hồ sơ.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Giá trị hồ sơ thanh toán trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
       <li><b>Lập hồ sơ là báo P. Kế toán</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 10)</em>. Hồ sơ thanh toán vật tư mới phát <code>dossier_created</code> tới cả phòng <code>KT</code> theo quy tắc chung của <a href="ORD-01.html">ORD-01</a> và <a href="PF-04.html">PF-04</a>; từ 11/10/2026 phòng còn được báo khi chủ đầu tư chấp thuận, trả lại, hủy hồ sơ và được nhắc hạn thu tiền (<em>chốt <a href="PL-C.html#Q-105">Q-105</a></em>).<span class="then">Việc chờ lập hồ sơ sinh từ hàng dư ở <a href="ORD-07.html">ORD-07</a> chưa phát — chỉ hồ sơ đã lập mới phát.</span></li>
+      <li><b>Luồng duyệt rút gọn</b> <em>(thay đổi 19/10/2026 · mục 1b)</em>. Hồ sơ vật tư đi theo luồng chung của <a href="ORD-01.html">ORD-01</a>: form lập hỏi Loại hồ sơ, Dự án, Số tiền, Tiêu đề, cộng nguồn phát sinh và phiếu xuất được kê; đính kèm ít nhất một tệp ở dòng “Tệp hồ sơ” rồi “Gửi hồ sơ”; <b>chỉ Trưởng phòng TQT duyệt</b>.<span class="then">Duyệt xong hồ sơ sang thẳng “Chờ thanh toán”, ghi công nợ phải thu và doanh thu, báo P. Kế toán “Hồ sơ thanh toán {mã} đã được gửi — theo dõi nhận tiền”; gửi chủ đầu tư làm ngoài hệ thống. Kế toán nhập tiền nhận nhiều lần, đủ tiền thì hồ sơ tự sang “Đã thanh toán”.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -322,7 +323,7 @@
           <tr><td>Kê phiếu đã dùng</td><td>Phiếu có trong hồ sơ khác</td><td>“Phiếu {mã} đã được kê ở hồ sơ {mã hồ sơ}. Mở hồ sơ đó để kiểm tra.”</td></tr>
           <tr><td>Thiếu biên bản có xác nhận CĐT</td><td>Nguồn hàng dư / tồn cuối, thiếu tệp</td><td>“Nguồn ‘{tên nguồn}’ cần biên bản nhập kho công trình có xác nhận của chủ đầu tư.”</td></tr>
           <tr><td>Kê phiếu chưa xác nhận nhận</td><td>Phiếu chưa được dự án xác nhận</td><td>“Phiếu {mã} chưa được dự án xác nhận nhận hàng, chưa đủ điều kiện kê thanh toán.”</td></tr>
-          <tr><td>Đơn giá lệch BOQ</td><td>Khác đơn giá hợp đồng</td><td>“Đơn giá lệch BOQ hợp đồng. Ghi lý do — chủ đầu tư sẽ đối chiếu con số này.”</td></tr>
+          <tr><td>Đơn giá lệch BOQ</td><td>Khác đơn giá hợp đồng</td><td>“Đơn giá lệch BOQ hợp đồng — chủ đầu tư sẽ đối chiếu con số này.” <em>(cảnh báo, lý do không bắt buộc)</em></td></tr>
         </tbody>
       </table>
     </div>
@@ -338,6 +339,7 @@
           <tr><td>UAT-ORD08-4</td><td>Bảng kê nạp từ phiếu xuất</td><td>Kiểm tra đơn giá</td><td>Đơn giá bằng đơn giá BOQ hợp đồng của vật tư tương ứng</td></tr>
           <tr><td>UAT-ORD08-5</td><td>Hồ sơ nhận đủ tiền</td><td>Ghi nhận thanh toán</td><td>Sinh bút toán doanh thu vật tư và giảm công nợ phải thu</td></tr>
           <tr><td>UAT-ORD08-6</td><td>Hồ sơ đang có vướng mắc mở</td><td>Thử đóng hồ sơ</td><td>Bị chặn giống hệt cơ chế của ORD-01</td></tr>
+          <tr><td>UAT-ORD08-R1</td><td>Hồ sơ HSVT vật tư đang lập, đã đính kèm tệp hồ sơ</td><td>Gửi hồ sơ, TP TQT duyệt, kế toán nhập tiền hai lần đủ giá trị đề nghị</td><td>Sau khi duyệt hồ sơ ở “Chờ thanh toán” và P. Kế toán nhận thông báo; không có nút Nộp CĐT; lần nhập tiền thứ hai làm hồ sơ tự sang “Đã thanh toán”</td></tr>
         </tbody>
       </table>
     </div>
