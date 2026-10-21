@@ -299,6 +299,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <a href="#PRJ-03"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="#PRJ-04"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="#PRJ-05"><i>PRJ-05</i>Danh mục tổ đội</a>
+    <a href="#PRJ-06"><i>PRJ-06</i>Nhân sự dự án</a>
 
     <div class="rail-grp">Phòng Kế toán</div>
     <a href="#ACC-01"><i>ACC-01</i>Đề xuất mua sắm / chi phí</a>
@@ -653,6 +654,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr><td class="k">Chung</td><td>Up file PDF đề xuất hoặc form nhập liệu; chứng từ đính kèm mọi bước</td><td class="k"><a href="#PF-05">PF-05</a></td></tr>
         <tr><td class="k">Chung</td><td>Danh mục dự án, kho, KMCP, mã thống kê, tick chi phí hợp lý</td><td class="k"><a href="#PF-01">PF-01</a></td></tr>
         <tr><td class="k">05/09 · Thi công</td><td>Danh mục tổ đội — bên nhận khoán nhân công phải có màn hình khai báo riêng, ba màn hình PRJ đang dùng như danh mục có sẵn</td><td class="k"><a href="#PRJ-05">PRJ-05</a></td></tr>
+        <tr><td class="k">20/10 · Thi công</td><td>Bỏ phân công nhân sự hiện trường khỏi Hợp đồng (BID-05); GĐ dự án được gán nhận thông báo và phân công nhân sự từ phòng ban của mình</td><td class="k"><a href="#PRJ-06">PRJ-06</a></td></tr>
         <tr><td class="k">05/09 · Kế toán</td><td>Danh mục tài khoản kế toán — hệ thống tài khoản dùng chung cho định khoản và báo cáo</td><td class="k"><a href="#ACC-10">ACC-10</a></td></tr>
         <tr><td class="k">Theo dõi tiến độ</td><td>File Excel theo dõi thủ công từng hợp đồng — quyết toán, hoá đơn, bảo hành, công nợ</td><td class="k"><a href="#RPT-05">RPT-05</a></td></tr>
         <tr><td class="k">15/09 · YC-02</td><td>Đơn giá chuẩn nhân công theo vùng miền &amp; kỳ hiệu lực — bổ sung đợt 15/09/2026</td><td class="k"><a href="#PF-06">PF-06</a></td></tr>
@@ -3768,7 +3770,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Sai lệch lớn phải làm rõ.</b> Tổng khối lượng lệch quá 10% so với BOQ mời thầu thì hệ thống nhắc lập văn bản làm rõ trước khi chốt.<span class="then">Cho phép bỏ qua nhưng phải ghi lý do — lý do này hiện lại ở bước áp giá.</span></li>
       <li><b>Dòng chưa có khối lượng phải chốt xong ở bước này.</b> Dòng mang sang từ <a href="#BID-01">BID-01</a> với ô khối lượng để trống — trạng thái hợp lệ lúc tiếp nhận hồ sơ, kèm ghi chú “chờ làm rõ” — chỉ nộp phiếu được khi người rà soát đã điền khối lượng đề xuất cho nó, <b>bất kể chọn kết luận nào trong bốn giá trị của <code>line_check[]</code></b>. Chính vì cổng nộp đó mà kết luận “đúng” không dùng được cho dòng như vậy: “đúng” nghĩa là số mời thầu đã chuẩn, mà ở đây chưa có số nào để mà chuẩn.<span class="then">Đây là điểm cuối cùng còn đổi được khối lượng: từ <a href="#BID-03">BID-03</a> trở đi khối lượng khóa, muốn đổi phải quay lại đây và chốt một bản BOQ mới.</span><span class="then">Dòng để trống lọt qua bước này sẽ nằm nguyên trong BOQ hợp đồng và bị chốt chặn <code>chk_qty</code> của <a href="#BID-05">BID-05</a> giữ lại ngay trước khi trình ký — muộn hơn nhiều so với chỗ đáng lẽ phải xử lý.</span></li>
       <li><b>Người thẩm định chỉ mở gói được giao</b> <em>(yêu cầu thay đổi 05/10 mục 4 · chốt 15/10/2026)</em>. Phân hệ Đấu thầu chỉ dành cho P. Đấu thầu, Kế toán trưởng, Ban lãnh đạo, Admin; kỹ sư P. TQT và Ban dự án không thấy menu Đấu thầu. Người được giao phiếu kỹ thuật hoặc phiếu khảo sát mở gói từ <em>Việc được giao</em> (<a href="#PF-03">PF-03</a>) hoặc thông báo, đọc được hồ sơ, BOQ, so sánh BOQ và các phiếu của <b>đúng gói đó</b>, làm phiếu của mình.<span class="then">Gói không có phiếu của mình thì máy chủ từ chối “Bạn không được giao thẩm định gói thầu này.”; báo giá và hợp đồng của gói vẫn đóng với họ. Ma trận ở <a href="#PL-B">PL-B</a>.</span></li>
-      <li><b>Giao việc hai cấp</b> <em>(yêu cầu thay đổi 19/10/2026)</em>. Khi chuyển thẩm định, TP Đấu thầu giao mỗi phiếu cho một <b>lãnh đạo</b> — Tổng Giám đốc, TP Đấu thầu, Kế toán trưởng, GĐ dự án (Bắc/Trung/Nam), TP TQT; ô chọn người chỉ liệt kê những người giữ vai trò này. Lãnh đạo nhận thông báo “Nhiệm vụ mới từ phòng Đấu thầu – {tên phiếu}”, bấm vào là mở thẳng hộp thoại “Giao nhân viên” trên phiếu.<span class="then">Lãnh đạo tự làm phiếu, hoặc giao cho <b>đúng một</b> người đang hoạt động <b>cùng phòng/ban với mình</b> (mỗi GĐ dự án vùng là trưởng phòng của vùng mình). Người được giao nhận thông báo “Phiếu thẩm định mới” như hiện nay, sửa BOQ và nộp phiếu như hiện nay.</span><span class="then">Sau khi giao, lãnh đạo vẫn <b>xem</b> được gói và phiếu (không sửa), và <b>đổi được người làm</b> khi phiếu còn đang xử lý; phiếu luôn ghi lãnh đạo giao ban đầu, đổi người nhiều lần cũng không đổi. TP Đấu thầu đổi được người làm của mọi phiếu đang mở: chọn một lãnh đạo khác thì bắt đầu lại hai cấp, chọn nhân viên thì lãnh đạo giao vẫn giữ nguyên. Phiếu đã nộp thì không đổi người làm nữa — phải Trả lại trước.</span></li>
+      <li><b>Giao việc hai cấp</b> <em>(yêu cầu thay đổi 19/10/2026)</em>. Khi chuyển thẩm định, TP Đấu thầu giao mỗi phiếu cho một <b>lãnh đạo</b> — Tổng Giám đốc, TP Đấu thầu, Kế toán trưởng, GĐ dự án (Bắc/Trung/Nam), TP TQT; ô chọn người chỉ liệt kê những người giữ vai trò này. Lãnh đạo nhận thông báo “Nhiệm vụ mới từ phòng Đấu thầu – {tên phiếu}”, bấm vào là mở thẳng hộp thoại “Giao nhân viên” trên phiếu.<span class="then">Lãnh đạo tự làm phiếu, hoặc giao cho <b>đúng một</b> người đang hoạt động <b>cùng phòng/ban với mình</b> (mỗi GĐ dự án vùng là trưởng phòng của vùng mình). Người được giao nhận thông báo “Phiếu thẩm định mới” như hiện nay, sửa BOQ và nộp phiếu như hiện nay.</span><span class="then">Sau khi giao, lãnh đạo vẫn <b>xem</b> được gói và phiếu (không sửa), và <b>đổi được người làm</b> khi phiếu còn đang xử lý; phiếu luôn ghi lãnh đạo giao ban đầu, đổi người nhiều lần cũng không đổi. TP Đấu thầu đổi được người làm của mọi phiếu đang mở: chọn một lãnh đạo khác thì bắt đầu lại hai cấp, chọn nhân viên thì lãnh đạo giao vẫn giữ nguyên. Phiếu đã nộp thì không đổi người làm nữa — phải Trả lại trước.</span><span class="then"><em>(yêu cầu thay đổi 20/10/2026)</em> Chỉ <b>lãnh đạo đã giao phiếu</b>, TP Đấu thầu hoặc Admin mới phân công lại. Người đã được giao <b>không</b> giao tiếp cho người khác và không thấy nút “Phân công lại” — kể cả khi họ cũng giữ vai trò lãnh đạo (ví dụ chỉ huy trưởng mang vai trò GĐ dự án).</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -3788,7 +3790,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Thêm tệp vào phiếu đã nộp</td><td>Phiếu ở trạng thái đã nộp / đã khóa</td><td>“Phiếu đã nộp — mở lại phiếu nếu cần bổ sung ảnh.”</td></tr>
           <tr><td>Chốt khi thiếu phiếu</td><td>Một trong hai phiếu chưa nộp</td><td>“Chưa nhận được {tên phiếu} từ {bộ phận}. Đã gửi nhắc lúc {giờ}.”</td></tr>
           <tr><td>Lãnh đạo giao phiếu cho người phòng khác</td><td>Người được chọn không cùng <code>department_id</code> với lãnh đạo</td><td>“Chỉ giao được cho người cùng phòng/ban với bạn.”</td></tr>
-          <tr><td>Nhân viên hoặc người ngoài phiếu đổi người làm</td><td>Người thao tác không phải lãnh đạo đang giữ/đã giao phiếu, cũng không có quyền giao việc gói thầu</td><td>“Chỉ lãnh đạo đang giữ phiếu (hoặc đã giao phiếu) hay TP Đấu thầu mới đổi được người làm.”</td></tr>
+          <tr><td>Người được giao, nhân viên hoặc người ngoài phiếu đổi người làm</td><td>Người thao tác không phải lãnh đạo đã giao phiếu (hoặc đang giữ phiếu chưa giao), cũng không có quyền giao việc gói thầu — người đã được giao luôn bị chặn, kể cả khi giữ vai trò lãnh đạo</td><td>“Chỉ lãnh đạo đã giao phiếu (hoặc đang giữ phiếu chưa giao) hay TP Đấu thầu mới đổi được người làm.”</td></tr>
           <tr><td>Giao cho tài khoản ngừng hoạt động</td><td>Người được chọn không ở trạng thái hoạt động</td><td>“Người được giao phải là tài khoản đang hoạt động.”</td></tr>
           <tr><td>Đổi người làm phiếu đã nộp</td><td>Phiếu ở trạng thái đã nộp / đã khóa</td><td>“Phiếu đã nộp — chỉ đổi người làm được khi phiếu đang xử lý.”</td></tr>
           <tr><td>Nộp phiếu khi còn dòng chưa có khối lượng</td><td>Dòng có <code>qty_invited</code> rỗng mà <code>qty_proposed</code> cũng rỗng</td><td>“Dòng {stt} chưa có khối lượng. Nhập khối lượng đề xuất trước khi nộp phiếu — đây là bước cuối còn đổi được khối lượng.”</td></tr>
@@ -3820,6 +3822,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-BID02-18</td><td>Tiếp UAT-BID02-17</td><td>Giao cho kỹ sư A; sau đó đổi sang kỹ sư B</td><td>A rồi B lần lượt nhận “Phiếu thẩm định mới”; phiếu ghi người làm B, lãnh đạo giao vẫn là GĐ dự án; GĐ dự án vẫn xem được phiếu nhưng không sửa được; B sửa và nộp được</td></tr>
           <tr><td>UAT-BID02-19</td><td>Phiếu đã giao cho kỹ sư B</td><td>B thử đổi người làm (gọi thẳng API); GĐ dự án miền Nam thử đổi</td><td>Cả hai bị từ chối</td></tr>
           <tr><td>UAT-BID02-20</td><td>Phiếu đã nộp</td><td>GĐ dự án mở hộp thoại đổi người làm</td><td>Không còn nút; gọi API bị từ chối “Phiếu đã nộp…”</td></tr>
+          <tr><td>UAT-BID02-21</td><td>GĐ dự án miền Bắc đã giao phiếu hiện trường cho chỉ huy trưởng C (C cũng giữ vai trò GĐ dự án)</td><td>C mở trang thẩm định; C gọi thẳng API đổi người làm sang kỹ sư D</td><td>C làm và nộp được phiếu nhưng không thấy nút “Phân công lại”; gọi API bị từ chối “Chỉ lãnh đạo đã giao phiếu…”; GĐ dự án miền Bắc và TP Đấu thầu vẫn phân công lại được</td></tr>
           <tr><td>UAT-BID02-6</td><td>Quá hạn 1 ngày, phiếu hiện trường chưa nộp</td><td>Chờ tới mốc quá hạn</td><td>Gói thầu gắn cờ; trưởng Ban dự án nhận nhắc việc</td></tr>
         </tbody>
       </table>
@@ -4559,7 +4562,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <h3>Ký hợp đồng &amp; khởi tạo dự án</h3>
       <p>Bước bản lề của cả hệ thống. Ghi chú gốc nói rất rõ: “ở bước này có thể tương đương tạo 1 dự án mới… PĐT sẽ thêm Ban lãnh đạo cty, Giám đốc dự án, các phòng ban vào dự án này, Giám đốc dự án sẽ phân công chỉ huy trưởng, CBKT vào dự án, sẽ có thông báo đến từng ID được thêm vào dự án”.</p>
       <dl class="tb-meta">
-        <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu → Giám đốc dự án</dd></div>
+        <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu (nhân sự hiện trường: GĐ dự án ở <a href="#PRJ-06">PRJ-06</a>, <em>20/10/2026</em>)</dd></div>
         <div><dt>Phê duyệt</dt><dd>Kiểm tra hợp đồng đạt → khởi tạo dự án <em>(19/10/2026)</em></dd></div>
         <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · trưởng các BP · dự án liên quan</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>ĐT · dòng 4.2</dd></div>
@@ -4569,7 +4572,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
   <div class="sb">
     <h4>Mục tiêu</h4>
     <p>Một thao tác duy nhất phải cho ra ba kết quả: hợp đồng được chốt với số hợp đồng chính thức, dự án được khởi tạo với BOQ hợp đồng, và bộ máy nhân sự dự án được gán kèm thông báo tới từng người. Nếu tách rời ba việc này thì dữ liệu dự án sẽ khuyết ngay từ ngày đầu.</p>
-    <p><em>(19/10/2026)</em> Hệ thống không còn chuỗi ký số. Hợp đồng được soạn và review, rồi chạy một bước kiểm tra hợp đồng: đối chiếu giá trị và BOQ với gói thầu đã chốt ở <a href="#BID-03">BID-03</a>, soát điều khoản thương mại, pháp nhân bên ký kết, tiến độ và bảo hành, cùng phiên bản hợp đồng tự sinh theo BOQ. Mọi mục đạt thì mới được khởi tạo dự án — số hợp đồng nhập đúng lúc đó — rồi GĐ dự án phân công nhân sự hiện trường. Sai lệch phải được phát hiện ở bước kiểm tra, không phải sau khi dự án đã sinh ra.</p>
+    <p><em>(19/10/2026)</em> Hệ thống không còn chuỗi ký số. Hợp đồng được soạn và review, rồi chạy một bước kiểm tra hợp đồng: đối chiếu giá trị và BOQ với gói thầu đã chốt ở <a href="#BID-03">BID-03</a>, soát điều khoản thương mại, pháp nhân bên ký kết, tiến độ và bảo hành, cùng phiên bản hợp đồng tự sinh theo BOQ. Mọi mục đạt thì mới được khởi tạo dự án — số hợp đồng nhập đúng lúc đó. <em>(20/10/2026)</em> Màn hình này không còn phần phân công nhân sự hiện trường: GĐ dự án được gán nhận thông báo và phân công ở <a href="#PRJ-06">PRJ-06</a>, từ phòng ban của mình. Sai lệch phải được phát hiện ở bước kiểm tra, không phải sau khi dự án đã sinh ra.</p>
 
     <h4>Lưu đồ — kiểm tra và khởi tạo</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:510px;margin:0 auto"><svg role="img" aria-label="Hình BID-05.1 Hợp đồng soạn và review xong phải qua một bước kiểm tra đối chiếu BOQ chốt, điều khoản và phiên bản hợp đồng; còn sai lệch thì quay lại soạn thảo, đạt thì mới khởi tạo dự án, nhập số hợp đồng ngay lúc đó. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện."
@@ -4744,7 +4747,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>BOQ hợp đồng</td><td class="k">contract_boq[]</td><td>Bảng</td><td class="c req">✱</td><td>Sao từ BOQ báo giá đã chốt; khóa cột khối lượng và đơn giá. Là gốc so sánh của <a href="#PRJ-02">PRJ-02</a> và <a href="#RPT-03">RPT-03</a>.</td></tr>
           <tr><td>Danh mục hạng mục</td><td class="k">wbs[]</td><td>Bảng</td><td class="c req">✱</td><td>Sinh từ mã hạng mục của BOQ hợp đồng.</td></tr>
           <tr><td>Thành phần dự án</td><td class="k">members[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: người, vai trò trong dự án, phạm vi quyền. Vai trò tối thiểu: Ban lãnh đạo, Giám đốc dự án, đại diện các phòng ban. <em>(19/10/2026)</em> Ô chọn người chỉ liệt kê lãnh đạo — Tổng Giám đốc, TP Đấu thầu, Kế toán trưởng, GĐ dự án, TP TQT — cùng danh sách với ô giao phiếu thẩm định ở <a href="#BID-02">BID-02</a>; ở đây chỉ lọc, không có bước giao tiếp cho nhân viên.</td></tr>
-          <tr><td>Nhân sự hiện trường</td><td class="k">site_team[]</td><td>Bảng</td><td class="c req">✱</td><td>Do Giám đốc dự án phân công: chỉ huy trưởng, cán bộ kỹ thuật, thủ kho công trình.</td></tr>
+          <tr><td>Nhân sự hiện trường</td><td class="k">site_team[]</td><td>Bảng</td><td class="c">—</td><td><em>(20/10/2026)</em> Không nhập ở màn hình này. Giám đốc dự án phân công ở <a href="#PRJ-06">PRJ-06</a> sau khi nhận thông báo: chỉ huy trưởng, cán bộ kỹ thuật, thủ kho công trình, chọn từ phòng ban của GĐ dự án.</td></tr>
           <tr><td>Kho dự án</td><td class="k">project_wh</td><td>Tham chiếu</td><td class="c req">✱</td><td>Tự tạo một kho dự án khi khởi tạo (<a href="#ACC-02">ACC-02</a>).</td></tr>
           <tr><td>Vùng miền</td><td class="k">region_stat</td><td>Tham chiếu</td><td class="c req">✱</td><td>Suy ra từ địa điểm công trình; là chiều nhóm của báo cáo lãi lỗ.</td></tr>
         </tbody>
@@ -4816,7 +4819,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
             </tbody></table>
           </div></div>
           <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">5</span> Nhân sự hiện trường — GĐ dự án phân công</div>
+            <div class="wf-lg"><span class="pin">5</span> Nhân sự hiện trường — GĐ dự án phân công ở PRJ-06 (chỉ minh họa, không còn trên màn hình này)</div>
             <table><thead><tr><th>Chức danh</th><th>Người</th><th>Hạng mục phụ trách</th></tr></thead>
             <tbody>
               <tr><td>Chỉ huy trưởng</td><td>Đỗ Thái Sơn</td><td>Toàn công trình</td></tr>
@@ -4836,7 +4839,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td class="c"><span class="pin">2</span></td><td>Chạy lại kiểm tra</td><td>Sửa bất kỳ nội dung nào sau khi kiểm tra đạt thì kết quả về <code>chưa chạy</code>; bấm để chạy lại trước khi khởi tạo dự án <em>(19/10/2026)</em>.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Khai báo giá trị &amp; điều kiện thực hiện</td><td>Giá trị sau VAT tính tự động. Phiên bản hợp đồng <code>V{n}</code> chỉ đọc, theo bản BOQ của báo giá chốt; “% giữ lại bảo hành” mặc định 5, nhập 0–100 <em>(19/10/2026)</em>. Tiến độ thi công và thời hạn bảo hành nạp sẵn từ gói thầu (<a href="#BID-01">BID-01</a>), sửa được và hiện giá trị gốc bên cạnh khi đã sửa. Sửa bất kỳ ô nào ở đây làm kết quả kiểm tra hết hiệu lực.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Gán thành phần dự án</td><td>Do P. Đấu thầu thực hiện. Mỗi dòng gán một vai trò và bộ quyền tương ứng.</td></tr>
-          <tr><td class="c"><span class="pin">5</span></td><td>Phân công nhân sự hiện trường</td><td>Do Giám đốc dự án thực hiện sau khi được gán. Gán được theo hạng mục.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Phân công nhân sự hiện trường</td><td><em>(20/10/2026)</em> Chuyển sang <a href="#PRJ-06">PRJ-06</a>: Giám đốc dự án thực hiện sau khi được gán và nhận thông báo, chọn người từ phòng ban của mình. Gán được theo hạng mục.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Khởi tạo &amp; thông báo</td><td>Chỉ mở khi kiểm tra đạt. Hỏi số hợp đồng ngay lúc bấm, rồi chạy đồng thời: sinh mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, và gửi thông báo tới từng ID.</td></tr>
         </tbody>
       </table>
@@ -4853,7 +4856,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Một thao tác, tám kết quả.</b> Khởi tạo dự án sinh đồng thời: mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, danh sách thành phần, các thông báo, hồ sơ bản vẽ thiết kế và hồ sơ Shopdrawing — hai hồ sơ sau sinh rỗng, chờ P. TQT nạp nội dung (<a href="#ORD-02">ORD-02</a>, theo <a href="2026-09-15/YC-07.html">YC-07</a> và <a href="2026-09-15/YC-08.html">YC-08</a>).<span class="then">Chạy trong một giao dịch — lỗi ở bất kỳ bước nào thì hoàn tác toàn bộ, không để dự án sinh ra thiếu bộ phận.</span></li>
       <li><b>BOQ hợp đồng bất biến.</b> Khối lượng và đơn giá của BOQ hợp đồng khóa vĩnh viễn.<span class="then">Thay đổi chỉ qua phụ lục hợp đồng, sinh phiên bản BOQ mới và giữ nguyên bản gốc để đối chiếu.</span></li>
       <li><b>Dòng hỗ trợ % chốt thành số tiền cố định.</b> Khi khởi tạo BOQ hợp đồng, mỗi dòng hỗ trợ % của <a href="#BID-01">BID-01</a> thành một dòng thường: khối lượng 1, ĐVT “gói”, đơn giá = thành tiền đã chốt ở <a href="#BID-03">BID-03</a> (âm nếu là dòng trừ đi), giữ nguyên tên dòng (yêu cầu sửa 14/10/2026).<span class="then">Nhờ vậy giá trị hợp đồng, danh mục hạng mục của dự án, quyết toán và kế toán nhận đúng số tiền đã thỏa thuận mà không phải hiểu tỷ lệ %. Kiểm tra <code>chk_qty</code> và đếm dòng chưa có đơn giá của <code>chk_boq</code> bỏ qua dòng hỗ trợ %.</span></li>
-      <li><b>Gán nhân sự hai tầng.</b> P. Đấu thầu gán thành phần dự án; Giám đốc dự án — sau khi được gán — mới phân công nhân sự hiện trường.<span class="then">Chưa gán Giám đốc dự án thì phần phân công hiện trường bị khóa.</span></li>
+      <li><b>Gán nhân sự hai tầng.</b> P. Đấu thầu gán thành phần dự án tại đây; Giám đốc dự án — sau khi được gán — mới phân công nhân sự hiện trường, ở <a href="#PRJ-06">PRJ-06</a> <em>(20/10/2026)</em>.<span class="then">GĐ dự án nhận thông báo riêng “Bạn được giao Giám đốc dự án {dự án} — hãy phân công nhân sự hiện trường”, mở thẳng PRJ-06. Chưa gán Giám đốc dự án thì phần phân công hiện trường bị khóa.</span></li>
       <li><b>Thông báo cá nhân hóa.</b> Mỗi người được thêm nhận đúng một thông báo nêu tên dự án và vai trò của chính họ.<span class="then">Không gửi một thông báo chung cho cả nhóm — người nhận cần biết mình được giao việc gì.</span></li>
       <li><b>Tiến độ và bảo hành nạp sẵn từ gói thầu, không nhập lại.</b> Mở form hợp đồng là bốn ô <code>contract_start</code>, <code>contract_end</code>, <code>warranty_months</code>, <code>warranty_from</code> đã có giá trị của gói thầu ở <a href="#BID-01">BID-01</a> (<a href="2026-09-15/YC-06.html">YC-06</a>), và chúng vẫn <b>sửa được</b>.<span class="then">Điều kiện thực hiện đã được khai một lần ở bước tiếp nhận và đã cấu thành giá chào; gõ lại ở bước ký là mời một lỗi chép tay vào đúng văn bản pháp lý. Nhưng khóa cứng cũng sai: thương thảo thường đổi tiến độ và đổi số tháng bảo hành, và hợp đồng mới là bản ràng buộc.</span><span class="then">Mốc tính bảo hành vẫn bắt buộc khi số tháng lớn hơn 0 — ràng buộc này đi theo cặp trường xuống tận đây, vì <a href="#RPT-05">RPT-05</a> cần cả hai để ra <code>warranty_end_date</code>.</span></li>
       <li><b>Sửa thì hiện giá trị cũ, không xóa dấu vết.</b> Ô nào khác <code>tender_baseline</code> thì hiện chú thích “gói thầu: {giá trị cũ}” ngay cạnh ô, và mục kiểm tra <code>chk_warranty</code> chuyển sang Cảnh báo, đòi người kiểm tra ghi lý do trước khi khởi tạo dự án.<span class="then">Người duyệt hợp đồng không đọc lại hồ sơ gói thầu. Đặt giá trị cũ ngay cạnh giá trị mới là cách duy nhất để họ thấy điều kiện đã dịch chuyển bao nhiêu so với lúc mời thầu — 12 tháng bảo hành thành 24 tháng là một khoản tiền, không phải một chi tiết soạn thảo.</span><span class="then">Bản chụp giữ nguyên kể cả sau khi khởi tạo dự án, nên ba tháng sau vẫn trả lời được câu “điều kiện này có phải thứ đã dùng để dựng giá không”.</span></li>
@@ -4895,7 +4898,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-BID05-3</td><td>Kiểm tra đạt, nhập số hợp đồng, đã gán 7 người</td><td>Bấm “Khởi tạo &amp; thông báo”</td><td>Sinh mã dự án, BOQ hợp đồng, hạng mục, kho dự án; không sinh bảng đợt; 7 người nhận thông báo riêng</td></tr>
           <tr><td>UAT-BID05-4</td><td>Dự án vừa khởi tạo</td><td>Mở BOQ hợp đồng và thử sửa khối lượng</td><td>Ô khối lượng và đơn giá chỉ đọc; gợi ý lập phụ lục hợp đồng</td></tr>
           <tr><td>UAT-BID05-5</td><td>Vừa được gán vào dự án với vai trò CBKT</td><td>Người đó đăng nhập</td><td>Thấy dữ liệu dự án ngay, không cần Admin cấp quyền</td></tr>
-          <tr><td>UAT-BID05-6</td><td>Chưa gán Giám đốc dự án</td><td>Mở phần phân công nhân sự hiện trường</td><td>Phần này bị khóa kèm hướng dẫn gán GĐ dự án trước</td></tr>
+          <tr><td>UAT-BID05-6</td><td>Khởi tạo dự án có gán GĐ dự án</td><td>Xem lại màn hình Hợp đồng; GĐ dự án mở thông báo</td><td>Hợp đồng chỉ còn thành phần dự án (chỉ đọc), không có bảng nhân sự hiện trường; thông báo của GĐ dự án mở <a href="#PRJ-06">PRJ-06</a> <em>(20/10/2026)</em></td></tr>
           <tr><td>UAT-BID05-7</td><td>Báo giá chốt ở BID-03 dựa trên BOQ bản 1</td><td>Mở hợp đồng, chạy kiểm tra</td><td>Phiên bản hợp đồng hiện <code>V1</code>, chỉ đọc; <code>chk_doc</code> Đạt <em>(19/10/2026)</em></td></tr>
           <tr><td>UAT-BID05-8</td><td>Tiếp UAT-7; đối tác không đồng ý, BOQ được sửa thành bản 2 và áp giá lại</td><td>Mở lại hợp đồng</td><td>Phiên bản hợp đồng tự lên <code>V2</code>, kết quả kiểm tra về “chưa chạy” <em>(19/10/2026)</em></td></tr>
           <tr><td>UAT-BID05-9</td><td>Hợp đồng soạn xong, chưa chạy kiểm tra</td><td>Bấm “Khởi tạo &amp; thông báo”</td><td>Bị chặn, yêu cầu chạy kiểm tra hợp đồng trước</td></tr>
@@ -9489,7 +9492,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 </section>
 <section class="block" id="grp-prj">
   <h2><em>Nhóm PRJ</em>Ban Dự án — Thi công</h2>
-  <p class="intro">Năm đặc tả này là nơi bảng yêu cầu nhấn mạnh nhất: “khoán tổ đội, nhân công cần đưa lên GĐ1”. Lý do rất cụ thể — không có giá khoán và sản lượng thi công thì vế chi phí của bài toán lãi lỗ dự án bị khuyết, và mục tiêu cốt lõi số 4 không đạt được dù mọi phân hệ khác đã chạy.</p>
+  <p class="intro">Năm đặc tả này là nơi bảng yêu cầu nhấn mạnh nhất: “khoán tổ đội, nhân công cần đưa lên GĐ1”. Lý do rất cụ thể — không có giá khoán và sản lượng thi công thì vế chi phí của bài toán lãi lỗ dự án bị khuyết, và mục tiêu cốt lõi số 4 không đạt được dù mọi phân hệ khác đã chạy. <a href="#PRJ-06">PRJ-06</a> <em>(20/10/2026)</em> bổ sung màn hình nhân sự dự án, nơi GĐ dự án phân công nhân sự hiện trường.</p>
 </section>
 <section class="sheet" id="PRJ-01">
   <header class="tb">
@@ -11152,6 +11155,105 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
 
     <h4>Liên kết</h4>
     <p class="links"><a href="#PRJ-01">PRJ-01 giá khoán tổ đội</a><a href="#PRJ-02">PRJ-02 sản lượng thi công</a><a href="#PRJ-03">PRJ-03 thanh toán nhân công tổ đội</a><a href="#PF-01">PF-01 danh mục nền</a></p>
+  </div>
+</section>
+<section class="sheet" id="PRJ-06">
+  <header class="tb">
+    <div class="tb-id">PRJ-06</div>
+    <div class="tb-main">
+      <h3>Nhân sự dự án</h3>
+      <p><em>(Yêu cầu thay đổi 20/10/2026)</em> Phần phân công nhân sự hiện trường được chuyển khỏi <a href="#BID-05">BID-05</a> sang phân hệ Dự án – Thi công. P. Đấu thầu vẫn gán thành phần dự án trên hợp đồng; người được gán <em>Giám đốc dự án</em> nhận thông báo, mở màn hình này và tự phân công chỉ huy trưởng, cán bộ kỹ thuật, thủ kho công trình từ chính phòng ban của mình.</p>
+      <dl class="tb-meta">
+        <div><dt>Thực hiện</dt><dd>Giám đốc dự án của dự án</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Không (có thông báo tới từng người)</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Xem: người có <code>project:read</code> · Sửa: GĐ dự án của dự án, Admin</dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>Yêu cầu thay đổi 20/10/2026</dd></div>
+      </dl>
+    </div>
+  </header>
+  <div class="sb">
+    <h4>Mục tiêu</h4>
+    <p>Người hiểu công trường nhất phải là người dựng bộ máy hiện trường. Mỗi Giám đốc dự án vùng là một phòng ban, nên nhân sự hiện trường được chọn từ phòng ban của GĐ dự án — không phải từ danh bạ toàn công ty, và không do P. Đấu thầu làm thay. Màn hình gom toàn bộ đội ngũ một dự án về một chỗ: thành phần dự án (chỉ đọc, gán ở <a href="#BID-05">BID-05</a>) và nhân sự hiện trường (GĐ dự án phân công).</p>
+
+    <h4>Lưu đồ</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:520px;margin:0 auto"><svg role="img" aria-label="Hình PRJ-06.1 P. Đấu thầu gán Giám đốc dự án ở BID-05, hệ thống gửi thông báo, GĐ dự án mở màn hình Nhân sự dự án và phân công nhân sự hiện trường từ phòng ban của mình; mỗi người được gán nhận thông báo." viewBox="0 0 520 330" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">
+  <rect x="110" y="10" width="300" height="44" fill="#eef1f4" stroke="#5d6b7a"/>
+  <text x="260" y="28" text-anchor="middle">BID-05 · P. Đấu thầu gán thành phần dự án</text>
+  <text x="260" y="44" text-anchor="middle">(có vai trò Giám đốc dự án)</text>
+  <path d="M260,54 L260,82" stroke="#55606b" fill="none"/><polygon points="256,76 260,84 264,76" fill="#55606b"/>
+  <rect x="110" y="86" width="300" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="260" y="104" text-anchor="middle">Thông báo tới GĐ dự án</text>
+  <text x="260" y="120" text-anchor="middle">“hãy phân công nhân sự hiện trường”</text>
+  <path d="M260,130 L260,158" stroke="#55606b" fill="none"/><polygon points="256,152 260,160 264,152" fill="#55606b"/>
+  <rect x="110" y="162" width="300" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="260" y="180" text-anchor="middle">PRJ-06 · GĐ dự án chọn người</text>
+  <text x="260" y="196" text-anchor="middle">từ phòng ban của mình</text>
+  <path d="M260,206 L260,234" stroke="#55606b" fill="none"/><polygon points="256,228 260,236 264,228" fill="#55606b"/>
+  <rect x="110" y="238" width="300" height="44" fill="#eef1f4" stroke="#5d6b7a"/>
+  <text x="260" y="256" text-anchor="middle">Lưu → thông báo tới từng người</text>
+  <text x="260" y="272" text-anchor="middle">được phân công</text>
+</g>
+</svg></div><figcaption><b>Hình PRJ-06.1</b> Hai tầng phân công: P. Đấu thầu gán thành phần dự án ở <a href="#BID-05">BID-05</a>; GĐ dự án được gán mới mở được phần nhân sự hiện trường ở màn hình này.</figcaption></figure>
+
+    <h4>Tham số</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Danh sách dự án: GĐ dự án thấy các dự án mình tham gia; người có <code>project:assign</code> và Admin thấy tất cả.</td></tr>
+          <tr><td>Thành phần dự án</td><td class="k">members[]</td><td>Bảng</td><td class="c">—</td><td>Chỉ đọc — gán ở <a href="#BID-05">BID-05</a>.</td></tr>
+          <tr><td>Nhân sự hiện trường</td><td class="k">site_team[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: vai trò (mặc định chỉ huy trưởng, cán bộ kỹ thuật, thủ kho công trình), người, phạm vi phụ trách (toàn công trình hoặc theo hạng mục). Ô chọn người chỉ liệt kê nhân sự đang hoạt động thuộc phòng ban của GĐ dự án.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Quy tắc nghiệp vụ</h4>
+    <ol class="br">
+      <li><b>Chỉ GĐ dự án của dự án được phân công.</b> Người được gán vai trò Giám đốc dự án ở thành phần dự án — hoặc Admin — mới thấy và lưu được bảng nhân sự hiện trường; người khác chỉ xem.<span class="then">Quyền <code>project:assign</code> của P. Đấu thầu không còn mở phần này; máy chủ kiểm tra lại, không dựa vào việc ẩn nút.</span></li>
+      <li><b>Chọn người trong phòng ban của GĐ dự án.</b> Mỗi GĐ dự án vùng là một phòng ban; nhân sự hiện trường phải thuộc phòng ban đó.<span class="then">Admin phân công thay thì vẫn theo phòng ban của GĐ dự án. GĐ dự án chưa thuộc phòng ban nào thì không phân công được cho tới khi Admin gán phòng ban (<a href="#PF-02">PF-02</a>).</span></li>
+      <li><b>Chưa có GĐ dự án thì khóa.</b> Dự án chưa gán Giám đốc dự án thì phần nhân sự hiện trường bị khóa kèm hướng dẫn.</li>
+      <li><b>Lưu là thay toàn bộ tầng hiện trường.</b> Thành phần dự án không bị đụng tới — GĐ dự án không tự gỡ được mình khỏi danh sách đã trao quyền cho mình.</li>
+      <li><b>Thông báo theo vai trò.</b> GĐ dự án nhận thông báo riêng “Bạn được giao Giám đốc dự án {dự án} — hãy phân công nhân sự hiện trường”, bấm vào mở thẳng màn hình này (<a href="#PF-04">PF-04</a>); những người khác nhận thông báo được thêm vào dự án với vai trò của mình.</li>
+    </ol>
+
+    <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <tbody>
+          <tr><td>Chưa gán GĐ dự án</td><td>Thành phần dự án không có vai trò Giám đốc dự án</td><td>“Chưa gán Giám đốc dự án — phần phân công nhân sự hiện trường bị khóa.”</td></tr>
+          <tr><td>Người lưu không phải GĐ dự án</td><td>Người gọi không phải GĐ dự án của dự án, không phải Admin</td><td>“Chỉ Giám đốc dự án của dự án mới phân công nhân sự hiện trường.”</td></tr>
+          <tr><td>Chọn người ngoài phòng ban</td><td>Người được chọn không thuộc phòng ban của GĐ dự án</td><td>“Nhân sự hiện trường phải thuộc phòng ban của Giám đốc dự án.”</td></tr>
+          <tr><td>GĐ dự án chưa có phòng ban</td><td>Tài khoản GĐ dự án không gắn phòng ban</td><td>“Giám đốc dự án chưa thuộc phòng ban nào — liên hệ quản trị để gán phòng ban trước khi phân công.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Kết quả mong đợi</h4>
+    <ol class="exp">
+      <li>Gán Giám đốc dự án ở <a href="#BID-05">BID-05</a> xong, người đó nhận một thông báo mở thẳng trang Nhân sự dự án của dự án.</li>
+      <li>GĐ dự án thấy thành phần dự án (chỉ đọc) và bảng nhân sự hiện trường sửa được; ô chọn người chỉ có nhân sự phòng ban mình.</li>
+      <li>Lưu xong, mỗi người được phân công nhận thông báo kèm vai trò của mình.</li>
+      <li>Người khác mở trang chỉ xem được hai bảng, không có nút sửa.</li>
+    </ol>
+
+    <h4>Kịch bản kiểm thử</h4>
+    <div class="tw">
+      <table class="uat">
+        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>UAT-PRJ06-1</td><td>TP Đấu thầu khởi tạo dự án ở BID-05, gán A làm GĐ dự án</td><td>A mở thông báo</td><td>Mở trang Nhân sự dự án của dự án; thông báo ghi “hãy phân công nhân sự hiện trường”</td></tr>
+          <tr><td>UAT-PRJ06-2</td><td>A thuộc phòng GĐ dự án miền Bắc</td><td>A mở ô chọn người ở dòng Chỉ huy trưởng</td><td>Chỉ liệt kê nhân sự phòng GĐ dự án miền Bắc</td></tr>
+          <tr><td>UAT-PRJ06-3</td><td>Tiếp UAT-2</td><td>A chọn đủ ba dòng, bấm Lưu</td><td>Lưu thành công; ba người nhận thông báo kèm vai trò</td></tr>
+          <tr><td>UAT-PRJ06-4</td><td>TP Đấu thầu có <code>project:assign</code>, không phải GĐ dự án</td><td>Mở trang Nhân sự dự án; gọi trực tiếp API lưu</td><td>Chỉ xem; API từ chối “Chỉ Giám đốc dự án của dự án…”</td></tr>
+          <tr><td>UAT-PRJ06-5</td><td>Tiếp UAT-2</td><td>Gửi API với một người thuộc phòng khác</td><td>Bị từ chối “Nhân sự hiện trường phải thuộc phòng ban của Giám đốc dự án.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Liên kết</h4>
+    <p class="links"><a href="#BID-05">BID-05 thành phần dự án</a><a href="#PF-02">PF-02 phòng ban &amp; phân quyền</a><a href="#PF-04">PF-04 thông báo</a><a href="#PRJ-02">PRJ-02 sản lượng thi công</a><a href="#PRJ-04">PRJ-04 xuất nhập kho dự án</a></p>
   </div>
 </section>
 <section class="block" id="grp-acc">
