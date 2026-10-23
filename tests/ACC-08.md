@@ -6,7 +6,7 @@
 
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng |
 |---|---|---|---|
-| UAT-ACC08-1 | Vai trò Kế toán tổng hợp | Menu **Tài chính → Phiếu kế toán & phân bổ → + Phiếu kế toán** | Lưới nhập nhiều dòng; mỗi dòng có đủ 4 cột: Mã dự án, KMCP, Mã thống kê, CP hợp lý |
+| UAT-ACC08-1 | Vai trò Kế toán tổng hợp | Menu **Tài chính → Phiếu kế toán & phân bổ → + Phiếu kế toán** | Lưới nhập nhiều dòng; mỗi dòng có đủ 4 cột: Mã dự án, KMCP, Mã thống kê, CP không hợp lý (mặc định để trống) |
 | UAT-ACC08-2 | Đã nhập các dòng bút toán lệch nợ–có | Xem dòng tổng dưới lưới | Hiển thị "Tổng nợ … ≠ tổng có …" kèm chênh lệch; nút **Lưu** mờ |
 | UAT-ACC08-3 | Đang ở màn hình phiếu kế toán | Chuyển sang tab **Phân bổ chi phí chung** | Tab tách hẳn khỏi lưới nhập liệu thường; chọn được kỳ, nhóm chi phí, tiêu chí, cấp phân bổ |
 | UAT-ACC08-4 | Tab phân bổ, chọn nhóm chi phí kỳ tháng 7 | Chọn **Tiêu chí = "Theo doanh thu ghi nhận"** | Bảng nháp hiện tỷ trọng và số tiền phân bổ cho từng dự án; "Tổng cần phân bổ" khớp tổng nhóm |
