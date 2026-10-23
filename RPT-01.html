@@ -102,7 +102,7 @@
           <tr><td>4</td><td>Tổng hợp công nợ phải thu / phải trả</td><td>Công trình · đối tác</td><td><b>Chi tiết theo công trình và tổng hợp chung — cùng một báo cáo, hai chế độ xem</b></td><td class="k"><a href="ACC-05.html">ACC-05</a></td></tr>
           <tr><td>5</td><td>Sổ chi tiết hàng hóa</td><td>Vật tư · kho · nhà cung cấp</td><td><b>Thêm thông tin nhà cung cấp; giá trị hiển thị 2 cột: chưa phân bổ vận chuyển và đã phân bổ</b> — xem <a href="PL-C.html">Q-06</a></td><td class="k"><a href="ACC-03.html">ACC-03</a></td></tr>
           <tr><td>6</td><td>Tổng hợp nhập – xuất – tồn theo dự án</td><td>Dự án · kho · vật tư · kỳ</td><td>—</td><td class="k"><a href="PRJ-04.html">PRJ-04</a></td></tr>
-          <tr><td>7</td><td>Tổng hợp chi phí không hợp lý theo dự án</td><td>Dự án · khoản mục · kỳ</td><td>Lấy các chứng từ có <code>is_deductible = false</code></td><td class="k"><a href="PF-01.html">PF-01</a></td></tr>
+          <tr><td>7</td><td>Chi phí không hợp lý</td><td>Tài khoản · dự án · từ ngày – đến ngày</td><td>Từng dòng bút toán đã ghi sổ có <code>is_deductible = false</code></td><td class="k"><a href="PF-01.html">PF-01</a></td></tr>
           <tr><td>8</td><td>Tổng hợp CCDC &amp; TSCĐ</td><td>Nhóm · vị trí tồn hiện tại</td><td><b>Tách hai nhóm: theo dự án và không theo dự án, xếp theo vị trí tồn hiện tại</b></td><td class="k"><a href="ACC-06.html">ACC-06</a></td></tr>
           <tr><td>9</td><td>Sổ chi phí công trình</td><td>Kỳ · dự án · hạng mục</td><td><b>Chọn một trong hai cách xem: theo tài khoản tổng hợp hoặc theo mã dự án</b></td><td class="k"><a href="ACC-09.html">ACC-09</a></td></tr>
         </tbody>
@@ -292,7 +292,7 @@
       <li><b>Excel giữ công thức.</b> Xuất Excel giữ công thức tổng và tổng phụ.<span class="then">Người nhận kiểm tra lại được, và sửa bộ lọc trong Excel không làm sai tổng.</span></li>
       <li><b>PDF theo mẫu công ty.</b> Bản PDF có đầu trang, kỳ báo cáo, người lập, thời điểm xuất và số trang.<span class="then">Dùng trực tiếp làm hồ sơ nộp, không cần định dạng lại.</span></li>
       <li><b>Sổ chi tiết hàng hóa hai cột giá trị.</b> Hiển thị song song giá trị chưa phân bổ vận chuyển và đã phân bổ.<span class="then">Chỉ chi phí vận chuyển <em>về nhà máy</em> vào cột thứ hai — xem <a href="PL-C.html">Q-06</a>.</span></li>
-      <li><b>Chi phí không hợp lý lấy theo cờ.</b> Báo cáo gom mọi chứng từ có <code>is_deductible = false</code>, kèm lý do đã nhập.<span class="then">Lý do hiển thị trực tiếp trên báo cáo, không phải mở từng chứng từ.</span></li>
+      <li><b>Chi phí không hợp lý lấy theo cờ</b> <em>(góp ý 23/10/2026 · chốt <a href="PL-C.html#Q-136">Q-136</a>)</em>. Báo cáo đọc từng dòng bút toán đã ghi sổ có <code>is_deductible = false</code> — từ đề xuất đã thành phiếu nhập, phiếu xuất, phiếu kế toán, chứng từ chi. Lọc theo tài khoản (gồm tài khoản con), dự án (có <code>CHUNG</code>) và khoảng ngày chứng từ. Không chọn tài khoản thì chỉ lấy tài khoản chi phí.<span class="then">Phía 331, 111 của cùng khoản chi mang cùng cờ nhưng không bị đếm hai lần. Mỗi dòng có ngày, số chứng từ, diễn giải, tài khoản, dự án, khoản mục, số tiền; xuất Excel đúng bộ lọc đang chọn.</span></li>
       <li><b>Đối chiếu với sổ cái.</b> Mỗi báo cáo có nút đối chiếu nhanh với số liệu sổ cái cùng kỳ.<span class="then">Lệch thì chỉ ra khoản mục và chứng từ gây lệch.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo kỳ báo cáo của từng báo cáo.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Mỗi báo cáo kế toán khai mốc riêng trong bảng danh mục báo cáo của trang.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
@@ -321,7 +321,7 @@
           <tr><td>UAT-RPT01-3</td><td>Đang ở chế độ “theo mã dự án”</td><td>Đổi sang “theo TK tổng hợp”</td><td>Cùng dữ liệu, đổi cách nhóm; tổng không đổi</td></tr>
           <tr><td>UAT-RPT01-4</td><td>Có phát sinh nhiều mặt hàng</td><td>Xuất sổ chi tiết công nợ ra Excel</td><td>Có cột tên hàng, đơn giá, số lượng; công thức tổng còn nguyên</td></tr>
           <tr><td>UAT-RPT01-5</td><td>Lô hàng đã phân bổ chi phí vận chuyển</td><td>Mở sổ chi tiết hàng hóa</td><td>Hai cột giá trị: trước và sau phân bổ vận chuyển</td></tr>
-          <tr><td>UAT-RPT01-6</td><td>Có 3 chứng từ đánh dấu không hợp lý</td><td>Mở báo cáo chi phí không hợp lý</td><td>Đủ 3 chứng từ kèm lý do, nhóm theo dự án</td></tr>
+          <tr><td>UAT-RPT01-6</td><td>Có 3 chứng từ đánh dấu không hợp lý</td><td>Mở báo cáo chi phí không hợp lý, rồi lọc một tài khoản, một dự án, một khoảng ngày</td><td>Không lọc: đủ 3 khoản trên tài khoản chi phí, không có dòng 331 / 111; mỗi bộ lọc chỉ giữ dòng khớp</td></tr>
           <tr><td>UAT-RPT01-7</td><td>Kỳ quý 3 đã chốt</td><td>Bấm đối chiếu sổ cái</td><td>Chênh lệch bằng 0</td></tr>
         </tbody>
       </table>

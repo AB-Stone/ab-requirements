@@ -335,7 +335,7 @@
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Kỳ tính giá thành</td><td class="k">period</td><td>Chọn 1</td><td class="c req">✱</td><td><code>tháng</code> · <code>quý</code> · <code>6 tháng</code> — đúng ba chu kỳ yêu cầu gốc nêu.</td></tr>
+          <tr><td>Kỳ tính giá thành</td><td class="k">period</td><td>Chọn 1</td><td class="c req">✱</td><td><code>tháng</code> · <code>quý</code> · <code>6 tháng</code> — ba chu kỳ yêu cầu gốc nêu; thêm <code>năm</code> và <code>từ ngày – đến ngày</code> theo góp ý 23/10/2026. Khoảng ngày tự chọn chỉ để xem — chốt kỳ, kết chuyển vẫn theo từng kỳ tháng.</td></tr>
           <tr><td>Đối tượng tính giá thành</td><td class="k">costing_object</td><td>Chọn 1</td><td class="c req">✱</td><td><code>dự án</code> · <code>hạng mục</code> · <code>sản phẩm nhà máy</code>.</td></tr>
           <tr><td>Chi phí tập hợp theo KMCP</td><td class="k">cost_by_item[]</td><td>Bảng</td><td class="c">—</td><td>Hệ thống tổng hợp; hiển thị nguồn chứng từ của từng khoản mục.</td></tr>
           <tr><td>Chi phí dở dang đầu kỳ</td><td class="k">wip_open</td><td>Số tiền</td><td class="c">—</td><td>Lấy từ dở dang cuối kỳ trước.</td></tr>
@@ -350,7 +350,7 @@
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Chạy tính giá thành theo cả ba chu kỳ tháng, quý, 6 tháng trên cùng dữ liệu.</li>
+      <li>Chạy tính giá thành theo tháng, quý, 6 tháng, năm hoặc một khoảng ngày tự chọn, trên cùng dữ liệu.</li>
       <li>Bảng tập hợp chi phí theo khoản mục truy ngược được tới từng chứng từ gốc chỉ bằng một cú bấm.</li>
       <li>Chi phí kết chuyển tính theo khối lượng hoàn thành, phần chưa hoàn thành tự thành dở dang cuối kỳ.</li>
       <li>Lãi lỗ dự án ra được cho từng dự án và cho toàn công ty, khớp với báo cáo <a href="RPT-03.html">RPT-03</a>.</li>
@@ -401,7 +401,7 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Chọn chu kỳ</td><td>Tháng, quý hoặc 6 tháng trên cùng tập dữ liệu.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Chọn chu kỳ</td><td>Tháng, quý, 6 tháng, năm, hoặc từ ngày – đến ngày, trên cùng tập dữ liệu.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Xem tập hợp chi phí</td><td>Bấm một khoản mục mở danh sách chứng từ gốc tạo nên con số đó.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Kết chuyển theo sản lượng</td><td>Tỷ lệ hoàn thành lấy từ sản lượng đã chốt; dở dang cuối kỳ tự chuyển kỳ sau.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Chạy tính giá thành</td><td>Chạy được nhiều lần khi kỳ còn mở; mỗi lần ghi đè kết quả nháp.</td></tr>
@@ -413,7 +413,7 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Ba chu kỳ, một bộ dữ liệu.</b> Tháng, quý và 6 tháng chạy trên cùng dữ liệu gốc.<span class="then">Đúng ba chu kỳ mà yêu cầu gốc nêu; không có bảng số liệu riêng cho từng chu kỳ.</span></li>
+      <li><b>Nhiều chu kỳ, một bộ dữ liệu.</b> Tháng, quý, 6 tháng, năm và khoảng ngày tự chọn chạy trên cùng dữ liệu gốc <em>(năm và khoảng ngày: góp ý 23/10/2026)</em>.<span class="then">Không có bảng số liệu riêng cho từng chu kỳ. Khoảng ngày tự chọn lấy số dư đầu kỳ đến hết ngày liền trước “từ ngày”; chi phí của kỳ bị cắt đôi lấy theo ngày chứng từ, bút toán ghi dời sang kỳ khác (vì kỳ gốc đã chốt) tính vào ngày đầu của kỳ đang giữ nó — nên số dư đầu và phát sinh trong khoảng cộng lại luôn khớp sổ. Tháng, quý, 6 tháng, năm vẫn ra đúng số theo kỳ như trước. Khoảng ngày không chốt kỳ và không kết chuyển được — các việc đó vẫn theo từng kỳ tháng.</span></li>
       <li><b>Năm nguồn chi phí.</b> Vật tư xuất kho, nhân công khoán, máy và khấu hao, mua không qua kho, chi phí chung đã phân bổ.<span class="then">Mỗi nguồn tương ứng đúng một đặc tả — đây là lý do các đặc tả đó bắt buộc có mặt ở giai đoạn 1.</span></li>
       <li><b>Kết chuyển theo khối lượng hoàn thành.</b> Chi phí kết chuyển tính theo tỷ lệ khối lượng hoàn thành lấy từ sản lượng đã chốt.<span class="then">Phần còn lại thành chi phí dở dang cuối kỳ và tự chuyển sang kỳ sau làm dở dang đầu kỳ.</span></li>
       <li><b>Khoan xuống tới chứng từ.</b> Mỗi ô số liệu trong bảng tập hợp chi phí mở được danh sách chứng từ gốc tạo nên nó.<span class="then">Không có con số nào trong báo cáo mà không truy ngược được.</span></li>
@@ -460,6 +460,7 @@
           <tr><td>UAT-ACC09-6</td><td>Quý 3 đã chốt</td><td>Ghi phiếu nhập ngày 20/09</td><td>Hệ thống chuyển sang kỳ hiện tại kèm thông báo</td></tr>
           <tr><td>UAT-ACC09-7</td><td>Nhà máy sản xuất và nhập kho thành phẩm</td><td>Chạy giá thành nhà máy</td><td>Giá nhập kho thành phẩm cập nhật; ảnh hưởng giá xuất kỳ sau</td></tr>
           <tr><td>UAT-ACC09-8</td><td>Đã chốt kỳ</td><td>Mở báo cáo đối chiếu tổng</td><td>Tổng chi phí dự án khớp sổ cái, chênh lệch bằng 0</td></tr>
+          <tr><td>UAT-ACC09-9</td><td>Có sổ tháng 9 và tháng 10/2026</td><td>Chọn chu kỳ “Năm” 2026, rồi chọn “Từ ngày – đến ngày” 15/09 – 20/10/2026</td><td>Năm 2026 gồm mười hai kỳ; khoảng ngày lấy số dư đầu đến 14/09, phát sinh 15/09 – 20/10, ghi rõ chỉ để xem</td></tr>
         </tbody>
       </table>
     </div>

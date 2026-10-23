@@ -6,7 +6,7 @@
 
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng |
 |---|---|---|---|
-| UAT-ACC03-1 | Vai trò Kế toán kho | Menu **Kho → Phiếu nhập kho → + Phiếu nhập** | Form mở, `PN-YYYY-NNNN` tự sinh; 4 trường quản trị (dự án, KMCP, mã thống kê, tick CP hợp lý) nằm ở đầu form |
+| UAT-ACC03-1 | Vai trò Kế toán kho | Menu **Kho → Phiếu nhập kho → + Phiếu nhập** | Form mở, `PN-YYYY-NNNN` tự sinh; 4 trường quản trị (dự án, KMCP, mã thống kê, tick CP không hợp lý, mặc định để trống) nằm trên từng dòng |
 | UAT-ACC03-2 | Form phiếu nhập mới | Mở ô **Kho nhập** | Chỉ liệt kê kho có `allowed_ops` chứa "nhập mua"; `K-TONG-CTY` không xuất hiện |
 | UAT-ACC03-3 | Vật tư có hệ số PF-01: 1 m² = 2,78 tấm | Nhập **SL kế toán** = 1.240 m² | Cột **SL dự án** tự điền 3.444 tấm |
 | UAT-ACC03-4 | Tiếp UAT-ACC03-3 | Sửa tay ô **SL dự án** lệch hệ số chuẩn | Ô gắn cờ cảnh báo lệch quy đổi; vẫn cho lưu |

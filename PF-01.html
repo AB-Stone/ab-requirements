@@ -268,7 +268,7 @@
           <tr><td>Hạng mục</td><td class="k">wbs_id</td><td>Tham chiếu</td><td class="c">—</td><td>Bắt buộc với chứng từ gắn khối lượng thi công (<a href="PRJ-02.html">PRJ-02</a>) và đơn hàng (<a href="ORD-03.html">ORD-03</a>).</td></tr>
           <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc với chứng từ ghi nhận chi phí; mặc định lấy theo nhóm vật tư, cho sửa.</td></tr>
           <tr><td>Mã thống kê</td><td class="k">stat_id</td><td>Tham chiếu</td><td class="c">—</td><td>Nhiều giá trị. Là chiều lọc phụ của <a href="RPT-03.html">RPT-03</a> (nhóm vùng miền).</td></tr>
-          <tr><td>Chi phí hợp lý</td><td class="k">is_deductible</td><td>Boolean</td><td class="c req">✱</td><td>Mặc định <code>true</code>. Khi <code>false</code> phải nhập lý do; dồn vào báo cáo “TH chi phí không hợp lý theo dự án”.</td></tr>
+          <tr><td>Chi phí không hợp lý</td><td class="k">is_deductible</td><td>Boolean</td><td class="c req">✱</td><td>Hiện cho người dùng là ô tích “CP không hợp lý”, mặc định để trống (lưu <code>true</code>). Tích (lưu <code>false</code>) thì phải nhập lý do; dồn vào báo cáo “Chi phí không hợp lý” của <a href="RPT-01.html">RPT-01</a> — <a href="PL-C.html#Q-136">Q-136</a>.</td></tr>
           <tr><td>Đơn vị chủ quản</td><td class="k">unit_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Xác định phạm vi dữ liệu người dùng được xem (<a href="PF-02.html">PF-02</a>).</td></tr>
         </tbody>
       </table>
@@ -570,7 +570,7 @@
           <tr><td>Xóa bản ghi đang dùng</td><td>Tồn tại chứng từ tham chiếu</td><td>“Không xóa được vì đang được {n} chứng từ sử dụng. Chọn Ngừng sử dụng để ẩn khỏi các chứng từ mới.”</td></tr>
           <tr><td>Đổi ĐVT của vật tư đã phát sinh</td><td>Có chứng từ tham chiếu mã vật tư</td><td>“Vật tư {mã} đã có {n} chứng từ theo ĐVT {cũ}. Ngừng sử dụng mã này và mở mã mới nếu cần đơn vị tính khác.”</td></tr>
           <tr><td>Chọn khoản mục là nút cha</td><td>Khoản mục còn nút con</td><td>“{mã} là nhóm tổng hợp, không hạch toán trực tiếp. Chọn một trong các khoản mục con: {danh sách}.”</td></tr>
-          <tr><td>Tắt cờ chi phí hợp lý</td><td><code>is_deductible = false</code> mà thiếu lý do</td><td>“Nhập lý do không tính là chi phí hợp lý — nội dung này xuất hiện trên báo cáo chi phí không hợp lý theo dự án.”</td></tr>
+          <tr><td>Tích chi phí không hợp lý</td><td><code>is_deductible = false</code> mà thiếu lý do</td><td>“Nhập lý do không tính là chi phí hợp lý — nội dung này xuất hiện trên báo cáo chi phí không hợp lý theo dự án.”</td></tr>
           <tr><td>Nhập Excel sai cột</td><td>Thiếu cột bắt buộc trong tệp</td><td>“Tệp thiếu cột bắt buộc: {danh sách}. Tải tệp mẫu để đối chiếu rồi nhập lại.”</td></tr>
           <tr><td>Vùng tự nhập trùng vùng đã có</td><td>Tên vùng nhập qua giá trị <em>Khác</em> trùng một dòng danh mục đang dùng</td><td>“Đã có vùng {tên} trong danh mục ({mã}). Chọn vùng đó thay vì tạo dòng mới.”</td></tr>
           <tr><td>Sửa tay mã hồ sơ shop hoặc mã đợt trình</td><td>Người dùng gõ vào ô <code>shop_dossier_id</code> / <code>batch_id</code></td><td>“Mã này sinh theo mã gói thầu và không sửa tay được. Đổi mã gói thầu khi gói còn ở trạng thái Nháp nếu cần.”</td></tr>
