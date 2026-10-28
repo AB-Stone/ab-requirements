@@ -301,9 +301,10 @@
           <tr><td>Tài khoản hạch toán</td><td class="k">acc_code</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chiều phân tích thứ ba của sổ tiền gửi.</td></tr>
           <tr><td>Đối tượng</td><td class="k">partner_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Người nộp hoặc người nhận tiền.</td></tr>
           <tr><td>Chứng từ nguồn</td><td class="k">source_ref</td><td>Tham chiếu</td><td class="c">—</td><td>Đề nghị thanh toán, hồ sơ tạm ứng, hồ sơ giao khoán…</td></tr>
-          <tr><td>Dự án · khoản mục</td><td class="k">project_id, cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc với chi phí; cho phép <code>CHUNG</code>.</td></tr>
-          <tr><td>Chi phí không hợp lý</td><td class="k">is_deductible, non_deductible_reason</td><td>Boolean · chuỗi</td><td class="c">—</td><td>Chỉ trên chứng từ chi (phiếu chi, báo nợ, ủy nhiệm chi). Ô tích “CP không hợp lý”, mặc định để trống — để trống là chi phí hợp lý; tích thì bắt buộc lý do. Cờ đi theo dòng tài khoản đối ứng của bút toán (từ 23/10/2026 — <a href="PL-C.html#Q-136">Q-136</a>).</td></tr>
-          <tr><td>Số tiền</td><td class="k">amount</td><td>Số tiền</td><td class="c req">✱</td><td>Với phiếu chi: không vượt giá trị đề nghị đã duyệt.</td></tr>
+          <tr><td>Dự án · khoản mục</td><td class="k">project_id, cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Bắt buộc với chi phí; cho phép <code>CHUNG</code>. Chứng từ thu: ở đầu phiếu. Chứng từ chi: trên từng dòng bảng kê (từ 28/10/2026).</td></tr>
+          <tr><td>Bảng kê</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱ chứng từ chi</td><td>Phiếu chi, báo nợ, ủy nhiệm chi có ít nhất một dòng: STT · nội dung · số tiền · dự án hoặc <code>CHUNG</code> (khối văn phòng) · khoản mục · CP không hợp lý (+ lý do). Một khoản chi chia được cho nhiều công trình, vừa hợp lý vừa không hợp lý (sheet 28.10.2026 mục 2 · <a href="PL-C.html#Q-143">Q-143</a>). Lập từ đề nghị thanh toán thì bảng kê điền sẵn từ các dòng đề nghị. Tài khoản đối ứng vẫn một cho cả chứng từ.</td></tr>
+          <tr><td>Chi phí không hợp lý</td><td class="k">is_deductible, non_deductible_reason</td><td>Boolean · chuỗi</td><td class="c">—</td><td>Chỉ trên chứng từ chi (phiếu chi, báo nợ, ủy nhiệm chi). Ô tích “CP không hợp lý”, mặc định để trống — để trống là chi phí hợp lý; tích thì bắt buộc lý do. Với chứng từ chi, ô tích nằm trên từng dòng bảng kê; cờ đi theo dòng tài khoản đối ứng tương ứng của bút toán (từ 23/10/2026 — <a href="PL-C.html#Q-136">Q-136</a>).</td></tr>
+          <tr><td>Số tiền</td><td class="k">amount</td><td>Số tiền</td><td class="c req">✱</td><td>Với phiếu chi: không vượt giá trị đề nghị đã duyệt. Chứng từ chi: bằng tổng bảng kê, chỉ đọc.</td></tr>
           <tr><td>Số dư quỹ sau chứng từ</td><td class="k">balance_after</td><td>Hệ thống</td><td class="c">—</td><td>Không cho chi vượt số dư quỹ tiền mặt.</td></tr>
         </tbody>
       </table>
@@ -317,6 +318,7 @@
       <li>Phiếu chi chỉ lập được từ đề nghị thanh toán đã duyệt; giá trị không vượt số đã duyệt.</li>
       <li>Báo có ngân hàng đối chiếu tự động với hồ sơ chờ thanh toán và gợi ý hồ sơ khớp cho kế toán xác nhận.</li>
       <li>Mọi chứng từ tiền đều gắn mã dự án và khoản mục chi phí, kể cả khi là chi phí chung.</li>
+      <li>Một phiếu chi 10 triệu chia được 5 triệu công trình A, 3 triệu công trình B, 2 triệu khối văn phòng không hợp lý; sổ quỹ hiện đủ các mã dự án, báo cáo chi phí không hợp lý chỉ lấy dòng 2 triệu.</li>
       <li>Nhập sao kê ngân hàng hàng loạt được từ tệp và tự khớp theo số tiền, ngày, nội dung chuyển khoản.</li>
     </ol>
 
@@ -337,6 +339,7 @@
           <tbody>
             <tr><td>08/08</td><td>PT-2026-118</td><td>Rút tiền gửi nhập quỹ</td><td>Vietcombank</td><td>CHUNG</td><td>1111/1121</td><td class="num">800.000.000</td><td class="num">—</td><td class="num">2.040.000.000</td></tr>
             <tr><td>09/08</td><td>PC-2026-241</td><td>Chi tạm ứng tổ đội TD-004</td><td>Ng. Văn Đại</td><td>DA-2026-014</td><td>141/1111</td><td class="num">—</td><td class="num">300.000.000</td><td class="num">1.740.000.000</td></tr>
+            <tr><td>10/08</td><td>PC-2026-242</td><td>Chi tiền mua vật tư phụ</td><td>Cửa hàng Tân Phát</td><td>2005/2022 · 2205/2024 · CHUNG</td><td>6278/1111</td><td class="num">—</td><td class="num">10.000.000</td><td class="num">1.730.000.000</td></tr>
           </tbody></table>
         </div>
         <div class="wf-sec">
@@ -370,12 +373,13 @@
       <li><b>Sổ tiền gửi ba chiều.</b> Lọc đồng thời theo ngân hàng, tài khoản hạch toán và số tài khoản ngân hàng.<span class="then">Đúng ba chiều mà yêu cầu gốc liệt kê.</span></li>
       <li><b>Báo có gợi ý khớp hồ sơ.</b> Hệ thống so số tiền và nội dung chuyển khoản để gợi ý hồ sơ đang chờ thanh toán.<span class="then">Kế toán xác nhận thì hồ sơ tự đóng và công nợ phải thu giảm — không nhập tay hai lần.</span></li>
       <li><b>Sao kê nhập hàng loạt.</b> Tải tệp sao kê ngân hàng, hệ thống tự khớp phần rõ ràng.<span class="then">Phần không khớp để riêng cho kế toán xử lý tay, không tự đoán bừa.</span></li>
-      <li><b>Mọi chứng từ tiền đều gắn dự án.</b> Kể cả chi phí chung cũng phải chọn giá trị <code>CHUNG</code> một cách chủ động.<span class="then">Không có chứng từ tiền nào không có mã dự án.</span></li>
+      <li><b>Mọi chứng từ tiền đều gắn dự án.</b> Kể cả chi phí chung cũng phải chọn giá trị <code>CHUNG</code> một cách chủ động.<span class="then">Không có chứng từ tiền nào không có mã dự án.</span><span class="then">Chứng từ chi gắn dự án trên từng dòng bảng kê, nên một chứng từ có thể mang nhiều mã dự án.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày chứng từ.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Thu chi trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
       <li><b>Chọn người từ Danh mục nhân viên</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 7 · chốt 11/10/2026)</em>. Người nộp / người nhận tiền mặt là nhân viên thì chọn từ Danh mục nhân viên của <a href="PF-01.html">PF-01</a>; đối tác bên ngoài vẫn chọn ở ô đối tác. Nhân viên hay đối tác đã ngừng không chọn được trên phiếu mới.<span class="then">Chốt ở <a href="PL-C.html#Q-104">Q-104</a>.</span></li>
       <li><b>Danh mục quỹ &amp; tài khoản ngân hàng khai ngay trên màn hình Thu chi</b> <em>(góp ý 23/10/2026)</em>. Tab “Danh mục quỹ” cho thêm, sửa, ngừng một quỹ tiền mặt (tài khoản 111x) hay một tài khoản ngân hàng (112x, bắt buộc tên ngân hàng và số tài khoản, có hạn mức thấu chi), kèm số dư và ngày số dư đầu kỳ. Chưa có quỹ nào thì màn hình mở thẳng danh mục này.<span class="then">Sổ tiền gửi, sao kê và đối chiếu chỉ chạy được khi đã có tài khoản ngân hàng; loại quỹ không đổi sau khi tạo.</span></li>
       <li><b>Khoản chi không hợp lý đánh dấu ngay trên chứng từ chi</b> <em>(góp ý 23/10/2026 · chốt <a href="PL-C.html#Q-136">Q-136</a>)</em>. Khoản chi không có hóa đơn, chứng từ hợp lệ thì tích “CP không hợp lý” và ghi lý do; chứng từ thu không có ô này.<span class="then">Dòng tài khoản đối ứng mang cờ, nên khoản chi lên báo cáo chi phí không hợp lý của <a href="RPT-01.html">RPT-01</a> cùng các chứng từ khác.</span></li>
+      <li><b>Bảng kê trong chứng từ chi</b> <em>(yêu cầu thay đổi 28/10/2026 mục 2 · chốt <a href="PL-C.html#Q-143">Q-143</a>)</em>. Phiếu chi, báo nợ, ủy nhiệm chi giữ một diễn giải chung ở đầu phiếu và có bảng kê ít nhất một dòng; mỗi dòng mang nội dung, số tiền, dự án hoặc <code>CHUNG</code>, khoản mục và ô tích CP không hợp lý kèm lý do. Số tiền chứng từ bằng tổng bảng kê.<span class="then">Bút toán: mỗi dòng bảng kê sinh một dòng tài khoản đối ứng mang dự án, khoản mục, cờ không hợp lý và nội dung của dòng; tài khoản quỹ ghi một dòng tổng. Báo cáo chi phí không hợp lý, giá thành và phân bổ chi phí chung đọc thẳng các dòng này.</span><span class="then">Quỹ phạt kiểm khoản mục trên từng dòng. Chứng từ chi lập trước ngày 28/10/2026 được chuyển thành một dòng bảng kê, bút toán đã ghi sổ không đổi. Chứng từ thu không có bảng kê.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -389,6 +393,9 @@
           <tr><td>Thu vào quỹ phạt sai nguồn</td><td>Không phải khoản khấu trừ phạt</td><td>“Quỹ phạt chỉ nhận nguồn từ các khoản khấu trừ phạt. Chọn quỹ khác.”</td></tr>
           <tr><td>Sao kê không khớp</td><td>Không tìm được đối tượng</td><td>“{n} giao dịch chưa khớp được. Xử lý thủ công tại tab ‘Chờ đối chiếu’.”</td></tr>
           <tr><td>Chi không hợp lý thiếu lý do</td><td>Tích “CP không hợp lý”, lý do rỗng</td><td>“Ghi lý do chi phí không hợp lý.”</td></tr>
+          <tr><td>Chứng từ chi không có bảng kê</td><td><code>lines[]</code> rỗng</td><td>“Thêm ít nhất một dòng bảng kê: nội dung, số tiền, dự án, khoản mục.”</td></tr>
+          <tr><td>Dòng bảng kê thiếu dự án hoặc khoản mục</td><td>Dòng {n} không có dự án (hay <code>CHUNG</code>) hoặc khoản mục</td><td>“Dòng {n}: chọn dự án (hoặc CHUNG) và khoản mục chi phí.”</td></tr>
+          <tr><td>Dòng không hợp lý thiếu lý do</td><td>Dòng {n} tích “CP không hợp lý”, lý do rỗng</td><td>“Dòng {n}: ghi lý do chi phí không hợp lý.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -406,6 +413,8 @@
           <tr><td>UAT-ACC07-6</td><td>Có 2 ngân hàng, 3 tài khoản</td><td>Mở sổ tiền gửi và lọc</td><td>Lọc được đồng thời theo ngân hàng, TK hạch toán và số tài khoản</td></tr>
           <tr><td>UAT-ACC07-7</td><td>Chi 3,5 triệu tiền tiếp khách không hóa đơn, TK 642</td><td>Lập phiếu chi, tích “CP không hợp lý”, ghi lý do, ghi sổ</td><td>Bút toán Nợ 642 mang cờ không hợp lý; dòng 1111 không mang; khoản chi hiện trên báo cáo chi phí không hợp lý của RPT-01 khi lọc TK 642</td></tr>
           <tr><td>UAT-ACC07-8</td><td>Chưa khai tài khoản ngân hàng nào</td><td>Mở tab Danh mục quỹ, thêm “Vietcombank CN Bình Dương”, TK 1121, số tài khoản, số dư đầu kỳ 500 triệu ngày 01/10/2026</td><td>Tài khoản hiện trên dải chọn quỹ với số dư 500 triệu; lập được báo có, báo nợ, ủy nhiệm chi và tải sao kê trên tài khoản này</td></tr>
+          <tr><td>UAT-ACC07-9</td><td>Đề nghị thanh toán 10 triệu đã duyệt <em>(sheet 28.10.2026 mục 2)</em></td><td>Lập phiếu chi, diễn giải “Chi tiền mua vật tư phụ”, bảng kê: 5 triệu công trình 2005/2022; 3 triệu công trình 2205/2024; 2 triệu CHUNG tích “CP không hợp lý” ghi lý do; ghi sổ</td><td>Số tiền chứng từ 10 triệu (chỉ đọc); bút toán ba dòng Nợ mang ba dự án, dòng CHUNG mang cờ không hợp lý, một dòng Có 1111 10 triệu; sổ quỹ hiện “2005/2022 · 2205/2024 · CHUNG”; báo cáo chi phí không hợp lý có đúng dòng 2 triệu</td></tr>
+          <tr><td>UAT-ACC07-10</td><td>Cùng phiếu</td><td>Bỏ trống khoản mục dòng 2 rồi lưu</td><td>Bị chặn: “Dòng 2: chọn dự án (hoặc CHUNG) và khoản mục chi phí.”</td></tr>
         </tbody>
       </table>
     </div>

@@ -339,7 +339,12 @@
           <tr><td>Đơn giá trước VAT</td><td class="k">unit_price</td><td>Số tiền</td><td class="c req">✱</td><td>Chi phí ghi nhận theo giá này.</td></tr>
           <tr><td>Thuế suất VAT</td><td class="k">vat_rate</td><td>Phần trăm</td><td class="c req">✱</td><td>Tách riêng, không nhập vào giá vốn.</td></tr>
           <tr><td>Chứng từ</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>Hóa đơn và phiếu giao hàng. Cho phép nhập hàng chưa có hóa đơn, gắn cờ chờ hóa đơn.</td></tr>
-          <tr><td>Phân bổ vận chuyển</td><td class="k">freight_alloc</td><td>Bảng</td><td class="c">—</td><td>Chọn các phiếu nhập cùng chuyến; phân bổ theo số lượng.</td></tr>
+          <tr><td>Chi phí vận chuyển trên phiếu</td><td class="k">freight_amount</td><td>Số tiền</td><td class="c">—</td><td>Cước biết ngay lúc nhập (sheet 28.10.2026 mục 1 · <a href="PL-C.html#Q-142">Q-142</a>), trước VAT, mặc định 0. Chia vào giá nhập kho của từng dòng; phiếu không qua kho không nhận ô này.</td></tr>
+          <tr><td>Đơn vị vận chuyển</td><td class="k">freight_partner_id</td><td>Tham chiếu</td><td class="c">—</td><td>Điền sẵn nhà cung cấp của phiếu (cước nằm trên cùng hóa đơn, như dòng CPMH của sheet pbvc); đổi được sang nhà xe khác.</td></tr>
+          <tr><td>Thuế suất VAT cước</td><td class="k">freight_vat_rate</td><td>Phần trăm</td><td class="c">—</td><td>Mặc định 0. Như VAT của dòng: tách riêng, không vào giá nhập kho.</td></tr>
+          <tr><td>CP VC của dòng</td><td class="k">lines[].freight_alloc</td><td>Số tiền</td><td class="c">—</td><td>Hệ thống chia CP VC theo số lượng của từng dòng, dòng cuối nhận phần lẻ; kế toán sửa tay được từng ô (phiếu trộn m², m³, kg) và bấm “Chia lại” để về cách chia tự động. Tổng các ô phải bằng CP VC trên phiếu.</td></tr>
+          <tr><td>Giá nhập kho</td><td class="k">lines[].landed_amount</td><td>Số tiền</td><td class="c">—</td><td>Chỉ đọc: thành tiền + CP VC của dòng. Là giá trị vào tồn kho và giá bình quân.</td></tr>
+          <tr><td>Phân bổ vận chuyển (chứng từ rời)</td><td class="k">freight_alloc</td><td>Bảng</td><td class="c">—</td><td>Cước về sau, cước một chuyến cho nhiều phiếu, hoặc cước ra dự án: lập chứng từ chi phí vận chuyển riêng, chọn các phiếu nhập cùng chuyến; phân bổ theo số lượng.</td></tr>
           <tr><td>Giảm giá hàng mua</td><td class="k">discount</td><td>Số tiền</td><td class="c">—</td><td>Ghi nhận sau khi nhập; làm giảm giá trị hàng mua và kích hoạt tính lại giá xuất kho.</td></tr>
         </tbody>
       </table>
@@ -355,6 +360,7 @@
       <li>Giảm giá hàng mua làm giảm giá trị hàng mua và giá xuất kho bình quân được tính lại cho các lần xuất sau.</li>
       <li>Chi phí vận chuyển ra dự án đi vào tài khoản chi phí, không cộng vào giá vốn.</li>
       <li>Chi phí vận chuyển về nhà máy được tick chọn cho nhiều phiếu nhập và phân bổ theo số lượng của từng phiếu.</li>
+      <li>Cước biết ngay lúc nhập được gõ trên chính phiếu: mỗi dòng hiện CP VC và giá nhập kho, chia theo số lượng và sửa tay được; giá bình quân nhận giá nhập kho chứ không phải đơn giá mua.</li>
       <li>Nhận hàng chưa có hóa đơn vẫn nhập kho được; phiếu gắn cờ “chờ hóa đơn” và xuất được danh sách theo dõi.</li>
       <li>Phiếu nhập tick về đề xuất nào thì lũy kế nhập của đề xuất đó tăng; đủ số lượng thì đề xuất tự hoàn thành.</li>
     </ol>
@@ -382,6 +388,20 @@
           <tbody>
             <tr><td>VT-0101</td><td>Đá block granite đen</td><td>K-NVL</td><td>1521 ▾</td><td>331 ▾</td><td>—</td><td>Mỏ đá Phú Yên</td><td>Miền Nam</td><td>KM-101</td><td>DA-2026-014</td><td class="c">☐</td><td>m³</td><td class="num">86</td><td class="num">12.400.000</td><td class="num">8%</td><td class="num">1.066.400.000</td></tr>
             <tr><td>VT-0230</td><td>Đá tấm thô 600×600</td><td>K-NVL</td><td>1521 ▾</td><td>331 ▾</td><td>—</td><td>Mỏ đá Phú Yên</td><td>Miền Nam</td><td>KM-101</td><td>DA-2026-014</td><td class="c">☐</td><td>m²</td><td class="num">1.240</td><td class="num">620.000</td><td class="num">8%</td><td class="num">768.800.000</td></tr>
+          </tbody></table>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">7</span> CP vận chuyển trên phiếu — chia theo số lượng (sheet pbvc)</div>
+          <div class="wf-row">
+            <div class="wf-c"><div class="wf-f"><label>Chi phí vận chuyển</label><div class="in">10.000.000</div></div></div>
+            <div class="wf-c"><div class="wf-f"><label>Đơn vị vận chuyển</label><div class="in">Mỏ đá Phú Yên <em>▾ · mặc định NCC</em></div></div></div>
+            <div class="wf-c"><div class="wf-f"><label>VAT cước</label><div class="in">0% <em>▾</em></div></div></div>
+          </div>
+          <table><thead><tr><th>Mã VT</th><th>Tên vật tư</th><th>ĐVT</th><th class="num">SL</th><th class="num">Đơn giá</th><th class="num">Thành tiền</th><th class="num">CP VC</th><th class="num">Giá nhập kho</th></tr></thead>
+          <tbody>
+            <tr><td>NVL-TBĐ-MB-30</td><td>Tím BĐ slab mài bóng dày 30mm</td><td>m²</td><td class="num">250</td><td class="num">550.000</td><td class="num">137.500.000</td><td class="num">8.333.333</td><td class="num">145.833.333</td></tr>
+            <tr><td>NVL-ARO-MB-20</td><td>Aman Rose slab mài bóng dày 18mm</td><td>m²</td><td class="num">50</td><td class="num">650.000</td><td class="num">32.500.000</td><td class="num">1.666.667</td><td class="num">34.166.667</td></tr>
+            <tr><td></td><td><b>Cộng</b></td><td></td><td class="num">300</td><td></td><td class="num">170.000.000</td><td class="num">10.000.000</td><td class="num">180.000.000</td></tr>
           </tbody></table>
         </div>
         <div class="wf-row">
@@ -413,6 +433,7 @@
           <tr><td class="c"><span class="pin">3</span></td><td>Nhập dòng hàng</td><td>Một dòng mang đủ kho, TK Nợ / Có, đối tượng, mã thống kê, khoản mục, dự án, chi phí không hợp lý — không tách hộp. Ô tài khoản trống khi mở dòng, chọn tự do. ĐVT lấy từ danh mục vật tư và không sửa ở phiếu.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Xử lý chi phí vận chuyển</td><td>Chọn loại vận chuyển quyết định cách hạch toán. Loại về nhà máy mở bảng tick phân bổ nhiều phiếu.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Ghi nhận giảm giá hàng mua</td><td>Giảm giá trị hàng mua và kích hoạt tính lại giá xuất kho bình quân.</td></tr>
+          <tr><td class="c"><span class="pin">7</span></td><td>CP vận chuyển trên phiếu</td><td>Gõ một số tiền; hệ thống chia ngay theo số lượng vào cột CP VC, cột Giá nhập kho cộng sẵn. Sửa tay một ô thì các ô khác giữ nguyên và tổng phải khớp; “Chia lại” trả về cách chia tự động.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Nhập hàng chưa có hóa đơn</td><td>Gắn cờ chờ hóa đơn; có báo cáo theo dõi và nhắc việc khi quá hạn nhận hóa đơn.</td></tr>
           <tr><td class="c">—</td><td>Nhập thành phẩm từ Excel</td><td>Tải mẫu, đối chiếu cột, kiểm lỗi theo dòng rồi mới ghi sổ.</td></tr>
         </tbody>
@@ -428,6 +449,7 @@
       <li><b>Lý do mua quyết định dự án</b> <em>(yêu cầu thay đổi 11/10/2026 · tạm chốt <a href="PL-C.html#Q-109">Q-109</a>)</em>. Phiếu nhập chọn một lý do mua: <em>gia công, sản xuất</em>, <em>thi công</em> hoặc <em>khác</em>. Chỉ <em>thi công</em> — mua đưa ra công trình dùng ngay — bắt buộc chọn dự án trên mọi dòng. Mua về kho nhà máy để sản xuất, gia công, hay vì lý do khác thì dòng để trống dự án được.<span class="then">Bản dựng đang bắt mọi phiếu nhập mua chọn dự án, kể cả hàng nhập kho nhà máy chưa biết sẽ dùng cho dự án nào.</span><span class="then">Dòng không có dự án mà chọn TK Nợ là tài khoản chi phí đòi mã dự án (621, 622, 627, 632, 642, 811 ở <a href="ACC-10.html">ACC-10</a>) thì không lưu được — tài khoản kho 152x, 153, 156 không đòi. Phiếu không qua kho chỉ đi với lý do <em>thi công</em>: hàng ra thẳng công trình thì luôn có dự án.</span></li>
       <li><b>Một hệ đơn vị duy nhất.</b> Số lượng và ĐVT của phiếu nhập là đơn vị đã khai ở <a href="PF-01.html">PF-01</a>, dùng luôn cho giá xuất kho, biên bản giao hàng và tồn tại công trình.<span class="then">Không còn cột kế toán riêng và không còn hệ số quy đổi — xem <a href="PL-C.html">Q-07</a> về quyết định đảo lại và <a href="PL-C.html">Q-34</a> về chứng từ cũ.</span></li>
       <li><b>Vận chuyển hai đường khác nhau.</b> Vận chuyển ra dự án ghi tài khoản chi phí; vận chuyển về nhà máy phân bổ vào giá vốn nhập hàng theo số lượng của phiếu nhập.<span class="then">Chọn sai loại làm sai giá vốn của toàn bộ lô hàng, nên trường này bắt buộc và không có giá trị mặc định.</span></li>
+      <li><b>CP vận chuyển ngay trên phiếu nhập</b> <em>(sheet 28.10.2026 mục 1 · chốt <a href="PL-C.html#Q-142">Q-142</a>)</em>. Cước biết lúc nhập thì gõ vào ô Chi phí vận chuyển của phiếu; hệ thống chia theo số lượng từng dòng (dòng cuối nhận phần lẻ), kế toán sửa tay được, tổng phải khớp. Giá nhập kho của dòng = thành tiền + CP VC; tồn kho và giá bình quân nhận giá này.<span class="then">Hạch toán: phần cước của dòng ghi Nợ đúng TK Nợ, kho, dự án, khoản mục của dòng. Có: cùng TK Có của dòng khi đơn vị vận chuyển là nhà cung cấp của phiếu; là nhà xe khác thì Có 331 theo nhà xe — không bao giờ ghi Có tiền mặt, tiền gửi cho nhà xe. VAT cước ghi Nợ 1331 / Có cùng tài khoản đó.</span><span class="then">Ngưỡng lệch so với đề xuất (<a href="ACC-01.html">ACC-01</a>) vẫn so trên giá trị hàng, không cộng cước. Công nợ tách theo đối tượng: nhà cung cấp gồm hàng + VAT, nhà xe gồm cước + VAT cước.</span><span class="then">Phiếu không qua kho (giao thẳng dự án) không nhận cước trên phiếu — cước đó là “ra dự án”, ghi chi phí kỳ bằng chứng từ rời. Một phiếu đã có cước trên phiếu thì không gắn thêm vào chứng từ cước về nhà máy, để không cộng hai lần.</span></li>
       <li><b>Giảm giá tính lại giá xuất.</b> Ghi nhận giảm giá hàng mua làm giảm giá trị hàng mua và kích hoạt tính lại giá xuất kho bình quân.<span class="then">Chỉ ảnh hưởng các lần xuất <em>sau</em> thời điểm ghi giảm giá; các phiếu xuất đã ghi sổ giữ nguyên giá vốn cũ.</span></li>
       <li><b>Nhập chưa có hóa đơn vẫn được.</b> Phiếu gắn cờ “chờ hóa đơn” và vào báo cáo theo dõi riêng.<span class="then">Quá 30 ngày chưa nhận hóa đơn thì nhắc kế toán và trưởng bộ phận mua hàng.</span></li>
       <li><b>Không có đề xuất thì cần lý do và duyệt.</b> Phiếu nhập không gắn đề xuất phải chọn lý do từ danh mục và qua một cấp duyệt của Kế toán trưởng.<span class="then">Danh mục có thêm mục <em>Khác</em> để tự ghi lý do khi trường hợp thực tế không thuộc bốn lý do sẵn có (yêu cầu sửa 14/10/2026). Đây không phải đường tắt bỏ qua duyệt: phiếu chọn <em>Khác</em> vẫn qua Kế toán trưởng như mọi phiếu không gắn đề xuất, và lý do ghi rõ hiện ngay trong yêu cầu duyệt để người ký đọc được.</span><span class="then">Các phiếu này gom vào một báo cáo rà soát định kỳ — xem <a href="PL-C.html">Q-05</a>.</span></li>
@@ -444,6 +466,9 @@
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
           <tr><td>Chưa chọn loại vận chuyển</td><td>Có chi phí VC, <code>freight_type</code> rỗng</td><td>“Chọn loại vận chuyển: ra dự án (ghi chi phí) hay về nhà máy (phân bổ vào giá vốn).”</td></tr>
+          <tr><td>CP VC của dòng không khớp</td><td>Σ <code>lines[].freight_alloc</code> ≠ <code>freight_amount</code></td><td>“Tổng CP vận chuyển của các dòng ({tổng}) phải bằng chi phí vận chuyển của phiếu ({số}). Sửa lại hoặc bấm Chia lại.”</td></tr>
+          <tr><td>Cước trên phiếu không qua kho</td><td><code>direct_to_site</code> và <code>freight_amount &gt; 0</code></td><td>“Phiếu giao thẳng dự án không nhận cước trên phiếu. Ghi cước bằng chứng từ chi phí vận chuyển loại ra dự án.”</td></tr>
+          <tr><td>Phiếu đã có cước trên phiếu</td><td>Chứng từ cước về nhà máy chọn phiếu có <code>freight_amount &gt; 0</code></td><td>“Phiếu {mã} đã có chi phí vận chuyển trên phiếu. Bỏ chọn phiếu này để không tính cước hai lần.”</td></tr>
           <tr><td>Phiếu không có đề xuất</td><td><code>proposal_id</code> rỗng</td><td>“Phiếu không gắn đề xuất. Chọn lý do và phiếu sẽ cần Kế toán trưởng duyệt.”</td></tr>
           <tr><td>Lý do “Khác” chưa ghi rõ</td><td><code>no_proposal_reason = khac</code>, <code>no_proposal_note</code> rỗng</td><td>“Chọn lý do “Khác” thì ghi rõ lý do.”</td></tr>
           <tr><td>Đơn giá lệch giá nhập gần nhất</td><td>Lệch &gt; 20%</td><td>“Đơn giá {giá} lệch {x}% so với lần nhập gần nhất ({giá}). Kiểm tra lại đơn vị tính và quy cách.”</td></tr>
@@ -481,6 +506,9 @@
           <tr><td>UAT-ACC03-13</td><td>Phiếu lý do “Khác”, dòng không dự án</td><td>Chọn TK Nợ 627</td><td>Bị chặn: tài khoản 627 bắt buộc có mã dự án</td></tr>
           <tr><td>UAT-ACC03-14</td><td>Không có đề xuất phù hợp; lý do thực tế ngoài danh mục</td><td>Chọn lý do “Khác”, để trống ô ghi rõ rồi lưu; sau đó ghi “Mua bổ sung vật tư lẻ cho xưởng” rồi trình duyệt</td><td>Lần đầu bị chặn kèm thông điệp; lần sau lưu được, phiếu vào luồng duyệt của Kế toán trưởng, yêu cầu duyệt hiện “Lý do: Mua bổ sung vật tư lẻ cho xưởng”</td></tr>
           <tr><td>UAT-ACC03-15</td><td>Mã ĐH <code>TBĐ-K-150x150x20</code> (cha <code>TBĐ-K-150x20</code>) đã có, chưa có mã TP con <em>(<a href="PL-C.html#Q-135">Q-135</a>)</em></td><td>Lập phiếu nhập thành phẩm; ở dòng bấm “+ Tạo mã”, chọn loại TP và mã cha <code>TBĐ-K-150x150x20</code>, lưu</td><td>Mã gợi ý <code>TP-TBĐ-K-150x150x20</code>; dòng hiện Mã ĐH <code>TBĐ-K-150x150x20</code> · Mã HĐ <code>TBĐ-K-150x20</code>, cả hai chỉ đọc</td></tr>
+          <tr><td>UAT-ACC03-16</td><td>Phiếu nhập 250 m² × 550.000 và 50 m² × 650.000 <em>(sheet pbvc)</em></td><td>Nhập Chi phí vận chuyển 10.000.000, giữ đơn vị vận chuyển là nhà cung cấp, ghi sổ</td><td>CP VC 8.333.333 và 1.666.667; giá nhập kho 145.833.333 và 34.166.667; giá bình quân nhận giá nhập kho; bút toán có thêm dòng cước Nợ 1521 / Có 331 theo nhà cung cấp</td></tr>
+          <tr><td>UAT-ACC03-17</td><td>Cùng phiếu</td><td>Sửa tay CP VC dòng 1 thành 9.000.000 rồi lưu; sau đó bấm “Chia lại”</td><td>Lần đầu bị chặn: tổng 10.666.667 ≠ 10.000.000; sau “Chia lại” về 8.333.333 / 1.666.667 và lưu được</td></tr>
+          <tr><td>UAT-ACC03-18</td><td>Đơn vị vận chuyển đổi sang nhà xe, dòng hàng ghi Có 1111</td><td>Ghi sổ</td><td>Hàng ghi Có 1111 theo nhà cung cấp; cước ghi Có 331 theo nhà xe; ngưỡng lệch đề xuất không cộng cước</td></tr>
         </tbody>
       </table>
     </div>
