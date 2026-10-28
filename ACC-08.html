@@ -272,11 +272,11 @@
         <tbody>
           <tr><td>Mã phiếu</td><td class="k">journal_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>PKT-YYYY-NNNN</code>.</td></tr>
           <tr><td>Loại phiếu</td><td class="k">journal_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>hạch toán lương</code> · <code>phân bổ chi phí chung</code> · <code>kết chuyển</code> · <code>điều chỉnh</code> · <code>khác</code>.</td></tr>
-          <tr><td>Dòng bút toán</td><td class="k">entries[]</td><td>Bảng</td><td class="c req">✱</td><td>TK nợ, TK có, số tiền, diễn giải. Tổng nợ phải bằng tổng có.</td></tr>
-          <tr><td>Mã dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng; cho phép <code>CHUNG</code>.</td></tr>
-          <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng.</td></tr>
-          <tr><td>Mã thống kê</td><td class="k">stat_id</td><td>Tham chiếu</td><td class="c">—</td><td>Theo dòng.</td></tr>
-          <tr><td>Chi phí không hợp lý</td><td class="k">is_deductible</td><td>Boolean</td><td class="c req">✱</td><td>Cột riêng trên lưới nhập liệu, đúng yêu cầu gốc. Ô tích “CP không hợp lý”, mặc định để trống — để trống là chi phí hợp lý; tích thì ghi lý do (từ 23/10/2026 — <a href="PL-C.html#Q-136">Q-136</a>).</td></tr>
+          <tr><td>Dòng bút toán</td><td class="k">entries[]</td><td>Bảng</td><td class="c req">✱</td><td>Cột theo thứ tự: diễn giải dòng · TK Nợ · TK Có · số tiền · đối tượng Nợ · đối tượng Có · dự án · khoản mục · mã thống kê · CP không hợp lý (sheet 28.10.2026 mục 10 · <a href="PL-C.html#Q-144">Q-144</a>). Tổng nợ phải bằng tổng có.</td></tr>
+          <tr><td>Mã dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng; cho phép <code>CHUNG</code>. Gõ tìm theo mã hoặc tên.</td></tr>
+          <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng. Gõ tìm theo mã hoặc tên; chưa có thì “Tạo mã” ngay tại ô với quyền danh mục kế toán.</td></tr>
+          <tr><td>Mã thống kê</td><td class="k">stat_id</td><td>Tham chiếu</td><td class="c">—</td><td>Theo dòng. Gõ tìm theo mã hoặc tên; chưa có thì “Tạo mã” ngay tại ô với quyền danh mục kế toán.</td></tr>
+          <tr><td>Chi phí không hợp lý</td><td class="k">is_deductible</td><td>Boolean</td><td class="c req">✱</td><td>Cột riêng trên lưới nhập liệu, đúng yêu cầu gốc. Ô tích “CP không hợp lý”, mặc định để trống — để trống là chi phí hợp lý. Trên phiếu kế toán chỉ tích, không ghi lý do (sheet 28.10.2026 mục 10); phiếu nhập, chứng từ tiền, đề xuất vẫn ghi lý do (từ 23/10/2026 — <a href="PL-C.html#Q-136">Q-136</a>).</td></tr>
         </tbody>
       </table>
     </div>
@@ -315,11 +315,11 @@
         <div class="wf-chips"><span class="wf-chip on">Nhập liệu phiếu</span><span class="wf-chip"><span class="pin">3</span> Phân bổ chi phí chung</span><span class="wf-chip">Kết chuyển</span></div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">1</span> PKT-2026-0142 · Hạch toán lương tháng 7</div>
-          <table><thead><tr><th>TK Nợ</th><th>TK Có</th><th>Diễn giải</th><th>Mã dự án</th><th>KMCP</th><th>Mã thống kê</th><th class="c">CP không hợp lý</th><th class="num">Số tiền</th></tr></thead>
+          <table><thead><tr><th>Diễn giải</th><th>TK Nợ</th><th>TK Có</th><th class="num">Số tiền</th><th>Mã dự án</th><th>KMCP</th><th>Mã thống kê</th><th class="c">CP không hợp lý</th></tr></thead>
           <tbody>
-            <tr><td>622</td><td>334</td><td>Lương nhân công trực tiếp T7</td><td>DA-2026-014</td><td>KM-201</td><td>Miền Nam</td><td class="c">☐</td><td class="num">640.000.000</td></tr>
-            <tr><td>627</td><td>334</td><td>Lương quản lý công trình T7</td><td>DA-2026-014</td><td>KM-301</td><td>Miền Nam</td><td class="c">☐</td><td class="num">148.000.000</td></tr>
-            <tr><td>642</td><td>334</td><td>Lương khối văn phòng T7</td><td>CHUNG</td><td>KM-401</td><td>—</td><td class="c">☐</td><td class="num">520.000.000</td></tr>
+            <tr><td>Lương nhân công trực tiếp T7</td><td>622</td><td>334</td><td class="num">640.000.000</td><td>DA-2026-014</td><td>KM-201</td><td>Miền Nam</td><td class="c">☐</td></tr>
+            <tr><td>Lương quản lý công trình T7</td><td>627</td><td>334</td><td class="num">148.000.000</td><td>DA-2026-014</td><td>KM-301</td><td>Miền Nam</td><td class="c">☐</td></tr>
+            <tr><td>Lương khối văn phòng T7</td><td>642</td><td>334</td><td class="num">520.000.000</td><td>CHUNG</td><td>KM-401</td><td>—</td><td class="c">☐</td></tr>
           </tbody></table>
           <p style="margin:7px 0 0;font-size:11.5px;color:var(--ink-3)">Tổng nợ 1.308.000.000 = tổng có 1.308.000.000 ✓</p>
         </div>
@@ -365,6 +365,7 @@
       <li><b>Sau phân bổ khối CHUNG về 0.</b> Kết thúc phân bổ, chi phí chung của kỳ phải bằng 0.<span class="then">Có báo cáo đối chiếu kiểm tra điều này; số dư khác 0 nghĩa là còn nhóm chi phí chưa được phân bổ.</span></li>
       <li><b>Tỷ lệ ấn định phải đủ 100%.</b> Tiêu chí “tỷ lệ ấn định” yêu cầu tổng bảng tỷ lệ bằng đúng 100%.<span class="then">Ba tiêu chí còn lại tính tỷ trọng tự động từ số liệu thực tế của kỳ.</span></li>
       <li><b>Chi phí không hợp lý vẫn phân bổ.</b> Chi phí đánh dấu không hợp lý vẫn về dự án nhưng tách riêng trong báo cáo.<span class="then">Nhờ vậy lợi nhuận quản trị và lợi nhuận tính thuế đều ra được từ cùng bộ số liệu.</span></li>
+      <li><b>Lưới phiếu kế toán: thứ tự cột, gõ tìm, tạo mã</b> <em>(yêu cầu thay đổi 28/10/2026 mục 10, 11 · chốt <a href="PL-C.html#Q-144">Q-144</a>)</em>. Diễn giải dòng đứng đầu, số tiền ngay sau TK Có — người nhập đọc nội dung rồi tới cặp tài khoản và số tiền trên một mạch. TK Nợ, TK Có, dự án, khoản mục, mã thống kê đều gõ tìm theo mã hoặc tên thay cho cuộn danh sách. Khoản mục, mã thống kê và tài khoản chưa có thì “Tạo mã” ngay tại ô, mở biểu mẫu danh mục đã điền sẵn mã vừa gõ, với quyền danh mục kế toán; dự án không tạo từ phiếu kế toán — dự án sinh từ hợp đồng hoặc đơn hàng.<span class="then">Ô tích CP không hợp lý trên phiếu kế toán không kèm lý do; báo cáo chi phí không hợp lý (RPT-01) vẫn lấy đúng các dòng đã tích.</span></li>
       <li><b>Phân bổ tới cấp hạng mục là tùy chọn.</b> Chọn phân bổ tới dự án hoặc tới hạng mục.<span class="then">Tới hạng mục cho ra sổ chi phí công trình chi tiết hơn nhưng cần dữ liệu sản lượng theo hạng mục đầy đủ.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo kỳ kế toán.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Phân bổ chi phí chung. Giữ kỳ kế toán chứ không đổi sang khoảng ngày tự do — phân bổ là việc của một kỳ đã đóng, không phải của một quãng bất kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
@@ -397,6 +398,7 @@
           <tr><td>UAT-ACC08-5</td><td>Đã phân bổ nhóm KM-401 kỳ 7</td><td>Lập bảng phân bổ mới cùng nhóm, cùng kỳ</td><td>Bị chặn kèm mã bảng đã dùng</td></tr>
           <tr><td>UAT-ACC08-6</td><td>Phân bổ xong toàn bộ kỳ 7</td><td>Mở báo cáo đối chiếu chi phí chung</td><td>Số dư CHUNG của kỳ bằng 0</td></tr>
           <tr><td>UAT-ACC08-7</td><td>Có chi phí đánh dấu không hợp lý 104 triệu</td><td>Phân bổ và mở báo cáo</td><td>Chi phí về dự án nhưng vẫn tách riêng ở báo cáo chi phí không hợp lý</td></tr>
+          <tr><td>UAT-ACC08-8</td><td>Phiếu kế toán mới <em>(sheet 28.10.2026 mục 10, 11)</em></td><td>Gõ “642” ở TK Nợ, “KM-4” ở khoản mục; gõ “KM-999” chưa có rồi bấm Tạo mã; tích CP không hợp lý</td><td>Cột theo thứ tự Diễn giải · TK Nợ · TK Có · Số tiền …; danh sách lọc theo chữ gõ; biểu mẫu khoản mục mở sẵn mã KM-999, lưu xong ô chọn mã đó; không có ô lý do, lưu được</td></tr>
         </tbody>
       </table>
     </div>
