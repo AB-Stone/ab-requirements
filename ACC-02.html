@@ -254,10 +254,11 @@
         <tbody>
           <tr><td>Mã kho</td><td class="k">wh_id</td><td>Chuỗi</td><td class="c req">✱</td><td>Theo quy tắc ở bảng cây kho.</td></tr>
           <tr><td>Nhóm kho</td><td class="k">wh_group</td><td>Chọn 1</td><td class="c req">✱</td><td><code>tổng</code> · <code>dự án</code> · <code>nhà máy</code>.</td></tr>
-          <tr><td>Đơn vị chủ quản</td><td class="k">unit_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Quyết định ai thấy được kho này.</td></tr>
-          <tr><td>Vị trí vật lý</td><td class="k">physical_location</td><td>Chuỗi</td><td class="c req">✱</td><td>Có thể khác đơn vị chủ quản — trường hợp kho tổng.</td></tr>
-          <tr><td>Thủ kho</td><td class="k">keeper</td><td>Tham chiếu</td><td class="c req">✱</td><td>Người chịu trách nhiệm kiểm kê.</td></tr>
-          <tr><td>Nghiệp vụ cho phép</td><td class="k">allowed_ops[]</td><td>Danh sách</td><td class="c req">✱</td><td><code>nhập mua</code> · <code>xuất sản xuất</code> · <code>xuất bán</code> · <code>xuất thi công</code> · <code>xuất hao hụt</code> · <code>điều chuyển</code>.</td></tr>
+          <tr><td>Đơn vị chủ quản</td><td class="k">unit_id</td><td>Tham chiếu</td><td class="c">—</td><td>Quyết định ai thấy được kho này. Không bắt buộc — danh mục kho khách hàng gửi chỉ có mã và tên.</td></tr>
+          <tr><td>Vị trí vật lý</td><td class="k">physical_location</td><td>Chuỗi</td><td class="c">—</td><td>Có thể khác đơn vị chủ quản — trường hợp kho tổng. Không bắt buộc.</td></tr>
+          <tr><td>Thủ kho</td><td class="k">keeper</td><td>Tham chiếu</td><td class="c">—</td><td>Người chịu trách nhiệm kiểm kê. Không bắt buộc; gán sau khi tạo.</td></tr>
+          <tr><td>Tài khoản kho</td><td class="k">stock_account_code</td><td>Tham chiếu</td><td class="c">—</td><td><code>152x</code> vật liệu · <code>156x</code> hàng hóa — quyết định nghiệp vụ xuất của kho.</td></tr>
+          <tr><td>Nghiệp vụ cho phép</td><td class="k">allowed_ops[]</td><td>Cờ hệ thống</td><td class="c">—</td><td>Chỉ đọc — suy từ nhóm kho và tài khoản kho (Quy tắc 3): kho tổng <code>điều chuyển</code>; kho dự án <code>nhập mua</code> · <code>xuất thi công</code> · <code>xuất hao hụt</code> · <code>khác</code> · <code>điều chuyển</code>; kho nhà máy <code>nhập mua</code> · <code>xuất sản xuất</code> (TK 152) hoặc <code>xuất bán</code> (TK 156) · <code>xuất thi công</code> · <code>xuất hao hụt</code> · <code>khác</code> · <code>điều chuyển</code>.</td></tr>
           <tr><td>Phương pháp tính giá xuất</td><td class="k">costing_method</td><td>Chọn 1</td><td class="c req">✱</td><td>Bình quân gia quyền theo thời điểm ghi nhận — thống nhất toàn hệ thống.</td></tr>
           <tr><td>Định mức tồn tối thiểu</td><td class="k">min_stock</td><td>Bảng</td><td class="c">—</td><td>Theo từng vật tư; dưới định mức thì cảnh báo (<a href="PF-04.html">PF-04</a>).</td></tr>
         </tbody>
@@ -302,9 +303,8 @@
           <div class="wf-c"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">2</span> Cấu hình kho — K-TONG-CTY</div>
             <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Nhóm kho ✱</label><div class="in ro">Kho tổng</div></div></div>
-            <div class="wf-c"><div class="wf-f"><label>Vị trí vật lý ✱</label><div class="in">Nhà máy An Bình 2 <em>▾</em></div></div></div></div>
-            <div class="wf-f"><label>Nghiệp vụ cho phép ✱</label><div class="in">Điều chuyển đến / đi <em>· chỉ 1 nghiệp vụ</em></div></div>
-            <div class="wf-f"><label>Trích khấu hao khi ở kho này</label><div class="in">Có — tính số ngày tài sản không phục vụ dự án</div></div>
+            <div class="wf-c"><div class="wf-f"><label>Vị trí vật lý</label><div class="in">Nhà máy An Bình 2 <em>▾</em></div></div></div></div>
+            <div class="wf-f"><label>Nghiệp vụ cho phép</label><div class="in ro">Điều chuyển đến / đi <em>· theo nhóm kho tổng</em></div></div>
           </div></div>
           <div class="wf-c" style="flex:0 1 260px"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">3</span> Định mức tồn tối thiểu</div>
@@ -321,7 +321,7 @@
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Lọc theo nhóm kho</td><td>Mặc định ẩn kho của dự án đã đóng, giữ danh sách gọn dù số dự án tăng.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Cấu hình kho</td><td>Khai báo nghiệp vụ cho phép và cờ trích khấu hao. Vị trí vật lý tách khỏi đơn vị chủ quản.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Cấu hình kho</td><td>Nhóm kho và tài khoản kho quyết định nghiệp vụ cho phép (chỉ đọc); kho tổng là nơi trích khấu hao. Vị trí vật lý tách khỏi đơn vị chủ quản.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Đặt định mức tồn</td><td>Theo từng vật tư; dưới định mức thì tô cảnh báo và phát thông báo.</td></tr>
           <tr><td class="c">—</td><td>Đóng kho</td><td>Chỉ đóng được khi tồn bằng 0; đề xuất luồng điều chuyển hết tồn trước.</td></tr>
         </tbody>
@@ -332,7 +332,7 @@
     <ol class="br">
       <li><b>Kho dự án sinh tự động.</b> Khởi tạo dự án ở <a href="BID-05.html">BID-05</a> tạo luôn một kho dự án tương ứng.<span class="then">Không phải khai báo tay, và mã kho luôn suy được từ mã dự án.</span></li>
       <li><b>Kho tổng là kho kế toán.</b> Tài sản ở kho tổng vẫn ghi vị trí vật lý là nhà máy.<span class="then">Mục đích duy nhất của kho tổng là tính khấu hao cho những ngày tài sản không phục vụ dự án nào — đây là điểm dễ hiểu nhầm nhất của cây kho.</span></li>
-      <li><b>Nghiệp vụ cho phép là hàng rào cứng.</b> Mỗi kho chỉ thực hiện được những nghiệp vụ đã khai.<span class="then">Nghiệp vụ không hợp lệ không hiện trên giao diện, không phải hiện rồi báo lỗi khi lưu.</span></li>
+      <li><b>Nghiệp vụ cho phép là hàng rào cứng, và do hệ thống suy ra.</b> Mỗi kho chỉ thực hiện được những nghiệp vụ suy từ nhóm kho và tài khoản kho (bảng Tham số); không ai tick tay danh sách này (chốt 31/10/2026).<span class="then">Nghiệp vụ không hợp lệ không hiện trên giao diện, không phải hiện rồi báo lỗi khi lưu.</span></li>
       <li><b>Phương pháp tính giá xuất kho chọn theo từng kho.</b> Hệ thống hỗ trợ đúng hai phương pháp: <b>Nhập trước xuất trước (FIFO)</b> và <b>Bình quân gia quyền</b> — trong đó bình quân gia quyền có hai biến thể: <em>theo từng lần nhập</em> (bình quân di động, tính lại ngay sau mỗi lần nhập — đây là cách tính hiện có của đặc tả) và <em>cuối kỳ</em> (bình quân cố định, tính lại một lần khi chốt kỳ).<span class="then">Mỗi kho khai báo riêng một phương pháp và, nếu chọn bình quân gia quyền, một biến thể; khai rõ ràng theo từng kho thay vì ngầm định giống nhau để giá vốn vẫn đối chiếu được khi có kho dùng phương pháp khác.</span></li>
       <li><b>Trường “Đơn vị chủ quản” đổi thành “Nhân viên phụ trách”.</b> Chủ thể chịu trách nhiệm về một kho phải là một nhân viên cụ thể, không phải một đơn vị/phòng ban.<span class="then">Một đơn vị tổ chức không chịu trách nhiệm được cho chênh lệch tồn kho thực tế theo cách một cá nhân được nêu đích danh phải chịu — đổi nhãn trường và kiểu tham chiếu sang nhân viên để có người chịu trách nhiệm rõ ràng.</span></li>
       <li><b>Thêm nghiệp vụ “Khác” để cân bằng kiểm kê.</b> Bổ sung nghiệp vụ <code>khác</code> vào danh sách nghiệp vụ cho phép, dùng riêng để ghi nhận điều chỉnh khi kiểm kê phát hiện thừa hoặc thiếu không rõ nguyên nhân.<span class="then">Số tồn sổ sách được đối chiếu về đúng số tồn thực tế qua một phiếu nhập/xuất hợp lệ, thay vì sửa thẳng số tồn mà không để lại chứng từ.</span></li>
