@@ -271,7 +271,7 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Mã phiếu</td><td class="k">journal_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>PKT-YYYY-NNNN</code>.</td></tr>
-          <tr><td>Loại phiếu</td><td class="k">journal_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>hạch toán lương</code> · <code>phân bổ chi phí chung</code> · <code>kết chuyển</code> · <code>điều chỉnh</code> · <code>khác</code>.</td></tr>
+          <tr><td>Loại phiếu</td><td class="k">journal_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>hạch toán lương</code> · <code>phân bổ chi phí chung</code> · <code>kết chuyển</code> · <code>điều chỉnh</code> · <code>khác</code>. Loại <code>số dư ban đầu</code> không chọn được trên lưới: chỉ sinh từ nút “Số dư ban đầu” của bảng cân đối (<a href="RPT-01.html">RPT-01</a>, từ 31/10/2026 — <a href="PL-C.html#Q-150">Q-150</a>).</td></tr>
           <tr><td>Dòng bút toán</td><td class="k">entries[]</td><td>Bảng</td><td class="c req">✱</td><td>Cột theo thứ tự: diễn giải dòng · TK Nợ · TK Có · số tiền · đối tượng Nợ · đối tượng Có · dự án · khoản mục · mã thống kê · CP không hợp lý (sheet 28.10.2026 mục 10 · <a href="PL-C.html#Q-144">Q-144</a>). Tổng nợ phải bằng tổng có.</td></tr>
           <tr><td>Mã dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng; cho phép <code>CHUNG</code>. Gõ tìm theo mã hoặc tên.</td></tr>
           <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng. Gõ tìm theo mã hoặc tên; chưa có thì “Tạo mã” ngay tại ô với quyền danh mục kế toán.</td></tr>

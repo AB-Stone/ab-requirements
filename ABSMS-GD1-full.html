@@ -12148,10 +12148,11 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tbody>
           <tr><td>Mã kho</td><td class="k">wh_id</td><td>Chuỗi</td><td class="c req">✱</td><td>Theo quy tắc ở bảng cây kho.</td></tr>
           <tr><td>Nhóm kho</td><td class="k">wh_group</td><td>Chọn 1</td><td class="c req">✱</td><td><code>tổng</code> · <code>dự án</code> · <code>nhà máy</code>.</td></tr>
-          <tr><td>Đơn vị chủ quản</td><td class="k">unit_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Quyết định ai thấy được kho này.</td></tr>
-          <tr><td>Vị trí vật lý</td><td class="k">physical_location</td><td>Chuỗi</td><td class="c req">✱</td><td>Có thể khác đơn vị chủ quản — trường hợp kho tổng.</td></tr>
-          <tr><td>Thủ kho</td><td class="k">keeper</td><td>Tham chiếu</td><td class="c req">✱</td><td>Người chịu trách nhiệm kiểm kê.</td></tr>
-          <tr><td>Nghiệp vụ cho phép</td><td class="k">allowed_ops[]</td><td>Danh sách</td><td class="c req">✱</td><td><code>nhập mua</code> · <code>xuất sản xuất</code> · <code>xuất bán</code> · <code>xuất thi công</code> · <code>xuất hao hụt</code> · <code>điều chuyển</code>.</td></tr>
+          <tr><td>Đơn vị chủ quản</td><td class="k">unit_id</td><td>Tham chiếu</td><td class="c">—</td><td>Quyết định ai thấy được kho này. Không bắt buộc — danh mục kho khách hàng gửi chỉ có mã và tên.</td></tr>
+          <tr><td>Vị trí vật lý</td><td class="k">physical_location</td><td>Chuỗi</td><td class="c">—</td><td>Có thể khác đơn vị chủ quản — trường hợp kho tổng. Không bắt buộc.</td></tr>
+          <tr><td>Thủ kho</td><td class="k">keeper</td><td>Tham chiếu</td><td class="c">—</td><td>Người chịu trách nhiệm kiểm kê. Không bắt buộc; gán sau khi tạo.</td></tr>
+          <tr><td>Tài khoản kho</td><td class="k">stock_account_code</td><td>Tham chiếu</td><td class="c">—</td><td><code>152x</code> vật liệu · <code>156x</code> hàng hóa — quyết định nghiệp vụ xuất của kho.</td></tr>
+          <tr><td>Nghiệp vụ cho phép</td><td class="k">allowed_ops[]</td><td>Cờ hệ thống</td><td class="c">—</td><td>Chỉ đọc — suy từ nhóm kho và tài khoản kho (Quy tắc 3): kho tổng <code>điều chuyển</code>; kho dự án <code>nhập mua</code> · <code>xuất thi công</code> · <code>xuất hao hụt</code> · <code>khác</code> · <code>điều chuyển</code>; kho nhà máy <code>nhập mua</code> · <code>xuất sản xuất</code> (TK 152) hoặc <code>xuất bán</code> (TK 156) · <code>xuất thi công</code> · <code>xuất hao hụt</code> · <code>khác</code> · <code>điều chuyển</code>.</td></tr>
           <tr><td>Phương pháp tính giá xuất</td><td class="k">costing_method</td><td>Chọn 1</td><td class="c req">✱</td><td>Bình quân gia quyền theo thời điểm ghi nhận — thống nhất toàn hệ thống.</td></tr>
           <tr><td>Định mức tồn tối thiểu</td><td class="k">min_stock</td><td>Bảng</td><td class="c">—</td><td>Theo từng vật tư; dưới định mức thì cảnh báo (<a href="#PF-04">PF-04</a>).</td></tr>
         </tbody>
@@ -12196,9 +12197,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <div class="wf-c"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">2</span> Cấu hình kho — K-TONG-CTY</div>
             <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Nhóm kho ✱</label><div class="in ro">Kho tổng</div></div></div>
-            <div class="wf-c"><div class="wf-f"><label>Vị trí vật lý ✱</label><div class="in">Nhà máy An Bình 2 <em>▾</em></div></div></div></div>
-            <div class="wf-f"><label>Nghiệp vụ cho phép ✱</label><div class="in">Điều chuyển đến / đi <em>· chỉ 1 nghiệp vụ</em></div></div>
-            <div class="wf-f"><label>Trích khấu hao khi ở kho này</label><div class="in">Có — tính số ngày tài sản không phục vụ dự án</div></div>
+            <div class="wf-c"><div class="wf-f"><label>Vị trí vật lý</label><div class="in">Nhà máy An Bình 2 <em>▾</em></div></div></div></div>
+            <div class="wf-f"><label>Nghiệp vụ cho phép</label><div class="in ro">Điều chuyển đến / đi <em>· theo nhóm kho tổng</em></div></div>
           </div></div>
           <div class="wf-c" style="flex:0 1 260px"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">3</span> Định mức tồn tối thiểu</div>
@@ -12215,7 +12215,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Lọc theo nhóm kho</td><td>Mặc định ẩn kho của dự án đã đóng, giữ danh sách gọn dù số dự án tăng.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Cấu hình kho</td><td>Khai báo nghiệp vụ cho phép và cờ trích khấu hao. Vị trí vật lý tách khỏi đơn vị chủ quản.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Cấu hình kho</td><td>Nhóm kho và tài khoản kho quyết định nghiệp vụ cho phép (chỉ đọc); kho tổng là nơi trích khấu hao. Vị trí vật lý tách khỏi đơn vị chủ quản.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Đặt định mức tồn</td><td>Theo từng vật tư; dưới định mức thì tô cảnh báo và phát thông báo.</td></tr>
           <tr><td class="c">—</td><td>Đóng kho</td><td>Chỉ đóng được khi tồn bằng 0; đề xuất luồng điều chuyển hết tồn trước.</td></tr>
         </tbody>
@@ -12226,7 +12226,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
     <ol class="br">
       <li><b>Kho dự án sinh tự động.</b> Khởi tạo dự án ở <a href="#BID-05">BID-05</a> tạo luôn một kho dự án tương ứng.<span class="then">Không phải khai báo tay, và mã kho luôn suy được từ mã dự án.</span></li>
       <li><b>Kho tổng là kho kế toán.</b> Tài sản ở kho tổng vẫn ghi vị trí vật lý là nhà máy.<span class="then">Mục đích duy nhất của kho tổng là tính khấu hao cho những ngày tài sản không phục vụ dự án nào — đây là điểm dễ hiểu nhầm nhất của cây kho.</span></li>
-      <li><b>Nghiệp vụ cho phép là hàng rào cứng.</b> Mỗi kho chỉ thực hiện được những nghiệp vụ đã khai.<span class="then">Nghiệp vụ không hợp lệ không hiện trên giao diện, không phải hiện rồi báo lỗi khi lưu.</span></li>
+      <li><b>Nghiệp vụ cho phép là hàng rào cứng, và do hệ thống suy ra.</b> Mỗi kho chỉ thực hiện được những nghiệp vụ suy từ nhóm kho và tài khoản kho (bảng Tham số); không ai tick tay danh sách này (chốt 31/10/2026).<span class="then">Nghiệp vụ không hợp lệ không hiện trên giao diện, không phải hiện rồi báo lỗi khi lưu.</span></li>
       <li><b>Phương pháp tính giá xuất kho chọn theo từng kho.</b> Hệ thống hỗ trợ đúng hai phương pháp: <b>Nhập trước xuất trước (FIFO)</b> và <b>Bình quân gia quyền</b> — trong đó bình quân gia quyền có hai biến thể: <em>theo từng lần nhập</em> (bình quân di động, tính lại ngay sau mỗi lần nhập — đây là cách tính hiện có của đặc tả) và <em>cuối kỳ</em> (bình quân cố định, tính lại một lần khi chốt kỳ).<span class="then">Mỗi kho khai báo riêng một phương pháp và, nếu chọn bình quân gia quyền, một biến thể; khai rõ ràng theo từng kho thay vì ngầm định giống nhau để giá vốn vẫn đối chiếu được khi có kho dùng phương pháp khác.</span></li>
       <li><b>Trường “Đơn vị chủ quản” đổi thành “Nhân viên phụ trách”.</b> Chủ thể chịu trách nhiệm về một kho phải là một nhân viên cụ thể, không phải một đơn vị/phòng ban.<span class="then">Một đơn vị tổ chức không chịu trách nhiệm được cho chênh lệch tồn kho thực tế theo cách một cá nhân được nêu đích danh phải chịu — đổi nhãn trường và kiểu tham chiếu sang nhân viên để có người chịu trách nhiệm rõ ràng.</span></li>
       <li><b>Thêm nghiệp vụ “Khác” để cân bằng kiểm kê.</b> Bổ sung nghiệp vụ <code>khác</code> vào danh sách nghiệp vụ cho phép, dùng riêng để ghi nhận điều chỉnh khi kiểm kê phát hiện thừa hoặc thiếu không rõ nguyên nhân.<span class="then">Số tồn sổ sách được đối chiếu về đúng số tồn thực tế qua một phiếu nhập/xuất hợp lệ, thay vì sửa thẳng số tồn mà không để lại chứng từ.</span></li>
@@ -14392,7 +14392,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Mã phiếu</td><td class="k">journal_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>PKT-YYYY-NNNN</code>.</td></tr>
-          <tr><td>Loại phiếu</td><td class="k">journal_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>hạch toán lương</code> · <code>phân bổ chi phí chung</code> · <code>kết chuyển</code> · <code>điều chỉnh</code> · <code>khác</code>.</td></tr>
+          <tr><td>Loại phiếu</td><td class="k">journal_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>hạch toán lương</code> · <code>phân bổ chi phí chung</code> · <code>kết chuyển</code> · <code>điều chỉnh</code> · <code>khác</code>. Loại <code>số dư ban đầu</code> không chọn được trên lưới: chỉ sinh từ nút “Số dư ban đầu” của bảng cân đối (<a href="#RPT-01">RPT-01</a>, từ 31/10/2026 — <a href="#Q-150">Q-150</a>).</td></tr>
           <tr><td>Dòng bút toán</td><td class="k">entries[]</td><td>Bảng</td><td class="c req">✱</td><td>Cột theo thứ tự: diễn giải dòng · TK Nợ · TK Có · số tiền · đối tượng Nợ · đối tượng Có · dự án · khoản mục · mã thống kê · CP không hợp lý (sheet 28.10.2026 mục 10 · <a href="#Q-144">Q-144</a>). Tổng nợ phải bằng tổng có.</td></tr>
           <tr><td>Mã dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng; cho phép <code>CHUNG</code>. Gõ tìm theo mã hoặc tên.</td></tr>
           <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng. Gõ tìm theo mã hoặc tên; chưa có thì “Tạo mã” ngay tại ô với quyền danh mục kế toán.</td></tr>
@@ -14944,8 +14944,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
  viewBox="0.00 0.00 780.00 680.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g font-family="Barlow, system-ui, sans-serif">
 <rect x="230" y="44" width="300" height="46" fill="#dde3e9" stroke="#5d6b7a"/>
-<text x="380" y="62" text-anchor="middle" font-size="12.5" fill="#16202a">Nhập Mã, Tên, Loại tài khoản,</text>
-<text x="380" y="77" text-anchor="middle" font-size="12.5" fill="#16202a">Loại số dư thường (bắt buộc)</text>
+<text x="380" y="62" text-anchor="middle" font-size="12.5" fill="#16202a">Nhập Mã, Tên (bắt buộc), TK cha</text>
+<text x="380" y="77" text-anchor="middle" font-size="12.5" fill="#16202a">và 3 cờ theo dõi; loại, số dư suy theo mã</text>
 
 <path d="M380,90 L380,98" fill="none" stroke="#55606b"/>
 <polygon points="376,98 384,98 380,104" fill="#55606b" stroke="#55606b"/>
@@ -15025,10 +15025,13 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tbody>
           <tr><td>Mã tài khoản</td><td class="k">account_code</td><td>Chuỗi</td><td class="c req">✱</td><td>Duy nhất trong toàn hệ thống; theo khung số hiệu chuẩn kế toán Việt Nam (vd. <code>111</code>, <code>156</code>, <code>5113</code>). Không sửa được sau khi tạo.</td></tr>
           <tr><td>Tên tài khoản</td><td class="k">account_name</td><td>Chuỗi</td><td class="c req">✱</td><td>—</td></tr>
-          <tr><td>Loại tài khoản</td><td class="k">account_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>Tài sản</code> · <code>Nguồn vốn</code> · <code>Doanh thu</code> · <code>Chi phí</code> · <code>Tài khoản kết chuyển (911)</code>.</td></tr>
-          <tr><td>Loại số dư</td><td class="k">balance_side</td><td>Chọn 1</td><td class="c req">✱</td><td><code>Nợ</code> · <code>Có</code> · <code>Lưỡng tính</code> · <code>Không có số dư</code>.</td></tr>
+          <tr><td>Loại tài khoản</td><td class="k">account_type</td><td>Cờ hệ thống</td><td class="c">—</td><td>Chỉ đọc — suy theo đầu số tài khoản (Quy tắc 6): <code>Tài sản</code> · <code>Nguồn vốn</code> · <code>Doanh thu</code> · <code>Chi phí</code> · <code>Tài khoản kết chuyển (911)</code>.</td></tr>
+          <tr><td>Loại số dư</td><td class="k">balance_side</td><td>Cờ hệ thống</td><td class="c">—</td><td>Chỉ đọc — suy theo đầu số tài khoản (Quy tắc 6): <code>Nợ</code> · <code>Có</code> · <code>Lưỡng tính</code> · <code>Không có số dư</code>.</td></tr>
           <tr><td>Tài khoản cha</td><td class="k">parent_account_id</td><td>Tham chiếu</td><td class="c">—</td><td>Trỏ về chính danh mục này; xác định vị trí trong cây phân cấp mã số (vd. <code>156</code> là cha của <code>1561</code>, <code>1562</code>).</td></tr>
           <tr><td>Tính chất</td><td class="k">is_summary</td><td>Cờ hệ thống</td><td class="c">—</td><td>Chỉ đọc — suy ra tự động từ việc tài khoản có tài khoản con hay không (Quy tắc 1).</td></tr>
+          <tr><td>Theo dõi đối tác</td><td class="k">requires_partner</td><td>Boolean</td><td class="c">—</td><td>Cột “Theo dõi đối tác (MÃ NCC/KH/NVIEN)” của danh mục khách hàng gửi. Bật thì mọi dòng hạch toán vào tài khoản phải có đối tượng — nhà cung cấp, khách hàng <b>hoặc nhân viên</b>.</td></tr>
+          <tr><td>Theo dõi công nợ</td><td class="k">tracks_debt</td><td>Boolean</td><td class="c">—</td><td>Cột “Theo dõi công nợ”. Bật thì tài khoản lên sổ công nợ (<a href="ACC-05.html">ACC-05</a>) và bảng cân đối tách số dư theo từng đối tượng. Chỉ bật được khi đã bật Theo dõi đối tác.</td></tr>
+          <tr><td>Theo dõi dự án</td><td class="k">requires_project</td><td>Boolean</td><td class="c">—</td><td>Cột “Theo dõi dự án”. Bật thì mọi dòng hạch toán vào tài khoản phải có mã dự án.</td></tr>
           <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c">—</td><td><code>Đang dùng</code> · <code>Ngừng dùng</code>. Tài khoản ngừng dùng không hiện trong danh sách chọn khi hạch toán.</td></tr>
         </tbody>
       </table>
@@ -15074,15 +15077,16 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
               <div class="wf-c"><div class="wf-f"><label>Tên ✱</label><div class="in">Hàng hóa — đá nhân tạo</div></div></div>
             </div>
             <div class="wf-row">
-              <div class="wf-c"><div class="wf-f"><label>Loại ✱</label><div class="in">Tài sản <em>▾</em></div></div></div>
-              <div class="wf-c"><div class="wf-f"><label>Số dư thường ✱</label><div class="in">Nợ <em>▾</em></div></div></div>
+              <div class="wf-c"><div class="wf-f"><label>Loại</label><div class="in ro">Tài sản <em>· theo đầu số</em></div></div></div>
+              <div class="wf-c"><div class="wf-f"><label>Số dư thường</label><div class="in ro">Nợ <em>· theo đầu số</em></div></div></div>
               <div class="wf-c"><div class="wf-f"><label>Tài khoản cha</label><div class="in">156 — Hàng hóa <em>▾</em></div></div></div>
             </div>
           </div></div>
           <div class="wf-c" style="flex:0 1 260px"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">6</span> Tuỳ chọn khi hạch toán</div>
-            <div class="wf-f"><label>Yêu cầu đối tác</label><div class="in ro">Tắt <span class="tag t-warn">Chưa chốt</span></div></div>
-            <div class="wf-f"><label>Yêu cầu dự án</label><div class="in ro">Tắt <span class="tag t-warn">Chưa chốt</span></div></div>
+            <div class="wf-lg"><span class="pin">6</span> Theo dõi</div>
+            <div class="wf-f"><label>Theo dõi đối tác (NCC / KH / NV)</label><div class="in">Tắt</div></div>
+            <div class="wf-f"><label>Theo dõi công nợ</label><div class="in">Tắt</div></div>
+            <div class="wf-f"><label>Theo dõi dự án</label><div class="in">Tắt</div></div>
           </div></div>
         </div>
       </div>
@@ -15095,8 +15099,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td class="c"><span class="pin">2</span></td><td>Lọc danh mục</td><td>Lọc theo Loại tài khoản, tìm theo mã hoặc tên.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Danh sách tài khoản</td><td>Hiển thị đầy đủ phân cấp qua cột TK cha; sắp theo mã tài khoản.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Cột Tính chất</td><td>Chỉ đọc — <code>Tổng hợp</code> nếu có ít nhất một tài khoản con, ngược lại <code>Chi tiết</code>. Không có công tắc thủ công.</td></tr>
-          <tr><td class="c"><span class="pin">5</span></td><td>Form thêm tài khoản</td><td>Mã, Tên, Loại, Loại số dư bắt buộc; Tài khoản cha tuỳ chọn. Mã khoá chỉnh sửa ngay khi tạo xong.</td></tr>
-          <tr><td class="c"><span class="pin">6</span></td><td>Yêu cầu đối tác / dự án</td><td>Hai tuỳ chọn thấy trong mockup gốc, nhưng hình thức hiển thị (checkbox hay switch có nhãn) và việc giữ lại hay bỏ <b>chưa chốt</b> — xem Quy tắc nghiệp vụ #5.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Form thêm tài khoản</td><td>Mã, Tên bắt buộc; Tài khoản cha tuỳ chọn; Loại và Loại số dư chỉ đọc, suy theo đầu số (Quy tắc 6). Mã khoá chỉnh sửa ngay khi tạo xong.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Theo dõi đối tác / công nợ / dự án</td><td>Ba công tắc có nhãn, đúng ba cột “C” của danh mục khách hàng — xem Quy tắc nghiệp vụ #5. Bật “công nợ” thì tự bật “đối tác”; tắt “đối tác” thì tắt luôn “công nợ”.</td></tr>
           <tr><td class="c"><span class="pin">7</span></td><td>Nhập Excel</td><td>Tải file theo mẫu, kiểm tra từng dòng theo cùng quy tắc với form thủ công, báo lỗi theo dòng.</td></tr>
         </tbody>
       </table>
@@ -15107,8 +15111,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>Tài khoản tổng hợp suy ra tự động.</b> Một tài khoản là tổng hợp khi và chỉ khi có ít nhất một tài khoản khác nhận nó làm tài khoản cha; form thêm tài khoản không có ô nào để tự đánh dấu "hạch toán tổng hợp".<span class="then">Mockup hiện tại cho phép gắn cờ này thủ công lúc tạo trong khi danh sách tài khoản lại hiển thị cờ từ một nguồn không rõ ràng — suy ra từ cây tài khoản thực tế loại bỏ hẳn sự mâu thuẫn đó.</span></li>
       <li><b>Chỉ hạch toán vào tài khoản chi tiết (lá).</b> Mọi bút toán ở các màn hình khác (phiếu kế toán, hoá đơn, phiếu thu chi…) chỉ được chọn tài khoản không có con làm đối tượng hạch toán; tài khoản tổng hợp bị từ chối khi chọn.<span class="then">Đúng nguyên tắc ghi sổ kép chuẩn mực; ngăn bút toán biến mất vào một tài khoản gộp không thể đối chiếu ngược về chứng từ gốc.</span></li>
       <li><b>Mã tài khoản không sửa được sau khi tạo.</b> Đổi số hiệu của một tài khoản đã có phát sinh sẽ làm sai lệch các bút toán lịch sử; muốn đổi phân loại thì ngừng dùng tài khoản cũ và tạo tài khoản mới.<span class="then">Bảo toàn tính nhất quán của sổ cái qua các kỳ đã chốt.</span></li>
-      <li><b>Nhập Excel theo lô.</b> Tạo/cập nhật hàng loạt tài khoản qua file mẫu với các cột Mã, Tên, Loại, Loại số dư, Mã tài khoản cha; bộ nhập kiểm tra từng dòng theo đúng quy tắc của form thủ công (Mã không trùng, Loại và Loại số dư hợp lệ) trước khi ghi, và báo lỗi theo từng dòng thay vì huỷ cả file.<span class="then">Danh mục hiện có hơn 30 tài khoản được gõ tay từng dòng một — quá chậm để dựng đủ bảng tài khoản khi triển khai mới.</span></li>
-      <li><b>Hai tuỳ chọn "Yêu cầu đối tác / Yêu cầu dự án" — chưa chốt.</b> Mockup gốc còn cho thấy hai công tắc theo từng tài khoản, buộc mọi bút toán vào tài khoản đó phải kèm đối tác hoặc dự án.<span class="then">Việc có giữ lại hai tuỳ chọn này hay không, và nếu giữ thì hiển thị dưới dạng checkbox hay switch có nhãn, <b>chưa chốt</b> — theo dõi như một vấn đề cần chốt.</span></li>
+      <li><b>Nhập Excel theo lô.</b> Tạo/cập nhật hàng loạt tài khoản qua file mẫu với các cột Mã, Tên, Mã tài khoản cha và ba cột theo dõi (đối tác, công nợ, dự án — đánh <code>C</code> là bật); bộ nhập kiểm tra từng dòng theo đúng quy tắc của form thủ công (Mã không trùng, Mã bắt đầu bằng số loại tài khoản 1–9) trước khi ghi, và báo lỗi theo từng dòng thay vì huỷ cả file.<span class="then">Danh mục hiện có hơn 30 tài khoản được gõ tay từng dòng một — quá chậm để dựng đủ bảng tài khoản khi triển khai mới.</span></li>
+      <li><b>Ba cờ theo dõi lấy đúng theo danh mục khách hàng gửi.</b> Danh mục tài khoản của khách hàng (file DM-up, sheet DMTK) đánh dấu từng tài khoản bằng ba cột “C”: theo dõi đối tác, theo dõi công nợ, theo dõi dự án — hệ thống lưu đúng ba cờ đó, hiển thị dạng công tắc có nhãn (chốt 31/10/2026).<span class="then">Một cờ “đối tác” chung cho nhà cung cấp, khách hàng và nhân viên thay cho cờ “công nợ nhân viên” riêng trước đây; cờ “công nợ” tách khỏi cờ “đối tác” để tài khoản ngân hàng con (đối tượng là ngân hàng) không lọt vào sổ công nợ.</span></li>
+      <li><b>Loại tài khoản và loại số dư suy theo đầu số.</b> Đầu 1–2 là Tài sản / Nợ, 3 là Nợ phải trả / Có, 4 là Vốn chủ sở hữu / Có, 5 và 7 là Doanh thu / Có, 6 và 8 là Chi phí / Nợ, 9 là Kết chuyển / không số dư; ngoại lệ: <code>214</code> hao mòn số dư Có, <code>421</code> lưỡng tính, <code>521</code> giảm trừ doanh thu số dư Nợ.<span class="then">Danh mục khách hàng chỉ có mã và tên; form không hỏi hai trường này nên không thể nhập lệch với số hiệu.</span></li>
     
       <li><b>Màn hình này <em>không</em> có bộ lọc khoảng thời gian.</b> Danh mục tài khoản là danh mục nền: nó không có con số nào cộng dồn theo thời gian để mà lọc (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Một bộ lọc không lọc gì chỉ làm người dùng nghi ngờ mình đang xem thiếu dữ liệu, rồi đi hỏi. Ranh giới “màn hình nào có, màn hình nào không” đang chờ chốt ở <a href="#Q-52">PL-C · Q-52</a>.</span></li>
     </ol>
@@ -15119,7 +15124,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
           <tr><td>Trùng Mã tài khoản</td><td><code>account_code</code> đã tồn tại</td><td>"Mã tài khoản {mã} đã tồn tại — {tên tài khoản hiện có}. Chọn mã khác."</td></tr>
-          <tr><td>Loại tài khoản không hợp lệ</td><td><code>account_type</code> ngoài 5 giá trị chuẩn</td><td>"Loại tài khoản không hợp lệ. Chọn một trong: Tài sản, Nguồn vốn, Doanh thu, Chi phí, Tài khoản kết chuyển (911)."</td></tr>
+          <tr><td>Mã không suy được loại tài khoản</td><td><code>account_code</code> không bắt đầu bằng chữ số 1–9</td><td>"Mã tài khoản phải bắt đầu bằng số loại tài khoản (1–9)."</td></tr>
+          <tr><td>Theo dõi công nợ mà không theo dõi đối tác</td><td><code>tracks_debt</code> bật, <code>requires_partner</code> tắt</td><td>"Tài khoản theo dõi công nợ phải theo dõi đối tác."</td></tr>
           <tr><td>Hạch toán vào tài khoản tổng hợp</td><td>Tài khoản được chọn có <code>is_summary = true</code></td><td>"Tài khoản {mã} — {tên} là tài khoản tổng hợp, chỉ dùng để lên báo cáo. Chọn tài khoản chi tiết bên dưới nó."</td></tr>
           <tr><td>Sửa Mã tài khoản sau khi tạo</td><td><code>account_code</code> khác bản gốc của tài khoản đã tồn tại</td><td>"Mã tài khoản không thể sửa sau khi tạo. Ngừng dùng tài khoản này và tạo tài khoản mới nếu cần đổi mã."</td></tr>
           <tr><td>Import Excel có dòng lỗi</td><td>Dòng vi phạm Mã trùng / Loại không hợp lệ / Loại số dư không hợp lệ</td><td>"{n} dòng lỗi trên tổng {tổng} dòng. Dòng {số dòng}: {mô tả lỗi}. {tổng − n} dòng hợp lệ đã được nhập."</td></tr>
@@ -15168,7 +15174,7 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <table>
         <thead><tr><th style="width:40px">#</th><th>Báo cáo</th><th>Chiều lọc riêng</th><th>Yêu cầu đặc thù trong bảng gốc</th><th class="c">Nguồn</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>Bảng cân đối tài khoản</td><td>Kỳ · đơn vị · cấp tài khoản</td><td>—</td><td class="k"><a href="#ACC-08">ACC-08</a></td></tr>
+          <tr><td>1</td><td>Bảng cân đối tài khoản</td><td>Kỳ · đơn vị · cấp tài khoản</td><td><b>Cột theo bảng cân đối của công ty; nhập số dư ban đầu</b> — góp ý 31/10/2026, xem <a href="#Q-150">Q-150</a></td><td class="k"><a href="#ACC-08">ACC-08</a></td></tr>
           <tr><td>2</td><td>Sổ chi tiết tài khoản</td><td>Kỳ · tài khoản · dự án</td><td>—</td><td class="k"><a href="#ACC-08">ACC-08</a></td></tr>
           <tr><td>3</td><td>Sổ chi tiết công nợ phải thu / phải trả</td><td>Đối tác · công trình · tuổi nợ</td><td><b>Có thêm cột tên hàng, đơn giá, số lượng</b></td><td class="k"><a href="#ACC-05">ACC-05</a></td></tr>
           <tr><td>4</td><td>Tổng hợp công nợ phải thu / phải trả</td><td>Công trình · đối tác</td><td><b>Chi tiết theo công trình và tổng hợp chung — cùng một báo cáo, hai chế độ xem</b></td><td class="k"><a href="#ACC-05">ACC-05</a></td></tr>
@@ -15365,6 +15371,8 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
       <li><b>PDF theo mẫu công ty.</b> Bản PDF có đầu trang, kỳ báo cáo, người lập, thời điểm xuất và số trang.<span class="then">Dùng trực tiếp làm hồ sơ nộp, không cần định dạng lại.</span></li>
       <li><b>Sổ chi tiết hàng hóa hai cột giá trị.</b> Hiển thị song song giá trị chưa phân bổ vận chuyển và đã phân bổ.<span class="then">Chỉ chi phí vận chuyển <em>về nhà máy</em> vào cột thứ hai — xem <a href="#PL-C">Q-06</a>.</span><span class="then">Từ 28/10/2026 cước gõ ngay trên phiếu nhập (<a href="#Q-142">Q-142</a>) cũng vào cột thứ hai; giá trị nhập kho của dự án đọc theo giá nhập kho của dòng — thành tiền cộng CP VC của dòng — chứ không theo thành tiền.</span></li>
       <li><b>Chi phí không hợp lý lấy theo cờ</b> <em>(góp ý 23/10/2026 · chốt <a href="#Q-136">Q-136</a>)</em>. Báo cáo đọc từng dòng bút toán đã ghi sổ có <code>is_deductible = false</code> — từ đề xuất đã thành phiếu nhập, phiếu xuất, phiếu kế toán, chứng từ chi. Lọc theo tài khoản (gồm tài khoản con), dự án (có <code>CHUNG</code>) và khoảng ngày chứng từ. Không chọn tài khoản thì chỉ lấy tài khoản chi phí.<span class="then">Phía 331, 111 của cùng khoản chi mang cùng cờ nhưng không bị đếm hai lần. Mỗi dòng có ngày, số chứng từ, diễn giải, tài khoản, dự án, khoản mục, số tiền; xuất Excel đúng bộ lọc đang chọn.</span></li>
+      <li><b>Bảng cân đối theo khuôn của công ty</b> <em>(góp ý 31/10/2026)</em>. Tám cột theo đúng thứ tự trong bảng cân đối công ty đang dùng: Tài khoản · Tên tài khoản · Dư nợ đầu kỳ · Dư có đầu kỳ · Phát sinh nợ · Phát sinh có · Dư nợ cuối kỳ · Dư có cuối kỳ. Dòng tài khoản tổng hợp in đậm cả dòng, là tổng của các dòng con ngay dưới nó; tên lùi vào theo cấp, cột mã giữ thẳng hàng. Cả cây tài khoản hiện trên một trang, không phân trang; số 0 hiện “—”.<span class="then">Bấm mã tài khoản mở sổ chi tiết của tài khoản đó trong cùng kỳ.</span></li>
+      <li><b>Số dư ban đầu là một phiếu kế toán</b> <em>(góp ý 31/10/2026 · tạm chốt <a href="#Q-150">Q-150</a>)</em>. Dư nợ / dư có đầu kỳ chuyển từ sổ sách trước khi dùng hệ thống được nhập bằng nút “Số dư ban đầu” trên bảng cân đối: tải tệp mẫu hoặc chính bảng cân đối của công ty (.xlsx), chọn ngày số dư. Hệ thống tìm dòng tiêu đề có cột Tài khoản, Dư nợ đầu kỳ, Dư có đầu kỳ ở bất kỳ dòng nào, bỏ qua dòng tài khoản tổng hợp và các cột phát sinh, cuối kỳ. Tài khoản theo dõi đối tượng (công nợ, tạm ứng, tài khoản ngân hàng 112x…) cần cột Mã đối tượng — mã đối tác (gồm ngân hàng) hoặc mã nhân viên, mỗi đối tượng một dòng; tài khoản theo dõi dự án nhận cột Mã công trình, bỏ trống là <code>CHUNG</code>. Kết quả ghi thành một phiếu kế toán loại <code>số dư ban đầu</code> (<a href="#ACC-08">ACC-08</a>).<span class="then">Mọi báo cáo đọc phiếu này là số dư đầu kỳ, bất kể ngày chứng từ: bảng cân đối, sổ chi tiết tài khoản và sổ công nợ chạy từ ngày đầu tiên vẫn mở ra bằng số dư ban đầu, không tính nó vào phát sinh.</span><span class="then">Nhập lại thì đảo phiếu cũ (phiếu đảo mang ngày của phiếu cũ) rồi ghi phiếu mới, trong cùng một lần — số liệu cũ vẫn còn trên sổ để đối chiếu.</span><span class="then">Tệp còn một dòng lỗi thì không ghi gì; tổng dư nợ phải bằng tổng dư có.</span></li>
       <li><b>Đối chiếu với sổ cái.</b> Mỗi báo cáo có nút đối chiếu nhanh với số liệu sổ cái cùng kỳ.<span class="then">Lệch thì chỉ ra khoản mục và chứng từ gây lệch.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo kỳ báo cáo của từng báo cáo.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Mỗi báo cáo kế toán khai mốc riêng trong bảng danh mục báo cáo của trang.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="#PF-01">PF-01</a>.</span></li>
@@ -15378,6 +15386,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>Kỳ quá rộng</td><td>&gt; 24 tháng</td><td>“Kỳ báo cáo dài {n} tháng có thể chậm. Thu hẹp kỳ hoặc dùng xuất Excel theo lô.”</td></tr>
           <tr><td>Không có dữ liệu</td><td>Kết quả rỗng</td><td>“Không có số liệu với bộ lọc hiện tại. Kiểm tra kỳ, dự án và phạm vi dữ liệu của bạn.”</td></tr>
           <tr><td>Đối chiếu lệch sổ cái</td><td>Chênh ≠ 0</td><td>“Lệch {giá trị} so với sổ cái. Khoản mục: {danh sách}. Bấm để xem chứng từ nghi vấn.”</td></tr>
+          <tr><td>Số dư ban đầu — tệp thiếu cột</td><td>Không dòng nào trong 30 dòng đầu có đủ Tài khoản, Dư nợ đầu kỳ, Dư có đầu kỳ</td><td>“Không tìm thấy dòng tiêu đề có đủ cột Tài khoản, Dư nợ đầu kỳ, Dư có đầu kỳ.”</td></tr>
+          <tr><td>Số dư ban đầu — dòng lỗi</td><td>Tài khoản không có trong danh mục, ngừng sử dụng hoặc là tài khoản doanh thu / chi phí; TK theo dõi đối tượng thiếu Mã đối tượng; mã đối tượng / công trình không có; một dòng ghi cả hai bên; trùng dòng</td><td>“Tệp còn dòng lỗi, chưa nhập được — dòng {n}: {lý do}; …” (tối đa 5 dòng, kèm số dòng còn lại)</td></tr>
+          <tr><td>Số dư ban đầu — không cân</td><td>Tổng dư nợ ≠ tổng dư có</td><td>“Tổng dư nợ {x} khác tổng dư có {y} (lệch {z}). Số dư ban đầu phải cân.”</td></tr>
           <tr><td>Kỳ chưa chốt</td><td>Kỳ đang mở</td><td>“Kỳ {kỳ} chưa chốt, số liệu còn thay đổi. Bản in sẽ ghi rõ ‘số liệu tạm tính’.”</td></tr>
         </tbody>
       </table>
@@ -15395,12 +15406,15 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
           <tr><td>UAT-RPT01-5</td><td>Lô hàng đã phân bổ chi phí vận chuyển</td><td>Mở sổ chi tiết hàng hóa</td><td>Hai cột giá trị: trước và sau phân bổ vận chuyển</td></tr>
           <tr><td>UAT-RPT01-6</td><td>Có 3 chứng từ đánh dấu không hợp lý</td><td>Mở báo cáo chi phí không hợp lý, rồi lọc một tài khoản, một dự án, một khoảng ngày</td><td>Không lọc: đủ 3 khoản trên tài khoản chi phí, không có dòng 331 / 111; mỗi bộ lọc chỉ giữ dòng khớp</td></tr>
           <tr><td>UAT-RPT01-7</td><td>Kỳ quý 3 đã chốt</td><td>Bấm đối chiếu sổ cái</td><td>Chênh lệch bằng 0</td></tr>
+          <tr><td>UAT-RPT01-8</td><td>Bảng cân đối của công ty: tiêu đề ở dòng 9, có dòng 241 (tổng hợp) và 2412 dư nợ 5.193.374.829, 3311 theo từng nhà cung cấp</td><td>Bấm “Số dư ban đầu”, chọn ngày 01/10/2026, nhập tệp</td><td>Ghi một phiếu số dư ban đầu; dòng 241 bị bỏ qua; bảng cân đối từ 01/10/2026 hiện 2412 và 241 ở cột dư nợ đầu kỳ, không ở phát sinh; sổ công nợ mở bằng số dư từng nhà cung cấp</td></tr>
+          <tr><td>UAT-RPT01-9</td><td>Đã có phiếu số dư ban đầu</td><td>Sửa một con số trong tệp, nhập lại</td><td>Phiếu cũ bị đảo, phiếu mới ghi; bảng cân đối hiện số mới; danh sách phiếu kế toán còn cả phiếu cũ và phiếu đảo</td></tr>
+          <tr><td>UAT-RPT01-10</td><td>Tệp có dòng 331 không ghi Mã đối tượng, tổng hai bên lệch 200</td><td>Nhập tệp</td><td>Không ghi gì; thông điệp nêu số dòng thiếu mã đối tượng</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="#ACC-05">ACC-05 công nợ</a><a href="#ACC-06">ACC-06 tài sản</a><a href="#ACC-08">ACC-08 sổ cái</a><a href="#ACC-09">ACC-09 chi phí công trình</a><a href="#PF-02">PF-02 phạm vi dữ liệu</a><a href="#PL-C">Phụ lục C — Q-06</a></p>
+    <p class="links"><a href="#ACC-05">ACC-05 công nợ</a><a href="#ACC-06">ACC-06 tài sản</a><a href="#ACC-08">ACC-08 sổ cái</a><a href="#ACC-09">ACC-09 chi phí công trình</a><a href="#PF-02">PF-02 phạm vi dữ liệu</a><a href="#PL-C">Phụ lục C — Q-06</a><a href="#Q-150">Q-150 – Q-152 số dư ban đầu</a></p>
   </div>
 </section>
 <section class="sheet" id="RPT-02">
@@ -17206,6 +17220,9 @@ table.uat td:first-child{font-family:var(--font-m);font-size:12px;color:var(--ac
         <tr id="Q-147"><td class="k">Q-147</td><td><b>Dòng đầu mục và hai dải nhóm HSMT / bổ sung</b> — dòng có <code>*</code> ở cột Mã HM của CĐT là dòng đầu mục (mục 8); trước đây bảng cố ý không có dòng tiêu đề, hai dải “Công việc theo HSMT / Nhà thầu bổ sung” chỉ là thuộc tính <code>line_group</code></td><td><b>Tạm chốt 16/10/2026:</b> dòng đầu mục là dòng thật, chỉ có tên, không khối lượng, không tiền, không STT, không mã HM. <code>line_group</code> vẫn là thuộc tính của dòng và vẫn quyết định tiểu cộng theo nhóm; dòng dải nhóm trong tệp nhập vừa đặt nhóm cho các dòng dưới nó, vừa giữ lại thành một dòng đầu mục để người lập nhìn thấy — mã HM của đầu mục, dải nhóm: xem <a href="#Q-139">Q-139</a> (thay thế từ 28/10/2026)</td><td class="c">P. Đấu thầu</td><td class="c"><a href="#BID-01">BID-01</a></td></tr>
         <tr id="Q-148"><td class="k">Q-148</td><td><b>Tệp báo giá gửi đối tác có in dòng đá chi tiết không</b> — dòng chi tiết là cơ cấu giá nội bộ, nhưng bảng tổng hợp giá trị đơn hàng và tệp báo giá đang in mọi dòng của BOQ</td><td><b>Tạm chốt 16/10/2026:</b> không in dòng chi tiết; dòng đầu mục in thành dải tiêu đề kèm tiểu cộng; đầu việc in đơn giá đã ghép. P. Đấu thầu xác nhận khi xem bản dựng có bên mời thầu nào đòi bảng phân tích theo loại đá không</td><td class="c">P. Đấu thầu</td><td class="c"><a href="#BID-03">BID-03</a></td></tr>
         <tr id="Q-149"><td class="k">Q-149</td><td><b>Dòng chi tiết khi vòng giá tắt cấu phần “Đá” hoặc dùng bộ cấu phần cũ</b> — giá ghép đọc cấu phần đá; vòng giá mở trước khi tách cấu phần còn gộp vào <code>cost_material</code></td><td><b>Tạm chốt 16/10/2026:</b> không tắt được cấu phần Đá khi bảng có dòng chi tiết; vòng giá theo bộ cũ thì dòng chi tiết nhập vào ô vật liệu gộp</td><td class="c">Kỹ thuật</td><td class="c"><a href="#BID-03">BID-03</a></td></tr>
+        <tr id="Q-150"><td class="k">Q-150</td><td><b>Số dư ban đầu khi bắt đầu dùng hệ thống</b> — góp ý 31/10/2026: bảng cân đối phải có dư nợ / dư có đầu kỳ như bảng cân đối công ty đang dùng (2412 dư nợ 5.193.374.829, 214x dư có…). Bản dựng: đầu kỳ chỉ cộng các bút toán trước “Từ ngày”, không có chỗ nhập số dư chuyển từ sổ cũ, nên sau khi dữ liệu được làm sạch hai cột đầu kỳ trống</td><td><b>Tạm chốt 31/10/2026:</b> nhập bằng tệp (bảng cân đối của công ty hoặc tệp mẫu) thành một phiếu kế toán loại <code>số dư ban đầu</code>; mọi báo cáo đọc phiếu này là đầu kỳ bất kể ngày; tài khoản công nợ bắt buộc chi tiết theo đối tượng; nhập lại thì đảo phiếu cũ. Còn cần P. Kế toán xác nhận: có cho nhập lại sau khi kỳ chứa phiếu cũ đã chốt không — bản dựng từ chối, vì phiếu đảo phải nằm cùng kỳ với phiếu cũ, và muốn nhập lại phải mở lại kỳ đó</td><td class="c">P. Kế toán</td><td class="c"><a href="#RPT-01">RPT-01</a></td></tr>
+        <tr id="Q-151"><td class="k">Q-151</td><td><b>Hai nơi nhập số dư tiền</b> — danh mục quỹ của <a href="#ACC-07">ACC-07</a> có “số dư và ngày số dư đầu kỳ” riêng cho sổ quỹ / sổ tiền gửi, còn phiếu số dư ban đầu (<a href="#Q-150">Q-150</a>) ghi số dư 111x / 112x trên sổ cái. Hai con số nhập độc lập và có thể lệch nhau</td><td><b>Tạm chốt 31/10/2026:</b> để riêng; kế toán tự giữ hai con số khớp nhau. Cần chốt: hợp nhất về một nguồn (số dư quỹ lấy từ phiếu số dư ban đầu theo tài khoản của quỹ), hay ít nhất cảnh báo khi tổng 111x / 112x lệch tổng số dư các quỹ</td><td class="c">P. Kế toán</td><td class="c"><a href="#ACC-07">ACC-07</a></td></tr>
+        <tr id="Q-152"><td class="k">Q-152</td><td><b>Số dư ban đầu chưa gồm số lượng tồn kho và dở dang theo hạng mục</b> — phiếu số dư ban đầu chỉ mang giá trị trên tài khoản (152x, 1542x theo mã công trình). Số lượng tồn của từng vật tư ở từng kho, và chi phí dở dang đầu kỳ theo hạng mục của <a href="#ACC-09">ACC-09</a>, chưa có chỗ nhập</td><td><b>Cần chốt:</b> tồn kho đầu kỳ nhập bằng phiếu nhập kho số dư (<a href="#ACC-03">ACC-03</a>) để có cả số lượng, hay tệp riêng theo kho × vật tư khớp với số dư 152x; dở dang đầu kỳ của ACC-09 đọc từ số dư 1542x theo công trình hay nhập riêng</td><td class="c">P. Kế toán</td><td class="c"><a href="#ACC-03">ACC-03</a></td></tr>
       </tbody>
     </table>
   </div>

@@ -99,8 +99,8 @@
  viewBox="0.00 0.00 780.00 680.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g font-family="Barlow, system-ui, sans-serif">
 <rect x="230" y="44" width="300" height="46" fill="#dde3e9" stroke="#5d6b7a"/>
-<text x="380" y="62" text-anchor="middle" font-size="12.5" fill="#16202a">Nhập Mã, Tên, Loại tài khoản,</text>
-<text x="380" y="77" text-anchor="middle" font-size="12.5" fill="#16202a">Loại số dư thường (bắt buộc)</text>
+<text x="380" y="62" text-anchor="middle" font-size="12.5" fill="#16202a">Nhập Mã, Tên (bắt buộc), TK cha</text>
+<text x="380" y="77" text-anchor="middle" font-size="12.5" fill="#16202a">và 3 cờ theo dõi; loại, số dư suy theo mã</text>
 
 <path d="M380,90 L380,98" fill="none" stroke="#55606b"/>
 <polygon points="376,98 384,98 380,104" fill="#55606b" stroke="#55606b"/>
@@ -180,10 +180,13 @@
         <tbody>
           <tr><td>Mã tài khoản</td><td class="k">account_code</td><td>Chuỗi</td><td class="c req">✱</td><td>Duy nhất trong toàn hệ thống; theo khung số hiệu chuẩn kế toán Việt Nam (vd. <code>111</code>, <code>156</code>, <code>5113</code>). Không sửa được sau khi tạo.</td></tr>
           <tr><td>Tên tài khoản</td><td class="k">account_name</td><td>Chuỗi</td><td class="c req">✱</td><td>—</td></tr>
-          <tr><td>Loại tài khoản</td><td class="k">account_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>Tài sản</code> · <code>Nguồn vốn</code> · <code>Doanh thu</code> · <code>Chi phí</code> · <code>Tài khoản kết chuyển (911)</code>.</td></tr>
-          <tr><td>Loại số dư</td><td class="k">balance_side</td><td>Chọn 1</td><td class="c req">✱</td><td><code>Nợ</code> · <code>Có</code> · <code>Lưỡng tính</code> · <code>Không có số dư</code>.</td></tr>
+          <tr><td>Loại tài khoản</td><td class="k">account_type</td><td>Cờ hệ thống</td><td class="c">—</td><td>Chỉ đọc — suy theo đầu số tài khoản (Quy tắc 6): <code>Tài sản</code> · <code>Nguồn vốn</code> · <code>Doanh thu</code> · <code>Chi phí</code> · <code>Tài khoản kết chuyển (911)</code>.</td></tr>
+          <tr><td>Loại số dư</td><td class="k">balance_side</td><td>Cờ hệ thống</td><td class="c">—</td><td>Chỉ đọc — suy theo đầu số tài khoản (Quy tắc 6): <code>Nợ</code> · <code>Có</code> · <code>Lưỡng tính</code> · <code>Không có số dư</code>.</td></tr>
           <tr><td>Tài khoản cha</td><td class="k">parent_account_id</td><td>Tham chiếu</td><td class="c">—</td><td>Trỏ về chính danh mục này; xác định vị trí trong cây phân cấp mã số (vd. <code>156</code> là cha của <code>1561</code>, <code>1562</code>).</td></tr>
           <tr><td>Tính chất</td><td class="k">is_summary</td><td>Cờ hệ thống</td><td class="c">—</td><td>Chỉ đọc — suy ra tự động từ việc tài khoản có tài khoản con hay không (Quy tắc 1).</td></tr>
+          <tr><td>Theo dõi đối tác</td><td class="k">requires_partner</td><td>Boolean</td><td class="c">—</td><td>Cột “Theo dõi đối tác (MÃ NCC/KH/NVIEN)” của danh mục khách hàng gửi. Bật thì mọi dòng hạch toán vào tài khoản phải có đối tượng — nhà cung cấp, khách hàng <b>hoặc nhân viên</b>.</td></tr>
+          <tr><td>Theo dõi công nợ</td><td class="k">tracks_debt</td><td>Boolean</td><td class="c">—</td><td>Cột “Theo dõi công nợ”. Bật thì tài khoản lên sổ công nợ (<a href="ACC-05.html">ACC-05</a>) và bảng cân đối tách số dư theo từng đối tượng. Chỉ bật được khi đã bật Theo dõi đối tác.</td></tr>
+          <tr><td>Theo dõi dự án</td><td class="k">requires_project</td><td>Boolean</td><td class="c">—</td><td>Cột “Theo dõi dự án”. Bật thì mọi dòng hạch toán vào tài khoản phải có mã dự án.</td></tr>
           <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c">—</td><td><code>Đang dùng</code> · <code>Ngừng dùng</code>. Tài khoản ngừng dùng không hiện trong danh sách chọn khi hạch toán.</td></tr>
         </tbody>
       </table>
@@ -229,15 +232,16 @@
               <div class="wf-c"><div class="wf-f"><label>Tên ✱</label><div class="in">Hàng hóa — đá nhân tạo</div></div></div>
             </div>
             <div class="wf-row">
-              <div class="wf-c"><div class="wf-f"><label>Loại ✱</label><div class="in">Tài sản <em>▾</em></div></div></div>
-              <div class="wf-c"><div class="wf-f"><label>Số dư thường ✱</label><div class="in">Nợ <em>▾</em></div></div></div>
+              <div class="wf-c"><div class="wf-f"><label>Loại</label><div class="in ro">Tài sản <em>· theo đầu số</em></div></div></div>
+              <div class="wf-c"><div class="wf-f"><label>Số dư thường</label><div class="in ro">Nợ <em>· theo đầu số</em></div></div></div>
               <div class="wf-c"><div class="wf-f"><label>Tài khoản cha</label><div class="in">156 — Hàng hóa <em>▾</em></div></div></div>
             </div>
           </div></div>
           <div class="wf-c" style="flex:0 1 260px"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">6</span> Tuỳ chọn khi hạch toán</div>
-            <div class="wf-f"><label>Yêu cầu đối tác</label><div class="in ro">Tắt <span class="tag t-warn">Chưa chốt</span></div></div>
-            <div class="wf-f"><label>Yêu cầu dự án</label><div class="in ro">Tắt <span class="tag t-warn">Chưa chốt</span></div></div>
+            <div class="wf-lg"><span class="pin">6</span> Theo dõi</div>
+            <div class="wf-f"><label>Theo dõi đối tác (NCC / KH / NV)</label><div class="in">Tắt</div></div>
+            <div class="wf-f"><label>Theo dõi công nợ</label><div class="in">Tắt</div></div>
+            <div class="wf-f"><label>Theo dõi dự án</label><div class="in">Tắt</div></div>
           </div></div>
         </div>
       </div>
@@ -250,8 +254,8 @@
           <tr><td class="c"><span class="pin">2</span></td><td>Lọc danh mục</td><td>Lọc theo Loại tài khoản, tìm theo mã hoặc tên.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Danh sách tài khoản</td><td>Hiển thị đầy đủ phân cấp qua cột TK cha; sắp theo mã tài khoản.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Cột Tính chất</td><td>Chỉ đọc — <code>Tổng hợp</code> nếu có ít nhất một tài khoản con, ngược lại <code>Chi tiết</code>. Không có công tắc thủ công.</td></tr>
-          <tr><td class="c"><span class="pin">5</span></td><td>Form thêm tài khoản</td><td>Mã, Tên, Loại, Loại số dư bắt buộc; Tài khoản cha tuỳ chọn. Mã khoá chỉnh sửa ngay khi tạo xong.</td></tr>
-          <tr><td class="c"><span class="pin">6</span></td><td>Yêu cầu đối tác / dự án</td><td>Hai tuỳ chọn thấy trong mockup gốc, nhưng hình thức hiển thị (checkbox hay switch có nhãn) và việc giữ lại hay bỏ <b>chưa chốt</b> — xem Quy tắc nghiệp vụ #5.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Form thêm tài khoản</td><td>Mã, Tên bắt buộc; Tài khoản cha tuỳ chọn; Loại và Loại số dư chỉ đọc, suy theo đầu số (Quy tắc 6). Mã khoá chỉnh sửa ngay khi tạo xong.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Theo dõi đối tác / công nợ / dự án</td><td>Ba công tắc có nhãn, đúng ba cột “C” của danh mục khách hàng — xem Quy tắc nghiệp vụ #5. Bật “công nợ” thì tự bật “đối tác”; tắt “đối tác” thì tắt luôn “công nợ”.</td></tr>
           <tr><td class="c"><span class="pin">7</span></td><td>Nhập Excel</td><td>Tải file theo mẫu, kiểm tra từng dòng theo cùng quy tắc với form thủ công, báo lỗi theo dòng.</td></tr>
         </tbody>
       </table>
@@ -262,8 +266,9 @@
       <li><b>Tài khoản tổng hợp suy ra tự động.</b> Một tài khoản là tổng hợp khi và chỉ khi có ít nhất một tài khoản khác nhận nó làm tài khoản cha; form thêm tài khoản không có ô nào để tự đánh dấu "hạch toán tổng hợp".<span class="then">Mockup hiện tại cho phép gắn cờ này thủ công lúc tạo trong khi danh sách tài khoản lại hiển thị cờ từ một nguồn không rõ ràng — suy ra từ cây tài khoản thực tế loại bỏ hẳn sự mâu thuẫn đó.</span></li>
       <li><b>Chỉ hạch toán vào tài khoản chi tiết (lá).</b> Mọi bút toán ở các màn hình khác (phiếu kế toán, hoá đơn, phiếu thu chi…) chỉ được chọn tài khoản không có con làm đối tượng hạch toán; tài khoản tổng hợp bị từ chối khi chọn.<span class="then">Đúng nguyên tắc ghi sổ kép chuẩn mực; ngăn bút toán biến mất vào một tài khoản gộp không thể đối chiếu ngược về chứng từ gốc.</span></li>
       <li><b>Mã tài khoản không sửa được sau khi tạo.</b> Đổi số hiệu của một tài khoản đã có phát sinh sẽ làm sai lệch các bút toán lịch sử; muốn đổi phân loại thì ngừng dùng tài khoản cũ và tạo tài khoản mới.<span class="then">Bảo toàn tính nhất quán của sổ cái qua các kỳ đã chốt.</span></li>
-      <li><b>Nhập Excel theo lô.</b> Tạo/cập nhật hàng loạt tài khoản qua file mẫu với các cột Mã, Tên, Loại, Loại số dư, Mã tài khoản cha; bộ nhập kiểm tra từng dòng theo đúng quy tắc của form thủ công (Mã không trùng, Loại và Loại số dư hợp lệ) trước khi ghi, và báo lỗi theo từng dòng thay vì huỷ cả file.<span class="then">Danh mục hiện có hơn 30 tài khoản được gõ tay từng dòng một — quá chậm để dựng đủ bảng tài khoản khi triển khai mới.</span></li>
-      <li><b>Hai tuỳ chọn "Yêu cầu đối tác / Yêu cầu dự án" — chưa chốt.</b> Mockup gốc còn cho thấy hai công tắc theo từng tài khoản, buộc mọi bút toán vào tài khoản đó phải kèm đối tác hoặc dự án.<span class="then">Việc có giữ lại hai tuỳ chọn này hay không, và nếu giữ thì hiển thị dưới dạng checkbox hay switch có nhãn, <b>chưa chốt</b> — theo dõi như một vấn đề cần chốt.</span></li>
+      <li><b>Nhập Excel theo lô.</b> Tạo/cập nhật hàng loạt tài khoản qua file mẫu với các cột Mã, Tên, Mã tài khoản cha và ba cột theo dõi (đối tác, công nợ, dự án — đánh <code>C</code> là bật); bộ nhập kiểm tra từng dòng theo đúng quy tắc của form thủ công (Mã không trùng, Mã bắt đầu bằng số loại tài khoản 1–9) trước khi ghi, và báo lỗi theo từng dòng thay vì huỷ cả file.<span class="then">Danh mục hiện có hơn 30 tài khoản được gõ tay từng dòng một — quá chậm để dựng đủ bảng tài khoản khi triển khai mới.</span></li>
+      <li><b>Ba cờ theo dõi lấy đúng theo danh mục khách hàng gửi.</b> Danh mục tài khoản của khách hàng (file DM-up, sheet DMTK) đánh dấu từng tài khoản bằng ba cột “C”: theo dõi đối tác, theo dõi công nợ, theo dõi dự án — hệ thống lưu đúng ba cờ đó, hiển thị dạng công tắc có nhãn (chốt 31/10/2026).<span class="then">Một cờ “đối tác” chung cho nhà cung cấp, khách hàng và nhân viên thay cho cờ “công nợ nhân viên” riêng trước đây; cờ “công nợ” tách khỏi cờ “đối tác” để tài khoản ngân hàng con (đối tượng là ngân hàng) không lọt vào sổ công nợ.</span></li>
+      <li><b>Loại tài khoản và loại số dư suy theo đầu số.</b> Đầu 1–2 là Tài sản / Nợ, 3 là Nợ phải trả / Có, 4 là Vốn chủ sở hữu / Có, 5 và 7 là Doanh thu / Có, 6 và 8 là Chi phí / Nợ, 9 là Kết chuyển / không số dư; ngoại lệ: <code>214</code> hao mòn số dư Có, <code>421</code> lưỡng tính, <code>521</code> giảm trừ doanh thu số dư Nợ.<span class="then">Danh mục khách hàng chỉ có mã và tên; form không hỏi hai trường này nên không thể nhập lệch với số hiệu.</span></li>
     
       <li><b>Màn hình này <em>không</em> có bộ lọc khoảng thời gian.</b> Danh mục tài khoản là danh mục nền: nó không có con số nào cộng dồn theo thời gian để mà lọc (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Một bộ lọc không lọc gì chỉ làm người dùng nghi ngờ mình đang xem thiếu dữ liệu, rồi đi hỏi. Ranh giới “màn hình nào có, màn hình nào không” đang chờ chốt ở <a href="PL-C.html#Q-52">PL-C · Q-52</a>.</span></li>
     </ol>
@@ -274,7 +279,8 @@
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
           <tr><td>Trùng Mã tài khoản</td><td><code>account_code</code> đã tồn tại</td><td>"Mã tài khoản {mã} đã tồn tại — {tên tài khoản hiện có}. Chọn mã khác."</td></tr>
-          <tr><td>Loại tài khoản không hợp lệ</td><td><code>account_type</code> ngoài 5 giá trị chuẩn</td><td>"Loại tài khoản không hợp lệ. Chọn một trong: Tài sản, Nguồn vốn, Doanh thu, Chi phí, Tài khoản kết chuyển (911)."</td></tr>
+          <tr><td>Mã không suy được loại tài khoản</td><td><code>account_code</code> không bắt đầu bằng chữ số 1–9</td><td>"Mã tài khoản phải bắt đầu bằng số loại tài khoản (1–9)."</td></tr>
+          <tr><td>Theo dõi công nợ mà không theo dõi đối tác</td><td><code>tracks_debt</code> bật, <code>requires_partner</code> tắt</td><td>"Tài khoản theo dõi công nợ phải theo dõi đối tác."</td></tr>
           <tr><td>Hạch toán vào tài khoản tổng hợp</td><td>Tài khoản được chọn có <code>is_summary = true</code></td><td>"Tài khoản {mã} — {tên} là tài khoản tổng hợp, chỉ dùng để lên báo cáo. Chọn tài khoản chi tiết bên dưới nó."</td></tr>
           <tr><td>Sửa Mã tài khoản sau khi tạo</td><td><code>account_code</code> khác bản gốc của tài khoản đã tồn tại</td><td>"Mã tài khoản không thể sửa sau khi tạo. Ngừng dùng tài khoản này và tạo tài khoản mới nếu cần đổi mã."</td></tr>
           <tr><td>Import Excel có dòng lỗi</td><td>Dòng vi phạm Mã trùng / Loại không hợp lệ / Loại số dư không hợp lệ</td><td>"{n} dòng lỗi trên tổng {tổng} dòng. Dòng {số dòng}: {mô tả lỗi}. {tổng − n} dòng hợp lệ đã được nhập."</td></tr>
