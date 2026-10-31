@@ -83,9 +83,9 @@
       <h3>Danh mục tài khoản kế toán</h3>
       <p>Danh mục tài khoản hiện chưa được quản lý tập trung — dựng lại mỗi kỳ trên bảng tính rời rạc. Màn hình này biến nó thành một <b>danh mục nền</b> như <a href="PF-01.html">PF-01</a>: nguồn duy nhất mà mọi phiếu kế toán, hoá đơn, phiếu thu chi ở ACC-01 đến ACC-09 tra cứu để chọn tài khoản hạch toán.</p>
       <dl class="tb-meta">
-        <div><dt>Thực hiện</dt><dd>Kế toán tổng hợp</dd></div>
+        <div><dt>Thực hiện</dt><dd>Kế toán trưởng · Admin <em>(yêu cầu 31/10/2026)</em></dd></div>
         <div><dt>Phê duyệt</dt><dd>Không qua luồng duyệt riêng — Kế toán trưởng rà soát định kỳ</dd></div>
-        <div><dt>Quyền truy cập</dt><dd>Phòng Kế toán</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Xem: Phòng Kế toán · Thêm, sửa, xóa: Admin · Kế toán trưởng</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>KT · <code>Van de can sua_05.09.26.xlsx</code>, sheet Kế toán</dd></div>
       </dl>
     </div>
@@ -199,6 +199,7 @@
       <li>Mã tài khoản không sửa được sau khi tạo; đổi phân loại nghĩa là ngừng dùng tài khoản cũ và tạo tài khoản mới.</li>
       <li>Import Excel tạo/cập nhật hàng loạt tài khoản, báo lỗi theo từng dòng thay vì huỷ cả file.</li>
       <li>Danh mục tài khoản trở thành nguồn duy nhất cho mọi màn hình hạch toán khác — không còn quản lý bằng bảng tính rời rạc.</li>
+      <li>Tài khoản tạo nhầm, chưa có phát sinh, xóa hẳn được; tài khoản đã có bút toán, có tài khoản con hoặc đang là tài khoản của kho, quỹ, khoản mục chỉ ngừng dùng. Chỉ Admin và Kế toán trưởng thêm, sửa, xóa <em>(yêu cầu 31/10/2026)</em>.</li>
     </ol>
 
     <h4>Mockup UI — Kế toán › Danh mục tài khoản</h4>
@@ -271,6 +272,7 @@
       <li><b>Loại tài khoản và loại số dư suy theo đầu số.</b> Đầu 1–2 là Tài sản / Nợ, 3 là Nợ phải trả / Có, 4 là Vốn chủ sở hữu / Có, 5 và 7 là Doanh thu / Có, 6 và 8 là Chi phí / Nợ, 9 là Kết chuyển / không số dư; ngoại lệ: <code>214</code> hao mòn số dư Có, <code>421</code> lưỡng tính, <code>521</code> giảm trừ doanh thu số dư Nợ.<span class="then">Danh mục khách hàng chỉ có mã và tên; form không hỏi hai trường này nên không thể nhập lệch với số hiệu.</span></li>
     
       <li><b>Màn hình này <em>không</em> có bộ lọc khoảng thời gian.</b> Danh mục tài khoản là danh mục nền: nó không có con số nào cộng dồn theo thời gian để mà lọc (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Một bộ lọc không lọc gì chỉ làm người dùng nghi ngờ mình đang xem thiếu dữ liệu, rồi đi hỏi. Ranh giới “màn hình nào có, màn hình nào không” đang chờ chốt ở <a href="PL-C.html#Q-52">PL-C · Q-52</a>.</span></li>
+      <li><b>Xóa tài khoản chưa dùng, ngừng tài khoản đã dùng</b> <em>(yêu cầu 31/10/2026)</em>. Danh sách có nút Xóa cạnh Sửa. Tài khoản bị xóa hẳn khi chưa có dòng bút toán nào — kể cả phiếu số dư ban đầu —, không có tài khoản con, và không là tài khoản của một dòng danh mục khác: tài khoản kho (<a href="ACC-02.html">ACC-02</a>), tài khoản của quỹ (<a href="ACC-07.html">ACC-07</a>), TK hạch toán mặc định của khoản mục chi phí (<a href="PF-01.html">PF-01</a>); ngược lại bị từ chối "{mã} đã được dùng — chỉ ngừng dùng được."<span class="then">Xóa tài khoản con cuối cùng thì tài khoản cha trở lại chi tiết, theo Quy tắc 1. Mã của tài khoản đã xóa tạo lại được; “mã không sửa được sau khi tạo” (Quy tắc 3) vẫn giữ cho tài khoản còn tồn tại.</span><span class="then">Thêm, sửa, xóa, ngừng dùng và nhập Excel chỉ dành cho Admin và Kế toán trưởng (<code>acc_catalog:write</code>); Kế toán viên chỉ xem — quy tắc chung ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -283,6 +285,7 @@
           <tr><td>Theo dõi công nợ mà không theo dõi đối tác</td><td><code>tracks_debt</code> bật, <code>requires_partner</code> tắt</td><td>"Tài khoản theo dõi công nợ phải theo dõi đối tác."</td></tr>
           <tr><td>Hạch toán vào tài khoản tổng hợp</td><td>Tài khoản được chọn có <code>is_summary = true</code></td><td>"Tài khoản {mã} — {tên} là tài khoản tổng hợp, chỉ dùng để lên báo cáo. Chọn tài khoản chi tiết bên dưới nó."</td></tr>
           <tr><td>Sửa Mã tài khoản sau khi tạo</td><td><code>account_code</code> khác bản gốc của tài khoản đã tồn tại</td><td>"Mã tài khoản không thể sửa sau khi tạo. Ngừng dùng tài khoản này và tạo tài khoản mới nếu cần đổi mã."</td></tr>
+          <tr><td>Xóa tài khoản đã dùng <em>(yêu cầu 31/10/2026)</em></td><td>Tài khoản có dòng bút toán, tài khoản con, hoặc là tài khoản của kho, quỹ, khoản mục chi phí — kể cả gọi thẳng máy chủ</td><td>"{mã} đã được dùng — chỉ ngừng dùng được."</td></tr>
           <tr><td>Import Excel có dòng lỗi</td><td>Dòng vi phạm Mã trùng / Loại không hợp lệ / Loại số dư không hợp lệ</td><td>"{n} dòng lỗi trên tổng {tổng} dòng. Dòng {số dòng}: {mô tả lỗi}. {tổng − n} dòng hợp lệ đã được nhập."</td></tr>
         </tbody>
       </table>
@@ -297,12 +300,15 @@
           <tr><td>UAT-ACC10-2</td><td>Tài khoản 156 vừa tạo, chưa có con</td><td>Tạo tiếp tài khoản 1561 với tài khoản cha = 156</td><td>Tài khoản 156 tự chuyển thành Tổng hợp (chỉ đọc); 1561 là Chi tiết</td></tr>
           <tr><td>UAT-ACC10-3</td><td>Tài khoản 156 đã là Tổng hợp (có con 1561, 1562)</td><td>Mở phiếu kế toán, chọn tài khoản 156 để hạch toán</td><td>Bị chặn — chỉ chọn được 1561 hoặc 1562</td></tr>
           <tr><td>UAT-ACC10-4</td><td>File Excel import 20 dòng: dòng 7 trùng mã, dòng 15 sai Loại tài khoản</td><td>Bấm "Nhập Excel"</td><td>18 dòng hợp lệ được tạo; báo lỗi rõ dòng 7 và dòng 15 kèm mô tả, không huỷ cả file</td></tr>
+          <tr><td>UAT-ACC10-5</td><td>Kế toán trưởng; TK 1111 đã có phiếu thu, phiếu chi ghi sổ <em>(yêu cầu 31/10/2026)</em></td><td>Bấm Xóa trên 1111, xác nhận</td><td>Bị chặn: "1111 đã được dùng — chỉ ngừng dùng được."; 1111 còn nguyên, chuyển Ngừng dùng được</td></tr>
+          <tr><td>UAT-ACC10-6</td><td>Kế toán trưởng; TK 7118 tạo nhầm dưới 711, là con duy nhất của 711, chưa có phát sinh; TK 156 có con 1561, 1562 <em>(yêu cầu 31/10/2026)</em></td><td>Xóa 7118; xóa 156; tạo lại 7118</td><td>7118 mất khỏi danh mục và khỏi ô chọn tài khoản, 711 trở lại tài khoản chi tiết; xóa 156 bị chặn "156 đã được dùng — chỉ ngừng dùng được."; tạo lại 7118 được</td></tr>
+          <tr><td>UAT-ACC10-7</td><td>Kế toán viên <em>(yêu cầu 31/10/2026)</em></td><td>Mở Danh mục tài khoản; gọi thẳng máy chủ sửa tên TK 642</td><td>Xem được cây tài khoản; không có nút Thêm, Sửa, Xóa, Nhập Excel; lời gọi thẳng bị chặn "Bạn không có quyền thực hiện thao tác này."</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PF-01.html">PF-01 danh mục nền</a><a href="ACC-08.html">ACC-08 Phiếu KT &amp; phân bổ</a><a href="ACC-09.html">ACC-09 Giá thành &amp; lãi lỗ</a></p>
+    <p class="links"><a href="PF-01.html">PF-01 danh mục nền</a><a href="ACC-08.html">ACC-08 Phiếu KT &amp; phân bổ</a><a href="ACC-09.html">ACC-09 Giá thành &amp; lãi lỗ</a><a href="PL-B.html">PL-B quyền ghi danh mục</a></p>
   </div>
 </section>
 <div class="filefoot">

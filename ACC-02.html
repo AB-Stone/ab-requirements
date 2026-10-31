@@ -341,6 +341,7 @@
       <li><b>Nhiều dự án chung một kho vật lý.</b> Với công trình nhỏ dùng chung mặt bằng, một kho gắn được nhiều mã dự án.<span class="then">Khi đó phiếu xuất bắt buộc chọn dự án, và báo cáo nhập xuất tồn vẫn tách được theo dự án.</span></li>
       <li><b>Kho K-CT ghi nguồn dự án.</b> Đá dư từ dự án hoàn nhập về nhà máy lưu ở K-CT và giữ tham chiếu dự án nguồn.<span class="then">Nhờ vậy khi nhà máy mua lại, giá trị được ghi nhận đúng về dự án đã hoàn nhập.</span></li>
       <li><b>Đóng kho cần tồn bằng 0.</b> Kho còn tồn thì không đóng được.<span class="then">Hệ thống đề xuất luồng điều chuyển hoặc hoàn nhập để làm sạch tồn trước.</span></li>
+      <li><b>Thêm, sửa, xóa kho trong danh mục</b> <em>(yêu cầu 31/10/2026)</em>. Danh mục kho có Thêm · Sửa · Xóa; với kho, <em>ngừng dùng</em> là Đóng kho. Kho bị xóa hẳn khi chưa có phiếu nhập, xuất, kiểm kê, định mức tồn hay tài sản nào tham chiếu; ngược lại bị từ chối “{mã} đã được dùng — chỉ ngừng dùng được.”<span class="then">Kho dự án sinh tự động ở <a href="BID-05.html">BID-05</a> là kho của một dự án — dự án trỏ tới nó — nên tính là đã được dùng: không xóa, chỉ đóng kho khi dự án kết thúc.</span><span class="then">Thêm, sửa, xóa kho chỉ dành cho Admin và Kế toán trưởng (<code>acc_warehouse:write</code>); Kế toán viên chỉ xem — quy tắc chung ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -350,7 +351,7 @@
         <tbody>
           <tr><td>Chọn nghiệp vụ không hợp lệ</td><td>Ngoài <code>allowed_ops</code></td><td>“Kho {mã} không thực hiện nghiệp vụ này. Nghiệp vụ cho phép: {danh sách}.”</td></tr>
           <tr><td>Đóng kho còn tồn</td><td>Tồn &gt; 0</td><td>“Kho còn {giá trị} tồn. Điều chuyển hoặc hoàn nhập hết trước khi đóng.”</td></tr>
-          <tr><td>Xóa kho có lịch sử</td><td>Có chứng từ tham chiếu</td><td>“Kho đã phát sinh {n} chứng từ, không xóa được. Chọn Đóng kho để ngừng sử dụng.”</td></tr>
+          <tr><td>Xóa kho có lịch sử</td><td>Có chứng từ, định mức tồn hay tài sản tham chiếu, hoặc là kho dự án sinh tự động — kể cả gọi thẳng máy chủ</td><td>“{mã} đã được dùng — chỉ ngừng dùng được.” <em>(yêu cầu 31/10/2026 — với kho, ngừng dùng là Đóng kho; thay “Kho đã phát sinh {n} chứng từ, không xóa được…”)</em></td></tr>
           <tr><td>Kho dự án không gắn dự án</td><td>Nhóm kho là dự án, thiếu <code>project_id</code></td><td>“Kho thuộc nhóm dự án phải gắn ít nhất một mã dự án.”</td></tr>
           <tr><td>Định mức lớn hơn sức chứa</td><td>Định mức &gt; tồn tối đa khai báo — trường sức chứa chưa khai, xem <a href="PL-C.html">Q-17</a></td><td>“Định mức tối thiểu {số} vượt sức chứa khai báo {số}. Kiểm tra lại đơn vị tính.”</td></tr>
         </tbody>
@@ -368,6 +369,8 @@
           <tr><td>UAT-ACC02-4</td><td>Tài sản TS-0012 ở kho tổng</td><td>Xem hồ sơ tài sản</td><td>Vị trí kế toán là kho tổng, vị trí vật lý ghi Nhà máy An Bình 2</td></tr>
           <tr><td>UAT-ACC02-5</td><td>Kho dự án còn tồn 40 m²</td><td>Bấm “Đóng kho”</td><td>Bị chặn kèm giá trị tồn và gợi ý luồng xử lý</td></tr>
           <tr><td>UAT-ACC02-6</td><td>Kho chung gắn DA-A và DA-B</td><td>Lập phiếu xuất từ kho này</td><td>Bắt buộc chọn dự án; báo cáo NXT tách được theo từng dự án</td></tr>
+          <tr><td>UAT-ACC02-7</td><td>Kế toán trưởng; kho <code>K-VT-NM02</code> vừa tạo nhầm, chưa có phiếu nào <em>(yêu cầu 31/10/2026)</em></td><td>Bấm Xóa trên kho đó, xác nhận</td><td>Kho mất khỏi danh mục và khỏi ô chọn kho của phiếu nhập, phiếu xuất</td></tr>
+          <tr><td>UAT-ACC02-8</td><td>Kế toán trưởng; kho K-DA-2026-020 sinh tự động, chưa có phiếu; kho K-NVL đã có phiếu nhập <em>(yêu cầu 31/10/2026)</em></td><td>Xóa từng kho; rồi đăng nhập Kế toán viên mở danh mục kho</td><td>Cả hai lần xóa bị chặn “… đã được dùng — chỉ ngừng dùng được.”; Kế toán viên xem được danh mục, không có nút Thêm, Sửa, Xóa, Đóng kho</td></tr>
         </tbody>
       </table>
     </div>
