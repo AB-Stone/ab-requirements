@@ -417,6 +417,7 @@
       <li><b>Tài sản cũ không khấu hao.</b> Bật cờ <code>is_secondhand</code> thì ẩn toàn bộ nhóm trường khấu hao và không sinh bút toán.<span class="then">Vẫn theo dõi hiện vật và vị trí đầy đủ như tài sản thường.</span></li>
       <li><b>Điều chuyển cần xác nhận nơi nhận.</b> Phiếu điều chuyển được duyệt vẫn chưa có hiệu lực cho tới khi Giám đốc dự án nơi nhận xác nhận.<span class="then">Trước thời điểm xác nhận, tài sản vẫn tính khấu hao cho nơi cũ — tránh tranh chấp chi phí giữa hai dự án.</span></li>
       <li><b>Số ngày là hệ số phân bổ.</b> Khấu hao kỳ chia theo số ngày tài sản ở từng vị trí trong kỳ.<span class="then">Tài sản di chuyển giữa kỳ thì chi phí chia đúng tỷ lệ cho từng dự án, không dồn hết cho nơi cuối kỳ.</span></li>
+      <li><b>Kỳ nhiều tháng trích đủ số tháng</b> <em>(yêu cầu 01/11/2026 · tạm chốt <a href="PL-C.html#Q-163">Q-163</a>)</em>. Kỳ kế toán dài 1–12 tháng (<a href="PF-01.html">PF-01</a>); khấu hao một kỳ bằng mức tháng (nguyên giá ÷ số năm ÷ 12) nhân số tháng của kỳ, tài sản chỉ sống một phần kỳ thì lấy phần đó theo số ngày.<span class="then">Kỳ quý của máy 1 triệu/tháng trích 3 triệu; kỳ một tháng giữ nguyên như trước.</span></li>
       <li><b>Kho tổng vẫn trích khấu hao.</b> Ngày ở kho tổng ghi khấu hao vào chi phí chung.<span class="then">Khối chi phí này chờ phân bổ ở <a href="ACC-08.html">ACC-08</a>; đây chính là mục đích tồn tại của kho tổng.</span></li>
       <li><b>Ghi giảm ngưng khấu hao theo biên bản.</b> Ngày ngưng trích lấy theo ngày ghi trên biên bản, không phải ngày nhập liệu.<span class="then">Nhập liệu muộn không làm sai kỳ khấu hao.</span></li>
       <li><b>Ghi giảm sinh đủ ba bút toán.</b> Giảm nguyên giá, giảm hao mòn lũy kế, và ghi nhận thu nhập bán thanh lý nếu có.<span class="then">Thiếu một bút toán thì bảng cân đối lệch, nên ba bút toán chạy trong một giao dịch.</span></li>
@@ -465,6 +466,7 @@
           <tr><td>UAT-ACC06-13</td><td>Bộ phần mềm thiết kế 45 triệu, nhóm TSCĐ vô hình, trả bằng tiền gửi <em>(sheet 28.10.2026 mục 14)</em></td><td>Ghi tăng, nguồn “kèm hạch toán”; TK Nợ điền sẵn của nhóm, đổi sang 2135; Có 1121; lưu</td><td>Bút toán Nợ 2135 / Có 1121 45 triệu ghi sổ ngay; thẻ hiện tài khoản Nợ 2135 và Có 1121; chọn Có trùng Nợ thì bị chặn</td></tr>
           <tr><td>UAT-ACC06-13</td><td>Tiếp UAT-ACC06-12, chạy khấu hao kỳ</td><td>Trích khấu hao kỳ</td><td>Khấu hao của máy mài thành dòng Nợ riêng mang cờ không hợp lý; hiện trên báo cáo chi phí không hợp lý của RPT-01</td></tr>
           <tr><td>UAT-ACC06-14</td><td>Máy cắt đã nhập qua phiếu nhập PN-2026-0412</td><td>Ghi tăng, nguồn “Đã hạch toán qua phiếu nhập”</td><td>Thẻ mở, không sinh bút toán ghi tăng; chọn “kèm hạch toán” kèm phiếu nhập thì bị chặn</td></tr>
+          <tr><td>UAT-ACC06-15</td><td>Máy 120 triệu, 10 năm (1 triệu/tháng), khấu hao từ 2025; kỳ <code>2026-01..03</code> <em>(yêu cầu 01/11/2026)</em></td><td>Chạy khấu hao kỳ sau 31/03/2026</td><td>Trích 3.000.000 cho kỳ</td></tr>
         </tbody>
       </table>
     </div>
