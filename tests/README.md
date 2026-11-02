@@ -41,7 +41,7 @@ Mỗi tệp chia làm hai nhóm:
 | [ACC-04.md](ACC-04.md) | Xuất kho & bán hàng | 10 + 9 |
 | [ACC-05.md](ACC-05.md) | Công nợ & thanh toán | 8 + 11 |
 | [ACC-06.md](ACC-06.md) | TSCĐ & CCDC | 8 + 11 |
-| [ACC-07.md](ACC-07.md) | Thu chi — quỹ & ngân hàng | 7 + 11 |
+| [ACC-07.md](ACC-07.md) | Thu chi — quỹ & ngân hàng | 7 + 14 |
 | [ACC-08.md](ACC-08.md) | Phiếu kế toán & phân bổ | 7 + 11 |
 | [ACC-09.md](ACC-09.md) | Giá thành & lãi lỗ | 8 + 15 |
 
@@ -71,7 +71,7 @@ Mỗi tệp chia làm hai nhóm:
 ## Luồng kiểm thử liên phân hệ (chạy end-to-end)
 
 1. **Dòng gói thầu → dự án**: BID-01 tiếp nhận và số hoá BOQ → BID-02 hai phiếu — *Rà soát, kiểm tra Hồ sơ mời thầu* (P. TQT) và *Khảo sát hiện trường* (Ban dự án) — hợp nhất thành BOQ v2 → BID-03 áp giá, gửi báo giá, chốt giá → BID-05 kiểm tra trước ký, ký số, khởi tạo dự án (sinh kho ở ACC-02, WBS cho PRJ-02, đợt thanh toán cho ORD-01, hồ sơ bản vẽ thiết kế và hồ sơ shopdrawing ở ORD-02). Nhánh rẽ: BID-03 trượt thầu → BID-04; gói gộp ở BID-01 thì huỷ gói đích, không huỷ gói nguồn.
-2. **Dòng chi phí dự án**: ACC-01 duyệt đề xuất → ACC-03 nhập kho (ghi chi phí trước VAT) → ACC-05 phát sinh phải trả → ACC-07 chi trả (3 sổ) → ACC-09 kết chuyển giá thành.
+2. **Dòng chi phí dự án**: ACC-01 duyệt đề xuất → ACC-03 nhập kho (ghi chi phí trước VAT) → ACC-05 phát sinh phải trả → ACC-07 chi trả (sổ quỹ theo tài khoản 111 / 112) → ACC-09 kết chuyển giá thành.
 3. **Dòng vật tư ra công trường**: ACC-03 nhập kho nhà máy → ACC-04 xuất thi công (điều chuyển nội bộ) → PRJ-04 xuất cho tổ đội (ghi chi phí) → ACC-09.
 4. **Dòng tài sản & khấu hao**: ACC-06 ghi tăng (kho tổng) → điều chuyển ra dự án → khấu hao theo số ngày → ACC-08 phân bổ phần kho tổng → ACC-09.
 5. **Dòng cuối kỳ**: ACC-08 phân bổ chi phí chung (khối CHUNG về 0) → ACC-09 chạy giá thành → chốt kỳ → đối chiếu tổng với sổ cái.
