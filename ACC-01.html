@@ -332,7 +332,7 @@
           <tr><td>Dòng đề xuất</td><td class="k">lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng chọn chế độ: <code>có số lượng</code> (vật tư, ĐVT, SL, đơn giá) hoặc <code>chỉ giá trị</code> (nội dung, thành tiền).</td></tr>
           <tr><td>Khoản mục chi phí</td><td class="k">cost_item_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Theo dòng.</td></tr>
           <tr><td>Mã thống kê</td><td class="k">stat_id</td><td>Tham chiếu</td><td class="c">—</td><td>—</td></tr>
-          <tr><td>Chi phí không hợp lý</td><td class="k">is_deductible</td><td>Boolean</td><td class="c req">✱</td><td>Ô tích “CP không hợp lý”, mặc định để trống — để trống là chi phí hợp lý; tích thì bắt buộc lý do (từ 23/10/2026 — <a href="PL-C.html#Q-136">Q-136</a>).</td></tr>
+          <tr><td>Chi phí không hợp lý</td><td class="k">is_deductible</td><td>Boolean</td><td class="c req">✱</td><td>Ô tích “CP không hợp lý”, mặc định để trống — để trống là chi phí hợp lý; có dòng tích thì ghi <b>một lý do chung cho cả đề xuất</b> — ô “Lý do không hợp lý” dưới bảng dòng, chỉ hiện khi có dòng tích (từ 03/11/2026 — <a href="PL-C.html#Q-181">Q-181</a>; trước đó mỗi dòng một lý do, <a href="PL-C.html#Q-136">Q-136</a>).</td></tr>
           <tr><td>Ngày cần hàng</td><td class="k">required_date</td><td>Ngày</td><td class="c req">✱</td><td>Dùng xếp ưu tiên cho đơn vị cung ứng.</td></tr>
           <tr><td>Tệp đề xuất</td><td class="k">files[]</td><td>Tệp</td><td class="c">—</td><td>Cho phép tải PDF đề xuất thay vì nhập chi tiết — đúng cột chứng từ gốc “Up file PDF đx hoặc form nhập liệu”.</td></tr>
           <tr><td>Lũy kế đã nhập</td><td class="k">qty_received</td><td>Số</td><td class="c">—</td><td>Hệ thống cộng từ các phiếu nhập kho có tick về đề xuất này.</td></tr>
@@ -419,6 +419,7 @@
       <li><b>Đóng sớm có lý do.</b> Nhà cung cấp không giao tiếp phần còn lại thì Ban dự án đóng đề xuất sớm kèm lý do.<span class="then">Phần chưa nhập ghi nhận là hủy, không treo vô thời hạn trong nhóm đang theo dõi.</span></li>
       <li><b>Đề xuất không còn là điều kiện nhập kho</b> <em>(yêu cầu 03/11/2026 · <a href="PL-C.html#Q-177">Q-177</a>)</em>. Phiếu nhập ở <a href="ACC-03.html">ACC-03</a> lập được không gắn đề xuất, không cần lý do hay Kế toán trưởng duyệt.<span class="then">Phiếu có tick đề xuất vẫn cộng lũy kế nhập và vẫn qua phê duyệt bổ sung khi vượt ngưỡng lệch.</span></li>
       <li><b>Tải PDF thay nhập chi tiết.</b> Cho phép đính kèm PDF đề xuất mà không nhập từng dòng.<span class="then">Nhưng hệ thống cảnh báo ngay khi lập: đề xuất kiểu này không tự khớp được với phiếu nhập kho, phải theo dõi thủ công.</span></li>
+      <li><b>Một lý do chi phí không hợp lý cho cả đề xuất</b> <em>(góp ý 03/11/2026 · tạm chốt <a href="PL-C.html#Q-181">Q-181</a>)</em>. Khách: “Bỏ hàng lý do của các dòng không hợp lý ở mỗi hàng, thay vào là 1 ô nhập chung cho cả form; khi xuất hiện chi phí không hợp lý thì hiện ô đó.” Không còn hàng lý do dưới từng dòng. Khi có ít nhất một dòng tích “CP không hợp lý”, dưới bảng dòng hiện một ô lý do chung (bắt buộc); bỏ tích hết thì ô ẩn và lý do không được lưu.<span class="then">Lưu là ghi lý do đó vào mọi dòng đã tích, nên báo cáo chi phí không hợp lý, tệp nhập và màn xem vẫn đọc lý do theo dòng như trước.</span><span class="then">Mở sửa một đề xuất lưu trước 03/11/2026 mà các dòng mang lý do khác nhau: ô chung hiện các lý do đó nối bằng dấu “; ”, không mất lý do nào; lưu lại thì mọi dòng đã tích mang chung chuỗi này.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -432,6 +433,7 @@
           <tr><td>Nhập vượt ngưỡng lệch</td><td>Lệch &gt; 5% giá trị dòng</td><td>“Số lượng nhập lệch {x}% so với đề xuất. Cần phê duyệt bổ sung của {cấp duyệt} trước khi ghi sổ.”</td></tr>
           <tr><td>Chỉ tải PDF, không nhập dòng</td><td><code>lines</code> rỗng</td><td>“Đề xuất chỉ có tệp đính kèm sẽ không tự đối chiếu được với phiếu nhập kho. Xác nhận để tiếp tục.”</td></tr>
           <tr><td>Ngày cần hàng ở quá khứ</td><td><code>required_date &lt; hôm nay</code></td><td>“Ngày cần hàng đã qua. Cập nhật lại để đơn vị cung ứng xếp thứ tự ưu tiên đúng.”</td></tr>
+          <tr><td>Có dòng chi phí không hợp lý mà chưa ghi lý do <em>(03/11/2026 · <a href="PL-C.html#Q-181">Q-181</a>)</em></td><td>Một dòng <code>is_deductible = false</code>, ô lý do chung rỗng</td><td>“Nhập lý do đánh dấu chi phí không hợp lý.” — dưới ô lý do chung</td></tr>
         </tbody>
       </table>
     </div>
@@ -448,6 +450,7 @@
           <tr><td>UAT-ACC01-5</td><td>Tiếp UAT-4</td><td>Lập phiếu nhập 16 lưỡi tick về đề xuất</td><td>Đề xuất tự chuyển “hoàn thành” và rời nhóm theo dõi</td></tr>
           <tr><td>UAT-ACC01-6</td><td>Đề xuất 100 bao xi, nhà cung cấp giao 112</td><td>Lập phiếu nhập 112</td><td>Lệch 12% &gt; 5% → yêu cầu phê duyệt bổ sung</td></tr>
           <tr><td>UAT-ACC01-7</td><td>Người duyệt mở màn hình phê duyệt</td><td>Xem tóm tắt</td><td>Thấy đủ dự án, nội dung tóm tắt, nơi cung cấp và giá trị</td></tr>
+          <tr><td>UAT-ACC01-8</td><td>Đề xuất Loại 1 hai dòng <em>(góp ý 03/11/2026 · <a href="PL-C.html#Q-181">Q-181</a>)</em></td><td>Tích “CP không hợp lý” dòng 1 và dòng 2, để trống lý do, bấm Lưu; rồi ghi “Không có hóa đơn”, lưu; bỏ tích cả hai</td><td>Dưới từng dòng không có ô lý do; dưới bảng hiện một ô “Lý do không hợp lý *”, lưu lần đầu bị chặn ở ô này; lần sau lưu được, mở lại thấy cả hai dòng mang “Không có hóa đơn”; bỏ tích hết thì ô ẩn</td></tr>
         </tbody>
       </table>
     </div>
