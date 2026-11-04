@@ -168,7 +168,6 @@
           <tr><td>Ngày biên bản</td><td class="k">issued_at</td><td>Ngày</td><td class="c req">✱</td><td>Ngày ghi trên biên bản, không phải ngày nhập. Là mốc xếp biên bản vào kỳ báo cáo.</td></tr>
           <tr><td>Ngày nhận</td><td class="k">received_at</td><td>Ngày</td><td class="c">—</td><td>Ngày P. Đấu thầu nhận được. Không nhỏ hơn ngày biên bản.</td></tr>
           <tr><td>Lý do phạt</td><td class="k">reason</td><td>Chọn 1</td><td class="c req">✱</td><td>Danh mục đóng năm giá trị ở bảng dưới. Là cột <a href="RPT-02.html">RPT-02</a> gom nhóm.</td></tr>
-          <tr><td>Diễn giải</td><td class="k">description</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Nội dung vi phạm theo biên bản: hạng mục nào, ngày nào, ai lập. Là căn cứ để Ban chỉ huy quy trách nhiệm.</td></tr>
           <tr><td>Giá trị phạt</td><td class="k">amount</td><td>Số tiền</td><td class="c req">✱</td><td>Số dương, theo biên bản. Là <b>trần</b> của tổng phân bổ.</td></tr>
           <tr><td>Tệp biên bản</td><td class="k">files[]</td><td>Tệp</td><td class="c req">✱</td><td>PDF chủ đầu tư gửi, ít nhất một tệp, theo phiên bản của <a href="PF-05.html">PF-05</a>. Không có tệp thì không trình phân bổ được.</td></tr>
           <tr><td>Hạng mục liên quan</td><td class="k">wbs_ids[]</td><td>Tham chiếu</td><td class="c">—</td><td>Một hoặc nhiều đầu việc của hợp đồng. Dùng để gợi ý tổ đội khi phân bổ.</td></tr>
@@ -207,7 +206,7 @@
           <tr><td>Sai quy cách</td><td class="k">quality</td><td>Đá, bề mặt, dung sai không đúng hồ sơ</td></tr>
           <tr><td>Vi phạm an toàn</td><td class="k">safety</td><td>Cùng nhóm với khoản phạt an toàn mà Ban chỉ huy tự lập ở <a href="PRJ-03.html">PRJ-03</a>, nhưng khác chiều</td></tr>
           <tr><td>Vệ sinh môi trường</td><td class="k">environment</td><td></td></tr>
-          <tr><td>Khác</td><td class="k">other</td><td>Chọn giá trị này thì phần diễn giải phải nói rõ — danh mục đóng không được nở thêm chỉ vì một biên bản</td></tr>
+          <tr><td>Khác</td><td class="k">other</td><td>Vi phạm không thuộc bốn nhóm trên; nội dung đọc ở tệp biên bản — form không có ô diễn giải (<a href="PL-C.html#Q-191">Q-191</a>). Danh mục đóng không được nở thêm chỉ vì một biên bản</td></tr>
         </tbody>
       </table>
     </div>
@@ -255,7 +254,6 @@
             <div class="wf-c"><div class="wf-f"><label>Mã hệ thống</label><div class="in ro">BBP-KH_0114-01 <em>tự sinh</em></div></div></div>
             <div class="wf-c"><div class="wf-f"><label><span class="pin">2</span> Tệp biên bản ✱</label><div class="in">05-BB-PHAT.pdf</div></div></div>
           </div>
-          <div class="wf-f"><label>Diễn giải ✱</label><div class="in">Chậm 12 ngày mốc bàn giao mặt đứng trục A–D theo phụ lục 02; biên bản lập tại công trường ngày 10/09/2026.</div></div>
         </div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">3</span> Phân bổ về tổ đội — Ban chỉ huy đề xuất</div>
