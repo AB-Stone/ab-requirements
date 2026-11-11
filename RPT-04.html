@@ -106,10 +106,15 @@
           <tr><td rowspan="3">Biểu đồ</td><td>Doanh thu theo tháng</td><td>—</td><td class="k"><a href="ACC-09.html">ACC-09</a></td></tr>
           <tr><td>Hợp đồng theo trạng thái</td><td>—</td><td class="k"><a href="BID-05.html">BID-05</a></td></tr>
           <tr><td>Tuổi nợ phải thu</td><td>Nhóm trên 60 ngày vượt 5% tổng nợ</td><td class="k"><a href="ACC-05.html">ACC-05</a></td></tr>
-          <tr><td rowspan="3">KPI</td><td>Biên lợi nhuận thực tế so với dự thầu</td><td>Âm quá 3 điểm phần trăm</td><td class="k"><a href="RPT-03.html">RPT-03</a></td></tr>
-          <tr><td>Tiến độ thực tế so với kế hoạch</td><td>Chậm quá 10 điểm phần trăm</td><td class="k"><a href="PRJ-02.html">PRJ-02</a></td></tr>
-          <tr><td>Hoàn thành kế hoạch theo bộ phận</td><td>Dưới 60% kế hoạch quý</td><td class="k"><a href="RPT-02.html">RPT-02</a></td></tr>
-          <tr><td>So sánh</td><td>Chi phí theo khoản mục giữa các dự án — đơn giá quy về một ĐVT</td><td>Lệch quá 15% so với trung vị</td><td class="k"><a href="ACC-09.html">ACC-09</a></td></tr>
+          <tr><td rowspan="8">KPI</td><td>Biên lợi nhuận thực tế so với dự thầu</td><td>Âm quá 3 điểm phần trăm</td><td class="k"><a href="RPT-03.html">RPT-03</a> · chưa có nguồn, <a href="PL-C.html#Q-207">Q-207</a></td></tr>
+          <tr><td>Tiến độ thực tế so với kế hoạch</td><td>Chậm quá 10 điểm phần trăm</td><td class="k"><a href="PRJ-02.html">PRJ-02</a> · chưa có nguồn, <a href="PL-C.html#Q-240">Q-240</a></td></tr>
+          <tr><td>Hoàn thành kế hoạch theo bộ phận</td><td>Dưới 60% kế hoạch quý</td><td class="k"><a href="RPT-02.html">RPT-02</a> · chưa có nguồn, <a href="PL-C.html#Q-240">Q-240</a></td></tr>
+          <tr><td>Biên lợi nhuận gộp thực tế trong kỳ</td><td>Ngưỡng nhập trên màn hình, chưa có mặc định (<a href="PL-C.html#Q-247">Q-247</a>)</td><td class="k"><a href="RPT-03.html">RPT-03</a> dòng 7</td></tr>
+          <tr><td>Chi phí không hợp lý trên chi phí dự án</td><td>Ngưỡng nhập trên màn hình, chưa có mặc định</td><td class="k"><a href="RPT-03.html">RPT-03</a> dòng 10</td></tr>
+          <tr><td>Thu hồi hồ sơ thanh toán (đã thu trên phải thu của hồ sơ nghiệm thu)</td><td>Ngưỡng nhập trên màn hình, chưa có mặc định</td><td class="k"><a href="ORD-01.html">ORD-01</a> · <a href="ACC-07.html">ACC-07</a></td></tr>
+          <tr><td>Tỷ lệ hỗ trợ của Ban chỉ huy</td><td>Không có ngưỡng; chỉ xếp hạng</td><td class="k"><a href="RPT-02.html">RPT-02</a> mục 7</td></tr>
+          <tr><td>Nợ phải thu quá 60 ngày từng dự án</td><td>Không có ngưỡng riêng; chỉ xếp hạng</td><td class="k"><a href="ACC-05.html">ACC-05</a></td></tr>
+          <tr><td>So sánh</td><td>Chi phí theo khoản mục giữa các dự án — chi phí trên một đồng sản lượng (chuẩn hóa theo giá trị sản lượng, <a href="PL-C.html#Q-241">Q-241</a>)</td><td>Lệch quá 15% so với trung vị</td><td class="k"><a href="ACC-09.html">ACC-09</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -120,9 +125,62 @@
       <li>Nội dung đổi theo vai trò và phạm vi dữ liệu, không cần cấu hình riêng cho từng người.</li>
       <li>Khối “Chờ bạn phê duyệt” hiển thị đúng lệnh của người đang đăng nhập và dẫn thẳng tới màn hình duyệt.</li>
       <li>Chỉ số vượt ngưỡng đổi màu và có thể bấm để mở danh sách chi tiết gây ra cảnh báo.</li>
-      <li>So sánh chi phí giữa các dự án quy đơn giá về cùng đơn vị tính, chỉ ra dự án lệch xa trung vị.</li>
+      <li>So sánh chi phí giữa các dự án quy về chi phí trên một đồng sản lượng, chỉ ra dự án lệch xa trung vị; có báo cáo đầy đủ kèm xuất Excel.</li>
       <li>Xuất được toàn bộ dashboard thành báo cáo tháng dạng PDF.</li>
     </ol>
+
+    <h4>Nguồn dữ liệu của màn Tổng quan</h4>
+    <p>Màn hình đọc số thật từ một lần gọi <code>GET /api/v1/dashboard/overview</code> (kèm danh sách chờ duyệt của <a href="PF-03.html">PF-03</a>). Mỗi khối kiểm tra quyền của chính phân hệ sở hữu số liệu: người không có quyền thì khối ẩn đi, khối nào lỗi chỉ báo lỗi tại khối đó, không làm hỏng cả trang. Khối còn dùng số mẫu mang nhãn “Dữ liệu mẫu” ngay trên thẻ, không trộn mẫu và thật trong cùng một khối.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Khối</th><th class="c">Dữ liệu</th><th>Nguồn và quyền</th><th>Bấm để mở</th></tr></thead>
+        <tbody>
+          <tr><td>Doanh thu – chi phí – lợi nhuận theo tháng (12 tháng)</td><td class="c">Thật</td><td><a href="ACC-09.html">ACC-09</a>: doanh thu là hồ sơ nghiệm thu theo ngày nghiệm thu đợt, chi phí là chi phí sổ cái gắn dự án (chi phí chung chưa phân bổ không nằm trong), lấy hiệu hai số lũy kế cuối tháng; quyền <code>acc_costing:read</code></td><td>Giá thành &amp; lãi lỗ</td></tr>
+          <tr><td>Tuổi nợ phải thu / phải trả</td><td class="c">Thật</td><td><a href="ACC-05.html">ACC-05</a> bảng tuổi nợ cộng mọi đối tượng, thêm cột “Chưa có hạn”; quyền <code>acc_debt:read</code></td><td>Công nợ</td></tr>
+          <tr><td>Giá trị tồn kho, số mặt hàng dưới định mức</td><td class="c">Thật</td><td><a href="ACC-02.html">ACC-02</a> tồn × giá bình quân của các kho đang hoạt động; quyền <code>acc_warehouse:read</code></td><td>Kho</td></tr>
+          <tr><td>Số dư tiền mặt / ngân hàng</td><td class="c">Thật</td><td><a href="ACC-07.html">ACC-07</a>; chỉ các quỹ người xem được cấp (<a href="PL-C.html#Q-197">Q-197</a>), tổng cộng đúng bằng các quỹ hiện ra; quyền <code>acc_cash:read</code></td><td>Thu chi</td></tr>
+          <tr><td>Hợp đồng theo trạng thái</td><td class="c">Thật</td><td><a href="BID-05.html">BID-05</a>, giá trị sau VAT, không tính bản đã bị thay bằng lần sau; quyền <code>contract:read</code></td><td>Theo dõi hồ sơ thanh toán</td></tr>
+          <tr><td>Chờ bạn duyệt</td><td class="c">Thật</td><td>Chính danh sách của <a href="PF-03.html">PF-03</a>, cùng quy tắc nhìn thấy</td><td>Từng chứng từ / Trung tâm phê duyệt</td></tr>
+          <tr><td>So sánh chi phí giữa các công trình (năm đến nay)</td><td class="c">Thật</td><td><a href="ACC-09.html">ACC-09</a>: chi phí sản xuất lũy kế của từng khoản mục chia cho sản lượng lũy kế, lệch so với trung vị (<a href="PL-C.html#Q-241">Q-241</a>); chọn tối đa 6 dự án có sản lượng lớn nhất; quyền <code>acc_costing:read</code></td><td>Báo cáo So sánh chi phí giữa các dự án</td></tr>
+          <tr><td>Cảnh báo KPI (năm đến nay, ngưỡng mặc định)</td><td class="c">Thật</td><td>Cùng dịch vụ với báo cáo hiệu quả theo KPI: chỉ liệt kê chỉ số vượt ngưỡng — tuổi nợ quá 60 ngày toàn công ty vượt 5% (quyền <code>acc_debt:read</code>) và dự án lệch chi phí quá 15% so với trung vị; quyền <code>acc_costing:read</code>. Không có nơi lưu ngưỡng công ty nên biên lợi nhuận không bao giờ cảnh báo ở đây (<a href="PL-C.html#Q-247">Q-247</a>). Biên so dự thầu, tiến độ so kế hoạch, hoàn thành theo bộ phận không có số, không có dòng mẫu (<a href="PL-C.html#Q-207">Q-207</a>, <a href="PL-C.html#Q-240">Q-240</a>)</td><td>Báo cáo hiệu quả theo KPI</td></tr>
+          <tr><td>Công trình đang thực hiện, hoạt động gần đây</td><td class="c">Mẫu</td><td>Chưa có nguồn đáng tin, xem <a href="PL-C.html#Q-228">Q-228</a></td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Báo cáo So sánh chi phí giữa các dự án</h4>
+    <p>Mở từ nhóm Báo cáo của phân hệ Kế toán, và từ khối “So sánh chi phí giữa các công trình” trên dashboard (cùng một báo cáo, năm đến nay). Mỗi dự án một dòng; mỗi khoản mục (vật liệu 621, nhân công 622, máy và chi phí sản xuất chung, tổng) có hai cột: chi phí trên một đồng sản lượng và mức lệch so với trung vị của nhóm. Dòng cuối là trung vị. Quyền xem là <code>acc_costing:read</code> như <a href="ACC-09.html">ACC-09</a> và <a href="RPT-03.html">RPT-03</a>; xuất được ra Excel.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Tham số / quy tắc</th><th>Giá trị</th></tr></thead>
+        <tbody>
+          <tr><td>Kỳ</td><td>Cùng bộ chọn cửa sổ của ACC-09; số lũy kế tính đến hết cửa sổ</td></tr>
+          <tr><td>Chi phí</td><td>Chi phí sản xuất lũy kế gắn dự án (chưa kết chuyển), chia ba nhóm như RPT-03</td></tr>
+          <tr><td>Sản lượng</td><td>Sản lượng lũy kế của ACC-09; dự án sản lượng bằng 0 hiện “—” và không vào trung vị</td></tr>
+          <tr><td>Ngưỡng</td><td>Tham số, mặc định 15%; lệch tuyệt đối vượt ngưỡng thì đánh dấu</td></tr>
+          <tr><td>Điều kiện có trung vị</td><td>Ít nhất 2 dự án có sản lượng</td></tr>
+          <tr><td>Chưa làm</td><td>So với dự toán (<a href="PL-C.html#Q-239">Q-239</a>); quy theo ĐVT (<a href="PL-C.html#Q-241">Q-241</a>)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Báo cáo Hiệu quả theo KPI</h4>
+    <p>“BC hiệu quả theo KPI” (yêu cầu gốc KT · dòng 8 khối d). Mở từ nhóm Báo cáo của phân hệ Kế toán; <code>GET /api/v1/acc/costing/kpi</code> và <code>/export</code>, quyền <code>acc_costing:read</code>, không thêm quyền mới. Mỗi dự án một dòng; mỗi chỉ số có nguồn dữ liệu thật một cột, kèm thứ hạng của dự án trên cột đó (1 là tốt nhất) và cột trạng thái tô màu theo ngưỡng. Chỉ làm những chỉ số tính được từ dữ liệu sẵn có (<a href="PL-C.html#Q-247">Q-247</a>, <a href="PL-C.html#Q-245">Q-245</a>); chỉ số chưa có nguồn hiện dòng “chưa có nguồn dữ liệu” kèm mã PL-C, tuyệt đối không hiện số và không suy kế hoạch tuyến tính.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Chỉ số</th><th>Cách tính</th><th>Ngưỡng</th><th>Quyền riêng</th></tr></thead>
+        <tbody>
+          <tr><td>Biên lợi nhuận gộp</td><td>Dòng 7 của <a href="RPT-03.html">RPT-03</a> từng dự án, trong kỳ</td><td>Tối thiểu, nhập trên màn hình; trống = không cảnh báo</td><td>—</td></tr>
+          <tr><td>Lệch chi phí trên sản lượng so với trung vị</td><td>Như báo cáo So sánh chi phí: tổng và từng khoản mục 621 / 622 / máy &amp; chung, lũy kế đến hết kỳ; cần ít nhất 2 dự án có sản lượng</td><td>Mặc định 15%, tham số</td><td>—</td></tr>
+          <tr><td>Chi phí không hợp lý</td><td>Chi phí gắn dự án đánh dấu không hợp lý ÷ chi phí gắn dự án phát sinh trong kỳ (cùng nguồn sổ với <a href="RPT-03.html">RPT-03</a> dòng 10); dự án không có chi phí trong kỳ hiện “—”</td><td>Tối đa, nhập trên màn hình; trống = không cảnh báo</td><td>—</td></tr>
+          <tr><td>Thu hồi hồ sơ thanh toán</td><td>Tiền đã thu (báo có ghi cho hồ sơ, đến hết kỳ, không tính phiếu hủy) ÷ số phải thu sau khấu trừ tạm ứng và giữ lại bảo hành, của hồ sơ khối lượng và quyết toán nghiệm thu trong kỳ (chờ thanh toán, đã thanh toán, đã đóng — cùng ngày nghiệm thu và cùng trạng thái với doanh thu của <a href="ACC-09.html">ACC-09</a>)</td><td>Tối thiểu, nhập trên màn hình; trống = không cảnh báo</td><td>—</td></tr>
+          <tr><td>Tỷ lệ hỗ trợ Ban chỉ huy</td><td>Cột 7 của khối hiệu quả điều hành BCH ở <a href="RPT-02.html">RPT-02</a> mục 7, cùng kỳ; dự án không xếp hạng được hiện “—”, không phải 0</td><td>Không có; chỉ xếp hạng (thấp hơn là tốt hơn)</td><td><code>prj_rate_sheet:read</code></td></tr>
+          <tr><td>Nợ phải thu quá 60 ngày</td><td>Khối tóm tắt: nhóm quá 60 ngày ÷ tổng nợ phải thu toàn công ty (<a href="ACC-05.html">ACC-05</a>), như thẻ trên dashboard. Mỗi dự án có thêm tỷ lệ riêng, chỉ để so sánh và xếp hạng. Tuổi nợ tính tại thời điểm xem, không theo kỳ</td><td>Mặc định 5% tổng nợ, tham số; chỉ cấp công ty</td><td><code>acc_debt:read</code></td></tr>
+          <tr><td>Chưa có nguồn dữ liệu</td><td>Biên thực tế so với dự thầu (<a href="PL-C.html#Q-207">Q-207</a>); tiến độ thực tế so với kế hoạch và hoàn thành kế hoạch theo bộ phận (<a href="PL-C.html#Q-240">Q-240</a>)</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Người xem thiếu quyền riêng của một chỉ số thì cột đó để “—” kèm dòng thông báo, các cột còn lại vẫn hiện; một chỉ số đọc lỗi cũng chỉ làm trống đúng cột của nó. Thứ hạng chia sẻ khi hai dự án bằng nhau. Kỳ dùng cùng bộ chọn cửa sổ của ACC-09; xuất Excel có cùng số, thêm dòng toàn công ty, dòng trung vị và các chỉ số chưa có nguồn. Bảng “KPI hiệu quả — cảnh báo vượt ngưỡng” trong mockup bên dưới chỉ là minh họa: số liệu mẫu của biên so dự thầu, tiến độ và bộ phận không còn trên màn hình thật.</p>
 
     <h4>Mockup UI — Tổng quan</h4>
     <div class="wf">
@@ -160,12 +218,12 @@
             </tbody></table>
           </div></div>
           <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">3</span> So sánh chi phí giữa các dự án — KM-101 vật liệu chính</div>
-            <table><thead><tr><th>Dự án</th><th class="num">Đơn giá / m² hoàn thành</th><th class="num">Lệch trung vị</th></tr></thead>
+            <div class="wf-lg"><span class="pin">3</span> So sánh chi phí giữa các dự án — vật liệu (621) trên một đồng sản lượng</div>
+            <table><thead><tr><th>Dự án</th><th class="num">Vật liệu / sản lượng</th><th class="num">Lệch trung vị</th></tr></thead>
             <tbody>
-              <tr><td>DA-2026-014</td><td class="num">1.609.000</td><td class="num">−2,1%</td></tr>
-              <tr><td>DA-2026-011</td><td class="num">1.944.000</td><td class="num">+18,3%</td></tr>
-              <tr><td>DA-2025-032</td><td class="num">1.643.000</td><td class="num">0,0%</td></tr>
+              <tr><td>DA-2026-014</td><td class="num">40,6%</td><td class="num">−2,1%</td></tr>
+              <tr><td>DA-2026-011</td><td class="num">49,1%</td><td class="num">+18,3%</td></tr>
+              <tr><td>DA-2025-032</td><td class="num">41,5%</td><td class="num">0,0%</td></tr>
             </tbody></table>
             <p style="margin:6px 0 0;font-size:11.5px;color:var(--crit)">DA-2026-011 vượt 18,3% so với trung vị — cần rà soát định mức và giá nhập.</p>
           </div></div>
@@ -191,7 +249,7 @@
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Hàng chờ việc cá nhân</td><td>Chỉ hiện lệnh có tên người đang đăng nhập; bấm mở thẳng màn hình duyệt.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Bảng KPI theo ngưỡng</td><td>Chỉ hiện chỉ số vượt ngưỡng, không liệt kê toàn bộ — giữ dashboard đọc được trong 10 giây.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>So sánh chi phí liên dự án</td><td>Quy đơn giá về cùng ĐVT rồi so với trung vị; chọn khoản mục để so.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>So sánh chi phí liên dự án</td><td>Chi phí khoản mục trên một đồng sản lượng, so với trung vị; ô nào lệch quá ngưỡng đổi màu.</td></tr>
           <tr><td class="c">—</td><td>Xuất báo cáo tháng</td><td>Gộp toàn bộ khối trên dashboard thành một tệp PDF.</td></tr>
         </tbody>
       </table>
@@ -203,7 +261,7 @@
       <li><b>Nội dung theo vai trò.</b> Dashboard đổi theo vai trò và phạm vi dữ liệu, không cần cấu hình riêng cho từng người.<span class="then">Giám đốc thấy toàn công ty; Giám đốc dự án thấy dự án mình phụ trách.</span></li>
       <li><b>Hàng chờ việc là của riêng mình.</b> Khối “Chờ bạn phê duyệt” lọc theo tên người đang đăng nhập.<span class="then">Số ở khối này luôn khớp với số trên tab của <a href="PF-03.html">PF-03</a> và với chuông thông báo.</span></li>
       <li><b>Cảnh báo bấm được.</b> Mỗi chỉ số vượt ngưỡng mở được danh sách bản ghi gây ra cảnh báo.<span class="then">Không có cảnh báo nào chỉ để nhìn.</span></li>
-      <li><b>So sánh chi phí quy về một đơn vị.</b> So sánh giữa các dự án quy đơn giá về cùng ĐVT rồi so với trung vị.<span class="then">So tổng chi phí giữa các dự án khác quy mô là vô nghĩa; quy về đơn giá mới so được.</span></li>
+      <li><b>So sánh chi phí quy về một đồng sản lượng.</b> Chi phí sản xuất lũy kế của khoản mục chia cho sản lượng lũy kế của dự án, rồi so với trung vị của nhóm.<span class="then">So tổng chi phí giữa các dự án khác quy mô là vô nghĩa. Quy về m²/m³/tấn chưa làm được vì các hạng mục khác đơn vị; chuẩn hóa theo giá trị sản lượng thay thế, xem <a href="PL-C.html#Q-241">Q-241</a>.</span></li>
       <li><b>Ngưỡng cấu hình tập trung.</b> Mọi ngưỡng cảnh báo khai ở tham số công ty, dùng chung với <a href="RPT-02.html">RPT-02</a> và <a href="RPT-03.html">RPT-03</a>.<span class="then">Một chỉ số không thể vượt ngưỡng ở dashboard mà bình thường ở báo cáo.</span></li>
       <li><b>Hiệu năng có trần.</b> Dashboard tải xong dưới 3 giây với dữ liệu 12 tháng gần nhất.<span class="then">Số liệu tổng hợp tính sẵn theo kỳ, không truy vấn thẳng vào sổ chi tiết mỗi lần mở.</span></li>
     
@@ -231,7 +289,15 @@
           <tr><td>UAT-RPT04-1</td><td>Giám đốc có 3 lệnh chờ duyệt</td><td>Mở dashboard</td><td>Thẻ “Lệnh chờ duyệt” hiện 3, khớp tab PF-03 và chuông</td></tr>
           <tr><td>UAT-RPT04-2</td><td>Giám đốc dự án phạm vi 1 dự án</td><td>Mở cùng dashboard</td><td>Số liệu chỉ của dự án đó, không cần cấu hình riêng</td></tr>
           <tr><td>UAT-RPT04-3</td><td>DA-2026-011 bào mòn biên 6,4 điểm %</td><td>Xem bảng KPI</td><td>Có dòng cảnh báo; bấm mở được báo cáo lãi lỗ của dự án</td></tr>
-          <tr><td>UAT-RPT04-4</td><td>Ba dự án có đơn giá KM-101 khác nhau</td><td>Xem khối so sánh chi phí</td><td>Quy về đơn giá / m² hoàn thành; chỉ ra dự án lệch 18,3% so trung vị</td></tr>
+          <tr><td>UAT-RPT04-4</td><td>Ba dự án có vật liệu / sản lượng lần lượt 40,6%, 41,5%, 49,1%</td><td>Xem khối so sánh chi phí</td><td>Trung vị 41,5%; dự án 49,1% lệch +18,3% và bị đánh dấu, hai dự án còn lại không</td></tr>
+          <tr><td>UAT-RPT04-7</td><td>Một dự án có chi phí nhưng chưa có sản lượng</td><td>Mở báo cáo So sánh chi phí giữa các dự án</td><td>Dự án đó hiện “—” ở cột tỷ lệ và lệch, không vào trung vị, có cảnh báo nêu mã dự án</td></tr>
+          <tr><td>UAT-RPT04-8</td><td>Chỉ có một dự án có sản lượng</td><td>Mở báo cáo hoặc khối so sánh trên dashboard</td><td>“Cần ít nhất 2 dự án có phát sinh để so sánh chi phí.”; không có cờ lệch</td></tr>
+          <tr><td>UAT-RPT04-9</td><td>Ba dự án như UAT-RPT04-4</td><td>Đổi ngưỡng từ 15% lên 20%, rồi xuất Excel</td><td>Dự án +18,3% không còn bị đánh dấu; file Excel có cùng số, thêm dòng trung vị</td></tr>
+          <tr><td>UAT-RPT04-10</td><td>Ba dự án, chưa nhập ngưỡng biên, chi phí không hợp lý và thu hồi</td><td>Mở báo cáo hiệu quả theo KPI</td><td>Mỗi dự án một dòng; ba cột đó có số và thứ hạng nhưng không dòng nào bị cảnh báo vì chúng; dòng lệch chi phí vượt 15% bị tô và có trạng thái “Vượt ngưỡng”</td></tr>
+          <tr><td>UAT-RPT04-11</td><td>Dự án có biên 20%, dự án khác 40%</td><td>Nhập biên tối thiểu 25%</td><td>Chỉ dự án 20% bị cảnh báo; xóa ô thì cảnh báo biến mất</td></tr>
+          <tr><td>UAT-RPT04-12</td><td>Hồ sơ nghiệm thu 280 triệu phải thu sau khấu trừ, đã thu 100 triệu trước cuối kỳ và 50 triệu sau cuối kỳ; một phiếu hủy 70 triệu</td><td>Xem cột thu hồi với kỳ kết thúc trước ngày thu 50 triệu</td><td>Thu hồi = 100 ÷ 280; phiếu hủy và khoản thu sau kỳ không tính; hồ sơ nháp và hồ sơ tạm ứng không vào mẫu số</td></tr>
+          <tr><td>UAT-RPT04-13</td><td>Người dùng chỉ có <code>acc_costing:read</code></td><td>Mở báo cáo và Tổng quan</td><td>Báo cáo mở được; cột tỷ lệ hỗ trợ BCH, cột và tóm tắt nợ quá 60 ngày để “—” kèm thông báo thiếu quyền; Tổng quan không có cảnh báo nợ; người không có <code>acc_costing:read</code> bị từ chối 403</td></tr>
+          <tr><td>UAT-RPT04-14</td><td>Không dự án nào vượt ngưỡng đang áp dụng</td><td>Mở Tổng quan</td><td>Khối Cảnh báo KPI hiện “Không có chỉ số nào vượt ngưỡng trong kỳ”, không có dòng mẫu; ba chỉ số chưa có nguồn chỉ được nêu ở chú thích, không có số</td></tr>
           <tr><td>UAT-RPT04-5</td><td>Dữ liệu 12 tháng</td><td>Mở dashboard và đo thời gian</td><td>Tải xong dưới 3 giây</td></tr>
           <tr><td>UAT-RPT04-6</td><td>Kết thúc tháng</td><td>Bấm “Xuất báo cáo tháng”</td><td>PDF gộp đủ các khối trên dashboard</td></tr>
         </tbody>
@@ -239,7 +305,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="RPT-03.html">RPT-03 lãi lỗ</a><a href="RPT-02.html">RPT-02 tiến độ</a><a href="PF-03.html">PF-03 hàng chờ duyệt</a><a href="ACC-05.html">ACC-05 công nợ</a><a href="MOB-01.html">MOB-01 dashboard di động</a></p>
+    <p class="links"><a href="RPT-03.html">RPT-03 lãi lỗ</a><a href="RPT-02.html">RPT-02 tiến độ</a><a href="PF-03.html">PF-03 hàng chờ duyệt</a><a href="ACC-05.html">ACC-05 công nợ</a><a href="MOB-01.html">MOB-01 dashboard di động</a><a href="ACC-09.html">ACC-09 giá thành</a><a href="PL-C.html#Q-247">PL-C Q-247 KPI</a></p>
   </div>
 </section>
 <div class="filefoot">

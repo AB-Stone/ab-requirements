@@ -100,15 +100,15 @@
         <thead><tr><th>Dòng biểu mẫu</th><th>Cấu thành</th><th class="c">Nguồn</th></tr></thead>
         <tbody>
           <tr><td>1. Doanh thu</td><td>Doanh thu thi công theo hồ sơ thanh toán khối lượng đã được chấp thuận + doanh thu vật tư. Ranh giới với giá áp đơn hàng xem <a href="PL-C.html">Q-11</a></td><td class="k"><a href="ORD-09.html">ORD-09</a>, <a href="ORD-10.html">ORD-10</a>, <a href="ORD-08.html">ORD-08</a></td></tr>
-          <tr><td>2. Giá vốn — vật liệu</td><td>Giá trị vật tư xuất kho cho thi công</td><td class="k"><a href="PRJ-04.html">PRJ-04</a></td></tr>
-          <tr><td>3. Giá vốn — nhân công</td><td>Giá trị hồ sơ giao khoán đã duyệt</td><td class="k"><a href="PRJ-03.html">PRJ-03</a></td></tr>
-          <tr><td>4. Giá vốn — máy &amp; khấu hao</td><td>Khấu hao tài sản phân bổ theo số ngày ở dự án + chi phí máy thuê</td><td class="k"><a href="ACC-06.html">ACC-06</a></td></tr>
+          <tr><td>2. Giá vốn — vật liệu</td><td>Chi phí sản xuất tài khoản 621 (vật tư xuất kho cho thi công) đã kết chuyển thành giá vốn theo % sản lượng, cùng phép kết chuyển của <a href="ACC-09.html">ACC-09</a></td><td class="k"><a href="ACC-09.html">ACC-09</a>, <a href="PRJ-04.html">PRJ-04</a></td></tr>
+          <tr><td>3. Giá vốn — nhân công</td><td>Chi phí sản xuất tài khoản 622 (giao khoán đã duyệt ghi sổ) đã kết chuyển thành giá vốn</td><td class="k"><a href="ACC-09.html">ACC-09</a>, <a href="PRJ-03.html">PRJ-03</a></td></tr>
+          <tr><td>4. Giá vốn — máy &amp; khấu hao</td><td>Mọi chi phí sản xuất còn lại (623, 627: khấu hao tài sản phân bổ theo số ngày ở dự án, máy thuê, chi phí sản xuất chung) đã kết chuyển thành giá vốn. Ba dòng 2 – 4 cộng đúng bằng giá vốn kết chuyển của <a href="ACC-09.html">ACC-09</a> (<a href="PL-C.html#Q-211">Q-211</a>)</td><td class="k"><a href="ACC-09.html">ACC-09</a>, <a href="ACC-06.html">ACC-06</a></td></tr>
           <tr><td>5. Chi phí chung phân bổ</td><td>Phần chi phí chung được phân bổ về dự án</td><td class="k"><a href="ACC-08.html">ACC-08</a></td></tr>
-          <tr><td>6. Lợi nhuận gộp</td><td>Dòng 1 trừ các dòng 2 – 5</td><td class="k">Tính</td></tr>
+          <tr><td>6. Lợi nhuận gộp</td><td>Dòng 1 trừ các dòng 2 – 5 (đã trừ chi phí chung phân bổ, nên bằng “lợi nhuận thuần” của <a href="ACC-09.html">ACC-09</a>)</td><td class="k">Tính</td></tr>
           <tr><td>7. Biên lợi nhuận gộp</td><td>Dòng 6 chia dòng 1</td><td class="k">Tính</td></tr>
-          <tr><td>8. Biên dự thầu</td><td>Biên lợi nhuận tính lúc chào giá</td><td class="k"><a href="BID-03.html">BID-03</a></td></tr>
+          <tr><td>8. Biên dự thầu</td><td>Biên lợi nhuận tính lúc chào giá. <b>Chưa có nguồn</b>: <a href="BID-03.html">BID-03</a> đã bỏ phần biên lợi nhuận (yêu cầu thay đổi số 5), nên dòng 8 và dòng 9 hiển thị “—” (<a href="PL-C.html#Q-207">Q-207</a>)</td><td class="k"><a href="BID-03.html">BID-03</a></td></tr>
           <tr><td>9. Chênh lệch biên</td><td>Dòng 7 trừ dòng 8 — chỉ số bào mòn lợi nhuận</td><td class="k">Tính</td></tr>
-          <tr><td>10. Chi phí không hợp lý</td><td>Tách riêng, không trừ vào lợi nhuận gộp</td><td class="k"><a href="PF-01.html">PF-01</a></td></tr>
+          <tr><td>10. Chi phí không hợp lý</td><td>Chi phí ghi sổ có đánh dấu “không hợp lý”, tách riêng để theo dõi; đã nằm trong các dòng 2 – 5 nên không bị trừ thêm lần nữa (<a href="PL-C.html#Q-211">Q-211</a>)</td><td class="k"><a href="ACC-08.html">ACC-08</a>, <a href="PF-01.html">PF-01</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -220,10 +220,10 @@
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Chọn “All” cho ra một cột tổng công ty; chọn vùng miền cho ra ba cột; chọn dự án cho ra một cột mỗi dự án.</li>
+      <li>Chọn “All” cho ra một cột tổng công ty; chọn nhóm vùng miền cho ra một cột mỗi vùng (cộng cột “Chưa phân vùng” cho dự án chưa gán vùng); chọn dự án cho ra một cột mỗi dự án. Hai cấp sau có thêm cột Cộng.</li>
       <li>Tổng của các cột dự án bằng tổng của các cột vùng miền và bằng cột All — sai lệch bằng 0.</li>
       <li>Mỗi ô số liệu khoan xuống được tới sổ chi phí công trình rồi tới chứng từ gốc.</li>
-      <li>Dòng chênh lệch biên so với dự thầu hiện màu cảnh báo khi âm quá ngưỡng cấu hình.</li>
+      <li>Dòng chênh lệch biên so với dự thầu hiện màu cảnh báo khi âm quá ngưỡng cấu hình. Khi chưa có biên dự thầu (hiện tại) dòng 8 và 9 hiển thị “—”, không tự suy ra số (<a href="PL-C.html#Q-207">Q-207</a>).</li>
       <li>Chi phí không hợp lý hiển thị tách riêng, không làm sai lệch lợi nhuận gộp.</li>
       <li>Xuất được đúng biểu mẫu công ty, giữ nguyên thứ tự 10 dòng.</li>
       <li>Dự án chưa có đơn hàng áp giá thì cột doanh thu bằng 0 và hệ thống cảnh báo thay vì hiển thị lỗ giả.</li>
@@ -269,12 +269,13 @@
     <ol class="br">
       <li><b>Ba cấp gộp cộng khớp.</b> Tổng các cột dự án bằng tổng các cột vùng miền và bằng cột All.<span class="then">Đây là phép kiểm quan trọng nhất khi nghiệm thu báo cáo; sai lệch phải bằng 0.</span></li>
       <li><b>Biểu mẫu mười dòng cố định.</b> Thứ tự và tên dòng không đổi giữa các cấp gộp và giữa các kỳ.<span class="then">Bảo đảm so sánh được theo thời gian và giữa các dự án.</span></li>
-      <li><b>Chi phí không hợp lý nằm ngoài lợi nhuận gộp.</b> Dòng 10 hiển thị riêng, không trừ vào dòng 6.<span class="then">Cho ra đồng thời lợi nhuận quản trị và cơ sở tính lợi nhuận chịu thuế.</span></li>
-      <li><b>Biên dự thầu là số đóng băng.</b> Lấy từ thời điểm chốt giá ở <a href="BID-03.html">BID-03</a>, không tính lại.<span class="then">Nhờ vậy dòng chênh lệch biên phản ánh đúng mức bào mòn so với kỳ vọng ban đầu.</span></li>
-      <li><b>Cảnh báo bào mòn biên.</b> Chênh lệch biên âm quá ngưỡng cấu hình thì tô đỏ và sinh nhận định ở chân bảng.<span class="then">Ngưỡng mặc định 3 điểm phần trăm, cấu hình được ở tham số công ty.</span></li>
-      <li><b>Không hiển thị lỗ giả.</b> Dự án có chi phí nhưng chưa áp giá đơn hàng thì cảnh báo thay vì hiển thị số lỗ như kết quả thật.<span class="then">Rất hay gặp ở giai đoạn đầu dự án khi chi phí đã phát sinh mà doanh thu chưa ghi nhận.</span></li>
-      <li><b>Nhóm vùng miền theo mã thống kê.</b> Cấp gộp vùng miền dùng mã thống kê gắn khi khởi tạo dự án.<span class="then">Dự án thiếu mã vùng miền sẽ gom vào cột “chưa phân vùng” thay vì bị bỏ sót.</span></li>
-      <li><b>All gồm cả nhà máy.</b> Cấp gộp toàn công ty cộng thêm kết quả của nhà máy.<span class="then">Hai cấp còn lại chỉ gồm dự án; chênh lệch giữa All và tổng dự án chính là phần nhà máy.</span></li>
+      <li><b>Chi phí không hợp lý nằm ngoài lợi nhuận gộp.</b> Dòng 10 hiển thị riêng, không trừ vào dòng 6.<span class="then">Số này là tập con đã nằm trong dòng 2 – 5 (sổ ghi chi phí đúng như đã chi); dòng 10 chỉ cho biết bao nhiêu trong đó bị đánh dấu không hợp lý, để dựng cơ sở tính lợi nhuận chịu thuế (<a href="PL-C.html#Q-211">Q-211</a>).</span></li>
+      <li><b>Biên dự thầu chưa có nguồn thì để trống.</b> <a href="BID-03.html">BID-03</a> không còn biên lợi nhuận, nên dòng 8 và 9 hiển thị “—” ở mọi cấp; không điền 0 và không suy từ giá áp đơn hàng.<span class="then">Khi nghiệp vụ chốt nguồn biên dự thầu, đó phải là số đóng băng tại thời điểm chốt giá, không tính lại (<a href="PL-C.html#Q-207">Q-207</a>).</span></li>
+      <li><b>Cảnh báo bào mòn biên.</b> Chênh lệch biên âm quá ngưỡng cấu hình thì tô cảnh báo và sinh nhận định ở chân bảng.<span class="then">Ngưỡng mặc định 3 điểm phần trăm; tham số công ty và nhận định ở chân bảng chưa làm, màn hiện tô cảnh báo mọi chênh lệch âm khi có số (<a href="PL-C.html#Q-208">Q-208</a>).</span></li>
+      <li><b>Không hiển thị lỗ giả.</b> Dự án có chi phí nhưng chưa có doanh thu từ hồ sơ thanh toán trong kỳ thì cảnh báo thay vì hiển thị số lỗ như kết quả thật; cột vùng miền và All liệt kê các dự án đó.<span class="then">Rất hay gặp ở giai đoạn đầu dự án khi chi phí đã phát sinh mà doanh thu chưa ghi nhận. Doanh thu của báo cáo chỉ lấy từ hồ sơ thanh toán (<a href="ORD-09.html">ORD-09</a>, <a href="ORD-10.html">ORD-10</a>); giá áp đơn hàng không cộng vào (<a href="PL-C.html#Q-209">Q-209</a>).</span></li>
+      <li><b>Nhóm vùng miền theo danh mục Vùng miền của dự án.</b> Cấp gộp vùng miền dùng vùng miền gắn cho dự án (danh mục <a href="PF-01.html">PF-01</a>).<span class="then">Dự án chưa gắn vùng miền gom vào cột “Chưa phân vùng”, xếp cuối, thay vì bị bỏ sót (<a href="PL-C.html#Q-210">Q-210</a>).</span></li>
+      <li><b>Cả ba cấp cùng một nguồn.</b> Mỗi dự án được tính một lần từ cùng số liệu giá thành của <a href="ACC-09.html">ACC-09</a> trong cùng cửa sổ kỳ (tháng, quý, 6 tháng, năm, hoặc từ ngày – đến ngày); cột vùng miền và cột All là phép cộng các cột dự án, không truy vấn riêng.<span class="then">Vì vậy ba cấp khớp nhau đến từng xu, và cột dự án khớp bảng lãi lỗ của ACC-09.</span></li>
+      <li><b>All chỉ gồm các dự án.</b> Chi phí ghi ở CHUNG (không gắn dự án) hiển thị thành một dòng ghi chú dưới bảng, không nằm trong cột nào.<span class="then">Nhà máy chưa được tách thành một đối tượng riêng nên chưa có ở All (<a href="PL-C.html#Q-210">Q-210</a>).</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo kỳ báo cáo.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Lãi lỗ theo kỳ đã chọn.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
     </ol>
@@ -285,10 +286,10 @@
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
           <tr><td>Ba cấp không khớp</td><td>Tổng lệch ≠ 0</td><td>“Tổng ba cấp gộp lệch {giá trị}. Kiểm tra dự án thiếu mã vùng miền hoặc chi phí chưa phân bổ.”</td></tr>
-          <tr><td>Dự án chưa áp giá</td><td>Doanh thu = 0, chi phí &gt; 0</td><td>“{dự án} chưa có đơn hàng áp giá. Con số lỗ chưa phản ánh đúng kết quả.”</td></tr>
-          <tr><td>Thiếu mã vùng miền</td><td><code>region_stat</code> rỗng</td><td>“{n} dự án chưa gán vùng miền, được gom vào cột ‘chưa phân vùng’.”</td></tr>
-          <tr><td>Bào mòn biên vượt ngưỡng</td><td>Chênh &lt; −3 điểm %</td><td>“{dự án} bào mòn {x} điểm % so với dự thầu. Rà soát cấu phần giá vốn.”</td></tr>
-          <tr><td>Thiếu biên dự thầu</td><td>Dự án không qua đấu thầu</td><td>“Dự án nội bộ không có biên dự thầu. Dòng 8 và 9 để trống.”</td></tr>
+          <tr><td>Dự án chưa có doanh thu</td><td>Doanh thu hồ sơ thanh toán = 0, chi phí phát sinh &gt; 0</td><td>“Dự án {mã} chưa có doanh thu từ hồ sơ thanh toán trong kỳ. Số lỗ hiển thị chưa phản ánh đúng kết quả.” (nhiều dự án: “{n} dự án chưa có doanh thu …: {danh sách}.”)</td></tr>
+          <tr><td>Thiếu vùng miền</td><td>Dự án chưa gắn vùng miền</td><td>Cột “Chưa phân vùng” gom các dự án này (không có thông điệp riêng).</td></tr>
+          <tr><td>Bào mòn biên vượt ngưỡng</td><td>Chênh &lt; −3 điểm % — <b>chưa kích hoạt</b> vì chưa có biên dự thầu (<a href="PL-C.html#Q-207">Q-207</a>)</td><td>“{dự án} bào mòn {x} điểm % so với dự thầu. Rà soát cấu phần giá vốn.”</td></tr>
+          <tr><td>Thiếu biên dự thầu</td><td>Mọi dự án (chưa có nguồn biên)</td><td>Dòng 8 và 9 hiển thị “—”; chân bảng ghi “chưa có biên dự thầu (BID-03 đã bỏ phần biên lợi nhuận)”.</td></tr>
         </tbody>
       </table>
     </div>
@@ -298,18 +299,21 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-RPT03-1</td><td>Quý 3 có 3 dự án ở 2 vùng miền</td><td>Xem lần lượt ba cấp gộp</td><td>Tổng ba cấp bằng nhau (trừ phần nhà máy chỉ có ở All)</td></tr>
-          <tr><td>UAT-RPT03-2</td><td>DA-2026-014 biên thực tế 18,8%, dự thầu 24,9%</td><td>Xem dòng 9</td><td>Hiện −6,1 điểm %, tô đỏ vì vượt ngưỡng 3</td></tr>
+          <tr><td>UAT-RPT03-1</td><td>Quý 3 có 3 dự án ở 2 vùng miền</td><td>Xem lần lượt ba cấp gộp</td><td>Tổng cột dự án = tổng cột vùng miền = cột All, sai lệch 0 ở cả 6 dòng số tiền (dòng 1 – 6 và 10); biên dòng 7 tính lại từ tổng</td></tr>
+          <tr><td>UAT-RPT03-2</td><td>DA-2026-014 biên thực tế 18,8%, dự thầu 24,9%</td><td>Xem dòng 9</td><td>Khi BID-03 có biên dự thầu: hiện −6,1 điểm %, tô cảnh báo vì vượt ngưỡng 3. Hiện chưa có nguồn: dòng 8 và 9 hiển thị “—” (<a href="PL-C.html#Q-207">Q-207</a>)</td></tr>
           <tr><td>UAT-RPT03-3</td><td>Có 104 triệu chi phí không hợp lý</td><td>Kiểm tra dòng 6 và dòng 10</td><td>Lợi nhuận gộp không bị trừ; dòng 10 hiển thị riêng</td></tr>
           <tr><td>UAT-RPT03-4</td><td>DA-2026-020 mới khởi công, chưa áp giá</td><td>Mở báo cáo lãi lỗ</td><td>Hiện cảnh báo, không hiển thị lỗ như số thật</td></tr>
           <tr><td>UAT-RPT03-5</td><td>Đang xem theo dự án</td><td>Bấm vào ô giá vốn vật liệu</td><td>Khoan xuống sổ chi phí công trình rồi tới chứng từ</td></tr>
-          <tr><td>UAT-RPT03-6</td><td>Báo cáo đã lọc xong</td><td>Xuất Excel</td><td>Đúng 10 dòng theo thứ tự biểu mẫu công ty</td></tr>
+          <tr><td>UAT-RPT03-6</td><td>Báo cáo đã lọc xong</td><td>Xuất Excel</td><td>Đúng 10 dòng theo thứ tự biểu mẫu công ty, mỗi dự án / vùng một cột và cột Cộng; dòng 8 và 9 ghi “—”. Chỉ xuất Excel (chưa có PDF)</td></tr>
+          <tr><td>UAT-RPT03-7</td><td>Dự án A, B ở vùng Bắc; C ở vùng Nam; D chưa gắn vùng</td><td>Xem cấp vùng miền</td><td>Ba cột: Bắc = A + B, Nam = C, “Chưa phân vùng” = D (xếp cuối) và cột Cộng bằng cột All</td></tr>
+          <tr><td>UAT-RPT03-8</td><td>Đang xem cấp vùng miền hoặc All</td><td>Bấm “Xem theo dự án” ở đầu cột</td><td>Chuyển sang cấp dự án, chỉ gồm các dự án cột đó cộng lại; bấm mã dự án mở sổ chi phí công trình và chứng từ</td></tr>
+          <tr><td>UAT-RPT03-9</td><td>Kỳ có chi phí ghi ở CHUNG</td><td>Xem ghi chú dưới bảng</td><td>Số CHUNG hiển thị riêng, không nằm trong cột nào; khớp tab Đối chiếu tổng của ACC-09</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ACC-09.html">ACC-09 giá thành</a><a href="BID-06.html">BID-06 doanh thu</a><a href="BID-03.html">BID-03 biên dự thầu</a><a href="RPT-01.html">RPT-01 sổ chi phí công trình</a><a href="RPT-04.html">RPT-04 dashboard</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a></p>
+    <p class="links"><a href="ACC-09.html">ACC-09 giá thành</a><a href="BID-06.html">BID-06 doanh thu</a><a href="BID-03.html">BID-03 biên dự thầu</a><a href="RPT-01.html">RPT-01 sổ chi phí công trình</a><a href="RPT-04.html">RPT-04 dashboard</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a><a href="PL-C.html#Q-207">PL-C Q-207 – Q-211</a></p>
   </div>
 </section>
 <div class="filefoot">
