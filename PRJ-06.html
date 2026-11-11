@@ -81,11 +81,11 @@
     <div class="tb-id">PRJ-06</div>
     <div class="tb-main">
       <h3>Nhân sự dự án</h3>
-      <p><em>(Yêu cầu thay đổi 20/10/2026)</em> Phần phân công nhân sự hiện trường được chuyển khỏi <a href="BID-05.html">BID-05</a> sang phân hệ Dự án – Thi công. P. Đấu thầu vẫn gán thành phần dự án trên hợp đồng; người được gán <em>Giám đốc dự án</em> nhận thông báo, mở màn hình này và tự phân công chỉ huy trưởng, cán bộ kỹ thuật, thủ kho công trình từ chính phòng ban của mình.</p>
+      <p><em>(Yêu cầu thay đổi 20/10/2026)</em> Phần phân công nhân sự hiện trường được chuyển khỏi <a href="BID-05.html">BID-05</a> sang phân hệ Dự án – Thi công. P. Đấu thầu vẫn gán thành phần dự án trên hợp đồng; người được gán <em>Giám đốc dự án</em> nhận thông báo, mở màn hình này và tự phân công chỉ huy trưởng, cán bộ kỹ thuật, thủ kho công trình từ chính phòng ban của mình. Dự án tạo nhanh chưa có hợp đồng — gói <em>Làm trước, ký HĐ sau</em> ở <a href="BID-01.html">BID-01</a> hay dự án P. TQT tạo nhanh — có thêm khối <b>Cán bộ phụ trách (P. TQT)</b>: Trưởng phòng TQT giao một kỹ sư trong phòng (<a href="PL-C.html#Q-254">Q-254</a>, 11/11/2026).</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>Giám đốc dự án của dự án</dd></div>
         <div><dt>Phê duyệt</dt><dd>Không (có thông báo tới từng người)</dd></div>
-        <div><dt>Quyền truy cập</dt><dd>Xem: người có <code>project:read</code> · Sửa: GĐ dự án của dự án, Admin</dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Xem: người có <code>project:read</code> · Sửa nhân sự hiện trường: GĐ dự án của dự án, Admin · Giao cán bộ phụ trách dự án tạo nhanh: người có <code>shopdrawing:approve_internal</code> (Trưởng phòng TQT), Admin</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>Yêu cầu thay đổi 20/10/2026</dd></div>
       </dl>
     </div>
@@ -122,6 +122,7 @@
         <tbody>
           <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Danh sách dự án: GĐ dự án thấy các dự án mình tham gia; người có <code>project:assign</code> và Admin thấy tất cả.</td></tr>
           <tr><td>Thành phần dự án</td><td class="k">members[]</td><td>Bảng</td><td class="c">—</td><td>Chỉ đọc — gán ở <a href="BID-05.html">BID-05</a>.</td></tr>
+          <tr><td>Cán bộ phụ trách (P. TQT)</td><td class="k">quick_owner.user_id</td><td>Tham chiếu</td><td class="c">—</td><td>Chỉ có ở dự án tạo nhanh chưa có hợp đồng (<a href="PL-C.html#Q-254">Q-254</a>). Một người, đang hoạt động, thuộc P. TQT; ô chọn chỉ liệt kê nhân sự P. TQT. Lưu là thay người cũ — dòng “Cán bộ phụ trách” ở thành phần dự án. Người không có quyền chỉ xem tên, hoặc “Chưa phân công” khi trống.</td></tr>
           <tr><td>Nhân sự hiện trường</td><td class="k">site_team[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: vai trò (mặc định chỉ huy trưởng, cán bộ kỹ thuật, thủ kho công trình), người, phạm vi phụ trách (toàn công trình hoặc theo hạng mục). Ô chọn người chỉ liệt kê nhân sự đang hoạt động thuộc phòng ban của GĐ dự án.</td></tr>
         </tbody>
       </table>
@@ -133,6 +134,7 @@
       <li><b>Chọn người trong phòng ban của GĐ dự án.</b> Mỗi GĐ dự án vùng là một phòng ban; nhân sự hiện trường phải thuộc phòng ban đó.<span class="then">Admin phân công thay thì vẫn theo phòng ban của GĐ dự án. GĐ dự án chưa thuộc phòng ban nào thì không phân công được cho tới khi Admin gán phòng ban (<a href="PF-02.html">PF-02</a>).</span></li>
       <li><b>Chưa có GĐ dự án thì khóa.</b> Dự án chưa gán Giám đốc dự án thì phần nhân sự hiện trường bị khóa kèm hướng dẫn.</li>
       <li><b>Lưu là thay toàn bộ tầng hiện trường.</b> Thành phần dự án không bị đụng tới — GĐ dự án không tự gỡ được mình khỏi danh sách đã trao quyền cho mình.</li>
+      <li><b>Trưởng phòng TQT giao cán bộ phụ trách dự án tạo nhanh</b> <em>(<a href="PL-C.html#Q-254">Q-254</a>, 11/11/2026)</em>. Dự án tạo nhanh chưa có hợp đồng có khối <b>Cán bộ phụ trách (P. TQT)</b>; gói làm trước ở <a href="BID-01.html">BID-01</a> tới đây chưa có ai, Trưởng phòng TQT nhận thông báo “Gói làm trước {mã} cần phân công kỹ sư” mở thẳng trang này.<span class="then">Người có <code>shopdrawing:approve_internal</code> (Trưởng phòng TQT) hoặc Admin chọn <b>một</b> kỹ sư thuộc P. TQT — có thể chọn chính mình — rồi bấm <b>Giao việc</b>; giao lại bao nhiêu lần cũng được, mỗi lần thay người cũ, các dòng thành phần dự án khác giữ nguyên. Người được giao nhận thông báo được thêm vào dự án với vai trò “Cán bộ phụ trách”.</span><span class="then">Dự án đã có hợp đồng, hoặc mở từ <a href="BID-05.html">BID-05</a>, không có khối này — thành phần dự án theo BID-05. Máy chủ kiểm tra lại quyền, phòng ban và loại dự án.</span></li>
       <li><b>Thông báo theo vai trò.</b> GĐ dự án nhận thông báo riêng “Bạn được giao Giám đốc dự án {dự án} — hãy phân công nhân sự hiện trường”, bấm vào mở thẳng màn hình này (<a href="PF-04.html">PF-04</a>); những người khác nhận thông báo được thêm vào dự án với vai trò của mình.</li>
     </ol>
 
@@ -144,6 +146,9 @@
           <tr><td>Chưa gán GĐ dự án</td><td>Thành phần dự án không có vai trò Giám đốc dự án</td><td>“Chưa gán Giám đốc dự án — phần phân công nhân sự hiện trường bị khóa.”</td></tr>
           <tr><td>Người lưu không phải GĐ dự án</td><td>Người gọi không phải GĐ dự án của dự án, không phải Admin</td><td>“Chỉ Giám đốc dự án của dự án mới phân công nhân sự hiện trường.”</td></tr>
           <tr><td>Chọn người ngoài phòng ban</td><td>Người được chọn không thuộc phòng ban của GĐ dự án</td><td>“Nhân sự hiện trường phải thuộc phòng ban của Giám đốc dự án.”</td></tr>
+          <tr><td>Giao cán bộ phụ trách không có quyền</td><td>Người gọi không có <code>shopdrawing:approve_internal</code>, không phải Admin (<a href="PL-C.html#Q-254">Q-254</a>)</td><td>“Chỉ Trưởng phòng TQT mới phân công cán bộ phụ trách dự án.”</td></tr>
+          <tr><td>Cán bộ phụ trách ngoài P. TQT</td><td>Người được chọn không thuộc P. TQT</td><td>“Cán bộ phụ trách phải thuộc P. TQT.”</td></tr>
+          <tr><td>Dự án đã có hợp đồng</td><td>Dự án không phải tạo nhanh, hoặc đã gắn hợp đồng</td><td>“Dự án {mã} đã có hợp đồng — thành phần dự án theo BID-05.”</td></tr>
           <tr><td>GĐ dự án chưa có phòng ban</td><td>Tài khoản GĐ dự án không gắn phòng ban</td><td>“Giám đốc dự án chưa thuộc phòng ban nào — liên hệ quản trị để gán phòng ban trước khi phân công.”</td></tr>
         </tbody>
       </table>
@@ -155,6 +160,7 @@
       <li>GĐ dự án thấy thành phần dự án (chỉ đọc) và bảng nhân sự hiện trường sửa được; ô chọn người chỉ có nhân sự phòng ban mình.</li>
       <li>Lưu xong, mỗi người được phân công nhận thông báo kèm vai trò của mình.</li>
       <li>Người khác mở trang chỉ xem được hai bảng, không có nút sửa.</li>
+      <li>Dự án làm trước mở trang có khối Cán bộ phụ trách (P. TQT): Trưởng phòng TQT giao được một kỹ sư P. TQT hoặc chính mình, giao lại được; kỹ sư được giao nhận thông báo; người khác chỉ xem.</li>
     </ol>
 
     <h4>Kịch bản kiểm thử</h4>
@@ -167,12 +173,15 @@
           <tr><td>UAT-PRJ06-3</td><td>Tiếp UAT-2</td><td>A chọn đủ ba dòng, bấm Lưu</td><td>Lưu thành công; ba người nhận thông báo kèm vai trò</td></tr>
           <tr><td>UAT-PRJ06-4</td><td>TP Đấu thầu có <code>project:assign</code>, không phải GĐ dự án</td><td>Mở trang Nhân sự dự án; gọi trực tiếp API lưu</td><td>Chỉ xem; API từ chối “Chỉ Giám đốc dự án của dự án…”</td></tr>
           <tr><td>UAT-PRJ06-5</td><td>Tiếp UAT-2</td><td>Gửi API với một người thuộc phòng khác</td><td>Bị từ chối “Nhân sự hiện trường phải thuộc phòng ban của Giám đốc dự án.”</td></tr>
+          <tr><td>UAT-PRJ06-6</td><td>Gói <code>KH_0300</code> vừa tiếp nhận <em>Làm trước, ký HĐ sau</em> ở <a href="BID-01.html">BID-01</a>; B là Trưởng phòng TQT, D là kỹ sư P. TQT <em>(<a href="PL-C.html#Q-254">Q-254</a>)</em></td><td>B mở thông báo “cần phân công kỹ sư”, chọn D ở khối Cán bộ phụ trách (P. TQT), bấm Giao việc</td><td>Trang dự án <code>KH_0300</code> mở; lưu thành công, D là dòng “Cán bộ phụ trách” ở thành phần dự án và nhận thông báo được thêm vào dự án</td></tr>
+          <tr><td>UAT-PRJ06-7</td><td>Tiếp UAT-6</td><td>B chọn chính mình, bấm Giao việc</td><td>Lưu thành công; B thay D — chỉ còn một dòng Cán bộ phụ trách</td></tr>
+          <tr><td>UAT-PRJ06-8</td><td>Tiếp UAT-6</td><td>B gửi API với một người không thuộc P. TQT; một kỹ sư P. TQT không có quyền gửi API giao chính mình; B gửi API cho một dự án đã ký hợp đồng</td><td>Lần lượt bị từ chối “Cán bộ phụ trách phải thuộc P. TQT.”, “Chỉ Trưởng phòng TQT mới phân công cán bộ phụ trách dự án.”, “Dự án … đã có hợp đồng — thành phần dự án theo BID-05.”; không đổi dòng nào</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-05.html">BID-05 thành phần dự án</a><a href="PF-02.html">PF-02 phòng ban &amp; phân quyền</a><a href="PF-04.html">PF-04 thông báo</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="PRJ-04.html">PRJ-04 xuất nhập kho dự án</a></p>
+    <p class="links"><a href="BID-05.html">BID-05 thành phần dự án</a><a href="BID-01.html">BID-01 gói làm trước, ký HĐ sau</a><a href="PL-C.html#Q-254">Q-254 gói làm trước chuyển Trưởng phòng TQT</a><a href="PF-02.html">PF-02 phòng ban &amp; phân quyền</a><a href="PF-04.html">PF-04 thông báo</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="PRJ-04.html">PRJ-04 xuất nhập kho dự án</a></p>
   </div>
 </section>
 <div class="filefoot">
