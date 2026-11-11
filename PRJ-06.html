@@ -83,7 +83,7 @@
       <h3>Nhân sự dự án</h3>
       <p><em>(Yêu cầu thay đổi 20/10/2026)</em> Phần phân công nhân sự hiện trường được chuyển khỏi <a href="BID-05.html">BID-05</a> sang phân hệ Dự án – Thi công. P. Đấu thầu vẫn gán thành phần dự án trên hợp đồng; người được gán <em>Giám đốc dự án</em> nhận thông báo, mở màn hình này và tự phân công chỉ huy trưởng, cán bộ kỹ thuật, thủ kho công trình từ chính phòng ban của mình. Dự án tạo nhanh chưa có hợp đồng — gói <em>Làm trước, ký HĐ sau</em> ở <a href="BID-01.html">BID-01</a> hay dự án P. TQT tạo nhanh — có thêm khối <b>Cán bộ phụ trách (P. TQT)</b>: Trưởng phòng TQT giao một kỹ sư trong phòng (<a href="PL-C.html#Q-254">Q-254</a>, 11/11/2026).</p>
       <dl class="tb-meta">
-        <div><dt>Thực hiện</dt><dd>Giám đốc dự án của dự án</dd></div>
+        <div><dt>Thực hiện</dt><dd>Giám đốc dự án của dự án · Trưởng phòng TQT (cán bộ phụ trách dự án tạo nhanh)</dd></div>
         <div><dt>Phê duyệt</dt><dd>Không (có thông báo tới từng người)</dd></div>
         <div><dt>Quyền truy cập</dt><dd>Xem: người có <code>project:read</code> · Sửa nhân sự hiện trường: GĐ dự án của dự án, Admin · Giao cán bộ phụ trách dự án tạo nhanh: người có <code>shopdrawing:approve_internal</code> (Trưởng phòng TQT), Admin</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>Yêu cầu thay đổi 20/10/2026</dd></div>
@@ -122,7 +122,7 @@
         <tbody>
           <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Danh sách dự án: GĐ dự án thấy các dự án mình tham gia; người có <code>project:assign</code> và Admin thấy tất cả.</td></tr>
           <tr><td>Thành phần dự án</td><td class="k">members[]</td><td>Bảng</td><td class="c">—</td><td>Chỉ đọc — gán ở <a href="BID-05.html">BID-05</a>.</td></tr>
-          <tr><td>Cán bộ phụ trách (P. TQT)</td><td class="k">quick_owner.user_id</td><td>Tham chiếu</td><td class="c">—</td><td>Chỉ có ở dự án tạo nhanh chưa có hợp đồng (<a href="PL-C.html#Q-254">Q-254</a>). Một người, đang hoạt động, thuộc P. TQT; ô chọn chỉ liệt kê nhân sự P. TQT. Lưu là thay người cũ — dòng “Cán bộ phụ trách” ở thành phần dự án. Người không có quyền chỉ xem tên, hoặc “Chưa phân công” khi trống.</td></tr>
+          <tr><td>Cán bộ phụ trách (P. TQT)</td><td class="k">quick_owner.user_id</td><td>Tham chiếu</td><td class="c">—</td><td>Chỉ có ở dự án tạo nhanh chưa có hợp đồng (<a href="PL-C.html#Q-254">Q-254</a>). Một người thuộc P. TQT; ô chọn chỉ liệt kê nhân sự P. TQT đang hoạt động. Lưu là thay người cũ — dòng “Cán bộ phụ trách” ở thành phần dự án. Người không có quyền chỉ xem tên, hoặc “Chưa phân công” khi trống.</td></tr>
           <tr><td>Nhân sự hiện trường</td><td class="k">site_team[]</td><td>Bảng</td><td class="c req">✱</td><td>Mỗi dòng: vai trò (mặc định chỉ huy trưởng, cán bộ kỹ thuật, thủ kho công trình), người, phạm vi phụ trách (toàn công trình hoặc theo hạng mục). Ô chọn người chỉ liệt kê nhân sự đang hoạt động thuộc phòng ban của GĐ dự án.</td></tr>
         </tbody>
       </table>
