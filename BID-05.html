@@ -84,7 +84,7 @@
       <p>Bước bản lề của cả hệ thống. Ghi chú gốc nói rất rõ: “ở bước này có thể tương đương tạo 1 dự án mới… PĐT sẽ thêm Ban lãnh đạo cty, Giám đốc dự án, các phòng ban vào dự án này, Giám đốc dự án sẽ phân công chỉ huy trưởng, CBKT vào dự án, sẽ có thông báo đến từng ID được thêm vào dự án”.</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu (nhân sự hiện trường: GĐ dự án ở <a href="PRJ-06.html">PRJ-06</a>, <em>20/10/2026</em>)</dd></div>
-        <div><dt>Phê duyệt</dt><dd>Kiểm tra hợp đồng đạt → khởi tạo dự án <em>(19/10/2026)</em></dd></div>
+        <div><dt>Phê duyệt</dt><dd>Kiểm tra hợp đồng đạt + đủ điều kiện chốt → Chốt HĐ – Đã ký, khởi tạo dự án; ký số diễn ra ngoài hệ thống <em>(12/11/2026)</em></dd></div>
         <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · trưởng các BP · dự án liên quan</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>ĐT · dòng 4.2</dd></div>
       </dl>
@@ -94,149 +94,189 @@
     <h4>Mục tiêu</h4>
     <p>Một thao tác duy nhất phải cho ra ba kết quả: hợp đồng được chốt với số hợp đồng chính thức, dự án được khởi tạo với BOQ hợp đồng, và bộ máy nhân sự dự án được gán kèm thông báo tới từng người. Nếu tách rời ba việc này thì dữ liệu dự án sẽ khuyết ngay từ ngày đầu.</p>
     <p><em>(19/10/2026)</em> Hệ thống không còn chuỗi ký số. Hợp đồng được soạn và review, rồi chạy một bước kiểm tra hợp đồng: đối chiếu giá trị và BOQ với gói thầu đã chốt ở <a href="BID-03.html">BID-03</a>, soát điều khoản thương mại, pháp nhân bên ký kết, tiến độ và bảo hành, cùng phiên bản hợp đồng tự sinh theo BOQ. Mọi mục đạt thì mới được khởi tạo dự án — số hợp đồng nhập đúng lúc đó. <em>(20/10/2026)</em> Màn hình này không còn phần phân công nhân sự hiện trường: GĐ dự án được gán nhận thông báo và phân công ở <a href="PRJ-06.html">PRJ-06</a>, từ phòng ban của mình. Sai lệch phải được phát hiện ở bước kiểm tra, không phải sau khi dự án đã sinh ra.</p>
+    <p><em>(12/11/2026 · <a href="PL-C.html#Q-265">Q-265</a> – <a href="PL-C.html#Q-271">Q-271</a>)</em> Màn hình này là bước 4, 5, 6 của luồng gói thầu. <b>Bước 4 — ký số:</b> hợp đồng vẫn ký ngoài hệ thống; P. Đấu thầu bấm <em>Bắt đầu ký</em> để gói mang trạng thái <code>Đang ký số</code>, rồi khi ký xong nhập số HĐ, tổng giá trị, % được tạm ứng, hình thức bảo lãnh và tải PDF HĐ đã ký. <em>Chốt HĐ – Đã ký</em> chuyển gói sang <code>Đã ký - HĐ chốt</code> và khởi tạo dự án đúng như trước. <b>Bước 5 — tạo mã vật tư theo HĐ</b> và <b>bước 6 — thông báo các phòng ban</b> mở cùng lúc, không chờ nhau; xong cả hai thì gói <code>Hoàn tất</code>. Sau đó giá trị, khối lượng chỉ đổi bằng <b>phụ lục HĐ</b> — Loại 01 hoặc Loại 02 — cũng lập và ký trên màn hình này.</p>
 
-    <h4>Lưu đồ — kiểm tra và khởi tạo</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:510px;margin:0 auto"><svg role="img" aria-label="Hình BID-05.1 Hợp đồng soạn và review xong phải qua một bước kiểm tra đối chiếu BOQ chốt, điều khoản và phiên bản hợp đồng; còn sai lệch thì quay lại soạn thảo, đạt thì mới khởi tạo dự án, nhập số hợp đồng ngay lúc đó. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện."
- viewBox="0.00 0.00 510.00 722.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 994.32)">
-<title>G</title>
-<g id="node1" class="node">
-<title>A</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="249.12,-981.36 113.55,-981.36 113.55,-951.96 249.12,-951.96 249.12,-981.36"/>
-<text xml:space="preserve" text-anchor="middle" x="181.34" y="-962.91" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chốt giá tại BID&#45;03</text>
+    <h4>Lưu đồ — ký số, chốt HĐ, bước 5 và bước 6</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-05.1 Từ thương thảo hoàn thành, P. Đấu thầu soạn và kiểm tra hợp đồng, bấm Bắt đầu ký để chuyển Đang ký số trong lúc ký ngoài hệ thống, rồi nhập số HĐ, tổng giá trị, % được tạm ứng, hình thức bảo lãnh và PDF HĐ đã ký; đủ điều kiện thì Chốt HĐ – Đã ký khởi tạo dự án, mở song song bước 5 tạo mã vật tư và bước 6 thông báo phòng ban; xong cả hai thì Hoàn tất." viewBox="0 0 700 630" width="700" height="630" xmlns="http://www.w3.org/2000/svg">
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="200,10 500,10 500,54 200,54"/>
+<text text-anchor="middle" x="350" y="28.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Thương thảo hoàn thành</text>
+<text text-anchor="middle" x="350" y="43.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">BID-03 · giá đã đóng băng</text>
 </g>
-<g id="node2" class="node">
-<title>B</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="338.39,-916.96 24.28,-916.96 24.28,-872.56 338.39,-872.56 338.39,-916.96"/>
-<text xml:space="preserve" text-anchor="middle" x="181.34" y="-898.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Soạn &amp; review hợp đồng</text>
-<text xml:space="preserve" text-anchor="middle" x="181.34" y="-883.51" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">nạp sẵn giá trị, điều kiện thương mại, BOQ chốt</text>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="150,84 550,84 550,128 150,128"/>
+<text text-anchor="middle" x="350" y="102.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Soạn hợp đồng · kiểm tra hợp đồng</text>
+<text text-anchor="middle" x="350" y="117.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">đối chiếu giá chốt · BOQ · điều khoản · pháp nhân</text>
 </g>
-<g id="edge1" class="edge">
-<title>A&#45;&gt;B</title>
-<path fill="none" stroke="#55606b" d="M181.34,-951.51C181.34,-943.92 181.34,-934.28 181.34,-925.15"/>
-<polygon fill="#55606b" stroke="#55606b" points="183.61,-925.34 181.34,-918.84 179.06,-925.34 183.61,-925.34"/>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="200,158 500,158 500,202 200,202"/>
+<text text-anchor="middle" x="350" y="176.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Bắt đầu ký → Đang ký số</text>
+<text text-anchor="middle" x="350" y="191.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">ký ngoài hệ thống</text>
 </g>
-<g id="node15" class="node">
-<title>P</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="338.39,-840 24.28,-840 24.28,-795.6 338.39,-795.6 338.39,-840"/>
-<text xml:space="preserve" text-anchor="middle" x="181.34" y="-821.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Kiểm tra hợp đồng</text>
-<text xml:space="preserve" text-anchor="middle" x="181.34" y="-806.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đối chiếu BOQ chốt · điều khoản · phiên bản V{n}</text>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="130,232 570,232 570,276 130,276"/>
+<text text-anchor="middle" x="350" y="250.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Nhập điều kiện chốt HĐ</text>
+<text text-anchor="middle" x="350" y="265.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">số HĐ · tổng giá trị · % tạm ứng · bảo lãnh · PDF HĐ đã ký</text>
 </g>
-<g id="edge16" class="edge">
-<title>B&#45;&gt;P</title>
-<path fill="none" stroke="#55606b" d="M181.34,-872.16C181.34,-864.5 181.34,-856.5 181.34,-848.5"/>
-<polygon fill="#55606b" stroke="#55606b" points="183.61,-848.5 181.34,-842 179.06,-848.5 183.61,-848.5"/>
+<g class="node"><polygon fill="#eef2f5" stroke="#5d6b7a" points="350,292 450,322 350,352 250,322"/>
+<text text-anchor="middle" x="350" y="318.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Đủ điều kiện</text>
+<text text-anchor="middle" x="350" y="333.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">và kiểm tra đạt?</text>
 </g>
-<g id="node16" class="node">
-<title>Q</title>
-<polygon fill="#eef2f5" stroke="#5d6b7a" points="181.34,-763 114.55,-745.12 181.34,-727.24 248.13,-745.12 181.34,-763"/>
-<text xml:space="preserve" text-anchor="middle" x="181.34" y="-741.37" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đạt yêu cầu?</text>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="150,384 550,384 550,428 150,428"/>
+<text text-anchor="middle" x="350" y="402.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Chốt HĐ – Đã ký → Đã ký - HĐ chốt</text>
+<text text-anchor="middle" x="350" y="417.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">khởi tạo dự án · BOQ HĐ · kho · thành phần dự án</text>
 </g>
-<g id="edge17" class="edge">
-<title>P&#45;&gt;Q</title>
-<path fill="none" stroke="#55606b" d="M181.34,-795.2C181.34,-787 181.34,-779 181.34,-771.5"/>
-<polygon fill="#55606b" stroke="#55606b" points="183.61,-771.5 181.34,-765 179.06,-771.5 183.61,-771.5"/>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="30,480 330,480 330,524 30,524"/>
+<text text-anchor="middle" x="180" y="498.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Bước 5 · Tạo mã vật tư theo HĐ</text>
+<text text-anchor="middle" x="180" y="513.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">PĐT bấm Hoàn thành tạo mã</text>
 </g>
-<g id="edge18" class="edge">
-<title>Q&#45;&gt;I</title>
-<path fill="none" stroke="#55606b" d="M181.34,-727.24C181.34,-715 197.34,-710 197.34,-698.4"/>
-<polygon fill="#55606b" stroke="#55606b" points="199.61,-698.4 197.34,-691.9 195.06,-698.4 199.61,-698.4"/>
-<text xml:space="preserve" text-anchor="middle" x="210" y="-707" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Đạt</text>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="370,480 670,480 670,524 370,524"/>
+<text text-anchor="middle" x="520" y="498.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Bước 6 · Thông báo các phòng ban</text>
+<text text-anchor="middle" x="520" y="513.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">PĐT gửi một lần theo DS</text>
 </g>
-<g id="edge19" class="edge">
-<title>Q&#45;&gt;B</title>
-<path fill="none" stroke="#55606b" d="M114.35,-745.12C88.5,-745.12 6,-745.12 6,-762 6,-762 6,-878 6,-878 6,-888 11.5,-892.8 17.2,-894.5"/>
-<polygon fill="#55606b" stroke="#55606b" points="17,-892.49 23.5,-894.76 17,-897.03 17,-892.49"/>
-<text xml:space="preserve" text-anchor="middle" x="59" y="-732.6" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Còn sai lệch</text>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="200,570 500,570 500,614 200,614"/>
+<text text-anchor="middle" x="350" y="588.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Hoàn tất</text>
+<text text-anchor="middle" x="350" y="603.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">khi xong cả bước 5 và bước 6</text>
 </g>
-<g id="flow-after-check" transform="translate(0,-285)">
-<g id="node9" class="node">
-<title>I</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="273.12,-405.4 121.55,-405.4 121.55,-361 273.12,-361 273.12,-405.4"/>
-<text xml:space="preserve" text-anchor="middle" x="197.34" y="-386.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Khởi tạo dự án</text>
-<text xml:space="preserve" text-anchor="middle" x="197.34" y="-371.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">nhập số hợp đồng · sinh project_id</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M350,54 L350,84"/>
+<polygon fill="#55606b" stroke="#55606b" points="350,84 352.3,77.5 347.7,77.5"/>
 </g>
-<g id="node10" class="node">
-<title>J</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="322.31,-264.6 62.36,-264.6 62.36,-220.2 322.31,-220.2 322.31,-264.6"/>
-<text xml:space="preserve" text-anchor="middle" x="192.34" y="-246.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chuyển BOQ chốt thành BOQ hợp đồng</text>
-<text xml:space="preserve" text-anchor="middle" x="192.34" y="-231.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">khóa khối lượng và đơn giá</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M350,128 L350,158"/>
+<polygon fill="#55606b" stroke="#55606b" points="350,158 352.3,151.5 347.7,151.5"/>
 </g>
-<g id="edge10" class="edge">
-<title>I&#45;&gt;J</title>
-<path fill="none" stroke="#55606b" d="M196.55,-360.51C195.7,-336.88 194.34,-298.94 193.39,-272.68"/>
-<polygon fill="#55606b" stroke="#55606b" points="195.67,-272.86 193.17,-266.45 191.13,-273.03 195.67,-272.86"/>
+<g class="edge"><path fill="none" stroke="#55606b" d="M350,202 L350,232"/>
+<polygon fill="#55606b" stroke="#55606b" points="350,232 352.3,225.5 347.7,225.5"/>
 </g>
-<g id="node11" class="node">
-<title>K</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="483.75,-326 218.92,-326 218.92,-281.6 483.75,-281.6 483.75,-326"/>
-<text xml:space="preserve" text-anchor="middle" x="351.34" y="-307.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">P. Đấu thầu gán thành phần dự án</text>
-<text xml:space="preserve" text-anchor="middle" x="351.34" y="-292.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ban lãnh đạo · GĐ dự án · các phòng ban</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M350,276 L350,292"/>
+<polygon fill="#55606b" stroke="#55606b" points="350,292 352.3,285.5 347.7,285.5"/>
 </g>
-<g id="edge11" class="edge">
-<title>I&#45;&gt;K</title>
-<path fill="none" stroke="#55606b" d="M240.23,-360.64C259.18,-351.12 281.57,-339.86 301.28,-329.96"/>
-<polygon fill="#55606b" stroke="#55606b" points="302.26,-332.01 307.05,-327.06 300.22,-327.94 302.26,-332.01"/>
+<g class="edge"><path fill="none" stroke="#55606b" d="M250,322 L80,322 L80,254 L130,254"/>
+<polygon fill="#55606b" stroke="#55606b" points="130,254 123.5,251.7 123.5,256.3"/>
+<text text-anchor="middle" x="172" y="314" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Chưa đủ</text>
 </g>
-<g id="node14" class="node">
-<title>N</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="336.06,-44.4 88.61,-44.4 88.61,0 336.06,0 336.06,-44.4"/>
-<text xml:space="preserve" text-anchor="middle" x="212.34" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Mở các luồng phụ thuộc:</text>
-<text xml:space="preserve" text-anchor="middle" x="212.34" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">tạm ứng HĐ · shopdrawing · giá khoán</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M350,352 L350,384"/>
+<polygon fill="#55606b" stroke="#55606b" points="350,384 352.3,377.5 347.7,377.5"/>
+<text text-anchor="start" x="362" y="372" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Đủ</text>
 </g>
-<g id="edge14" class="edge">
-<title>J&#45;&gt;N</title>
-<path fill="none" stroke="#55606b" d="M194.29,-220.08C197.89,-180.81 205.57,-97 209.65,-52.45"/>
-<polygon fill="#55606b" stroke="#55606b" points="211.91,-52.79 210.23,-46.11 207.38,-52.38 211.91,-52.79"/>
+<g class="edge"><path fill="none" stroke="#55606b" d="M350,428 L350,454 L180,454 L180,480"/>
+<polygon fill="#55606b" stroke="#55606b" points="180,480 182.3,473.5 177.7,473.5"/>
+<text text-anchor="start" x="358" y="446" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">song song</text>
 </g>
-<g id="node12" class="node">
-<title>L</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="459.55,-203.2 237.12,-203.2 237.12,-158.8 459.55,-158.8 459.55,-203.2"/>
-<text xml:space="preserve" text-anchor="middle" x="348.34" y="-184.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">GĐ dự án phân công</text>
-<text xml:space="preserve" text-anchor="middle" x="348.34" y="-169.75" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chỉ huy trưởng · cán bộ kỹ thuật</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M350,454 L520,454 L520,480"/>
+<polygon fill="#55606b" stroke="#55606b" points="520,480 522.3,473.5 517.7,473.5"/>
 </g>
-<g id="edge12" class="edge">
-<title>K&#45;&gt;L</title>
-<path fill="none" stroke="#55606b" d="M350.8,-281.2C350.31,-261.71 349.6,-232.85 349.06,-211.29"/>
-<polygon fill="#55606b" stroke="#55606b" points="351.34,-211.36 348.9,-204.92 346.79,-211.48 351.34,-211.36"/>
+<g class="edge"><path fill="none" stroke="#55606b" d="M180,524 L180,547 L350,547 L350,570"/>
+<polygon fill="#55606b" stroke="#55606b" points="350,570 352.3,563.5 347.7,563.5"/>
 </g>
-<g id="node13" class="node">
-<title>M</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="451.07,-123.8 235.6,-123.8 235.6,-79.4 451.07,-79.4 451.07,-123.8"/>
-<text xml:space="preserve" text-anchor="middle" x="343.34" y="-105.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Thông báo tới từng ID được thêm</text>
-<text xml:space="preserve" text-anchor="middle" x="343.34" y="-90.35" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;04</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M520,524 L520,547 L350,547 L350,570"/>
+<polygon fill="#55606b" stroke="#55606b" points="350,570 352.3,563.5 347.7,563.5"/>
 </g>
-<g id="edge13" class="edge">
-<title>L&#45;&gt;M</title>
-<path fill="none" stroke="#55606b" d="M346.94,-158.44C346.41,-150.22 345.8,-140.71 345.23,-131.89"/>
-<polygon fill="#55606b" stroke="#55606b" points="347.51,-131.89 344.82,-125.55 342.97,-132.19 347.51,-131.89"/>
+</svg></div><figcaption><b>Hình BID-05.1</b> <em>(12/11/2026 · <a href="PL-C.html#Q-265">Q-265</a>, <a href="PL-C.html#Q-266">Q-266</a>)</em> Ký diễn ra ngoài hệ thống: <em>Bắt đầu ký</em> chỉ đổi trạng thái sang <em>Đang ký số</em>. Hợp đồng chỉ chốt khi đủ bốn điều kiện — tổng giá trị, % được tạm ứng, hình thức bảo lãnh, PDF HĐ đã ký (<a href="PL-C.html#Q-266">Q-266</a>) — cùng số HĐ (<a href="PL-C.html#Q-256">Q-256</a>) và kết quả kiểm tra đạt trên bản hợp đồng hiện hành (giữ từ quy tắc 1, <a href="PL-C.html#Q-283">Q-283</a>); <em>Chốt HĐ – Đã ký</em> khởi tạo dự án như trước. Bước 5 và bước 6 chạy song song, không chờ nhau; gói <em>Hoàn tất</em> khi đủ cả hai (<a href="PL-C.html#Q-267">Q-267</a>, <a href="PL-C.html#Q-268">Q-268</a>).</figcaption></figure>
+
+    <h4>Lưu đồ — phụ lục hợp đồng</h4>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-05.2 Phụ lục hợp đồng: Loại 01 (tiến độ, thông tin, pháp nhân) đi thẳng tới ký; Loại 02 (tăng giảm khối lượng, phát sinh ngoài HĐ) lập BOQ phụ lục rồi thương thảo giá hoặc bấm Bỏ qua, không qua thẩm định BID-02; ký số phụ lục cần số phụ lục, ngày ký và PDF; sau đó tạo mã vật tư cho dòng mới song song với thông báo phòng ban, xong cả hai thì phụ lục Hoàn tất." viewBox="0 0 700 610" width="700" height="610" xmlns="http://www.w3.org/2000/svg">
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="200,10 500,10 500,54 200,54"/>
+<text text-anchor="middle" x="350" y="28.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Khởi tạo phụ lục HĐ</text>
+<text text-anchor="middle" x="350" y="43.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">từ HĐ đã chốt · chọn loại · lý do ✱</text>
 </g>
-<g id="edge15" class="edge">
-<title>M&#45;&gt;N</title>
-<path fill="none" stroke="#55606b" d="M306.84,-79.04C290.8,-69.56 271.85,-58.37 255.15,-48.5"/>
-<polygon fill="#55606b" stroke="#55606b" points="256.69,-46.76 249.93,-45.41 254.37,-50.68 256.69,-46.76"/>
+<g class="node"><polygon fill="#eef2f5" stroke="#5d6b7a" points="350,72 430,96 350,120 270,96"/>
+<text text-anchor="middle" x="350" y="100.2" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Loại phụ lục?</text>
 </g>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="20,140 260,140 260,184 20,184"/>
+<text text-anchor="middle" x="140" y="158.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Loại 01</text>
+<text text-anchor="middle" x="140" y="173.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">tiến độ · thông tin · pháp nhân</text>
 </g>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="420,140 680,140 680,184 420,184"/>
+<text text-anchor="middle" x="550" y="158.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Loại 02 · BOQ phụ lục</text>
+<text text-anchor="middle" x="550" y="173.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">tăng giảm KL · phát sinh ngoài HĐ</text>
 </g>
-</svg></div><figcaption><b>Hình BID-05.1</b> <em>(19/10/2026)</em> Hợp đồng soạn và review xong phải qua một bước kiểm tra — đối chiếu BOQ chốt, điều khoản thương mại và phiên bản hợp đồng theo BOQ — mới được khởi tạo dự án; còn sai lệch thì quay lại soạn thảo, và sửa bất cứ gì sau khi kiểm tra đạt thì phải chạy lại. Số hợp đồng nhập ngay lúc khởi tạo. Ba nhánh sau đó — BOQ hợp đồng, gán nhân sự, mở luồng phụ thuộc — cùng xuất phát từ một sự kiện.</figcaption></figure>
+<g class="node"><polygon fill="#eef2f5" stroke="#5d6b7a" points="550,202 640,226 550,250 460,226"/>
+<text text-anchor="middle" x="550" y="230.2" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Thương thảo giá?</text>
+</g>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="420,280 680,280 680,324 420,324"/>
+<text text-anchor="middle" x="550" y="298.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Thương thảo · BID-03</text>
+<text text-anchor="middle" x="550" y="313.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">áp giá dòng mới · lần 1…n</text>
+</g>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="200,370 500,370 500,414 200,414"/>
+<text text-anchor="middle" x="350" y="388.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Ký số PLHĐ</text>
+<text text-anchor="middle" x="350" y="403.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">số phụ lục ✱ · ngày ký ✱ · PDF đã ký ✱</text>
+</g>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="40,460 320,460 320,504 40,504"/>
+<text text-anchor="middle" x="180" y="478.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Tạo mã vật tư theo PLHĐ</text>
+<text text-anchor="middle" x="180" y="493.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">chỉ dòng mới chưa có mã</text>
+</g>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="380,460 660,460 660,504 380,504"/>
+<text text-anchor="middle" x="520" y="478.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Thông báo các phòng ban</text>
+<text text-anchor="middle" x="520" y="493.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">PĐT gửi theo DS</text>
+</g>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="200,550 500,550 500,594 200,594"/>
+<text text-anchor="middle" x="350" y="568.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">PLHĐ Hoàn tất</text>
+<text text-anchor="middle" x="350" y="583.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">khi xong cả hai việc</text>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M350,54 L350,72"/>
+<polygon fill="#55606b" stroke="#55606b" points="350,72 352.3,65.5 347.7,65.5"/>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M270,96 L140,96 L140,140"/>
+<polygon fill="#55606b" stroke="#55606b" points="140,140 142.3,133.5 137.7,133.5"/>
+<text text-anchor="middle" x="205" y="89" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Loại 01</text>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M430,96 L550,96 L550,140"/>
+<polygon fill="#55606b" stroke="#55606b" points="550,140 552.3,133.5 547.7,133.5"/>
+<text text-anchor="middle" x="490" y="89" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Loại 02</text>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M550,184 L550,202"/>
+<polygon fill="#55606b" stroke="#55606b" points="550,202 552.3,195.5 547.7,195.5"/>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M550,250 L550,280"/>
+<polygon fill="#55606b" stroke="#55606b" points="550,280 552.3,273.5 547.7,273.5"/>
+<text text-anchor="start" x="562" y="268" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Có</text>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M460,226 L380,226 L380,370"/>
+<polygon fill="#55606b" stroke="#55606b" points="380,370 382.3,363.5 377.7,363.5"/>
+<text text-anchor="end" x="372" y="300" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Bỏ qua</text>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M550,324 L550,392 L500,392"/>
+<polygon fill="#55606b" stroke="#55606b" points="500,392 506.5,394.3 506.5,389.7"/>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M140,184 L140,392 L200,392"/>
+<polygon fill="#55606b" stroke="#55606b" points="200,392 193.5,389.7 193.5,394.3"/>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M350,414 L350,437 L180,437 L180,460"/>
+<polygon fill="#55606b" stroke="#55606b" points="180,460 182.3,453.5 177.7,453.5"/>
+<text text-anchor="middle" x="350" y="452" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">song song</text>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M350,437 L520,437 L520,460"/>
+<polygon fill="#55606b" stroke="#55606b" points="520,460 522.3,453.5 517.7,453.5"/>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M180,504 L180,527 L350,527 L350,550"/>
+<polygon fill="#55606b" stroke="#55606b" points="350,550 352.3,543.5 347.7,543.5"/>
+</g>
+<g class="edge"><path fill="none" stroke="#55606b" d="M520,504 L520,527 L350,527 L350,550"/>
+<polygon fill="#55606b" stroke="#55606b" points="350,550 352.3,543.5 347.7,543.5"/>
+</g>
+</svg></div><figcaption><b>Hình BID-05.2</b> <em>(12/11/2026 · <a href="PL-C.html#Q-271">Q-271</a>, thay phần phụ lục của <a href="PL-C.html#Q-201">Q-201</a>)</em> Loại 01 không qua BOQ, thẩm định hay áp giá. Loại 02 lập BOQ phụ lục, không qua thẩm định <a href="BID-02.html">BID-02</a>, rồi thương thảo ở <a href="BID-03.html">BID-03</a> hoặc bấm <em>Bỏ qua thương thảo</em>. Ký phụ lục bắt buộc số phụ lục và PDF; sau đó tạo mã vật tư cho dòng mới song song với thông báo phòng ban, xong cả hai thì phụ lục <em>Hoàn tất</em>.</figcaption></figure>
 
     <h4>Tham số — hợp đồng</h4>
     <div class="tw">
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Số hợp đồng</td><td class="k">contract_no</td><td>Chuỗi</td><td class="c req">✱</td><td><em>(19/10/2026)</em> Nhập tại thời điểm bấm Khởi tạo dự án, sau khi kiểm tra hợp đồng đạt. <code>&lt;TIỀN TỐ&gt;_NNNN</code> — tiền tố là chữ cái đầu của địa điểm công trình, suy từ địa chỉ khai ở <a href="BID-01.html">BID-01</a> (Khánh Hòa → <code>KH</code>, Hồ Chí Minh → <code>HCM</code>). Số thứ tự 4 chữ số chạy riêng cho từng tiền tố, lấy số lớn nhất đang dùng cộng một — sổ hợp đồng có khoảng trống và có mã dùng lại cho phát sinh, nên không đếm theo số dòng. Ví dụ <code>KH_0114</code>.</td></tr>
+          <tr><td>Số hợp đồng</td><td class="k">contract_no</td><td>Chuỗi</td><td class="c req">✱</td><td><em>(19/10/2026)</em> Nhập tại thời điểm bấm Khởi tạo dự án, sau khi kiểm tra hợp đồng đạt. <em>(12/11/2026 · <a href="PL-C.html#Q-256">Q-256</a>)</em> Nay nhập ở bước 4, trong lúc <code>Đang ký số</code>, và bắt buộc để bấm <em>Chốt HĐ – Đã ký</em>; gói thầu không có mã HĐ cho tới lúc đó. <code>&lt;TIỀN TỐ&gt;_NNNN</code> — tiền tố là chữ cái đầu của địa điểm công trình, suy từ địa chỉ khai ở <a href="BID-01.html">BID-01</a> (Khánh Hòa → <code>KH</code>, Hồ Chí Minh → <code>HCM</code>). Số thứ tự 4 chữ số chạy riêng cho từng tiền tố, lấy số lớn nhất đang dùng cộng một — sổ hợp đồng có khoảng trống và có mã dùng lại cho phát sinh, nên không đếm theo số dòng. Ví dụ <code>KH_0114</code>.</td></tr>
           <tr><td colspan="5">Một số tỉnh mang tiền tố lịch sử khác công thức và được giữ nguyên theo sổ (Quảng Ninh → <code>MC</code>); công trình không rút được địa điểm xếp vào <code>NL</code> (nhà dân, nhỏ lẻ). Hợp đồng đã cấp mã theo quy ước cũ <code>HD-YYYY-NNN</code> giữ nguyên, không đánh số lại.</td></tr>
           <tr><td>Gói thầu nguồn</td><td class="k">tender_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chỉ đọc, dùng để truy vết BOQ.</td></tr>
           <tr><td>Bên ký kết</td><td class="k">partner_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>—</td></tr>
-          <tr><td>Giá trị hợp đồng</td><td class="k">contract_value</td><td>Số tiền</td><td class="c req">✱</td><td>Trước và sau VAT, có ghi thuế suất.</td></tr>
+          <tr><td>Giá trị hợp đồng</td><td class="k">contract_value</td><td>Số tiền</td><td class="c req">✱</td><td>Trước và sau VAT, có ghi thuế suất. <em>(12/11/2026)</em> Là ô <b>Tổng giá trị gói thầu</b> của khung hoàn thiện hợp đồng ở bước 4 — một trong bốn điều kiện chốt (<a href="PL-C.html#Q-266">Q-266</a>); nạp sẵn từ giá đã đóng băng khi thương thảo hoàn thành ở <a href="BID-03.html">BID-03</a>.</td></tr>
+          <tr><td>Trạng thái ký</td><td class="k">sign_status</td><td>Trạng thái</td><td class="c">—</td><td><em>(12/11/2026 · <a href="PL-C.html#Q-265">Q-265</a>)</em> <code>Soạn thảo</code> → <code>Đang ký số</code> (bấm <em>Bắt đầu ký</em>) → <code>Đã ký - HĐ chốt</code> (bấm <em>Chốt HĐ – Đã ký</em>). Hệ thống không điều khiển việc ký, chỉ ghi trạng thái do P. Đấu thầu bấm. Gói thầu mang cùng nhãn (<a href="PL-A.html">PL-A</a>).</td></tr>
+          <tr><td>Ngày ký</td><td class="k">signed_at</td><td>Ngày</td><td class="c">—</td><td>Mặc định ngày bấm <em>Chốt HĐ – Đã ký</em>, sửa được trước khi chốt. Là mốc của bộ lọc theo ngày ký hợp đồng.</td></tr>
+          <tr><td>% được tạm ứng HĐ</td><td class="k">advance_pct</td><td>Số — %</td><td class="c req">✱</td><td><em>(12/11/2026)</em> Điều kiện chốt. Nhập 0–100; 0 nghĩa là hợp đồng không có tạm ứng. Là nguồn của hồ sơ tạm ứng ở <a href="ORD-01.html">ORD-01</a>. <b>Khác</b> <code>advance_recovery_pct</code> — tỷ lệ thu hồi tạm ứng mỗi đợt.</td></tr>
+          <tr><td>Hình thức bảo lãnh</td><td class="k">guarantee_form</td><td>Chọn 1</td><td class="c req">✱</td><td><em>(12/11/2026)</em> Điều kiện chốt: <code>Thư bảo lãnh</code> · <code>Công văn</code>.</td></tr>
+          <tr><td>File PDF hợp đồng đã ký</td><td class="k">signed_pdf</td><td>Tệp PDF</td><td class="c req">✱</td><td><em>(12/11/2026)</em> Điều kiện chốt. Bản quét hợp đồng đã ký đủ hai bên, lưu thành chứng từ của hợp đồng ở <a href="PF-05.html">PF-05</a>. Chỉ nhận PDF.</td></tr>
+          <tr><td>Đã tạo mã vật tư</td><td class="k">materials_done_at, materials_done_by</td><td>Bản ghi</td><td class="c">—</td><td><em>(12/11/2026 · <a href="PL-C.html#Q-268">Q-268</a>)</em> Cờ bước 5. Ghi khi P. Đấu thầu bấm <em>Hoàn thành tạo mã</em>.</td></tr>
+          <tr><td>Đã thông báo phòng ban</td><td class="k">depts_notified_at, depts_notified_by, notice_recipients[]</td><td>Bản ghi</td><td class="c">—</td><td><em>(12/11/2026 · <a href="PL-C.html#Q-267">Q-267</a>)</em> Cờ bước 6. Ghi khi P. Đấu thầu gửi thông báo phòng ban lần đầu, kèm danh sách phòng ban và số người nhận.</td></tr>
+          <tr><td>Lịch sử thay đổi</td><td class="k">change_log[]</td><td>Bảng</td><td class="c">—</td><td><em>(12/11/2026 · <a href="PL-C.html#Q-270">Q-270</a>)</em> Mỗi lần sửa hợp đồng hoặc gói thầu ghi người sửa, thời điểm, trường, giá trị cũ, giá trị mới; việc hệ thống tự làm ghi người thực hiện là “Hệ thống”. Chỉ đọc.</td></tr>
                     <tr><td>Tiến độ thi công theo hợp đồng</td><td class="k">contract_start, contract_end</td><td>Ngày</td><td class="c">—</td><td><b>Trường mới (<a href="2026-09-15/YC-06.html">YC-06</a>).</b> <b>Nạp sẵn</b> từ <code>exec_start</code> / <code>exec_end</code> của gói thầu ở <a href="BID-01.html">BID-01</a>; gói chỉ khai <code>exec_days</code> thì người soạn tự nhập khoảng thời gian <em>(19/10/2026)</em>. <b>Sửa được</b> khi thương thảo đổi điều kiện — mỗi ô đã sửa hiện giá trị gốc của gói thầu ngay bên cạnh. Là nguồn của <code>contract_start</code> / <code>contract_end</code> trên bảng theo dõi <a href="RPT-05.html">RPT-05</a>.</td></tr>
           <tr><td>Thời hạn bảo hành</td><td class="k">warranty_months, warranty_from</td><td>Số — tháng · Chọn 1</td><td class="c">—</td><td><b>Trường mới (<a href="2026-09-15/YC-06.html">YC-06</a>).</b> Nạp sẵn từ gói thầu, sửa được, số nguyên 0–120; mốc tính bắt buộc khi số tháng lớn hơn 0 — giữ nguyên ba lựa chọn của <a href="BID-01.html">BID-01</a>. <a href="RPT-05.html">RPT-05</a> cộng số tháng vào mốc tính để ra <code>warranty_end_date</code> và phát nhắc lập hồ sơ thanh toán phần giá trị giữ lại.</td></tr>
-          <tr><td>Giá trị gốc từ gói thầu</td><td class="k">tender_baseline</td><td>Bản ghi</td><td class="c">—</td><td>Bản chụp tiến độ và bảo hành của gói thầu tại thời điểm chốt giá ở <a href="BID-03.html">BID-03</a>. Chỉ đọc, do hệ thống ghi. Mỗi ô đã sửa hiện chú thích “gói thầu: {giá trị cũ}” ngay cạnh ô, và bản chụp này là thứ mục kiểm tra <code>chk_warranty</code> đối chiếu — nhờ vậy đọc hợp đồng biết ngay điều kiện đã dịch chuyển bao nhiêu so với lúc mời thầu.</td></tr>
+          <tr><td>Giá trị gốc từ gói thầu</td><td class="k">tender_baseline</td><td>Bản ghi</td><td class="c">—</td><td>Bản chụp tiến độ và bảo hành của gói thầu tại thời điểm thương thảo hoàn thành ở <a href="BID-03.html">BID-03</a>. Chỉ đọc, do hệ thống ghi. Mỗi ô đã sửa hiện chú thích “gói thầu: {giá trị cũ}” ngay cạnh ô, và bản chụp này là thứ mục kiểm tra <code>chk_warranty</code> đối chiếu — nhờ vậy đọc hợp đồng biết ngay điều kiện đã dịch chuyển bao nhiêu so với lúc mời thầu.</td></tr>
                     <tr><td>Tỷ lệ thu hồi tạm ứng</td><td class="k">advance_recovery_pct</td><td>Số — %</td><td class="c">—</td><td>Phần trăm giá trị khối lượng của mỗi đợt dùng để cấn trừ tạm ứng ở <a href="ORD-09.html">ORD-09</a>. Để trống thì hồ sơ đợt hiện nhắc và cho nhập tay, không mặc định bằng 0.</td></tr>
           <tr><td>% giữ lại bảo hành</td><td class="k">retention_rate</td><td>Số — %</td><td class="c">—</td><td><em>(19/10/2026)</em> Hiện trên form hợp đồng với nhãn “% giữ lại bảo hành”; cột đã có sẵn, mặc định 5, nhập 0–100. Là nguồn duy nhất của tỷ lệ giữ lại — không còn suy từ đợt cuối của bảng đợt thanh toán. <a href="ORD-09.html">ORD-09</a> giữ lại tỷ lệ này ở mọi đợt; <a href="ORD-10.html">ORD-10</a> và <a href="RPT-05.html">RPT-05</a> dùng cùng tỷ lệ. Phần trăm giữ lại ở <b>mỗi đợt thanh toán</b> — trước đây chỉ được nhân một lần vào giá trị quyết toán ở <a href="RPT-05.html">RPT-05</a>. Lũy kế thu hồi bằng hồ sơ <code>HSBH-…</code> ở <a href="ORD-10.html">ORD-10</a> khi hết hạn bảo hành. Đi cùng cặp <code>warranty_months</code> · <code>warranty_from</code>.</td></tr>
           <tr><td>Phiên bản hợp đồng</td><td class="k">doc_version</td><td>Chuỗi</td><td class="c">—</td><td><em>(19/10/2026)</em> Tự sinh, không ai nhập: <code>V{n}</code>, với n là số phiên bản của bản BOQ mà báo giá đã chốt ở <a href="BID-03.html">BID-03</a> dựa trên. Đối tác không đồng ý thì gói được <b>Làm lại (lần mới)</b> ở <a href="BID-01.html">BID-01</a>, đi lại thẩm định và áp giá — hợp đồng của lần 2 mang số phiên bản của BOQ mới, soạn bên cạnh hợp đồng đang có. Chỉ đọc.</td></tr>
-          <tr><td>Kết quả kiểm tra hợp đồng</td><td class="k">precheck</td><td>Bản ghi</td><td class="c req">✱</td><td>Trạng thái (<code>chưa chạy</code> · <code>còn sai lệch</code> · <code>đạt</code>), người kiểm tra, thời điểm, phiên bản hợp đồng được kiểm tra. Phải <code>đạt</code> mới khởi tạo được dự án <em>(19/10/2026)</em>.</td></tr>
+          <tr><td>Kết quả kiểm tra hợp đồng</td><td class="k">precheck</td><td>Bản ghi</td><td class="c req">✱</td><td>Trạng thái (<code>chưa chạy</code> · <code>còn sai lệch</code> · <code>đạt</code>), người kiểm tra, thời điểm, phiên bản hợp đồng được kiểm tra. Phải <code>đạt</code> mới khởi tạo được dự án <em>(19/10/2026)</em> — nay là mới bấm được <em>Chốt HĐ – Đã ký</em>, vì nút này khởi tạo dự án <em>(12/11/2026)</em>. Đây là điều kiện giữ từ quy tắc 1, ngoài bốn điều kiện của <a href="PL-C.html#Q-266">Q-266</a>.</td></tr>
         </tbody>
       </table>
     </div>
@@ -275,16 +315,39 @@
       </table>
     </div>
 
+    <h4>Tham số — phụ lục hợp đồng</h4>
+    <p><em>(12/11/2026 · <a href="PL-C.html#Q-271">Q-271</a>, thay phần phụ lục của <a href="PL-C.html#Q-201">Q-201</a>)</em> Phụ lục lập từ hợp đồng đã chốt. Trạng thái của một phụ lục (<a href="PL-A.html">PL-A</a>): <code>Đã khởi tạo PLHĐ</code> → (Loại 02: <code>Đang thương thảo PLHĐ (lần n)</code> hoặc bỏ qua) → <code>Đang ký số PLHĐ</code> → <code>Đã ký – PLHĐ chốt</code> → <code>Hoàn tất</code> · <code>Đã hủy</code>. Gói thầu giữ trạng thái của nó trong lúc phụ lục chạy. Phụ lục Loại 01 tạo ra là ở ngay <code>Đang ký số PLHĐ</code>, không qua <code>Đã khởi tạo PLHĐ</code> (<a href="PL-C.html#Q-289">Q-289</a>).</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Mã phụ lục</td><td class="k">appendix_code</td><td>Chuỗi</td><td class="c">—</td><td>Hệ thống sinh <code>&lt;mã HĐ&gt;-PL0n</code>, n chạy theo hợp đồng. Chỉ đọc.</td></tr>
+          <tr><td>Loại phụ lục</td><td class="k">appendix_type</td><td>Chọn 1</td><td class="c req">✱</td><td><code>01</code> — tiến độ, thông tin, pháp nhân…: không đổi giá trị, đi thẳng tới ký. <code>02</code> — tăng giảm khối lượng, phát sinh ngoài HĐ: có BOQ phụ lục, thương thảo giá hoặc bỏ qua, rồi ký. Không đổi được sau khi tạo.</td></tr>
+          <tr><td>Lý do</td><td class="k">reason</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Bắt buộc khi tạo, như nút <em>Thêm phụ lục</em> hiện nay.</td></tr>
+          <tr><td>Nội dung thay đổi — Loại 01</td><td class="k">changes[]</td><td>Bảng</td><td class="c req">✱</td><td>Chỉ Loại 01. Mỗi dòng: trường hợp đồng (tiến độ thi công, thông tin chung, pháp nhân bên ký…), giá trị hiện tại, giá trị mới. Ít nhất một dòng. Áp vào hợp đồng khi ký.</td></tr>
+          <tr><td>BOQ phụ lục — Loại 02</td><td class="k">appendix_boq[]</td><td>Bảng</td><td class="c req">✱</td><td>Chỉ Loại 02. Dòng gắn hạng mục HĐ đổi khối lượng theo đơn giá HĐ (được âm, không bằng 0); dòng hạng mục mới mang đơn giá thương thảo ở <a href="BID-03.html">BID-03</a>, hoặc đơn giá nhập thẳng khi bỏ qua thương thảo. Không qua thẩm định <a href="BID-02.html">BID-02</a>.</td></tr>
+          <tr><td>Căn cứ từ thương thảo 3b</td><td class="k">from_neg_ids[]</td><td>Tham chiếu</td><td class="c">—</td><td>Chỉ Loại 02. Chọn các lần thương thảo <code>3b</code> của gói mà phụ lục này thực hiện (<a href="PL-C.html#Q-272">Q-272</a>); hiện tóm lược và thay đổi để sau của từng lần.</td></tr>
+          <tr><td>Bỏ qua thương thảo</td><td class="k">skip_negotiation</td><td>Có / Không</td><td class="c">—</td><td>Chỉ Loại 02. Bấm <em>Bỏ qua thương thảo</em> thì phụ lục đi thẳng tới ký; dòng hạng mục mới phải có đơn giá trước khi bấm.</td></tr>
+          <tr><td>Giá trị phụ lục</td><td class="k">value_before_vat, value_after_vat</td><td>Số tiền</td><td class="c">—</td><td>Hệ thống tính: dòng gắn hạng mục HĐ × đơn giá HĐ, cộng dòng hạng mục mới × đơn giá phụ lục; Loại 01 bằng 0.</td></tr>
+          <tr><td>Số phụ lục</td><td class="k">appendix_no</td><td>Chuỗi</td><td class="c req">✱</td><td>Số ghi trên văn bản phụ lục đã ký. Bắt buộc để ký.</td></tr>
+          <tr><td>Ngày ký</td><td class="k">signed_at</td><td>Ngày</td><td class="c req">✱</td><td>Bắt buộc để ký, như hiện nay.</td></tr>
+          <tr><td>File PDF phụ lục đã ký</td><td class="k">signed_pdf</td><td>Tệp PDF</td><td class="c req">✱</td><td>Bắt buộc để ký; lưu ở <a href="PF-05.html">PF-05</a>.</td></tr>
+          <tr><td>Đã tạo mã vật tư · đã thông báo phòng ban</td><td class="k">materials_done_at, depts_notified_at</td><td>Bản ghi</td><td class="c">—</td><td>Hai cờ sau ký, như bước 5 và bước 6 của hợp đồng. Phụ lục không có dòng mới thiếu mã thì cờ mã vật tư tự ghi lúc ký, người thực hiện “Hệ thống”.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
       <li>Dự án chỉ khởi tạo được khi danh mục kiểm tra không còn mục ở mức Chặn; mục ở mức Cảnh báo phải có xác nhận của người kiểm tra.</li>
       <li>Sửa bất kỳ nội dung nào của hợp đồng sau khi kiểm tra đạt thì kết quả kiểm tra hết hiệu lực và phải chạy lại.</li>
-      <li>Không thể khởi tạo dự án khi kiểm tra hợp đồng chưa đạt <em>(19/10/2026)</em>.</li>
+      <li>Không thể khởi tạo dự án — tức không bấm được <em>Chốt HĐ – Đã ký</em> — khi kiểm tra hợp đồng chưa đạt <em>(19/10/2026 · 12/11/2026)</em>.</li>
       <li>Phiên bản hợp đồng tự hiện <code>V{n}</code> theo bản BOQ của báo giá đã chốt; gói làm lại lần mới thì hợp đồng của lần đó lên số phiên bản của BOQ mới mà không ai phải gõ <em>(19/10/2026 · 08/11/2026)</em>.</li>
       <li>Khởi tạo dự án sinh đồng thời: mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, hồ sơ bản vẽ thiết kế và hồ sơ Shopdrawing — hai hồ sơ sau sinh ở trạng thái rỗng, xem <a href="ORD-02.html">ORD-02</a>. Không còn sinh bảng đợt thanh toán <em>(19/10/2026)</em>.</li>
-      <li>BOQ hợp đồng khóa khối lượng và đơn giá; muốn đổi khối lượng thì lập phụ lục bằng nút <b>Thêm phụ lục</b> ở <a href="BID-01.html">BID-01</a>, muốn làm lại cả bảng thì <b>Làm lại (lần mới)</b> (<a href="PL-C.html#Q-201">Q-201</a>).</li>
-      <li>Gói đã có dự án mà lần mới chốt giá thì nút khởi tạo đọc “Ký lại hợp đồng (lần n)”: ký xong không có dự án hay kho mới, dự án đang chạy chuyển sang hợp đồng mới cùng sản lượng, Đơn hàng, thanh toán tổ đội đã ghi; hợp đồng cũ mang trạng thái <em>Đã thay thế</em>.</li>
-      <li>Phụ lục đã chốt giá mở khung “Ký phụ lục” thay cho form hợp đồng, giá trị trước và sau VAT tự tính; ký xong khối lượng hợp đồng của đầu việc tăng hoặc giảm, hạng mục mới thành hạng mục dự án, và <a href="RPT-05.html">RPT-05</a> hiện giá trị hợp đồng cộng phụ lục.</li>
+      <li>BOQ hợp đồng khóa khối lượng và đơn giá; muốn đổi khối lượng thì lập phụ lục <b>Loại 02</b> (<a href="PL-C.html#Q-271">Q-271</a>), muốn làm lại cả bảng thì <b>Làm lại (lần mới)</b> (<a href="PL-C.html#Q-201">Q-201</a>).</li>
+      <li>Gói đã có dự án mà lần mới thương thảo hoàn thành thì nút chốt đọc “Ký lại hợp đồng (lần n)”: ký xong không có dự án hay kho mới, dự án đang chạy chuyển sang hợp đồng mới cùng sản lượng, Đơn hàng, thanh toán tổ đội đã ghi; hợp đồng cũ mang trạng thái <em>Đã thay thế</em>.</li>
+      <li>Phụ lục Loại 02 đã thương thảo xong hoặc đã bỏ qua thương thảo mở khung ký phụ lục, giá trị trước và sau VAT tự tính; ký xong khối lượng hợp đồng của đầu việc tăng hoặc giảm, hạng mục mới thành hạng mục dự án, và <a href="RPT-05.html">RPT-05</a> hiện giá trị hợp đồng cộng phụ lục <em>(12/11/2026 · thay “phụ lục đã chốt giá”)</em>.</li>
       <li>Mỗi người được thêm vào dự án nhận đúng một thông báo nêu rõ dự án và vai trò của mình.</li>
       <li>Người được gán tự động có quyền xem dữ liệu của dự án đó theo <a href="PF-02.html">PF-02</a>, không cần Admin cấp riêng.</li>
       <li>Dự án mới xuất hiện ngay ở danh sách công trình với tiến độ 0% và đủ 4 tab của mockup.</li>
@@ -292,11 +355,21 @@
       <li>Form hợp đồng mở ra đã có sẵn tiến độ thi công và thời hạn bảo hành kèm mốc tính lấy từ gói thầu ở <a href="BID-01.html">BID-01</a>; không phải gõ lại và vẫn sửa được.</li>
       <li>Sửa một trong các điều kiện đó thì ô hiện giá trị gốc của gói thầu ngay bên cạnh, và mục kiểm tra <code>chk_warranty</code> chuyển sang Cảnh báo — phải ghi lý do và xác nhận mới khởi tạo được dự án.</li>
       <li><a href="RPT-05.html">RPT-05</a> nhận <code>contract_start</code>, <code>contract_end</code> và <code>warranty_end_date</code> từ hợp đồng này, đặt tiến độ theo hợp đồng ngay cạnh tiến độ thi công thực tế lấy từ <a href="PRJ-02.html">PRJ-02</a>.</li>
+      <li><em>Bắt đầu ký</em> chỉ mở khi gói ở <code>Thương thảo hoàn thành</code> và chuyển gói sang <code>Đang ký số</code>; hệ thống không gửi gì đi ký <em>(12/11/2026 · <a href="PL-C.html#Q-265">Q-265</a>)</em>.</li>
+      <li><em>Chốt HĐ – Đã ký</em> khóa cho tới khi có đủ bốn điều kiện — tổng giá trị, % được tạm ứng, hình thức bảo lãnh, PDF HĐ đã ký (<a href="PL-C.html#Q-266">Q-266</a>) — cùng số HĐ (<a href="PL-C.html#Q-256">Q-256</a>) và kết quả kiểm tra đạt (quy tắc 1); khung <em>Điều kiện chốt</em> đánh dấu từng điều kiện ✓ / ✕.</li>
+      <li>Chốt xong, gói <code>Đã ký - HĐ chốt</code>, dự án khởi tạo như trước, và bước 5, bước 6 cùng mở.</li>
+      <li>Bước 5 liệt kê dòng HĐ có mã và chưa có mã vật tư; mã tạo ở đây nằm trong danh mục chung và gắn với hợp đồng, dự án; bấm <em>Hoàn thành tạo mã</em> thì cờ bước 5 bật <em>(<a href="PL-C.html#Q-268">Q-268</a>, <a href="PL-C.html#Q-269">Q-269</a>)</em>.</li>
+      <li>Bước 6 gửi thông báo tới các phòng ban trong danh sách phòng ban của gói đúng một lần do P. Đấu thầu bấm, qua hộp thoại người nhận; không có thông báo phòng ban tự động lúc chốt <em>(<a href="PL-C.html#Q-267">Q-267</a>, <a href="PL-C.html#Q-273">Q-273</a>)</em>.</li>
+      <li>Đủ cả hai cờ thì gói tự sang <code>Hoàn tất</code>; thiếu một thì vẫn <code>Đã ký - HĐ chốt</code> và hiện tiến độ 1/2.</li>
+      <li>Sau chốt, P. Đấu thầu sửa được thông tin chung của hợp đồng — mã HĐ, hạng mục, địa điểm, tiến độ, DS phòng ban… — và mỗi lần sửa có trong lịch sử thay đổi; giá trị, khối lượng không sửa trực tiếp được <em>(<a href="PL-C.html#Q-270">Q-270</a>)</em>.</li>
+      <li>Phụ lục Loại 01 đi thẳng tới ký; Loại 02 có BOQ phụ lục, thương thảo hoặc nút <em>Bỏ qua thương thảo</em>, không qua thẩm định <a href="BID-02.html">BID-02</a>; ký phụ lục nào cũng cần số phụ lục, ngày ký và PDF <em>(<a href="PL-C.html#Q-271">Q-271</a>)</em>.</li>
+      <li>Phụ lục đã ký mở tạo mã vật tư cho dòng mới chưa có mã song song với thông báo phòng ban; xong cả hai thì phụ lục <code>Hoàn tất</code>.</li>
+      <li>Màn hình hợp đồng có danh sách mọi phụ lục — mã, loại, nội dung, giá trị thay đổi, trạng thái — không chỉ phụ lục đang mở.</li>
     </ol>
 
     <h4>Mockup UI — Hợp đồng &amp; khởi tạo dự án</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › GT-2026-018 ›</span><b>KH_0114</b><span class="sp"></span><span class="tag t-ok">Kiểm tra đạt</span><span class="wf-btn"><span class="pin">2</span> Chạy lại kiểm tra</span></div>
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › GT-2026-018 ›</span><b>KH_0114</b><span class="sp"></span><span class="tag t-warn">Đang ký số</span><span class="tag t-ok">Kiểm tra đạt</span><span class="wf-btn"><span class="pin">2</span> Chạy lại kiểm tra</span></div>
       <div class="wf-body">
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">1</span> Kiểm tra hợp đồng <span class="tag t-ok">Đạt — 28/12 08:40</span></div>
@@ -309,7 +382,7 @@
             <tr><td>Tiến độ thi công &amp; bảo hành vs gói thầu</td><td>Bảo hành 24 tháng — gói thầu chốt 12 tháng</td><td><span class="tag t-warn">Đã xác nhận lại</span></td></tr>
             <tr><td>Phiên bản hợp đồng (theo BOQ)</td><td>V1 · BOQ bản 1 của báo giá chốt</td><td><span class="tag t-ok">Đạt</span></td></tr>
           </tbody></table>
-          <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Người kiểm tra: Ng. Thị Hạnh — 2 mục cảnh báo đã xác nhận, không còn mục chặn. Nút Khởi tạo dự án đã mở.</p>
+          <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Người kiểm tra: Ng. Thị Hạnh — 2 mục cảnh báo đã xác nhận, không còn mục chặn. Kiểm tra đạt là một điều kiện của <em>Chốt HĐ – Đã ký</em> <em>(12/11/2026)</em>.</p>
         </div>
         <div class="wf-row">
           <div class="wf-c"><div class="wf-sec">
@@ -328,7 +401,7 @@
       </div>
     </div>
     <div class="wf" style="margin-top:10px">
-      <div class="wf-bar"><b>Khởi tạo dự án từ hợp đồng</b><span class="wf-crumb">bước 2/2 — gán nhân sự</span><span class="sp"></span><span class="wf-btn pri"><span class="pin">6</span> Khởi tạo &amp; thông báo</span></div>
+      <div class="wf-bar"><b>Khởi tạo dự án từ hợp đồng</b><span class="wf-crumb">bước 2/2 — gán nhân sự</span><span class="sp"></span><span class="wf-btn pri"><span class="pin">6</span> Chốt HĐ – Đã ký</span></div>
       <div class="wf-body">
         <div class="wf-row">
           <div class="wf-c"><div class="wf-sec">
@@ -349,8 +422,84 @@
               <tr><td>Cán bộ kỹ thuật</td><td>Vũ Đình Nam</td><td>HM-01 mặt đứng tháp A</td></tr>
               <tr><td>Thủ kho công trình</td><td>Võ Hoàng Long</td><td>Kho DA-2026-014</td></tr>
             </tbody></table>
-            <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Khởi tạo xong: 7 người nhận thông báo, 1 kho dự án được tạo.</p>
+            <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Chốt xong: 7 người nhận thông báo được giao vai trò, 1 kho dự án được tạo. Thông báo các phòng ban là bước 6, gửi riêng.</p>
           </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › GT-2026-041 ›</span><b>Hợp đồng — bước 4</b><span class="sp"></span><span class="tag t-warn">Đang ký số</span></div>
+      <div class="wf-body">
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">7</span> Hoàn thiện hợp đồng</div>
+            <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Số HĐ ✱</label><div class="in">KH_0114</div></div></div>
+            <div class="wf-c"><div class="wf-f"><label>Ngày ký</label><div class="in">15/11/2026</div></div></div></div>
+            <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Tổng giá trị gói thầu (VND) ✱</label><div class="in">12.480.000.000</div></div></div>
+            <div class="wf-c"><div class="wf-f"><label>% được tạm ứng HĐ ✱</label><div class="in">15 %</div></div></div></div>
+            <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Hình thức bảo lãnh ✱</label><div class="in">◉ Thư bảo lãnh   ○ Công văn</div></div></div>
+            <div class="wf-c"><div class="wf-f"><label>File PDF hợp đồng đã ký ✱</label><div class="in">Kéo thả file PDF hợp đồng</div></div></div></div>
+          </div></div>
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">8</span> Điều kiện chốt</div>
+            <table><tbody>
+              <tr><td>Số HĐ</td><td><span class="tag t-ok">✓</span></td></tr>
+              <tr><td>Tổng giá trị gói thầu</td><td><span class="tag t-ok">✓</span></td></tr>
+              <tr><td>% được tạm ứng HĐ</td><td><span class="tag t-ok">✓</span></td></tr>
+              <tr><td>Hình thức bảo lãnh</td><td><span class="tag t-ok">✓</span></td></tr>
+              <tr><td>File PDF hợp đồng đã ký</td><td><span class="tag t-crit">✕</span></td></tr>
+              <tr><td>Kiểm tra hợp đồng</td><td><span class="tag t-ok">Đạt</span></td></tr>
+            </tbody></table>
+            <div class="wf-chips"><span class="wf-btn pri">Chốt HĐ – Đã ký</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › GT-2026-041 ›</span><b>Sau chốt HĐ</b><span class="sp"></span><span class="tag t-ok">Đã ký - HĐ chốt</span><span class="tag t-warn">Tiến độ 1/2</span></div>
+      <div class="wf-body">
+        <div class="wf-row">
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">9</span> Bước 5 · Tạo mã vật tư theo HĐ <span class="tag t-warn">Đang làm</span></div>
+            <table><thead><tr><th>Dòng HĐ</th><th>Vật tư</th><th>Mã</th></tr></thead>
+            <tbody>
+              <tr><td>1.1</td><td>Granite Kim Sa trung 20 mm</td><td><code>CT-GR-021</code></td></tr>
+              <tr><td>1.2</td><td>Marble Volakas 18 mm</td><td><span class="wf-btn">Tạo mã</span></td></tr>
+              <tr><td>2.4</td><td>Keo dán đá 2 thành phần</td><td><span class="wf-btn">Tạo mã</span></td></tr>
+            </tbody></table>
+            <div class="wf-chips"><span class="tag t-warn">12/18 dòng đã có mã</span><span class="wf-btn pri">Hoàn thành tạo mã</span></div>
+          </div></div>
+          <div class="wf-c"><div class="wf-sec">
+            <div class="wf-lg"><span class="pin">10</span> Bước 6 · Thông báo các phòng ban <span class="tag t-ok">Đã gửi</span></div>
+            <div class="wf-chips"><span class="tag t-ok">P.TQT</span><span class="tag t-ok">P.Kế toán</span><span class="tag t-ok">P.Vật tư</span><span class="tag t-ok">P.Thi công</span></div>
+            <div class="wf-f"><label>Đã gửi</label><div class="in ro">Phạm Lan · 15/11 09:12 · 4 phòng ban, 17 người nhận</div></div>
+            <div class="wf-chips"><span class="wf-btn">Gửi lại</span><span class="wf-btn">Lịch sử thay đổi</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="wf">
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › GT-2026-041 ›</span><b>Phụ lục hợp đồng</b><span class="sp"></span><span class="wf-btn pri"><span class="pin">11</span> Thêm phụ lục</span></div>
+      <div class="wf-body">
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">12</span> Danh sách phụ lục</div>
+          <table><thead><tr><th>Mã</th><th>Loại</th><th>Nội dung</th><th class="num">Giá trị thay đổi</th><th>Trạng thái</th></tr></thead>
+          <tbody>
+            <tr><td>KH_0114-PL01</td><td>01</td><td>Đổi tiến độ hoàn thành → 31/03</td><td class="num">—</td><td><span class="tag t-ok">Hoàn tất</span></td></tr>
+            <tr><td>KH_0114-PL02</td><td>02</td><td>Phát sinh ốp đá sảnh phụ</td><td class="num">640.000.000</td><td><span class="tag t-warn">Đang thương thảo PLHĐ (lần 1)</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg">Thêm phụ lục hợp đồng</div>
+          <div class="wf-f"><label>Loại phụ lục ✱</label><div class="in">○ Loại 01 — tiến độ, thông tin, pháp nhân…: đi thẳng tới ký   ◉ Loại 02 — tăng giảm khối lượng, phát sinh ngoài HĐ: thương thảo giá hoặc bỏ qua</div></div>
+          <div class="wf-f"><label>Lý do ✱</label><div class="in">CĐT bổ sung sảnh phụ tầng 1</div></div>
+          <div class="wf-f"><label>Căn cứ từ thương thảo 3b</label><div class="in">Lần 1 · CĐT giữ quy cách HSMT — thay đổi để sau: đá sảnh phụ</div></div>
+          <div class="wf-steps">
+            <div class="cur"><b>Thương thảo giá</b>hoặc Bỏ qua thương thảo</div>
+            <div><b>Ký số PLHĐ</b>số PL · ngày ký · PDF</div>
+            <div><b>Mã VT · Thông báo</b>song song</div>
+            <div><b>Hoàn tất</b>—</div>
+          </div>
         </div>
       </div>
     </div>
@@ -358,39 +507,59 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Kiểm tra hợp đồng</td><td>Chạy toàn bộ 8 mục kiểm tra, hiện kết quả từng mục kèm số liệu đối chiếu. Còn mục Chặn thì nút “Khởi tạo &amp; thông báo” khóa; mục Cảnh báo phải được người kiểm tra xác nhận kèm lý do. Kết quả lưu thành bản ghi có người và thời điểm.</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Kiểm tra hợp đồng</td><td>Chạy toàn bộ 8 mục kiểm tra, hiện kết quả từng mục kèm số liệu đối chiếu. Còn mục Chặn thì nút “Chốt HĐ – Đã ký” khóa; mục Cảnh báo phải được người kiểm tra xác nhận kèm lý do. Kết quả lưu thành bản ghi có người và thời điểm.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Chạy lại kiểm tra</td><td>Sửa bất kỳ nội dung nào sau khi kiểm tra đạt thì kết quả về <code>chưa chạy</code>; bấm để chạy lại trước khi khởi tạo dự án <em>(19/10/2026)</em>.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Khai báo giá trị &amp; điều kiện thực hiện</td><td>Giá trị sau VAT tính tự động. Phiên bản hợp đồng <code>V{n}</code> chỉ đọc, theo bản BOQ của báo giá chốt; “% giữ lại bảo hành” mặc định 5, nhập 0–100 <em>(19/10/2026)</em>. Tiến độ thi công và thời hạn bảo hành nạp sẵn từ gói thầu (<a href="BID-01.html">BID-01</a>), sửa được và hiện giá trị gốc bên cạnh khi đã sửa. Sửa bất kỳ ô nào ở đây làm kết quả kiểm tra hết hiệu lực.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Gán thành phần dự án</td><td>Do P. Đấu thầu thực hiện. Mỗi dòng gán một vai trò và bộ quyền tương ứng.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Phân công nhân sự hiện trường</td><td><em>(20/10/2026)</em> Chuyển sang <a href="PRJ-06.html">PRJ-06</a>: Giám đốc dự án thực hiện sau khi được gán và nhận thông báo, chọn người từ phòng ban của mình. Gán được theo hạng mục.</td></tr>
-          <tr><td class="c"><span class="pin">6</span></td><td>Khởi tạo &amp; thông báo</td><td>Chỉ mở khi kiểm tra đạt. Hỏi số hợp đồng ngay lúc bấm, rồi chạy đồng thời: sinh mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, và gửi thông báo tới từng ID.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Chốt HĐ – Đã ký</td><td><em>(12/11/2026 · thay nút “Khởi tạo &amp; thông báo”)</em> Chỉ mở khi gói <code>Đang ký số</code> và đủ điều kiện chốt ở khung <span class="pin">8</span> — bốn điều kiện của <a href="PL-C.html#Q-266">Q-266</a>, số HĐ, kiểm tra đạt. Chạy đồng thời như trước: chuyển gói sang <code>Đã ký - HĐ chốt</code>, sinh mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, và gửi thông báo vai trò tới từng ID được gán.</td></tr>
+          <tr><td class="c"><span class="pin">7</span></td><td>Hoàn thiện hợp đồng</td><td>Hiện khi gói <code>Đang ký số</code> (bấm <em>Bắt đầu ký</em> từ <code>Thương thảo hoàn thành</code>). Số HĐ, tổng giá trị, % được tạm ứng, hình thức bảo lãnh, PDF HĐ đã ký bắt buộc; ngày ký mặc định hôm nay.</td></tr>
+          <tr><td class="c"><span class="pin">8</span></td><td>Điều kiện chốt</td><td>Đánh dấu ✓ / ✕ từng điều kiện, kèm kết quả kiểm tra hợp đồng; còn một ✕ thì nút <em>Chốt HĐ – Đã ký</em> khóa.</td></tr>
+          <tr><td class="c"><span class="pin">9</span></td><td>Bước 5 · Tạo mã vật tư theo HĐ</td><td><em>(<a href="PL-C.html#Q-268">Q-268</a>, <a href="PL-C.html#Q-269">Q-269</a>)</em> Mở khi gói <code>Đã ký - HĐ chốt</code>. Liệt kê dòng HĐ và mã vật tư; dòng chưa có mã có nút <em>Tạo mã</em> mở form mã vật tư của danh mục chung (<a href="PF-01.html">PF-01</a>) với mã gắn sẵn hợp đồng, dự án, hoặc chọn mã có sẵn. <em>Hoàn thành tạo mã</em> bật cờ bước 5.</td></tr>
+          <tr><td class="c"><span class="pin">10</span></td><td>Bước 6 · Thông báo các phòng ban</td><td><em>(<a href="PL-C.html#Q-267">Q-267</a>)</em> Mở cùng lúc với bước 5. <em>Gửi thông báo</em> mở hộp thoại người nhận theo danh sách phòng ban của gói (<a href="PL-C.html#Q-273">Q-273</a>); gửi lần đầu bật cờ bước 6. <em>Gửi lại</em> gửi thêm cho phòng ban chưa nhận, ghi lịch sử, không đổi cờ.</td></tr>
+          <tr><td class="c"><span class="pin">11</span></td><td>Thêm phụ lục</td><td><em>(<a href="PL-C.html#Q-271">Q-271</a>)</em> Cùng hộp thoại với nút <em>Thêm phụ lục</em> ở <a href="BID-01.html">BID-01</a>: chọn Loại 01 hoặc 02, ghi lý do; Loại 02 chọn được các lần thương thảo 3b làm căn cứ. Mở khi gói <code>Đã ký - HĐ chốt</code> hoặc <code>Hoàn tất</code> và không có lần hay phụ lục nào đang mở.</td></tr>
+          <tr><td class="c"><span class="pin">12</span></td><td>Danh sách phụ lục</td><td>Mọi phụ lục của hợp đồng đang hiệu lực — mã, loại, nội dung, giá trị thay đổi, trạng thái; bấm một dòng mở khung của phụ lục đó (thương thảo, ký, mã vật tư, thông báo).</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Kiểm tra trước, khởi tạo sau.</b> <em>(19/10/2026)</em> Không còn chuỗi ký số. Luồng là: soạn/review hợp đồng → chạy kiểm tra → mọi mục đạt (không còn mục Chặn, mục Cảnh báo đã xác nhận kèm lý do) → Khởi tạo dự án, nhập số hợp đồng ngay lúc đó → GĐ dự án phân công nhân sự hiện trường.<span class="then">Dự án sinh ra là kéo theo kho, BOQ hợp đồng và các luồng phụ thuộc — phát hiện lệch giá trị hay lệch BOQ sau lúc đó thì phải gỡ cả chuỗi dữ liệu.</span></li>
+      <li><b>Kiểm tra trước, khởi tạo sau.</b> <em>(19/10/2026)</em> Không còn chuỗi ký số. Luồng là: soạn/review hợp đồng → chạy kiểm tra → mọi mục đạt (không còn mục Chặn, mục Cảnh báo đã xác nhận kèm lý do) → Khởi tạo dự án, nhập số hợp đồng ngay lúc đó → GĐ dự án phân công nhân sự hiện trường.<span class="then">Dự án sinh ra là kéo theo kho, BOQ hợp đồng và các luồng phụ thuộc — phát hiện lệch giá trị hay lệch BOQ sau lúc đó thì phải gỡ cả chuỗi dữ liệu.</span><span class="then"><em>(12/11/2026 · <a href="PL-C.html#Q-265">Q-265</a>, <a href="PL-C.html#Q-266">Q-266</a>)</em> Luồng nay là: soạn/review hợp đồng → chạy kiểm tra → <em>Bắt đầu ký</em> (<code>Đang ký số</code>, ký ngoài hệ thống) → nhập điều kiện chốt → <em>Chốt HĐ – Đã ký</em>, khởi tạo dự án → bước 5 ∥ bước 6 → <code>Hoàn tất</code>. Vẫn không có chuỗi ký số trong hệ thống; kiểm tra đạt vẫn là điều kiện của thao tác khởi tạo dự án, nay là nút chốt.</span></li>
       <li><b>Ba trạng thái kết quả, không phải hai.</b> Một mục kiểm tra không đạt báo rõ vì sao: <code>chưa nhập</code> khi trường liên quan còn để trống, <code>không đạt</code> khi trường đó đã có giá trị nhưng sai hoặc lệch so với nơi đối chiếu.<span class="then">Gộp hai trường hợp vào một nhãn "Không đạt" khiến người kiểm tra không phân biệt được giữa việc phải đi nhập liệu và việc phải đi sửa một sai lệch đã có — hai việc khác hẳn nhau. Với mức Chặn, cả hai trạng thái đều giữ nút khởi tạo dự án khóa như nhau; với mức Cảnh báo, cả hai đều cần xác nhận kèm lý do mới qua được.</span></li>
-      <li><b>Sửa hợp đồng thì kiểm tra lại.</b> Mọi thay đổi giá trị, điều khoản, tiến độ, bảo hành hoặc % giữ lại sau khi kiểm tra đạt đều đưa <code>precheck</code> về <code>chưa chạy</code>; phải chạy lại mới khởi tạo được dự án.<span class="then">Kết quả kiểm tra luôn gắn với đúng nội dung hợp đồng được dùng để khởi tạo dự án.</span></li>
+      <li><b>Sửa hợp đồng thì kiểm tra lại.</b> Mọi thay đổi giá trị, điều khoản, tiến độ, bảo hành hoặc % giữ lại sau khi kiểm tra đạt đều đưa <code>precheck</code> về <code>chưa chạy</code>; phải chạy lại mới khởi tạo được dự án.<span class="then">Kết quả kiểm tra luôn gắn với đúng nội dung hợp đồng được dùng để khởi tạo dự án. Áp cả trong lúc <code>Đang ký số</code>: số HĐ, ngày ký, % được tạm ứng, hình thức bảo lãnh, PDF không nằm trong danh mục kiểm tra nên sửa chúng không làm kiểm tra hết hiệu lực. Sau chốt, quy tắc 27 thay quy tắc này <em>(12/11/2026)</em>.</span></li>
       <li><b>Sửa hồ sơ pháp nhân ngay tại mục kiểm tra chưa nhập.</b> Dòng <code>chk_partner</code> chưa nhập mở form sửa hồ sơ pháp nhân của đối tác — mã số thuế, địa chỉ đăng ký — thay vì chỉ báo thiếu. Quyền sửa theo <a href="PF-01.html">PF-01</a> (Admin · Kế toán trưởng — yêu cầu 31/10/2026); người không có quyền được dẫn về hồ sơ gói thầu để chọn đối tác khác.<span class="then">Tiếp nhận thư chào thầu ở <a href="BID-01.html">BID-01</a> chỉ bắt buộc tên khách hàng khi tạo nhanh để không chặn việc nhận hồ sơ, nên đối tác đến bước ký có thể vẫn thiếu mã số thuế hoặc địa chỉ. Nếu không sửa được từ đây thì mục kiểm tra nêu ra một thiếu sót mà không màn hình nào trong hệ thống bổ sung được, và gói thầu kẹt vĩnh viễn trước bước khởi tạo dự án.</span><span class="then"><b>Người đại diện không còn là điều kiện</b> <em>(sheet 30.10.2026 mục 10 · đổi 31/10/2026)</em>. Đối tác có mã số thuế và địa chỉ là đạt <code>chk_partner</code>; form sửa hồ sơ pháp nhân không còn hỏi Người đại diện, Điện thoại, Email — khách: “Không cần thêm đủ pháp nhân là tên giám đốc công ty đâu”. Người đại diện đã khai ở danh mục (<a href="PF-01.html">PF-01</a>) giữ nguyên, chỉ không còn được kiểm. Tên người ký phía đối tác không suy ra từ hồ sơ đối tác — xem <a href="PL-C.html#Q-156">Q-156</a>.</span></li>
       <li><b>Phiên bản hợp đồng theo BOQ, không nhập tay.</b> <em>(19/10/2026)</em> <code>doc_version</code> = <code>V{n}</code>, n là số phiên bản của bản BOQ mà báo giá chốt ở <a href="BID-03.html">BID-03</a> dựa trên. Đối tác không đồng ý thì gói được <b>Làm lại (lần mới)</b> ở <a href="BID-01.html">BID-01</a>, lần 2 đi lại <a href="BID-02.html">BID-02</a> và <a href="BID-03.html">BID-03</a> — hợp đồng của lần đó tự lên số phiên bản của BOQ mới, soạn bên cạnh hợp đồng của lần trước; mục <code>chk_doc</code> hiện đúng số đó.<span class="then">Phiên bản hợp đồng chỉ có nghĩa khi nó trỏ được về đúng BOQ đã định giá; để người soạn tự gõ thì số hiệu và BOQ sẽ trôi khỏi nhau.</span></li>
       <li><b>% giữ lại bảo hành khai một lần trên hợp đồng.</b> <em>(19/10/2026)</em> <code>retention_rate</code> mặc định 5, nhập 0–100. <a href="ORD-09.html">ORD-09</a> giữ lại tỷ lệ này ở mọi đợt; <a href="ORD-10.html">ORD-10</a> và <a href="RPT-05.html">RPT-05</a> dùng cùng tỷ lệ.<span class="then">Không còn bảng đợt thanh toán để suy tỷ lệ từ đợt cuối — một ô duy nhất thì mọi màn hình đọc cùng một con số.</span></li>
-      <li><b>Một thao tác, tám kết quả.</b> Khởi tạo dự án sinh đồng thời: mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, danh sách thành phần, các thông báo, hồ sơ bản vẽ thiết kế và hồ sơ Shopdrawing — hai hồ sơ sau sinh rỗng, chờ P. TQT nạp nội dung (<a href="ORD-02.html">ORD-02</a>, theo <a href="2026-09-15/YC-07.html">YC-07</a> và <a href="2026-09-15/YC-08.html">YC-08</a>).<span class="then">Chạy trong một giao dịch — lỗi ở bất kỳ bước nào thì hoàn tác toàn bộ, không để dự án sinh ra thiếu bộ phận.</span></li>
-      <li><b>BOQ hợp đồng bất biến.</b> Khối lượng và đơn giá của BOQ hợp đồng khóa vĩnh viễn.<span class="then">Thay đổi chỉ qua hai đường mở từ <a href="BID-01.html">BID-01</a> (<a href="PL-C.html#Q-201">Q-201</a>): <b>Thêm phụ lục</b> — cộng hoặc trừ khối lượng theo đơn giá hợp đồng và thêm hạng mục mới, ký bằng “Ký phụ lục” — hoặc <b>Làm lại (lần mới)</b> — soạn hợp đồng mới thay hợp đồng cũ, ký bằng “Ký lại hợp đồng (lần n)”. Bản gốc không bị sửa: hợp đồng bị thay mang trạng thái <em>Đã thay thế</em> và giữ nguyên để đối chiếu.</span></li>
+      <li><b>Một thao tác, tám kết quả.</b> <em>(12/11/2026 · <a href="PL-C.html#Q-266">Q-266</a>)</em> Thao tác đó nay là <em>Chốt HĐ – Đã ký</em>. Khởi tạo dự án sinh đồng thời: mã dự án, BOQ hợp đồng, danh mục hạng mục, kho dự án, danh sách thành phần, các thông báo, hồ sơ bản vẽ thiết kế và hồ sơ Shopdrawing — hai hồ sơ sau sinh rỗng, chờ P. TQT nạp nội dung (<a href="ORD-02.html">ORD-02</a>, theo <a href="2026-09-15/YC-07.html">YC-07</a> và <a href="2026-09-15/YC-08.html">YC-08</a>).<span class="then">Chạy trong một giao dịch — lỗi ở bất kỳ bước nào thì hoàn tác toàn bộ, không để dự án sinh ra thiếu bộ phận.</span></li>
+      <li><b>BOQ hợp đồng bất biến.</b> Khối lượng và đơn giá của BOQ hợp đồng khóa vĩnh viễn.<span class="then">Thay đổi chỉ qua hai đường mở từ <a href="BID-01.html">BID-01</a> (<a href="PL-C.html#Q-201">Q-201</a>): <b>Thêm phụ lục Loại 02</b> — cộng hoặc trừ khối lượng theo đơn giá hợp đồng và thêm hạng mục mới, ký theo quy tắc 31 (<a href="PL-C.html#Q-271">Q-271</a>) — hoặc <b>Làm lại (lần mới)</b> — soạn hợp đồng mới thay hợp đồng cũ, ký bằng “Ký lại hợp đồng (lần n)”. Bản gốc không bị sửa: hợp đồng bị thay mang trạng thái <em>Đã thay thế</em> và giữ nguyên để đối chiếu.</span></li>
       <li><b>Dòng hỗ trợ % chốt thành số tiền cố định.</b> Khi khởi tạo BOQ hợp đồng, mỗi dòng hỗ trợ % của <a href="BID-01.html">BID-01</a> thành một dòng thường: khối lượng 1, ĐVT “gói”, đơn giá = thành tiền đã chốt ở <a href="BID-03.html">BID-03</a> (âm nếu là dòng trừ đi), giữ nguyên tên dòng (yêu cầu sửa 14/10/2026).<span class="then">Nhờ vậy giá trị hợp đồng, danh mục hạng mục của dự án, quyết toán và kế toán nhận đúng số tiền đã thỏa thuận mà không phải hiểu tỷ lệ %. Kiểm tra <code>chk_qty</code> và đếm dòng chưa có đơn giá của <code>chk_boq</code> bỏ qua dòng hỗ trợ %.</span></li>
       <li><b>Dòng đầu mục và dòng đá chi tiết vào BOQ hợp đồng nguyên dạng.</b> BOQ hợp đồng chép đủ ba loại dòng của <a href="BID-01.html">BID-01</a> — đầu mục, đầu việc, đá chi tiết kèm tỉ lệ — đúng thứ tự (<em>yêu cầu thay đổi 16/10/2026 · mục 8, 4</em>).<span class="then">Giá trị hợp đồng, danh mục hạng mục của dự án, nghiệm thu, hồ sơ khối lượng, thanh toán và kế toán chỉ đọc dòng đầu việc: bên mời thầu nghiệm thu theo đầu việc, và đơn giá đầu việc đã gồm giá đá ghép từ các dòng chi tiết. Dòng chi tiết ở lại trong BOQ hợp đồng để các bước cung ứng về sau đọc được loại đá và tỉ lệ đã ký.</span></li>
       <li><b>Gán nhân sự hai tầng.</b> P. Đấu thầu gán thành phần dự án tại đây; Giám đốc dự án — sau khi được gán — mới phân công nhân sự hiện trường, ở <a href="PRJ-06.html">PRJ-06</a> <em>(20/10/2026)</em>.<span class="then">GĐ dự án nhận thông báo riêng “Bạn được giao Giám đốc dự án {dự án} — hãy phân công nhân sự hiện trường”, mở thẳng PRJ-06. Chưa gán Giám đốc dự án thì phần phân công hiện trường bị khóa.</span></li>
-      <li><b>Thông báo cá nhân hóa.</b> Mỗi người được thêm nhận đúng một thông báo nêu tên dự án và vai trò của chính họ.<span class="then">Không gửi một thông báo chung cho cả nhóm — người nhận cần biết mình được giao việc gì.</span></li>
+      <li><b>Thông báo cá nhân hóa.</b> Mỗi người được thêm nhận đúng một thông báo nêu tên dự án và vai trò của chính họ.<span class="then">Không gửi một thông báo chung cho cả nhóm — người nhận cần biết mình được giao việc gì.</span><span class="then"><em>(12/11/2026)</em> Đây là thông báo vai trò sinh khi khởi tạo dự án, đi theo nút chốt như trước. Nó không phải thông báo các phòng ban: thông báo phòng ban là bước 6, chỉ gửi khi P. Đấu thầu bấm (<a href="PL-C.html#Q-267">Q-267</a>).</span></li>
       <li><b>Tiến độ và bảo hành nạp sẵn từ gói thầu, không nhập lại.</b> Mở form hợp đồng là bốn ô <code>contract_start</code>, <code>contract_end</code>, <code>warranty_months</code>, <code>warranty_from</code> đã có giá trị của gói thầu ở <a href="BID-01.html">BID-01</a> (<a href="2026-09-15/YC-06.html">YC-06</a>), và chúng vẫn <b>sửa được</b>.<span class="then">Điều kiện thực hiện đã được khai một lần ở bước tiếp nhận và đã cấu thành giá chào; gõ lại ở bước ký là mời một lỗi chép tay vào đúng văn bản pháp lý. Nhưng khóa cứng cũng sai: thương thảo thường đổi tiến độ và đổi số tháng bảo hành, và hợp đồng mới là bản ràng buộc.</span><span class="then">Mốc tính bảo hành vẫn bắt buộc khi số tháng lớn hơn 0 — ràng buộc này đi theo cặp trường xuống tận đây, vì <a href="RPT-05.html">RPT-05</a> cần cả hai để ra <code>warranty_end_date</code>.</span></li>
       <li><b>Sửa thì hiện giá trị cũ, không xóa dấu vết.</b> Ô nào khác <code>tender_baseline</code> thì hiện chú thích “gói thầu: {giá trị cũ}” ngay cạnh ô, và mục kiểm tra <code>chk_warranty</code> chuyển sang Cảnh báo, đòi người kiểm tra ghi lý do trước khi khởi tạo dự án.<span class="then">Người duyệt hợp đồng không đọc lại hồ sơ gói thầu. Đặt giá trị cũ ngay cạnh giá trị mới là cách duy nhất để họ thấy điều kiện đã dịch chuyển bao nhiêu so với lúc mời thầu — 12 tháng bảo hành thành 24 tháng là một khoản tiền, không phải một chi tiết soạn thảo.</span><span class="then">Bản chụp giữ nguyên kể cả sau khi khởi tạo dự án, nên ba tháng sau vẫn trả lời được câu “điều kiện này có phải thứ đã dùng để dựng giá không”.</span></li>
       <li><b>Tiến độ theo hợp đồng không phải tiến độ thi công thực tế.</b> <code>contract_start</code> / <code>contract_end</code> là cam kết trong văn bản; tiến độ thực tế dựng từ sản lượng thi công ở <a href="PRJ-02.html">PRJ-02</a> và không bao giờ ghi ngược lại vào hợp đồng.<span class="then">Hai cặp mốc đặt cạnh nhau trên bảng theo dõi hợp đồng của <a href="RPT-05.html">RPT-05</a>; chênh lệch giữa chúng là chỉ số trễ tiến độ. Lấy số thực tế đè lên số cam kết thì chỉ số đó luôn bằng 0 và không ai biết dự án đang chậm.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày ký hợp đồng.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Số hợp đồng đang thực hiện và giá trị ký trong kỳ — đúng con số mà yêu cầu gốc nhắc tới.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
-      <li><b>Ký lại hợp đồng (lần n): dự án đang chạy chuyển sang hợp đồng mới</b> <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-201">Q-201</a>)</em>. Lần n của gói (<a href="BID-01.html">BID-01</a>) soạn hợp đồng riêng, bên cạnh hợp đồng đang hiệu lực, và chạy kiểm tra như mọi hợp đồng. Khi gói đã có dự án, nút khởi tạo đọc <b>“Ký lại hợp đồng (lần n)”</b>: không sinh dự án, kho hay mã mới — dự án đang chạy chuyển sang hợp đồng mới, hợp đồng cũ thành <em>Đã thay thế</em> (<a href="PL-A.html">PL-A</a>) và giữ làm hồ sơ. Số hợp đồng có thể giữ như cũ.<span class="then">Mọi thứ dự án đã ghi theo hợp đồng cũ — hạng mục dự án, sản lượng (<a href="PRJ-02.html">PRJ-02</a>), Đơn hàng và kế hoạch cung ứng, thanh toán tổ đội, hồ sơ khối lượng — đi theo từng hạng mục sang <b>hạng mục kế thừa</b> trong BOQ mới: trước hết là dòng được chép ra từ chính nó khi nạp lần mới, không có thì dòng cùng mã HM.</span><span class="then">Hạng mục mà BOQ mới bỏ đi giữ nguyên lịch sử, khối lượng hợp đồng về 0 và hiện là ngoài hợp đồng; hạng mục mới sinh hạng mục dự án mới. Dòng theo dõi ở <a href="RPT-05.html">RPT-05</a> và biên bản phạt chủ đầu tư (<a href="BID-07.html">BID-07</a>) chuyển sang hợp đồng mới. Phụ lục đã ký trên lần cũ được thay cùng hợp đồng cũ — lần mới đã chứa chúng.</span><span class="then">Chứng từ đã phát hành — phiếu kho, bút toán, phiếu lương… — giữ số. Trước khi lần n ký, phía dự án không đổi gì.</span></li>
+      <li><b>Ký lại hợp đồng (lần n): dự án đang chạy chuyển sang hợp đồng mới</b> <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-201">Q-201</a>)</em>. Lần n của gói (<a href="BID-01.html">BID-01</a>) soạn hợp đồng riêng, bên cạnh hợp đồng đang hiệu lực, và chạy kiểm tra như mọi hợp đồng. Khi gói đã có dự án, nút khởi tạo đọc <b>“Ký lại hợp đồng (lần n)”</b>: không sinh dự án, kho hay mã mới — dự án đang chạy chuyển sang hợp đồng mới, hợp đồng cũ thành <em>Đã thay thế</em> (<a href="PL-A.html">PL-A</a>) và giữ làm hồ sơ. Số hợp đồng có thể giữ như cũ.<span class="then">Mọi thứ dự án đã ghi theo hợp đồng cũ — hạng mục dự án, sản lượng (<a href="PRJ-02.html">PRJ-02</a>), Đơn hàng và kế hoạch cung ứng, thanh toán tổ đội, hồ sơ khối lượng — đi theo từng hạng mục sang <b>hạng mục kế thừa</b> trong BOQ mới: trước hết là dòng được chép ra từ chính nó khi nạp lần mới, không có thì dòng cùng mã HM.</span><span class="then">Hạng mục mà BOQ mới bỏ đi giữ nguyên lịch sử, khối lượng hợp đồng về 0 và hiện là ngoài hợp đồng; hạng mục mới sinh hạng mục dự án mới. Dòng theo dõi ở <a href="RPT-05.html">RPT-05</a> và biên bản phạt chủ đầu tư (<a href="BID-07.html">BID-07</a>) chuyển sang hợp đồng mới. Phụ lục đã ký trên lần cũ được thay cùng hợp đồng cũ — lần mới đã chứa chúng.</span><span class="then">Chứng từ đã phát hành — phiếu kho, bút toán, phiếu lương… — giữ số. Trước khi lần n ký, phía dự án không đổi gì.</span><span class="then"><em>(12/11/2026)</em> Lần n đi cùng bước 4: <em>Bắt đầu ký</em> → <code>Đang ký số</code> → điều kiện chốt → nút chốt đọc “Ký lại hợp đồng (lần n)”. Ký xong, bước 5 mở lại cho dòng của BOQ mới chưa có mã và bước 6 mở lại — hai cờ thuộc hợp đồng mới, bắt đầu trống, gói về <code>Đã ký - HĐ chốt</code>; gói <code>Hoàn tất</code> khi đủ cả hai (<a href="PL-C.html#Q-282">Q-282</a>).</span></li>
       <li><b>Gói nạp từ sổ hợp đồng: hợp đồng thật đầu tiên gắn vào công trình đang có.</b> Gói nạp từ sổ (<a href="PL-C.html#Q-174">Q-174</a>) — đã ký nhưng chưa có hợp đồng trong hệ thống — được làm lại ở <a href="BID-01.html">BID-01</a> thì khi ký lần đó, hợp đồng gắn vào công trình cùng mã đang có thay vì sinh công trình mới.<span class="then">Công trình đó đã có chứng từ kho và kế toán từ trước; sinh công trình thứ hai cùng mã là chia đôi sổ sách của một việc.</span></li>
-      <li><b>Ký phụ lục thay cho form hợp đồng</b> <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-201">Q-201</a>)</em>. Phụ lục đã chốt giá ở <a href="BID-03.html">BID-03</a> mở ở màn hình này một khung phụ lục thay cho form hợp đồng: mã phụ lục <code>&lt;mã HĐ&gt;-PL0n</code>, giá trị trước và sau VAT do hệ thống tính — dòng gắn đầu việc hợp đồng × đơn giá hợp đồng, cộng dòng hạng mục mới × đơn giá báo —, ngày ký (bắt buộc để ký), ghi chú và nút <b>Ký phụ lục</b>. Phụ lục không chạy danh mục kiểm tra hợp đồng (<a href="PL-C.html#Q-201">Q-201</a> (b)). Ký cần quyền <code>tender:appendix</code>; sửa ngày ký, ghi chú sau đó cần quyền sửa hợp đồng (<a href="PL-B.html">PL-B</a>).<span class="then">Ký xong: dòng gắn đầu việc hợp đồng cộng khối lượng của nó vào hạng mục dự án tương ứng — khối lượng hợp đồng tăng hoặc giảm; hạng mục mới thành hạng mục dự án mới theo giá báo của phụ lục, có dòng theo dõi bản vẽ và dòng ở <a href="RPT-05.html">RPT-05</a>; gói về <em>Đã ký HĐ</em>.</span><span class="then">Giá trị hợp đồng hiện ở <a href="RPT-05.html">RPT-05</a> = giá trị hợp đồng + các phụ lục đã ký của lần đang hiệu lực, sau VAT. Phụ lục 1, 2… đều cộng vào hợp đồng chính, không phụ lục nào thay phụ lục nào. Kế hoạch cung ứng đọc cả dòng đá chi tiết của phụ lục đã ký.</span></li>
-      <li><b>Gói làm trước, ký hợp đồng sau</b> <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-202">Q-202</a>)</em>. Gói tiếp nhận với ô <b>Làm trước, ký HĐ sau</b> ở <a href="BID-01.html">BID-01</a> tới đây sau thao tác <b>Chuyển ký hợp đồng</b>, không qua <a href="BID-02.html">BID-02</a>, <a href="BID-03.html">BID-03</a>. Hợp đồng nháp lấy giá trị = Σ khối lượng × đơn giá của bảng đầu việc đã khóa ở BID-01; kiểm tra hợp đồng chạy như mọi gói, so với chính các đơn giá đó.<span class="then">Khởi tạo dự án <b>gắn vào dự án làm trước cùng mã</b>, không sinh dự án thứ hai: dự án giữ nguyên mã, kho, bản vẽ, Đơn hàng và hàng đã nhận, nhận thêm hợp đồng, BOQ hợp đồng và hạng mục dự án theo đơn giá đã ký. Cán bộ phụ trách P. TQT (Trưởng phòng TQT giao ở <a href="PRJ-06.html">PRJ-06</a>, <a href="PL-C.html#Q-254">Q-254</a>) đã là thành viên thì không thêm lần nữa, kể cả khi được chọn lại trong danh sách gán.</span><span class="then">Đơn hàng lập trong lúc làm trước không tự nối với hạng mục hợp đồng (<a href="PL-C.html#Q-202">Q-202</a> (a)).</span></li>
+      <li><b>Ký phụ lục thay cho form hợp đồng</b> <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-201">Q-201</a> · thay bởi quy tắc 28–33 từ 12/11/2026, <a href="PL-C.html#Q-271">Q-271</a>)</em>. Phụ lục mở ở màn hình này một khung phụ lục thay cho form hợp đồng: mã phụ lục <code>&lt;mã HĐ&gt;-PL0n</code>, giá trị trước và sau VAT do hệ thống tính — dòng gắn đầu việc hợp đồng × đơn giá hợp đồng, cộng dòng hạng mục mới × đơn giá phụ lục —, ghi chú. Phụ lục không chạy danh mục kiểm tra hợp đồng (<a href="PL-C.html#Q-201">Q-201</a> (b)). Ký cần quyền <code>tender:appendix</code>; sửa ngày ký, ghi chú sau đó cần quyền sửa hợp đồng (<a href="PL-B.html">PL-B</a>).<span class="then">Phụ lục Loại 02 ký xong: dòng gắn đầu việc hợp đồng cộng khối lượng của nó vào hạng mục dự án tương ứng — khối lượng hợp đồng tăng hoặc giảm; hạng mục mới thành hạng mục dự án mới theo giá của phụ lục, có dòng theo dõi bản vẽ và dòng ở <a href="RPT-05.html">RPT-05</a>. Gói thầu giữ trạng thái của nó — không còn “về Đã ký HĐ” như trước.</span><span class="then">Giá trị hợp đồng hiện ở <a href="RPT-05.html">RPT-05</a> = giá trị hợp đồng + các phụ lục đã ký của lần đang hiệu lực, sau VAT. Phụ lục 1, 2… đều cộng vào hợp đồng chính, không phụ lục nào thay phụ lục nào; phụ lục Loại 01 cộng 0. Kế hoạch cung ứng đọc cả dòng đá chi tiết của phụ lục đã ký.</span></li>
+      <li><b>Gói làm trước, ký hợp đồng sau</b> <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-202">Q-202</a> · thay bởi nhánh A từ 12/11/2026, <a href="PL-C.html#Q-276">Q-276</a>)</em>. Ô <b>Làm trước, ký HĐ sau</b> và thao tác <b>Chuyển ký hợp đồng</b> không còn: gói chưa có HSMT đi nhánh A “Chạy trước dự án” ở <a href="BID-01.html">BID-01</a>, qua thẩm định HSMT sau chạy trước ở <a href="BID-02.html">BID-02</a>, thương thảo ở <a href="BID-03.html">BID-03</a>, rồi ký ở đây như mọi gói.<span class="then">Gói đã ở <em>Làm trước HĐ</em> trước ngày chuyển được đưa sang <code>Chạy trước dự án - chờ HSMT</code> (<a href="PL-C.html#Q-275">Q-275</a>). Gói nào đã có dự án cùng mã thì <em>Chốt HĐ – Đã ký</em> <b>gắn vào dự án đó</b>, không sinh dự án thứ hai: dự án giữ nguyên mã, kho, bản vẽ, Đơn hàng và hàng đã nhận, nhận thêm hợp đồng, BOQ hợp đồng và hạng mục dự án theo đơn giá đã ký. Cán bộ phụ trách P. TQT (<a href="PRJ-06.html">PRJ-06</a>, <a href="PL-C.html#Q-254">Q-254</a>) đã là thành viên thì không thêm lần nữa.</span><span class="then">Đơn hàng lập trong lúc làm trước không tự nối với hạng mục hợp đồng (<a href="PL-C.html#Q-202">Q-202</a> (a)).</span></li>
+      <li><b>Bắt đầu ký chỉ đổi trạng thái.</b> <em>(12/11/2026 · <a href="PL-C.html#Q-265">Q-265</a>)</em> Gói ở <code>Thương thảo hoàn thành</code> có nút <em>Bắt đầu ký</em>; bấm thì gói và hợp đồng sang <code>Đang ký số</code>, ghi người bấm và thời điểm.<span class="then">Việc ký — ký số hay ký tay, nội bộ hay với chủ đầu tư — diễn ra ngoài hệ thống; hệ thống không gửi tệp đi ký và không theo dõi từng chữ ký. Trạng thái này để mọi người thấy gói đang chờ ký, không phải đang soạn.</span></li>
+      <li><b>Chốt HĐ cần đủ điều kiện.</b> <em>Chốt HĐ – Đã ký</em> chỉ mở khi gói <code>Đang ký số</code> và có đủ bốn điều kiện của <a href="PL-C.html#Q-266">Q-266</a>: tổng giá trị gói thầu, % được tạm ứng HĐ, hình thức bảo lãnh (thư bảo lãnh hoặc công văn), PDF HĐ đã ký. Thêm hai điều kiện: số HĐ, vì mã HĐ nhập ở bước này (<a href="PL-C.html#Q-256">Q-256</a>); và kết quả kiểm tra hợp đồng <code>đạt</code>, giữ từ quy tắc 1 vì nút này khởi tạo dự án (<a href="PL-C.html#Q-283">Q-283</a>).<span class="then"><em>(chốt khi triển khai 12/11/2026 · <a href="PL-C.html#Q-283">Q-283</a>)</em> Kiểm tra phải đạt trên bản hợp đồng hiện hành: lưu ô điều kiện chốt (số HĐ, % tạm ứng, bảo lãnh, PDF) không làm mất kết quả kiểm tra, nhưng sửa nội dung hợp đồng trong lúc <code>Đang ký số</code> thì kết quả cũ hết hiệu lực và phải chạy lại trước khi chốt.</span><span class="then">Một nút làm cả hai việc: chuyển gói sang <code>Đã ký - HĐ chốt</code> và khởi tạo dự án theo quy tắc 7 — không có nút khởi tạo dự án riêng. Lỗi ở bước khởi tạo thì hoàn tác cả việc chốt; gói ở lại <code>Đang ký số</code>.</span></li>
+      <li><b>% được tạm ứng không phải % thu hồi tạm ứng.</b> <code>advance_pct</code> là phần giá trị hợp đồng chủ đầu tư tạm ứng, nguồn của hồ sơ tạm ứng ở <a href="ORD-01.html">ORD-01</a>; <code>advance_recovery_pct</code> là phần cấn trừ mỗi đợt ở <a href="ORD-09.html">ORD-09</a>.<span class="then">Hai số cùng là phần trăm và đứng gần nhau trên form, nên nhãn ghi đủ chữ, không viết tắt “% TƯ”.</span></li>
+      <li><b>Bước 5 — tạo mã vật tư theo HĐ.</b> <em>(<a href="PL-C.html#Q-268">Q-268</a>, <a href="PL-C.html#Q-269">Q-269</a>)</em> Chỉ mở khi gói <code>Đã ký - HĐ chốt</code>. Màn hình liệt kê dòng HĐ cùng mã vật tư, đếm số dòng đã có mã; dòng chưa có mã tạo mã mới hoặc chọn mã có sẵn, căn cứ HSMT đã thẩm định, kết quả thương thảo và hợp đồng.<span class="then">Mã tạo ở đây nằm trong danh mục mã vật tư chung (<a href="PF-01.html">PF-01</a>) và gắn với hợp đồng, dự án — lọc được “mã của HĐ này”, các màn hình khác vẫn dùng chung. Bước 5 xong khi P. Đấu thầu bấm <em>Hoàn thành tạo mã</em>; còn dòng chưa có mã thì hỏi xác nhận, không chặn. Sau đó vẫn tạo thêm mã được, cờ giữ nguyên.</span></li>
+      <li><b>Bước 6 — thông báo các phòng ban, một lần, do người bấm.</b> <em>(<a href="PL-C.html#Q-267">Q-267</a>, <a href="PL-C.html#Q-273">Q-273</a>)</em> Mở cùng lúc với bước 5, không chờ bước 5. P. Đấu thầu bấm <em>Gửi thông báo</em>: hộp thoại hiện danh sách phòng ban nhận thông báo của gói, sửa được — Ban lãnh đạo, Dự án liên quan luôn nhận; ô <em>Lưu vào danh sách của gói</em> mặc định không tích.<span class="then">Lần gửi đầu bật cờ bước 6. Lúc chốt không có thông báo phòng ban tự động — chỉ thông báo vai trò của quy tắc 12 — nên mỗi phòng ban nhận đúng một thông báo “HĐ đã chốt”. <em>Gửi lại</em> dùng cho phòng ban bị sót, ghi lịch sử, không bật lại cờ và giữ nguyên thời điểm hoàn thành bước 6 của lần gửi đầu (<a href="PL-C.html#Q-280">Q-280</a>). Kênh: hộp thư trong ứng dụng và thông báo đẩy (<a href="PF-04.html">PF-04</a>, <a href="PL-C.html#Q-278">Q-278</a>).</span></li>
+      <li><b>Hoàn tất khi đủ cả hai bước.</b> Cờ bước 5 và cờ bước 6 độc lập; bật đủ hai thì hệ thống chuyển gói sang <code>Hoàn tất</code>, ghi người thực hiện “Hệ thống”.<span class="then">Thanh trạng thái hiện tiến độ 1/2 hoặc 2/2 để biết còn thiếu việc nào.</span></li>
+      <li><b>Sau chốt: sửa thông tin chung, có lịch sử; giá trị và khối lượng qua phụ lục.</b> <em>(<a href="PL-C.html#Q-270">Q-270</a>)</em> Từ <code>Đã ký - HĐ chốt</code> trở đi, P. Đấu thầu sửa được thông tin chung — mã HĐ, hạng mục thi công, địa điểm, tiến độ, DS phòng ban… — không chạy lại kiểm tra hợp đồng.<span class="then">Mỗi lần sửa ghi người sửa, thời điểm, giá trị cũ và mới vào lịch sử thay đổi. Giá trị hợp đồng, khối lượng, đơn giá không sửa trực tiếp: chỉ đổi bằng phụ lục Loại 02. Sửa thông tin chung là sửa bản ghi cho đúng văn bản đã ký; thay đổi đã thống nhất lại với chủ đầu tư — tiến độ mới, pháp nhân mới — đi bằng phụ lục Loại 01 để có văn bản ký kèm.</span></li>
+      <li><b>Phụ lục có hai loại.</b> <em>(<a href="PL-C.html#Q-271">Q-271</a>, thay phần phụ lục của <a href="PL-C.html#Q-201">Q-201</a>)</em> Lập từ hợp đồng đã chốt, khi không có lần hay phụ lục nào đang mở, bắt buộc lý do. <b>Loại 01</b> — tiến độ, thông tin, pháp nhân… — không đổi giá trị. <b>Loại 02</b> — tăng giảm khối lượng, phát sinh ngoài HĐ — có BOQ phụ lục.<span class="then">Loại chọn lúc tạo và không đổi được sau đó. Quyền <code>tender:appendix</code> giữ như cũ (<a href="PL-B.html">PL-B</a>).</span></li>
+      <li><b>Loại 01 đi thẳng tới ký.</b> Không qua BOQ, thẩm định hay áp giá. <em>(chốt khi triển khai 12/11/2026 · <a href="PL-C.html#Q-289">Q-289</a>)</em> Tạo phụ lục Loại 01 là phụ lục ở ngay <code>Đang ký số PLHĐ</code> — không có bước <em>Bắt đầu ký</em> riêng. Phụ lục ghi từng trường thay đổi với giá trị hiện tại và giá trị mới.<span class="then">Ký xong, các giá trị mới áp vào hợp đồng — tiến độ thi công sang <a href="RPT-05.html">RPT-05</a>, pháp nhân bên ký, thông tin chung — và mỗi trường đổi ghi vào lịch sử thay đổi kèm mã phụ lục.</span></li>
+      <li><b>Loại 02: thương thảo hoặc bỏ qua, không qua BID-02.</b> BOQ phụ lục lập như phụ lục hiện nay — dòng gắn hạng mục HĐ đổi khối lượng theo đơn giá HĐ, dòng hạng mục mới — rồi đi thẳng tới thương thảo ở <a href="BID-03.html">BID-03</a> cho dòng mới, hoặc P. Đấu thầu bấm <em>Bỏ qua thương thảo</em> và nhập đơn giá dòng mới ngay trên bảng phụ lục.<span class="then"><em>(chốt khi triển khai 12/11/2026 · <a href="PL-C.html#Q-281">Q-281</a>)</em> Bỏ qua thương thảo khóa BOQ phụ lục và lấy giá dòng mới đúng bằng đơn giá đã gõ — không dựng giá vốn, không có vòng báo giá gửi đối tác; còn dòng mới chưa có đơn giá thì không bỏ qua được.</span><span class="then">Không có phiếu thẩm định <a href="BID-02.html">BID-02</a> cho phụ lục Loại 02 — đây là điểm thay <a href="PL-C.html#Q-201">Q-201</a>. Thay đổi để sau từ các lần thương thảo <code>3b</code> làm bằng chính loại phụ lục này; hộp thoại tạo phụ lục cho chọn các lần đó làm căn cứ (<a href="PL-C.html#Q-272">Q-272</a>).</span></li>
+      <li><b>Ký phụ lục cần số phụ lục và PDF.</b> Khác hợp đồng, phụ lục không có nút <em>Bắt đầu ký</em>: Loại 01 tạo ra là ở <code>Đang ký số PLHĐ</code>, Loại 02 sang <code>Đang ký số PLHĐ</code> khi thương thảo hoàn thành hoặc bấm <em>Bỏ qua thương thảo</em> (<a href="PL-C.html#Q-289">Q-289</a>). <em>Ký phụ lục</em> chỉ mở khi có số phụ lục, ngày ký và PDF phụ lục đã ký.<span class="then">Loại 02 còn cần thương thảo hoàn thành hoặc đã bỏ qua, và mọi dòng mới có đơn giá. Phụ lục vẫn không chạy danh mục kiểm tra hợp đồng.</span></li>
+      <li><b>Sau ký phụ lục: mã vật tư dòng mới ∥ thông báo → Hoàn tất.</b> Ký xong phụ lục sang <code>Đã ký – PLHĐ chốt</code> và mở hai việc như bước 5, bước 6 của hợp đồng: tạo mã vật tư cho dòng mới chưa có mã, và thông báo các phòng ban theo DS.<span class="then">Phụ lục không có dòng mới thiếu mã — mọi phụ lục Loại 01, và Loại 02 chỉ đổi khối lượng — thì việc mã vật tư tự xong lúc ký. Xong cả hai thì phụ lục <code>Hoàn tất</code>.</span></li>
+      <li><b>Danh sách phụ lục.</b> Màn hình hợp đồng có danh sách mọi phụ lục của lần đang hiệu lực, mỗi dòng: mã, loại, nội dung, giá trị thay đổi, trạng thái.<span class="then">Trước đây chỉ thấy phụ lục đang mở; phụ lục đã ký không còn chỗ nào để xem lại PDF và giá trị của nó.</span></li>
+      <li><b>Hợp đồng đang có chuyển sang trạng thái mới.</b> <em>(<a href="PL-C.html#Q-275">Q-275</a>)</em> Gói đã ký hợp đồng trước ngày chuyển mang trạng thái <code>Hoàn tất</code>, cờ bước 5 và bước 6 đều bật, người thực hiện “Hệ thống”.<span class="then">Không đòi bổ sung % được tạm ứng, hình thức bảo lãnh hay PDF cho các hợp đồng này; ô nào trống thì để trống và sửa được theo quy tắc 27.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -398,11 +567,11 @@
       <table>
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
-          <tr><td>Khởi tạo dự án khi chưa kiểm tra</td><td><code>precheck = chưa chạy</code></td><td>“Chạy kiểm tra hợp đồng trước khi khởi tạo dự án. Nút khởi tạo chỉ mở khi kết quả đạt.”</td></tr>
+          <tr><td>Chốt HĐ khi chưa kiểm tra</td><td><code>precheck = chưa chạy</code></td><td>“Chạy kiểm tra hợp đồng trước khi chốt — Chốt HĐ – Đã ký khởi tạo dự án nên chỉ mở khi kết quả đạt.” <em>(đổi chữ 12/11/2026)</em></td></tr>
           <tr><td>Còn mục kiểm tra ở mức Chặn</td><td>Có mục kết quả “Chưa nhập” hoặc “Không đạt”, mức Chặn</td><td>“Còn {n} mục chưa đạt: {danh sách}. Xử lý xong mới khởi tạo được dự án.”</td></tr>
           <tr><td>Mục cảnh báo chưa xác nhận</td><td>Có mục mức Cảnh báo chưa có xác nhận</td><td>“{n} mục cảnh báo chưa được xác nhận. Ghi lý do chấp nhận để tiếp tục.”</td></tr>
           <tr><td>Sửa hợp đồng sau khi kiểm tra đạt</td><td>Có thay đổi trên hợp đồng đã <code>đạt</code></td><td>“Hợp đồng vừa thay đổi nên kết quả kiểm tra hết hiệu lực. Chạy kiểm tra lại trước khi khởi tạo dự án.”</td></tr>
-          <tr><td>Khởi tạo dự án thiếu số hợp đồng</td><td><code>contract_no</code> rỗng khi bấm Khởi tạo</td><td>“Nhập số hợp đồng để khởi tạo dự án.” <em>(19/10/2026)</em></td></tr>
+          <tr><td>Chốt HĐ thiếu số hợp đồng</td><td><code>contract_no</code> rỗng khi bấm <em>Chốt HĐ – Đã ký</em></td><td>“Nhập số hợp đồng để chốt hợp đồng.” <em>(19/10/2026 · đổi 12/11/2026)</em></td></tr>
           <tr><td>% giữ lại bảo hành ngoài khoảng</td><td><code>retention_rate</code> &lt; 0 hoặc &gt; 100</td><td>“% giữ lại bảo hành phải từ 0 đến 100.” <em>(19/10/2026)</em></td></tr>
           <tr><td>Không tìm thấy bản BOQ của báo giá chốt <span class="tag t-warn">Chưa nhập</span></td><td><code>chk_doc</code>: báo giá chốt không trỏ được tới bản BOQ nào</td><td>“Không xác định được phiên bản hợp đồng — báo giá đã chốt không gắn với bản BOQ nào. Chốt lại giá ở BID-03.” <em>(19/10/2026)</em></td></tr>
           <tr><td>Chưa gán Giám đốc dự án</td><td>Thiếu vai trò GĐ dự án</td><td>“Gán Giám đốc dự án trước — người này sẽ phân công nhân sự hiện trường.”</td></tr>
@@ -415,6 +584,20 @@
           <tr><td>Hồ sơ pháp nhân đối tác thiếu <span class="tag t-warn">Chưa nhập</span></td><td><code>chk_partner</code>: đối tác thiếu mã số thuế hoặc địa chỉ — người đại diện không được kiểm <em>(sheet 30.10.2026 mục 10)</em></td><td>“Đối tác {tên} chưa có {mã số thuế / địa chỉ}. Bổ sung ngay tại dòng này rồi chạy lại kiểm tra.”</td></tr>
           <tr><td>Ký phụ lục thiếu ngày ký</td><td>Ngày ký trống khi bấm <b>Ký phụ lục</b> (<a href="PL-C.html#Q-201">Q-201</a>)</td><td>“Nhập ngày ký phụ lục trước khi ký.”</td></tr>
           <tr><td>Ký phụ lục không có quyền</td><td>Người bấm không có quyền <code>tender:appendix</code></td><td>“Bạn không có quyền ký phụ lục hợp đồng. Liên hệ TP Đấu thầu.”</td></tr>
+          <tr><td>Bắt đầu ký khi chưa thương thảo hoàn thành <em>(12/11/2026)</em></td><td>Gói khác <code>Thương thảo hoàn thành</code></td><td>“Gói đang ở {trạng thái}. Thông báo thương thảo hoàn thành ở BID-03 trước khi bắt đầu ký.”</td></tr>
+          <tr><td>Chốt HĐ thiếu điều kiện</td><td>Một trong <code>contract_value</code>, <code>advance_pct</code>, <code>guarantee_form</code>, <code>signed_pdf</code> rỗng</td><td>“Còn thiếu {danh sách} — đủ thì mới chốt được hợp đồng.”</td></tr>
+          <tr><td>% được tạm ứng ngoài khoảng</td><td><code>advance_pct</code> &lt; 0 hoặc &gt; 100</td><td>“% được tạm ứng HĐ phải từ 0 đến 100.”</td></tr>
+          <tr><td>File hợp đồng không phải PDF</td><td>Tệp tải lên khác PDF</td><td>“Tải bản PDF hợp đồng đã ký.”</td></tr>
+          <tr><td>Chốt HĐ khi chưa Đang ký số</td><td>Gói khác <code>Đang ký số</code></td><td>“Bấm Bắt đầu ký trước — hợp đồng chỉ chốt được khi đang ký số.”</td></tr>
+          <tr><td>Tạo mã vật tư trước khi chốt</td><td>Gói chưa <code>Đã ký - HĐ chốt</code></td><td>“Mã vật tư theo HĐ chỉ tạo khi hợp đồng đã chốt.”</td></tr>
+          <tr><td>Hoàn thành tạo mã khi còn dòng chưa có mã</td><td>Có dòng HĐ chưa có mã vật tư</td><td>“Còn {n}/{tổng} dòng chưa có mã vật tư. Vẫn đánh dấu hoàn thành bước 5?” <em>(xác nhận, cho đi tiếp)</em></td></tr>
+          <tr><td>Gửi thông báo phòng ban không có người nhận</td><td>Danh sách trong hộp thoại rỗng</td><td>“Chọn ít nhất một phòng ban nhận thông báo.”</td></tr>
+          <tr><td>Sửa giá trị hoặc khối lượng sau chốt</td><td>Gói <code>Đã ký - HĐ chốt</code> hoặc <code>Hoàn tất</code>, thao tác trên <code>contract_value</code>, khối lượng, đơn giá</td><td>“Hợp đồng đã chốt. Giá trị, khối lượng chỉ đổi bằng phụ lục HĐ Loại 02.”</td></tr>
+          <tr><td>Tạo phụ lục thiếu loại hoặc lý do</td><td><code>appendix_type</code> hoặc <code>reason</code> rỗng</td><td>“Chọn loại phụ lục (01 hoặc 02) và ghi lý do.”</td></tr>
+          <tr><td>Phụ lục Loại 01 không có thay đổi</td><td><code>changes[]</code> rỗng</td><td>“Ghi ít nhất một nội dung thay đổi của phụ lục Loại 01.”</td></tr>
+          <tr><td>Bỏ qua thương thảo khi dòng mới chưa có giá</td><td>Loại 02, có dòng hạng mục mới chưa có đơn giá</td><td>“Còn {n} dòng hạng mục mới chưa có đơn giá. Nhập đơn giá hoặc thương thảo ở BID-03.”</td></tr>
+          <tr><td>Ký phụ lục thiếu số phụ lục hoặc PDF</td><td><code>appendix_no</code> hoặc <code>signed_pdf</code> rỗng</td><td>“Nhập số phụ lục và tải PDF phụ lục đã ký trước khi ký.”</td></tr>
+          <tr><td>Thêm phụ lục khi đang có phụ lục mở</td><td>Có phụ lục chưa <code>Hoàn tất</code> hoặc một lần đang mở</td><td>“Phụ lục {mã} đang ở {trạng thái}. Hoàn tất phụ lục đó trước khi thêm phụ lục mới.”</td></tr>
           </tbody>
       </table>
     </div>
@@ -424,18 +607,18 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-BID05-1</td><td>Hợp đồng soạn xong, kiểm tra đạt</td><td>Bấm “Khởi tạo &amp; thông báo”, để trống số hợp đồng</td><td>Bị chặn, yêu cầu nhập số hợp đồng <em>(19/10/2026)</em></td></tr>
-          <tr><td>UAT-BID05-2</td><td>Kiểm tra đạt: không còn mục Chặn, 2 mục Cảnh báo đã xác nhận kèm lý do</td><td>Mở hợp đồng</td><td>Nút “Khởi tạo &amp; thông báo” mở; không có bước ký số nào <em>(19/10/2026)</em></td></tr>
-          <tr><td>UAT-BID05-3</td><td>Kiểm tra đạt, nhập số hợp đồng, đã gán 7 người</td><td>Bấm “Khởi tạo &amp; thông báo”</td><td>Sinh mã dự án, BOQ hợp đồng, hạng mục, kho dự án; không sinh bảng đợt; 7 người nhận thông báo riêng</td></tr>
-          <tr><td>UAT-BID05-4</td><td>Dự án vừa khởi tạo</td><td>Mở BOQ hợp đồng và thử sửa khối lượng</td><td>Ô khối lượng và đơn giá chỉ đọc; gợi ý dùng nút <b>Thêm phụ lục</b> ở <a href="BID-01.html">BID-01</a> <em>(08/11/2026)</em></td></tr>
+          <tr><td>UAT-BID05-1</td><td>Hợp đồng <code>Đang ký số</code>, kiểm tra đạt, đủ bốn điều kiện chốt</td><td>Bấm “Chốt HĐ – Đã ký”, để trống số hợp đồng</td><td>Bị chặn, yêu cầu nhập số hợp đồng <em>(19/10/2026 · 12/11/2026)</em></td></tr>
+          <tr><td>UAT-BID05-2</td><td>Kiểm tra đạt: không còn mục Chặn, 2 mục Cảnh báo đã xác nhận kèm lý do; gói <code>Đang ký số</code>, đủ điều kiện chốt</td><td>Mở hợp đồng</td><td>Nút “Chốt HĐ – Đã ký” mở; không có chuỗi ký số nào trong hệ thống <em>(19/10/2026 · 12/11/2026)</em></td></tr>
+          <tr><td>UAT-BID05-3</td><td>Kiểm tra đạt, đủ điều kiện chốt, nhập số hợp đồng, đã gán 7 người</td><td>Bấm “Chốt HĐ – Đã ký”</td><td>Sinh mã dự án, BOQ hợp đồng, hạng mục, kho dự án; không sinh bảng đợt; 7 người nhận thông báo riêng</td></tr>
+          <tr><td>UAT-BID05-4</td><td>Dự án vừa khởi tạo</td><td>Mở BOQ hợp đồng và thử sửa khối lượng</td><td>Ô khối lượng và đơn giá chỉ đọc; gợi ý lập phụ lục <b>Loại 02</b> <em>(08/11/2026 · 12/11/2026)</em></td></tr>
           <tr><td>UAT-BID05-5</td><td>Vừa được gán vào dự án với vai trò CBKT</td><td>Người đó đăng nhập</td><td>Thấy dữ liệu dự án ngay, không cần Admin cấp quyền</td></tr>
           <tr><td>UAT-BID05-6</td><td>Khởi tạo dự án có gán GĐ dự án</td><td>Xem lại màn hình Hợp đồng; GĐ dự án mở thông báo</td><td>Hợp đồng chỉ còn thành phần dự án (chỉ đọc), không có bảng nhân sự hiện trường; thông báo của GĐ dự án mở <a href="PRJ-06.html">PRJ-06</a> <em>(20/10/2026)</em></td></tr>
           <tr><td>UAT-BID05-7</td><td>Báo giá chốt ở BID-03 dựa trên BOQ bản 1</td><td>Mở hợp đồng, chạy kiểm tra</td><td>Phiên bản hợp đồng hiện <code>V1</code>, chỉ đọc; <code>chk_doc</code> Đạt <em>(19/10/2026)</em></td></tr>
-          <tr><td>UAT-BID05-8</td><td>Tiếp UAT-7; đối tác không đồng ý, P. Đấu thầu bấm <b>Làm lại (lần mới)</b> ở <a href="BID-01.html">BID-01</a>, lần 2 thẩm định và chốt giá lại</td><td>Mở hợp đồng của lần 2</td><td>Phiên bản hợp đồng lên theo bản BOQ của lần 2, kết quả kiểm tra “chưa chạy”; hợp đồng chưa ký của lần 1 khóa, lần 1 mang nhãn đã thay thế <em>(19/10/2026 · đổi 08/11/2026)</em></td></tr>
-          <tr><td>UAT-BID05-9</td><td>Hợp đồng soạn xong, chưa chạy kiểm tra</td><td>Bấm “Khởi tạo &amp; thông báo”</td><td>Bị chặn, yêu cầu chạy kiểm tra hợp đồng trước</td></tr>
+          <tr><td>UAT-BID05-8</td><td>Tiếp UAT-7; đối tác không đồng ý, P. Đấu thầu bấm <b>Làm lại (lần mới)</b> ở <a href="BID-01.html">BID-01</a>, lần 2 thẩm định và thương thảo hoàn thành lại</td><td>Mở hợp đồng của lần 2</td><td>Phiên bản hợp đồng lên theo bản BOQ của lần 2, kết quả kiểm tra “chưa chạy”; hợp đồng chưa ký của lần 1 khóa, lần 1 mang nhãn đã thay thế <em>(19/10/2026 · đổi 08/11/2026)</em></td></tr>
+          <tr><td>UAT-BID05-9</td><td>Hợp đồng <code>Đang ký số</code>, đủ điều kiện chốt, chưa chạy kiểm tra</td><td>Bấm “Chốt HĐ – Đã ký”</td><td>Bị chặn, yêu cầu chạy kiểm tra hợp đồng trước</td></tr>
           <tr><td>UAT-BID05-10</td><td>Giá trị hợp đồng lệch 3% so với BOQ chốt</td><td>Chạy kiểm tra hợp đồng</td><td>Mục giá trị báo Không đạt (mức Chặn), nút khởi tạo dự án vẫn khóa</td></tr>
           <tr><td>UAT-BID05-11</td><td>Điều khoản thanh toán khác báo giá đã chốt</td><td>Chạy kiểm tra, ghi lý do và xác nhận mục cảnh báo</td><td>Kết quả chuyển sang Đạt, nút khởi tạo dự án mở, lý do lưu kèm bản ghi kiểm tra</td></tr>
-          <tr><td>UAT-BID05-12</td><td>Kiểm tra đã đạt, chưa khởi tạo dự án</td><td>Sửa giá trị hợp đồng rồi lưu, bấm “Khởi tạo &amp; thông báo”</td><td>Kết quả kiểm tra về “chưa chạy”, nút khởi tạo khóa cho tới khi chạy lại kiểm tra và đạt <em>(19/10/2026)</em></td></tr>
+          <tr><td>UAT-BID05-12</td><td>Kiểm tra đã đạt, chưa khởi tạo dự án</td><td>Sửa giá trị hợp đồng rồi lưu, bấm “Chốt HĐ – Đã ký”</td><td>Kết quả kiểm tra về “chưa chạy”, nút khởi tạo khóa cho tới khi chạy lại kiểm tra và đạt <em>(19/10/2026)</em></td></tr>
           <tr><td>UAT-BID05-14</td><td>Form hợp đồng mới</td><td>Nhập “% giữ lại bảo hành” lần lượt 101, −1, rồi 0</td><td>Ô mặc định 5; 101 và −1 bị chặn kèm thông điệp 0–100; 0 lưu được <em>(19/10/2026)</em></td></tr>
           <tr><td>UAT-BID05-15</td><td>Hợp đồng khai % giữ lại bảo hành 3, dự án đã khởi tạo</td><td>Lập hồ sơ đợt ở <a href="ORD-09.html">ORD-09</a></td><td>Dòng giữ lại bảo hành tính đúng 3% giá trị khối lượng đợt <em>(19/10/2026)</em></td></tr>
           <tr><td>UAT-BID05-13</td><td>Đối tác được tiếp nhận ở BID-01 mới chỉ có tên và mã số thuế, chưa khai địa chỉ và người đại diện <em>(31/10/2026: chỉ thiếu địa chỉ làm mục này Chưa nhập; form sửa chỉ hỏi mã số thuế và địa chỉ — sheet 30.10.2026 mục 10)</em></td><td>Chạy kiểm tra hợp đồng</td><td>Mục pháp nhân báo <b>Chưa nhập</b> (không phải Không đạt), mức Chặn, mở form sửa hồ sơ pháp nhân ngay tại dòng đó; nút khởi tạo dự án vẫn khóa</td></tr>
@@ -445,16 +628,34 @@
           <tr><td>UAT-BID05-19</td><td>Báo giá đã chốt có dòng hỗ trợ 5% = 120.000 và dòng −40.000</td><td>Chạy kiểm tra hợp đồng rồi khởi tạo dự án</td><td><code>chk_qty</code>, <code>chk_boq</code> đạt; BOQ hợp đồng có hai dòng 1 gói × 120.000 và 1 gói × −40.000; giá trị hợp đồng bằng tổng báo giá</td></tr>
           <tr><td>UAT-BID05-20</td><td>Đối tác có mã số thuế và địa chỉ, không có người đại diện <em>(sheet 30.10.2026 mục 10)</em></td><td>Chạy kiểm tra hợp đồng</td><td><code>chk_partner</code> <b>Đạt</b>; không mục nào đòi người đại diện; nút khởi tạo dự án không bị mục này chặn</td></tr>
           <tr><td>UAT-BID05-21</td><td>Đối tác có mã số thuế, thiếu địa chỉ <em>(sheet 30.10.2026 mục 10)</em></td><td>Chạy kiểm tra; bấm vào dòng <code>chk_partner</code>, nhập địa chỉ, lưu, chạy lại kiểm tra</td><td>Lần đầu mục báo <b>Chưa nhập</b>, thông điệp nêu thiếu địa chỉ; form sửa chỉ có mã số thuế và địa chỉ đăng ký, không có người đại diện, điện thoại, email; lần sau mục Đạt</td></tr>
-          <tr><td>UAT-BID05-22</td><td>Gói <code>KH_0112</code> đã ký hợp đồng lần 1, dự án đang chạy: “Lát sàn sảnh” có sản lượng 300 m², Đơn hàng số 1 và phiếu lương tổ đội đã phát hành; “Ốp cột” có sản lượng 50 m². Lần 2 đã chốt giá: giữ “Lát sàn sảnh” (1.000 → 1.100 m²), bỏ “Ốp cột”, thêm “Ốp bậc tam cấp” <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-201">Q-201</a>)</em></td><td>Mở hợp đồng của lần 2, chạy kiểm tra đạt, giữ số hợp đồng cũ, bấm nút khởi tạo</td><td>Nút đọc “Ký lại hợp đồng (lần 2)”. Sau khi ký: không có dự án, kho mới; hợp đồng lần 1 mang trạng thái Đã thay thế, vẫn mở xem được; sản lượng 300 m², Đơn hàng số 1, thanh toán tổ đội nằm dưới “Lát sàn sảnh” của hợp đồng lần 2 với khối lượng hợp đồng 1.100 m²; “Ốp cột” giữ 50 m², khối lượng hợp đồng 0, hiện là ngoài hợp đồng; “Ốp bậc tam cấp” có hạng mục dự án mới; phiếu lương đã phát hành giữ số</td></tr>
-          <tr><td>UAT-BID05-23</td><td>Gói <code>HCM_0012</code> nạp từ sổ hợp đồng, công trình <code>HCM_0012</code> đã có phiếu nhập kho; lần 2 đã chốt giá</td><td>Soạn hợp đồng, chạy kiểm tra, ký</td><td>Hợp đồng gắn vào công trình <code>HCM_0012</code> đang có; không sinh công trình hay kho mới; phiếu nhập kho cũ vẫn thuộc công trình đó</td></tr>
-          <tr><td>UAT-BID05-24</td><td>Phụ lục 1 của <code>KH_0112</code> đã chốt giá: dòng gắn <code>KH_0112.01</code> (đơn giá hợp đồng 500.000) khối lượng −20, giá gõ ở BID-03 là 600.000; dòng hạng mục mới 80 m × 300.000; VAT 8%</td><td>Mở màn hình hợp đồng; bấm <b>Ký phụ lục</b> khi chưa nhập ngày ký; nhập ngày ký, bấm lại</td><td>Khung phụ lục thay form hợp đồng, mã <code>&lt;mã HĐ&gt;-PL01</code>, không có danh mục kiểm tra; giá trị trước VAT = −20 × 500.000 + 80 × 300.000 = 14.000.000, sau VAT 15.120.000 (giá 600.000 không được tính). Lần đầu bị chặn đòi ngày ký; ký xong khối lượng hợp đồng của <code>KH_0112.01</code> giảm 20, hạng mục mới có hạng mục dự án, dòng theo dõi bản vẽ và dòng <a href="RPT-05.html">RPT-05</a>; gói về Đã ký HĐ</td></tr>
+          <tr><td>UAT-BID05-22</td><td>Gói <code>KH_0112</code> đã ký hợp đồng lần 1, dự án đang chạy: “Lát sàn sảnh” có sản lượng 300 m², Đơn hàng số 1 và phiếu lương tổ đội đã phát hành; “Ốp cột” có sản lượng 50 m². Lần 2 đã thương thảo hoàn thành: giữ “Lát sàn sảnh” (1.000 → 1.100 m²), bỏ “Ốp cột”, thêm “Ốp bậc tam cấp” <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-201">Q-201</a>)</em></td><td>Mở hợp đồng của lần 2, chạy kiểm tra đạt, giữ số hợp đồng cũ, bấm nút khởi tạo</td><td>Nút đọc “Ký lại hợp đồng (lần 2)”. Sau khi ký: không có dự án, kho mới; hợp đồng lần 1 mang trạng thái Đã thay thế, vẫn mở xem được; sản lượng 300 m², Đơn hàng số 1, thanh toán tổ đội nằm dưới “Lát sàn sảnh” của hợp đồng lần 2 với khối lượng hợp đồng 1.100 m²; “Ốp cột” giữ 50 m², khối lượng hợp đồng 0, hiện là ngoài hợp đồng; “Ốp bậc tam cấp” có hạng mục dự án mới; phiếu lương đã phát hành giữ số</td></tr>
+          <tr><td>UAT-BID05-23</td><td>Gói <code>HCM_0012</code> nạp từ sổ hợp đồng, công trình <code>HCM_0012</code> đã có phiếu nhập kho; lần 2 đã thương thảo hoàn thành</td><td>Soạn hợp đồng, chạy kiểm tra, ký</td><td>Hợp đồng gắn vào công trình <code>HCM_0012</code> đang có; không sinh công trình hay kho mới; phiếu nhập kho cũ vẫn thuộc công trình đó</td></tr>
+          <tr><td>UAT-BID05-24</td><td>Phụ lục 1 của <code>KH_0112</code> đã thương thảo xong: dòng gắn <code>KH_0112.01</code> (đơn giá hợp đồng 500.000) khối lượng −20, giá gõ ở BID-03 là 600.000; dòng hạng mục mới 80 m × 300.000; VAT 8%</td><td>Phụ lục Loại 02 đã thương thảo xong, <code>Đang ký số PLHĐ</code>, đã có số phụ lục và PDF <em>(12/11/2026)</em>. Mở màn hình hợp đồng; bấm <b>Ký phụ lục</b> khi chưa nhập ngày ký; nhập ngày ký, bấm lại</td><td>Khung phụ lục thay form hợp đồng, mã <code>&lt;mã HĐ&gt;-PL01</code>, không có danh mục kiểm tra; giá trị trước VAT = −20 × 500.000 + 80 × 300.000 = 14.000.000, sau VAT 15.120.000 (giá 600.000 không được tính). Lần đầu bị chặn đòi ngày ký; ký xong khối lượng hợp đồng của <code>KH_0112.01</code> giảm 20, hạng mục mới có hạng mục dự án, dòng theo dõi bản vẽ và dòng <a href="RPT-05.html">RPT-05</a>; phụ lục sang <code>Đã ký – PLHĐ chốt</code>, gói giữ trạng thái của nó</td></tr>
           <tr><td>UAT-BID05-25</td><td>Hợp đồng lần 1 giá trị sau VAT 10.800.000.000; Phụ lục 1 (15.120.000) và Phụ lục 2 (54.000.000) đã ký</td><td>Mở <a href="RPT-05.html">RPT-05</a>; sau đó lần 2 ký với giá trị sau VAT 11.000.000.000, mở lại RPT-05</td><td>Lần đầu giá trị hợp đồng 10.869.120.000 — cả hai phụ lục cộng vào hợp đồng chính; lần sau 11.000.000.000 — hai phụ lục cũ được thay cùng hợp đồng lần 1, không cộng nữa</td></tr>
+          <tr><td>UAT-BID05-26</td><td>Gói <code>Thương thảo hoàn thành</code>, hợp đồng soạn xong <em>(12/11/2026)</em></td><td>Bấm “Bắt đầu ký”</td><td>Gói và hợp đồng <code>Đang ký số</code>; không có tệp nào được gửi đi ký; lịch sử ghi người bấm, thời điểm</td></tr>
+          <tr><td>UAT-BID05-27</td><td>Gói <code>Đang thương thảo (lần 2)</code></td><td>Mở hợp đồng, tìm nút “Bắt đầu ký”</td><td>Nút khóa: “Gói đang ở Đang thương thảo (lần 2)…”</td></tr>
+          <tr><td>UAT-BID05-28</td><td>Tiếp UAT-26, kiểm tra đạt; đã nhập số HĐ, tổng giá trị 12.480.000.000, % tạm ứng 15, chọn Thư bảo lãnh, chưa tải PDF</td><td>Xem khung Điều kiện chốt, bấm “Chốt HĐ – Đã ký”</td><td>Bốn ✓, PDF ✕; nút khóa, thông điệp nêu thiếu PDF HĐ đã ký</td></tr>
+          <tr><td>UAT-BID05-29</td><td>Tiếp UAT-28</td><td>Tải tệp DOCX, rồi tải PDF; bấm chốt</td><td>DOCX bị từ chối; PDF nhận. Gói <code>Đã ký - HĐ chốt</code>; dự án, BOQ HĐ, kho, hạng mục sinh như trước; người được gán nhận thông báo vai trò; <b>không</b> phòng ban nào nhận thông báo “HĐ đã chốt”; bước 5 và bước 6 cùng mở</td></tr>
+          <tr><td>UAT-BID05-30</td><td>Nhập % được tạm ứng 120, rồi −5</td><td>Lưu</td><td>Cả hai bị chặn: “% được tạm ứng HĐ phải từ 0 đến 100.”; ô % thu hồi tạm ứng không đổi</td></tr>
+          <tr><td>UAT-BID05-31</td><td>Gói <code>Đã ký - HĐ chốt</code>, 18 dòng HĐ, 12 dòng đã có mã</td><td>Mở bước 5, bấm “Tạo mã” ở dòng 1.2, lưu mã mới</td><td>Mã mới có trong danh mục mã vật tư chung, gắn hợp đồng và dự án; bước 5 hiện 13/18 dòng đã có mã</td></tr>
+          <tr><td>UAT-BID05-32</td><td>Tiếp UAT-31</td><td>Bấm “Hoàn thành tạo mã”</td><td>Hỏi xác nhận “Còn 5/18 dòng chưa có mã…”; xác nhận thì cờ bước 5 bật; gói vẫn <code>Đã ký - HĐ chốt</code>, tiến độ 1/2 vì bước 6 chưa gửi</td></tr>
+          <tr><td>UAT-BID05-33</td><td>Tiếp UAT-29, DS gói: P.TQT, P.Kế toán, P.Vật tư</td><td>Ở bước 6 bấm “Gửi thông báo”, thêm P.Thi công, tích “Lưu vào danh sách của gói”, gửi</td><td>Bốn phòng ban nhận thông báo qua hộp thư và thông báo đẩy; DS của gói nay có P.Thi công; cờ bước 6 bật — không cần chờ bước 5</td></tr>
+          <tr><td>UAT-BID05-34</td><td>Tiếp UAT-32 và UAT-33</td><td>Mở gói</td><td>Gói tự sang <code>Hoàn tất</code>, lịch sử ghi người thực hiện “Hệ thống”</td></tr>
+          <tr><td>UAT-BID05-35</td><td>Tiếp UAT-33</td><td>Bấm “Gửi lại” cho P.Vật tư</td><td>P.Vật tư nhận thêm một thông báo; lịch sử ghi lần gửi lại; cờ bước 6 không đổi</td></tr>
+          <tr><td>UAT-BID05-36</td><td>Gói <code>Hoàn tất</code></td><td>Sửa tiến độ thi công và DS phòng ban; thử sửa giá trị hợp đồng</td><td>Tiến độ, DS lưu được, không chạy lại kiểm tra; lịch sử ghi người sửa, thời điểm, cũ → mới. Sửa giá trị bị chặn: “Hợp đồng đã chốt. Giá trị, khối lượng chỉ đổi bằng phụ lục HĐ Loại 02.”</td></tr>
+          <tr><td>UAT-BID05-37</td><td>Gói <code>Hoàn tất</code>, không có phụ lục mở</td><td>Thêm phụ lục Loại 01 “Đổi tiến độ hoàn thành → 31/03”; phụ lục hiện ngay <code>Đang ký số PLHĐ</code>, không có nút Bắt đầu ký (<a href="PL-C.html#Q-289">Q-289</a>); nhập số phụ lục, ngày ký, PDF, Ký phụ lục</td><td>Không có BOQ, thẩm định hay áp giá; ký xong <code>contract_end</code> = 31/03 và hiện ở RPT-05, lịch sử ghi kèm mã phụ lục; việc mã vật tư tự xong; sau khi gửi thông báo phòng ban thì phụ lục <code>Hoàn tất</code>; giá trị hợp đồng không đổi</td></tr>
+          <tr><td>UAT-BID05-38</td><td>Gói có lần thương thảo 1 kết quả 3b “đá sảnh phụ để sau”</td><td>Thêm phụ lục Loại 02, chọn lần 1 làm căn cứ, thêm dòng mới “Ốp đá sảnh phụ” 400 m²</td><td>Phụ lục không có phiếu thẩm định BID-02; tóm lược lần 1 hiện trong phụ lục; phụ lục đi sang thương thảo ở BID-03 với lần thương thảo đánh số từ 1</td></tr>
+          <tr><td>UAT-BID05-39</td><td>Phụ lục Loại 02 chỉ đổi khối lượng dòng gắn hạng mục HĐ, cộng một dòng mới chưa có đơn giá</td><td>Bấm “Bỏ qua thương thảo”; nhập đơn giá dòng mới rồi bấm lại</td><td>Lần đầu bị chặn “Còn 1 dòng hạng mục mới chưa có đơn giá…”; lần sau phụ lục sang ký, không qua BID-03</td></tr>
+          <tr><td>UAT-BID05-40</td><td>Phụ lục <code>Đang ký số PLHĐ</code>, đã có ngày ký</td><td>Bấm “Ký phụ lục” khi chưa có số phụ lục và PDF</td><td>Bị chặn: “Nhập số phụ lục và tải PDF phụ lục đã ký trước khi ký.”</td></tr>
+          <tr><td>UAT-BID05-41</td><td>Phụ lục Loại 02 có 2 dòng mới, 1 dòng đã chọn mã có sẵn</td><td>Ký phụ lục; mở việc mã vật tư</td><td>Chỉ dòng mới còn lại cần tạo mã; dòng gắn hạng mục HĐ không hiện; thông báo phòng ban mở song song; xong cả hai thì phụ lục <code>Hoàn tất</code></td></tr>
+          <tr><td>UAT-BID05-42</td><td>Hợp đồng có PL01 <code>Hoàn tất</code>, PL02 <code>Đang thương thảo PLHĐ (lần 1)</code></td><td>Mở khung phụ lục; bấm “Thêm phụ lục”</td><td>Danh sách hiện cả hai phụ lục với loại, nội dung, giá trị, trạng thái; thêm phụ lục bị chặn vì PL02 đang mở</td></tr>
+          <tr><td>UAT-BID05-43</td><td>Gói đã ký hợp đồng trước ngày chuyển dữ liệu</td><td>Mở gói sau khi chuyển</td><td>Gói <code>Hoàn tất</code>, cờ bước 5 và bước 6 đều bật, người thực hiện “Hệ thống”; % tạm ứng, bảo lãnh, PDF để trống và sửa được (<a href="PL-C.html#Q-275">Q-275</a>)</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-01.html">BID-01 BOQ mời thầu</a><a href="PL-C.html#Q-202">Q-202 gói làm trước, ký HĐ sau</a><a href="BID-02.html">BID-02 chốt khối lượng</a><a href="BID-03.html">BID-03 chốt giá</a><a href="BID-01.html">BID-01 làm lại (lần mới) → hợp đồng V2</a><a href="BID-01.html">BID-01 thêm phụ lục</a><a href="BID-07.html">BID-07 biên bản phạt CĐT</a><a href="PL-C.html#Q-201">Q-201 lần của gói thầu &amp; phụ lục</a><a href="PF-01.html">PF-01 sinh mã dự án</a><a href="PF-02.html">PF-02 quyền theo dự án</a><a href="ORD-01.html">ORD-01 tạm ứng hợp đồng</a><a href="ORD-02.html">ORD-02 shopdrawing</a><a href="ORD-09.html">ORD-09 giữ lại bảo hành theo đợt</a><a href="ORD-10.html">ORD-10 quyết toán &amp; thu hồi bảo hành</a><a href="PRJ-01.html">PRJ-01 giá khoán tổ đội</a><a href="ACC-02.html">ACC-02 kho dự án</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="RPT-05.html">RPT-05 theo dõi tiến độ hợp đồng</a><a href="2026-09-15/YC-06.html">YC-06 thông tin chung gói thầu</a></p>
+    <p class="links"><a href="BID-01.html">BID-01 BOQ mời thầu</a><a href="PL-C.html#Q-202">Q-202 gói làm trước, ký HĐ sau</a><a href="BID-02.html">BID-02 chốt khối lượng</a><a href="BID-03.html">BID-03 thương thảo hoàn thành</a><a href="BID-01.html">BID-01 làm lại (lần mới) → hợp đồng V2</a><a href="BID-01.html">BID-01 thêm phụ lục</a><a href="BID-07.html">BID-07 biên bản phạt CĐT</a><a href="PL-C.html#Q-201">Q-201 lần của gói thầu &amp; phụ lục</a><a href="PF-01.html">PF-01 sinh mã dự án</a><a href="PF-02.html">PF-02 quyền theo dự án</a><a href="ORD-01.html">ORD-01 tạm ứng hợp đồng</a><a href="ORD-02.html">ORD-02 shopdrawing</a><a href="ORD-09.html">ORD-09 giữ lại bảo hành theo đợt</a><a href="ORD-10.html">ORD-10 quyết toán &amp; thu hồi bảo hành</a><a href="PRJ-01.html">PRJ-01 giá khoán tổ đội</a><a href="ACC-02.html">ACC-02 kho dự án</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="RPT-05.html">RPT-05 theo dõi tiến độ hợp đồng</a><a href="2026-09-15/YC-06.html">YC-06 thông tin chung gói thầu</a><a href="PF-04.html">PF-04 thông báo</a><a href="PF-05.html">PF-05 PDF hợp đồng, phụ lục</a><a href="PL-A.html">PL-A trạng thái bước 4–6 &amp; phụ lục</a><a href="PL-B.html">PL-B quyền phụ lục</a><a href="PL-C.html#Q-256">Q-256 mã HĐ nhập ở bước 4</a><a href="PL-C.html#Q-265">Q-265 ký ngoài hệ thống</a><a href="PL-C.html#Q-266">Q-266 chốt HĐ khởi tạo dự án</a><a href="PL-C.html#Q-267">Q-267 thông báo phòng ban</a><a href="PL-C.html#Q-268">Q-268 – Q-269 mã vật tư theo HĐ</a><a href="PL-C.html#Q-270">Q-270 sửa sau chốt</a><a href="PL-C.html#Q-271">Q-271 phụ lục Loại 01/02</a><a href="PL-C.html#Q-272">Q-272 thay đổi 3b</a><a href="PL-C.html#Q-276">Q-276 nhánh A thay gói làm trước</a></p>
   </div>
 </section>
 <div class="filefoot">
