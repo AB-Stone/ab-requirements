@@ -81,10 +81,10 @@
     <div class="tb-id">BID-02</div>
     <div class="tb-main">
       <h3>Thẩm định BOQ liên phòng ban</h3>
-      <p>Thay cho việc “cc mail đến P. TQT và Dự án”, hệ thống tạo hai phiếu chạy song song và gộp kết quả thành một bản BOQ cập nhật duy nhất.</p>
+      <p>Bước 2 của gói thầu: P. Đấu thầu thông báo hoặc gửi HSMT, P. TQT thẩm định, Dự án liên quan khảo sát — theo nhánh 2A, 2B hoặc 2C, có hạn phản hồi và tự xác nhận khi quá hạn — rồi chốt một bản BOQ cập nhật duy nhất để mở thương thảo.</p>
       <dl class="tb-meta">
-        <div><dt>Thực hiện</dt><dd>P. TQT (kỹ thuật) · Ban Dự án (hiện trường)</dd></div>
-        <div><dt>Phê duyệt</dt><dd>TP Đấu thầu chốt bản BOQ cập nhật hoặc trả lại phiếu</dd></div>
+        <div><dt>Thực hiện</dt><dd>P. Đấu thầu (gửi) · P. TQT (thẩm định HSMT) · Dự án liên quan (khảo sát, báo tình hình)</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Không — gói tự sang Đã thẩm định; TP Đấu thầu chốt BOQ cập nhật để mở bước 3, hoặc trả lại phiếu</dd></div>
         <div><dt>Quyền truy cập</dt><dd>Không giới hạn</dd></div>
         <div><dt>Yêu cầu gốc</dt><dd>ĐT · dòng 2</dd></div>
       </dl>
@@ -92,190 +92,105 @@
   </header>
   <div class="sb">
     <h4>Mục tiêu</h4>
-    <p>Yêu cầu gốc tách rõ hai việc: P. TQT “kiểm tra tính đủ/thiếu, đúng/sai đầu việc, khối lượng, quy cách”; Ban dự án “bố trí nhân sự đi kiểm tra mặt bằng/thực tế công trình để bổ sung các biện pháp thi công khó, phát sinh chi phí nếu có”. Hai việc này độc lập nhau nên phải chạy song song, nhưng kết quả phải hợp nhất trước khi áp giá.</p>
+    <p>Yêu cầu gốc tách rõ hai việc: P. TQT “kiểm tra tính đủ/thiếu, đúng/sai đầu việc, khối lượng, quy cách”; Ban dự án “bố trí nhân sự đi kiểm tra mặt bằng/thực tế công trình để bổ sung các biện pháp thi công khó, phát sinh chi phí nếu có”. Hai việc này độc lập nhau nên phải chạy song song, nhưng kết quả phải gom về một bản BOQ cập nhật trước khi áp giá.</p>
     <p><em>(yêu cầu thay đổi 16/10/2026 · mục 12, 10, 11)</em> Người rà soát không còn chấm kết luận từng dòng rồi chờ bước hợp nhất mới thấy số liệu đổi. Phiếu rà soát mang sẵn <b>một bản BOQ nháp</b> chép từ BOQ mời thầu: QS sửa thẳng mọi dòng, mọi cột, thêm và xóa dòng, mỗi ô đã đổi giữ <b>vết nội dung cũ</b> ngay bên dưới; riêng khối lượng có ba cột <em>KL hiện trạng · Cập nhật KL · KL sau cùng</em>. TP Đấu thầu xem bảng có vết rồi <b>chốt</b> — bản nháp thành BOQ cập nhật — hoặc <b>trả lại</b> kèm lý do. Hồ sơ mời thầu có thể tới 10.000 dòng, nên mọi thao tác ở đây làm trên cả bảng một lần, không chọn tay từng dòng.</p>
+    <p><em>(thiết kế lại luồng gói thầu 12/11/2026 · <a href="PL-C.html#Q-256">Q-256</a> – <a href="PL-C.html#Q-278">Q-278</a>)</em> Bước 2 nay có ba dạng, theo <b>loại hồ sơ</b> chọn ở <a href="BID-01.html">BID-01</a> (<a href="PL-C.html#Q-276">Q-276</a>):</p>
+    <ul>
+      <li><b>2A · Khảo sát sơ bộ</b> — nhánh A, chưa có HSMT. P. Đấu thầu tải chỉ thị công trình, biên bản họp và bấm <b>Thông báo</b>; Dự án liên quan khảo sát mặt bằng, điều kiện thi công và báo lại trên hệ thống. Không có hạn, hệ thống nhắc hằng ngày (<a href="PL-C.html#Q-257">Q-257</a>). Báo xong thì gói <em>Chạy trước dự án - chờ HSMT</em>.</li>
+      <li><b>2C · Thẩm định HSMT sau chạy trước</b> — nhánh A, khi chủ đầu tư phát hành HSMT. P. Đấu thầu tải HSMT, chọn hạn; P. TQT thẩm định có hạn; Dự án chỉ báo tình hình, khó khăn thi công nếu có, không chặn gói (<a href="PL-C.html#Q-258">Q-258</a>).</li>
+      <li><b>2B · Thẩm định/khảo sát</b> — nhánh B, đã có HSMT. P. Đấu thầu tải HSMT, chọn hạn 24 h hoặc 48 h (<a href="PL-C.html#Q-260">Q-260</a>); P. TQT thẩm định và Dự án khảo sát hiện trạng, cả hai cùng hạn.</li>
+    </ul>
+    <p>Ở 2B và 2C, tới hạn mà phiếu bắt buộc chưa phản hồi thì hệ thống xem HSMT là đúng, ghi “Tự động xác nhận quá hạn” và báo các bên (<a href="PL-C.html#Q-259">Q-259</a>). Đủ phản hồi hoặc quá hạn thì gói <b>tự</b> sang <em>Đã thẩm định</em> — không còn bước hợp nhất phải bấm; <b>Chốt BOQ cập nhật</b> trở thành thao tác mở bước 3, <em>Thương thảo – áp giá (lần 0)</em> ở <a href="BID-03.html">BID-03</a> (<a href="PL-C.html#Q-261">Q-261</a>, <a href="PL-C.html#Q-274">Q-274</a>). Phiếu rà soát vẫn mang bản BOQ nháp sửa thẳng như mô tả ở trên.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:551px;margin:0 auto"><svg role="img" aria-label="Hình BID-02.1 Hai phiếu chạy song song nhưng có một điểm hợp nhất bắt buộc. TP Đấu thầu chốt bản BOQ nháp của phiếu rà soát hoặc trả lại phiếu kèm lý do. Vòng lặp “làm rõ với bên mời thầu” là lý do BOQ phải có nhiều phiên bản (PF-05)."
- viewBox="0.00 0.00 551.00 770.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 757.48)">
-<title>G</title>
-<g id="clust1" class="cluster">
-<title>cluster_T1</title>
-<polygon fill="#e6eaee" stroke="#a3acb5" points="8,-375.72 8,-594.72 266,-594.72 266,-375.72 8,-375.72"/>
-<text xml:space="preserve" text-anchor="middle" x="110.00" y="-580.37" font-family="Barlow, system-ui, sans-serif" font-size="11.50" fill="#4a545e">Rà soát, kiểm tra Hồ sơ mời thầu — P. TQT</text>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:560px;margin:0 auto"><svg role="img" aria-label="Hình BID-02.1 Bước 2 có ba dạng theo nhánh. Nhánh A: 2A thông báo, Dự án khảo sát sơ bộ không hạn, chờ HSMT, rồi 2C thẩm định HSMT có hạn. Nhánh B: 2B thẩm định và khảo sát có hạn. Đủ phản hồi hoặc quá hạn thì gói tự sang Đã thẩm định; P. Đấu thầu chốt BOQ cập nhật để mở thương thảo." viewBox="0 0 560 760" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="bid02a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#55606b"/></marker></defs>
+<g font-family="Barlow, system-ui, sans-serif" font-size="12" fill="#16202a" text-anchor="middle">
+  <rect x="140" y="8" width="280" height="42" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="280" y="26">Gói <tspan font-style="italic">Đã khởi tạo</tspan> ở BID-01</text><text x="280" y="41">P. Đấu thầu mở bước 2</text>
+  <path d="M280,50 L280,66" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+  <polygon points="280,70 340,94 280,118 220,94" fill="#eef2f5" stroke="#5d6b7a"/>
+  <text x="280" y="98">Loại hồ sơ?</text>
+
+  <path d="M220,94 L138,94 L138,146" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+  <text x="150" y="84">A · Chưa có HSMT</text>
+  <path d="M340,94 L422,94 L422,304" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+  <text x="410" y="84">B · Có HSMT</text>
+
+  <rect x="8" y="150" width="260" height="58" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="138" y="168">2A · Thông báo — hộp người nhận</text><text x="138" y="183">phiếu Khảo sát sơ bộ → Dự án liên quan</text><text x="138" y="198">không có hạn · nhắc Dự án hằng ngày</text>
+  <path d="M138,208 L138,232" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+
+  <rect x="8" y="236" width="260" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="138" y="254">Dự án báo khảo sát sơ bộ</text><text x="138" y="269" font-style="italic">→ Chạy trước dự án - chờ HSMT</text>
+  <path d="M138,280 L138,304" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+
+  <rect x="8" y="308" width="260" height="58" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="138" y="326">2C · tải HSMT, hạn 24 h / 48 h</text><text x="138" y="341">Rà soát HSMT → P. TQT (có hạn)</text><text x="138" y="356">Báo tình hình → Dự án (không chặn)</text>
+
+  <rect x="292" y="308" width="260" height="58" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="422" y="326">2B · tải HSMT, hạn 24 h / 48 h</text><text x="422" y="341">Rà soát HSMT → P. TQT (có hạn)</text><text x="422" y="356">Khảo sát hiện trạng → Dự án (có hạn)</text>
+
+  <path d="M138,366 L138,390" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+  <path d="M422,366 L422,390" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+  <rect x="60" y="394" width="440" height="40" fill="#eef2f5" stroke="#5d6b7a"/>
+  <text x="280" y="411">Người nhận phiếu phản hồi trên hệ thống → báo P. Đấu thầu, BLĐ</text><text x="280" y="426">4 giờ trước hạn: nhắc người chưa phản hồi</text>
+  <path d="M280,434 L280,452" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+
+  <polygon points="280,456 400,484 280,512 160,484" fill="#eef2f5" stroke="#5d6b7a"/>
+  <text x="280" y="481">Phiếu bắt buộc</text><text x="280" y="495">đã đủ phản hồi?</text>
+  <path d="M280,512 L280,616" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+  <text x="300" y="560" text-anchor="start">đủ</text>
+  <path d="M400,484 L476,484 L476,526" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+  <text x="438" y="476">tới hạn</text>
+
+  <rect x="400" y="530" width="152" height="58" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="476" y="548">Hệ thống ghi phiếu thiếu</text><text x="476" y="563">“Tự động xác nhận</text><text x="476" y="578">quá hạn”</text>
+  <path d="M476,588 L476,642 L454,642" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+
+  <rect x="110" y="620" width="340" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="280" y="638" font-style="italic">Đã thẩm định (có phản hồi)</text><text x="280" y="653" font-style="italic">Đã thẩm định (tự động xác nhận quá hạn)</text>
+  <path d="M280,664 L280,686" fill="none" stroke="#55606b" marker-end="url(#bid02a)"/>
+
+  <rect x="60" y="690" width="440" height="58" fill="#dde3e9" stroke="#5d6b7a"/>
+  <text x="280" y="708">P. Đấu thầu xem bảng có vết · trả lại phiếu nếu cần</text><text x="280" y="723">bấm Chốt BOQ cập nhật</text><text x="280" y="738" font-style="italic">→ Thương thảo – áp giá (lần 0) · BID-03</text>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_T2</title>
-<polygon fill="#e6eaee" stroke="#a3acb5" points="274,-375.72 274,-594.72 508,-594.72 508,-375.72 274,-375.72"/>
-<text xml:space="preserve" text-anchor="middle" x="368.61" y="-580.37" font-family="Barlow, system-ui, sans-serif" font-size="11.50" fill="#4a545e">Phiếu hiện trường — Ban Dự án</text>
-</g>
-<g id="node1" class="node">
-<title>C1</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="245.9,-560.92 72.1,-560.92 72.1,-531.52 245.9,-531.52 245.9,-560.92"/>
-<text xml:space="preserve" text-anchor="middle" x="159" y="-542.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sửa thẳng bản BOQ nháp</text>
-</g>
-<g id="node2" class="node">
-<title>C2</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="254.12,-496.52 19.88,-496.52 19.88,-452.12 254.12,-452.12 254.12,-496.52"/>
-<text xml:space="preserve" text-anchor="middle" x="137" y="-478.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Sửa · thêm · xóa dòng</text>
-<text xml:space="preserve" text-anchor="middle" x="137" y="-463.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">vết cũ hiện dưới từng ô</text>
-</g>
-<g id="edge4" class="edge">
-<title>C1&#45;&gt;C2</title>
-<path fill="none" stroke="#55606b" d="M154.55,-531.07C152.13,-523.41 149.06,-513.64 146.16,-504.43"/>
-<polygon fill="#55606b" stroke="#55606b" points="148.36,-503.84 144.24,-498.33 144.02,-505.21 148.36,-503.84"/>
-</g>
-<g id="node3" class="node">
-<title>C3</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="250.96,-417.12 41.04,-417.12 41.04,-387.72 250.96,-387.72 250.96,-417.12"/>
-<text xml:space="preserve" text-anchor="middle" x="146" y="-398.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cập nhật KL → KL sau cùng</text>
-</g>
-<g id="edge5" class="edge">
-<title>C2&#45;&gt;C3</title>
-<path fill="none" stroke="#55606b" d="M139.75,-451.97C140.85,-443.45 142.11,-433.65 143.21,-425.1"/>
-<polygon fill="#55606b" stroke="#55606b" points="145.44,-425.6 144.01,-418.87 140.92,-425.02 145.44,-425.6"/>
-</g>
-<g id="node9" class="node">
-<title>E</title>
-<polygon fill="#eef2f5" stroke="#5d6b7a" points="262,-349.72 191.72,-316.84 262,-283.96 332.28,-316.84 262,-349.72"/>
-<text xml:space="preserve" text-anchor="middle" x="262" y="-320.59" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cả 2 phiếu</text>
-<text xml:space="preserve" text-anchor="middle" x="262" y="-305.59" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">đã nộp?</text>
-</g>
-<g id="edge8" class="edge">
-<title>C3&#45;&gt;E</title>
-<path fill="none" stroke="#55606b" d="M165.68,-387.24C182.83,-374.89 208.06,-356.7 228.4,-342.05"/>
-<polygon fill="#55606b" stroke="#55606b" points="229.65,-343.95 233.59,-338.31 226.99,-340.26 229.65,-343.95"/>
-</g>
-<g id="node4" class="node">
-<title>D1</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="496.31,-560.92 285.69,-560.92 285.69,-531.52 496.31,-531.52 496.31,-560.92"/>
-<text xml:space="preserve" text-anchor="middle" x="391" y="-542.47" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Cử nhân sự khảo sát mặt bằng</text>
-</g>
-<g id="node5" class="node">
-<title>D2</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="469.6,-496.52 294.4,-496.52 294.4,-452.12 469.6,-452.12 469.6,-496.52"/>
-<text xml:space="preserve" text-anchor="middle" x="382" y="-478.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ghi biện pháp thi công khó</text>
-<text xml:space="preserve" text-anchor="middle" x="382" y="-463.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">kèm ảnh hiện trường</text>
-</g>
-<g id="edge6" class="edge">
-<title>D1&#45;&gt;D2</title>
-<path fill="none" stroke="#55606b" d="M389.18,-531.07C388.2,-523.48 386.96,-513.84 385.78,-504.71"/>
-<polygon fill="#55606b" stroke="#55606b" points="388.06,-504.54 384.97,-498.38 383.54,-505.12 388.06,-504.54"/>
-</g>
-<g id="node6" class="node">
-<title>D3</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="463.21,-417.12 290.79,-417.12 290.79,-387.72 463.21,-387.72 463.21,-417.12"/>
-<text xml:space="preserve" text-anchor="middle" x="377" y="-398.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Ước tính chi phí phát sinh</text>
-</g>
-<g id="edge7" class="edge">
-<title>D2&#45;&gt;D3</title>
-<path fill="none" stroke="#55606b" d="M380.47,-451.97C379.86,-443.45 379.16,-433.65 378.55,-425.1"/>
-<polygon fill="#55606b" stroke="#55606b" points="380.84,-425.2 378.11,-418.88 376.3,-425.52 380.84,-425.2"/>
-</g>
-<g id="edge9" class="edge">
-<title>D3&#45;&gt;E</title>
-<path fill="none" stroke="#55606b" d="M357.49,-387.24C340.49,-374.89 315.47,-356.7 295.31,-342.05"/>
-<polygon fill="#55606b" stroke="#55606b" points="296.77,-340.3 290.17,-338.31 294.09,-343.98 296.77,-340.3"/>
-</g>
-<g id="node7" class="node">
-<title>A</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="373.24,-744.52 182.76,-744.52 182.76,-700.12 373.24,-700.12 373.24,-744.52"/>
-<text xml:space="preserve" text-anchor="middle" x="278" y="-726.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Gói thầu chuyển thẩm định</text>
-<text xml:space="preserve" text-anchor="middle" x="278" y="-711.07" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">BID&#45;01</text>
-</g>
-<g id="node8" class="node">
-<title>B</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="389.22,-665.12 166.78,-665.12 166.78,-620.72 389.22,-620.72 389.22,-665.12"/>
-<text xml:space="preserve" text-anchor="middle" x="278" y="-646.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hệ thống tạo 2 phiếu</text>
-<text xml:space="preserve" text-anchor="middle" x="278" y="-631.67" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">song song, cùng hạn</text>
-</g>
-<g id="edge1" class="edge">
-<title>A&#45;&gt;B</title>
-<path fill="none" stroke="#55606b" d="M278,-699.76C278,-691.54 278,-682.03 278,-673.21"/>
-<polygon fill="#55606b" stroke="#55606b" points="280.28,-673.38 278,-666.88 275.73,-673.38 280.28,-673.38"/>
-</g>
-<g id="edge2" class="edge">
-<title>B&#45;&gt;C1</title>
-<path fill="none" stroke="#55606b" d="M251,-620.43C243.07,-614.12 234.03,-606.93 224.78,-599.57"/>
-<polygon fill="#55606b" stroke="#55606b" points="226.37,-597.93 219.87,-595.66 223.54,-601.49 226.37,-597.93"/>
-</g>
-<g id="edge3" class="edge">
-<title>B&#45;&gt;D1</title>
-<path fill="none" stroke="#55606b" d="M303.64,-620.43C311.1,-614.18 319.59,-607.06 328.28,-599.78"/>
-<polygon fill="#55606b" stroke="#55606b" points="329.64,-601.61 333.16,-595.69 326.72,-598.12 329.64,-601.61"/>
-</g>
-<g id="node10" class="node">
-<title>F</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="302.47,-236.76 133.53,-236.76 133.53,-192.36 302.47,-192.36 302.47,-236.76"/>
-<text xml:space="preserve" text-anchor="middle" x="218" y="-218.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhắc bộ phận còn thiếu</text>
-<text xml:space="preserve" text-anchor="middle" x="218" y="-203.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PF&#45;04</text>
-</g>
-<g id="edge10" class="edge">
-<title>E&#45;&gt;F</title>
-<path fill="none" stroke="#55606b" d="M241.21,-293.4C229.3,-280.55 216.71,-266.96 216.71,-266.96 216.71,-266.96 216.71,-253.76 216.71,-253.76 216.71,-253.76 216.84,-249.92 217.02,-244.68"/>
-<polygon fill="#55606b" stroke="#55606b" points="219.28,-244.98 217.23,-238.41 214.73,-244.83 219.28,-244.98"/>
-<text xml:space="preserve" text-anchor="middle" x="229.85" y="-257.06" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Chưa</text>
-</g>
-<g id="node11" class="node">
-<title>G</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="487.3,-236.76 326.7,-236.76 326.7,-192.36 487.3,-192.36 487.3,-236.76"/>
-<text xml:space="preserve" text-anchor="middle" x="407" y="-218.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">TP Đấu thầu xem vết</text>
-<text xml:space="preserve" text-anchor="middle" x="407" y="-203.31" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chốt hoặc trả lại</text>
-</g>
-<g id="edge12" class="edge">
-<title>E&#45;&gt;G</title>
-<path fill="none" stroke="#55606b" d="M289.96,-296.51C312.55,-280.88 344.55,-258.75 369.39,-241.57"/>
-<polygon fill="#55606b" stroke="#55606b" points="370.56,-243.53 374.62,-237.96 367.98,-239.78 370.56,-243.53"/>
-<text xml:space="preserve" text-anchor="middle" x="361.53" y="-257.06" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Rồi</text>
-</g>
-<g id="edge11" class="edge">
-<title>F&#45;&gt;E</title>
-<path fill="none" stroke="#55606b" d="M233.08,-236.89C239.26,-245.64 245,-253.76 245,-253.76 245,-253.76 248.37,-266.05 252.1,-279.69"/>
-<polygon fill="#55606b" stroke="#55606b" points="249.89,-280.22 253.8,-285.88 254.27,-279.01 249.89,-280.22"/>
-</g>
-<g id="node12" class="node">
-<title>H</title>
-<polygon fill="#eef2f5" stroke="#5d6b7a" points="285,-157.36 149.44,-124.48 285,-91.6 420.56,-124.48 285,-157.36"/>
-<text xml:space="preserve" text-anchor="middle" x="285" y="-128.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Có sai lệch lớn</text>
-<text xml:space="preserve" text-anchor="middle" x="285" y="-113.23" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">so với BOQ mời thầu?</text>
-</g>
-<g id="edge13" class="edge">
-<title>G&#45;&gt;H</title>
-<path fill="none" stroke="#55606b" d="M377.16,-192.01C361.32,-180.58 341.66,-166.39 324.57,-154.05"/>
-<polygon fill="#55606b" stroke="#55606b" points="326.23,-152.44 319.63,-150.48 323.57,-156.13 326.23,-152.44"/>
-</g>
-<g id="node13" class="node">
-<title>I</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="524.78,-44.4 389.22,-44.4 389.22,0 524.78,0 524.78,-44.4"/>
-<text xml:space="preserve" text-anchor="middle" x="457" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Gửi văn bản làm rõ</text>
-<text xml:space="preserve" text-anchor="middle" x="457" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">tới bên mời thầu</text>
-</g>
-<g id="edge14" class="edge">
-<title>H&#45;&gt;I</title>
-<path fill="none" stroke="#55606b" d="M324.03,-100.72C350.53,-85.28 385.61,-64.82 413.08,-48.81"/>
-<polygon fill="#55606b" stroke="#55606b" points="414.12,-50.84 418.59,-45.6 411.82,-46.9 414.12,-50.84"/>
-<text xml:space="preserve" text-anchor="middle" x="398.49" y="-64.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Có</text>
-</g>
-<g id="node14" class="node">
-<title>J</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="363.56,-44.4 206.44,-44.4 206.44,0 363.56,0 363.56,-44.4"/>
-<text xml:space="preserve" text-anchor="middle" x="285" y="-25.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Chốt BOQ cập nhật</text>
-<text xml:space="preserve" text-anchor="middle" x="285" y="-10.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">chuyển áp giá · BID&#45;03</text>
-</g>
-<g id="edge16" class="edge">
-<title>H&#45;&gt;J</title>
-<path fill="none" stroke="#55606b" d="M285,-91.2C285,-78.71 285,-64.51 285,-52.33"/>
-<polygon fill="#55606b" stroke="#55606b" points="287.28,-52.67 285,-46.17 282.73,-52.67 287.28,-52.67"/>
-<text xml:space="preserve" text-anchor="middle" x="300.9" y="-64.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Không</text>
-</g>
-<g id="edge15" class="edge">
-<title>I&#45;&gt;G</title>
-<path fill="none" stroke="#55606b" d="M453.14,-44.76C446.36,-82.68 433,-157.36 433,-157.36 433,-157.36 426.7,-170.98 420.3,-184.81"/>
-<polygon fill="#55606b" stroke="#55606b" points="418.28,-183.76 417.61,-190.62 422.41,-185.67 418.28,-183.76"/>
-</g>
-</g>
-</svg></div><figcaption><b>Hình BID-02.1</b> Hai phiếu chạy song song nhưng có một điểm hợp nhất bắt buộc. Ở điểm đó TP Đấu thầu chốt bản BOQ nháp của phiếu rà soát, hoặc <b>trả lại</b> một phiếu kèm lý do — phiếu về <em>Đang xử lý</em>, người làm phiếu sửa rồi nộp lại, lưu đồ quay về ô “Cả 2 phiếu đã nộp?”. Vòng lặp “làm rõ với bên mời thầu” là lý do BOQ phải có nhiều phiên bản (<a href="PF-05.html">PF-05</a>).</figcaption></figure>
+</svg></div><figcaption><b>Hình BID-02.1</b> Bước 2 có ba dạng theo loại hồ sơ chọn ở <a href="BID-01.html">BID-01</a> (<a href="PL-C.html#Q-276">Q-276</a>). Nhánh A: 2A chỉ thông báo và giao Dự án khảo sát sơ bộ — không hạn, nhắc hằng ngày (<a href="PL-C.html#Q-257">Q-257</a>) —, gói chờ chủ đầu tư phát hành HSMT, rồi 2C chỉ phiếu P. TQT có hạn (<a href="PL-C.html#Q-258">Q-258</a>). Nhánh B: 2B mở hai phiếu cùng hạn. Hạn 24 h hoặc 48 h tính từ lúc gửi (<a href="PL-C.html#Q-260">Q-260</a>); tới hạn mà phiếu bắt buộc chưa phản hồi thì hệ thống xem HSMT là đúng (<a href="PL-C.html#Q-259">Q-259</a>). Gói tự sang <em>Đã thẩm định</em>, không cần bấm hợp nhất; thao tác <b>Chốt BOQ cập nhật</b> nay là thao tác mở bước 3 (<a href="PL-C.html#Q-261">Q-261</a>, <a href="PL-C.html#Q-274">Q-274</a>). Vòng “làm rõ với bên mời thầu” vẫn là lý do BOQ có nhiều phiên bản (<a href="PF-05.html">PF-05</a>).</figcaption></figure>
+
+    <h4>Tham số — gửi thông báo, gửi thẩm định (2A · 2B · 2C)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Bước gửi</td><td class="k">stage</td><td>Danh mục</td><td class="c">—</td><td><code>2A</code> · <code>2B</code> · <code>2C</code>. Hệ thống suy ra từ loại hồ sơ và trạng thái gói, không chọn tay: nhánh A ở <em>Đã khởi tạo</em> → 2A; nhánh A ở <em>Chạy trước dự án - chờ HSMT</em> → 2C; nhánh B ở <em>Đã khởi tạo</em> → 2B.</td></tr>
+          <tr><td>Tài liệu chỉ thị công trình · biên bản họp</td><td class="k">files[] (directive, minutes)</td><td>Tệp</td><td class="c req">✱</td><td>Chỉ ở 2A: ít nhất một tệp mang một trong hai loại này (<a href="PF-05.html">PF-05</a>). Mỗi tệp hiện loại, tên, người tải, ngày tải.</td></tr>
+          <tr><td>HSMT</td><td class="k">files[] (hsmt)</td><td>Tệp</td><td class="c req">✱</td><td>Ở 2B và 2C: ít nhất một tệp loại HSMT — thay cho điều kiện “có tệp BOQ mời thầu” trước đây. Phiếu rà soát chép bảng đầu việc BOQ mời thầu của <a href="BID-01.html">BID-01</a>; bảng còn trống — HSMT chỉ có bản scan — thì vẫn gửi được, gói mang nhãn “cần số hóa”.</td></tr>
+          <tr><td>Hạn phản hồi</td><td class="k">response_hours</td><td>Chọn 1</td><td class="c req">✱</td><td>Ở 2B và 2C: <b>24 giờ</b> hoặc <b>48 giờ</b> (<a href="PL-C.html#Q-260">Q-260</a>), không chọn sẵn; thay ô ngày tự do mặc định 7 ngày. Ngay dưới hiện mốc hạn tính sẵn — “Hạn: 14/11 17:00. Nhắc trước 4 giờ.” Không có ở 2A (<a href="PL-C.html#Q-257">Q-257</a>).</td></tr>
+          <tr><td>Mốc hạn</td><td class="k">due_at</td><td>Ngày giờ</td><td class="c">—</td><td>Hệ thống tính = thời điểm gửi + <code>response_hours</code>, theo giờ lịch, kể cả thứ bảy, chủ nhật, ngày lễ. Chung cho mọi phiếu có hạn của lần gửi đó. Chỉ đọc.</td></tr>
+          <tr><td>Người nhận</td><td class="k">recipients</td><td>Hộp người nhận</td><td class="c req">✱</td><td>Mở mỗi lần bấm Thông báo / Gửi thẩm định (<a href="PL-C.html#Q-273">Q-273</a>). <b>Ban lãnh đạo</b> (vai trò <code>ord_board</code>) và <b>Dự án liên quan</b> hiện có khóa, luôn nhận. Bên dưới là danh sách phòng ban (DS) nạp sẵn từ gói, thêm bớt được; còn ít nhất một phòng.</td></tr>
+          <tr><td>Lưu vào danh sách của gói</td><td class="k">save_to_package</td><td>Có / Không</td><td class="c">—</td><td>Mặc định <em>Không</em>: phần sửa DS chỉ dùng cho lần gửi này. Tích thì DS của gói đổi theo và ghi lịch sử thay đổi.</td></tr>
+          <tr><td>Nội dung</td><td class="k">message</td><td>Chuỗi dài</td><td class="c">—</td><td>Điền sẵn theo bước — 2A: “Gói {mã} chạy trước dự án. Đề nghị Dự án khảo sát mặt bằng, điều kiện thi công và báo lại trên hệ thống.”; 2B, 2C: “Gói {mã} gửi HSMT để thẩm định — hạn phản hồi {mốc hạn}.” Sửa được, tối đa 2.000 ký tự. Dòng cuối tự ghi số tài liệu đính kèm và việc từng bên nhận.</td></tr>
+          <tr><td>Người nhận phiếu</td><td class="k">assignee_leader</td><td>Tham chiếu</td><td class="c req">✱</td><td>Như quy tắc <em>Giao việc hai cấp</em>: mỗi phiếu giao cho một lãnh đạo. Phiếu của Dự án điền sẵn GĐ dự án / người phụ trách của Dự án liên quan (<a href="PRJ-06.html">PRJ-06</a>), sửa được. Ở 2A, gói chưa có Dự án liên quan thì ô này bắt buộc chọn tay (<a href="PL-C.html#Q-287">Q-287</a>).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Tham số — trạng thái phiếu và phản hồi</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
+        <tbody>
+          <tr><td>Loại phiếu</td><td class="k">kind</td><td>Danh mục</td><td class="c">—</td><td><code>pre_survey</code> Khảo sát sơ bộ (2A, Dự án, không hạn) · <code>tech</code> Rà soát, kiểm tra Hồ sơ mời thầu (2B, 2C, P. TQT, có hạn) · <code>site</code> Khảo sát hiện trường (2B, Dự án, có hạn) · <code>site_status</code> Báo tình hình thi công (2C, Dự án, không hạn, không bắt buộc).</td></tr>
+          <tr><td>Trạng thái · kết quả phiếu</td><td class="k">status · result</td><td>Danh mục</td><td class="c">—</td><td>Trạng thái như <a href="PL-A.html">PL-A</a>: <em>Đang xử lý</em> · <em>Đã nộp</em> · <em>Đã khóa</em> (sau khi chốt BOQ cập nhật, hoặc gói hủy, gộp). Phiếu có hạn mà tới hạn chưa nộp nhận <b>kết quả</b> <em>Tự động xác nhận quá hạn</em>, người thực hiện “Hệ thống” (<a href="PL-C.html#Q-259">Q-259</a>) — nhãn hiện trên thẻ phiếu và hàng chờ việc; phiếu khảo sát sơ bộ 2A và báo tình hình 2C không có kết quả này.</td></tr>
+          <tr><td>Kết luận HSMT</td><td class="k">hsmt_verdict</td><td>Chọn 1</td><td class="c req">✱</td><td>Phiếu <code>tech</code>: <em>HSMT đúng</em> · <em>HSMT có sai sót</em>. Chỉ là ý kiến (<a href="PL-C.html#Q-261">Q-261</a>): chọn “có sai sót” không chặn gói, không mở vòng nào; gói vẫn sang <em>Đã thẩm định</em>.</td></tr>
+          <tr><td>Ý kiến thẩm định</td><td class="k">review_comment</td><td>Chuỗi dài</td><td class="c">—</td><td>Phiếu <code>tech</code>, tối đa 4.000 ký tự. <b>Bắt buộc khi chọn “HSMT có sai sót”</b> — nêu sai ở đâu. Hiện trên thẻ phiếu cho P. Đấu thầu, BLĐ và ở bước 3.</td></tr>
+          <tr><td>Kết quả khảo sát sơ bộ</td><td class="k">pre_survey.note</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Phiếu <code>pre_survey</code>: mặt bằng, điều kiện thi công, khó khăn dự kiến. Tối đa 4.000 ký tự. Kèm ảnh, video như phiếu khảo sát hiện trường (không bắt buộc). Hiện lại ở bước 3, chỉ đọc.</td></tr>
+          <tr><td>Tình hình, khó khăn thi công</td><td class="k">site_status.note</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Phiếu <code>site_status</code>: chỉ cần khi Dự án có điều muốn báo; tối đa 4.000 ký tự, kèm ảnh nếu có. Gửi được tới khi gói <em>Thương thảo hoàn thành</em>. Hiện lại ở bước 3, chỉ đọc.</td></tr>
+          <tr><td>Bổ sung muộn</td><td class="k">supplements[]</td><td>Danh sách</td><td class="c">—</td><td><a href="PL-C.html#Q-262">Q-262</a>: phiếu đã <em>Tự động xác nhận quá hạn</em> vẫn nhận phản hồi muộn — ý kiến (bắt buộc, tối đa 4.000 ký tự) kèm tệp. Mỗi lần bổ sung ghi người gửi, thời điểm; không đổi trạng thái phiếu, không đổi trạng thái gói, không sửa bảng BOQ. Nhận tới khi gói <em>Thương thảo hoàn thành</em>.</td></tr>
+          <tr><td>Nhật ký phiếu</td><td class="k">events[]</td><td>Hệ thống</td><td class="c">—</td><td>Gửi, giao, nhắc, phản hồi, tự động xác nhận, bổ sung, trả lại, khóa — mỗi dòng có người (hoặc “Hệ thống”), thời điểm. Chỉ đọc.</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <h4>Tham số — phiếu rà soát, kiểm tra Hồ sơ mời thầu</h4>
     <div class="tw">
@@ -314,28 +229,68 @@
       </table>
     </div>
 
+    <h4>Ma trận thông báo của bước 2</h4>
+    <p>Mọi thông báo đi qua hộp thông báo trong ứng dụng và thông báo đẩy FCM trên di động; không gửi email (<a href="PL-C.html#Q-278">Q-278</a>). “BLĐ” là mọi người giữ vai trò <code>ord_board</code> (<a href="PL-B.html">PL-B</a>); “Dự án” là Ban dự án của Dự án liên quan cộng người đang giữ phiếu của Dự án; “DS” là danh sách phòng ban của lần gửi (<a href="PL-C.html#Q-273">Q-273</a>).</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Sự kiện</th><th>Người nhận</th><th>Nội dung</th></tr></thead>
+        <tbody>
+          <tr><td>P. Đấu thầu bấm <b>Thông báo</b> ở 2A</td><td>BLĐ · Dự án · DS</td><td>Nội dung hộp người nhận; Dự án nhận thêm việc “Khảo sát sơ bộ”.</td></tr>
+          <tr><td>Nhắc khảo sát sơ bộ — 08:00 hằng ngày, từ ngày sau ngày gửi (<a href="PL-C.html#Q-257">Q-257</a>)</td><td>Người giữ phiếu khảo sát sơ bộ (chưa giao: lãnh đạo nhận phiếu)</td><td>“Gói {mã} đang chờ khảo sát sơ bộ — đã {n} ngày.” Dừng khi Dự án báo hoặc gói hủy, gộp.</td></tr>
+          <tr><td>Dự án báo khảo sát sơ bộ</td><td>P. Đấu thầu (người phụ trách gói) · BLĐ</td><td>“Dự án đã báo khảo sát sơ bộ gói {mã} — gói chờ HSMT.”</td></tr>
+          <tr><td>P. Đấu thầu <b>Gửi thẩm định</b> ở 2B hoặc tải HSMT ở 2C</td><td>BLĐ · Dự án · DS</td><td>Nội dung hộp người nhận kèm mốc hạn. Lãnh đạo nhận phiếu nhận thêm “Nhiệm vụ mới từ phòng Đấu thầu – {tên phiếu}”.</td></tr>
+          <tr><td>P. TQT hoặc Dự án phản hồi — nộp phiếu, báo tình hình</td><td>P. Đấu thầu · BLĐ</td><td>“{bộ phận} đã phản hồi {tên phiếu} gói {mã}.” Kèm “HSMT có sai sót” nếu có.</td></tr>
+          <tr><td>Còn 4 giờ tới hạn (<a href="PL-C.html#Q-260">Q-260</a>)</td><td>Người giữ phiếu có hạn chưa phản hồi — 2B: P. TQT, Dự án; 2C: P. TQT</td><td>“Còn 4 giờ tới hạn {tên phiếu} gói {mã} ({mốc hạn}). Quá hạn hệ thống sẽ xem HSMT là đúng.” Gửi một lần cho mỗi phiếu.</td></tr>
+          <tr><td>Tới hạn — <b>Tự động xác nhận quá hạn</b> (<a href="PL-C.html#Q-259">Q-259</a>)</td><td>2B: P. Đấu thầu · P. TQT · Dự án. 2C: P. Đấu thầu · P. TQT</td><td>“Quá hạn {tên phiếu} gói {mã}: hệ thống tự động xác nhận HSMT đúng.”</td></tr>
+          <tr><td>Gói sang <em>Đã thẩm định</em></td><td>P. Đấu thầu</td><td>“Gói {mã} đã thẩm định ({có phản hồi / tự động xác nhận quá hạn}) — chốt BOQ cập nhật để mở thương thảo.”</td></tr>
+          <tr><td>Bổ sung muộn (<a href="PL-C.html#Q-262">Q-262</a>)</td><td>P. Đấu thầu</td><td>“{bộ phận} gửi bổ sung muộn cho {tên phiếu} gói {mã}.”</td></tr>
+          <tr><td>TP Đấu thầu trả lại phiếu</td><td>Người làm phiếu</td><td>Như cũ — kèm lý do.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Hai phiếu hiển thị cùng lúc trên hàng chờ việc của hai bộ phận, có cùng hạn xử lý: P. TQT thấy dòng “Rà soát, kiểm tra Hồ sơ mời thầu”, Ban dự án thấy dòng “Khảo sát hiện trường”.</li>
+      <li>Gửi thẩm định ở 2B thì hai phiếu hiện cùng lúc trên hàng chờ việc của hai bộ phận, cùng mốc hạn 24 h hoặc 48 h: P. TQT thấy dòng “Rà soát, kiểm tra Hồ sơ mời thầu”, Dự án thấy dòng “Khảo sát hiện trường”. Ở 2C chỉ phiếu P. TQT có hạn; Dự án thấy “Báo tình hình thi công” không hạn (<a href="PL-C.html#Q-258">Q-258</a>, <a href="PL-C.html#Q-260">Q-260</a>).</li>
       <li>Bảng rà soát xem được ở hai mức: bản gọn tám cột làm việc, và bản đầy đủ dựng lại nguyên bảng đầu việc của <a href="BID-01.html">BID-01</a>. Ở cả hai mức người rà soát sửa thẳng mọi ô, thêm, chèn và xóa dòng.</li>
       <li>Ô nào khác dòng gốc thì hiện giá trị mới, ngay dưới là giá trị cũ chữ nhỏ, màu đỏ, gạch ngang; bấm vào ô thì xem được toàn văn nội dung cũ. Dòng thêm mới có nhãn “Mới”; dòng xóa vẫn nằm tại chỗ, gạch ngang, kèm lý do.</li>
       <li>Bảng 10.000 dòng mở, cuộn và gõ được không giật; lưu cả bảng một lần.</li>
       <li>Bản BOQ cập nhật chính là bản nháp của phiếu rà soát được khóa lại khi chốt: khối lượng là <em>KL sau cùng</em>, dòng đã xóa không còn, và mỗi dòng còn lại nhận ra được là giữ nguyên, đã sửa hay bổ sung mới.</li>
       <li>So sánh BOQ v2 với v1 hiển thị được số dòng sửa, thêm, xóa và chênh lệch tổng khối lượng theo nhóm.</li>
       <li>Chi phí biện pháp thi công khó tự động chuyển thành một cấu phần giá vốn khi áp giá, không phải nhập lại.</li>
-      <li>Quá hạn mà một trong hai phiếu chưa nộp thì gói thầu bị gắn cờ và trưởng bộ phận tương ứng nhận nhắc việc.</li>
-      <li>Không thể chuyển sang bước áp giá nếu còn phiếu chưa nộp.</li>
+      <li>4 giờ trước hạn, người chưa phản hồi nhận nhắc một lần; tới hạn mà phiếu bắt buộc chưa nộp thì phiếu mang nhãn “Tự động xác nhận quá hạn”, các bên nhận thông báo theo ma trận và gói sang “Đã thẩm định (tự động xác nhận quá hạn)” (<a href="PL-C.html#Q-259">Q-259</a>). <em>Trước 12/11/2026: gắn cờ quá hạn, nhắc trưởng bộ phận.</em></li>
+      <li>Không chốt được BOQ cập nhật — tức không mở bước áp giá — khi gói chưa <em>Đã thẩm định</em>: còn phiếu bắt buộc chưa phản hồi và chưa tới hạn (<a href="PL-C.html#Q-261">Q-261</a>).</li>
       <li>TP Đấu thầu trả lại được từng phiếu đã nộp kèm lý do; phiếu về <em>Đang xử lý</em>, người làm phiếu nhận thông báo kèm lý do và sửa tiếp trên chính bảng đã nộp.</li>
+      <li>Ở 2A, bấm <b>Thông báo</b> mở hộp người nhận với BLĐ và Dự án liên quan khóa sẵn, DS sửa được; gửi xong gói sang “Chạy trước dự án - đang khảo sát sơ bộ”, Dự án có việc “Khảo sát sơ bộ” không hạn và nhận nhắc mỗi sáng tới khi báo (<a href="PL-C.html#Q-257">Q-257</a>, <a href="PL-C.html#Q-273">Q-273</a>).</li>
+      <li>Dự án báo khảo sát sơ bộ thì gói sang “Chạy trước dự án - chờ HSMT”, P. Đấu thầu và BLĐ nhận thông báo; kết quả khảo sát hiện lại ở bước 3, chỉ đọc.</li>
+      <li>Ô hạn phản hồi chỉ có hai lựa chọn 24 giờ và 48 giờ, hiện ngay mốc hạn tính theo giờ lịch kể cả cuối tuần (<a href="PL-C.html#Q-260">Q-260</a>).</li>
+      <li>Đủ phản hồi của mọi phiếu bắt buộc thì gói tự sang “Đã thẩm định (có phản hồi)” mà không ai phải bấm; P. TQT chọn “HSMT có sai sót” vẫn cho gói đi tiếp, ý kiến hiện trên thẻ phiếu (<a href="PL-C.html#Q-261">Q-261</a>).</li>
+      <li>Phiếu đã tự xác nhận vẫn nhận bổ sung muộn: ý kiến và tệp lưu vào nhật ký, P. Đấu thầu nhận thông báo, trạng thái phiếu và gói không đổi (<a href="PL-C.html#Q-262">Q-262</a>).</li>
+      <li>Bấm <b>Chốt BOQ cập nhật</b> trên gói <em>Đã thẩm định</em> khóa bảng và đưa gói sang “Thương thảo – áp giá (lần 0)” ở <a href="BID-03.html">BID-03</a> (<a href="PL-C.html#Q-274">Q-274</a>).</li>
     </ol>
 
     <h4>Mockup UI — Đấu thầu › Thẩm định</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">GT-2026-018 ›</span><b>Thẩm định BOQ</b><span class="sp"></span><span class="wf-btn"><span class="pin">10</span> Xem đầy đủ</span><span class="wf-btn"><span class="pin">4</span> So sánh v1 ↔ v2</span><span class="wf-btn"><span class="pin">7</span> Trả lại</span><span class="wf-btn pri"><span class="pin">5</span> Chốt BOQ cập nhật</span></div>
+      <div class="wf-bar"><span class="wf-crumb">GT-2026-038 ›</span><b>Thẩm định BOQ</b><span class="sp"></span><span class="tag t-neu">Đã thẩm định (tự động xác nhận quá hạn)</span><span class="tag t-neu">Nhánh B</span><span class="wf-btn"><span class="pin">10</span> Xem đầy đủ</span><span class="wf-btn"><span class="pin">4</span> So sánh v1 ↔ v2</span><span class="wf-btn"><span class="pin">7</span> Trả lại</span><span class="wf-btn pri"><span class="pin">5</span> Chốt BOQ cập nhật</span></div>
       <div class="wf-body">
         <div class="wf-steps">
-          <div class="done"><b>Rà soát, kiểm tra Hồ sơ mời thầu</b>P. TQT · nộp 12/11</div>
-          <div class="cur"><b>Phiếu hiện trường</b>Ban dự án · đang khảo sát</div>
-          <div><b>Hợp nhất</b>P. Đấu thầu</div>
+          <div class="done"><b><span class="pin">11</span> Gửi thẩm định</b>P. Đấu thầu · 12/11 17:00 · hạn 48 giờ</div>
+          <div class="done"><b>Rà soát, kiểm tra Hồ sơ mời thầu</b>P. TQT · Đã nộp 13/11 10:24</div>
+          <div class="done"><b><span class="pin">13</span> Khảo sát hiện trường</b>Dự án · Tự động xác nhận quá hạn 14/11 17:00</div>
+          <div class="cur"><b>Chốt BOQ cập nhật</b>P. Đấu thầu → áp giá (lần 0)</div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">11</span> Gửi thẩm định / khảo sát</div>
+          <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>HSMT ✱</label><div class="in">HSMT-GT038.zip</div></div></div>
+          <div class="wf-c"><div class="wf-f"><label>Hạn phản hồi ✱</label><div class="in">24 giờ · <b>48 giờ</b> <em>Hạn: 14/11 17:00. Nhắc trước 4 giờ.</em></div></div></div></div>
+          <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>P. TQT · Rà soát HSMT</label><div class="in">Đã nộp · Trần Minh · 13/11 10:24 — HSMT đúng. Lưu ý đá Granite Kim Sa dày 20mm, đề nghị CĐT xác nhận quy cách mặt cầu thang.</div></div></div>
+          <div class="wf-c"><div class="wf-f"><label><span class="pin">13</span> Dự án · Khảo sát hiện trường</label><div class="in"><span class="tag t-warn">Tự động xác nhận quá hạn</span> Hạn 14/11 17:00 · không phản hồi · <em>Gửi bổ sung khảo sát</em></div></div></div></div>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">12</span> Hộp người nhận — dùng chung cho Thông báo 2A, Gửi thẩm định 2B, tải HSMT 2C</div>
+          <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Gửi tới</label><div class="in">🔒 Ban lãnh đạo · 🔒 Dự án: CT-THUDUC-02 · P.TQT ✕ · P.Kế toán ✕ · P.Vật tư ✕ <em>+ Thêm phòng ban</em></div></div></div>
+          <div class="wf-c"><div class="wf-f"><label>Lưu thay đổi vào danh sách của gói</label><div class="in">☐ <em>mặc định không tích</em></div></div></div></div>
+          <div class="wf-f"><label>Nội dung</label><div class="in">Gói GT-2026-038 gửi HSMT để thẩm định — hạn phản hồi 14/11 17:00. Đính kèm: 1 tài liệu · P. TQT nhận “Rà soát HSMT”, Dự án nhận “Khảo sát hiện trường”.</div></div>
         </div>
         <div class="wf-sec" style="margin-top:10px">
           <div class="wf-lg"><span class="pin">1</span> Bảng BOQ rà soát — phiếu rà soát, kiểm tra Hồ sơ mời thầu <span style="font-weight:400;color:var(--ink-3)">· Sửa 2 · Thêm 1 · Xóa 1 · <span class="pin">9</span> Chỉ dòng có thay đổi</span></div>
@@ -369,19 +324,22 @@
           <tr><td class="c"><span class="pin">2</span></td><td>Thêm / chèn dòng</td><td>Dòng thêm ở bước rà soát mang nhãn “Mới” — chính là đầu việc bên mời thầu bỏ sót. Nhập đủ đầu việc, ĐVT và khối lượng như một dòng BOQ.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Nhập kết quả khảo sát</td><td>Bảng biện pháp thi công khó gắn được vào dòng BOQ cụ thể; tổng chi phí cộng tự động.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>So sánh phiên bản BOQ</td><td>Hiện cạnh nhau v1 và v2, tô màu dòng sửa, dòng thêm mới và dòng đã xóa.</td></tr>
-          <tr><td class="c"><span class="pin">5</span></td><td>Chốt BOQ cập nhật</td><td>Khóa bản BOQ nháp của phiếu rà soát thành BOQ cập nhật (bỏ dòng đã xóa, đánh lại mã HM theo cấp), khóa hai phiếu, mở bước áp giá.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Chốt BOQ cập nhật</td><td>Chỉ bấm được khi gói <em>Đã thẩm định</em> (<a href="PL-C.html#Q-261">Q-261</a>). Khóa bản BOQ nháp của phiếu rà soát thành BOQ cập nhật (bỏ dòng đã xóa, đánh lại mã HM theo cấp), khóa mọi phiếu của lần, đưa gói sang <em>Thương thảo – áp giá (lần 0)</em> ở <a href="BID-03.html">BID-03</a> (<a href="PL-C.html#Q-274">Q-274</a>). Không còn là bước hợp nhất phải chờ: trạng thái <em>Đã thẩm định</em> do hệ thống tự đặt.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Xóa / khôi phục dòng</td><td><em>(mục 12)</em> Xóa dòng gốc hỏi lý do; dòng ở lại tại chỗ, gạch ngang. <em>Khôi phục</em> đưa dòng về đúng như trước khi xóa, kể cả các ô đã sửa trước đó.</td></tr>
           <tr><td class="c"><span class="pin">7</span></td><td>Trả lại phiếu</td><td><em>(mục 12)</em> TP Đấu thầu chọn phiếu cần trả, ghi lý do (để trống được). Phiếu về <em>Đang xử lý</em> — dải bước hiện “Trả lại”, không còn “Đã nộp” — bảng nháp giữ nguyên mọi thứ đã sửa.</td></tr>
           <tr><td class="c"><span class="pin">8</span></td><td>Xem nội dung cũ</td><td><em>(mục 10)</em> Bấm vào ô có vết cũ thì mở khung nhỏ “Nội dung cũ” với toàn văn — quy cách thường dài hơn chỗ hiện được dưới ô.</td></tr>
           <tr><td class="c"><span class="pin">9</span></td><td>Chỉ dòng có thay đổi</td><td>Lọc bảng còn dòng sửa, thêm, xóa; dòng đầu mục của các dòng đó vẫn hiện để biết dòng nằm ở đâu. Dòng tóm tắt “Sửa {n} · Thêm {n} · Xóa {n}” luôn đếm trên cả bảng.</td></tr>
           <tr><td class="c"><span class="pin">10</span></td><td>Xem đầy đủ / xem gọn</td><td>Đổi giữa tám cột làm việc và toàn bộ cột của bảng đầu việc <a href="BID-01.html">BID-01</a>. Đổi chế độ không mất phần đang sửa dở.</td></tr>
+          <tr><td class="c"><span class="pin">11</span></td><td>Gửi thẩm định · hạn phản hồi</td><td>2B và 2C: chọn tệp HSMT, chọn 24 giờ hoặc 48 giờ; mốc hạn và giờ nhắc hiện ngay dưới (<a href="PL-C.html#Q-260">Q-260</a>). Bấm gửi mở hộp người nhận (12). 2A dùng nút <b>Thông báo</b> thay cho khối này: tải chỉ thị công trình, biên bản họp, không có ô hạn (<a href="PL-C.html#Q-257">Q-257</a>).</td></tr>
+          <tr><td class="c"><span class="pin">12</span></td><td>Hộp người nhận</td><td>BLĐ và Dự án liên quan có khóa, luôn nhận; DS nạp từ gói, thêm bớt được; ô “Lưu thay đổi vào danh sách của gói” mặc định không tích (<a href="PL-C.html#Q-273">Q-273</a>). Nội dung điền sẵn theo bước, sửa được.</td></tr>
+          <tr><td class="c"><span class="pin">13</span></td><td>Thẻ phiếu · bổ sung muộn</td><td>Mỗi phiếu một thẻ: bộ phận, việc, người làm, trạng thái, mốc hạn hoặc thời điểm phản hồi, ý kiến. Phiếu quá hạn mang nhãn “Tự động xác nhận quá hạn” và dòng “Hệ thống ghi nhận {thời điểm}”; người giữ phiếu thấy nút <em>Gửi bổ sung</em> (<a href="PL-C.html#Q-262">Q-262</a>). Ở 2C, thẻ của Dự án là “Báo tình hình thi công”, không có hạn.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Hai phiếu độc lập, một điểm hợp nhất.</b> Phiếu “Rà soát, kiểm tra Hồ sơ mời thầu” và phiếu hiện trường mở cùng lúc, cùng hạn, không phiếu nào chờ phiếu nào.<span class="then">Bước hợp nhất chỉ mở khi cả hai đã nộp; trước đó nút “Chốt BOQ cập nhật” bị vô hiệu và ghi rõ đang thiếu phiếu nào. Chỉ phiếu rà soát mang bảng BOQ; phiếu hiện trường giữ nguyên như cũ — ảnh, điều kiện mặt bằng, biện pháp thi công khó.</span></li>
+      <li><b>Phiếu độc lập, gói tự sang Đã thẩm định; chốt là thao tác mở bước 3.</b> <em>(viết lại 12/11/2026 · <a href="PL-C.html#Q-261">Q-261</a>, <a href="PL-C.html#Q-274">Q-274</a>)</em> Ở 2B, phiếu “Rà soát, kiểm tra Hồ sơ mời thầu” và phiếu hiện trường mở cùng lúc, cùng hạn, không phiếu nào chờ phiếu nào; ở 2C chỉ phiếu rà soát là bắt buộc. Mọi phiếu bắt buộc đã phản hồi hoặc đã tự xác nhận quá hạn thì hệ thống tự đưa gói sang <em>Đã thẩm định</em> — không còn bước hợp nhất phải bấm.<span class="then">Nút “Chốt BOQ cập nhật” chỉ bật khi gói đã <em>Đã thẩm định</em>; trước đó nút bị vô hiệu và ghi rõ đang chờ phiếu nào, hạn khi nào. Chốt là thao tác mở <em>Thương thảo – áp giá (lần 0)</em>. Chỉ phiếu rà soát mang bảng BOQ; phiếu hiện trường giữ nguyên như cũ — ảnh, điều kiện mặt bằng, biện pháp thi công khó.</span></li>
       <li><b>Người rà soát sửa thẳng bảng BOQ</b> <em>(yêu cầu thay đổi 16/10/2026 · mục 12)</em>. Phiếu rà soát không còn cột kết luận theo dòng. Phiếu mang một bản BOQ nháp chép từ BOQ mời thầu; QS sửa trực tiếp mọi dòng, mọi cột — đầu việc, quy cách, ĐVT, khối lượng, thuộc tính đá, cột tự thêm — thêm, chèn và xóa dòng, rồi <em>Lưu</em> cả bảng một lần.<span class="then">Hồ sơ của chủ đầu tư có thể tới 10.000 dòng: chấm từng dòng một là việc không làm nổi, còn sửa đúng những ô sai thì làm được. Dòng không đụng tới tự hiểu là giữ nguyên.</span><span class="then">Bảng dùng chung lưới của <a href="BID-01.html">BID-01</a> và chung bộ kiểm tra của lưới đó — dòng đầu mục chỉ cần tên, dòng đá con cần tỉ lệ hoặc khối lượng, Σ tỉ lệ dưới một đầu việc đủ 100% mới nộp được phiếu. Bộ cột thì không đổi ở đây: thêm cột, ẩn cột làm ở BID-01 trước khi chuyển thẩm định.</span><span class="then">Gói “cần số hóa” chuyển thẩm định với BOQ mời thầu trống: bảng nháp cũng trống và người rà soát nhập thẳng các đầu việc vào đó.</span></li>
       <li><b>Bảng rà soát có hai mức xem.</b> Chế độ gọn hiện tám cột làm việc; chế độ đầy đủ dựng lại nguyên bảng đầu việc đã nhập ở <a href="BID-01.html">BID-01</a> theo đúng bộ cột của gói thầu. Ở cả hai chế độ mọi ô đều sửa được.<span class="then">Đổi chế độ không mất phần đang sửa dở; dòng tóm tắt “Sửa {n} · Thêm {n} · Xóa {n}” luôn đếm trên cả bảng, không đếm theo số dòng đang nhìn thấy.</span><span class="then"><b>Một cột mã ở chế độ gọn, hai cột ở chế độ đầy đủ.</b> Bảng đầu việc của <a href="BID-01.html">BID-01</a> mang hai mã cho mỗi dòng: <code>hm_code</code> do hệ thống sinh theo mã gói và <code>owner_hm_code</code> nguyên gốc của bên mời thầu. Chế độ gọn chỉ còn chỗ cho một cột nên hiện mã của chủ đầu tư khi có, ngược lại hiện mã hệ thống — người rà soát đang làm rõ với bên mời thầu thì phải đọc đúng thứ tiếng mà bên mời thầu dùng. Chế độ đầy đủ hiện cả hai, vì mã hệ thống mới là thứ <a href="BID-03.html">BID-03</a> và hợp đồng bám vào.</span><span class="then">Trên gói gộp, hai dòng đến từ hai gói nguồn khác nhau có thể cùng mã của chủ đầu tư. Bảng vẫn tách được vì mỗi dòng thuộc một nhóm gói nguồn riêng, và mã hệ thống của hai dòng đó khác nhau.</span></li>
       <li><b>BOQ mời thầu giữ nguyên, vết cũ nằm ngay trên ô</b> <em>(yêu cầu thay đổi 16/10/2026 · mục 10)</em>. Mọi chỗ sửa nằm ở bản BOQ nháp của phiếu; BOQ mời thầu không đổi một ô nào. Ô nào khác dòng gốc thì hiện giá trị mới, ngay dưới là giá trị cũ chữ nhỏ, màu đỏ, gạch ngang; bấm vào ô thì mở khung “Nội dung cũ” với toàn văn.<span class="then">Vết luôn so với <b>BOQ mời thầu</b>, không so với lần lưu trước: lưu mười lần thì ô vẫn chỉ hiện hai giá trị — giá trị của bên mời thầu và giá trị đang có. Sửa một ô về đúng như cũ thì vết tự mất. Nhờ vậy TP Đấu thầu nhìn một lần là thấy bỏ gì, thêm gì, và so sánh v1 ↔ v2 vẫn đọc được.</span><span class="then">Vết hiện cả khi chưa lưu, để người rà soát thấy ngay mình vừa đổi gì. Dòng thêm mới không có vết — cả dòng mang nhãn “Mới”.</span></li>
@@ -391,13 +349,25 @@
       <li><b>Ảnh hoặc video bắt buộc khi có biện pháp khó.</b> Ghi nhận biện pháp thi công khó thì cần tối thiểu 3 tệp hiện trường, đếm trên tệp đã tải lên phiếu và đã xác nhận trên kho.<span class="then">Đây là bằng chứng khi giải trình chi phí phát sinh với chủ đầu tư về sau — nên số đếm là số tệp thật, không phải con số người khảo sát tự khai. Video tính như ảnh: một đoạn quay dọc lối tiếp cận nói được nhiều hơn ba tấm ảnh chụp cùng bức tường.</span></li>
       <li><b>BOQ v2 giữ vết.</b> Bản BOQ cập nhật nhận ra được bốn loại dòng so với BOQ mời thầu: giữ nguyên, đã sửa (khối lượng hoặc bất kỳ cột nào), bổ sung mới, đã xóa.<span class="then">Chức năng so sánh v1 ↔ v2 hiện số dòng từng loại và chênh lệch tổng khối lượng theo nhóm; dòng đã xóa hiện kèm lý do dù không còn trong bản v2.</span></li>
       <li><b>Sai lệch lớn phải làm rõ.</b> Tổng khối lượng lệch quá 10% so với BOQ mời thầu thì hệ thống nhắc lập văn bản làm rõ trước khi chốt.<span class="then">Cho phép bỏ qua nhưng phải ghi lý do — lý do này hiện lại ở bước áp giá.</span></li>
-      <li><b>Dòng chưa có khối lượng phải chốt xong ở bước này.</b> Dòng mang sang từ <a href="BID-01.html">BID-01</a> với ô khối lượng để trống — trạng thái hợp lệ lúc tiếp nhận hồ sơ, kèm ghi chú “chờ làm rõ” — chỉ nộp phiếu được khi người rà soát đã điền <em>Cập nhật KL</em> cho nó, hoặc đã xóa dòng đó kèm lý do. <em>(Từ 16/10/2026 ô Cập nhật KL thay cho khối lượng đề xuất của kết luận theo dòng.)</em><span class="then">Đây là điểm cuối cùng còn đổi được khối lượng: từ <a href="BID-03.html">BID-03</a> trở đi khối lượng khóa, muốn đổi phải quay lại đây và chốt một bản BOQ mới.</span><span class="then">Dòng để trống lọt qua bước này sẽ nằm nguyên trong BOQ hợp đồng và bị chốt chặn <code>chk_qty</code> của <a href="BID-05.html">BID-05</a> giữ lại ngay trước khi trình ký — muộn hơn nhiều so với chỗ đáng lẽ phải xử lý.</span></li>
-      <li><b>Nộp là khóa; TP Đấu thầu chốt hoặc trả lại</b> <em>(yêu cầu thay đổi 16/10/2026 · mục 12)</em>. Phiếu đã nộp thì bảng chỉ đọc với người rà soát — máy chủ từ chối mọi lần lưu bảng, lưu phiếu hay tải tệp lên phiếu đã nộp, không chỉ ẩn nút. TP Đấu thầu xem bảng có vết rồi chọn một trong hai: <b>Chốt BOQ cập nhật</b>, hoặc <b>Trả lại</b> một phiếu kèm lý do.<span class="then">Trả lại đưa phiếu về <em>Đang xử lý</em> (<a href="PL-A.html">PL-A</a>) — trên dải bước của màn thẩm định, bước của phiếu đó hiện lại là bước đang làm, nhãn “Trả lại · {ngày}”, không còn “Đã nộp” (<em>chốt 17/10/2026</em>); bảng nháp giữ nguyên mọi thứ đã sửa, người làm phiếu nhận thông báo kèm lý do, sửa tiếp rồi nộp lại. Hạn xử lý không tự gia hạn — TP Đấu thầu ghi hạn mới vào lý do nếu cần. Trả lại được cả phiếu hiện trường, cùng một cách.</span><span class="then">Trả lại không sửa bảng: bảng người làm phiếu đã nộp giữ nguyên, người đó sửa tiếp. TP Đấu thầu vẫn làm được mọi bước của mọi gói thầu mà không cần được giao (<a href="PL-C.html#Q-126">Q-126</a>, 18/10/2026). Phiếu đã khóa (đã chốt) thì không trả lại được nữa. Quyền ở <a href="PL-B.html">PL-B</a>; quyết định xem <a href="PL-C.html#Q-128">Q-128</a>.</span></li>
+      <li><b>Dòng chưa có khối lượng phải chốt xong ở bước này.</b> Dòng mang sang từ <a href="BID-01.html">BID-01</a> với ô khối lượng để trống — trạng thái hợp lệ lúc tiếp nhận hồ sơ, kèm ghi chú “chờ làm rõ” — chỉ nộp phiếu được khi người rà soát đã điền <em>Cập nhật KL</em> cho nó, hoặc đã xóa dòng đó kèm lý do. <em>(Từ 16/10/2026 ô Cập nhật KL thay cho khối lượng đề xuất của kết luận theo dòng.)</em><span class="then">Đây là điểm cuối cùng còn đổi được khối lượng: từ <a href="BID-03.html">BID-03</a> trở đi khối lượng khóa, muốn đổi phải quay lại đây và chốt một bản BOQ mới.</span><span class="then">Dòng để trống lọt qua bước này sẽ nằm nguyên trong BOQ hợp đồng và bị chốt chặn <code>chk_qty</code> của <a href="BID-05.html">BID-05</a> giữ lại ngay trước khi trình ký — muộn hơn nhiều so với chỗ đáng lẽ phải xử lý.</span><span class="then"><em>(chốt khi triển khai 12/11/2026 · <a href="PL-C.html#Q-284">Q-284</a>)</em> Phiếu rà soát <em>Tự động xác nhận quá hạn</em> không có lần nộp nên không qua kiểm tra này, và chốt BOQ cập nhật không chặn vì dòng trống: bảng đã về đúng BOQ mời thầu, dòng trống đi nguyên sang BOQ cập nhật và do <code>chk_qty</code> ở <a href="BID-05.html">BID-05</a> giữ lại.</span></li>
+      <li><b>Nộp là khóa; TP Đấu thầu chốt hoặc trả lại</b> <em>(yêu cầu thay đổi 16/10/2026 · mục 12)</em>. Phiếu đã nộp thì bảng chỉ đọc với người rà soát — máy chủ từ chối mọi lần lưu bảng, lưu phiếu hay tải tệp lên phiếu đã nộp, không chỉ ẩn nút. TP Đấu thầu xem bảng có vết rồi chọn một trong hai: <b>Chốt BOQ cập nhật</b>, hoặc <b>Trả lại</b> một phiếu kèm lý do.<span class="then">Trả lại đưa phiếu về <em>Đang xử lý</em> (<a href="PL-A.html">PL-A</a>) — trên dải bước của màn thẩm định, bước của phiếu đó hiện lại là bước đang làm, nhãn “Trả lại · {ngày}”, không còn “Đã nộp” (<em>chốt 17/10/2026</em>); bảng nháp giữ nguyên mọi thứ đã sửa, người làm phiếu nhận thông báo kèm lý do, sửa tiếp rồi nộp lại. Hạn xử lý không tự gia hạn — TP Đấu thầu ghi hạn mới vào lý do nếu cần. Từ 12/11/2026 (<a href="PL-C.html#Q-261">Q-261</a>): trả lại được cả phiếu đã <em>Tự động xác nhận quá hạn</em>; gói vẫn ở <em>Đã thẩm định</em>, phiếu trả lại không có hạn mới, không nhắc, không tự xác nhận lần nữa — nhưng chốt BOQ cập nhật bị chặn tới khi phiếu nộp lại. Trả lại được cả phiếu hiện trường, cùng một cách.</span><span class="then">Trả lại không sửa bảng: bảng người làm phiếu đã nộp giữ nguyên, người đó sửa tiếp. TP Đấu thầu vẫn làm được mọi bước của mọi gói thầu mà không cần được giao (<a href="PL-C.html#Q-126">Q-126</a>, 18/10/2026). Phiếu đã khóa (đã chốt) thì không trả lại được nữa. Quyền ở <a href="PL-B.html">PL-B</a>; quyết định xem <a href="PL-C.html#Q-128">Q-128</a>.</span></li>
       <li><b>Chốt là khóa bản nháp, không dựng lại bảng</b> <em>(yêu cầu thay đổi 16/10/2026 · mục 12)</em>. Chốt BOQ cập nhật khóa chính bản nháp của phiếu rà soát: bỏ các dòng đã xóa, đánh lại mã HM theo cấp (<a href="PL-C.html#Q-139">Q-139</a>), giữ khối lượng sau cùng và mọi ô đã sửa — kể cả quy cách, đầu việc.<span class="then">Khác trước 16/10/2026, khi bước hợp nhất chỉ áp khối lượng đề xuất và không bao giờ đổi quy cách: nay bảng người rà soát đã nộp chính là bảng được chốt.</span><span class="then">Biện pháp thi công khó của phiếu hiện trường gắn vào một dòng BOQ mời thầu. Dòng đó bị xóa ở bảng rà soát thì không chốt được — chi phí biện pháp sẽ không còn chỗ để vào áp giá: khôi phục dòng, hoặc trả lại phiếu hiện trường để gắn biện pháp sang dòng khác (<a href="PL-C.html#Q-129">Q-129</a>).</span></li>
       <li><b>Bảng lớn vẫn phải dùng được</b> <em>(yêu cầu thay đổi 16/10/2026 · mục 12)</em>. Bảng rà soát mở, cuộn, lọc và gõ được với 10.000 dòng mà không giật: lưới chỉ dựng những dòng đang nằm trong khung nhìn.<span class="then">Hệ quả: tìm bằng Ctrl+F của trình duyệt không thấy dòng nằm ngoài khung nhìn — dùng ô tìm của bảng và bộ lọc “Chỉ dòng có thay đổi”.</span></li>
       <li><b>Người thẩm định chỉ mở gói được giao</b> <em>(yêu cầu thay đổi 05/10 mục 4 · chốt 15/10/2026)</em>. Phân hệ Đấu thầu chỉ dành cho P. Đấu thầu, Kế toán trưởng, Ban lãnh đạo, Admin; kỹ sư P. TQT và Ban dự án không thấy menu Đấu thầu. Người được giao phiếu kỹ thuật hoặc phiếu khảo sát mở gói từ <em>Việc được giao</em> (<a href="PF-03.html">PF-03</a>) hoặc thông báo, đọc được hồ sơ, BOQ, so sánh BOQ và các phiếu của <b>đúng gói đó</b>, làm phiếu của mình.<span class="then">Gói không có phiếu của mình thì máy chủ từ chối “Bạn không được giao thẩm định gói thầu này.”; báo giá và hợp đồng của gói vẫn đóng với họ. Ma trận ở <a href="PL-B.html">PL-B</a>.</span></li>
-      <li><b>Giao việc hai cấp</b> <em>(yêu cầu thay đổi 19/10/2026)</em>. Khi chuyển thẩm định, TP Đấu thầu giao mỗi phiếu cho một <b>lãnh đạo</b> — Tổng Giám đốc, TP Đấu thầu, Kế toán trưởng, GĐ dự án (Bắc/Trung/Nam), TP TQT; ô chọn người chỉ liệt kê những người giữ vai trò này. Lãnh đạo nhận thông báo “Nhiệm vụ mới từ phòng Đấu thầu – {tên phiếu}”, bấm vào là mở thẳng hộp thoại “Giao nhân viên” trên phiếu.<span class="then">Lãnh đạo tự làm phiếu, hoặc giao cho <b>đúng một</b> người đang hoạt động <b>cùng phòng/ban với mình</b> (mỗi GĐ dự án vùng là trưởng phòng của vùng mình). Người được giao nhận thông báo “Phiếu thẩm định mới” như hiện nay, sửa BOQ và nộp phiếu như hiện nay.</span><span class="then">Sau khi giao, lãnh đạo vẫn <b>xem</b> được gói và phiếu (không sửa), và <b>đổi được người làm</b> khi phiếu còn đang xử lý; phiếu luôn ghi lãnh đạo giao ban đầu, đổi người nhiều lần cũng không đổi. TP Đấu thầu đổi được người làm của mọi phiếu đang mở: chọn một lãnh đạo khác thì bắt đầu lại hai cấp, chọn nhân viên thì lãnh đạo giao vẫn giữ nguyên. Phiếu đã nộp thì không đổi người làm nữa — phải Trả lại trước.</span><span class="then"><em>(yêu cầu thay đổi 20/10/2026)</em> Chỉ <b>lãnh đạo đã giao phiếu</b>, TP Đấu thầu hoặc Admin mới phân công lại. Người đã được giao <b>không</b> giao tiếp cho người khác và không thấy nút “Phân công lại” — kể cả khi họ cũng giữ vai trò lãnh đạo (ví dụ chỉ huy trưởng mang vai trò GĐ dự án).</span></li>
-      <li><b>Mỗi lần của gói có hai phiếu riêng</b> <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-201">Q-201</a>)</em>. Gói được <b>Làm lại (lần mới)</b> hay <b>Thêm phụ lục</b> ở <a href="BID-01.html">BID-01</a> thì lần mới — hoặc phụ lục — chuyển thẩm định như một gói mới: mở hai phiếu riêng, rà soát bản BOQ mời thầu của chính lần đó, chốt thành BOQ cập nhật của lần đó. Phiếu của các lần trước giữ nguyên, chỉ đọc.<span class="then">Lần bị thay hoặc bị hủy thì phiếu đang mở của nó khóa lại cùng lần — không ai còn phải nộp một phiếu cho bảng không còn được dùng.</span></li>
+      <li><b>Giao việc hai cấp</b> <em>(yêu cầu thay đổi 19/10/2026)</em>. Khi gửi thẩm định (2B, 2C) hoặc thông báo (2A), TP Đấu thầu giao mỗi phiếu cho một <b>lãnh đạo</b> — Tổng Giám đốc, TP Đấu thầu, Kế toán trưởng, GĐ dự án (Bắc/Trung/Nam), TP TQT; ô chọn người chỉ liệt kê những người giữ vai trò này. Lãnh đạo nhận thông báo “Nhiệm vụ mới từ phòng Đấu thầu – {tên phiếu}”, bấm vào là mở thẳng hộp thoại “Giao nhân viên” trên phiếu.<span class="then">Lãnh đạo tự làm phiếu, hoặc giao cho <b>đúng một</b> người đang hoạt động <b>cùng phòng/ban với mình</b> (mỗi GĐ dự án vùng là trưởng phòng của vùng mình). Người được giao nhận thông báo “Phiếu thẩm định mới” như hiện nay, sửa BOQ và nộp phiếu như hiện nay.</span><span class="then">Sau khi giao, lãnh đạo vẫn <b>xem</b> được gói và phiếu (không sửa), và <b>đổi được người làm</b> khi phiếu còn đang xử lý; phiếu luôn ghi lãnh đạo giao ban đầu, đổi người nhiều lần cũng không đổi. TP Đấu thầu đổi được người làm của mọi phiếu đang mở: chọn một lãnh đạo khác thì bắt đầu lại hai cấp, chọn nhân viên thì lãnh đạo giao vẫn giữ nguyên. Phiếu đã nộp thì không đổi người làm nữa — phải Trả lại trước.</span><span class="then"><em>(yêu cầu thay đổi 20/10/2026)</em> Chỉ <b>lãnh đạo đã giao phiếu</b>, TP Đấu thầu hoặc Admin mới phân công lại. Người đã được giao <b>không</b> giao tiếp cho người khác và không thấy nút “Phân công lại” — kể cả khi họ cũng giữ vai trò lãnh đạo (ví dụ chỉ huy trưởng mang vai trò GĐ dự án).</span></li>
+      <li><b>Mỗi lần của gói có hai phiếu riêng</b> <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-201">Q-201</a>)</em>. Gói được <b>Làm lại (lần mới)</b> hay <b>Thêm phụ lục</b> ở <a href="BID-01.html">BID-01</a> thì lần mới — hoặc phụ lục — chuyển thẩm định như một gói mới: mở hai phiếu riêng, rà soát bản BOQ mời thầu của chính lần đó, chốt thành BOQ cập nhật của lần đó. Phiếu của các lần trước giữ nguyên, chỉ đọc.<span class="then">Lần bị thay hoặc bị hủy thì phiếu đang mở của nó khóa lại cùng lần — không ai còn phải nộp một phiếu cho bảng không còn được dùng.</span><span class="then">Từ 12/11/2026 phụ lục không qua bước này: luồng phụ lục đi theo loại PLHĐ ở <a href="BID-05.html">BID-05</a> (<a href="PL-C.html#Q-271">Q-271</a>). Lần mới vẫn qua bước này, theo nhánh B.</span></li>
+      <li><b>Ba dạng của bước 2 theo nhánh</b> <em>(12/11/2026 · <a href="PL-C.html#Q-276">Q-276</a>)</em>. Gói nhánh A đi 2A rồi 2C; gói nhánh B đi 2B. Nút trên hồ sơ gói đổi theo: <em>Thông báo</em> (nhánh A, <em>Đã khởi tạo</em>), <em>Tải HSMT</em> (nhánh A, <em>Chạy trước dự án - chờ HSMT</em>), <em>Gửi thẩm định</em> (nhánh B, <em>Đã khởi tạo</em>).<span class="then">Mỗi lần gửi chỉ làm một lần cho mỗi bước: gói đã rời trạng thái xuất phát thì nút ẩn, máy chủ từ chối lần gửi thứ hai.</span></li>
+      <li><b>2A — Thông báo, khảo sát sơ bộ không có hạn</b> <em>(<a href="PL-C.html#Q-257">Q-257</a>)</em>. P. Đấu thầu tải ít nhất một tệp chỉ thị công trình hoặc biên bản họp, bấm <b>Thông báo</b>, duyệt hộp người nhận rồi gửi. Gói sang <em>Chạy trước dự án - đang khảo sát sơ bộ</em>; phiếu <em>Khảo sát sơ bộ</em> giao cho người phụ trách chọn trong hộp thoại, mặc định GĐ dự án của Dự án liên quan.<span class="then">Thông báo cần <b>Dự án liên quan</b> hoặc một <b>người phụ trách phiếu</b> được chọn rõ — thiếu cả hai thì không có ai khảo sát (<em>chốt khi triển khai 12/11/2026 · <a href="PL-C.html#Q-287">Q-287</a></em>).</span><span class="then">Phiếu không có hạn và không tự xác nhận: chưa có HSMT thì chưa có gì để “xem là đúng”. Thay vào đó hệ thống nhắc người giữ phiếu lúc 08:00 mỗi ngày, bắt đầu từ ngày sau ngày gửi, cho tới khi Dự án báo.</span><span class="then">Dự án báo kết quả khảo sát trên hệ thống thì gói sang <em>Chạy trước dự án - chờ HSMT</em>, P. Đấu thầu và BLĐ nhận thông báo. Kết quả khảo sát lưu cùng gói và hiện lại ở bước 3, chỉ đọc.</span></li>
+      <li><b>Chờ HSMT</b>. Gói <em>Chạy trước dự án - chờ HSMT</em> đứng chờ chủ đầu tư phát hành HSMT; không ai bị nhắc. Khi có HSMT, P. Đấu thầu nhập BOQ mời thầu ở <a href="BID-01.html">BID-01</a>, tải tệp HSMT và gửi — gói sang 2C.</li>
+      <li><b>2C — chỉ P. TQT có hạn, Dự án báo tình hình nếu có</b> <em>(<a href="PL-C.html#Q-258">Q-258</a>)</em>. Tải HSMT ở gói chờ HSMT mở phiếu <em>Rà soát, kiểm tra Hồ sơ mời thầu</em> cho P. TQT, có hạn 24 h / 48 h, và phiếu <em>Báo tình hình thi công</em> cho Dự án. Gói sang <em>Đang thẩm định HSMT (sau chạy trước)</em>.<span class="then">Dự án đã khảo sát ở 2A nên ở 2C không khảo sát lại, chỉ báo tình hình, khó khăn thi công nếu có. Phiếu này không hạn, không nhắc, không tự xác nhận và không chặn gói: P. TQT phản hồi hoặc quá hạn là gói sang <em>Đã thẩm định</em>; Dự án vẫn gửi được tới khi <em>Thương thảo hoàn thành</em>.</span></li>
+      <li><b>2B — hai phiếu có hạn</b>. Gửi thẩm định ở gói nhánh B cần tệp HSMT và hạn 24 h / 48 h; mở phiếu rà soát cho P. TQT và phiếu khảo sát hiện trường cho Dự án, cùng mốc hạn. Gói sang <em>Đang thẩm định/khảo sát</em>.</li>
+      <li><b>Hạn 24 giờ hoặc 48 giờ, nhắc 4 giờ trước</b> <em>(<a href="PL-C.html#Q-260">Q-260</a>)</em>. Hạn tính bằng giờ lịch từ thời điểm gửi, kể cả thứ bảy, chủ nhật, ngày lễ — gửi 17:00 thứ sáu hạn 24 giờ là 17:00 thứ bảy. Đúng 4 giờ trước hạn, mỗi phiếu có hạn mà chưa phản hồi nhận <b>một</b> lần nhắc — tới người đang giữ phiếu, hoặc lãnh đạo nhận phiếu nếu chưa giao.<span class="then">Hệ thống đánh dấu phiếu đã nhắc nên chạy lại lịch không nhắc trùng. Phiếu giao lại cho người khác sau mốc nhắc thì người mới nhận ngay một lần nhắc.</span></li>
+      <li><b>Quá hạn: hệ thống tự xác nhận</b> <em>(<a href="PL-C.html#Q-259">Q-259</a>)</em>. Tới mốc hạn mà phiếu có hạn chưa nộp, hệ thống xem HSMT là đúng: phiếu nhận kết quả <em>Tự động xác nhận quá hạn</em>, nhật ký ghi “Hệ thống — Tự động xác nhận quá hạn” kèm thời điểm, và gửi thông báo — 2B: P. Đấu thầu, P. TQT, Dự án; 2C: P. Đấu thầu, P. TQT. Việc chạy chậm nhất 15 phút sau mốc hạn.<span class="then"><em>(chốt khi triển khai 12/11/2026 · <a href="PL-C.html#Q-284">Q-284</a>)</em> “Xem như HSMT đúng” nghĩa là bảng BOQ nháp của phiếu rà soát tự xác nhận được <b>đặt lại về đúng BOQ mời thầu</b>: mọi chỗ P. TQT đã lưu mà chưa nộp bị bỏ, BOQ cập nhật trùng BOQ mời thầu. Ý kiến muộn của P. TQT chỉ vào bằng <em>Gửi bổ sung</em>, không sửa bảng. Phiếu khảo sát tự xác nhận không có biện pháp thi công khó nào, nên không có chi phí phát sinh chuyển sang áp giá.</span><span class="then">Gói đã hủy, đã gộp thì phiếu khóa cùng gói; hệ thống không nhắc, không tự xác nhận cho chúng (<a href="PL-C.html#Q-277">Q-277</a>).</span></li>
+      <li><b>Bổ sung muộn được nhận, không đổi trạng thái</b> <em>(<a href="PL-C.html#Q-262">Q-262</a>)</em>. Người giữ phiếu đã tự xác nhận vẫn gửi được phản hồi muộn — ý kiến bắt buộc, tệp tùy chọn — tới khi gói <em>Thương thảo hoàn thành</em>. Bổ sung lưu vào nhật ký phiếu, P. Đấu thầu nhận thông báo.<span class="then">Trạng thái phiếu, nhãn biến thể của gói và bảng BOQ không đổi. Muốn đưa nội dung bổ sung vào bảng trước khi chốt, TP Đấu thầu trả lại phiếu rà soát — xem quy tắc <em>Nộp là khóa; TP Đấu thầu chốt hoặc trả lại</em>.</span></li>
+      <li><b>“HSMT có sai sót” chỉ là ý kiến</b> <em>(<a href="PL-C.html#Q-261">Q-261</a>)</em>. P. TQT chọn “HSMT có sai sót” phải ghi ý kiến; ý kiến hiện trên thẻ phiếu, thông báo cho P. Đấu thầu và BLĐ, và ở bước 3. Gói vẫn đi tiếp sang <em>Đã thẩm định</em> như mọi phản hồi khác; việc làm rõ với chủ đầu tư nằm ở thương thảo.</li>
+      <li><b>Hai biến thể của Đã thẩm định</b>. Gói nhận <em>Đã thẩm định (có phản hồi)</em> khi mọi phiếu bắt buộc do người nộp, và <em>Đã thẩm định (tự động xác nhận quá hạn)</em> khi ít nhất một phiếu bắt buộc do hệ thống xác nhận — ví dụ P. TQT đã phản hồi, Dự án quá hạn. Nhãn đặt một lần lúc gói sang trạng thái này; bổ sung muộn không đổi nhãn.</li>
+      <li><b>Kết quả bước 2 hiện lại ở bước 3</b>. Khảo sát sơ bộ (2A), ý kiến thẩm định HSMT, khảo sát hiện trường (2B), báo tình hình (2C) và mọi bổ sung muộn hiện ở đầu màn hình thương thảo <a href="BID-03.html">BID-03</a>, chỉ đọc, theo thứ tự thời gian.</li>
+      <li><b>Gói cũ đang thẩm định khi triển khai</b> <em>(<a href="PL-C.html#Q-275">Q-275</a>)</em>. Gói ở <em>Đang thẩm định</em> chuyển sang <em>Đang thẩm định/khảo sát</em>, nhánh B; phiếu đang mở nhận hạn mới bằng <b>giá trị muộn hơn</b> giữa hạn cũ và thời điểm triển khai + 48 giờ (<em>chốt khi triển khai 12/11/2026 · <a href="PL-C.html#Q-285">Q-285</a></em>), rồi nhắc trước 4 giờ và tự xác nhận như phiếu mới. Phiếu đã quá hạn từ trước khi triển khai vì thế không bị tự xác nhận ngay lúc chuyển — người giữ phiếu còn ít nhất 48 giờ để nộp.</li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -412,7 +382,7 @@
           <tr><td>Vượt số tệp một phiếu</td><td>Tổng tệp (kể cả tệp đang tải) ≥ 40</td><td>“Một phiếu khảo sát giữ tối đa 40 tệp (hiện có {n}).”</td></tr>
           <tr><td>Tải xong nhưng không thấy tệp trên kho</td><td>Xác nhận mà kho chưa có đối tượng</td><td>“Chưa thấy tệp {tên} trên kho lưu trữ — tải lại tệp trước khi xác nhận.”</td></tr>
           <tr><td>Thêm tệp vào phiếu đã nộp</td><td>Phiếu ở trạng thái đã nộp / đã khóa</td><td>“Phiếu đã nộp — mở lại phiếu nếu cần bổ sung ảnh.”</td></tr>
-          <tr><td>Chốt khi thiếu phiếu</td><td>Một trong hai phiếu chưa nộp</td><td>“Chưa nhận được {tên phiếu} từ {bộ phận}. Đã gửi nhắc lúc {giờ}.”</td></tr>
+          <tr><td>Chốt khi gói chưa Đã thẩm định</td><td>Còn phiếu bắt buộc chưa nộp và chưa tới hạn <em>(viết lại 12/11/2026 · <a href="PL-C.html#Q-261">Q-261</a>)</em></td><td>“Chưa nhận được {tên phiếu} từ {bộ phận} — hạn {mốc hạn}. Quá hạn hệ thống sẽ tự xác nhận.”</td></tr>
           <tr><td>Lãnh đạo giao phiếu cho người phòng khác</td><td>Người được chọn không cùng <code>department_id</code> với lãnh đạo</td><td>“Chỉ giao được cho người cùng phòng/ban với bạn.”</td></tr>
           <tr><td>Người được giao, nhân viên hoặc người ngoài phiếu đổi người làm</td><td>Người thao tác không phải lãnh đạo đã giao phiếu (hoặc đang giữ phiếu chưa giao), cũng không có quyền giao việc gói thầu — người đã được giao luôn bị chặn, kể cả khi giữ vai trò lãnh đạo</td><td>“Chỉ lãnh đạo đã giao phiếu (hoặc đang giữ phiếu chưa giao) hay TP Đấu thầu mới đổi được người làm.”</td></tr>
           <tr><td>Giao cho tài khoản ngừng hoạt động</td><td>Người được chọn không ở trạng thái hoạt động</td><td>“Người được giao phải là tài khoản đang hoạt động.”</td></tr>
@@ -425,6 +395,19 @@
           <tr><td>Lưu hoặc nộp phiếu đã nộp</td><td>Phiếu ở <em>Đã nộp</em>; máy chủ kiểm, không chỉ ẩn nút</td><td>“Phiếu đã nộp — đang chờ TP Đấu thầu chốt hoặc trả lại. Muốn sửa tiếp thì đề nghị TP Đấu thầu trả lại phiếu.”</td></tr>
           <tr><td>Trả lại phiếu chưa nộp hoặc đã khóa</td><td>Phiếu ở <em>Đang xử lý</em> hoặc <em>Đã khóa</em></td><td><em>Đang xử lý</em>: “Phiếu {tên phiếu} chưa nộp nên chưa có gì để trả lại.” · <em>Đã khóa</em>: “BOQ cập nhật đã chốt — không trả lại phiếu được nữa.”</td></tr>
           <tr><td>Chốt khi biện pháp khó gắn dòng đã xóa</td><td>Phiếu hiện trường có biện pháp gắn vào dòng mà bảng rà soát đã xóa</td><td>“Biện pháp “{tên biện pháp}” đang gắn vào dòng {mã HM} đã bị xóa ở bảng rà soát. Khôi phục dòng, hoặc trả lại phiếu hiện trường để gắn biện pháp sang dòng khác.”</td></tr>
+          <tr><td>Thông báo 2A khi thiếu tài liệu</td><td>Gói không có tệp loại chỉ thị công trình hay biên bản họp (<a href="PL-C.html#Q-257">Q-257</a>)</td><td>“Tải lên chỉ thị công trình hoặc biên bản họp trước khi thông báo.”</td></tr>
+          <tr><td>Thông báo 2A khi không có người khảo sát</td><td><code>related_project_id</code> rỗng và chưa chọn người phụ trách phiếu (<code>site_assignee_id</code>) <em>(<a href="PL-C.html#Q-287">Q-287</a>)</em></td><td>“Chọn Dự án liên quan ở hồ sơ gói, hoặc chọn người phụ trách khảo sát sơ bộ.”</td></tr>
+          <tr><td>Gửi thẩm định khi thiếu HSMT</td><td>2B hoặc 2C, gói không có tệp loại HSMT</td><td>“Cần đính kèm HSMT trước khi gửi thẩm định.”</td></tr>
+          <tr><td>Gửi thẩm định khi bảng đầu việc trống</td><td>2B hoặc 2C, BOQ mời thầu chưa có dòng nào — HSMT chỉ có bản scan</td><td>Không chặn, hỏi xác nhận: “Bảng đầu việc chưa số hóa — gói sẽ mang nhãn “cần số hóa” và phiếu rà soát chỉ nhận xét chung. Vẫn gửi?” (như quy tắc thiếu BOQ của <a href="BID-01.html">BID-01</a>)</td></tr>
+          <tr><td>Chưa chọn hạn phản hồi</td><td>2B hoặc 2C, <code>response_hours</code> rỗng hoặc khác 24, 48 (<a href="PL-C.html#Q-260">Q-260</a>)</td><td>“Chọn hạn phản hồi: 24 giờ hoặc 48 giờ.”</td></tr>
+          <tr><td>Hộp người nhận không còn phòng ban</td><td>Bỏ hết chip DS (<a href="PL-C.html#Q-273">Q-273</a>)</td><td>“Giữ ít nhất một phòng ban nhận thông báo.”</td></tr>
+          <tr><td>Gửi hai lần cho cùng một bước</td><td>Gói đã rời trạng thái xuất phát của bước; máy chủ kiểm</td><td>“Gói {mã} đã ở {trạng thái} — bước này đã gửi lúc {thời điểm}.”</td></tr>
+          <tr><td>Báo khảo sát sơ bộ để trống</td><td><code>pre_survey.note</code> rỗng</td><td>“Ghi kết quả khảo sát sơ bộ: mặt bằng, điều kiện thi công.”</td></tr>
+          <tr><td>Báo tình hình để trống</td><td><code>site_status.note</code> rỗng</td><td>“Ghi tình hình hoặc khó khăn thi công cần báo.”</td></tr>
+          <tr><td>HSMT có sai sót mà không ghi ý kiến</td><td><code>hsmt_verdict</code> = có sai sót, <code>review_comment</code> rỗng (<a href="PL-C.html#Q-261">Q-261</a>)</td><td>“Ghi rõ HSMT sai ở đâu — ý kiến này chuyển cho P. Đấu thầu và Ban lãnh đạo.”</td></tr>
+          <tr><td>Bổ sung muộn để trống</td><td>Ý kiến bổ sung rỗng (<a href="PL-C.html#Q-262">Q-262</a>)</td><td>“Ghi nội dung bổ sung.”</td></tr>
+          <tr><td>Bổ sung khi gói đã thương thảo xong</td><td>Gói từ <em>Thương thảo hoàn thành</em> trở đi, hoặc đã hủy, gộp</td><td>“Gói {mã} đã {trạng thái} — không nhận bổ sung nữa.”</td></tr>
+          <tr><td>Nộp phiếu sau khi đã tự xác nhận</td><td>Phiếu ở <em>Tự động xác nhận quá hạn</em>, gọi lệnh nộp; máy chủ kiểm</td><td>“Phiếu đã tự động xác nhận quá hạn lúc {thời điểm}. Dùng Gửi bổ sung để ghi phản hồi muộn.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -434,8 +417,8 @@
       <table class="uat">
         <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-BID02-1</td><td>Gói thầu vừa chuyển thẩm định</td><td>Mở hàng chờ việc của P. TQT và của Ban dự án</td><td>Mỗi bên thấy đúng một phiếu, cùng hạn xử lý</td></tr>
-          <tr><td>UAT-BID02-2</td><td>Phiếu “Rà soát, kiểm tra Hồ sơ mời thầu” đã nộp, phiếu hiện trường chưa</td><td>Bấm “Chốt BOQ cập nhật”</td><td>Bị chặn, nêu rõ đang thiếu phiếu hiện trường của Ban dự án</td></tr>
+          <tr><td>UAT-BID02-1</td><td>Gói nhánh B vừa gửi thẩm định ở 2B, hạn 48 giờ <em>(viết lại 12/11/2026)</em></td><td>Mở hàng chờ việc của P. TQT và của Dự án</td><td>Mỗi bên thấy đúng một phiếu, cùng mốc hạn = lúc gửi + 48 giờ</td></tr>
+          <tr><td>UAT-BID02-2</td><td>2B: phiếu “Rà soát, kiểm tra Hồ sơ mời thầu” đã nộp, phiếu hiện trường chưa, chưa tới hạn <em>(viết lại 12/11/2026)</em></td><td>Bấm “Chốt BOQ cập nhật”</td><td>Nút vô hiệu; gọi thẳng lệnh chốt bị chặn “Chưa nhận được Khảo sát hiện trường từ Dự án — hạn …”; gói vẫn <em>Đang thẩm định/khảo sát</em></td></tr>
           <tr><td>UAT-BID02-3</td><td>Cả hai phiếu đã nộp; bảng rà soát có 1 dòng sửa KL, 1 dòng bổ sung, 1 dòng xóa “trùng HM-02”</td><td>Chốt BOQ cập nhật rồi mở so sánh v1 ↔ v2</td><td>Hiện 1 dòng sửa, 1 dòng thêm, 1 dòng xóa kèm lý do; bản v2 không còn dòng đã xóa; chênh lệch tổng khối lượng đúng</td></tr>
           <tr><td>UAT-BID02-4</td><td>Phiếu hiện trường ghi 2 biện pháp gắn HM-01, tổng 960 triệu</td><td>Chuyển sang bước áp giá</td><td>Cấu phần “máy · biện pháp khó” của HM-01 nạp sẵn 960 triệu</td></tr>
           <tr><td>UAT-BID02-5</td><td>Tổng khối lượng v2 lệch 14% so với v1</td><td>Bấm chốt</td><td>Hiện nhắc lập văn bản làm rõ; bỏ qua thì bắt buộc nhập lý do</td></tr>
@@ -448,7 +431,7 @@
           <tr><td>UAT-BID02-13</td><td>Đang ở chế độ đầy đủ, 20 dòng BOQ, đã sửa 3 dòng và xóa 1 dòng</td><td>Đổi về chế độ gọn, bật “Chỉ dòng có thay đổi”</td><td>Tóm tắt vẫn “Sửa 3 · Xóa 1” ở cả hai chế độ; bộ lọc còn đúng 4 dòng, dòng đầu mục của chúng vẫn hiện</td></tr>
           <tr><td>UAT-BID02-14</td><td>Phiếu đang xử lý <em>(thay kịch bản “chặn sửa dòng gốc” trước 16/10/2026)</em></td><td>Sửa ô “Quy cách” của một dòng BOQ gốc, lưu, tải lại trang; bấm vào ô đó; sửa ô về đúng nội dung cũ</td><td>Ô hiện quy cách mới, ngay dưới là quy cách cũ chữ nhỏ, đỏ, gạch ngang; bấm mở khung “Nội dung cũ” với toàn văn; sửa về như cũ thì vết mất. BOQ mời thầu không đổi</td></tr>
           <tr><td>UAT-BID02-15</td><td>BOQ có dòng 1 mang mã CĐT <code>HM-01</code>, dòng 2 để trống mã CĐT; phiếu đang ở chế độ gọn</td><td>Đọc cột mã HM của hai dòng</td><td>Dòng 1 hiện <code>HM-01</code>, dòng 2 hiện mã hệ thống của dòng đó; bấm “Xem đầy đủ” thì cả hai cột mã cùng hiện</td></tr>
-          <tr><td>UAT-BID02-16</td><td>TP Đấu thầu mở “Chuyển thẩm định”</td><td>Mở ô chọn người làm phiếu hiện trường</td><td>Chỉ liệt kê lãnh đạo (TGĐ, TP Đấu thầu, KTT, GĐ dự án, TP TQT)</td></tr>
+          <tr><td>UAT-BID02-16</td><td>TP Đấu thầu mở “Gửi thẩm định” (2B)</td><td>Mở ô chọn người làm phiếu hiện trường</td><td>Chỉ liệt kê lãnh đạo (TGĐ, TP Đấu thầu, KTT, GĐ dự án, TP TQT)</td></tr>
           <tr><td>UAT-BID02-17</td><td>Phiếu hiện trường giao cho GĐ dự án miền Bắc</td><td>GĐ dự án bấm thông báo “Nhiệm vụ mới từ phòng Đấu thầu – Phiếu khảo sát hiện trường”</td><td>Mở trang thẩm định với hộp thoại “Giao nhân viên” đã mở; ô chọn chỉ có người đang hoạt động của phòng miền Bắc</td></tr>
           <tr><td>UAT-BID02-18</td><td>Tiếp UAT-BID02-17</td><td>Giao cho kỹ sư A; sau đó đổi sang kỹ sư B</td><td>A rồi B lần lượt nhận “Phiếu thẩm định mới”; phiếu ghi người làm B, lãnh đạo giao vẫn là GĐ dự án; GĐ dự án vẫn xem được phiếu nhưng không sửa được; B sửa và nộp được</td></tr>
           <tr><td>UAT-BID02-19</td><td>Phiếu đã giao cho kỹ sư B</td><td>B thử đổi người làm (gọi thẳng API); GĐ dự án miền Nam thử đổi</td><td>Cả hai bị từ chối</td></tr>
@@ -462,13 +445,28 @@
           <tr><td>UAT-BID02-27</td><td>Dòng X có KL hiện trạng trống</td><td>Nộp phiếu khi chưa nhập Cập nhật KL; sau đó xóa dòng X kèm lý do rồi nộp</td><td>Lần đầu bị chặn, nêu dòng X; lần sau nộp được — dòng đã xóa không bị đòi khối lượng</td></tr>
           <tr><td>UAT-BID02-28</td><td>Đầu việc “Lát đá vỉa hè” có 5 dòng đá con Σ 100%</td><td>Sửa tỉ lệ một dòng con để Σ còn 95%, nộp phiếu</td><td>Bị chặn, ô Σ tô đỏ, bấm nhảy tới đầu việc đó; sửa đủ 100% thì nộp được</td></tr>
           <tr><td>UAT-BID02-29</td><td>Phiếu hiện trường có biện pháp gắn HM-03; bảng rà soát đã xóa HM-03; cả hai phiếu đã nộp</td><td>TP Đấu thầu bấm <em>Chốt BOQ cập nhật</em></td><td>Bị chặn, nêu tên biện pháp và dòng HM-03; trả lại phiếu hiện trường, gắn biện pháp sang dòng khác, nộp lại thì chốt được</td></tr>
-          <tr><td>UAT-BID02-6</td><td>Quá hạn 1 ngày, phiếu hiện trường chưa nộp</td><td>Chờ tới mốc quá hạn</td><td>Gói thầu gắn cờ; trưởng Ban dự án nhận nhắc việc</td></tr>
+          <tr><td>UAT-BID02-6</td><td>2B, hạn 24 giờ, phiếu hiện trường chưa nộp <em>(viết lại 12/11/2026 · Q-259; trước kiểm cờ quá hạn)</em></td><td>Chờ tới mốc hạn</td><td>Phiếu hiện trường mang kết quả “Tự động xác nhận quá hạn”; P. Đấu thầu, P. TQT, Dự án nhận thông báo; không gắn cờ quá hạn</td></tr>
+          <tr><td>UAT-BID02-44</td><td>Gói nhánh A <em>Đã khởi tạo</em>, có Dự án liên quan CT-THUDUC-02, DS P.TQT · P.Kế toán · P.Vật tư, chưa có tài liệu (<a href="PL-C.html#Q-257">Q-257</a>)</td><td>Bấm Thông báo; tải <code>CTCT-ThapB.pdf</code> loại chỉ thị công trình, bấm lại; trong hộp người nhận bỏ P.Vật tư, gửi</td><td>Lần đầu bị chặn “Tải lên chỉ thị công trình hoặc biên bản họp…”; lần sau hộp hiện BLĐ và Dự án khóa; sau khi gửi gói sang <em>Chạy trước dự án - đang khảo sát sơ bộ</em>; BLĐ, Ban dự án CT-THUDUC-02, P.TQT, P.Kế toán nhận thông báo, P.Vật tư không; Dự án có phiếu “Khảo sát sơ bộ” không có hạn; DS của gói vẫn ba phòng</td></tr>
+          <tr><td>UAT-BID02-45</td><td>Tiếp UAT-44, Dự án chưa báo</td><td>Chờ qua hai buổi sáng</td><td>Người giữ phiếu khảo sát sơ bộ nhận “… đang chờ khảo sát sơ bộ — đã 1 ngày”, rồi “đã 2 ngày”, lúc 08:00; phiếu không tự xác nhận, gói không đổi trạng thái</td></tr>
+          <tr><td>UAT-BID02-46</td><td>Tiếp UAT-45</td><td>Dự án báo khảo sát sơ bộ để trống; rồi ghi “Mặt bằng sảnh đã có, thang tải hoạt động 7h–17h”, kèm 2 ảnh, gửi</td><td>Lần đầu bị chặn; lần sau gói sang <em>Chạy trước dự án - chờ HSMT</em>, P. Đấu thầu và BLĐ nhận thông báo, nhắc hằng ngày dừng; kết quả hiện ở bước 3, chỉ đọc</td></tr>
+          <tr><td>UAT-BID02-47</td><td>Gói nhánh A <em>Đã khởi tạo</em>, chưa chọn Dự án liên quan, đã có tài liệu (<a href="PL-C.html#Q-287">Q-287</a>)</td><td>Bấm Thông báo, để trống người phụ trách, gửi; chọn người phụ trách là GĐ dự án miền Nam, gửi lại</td><td>Lần đầu bị chặn “Chọn Dự án liên quan ở hồ sơ gói, hoặc chọn người phụ trách khảo sát sơ bộ.”; lần sau gửi được, phiếu khảo sát sơ bộ giao cho người đã chọn</td></tr>
+          <tr><td>UAT-BID02-48</td><td>Gói của UAT-46 ở chờ HSMT; BOQ mời thầu đã nhập 12 dòng (<a href="PL-C.html#Q-258">Q-258</a>)</td><td>Tải HSMT, không chọn hạn, gửi; chọn 24 giờ, gửi</td><td>Lần đầu bị chặn “Chọn hạn phản hồi…”; lần sau gói sang <em>Đang thẩm định HSMT (sau chạy trước)</em>; P. TQT có phiếu rà soát hạn 24 giờ; Dự án có “Báo tình hình thi công” không hạn; không có phiếu khảo sát hiện trường</td></tr>
+          <tr><td>UAT-BID02-49</td><td>Tiếp UAT-48, Dự án không gửi gì</td><td>P. TQT nộp phiếu “HSMT đúng”</td><td>Gói sang <em>Đã thẩm định (có phản hồi)</em> ngay, không chờ Dự án; P. Đấu thầu và BLĐ nhận thông báo phản hồi</td></tr>
+          <tr><td>UAT-BID02-50</td><td>2C như UAT-48, gửi 13/11 08:00 hạn 24 giờ, P. TQT không phản hồi</td><td>Chờ tới 14/11 04:00, rồi tới 14/11 08:00</td><td>04:00 người giữ phiếu P. TQT nhận một lần nhắc “Còn 4 giờ…”; Dự án không nhận nhắc. Tới hạn phiếu mang kết quả “Tự động xác nhận quá hạn”, P. Đấu thầu và P. TQT nhận thông báo, Dự án không; gói sang <em>Đã thẩm định (tự động xác nhận quá hạn)</em></td></tr>
+          <tr><td>UAT-BID02-51</td><td>Gói nhánh B <em>Đã khởi tạo</em>, có HSMT; gửi thứ sáu 12/11 17:00, hạn 48 giờ (<a href="PL-C.html#Q-260">Q-260</a>)</td><td>Đọc mốc hạn trên hộp gửi và trên hai thẻ phiếu</td><td>Hạn 14/11 17:00 (chủ nhật) — tính cả cuối tuần; nhắc lúc 14/11 13:00</td></tr>
+          <tr><td>UAT-BID02-52</td><td>Tiếp UAT-51: P. TQT nộp 13/11 10:24; Dự án không phản hồi</td><td>Chờ qua 14/11 13:00 rồi 14/11 17:00; chạy lại lịch nhắc bằng tay</td><td>Chỉ Dự án nhận nhắc, đúng một lần kể cả khi chạy lại lịch; tới hạn phiếu Dự án “Tự động xác nhận quá hạn”, nhật ký ghi “Hệ thống — 14/11 17:00”; P. Đấu thầu, P. TQT, Dự án nhận thông báo; gói <em>Đã thẩm định (tự động xác nhận quá hạn)</em> dù P. TQT đã phản hồi</td></tr>
+          <tr><td>UAT-BID02-53</td><td>Tiếp UAT-52 (<a href="PL-C.html#Q-262">Q-262</a>)</td><td>Dự án bấm Gửi bổ sung, để trống, gửi; ghi “Lối tiếp cận tầng hầm bị chặn tới 20/11”, gửi; thử gọi lệnh nộp phiếu</td><td>Lần đầu bị chặn; lần sau bổ sung vào nhật ký với người, giờ; P. Đấu thầu nhận thông báo; phiếu vẫn “Tự động xác nhận quá hạn”, gói giữ nhãn; lệnh nộp bị từ chối “Phiếu đã tự động xác nhận quá hạn… Dùng Gửi bổ sung…”</td></tr>
+          <tr><td>UAT-BID02-54</td><td>2B, P. TQT mở phiếu (<a href="PL-C.html#Q-261">Q-261</a>)</td><td>Chọn “HSMT có sai sót”, để trống ý kiến, nộp; ghi “Thiếu chiều dày bậc cầu thang”, nộp; Dự án nộp phiếu khảo sát</td><td>Lần đầu bị chặn; lần sau nộp được; sau khi Dự án nộp, gói sang <em>Đã thẩm định (có phản hồi)</em> — không có vòng thẩm định lại; ý kiến hiện trên thẻ phiếu và ở bước 3</td></tr>
+          <tr><td>UAT-BID02-55</td><td>Gói <em>Đã thẩm định (có phản hồi)</em> nhánh B (<a href="PL-C.html#Q-274">Q-274</a>)</td><td>TP Đấu thầu bấm Chốt BOQ cập nhật</td><td>BOQ cập nhật khóa; mọi phiếu của lần sang <em>Đã khóa</em>; gói sang <em>Thương thảo – áp giá (lần 0)</em>, mở áp giá <a href="BID-03.html">BID-03</a></td></tr>
+          <tr><td>UAT-BID02-56</td><td>2B hạn 24 giờ; P. TQT đã lưu nháp phiếu rà soát — sửa Cập nhật KL dòng 5, xóa dòng 9 — nhưng không nộp <em>(viết lại 12/11/2026 · <a href="PL-C.html#Q-284">Q-284</a>)</em></td><td>Chờ tới mốc hạn; TP Đấu thầu mở bảng, bấm Chốt</td><td>Phiếu rà soát “Tự động xác nhận quá hạn”; bảng nháp về đúng BOQ mời thầu — dòng 5 giữ KL mời thầu, dòng 9 còn nguyên, không còn vết sửa; chốt được ngay, BOQ cập nhật trùng BOQ mời thầu</td></tr>
+          <tr><td>UAT-BID02-57</td><td>2B đang chờ, cả hai phiếu chưa phản hồi, còn 10 giờ tới hạn</td><td>Hủy gói ở <a href="BID-04.html">BID-04</a>; chờ qua mốc nhắc và mốc hạn</td><td>Hai phiếu khóa cùng gói; không ai nhận nhắc hay thông báo tự xác nhận; gói <em>Đã hủy</em></td></tr>
+          <tr><td>UAT-BID02-58</td><td>Gói nhánh B đã gửi 2B</td><td>Gửi thẳng lệnh Gửi thẩm định lần nữa tới máy chủ</td><td>Bị từ chối “Gói … đã ở Đang thẩm định/khảo sát — bước này đã gửi lúc …”; không sinh thêm phiếu</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-01.html">BID-01 gói thầu</a><a href="BID-03.html">BID-03 áp giá</a><a href="BID-05.html">BID-05 kiểm tra trước ký</a><a href="PF-04.html">PF-04 nhắc việc quá hạn, thông báo</a><a href="PF-02.html">PF-02 vai trò lãnh đạo, phòng ban</a><a href="PF-05.html">PF-05 phiên bản BOQ</a><a href="2026-09-15/YC-03.html">YC-03 đổi tên phiếu rà soát HSMT</a><a href="2026-09-15/YC-04.html">YC-04 hai cột mã hạng mục</a><a href="PL-A.html">PL-A trạng thái phiếu thẩm định</a><a href="PL-B.html">PL-B quyền chốt / trả lại</a><a href="PL-C.html#Q-128">PL-C Q-128 – Q-130 rà soát sửa thẳng BOQ</a></p>
+    <p class="links"><a href="BID-01.html">BID-01 gói thầu</a><a href="BID-03.html">BID-03 áp giá</a><a href="BID-05.html">BID-05 kiểm tra trước ký</a><a href="PF-04.html">PF-04 nhắc hạn, thông báo</a><a href="PF-02.html">PF-02 vai trò lãnh đạo, phòng ban</a><a href="PF-05.html">PF-05 phiên bản BOQ</a><a href="2026-09-15/YC-03.html">YC-03 đổi tên phiếu rà soát HSMT</a><a href="2026-09-15/YC-04.html">YC-04 hai cột mã hạng mục</a><a href="PL-A.html">PL-A trạng thái phiếu thẩm định</a><a href="PL-B.html">PL-B quyền chốt / trả lại</a><a href="PL-C.html#Q-128">PL-C Q-128 – Q-130 rà soát sửa thẳng BOQ</a><a href="PL-C.html#Q-257">Q-257 2A không hạn, nhắc hằng ngày</a><a href="PL-C.html#Q-258">Q-258 2C chỉ P. TQT có hạn</a><a href="PL-C.html#Q-259">Q-259 tự động xác nhận quá hạn</a><a href="PL-C.html#Q-260">Q-260 hạn 24 h / 48 h, nhắc 4 giờ</a><a href="PL-C.html#Q-261">Q-261 HSMT sai chỉ là ý kiến</a><a href="PL-C.html#Q-262">Q-262 bổ sung muộn</a><a href="PL-C.html#Q-271">Q-271 phụ lục không qua thẩm định</a><a href="PL-C.html#Q-273">Q-273 hộp người nhận</a><a href="PL-C.html#Q-274">Q-274 áp giá lần 0</a><a href="PL-C.html#Q-275">Q-275 chuyển đổi trạng thái</a><a href="PL-C.html#Q-276">Q-276 nhánh A/B</a><a href="PL-C.html#Q-278">Q-278 kênh thông báo</a><a href="PRJ-06.html">PRJ-06 nhân sự dự án liên quan</a></p>
   </div>
 </section>
 <div class="filefoot">
