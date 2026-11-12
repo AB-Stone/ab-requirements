@@ -105,6 +105,9 @@
 | UAT-BID03-86 | Người dùng Ban lãnh đạo, gói đã có 3 lần thương thảo, gói đã trượt thầu | Mở danh sách lần thương thảo | Thấy đủ 3 lần, mới nhất trên cùng, mở được từng lần và tải file | BR-32 · KQ-23 |
 | UAT-BID03-87 | Gói trước ngày chuyển dữ liệu ở trạng thái đàm phán, đã gửi 2 vòng; một gói khác đang áp giá; một gói đã chốt giá | Mở ba gói sau khi chuyển | Gói 1 "Đang thương thảo (lần 1)", hai vòng báo giá cũ vẫn là vòng, chưa có lần thương thảo nào; Thông báo thương thảo hoàn thành bị chặn tới khi lưu một lần đủ bốn ô (lần 1, Q-279); gói 2 "Thương thảo – áp giá (lần 0)"; gói 3 "Thương thảo hoàn thành" | BR-37 · Q-275 |
 | UAT-BID03-88 | Phụ lục Loại 02 của gói đã ký, có dòng hạng mục mới | Mở áp giá của phụ lục | Không có phiếu thẩm định BID-02 trước đó; lần thương thảo của phụ lục đánh từ lần 1; dòng gắn hạng mục HĐ giữ đơn giá HĐ | quy tắc *Báo giá theo lần, số vòng chạy suốt gói* · Q-271 |
+| UAT-BID03-89 | Vòng 1 đang nháp, HM-01 nhân công 300.000 (Q-300) | Sửa nhân công HM-01 thành 350.000, lưu; mở **Lịch sử thay đổi** | Hai dòng nhãn HM-01, ghi chú “Vòng báo giá 1”: Nhân công `300.000 → 350.000`, Giá chào tăng đúng 50.000 |
+| UAT-BID03-90 | Tiếp UAT-89 | Lưu lại không sửa gì | Không thêm dòng lịch sử |
+| UAT-BID03-91 | *(13/11/2026 · Q-301)* Lần 1 kết quả 3b đã lưu; gói đang thương thảo | Mở màn hợp đồng (BID-05); thông báo thương thảo hoàn thành, chốt HĐ – Đã ký; mở lại | Trước khi chốt không có lời nhắc lần 3b; sau khi chốt khối Phụ lục HĐ nhắc "Có 1 lần thương thảo theo HSMT ban đầu (3b) chưa đưa vào phụ lục" với *Lần 1 · {hướng xử lý}* | quy tắc *Kết quả 3a hay 3b ghi trên từng lần* · Q-301 |
 
 ## Ghi chú bao phủ
 
