@@ -308,6 +308,13 @@
             <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Nhóm kho ✱</label><div class="in ro">Kho tổng</div></div></div>
             <div class="wf-c"><div class="wf-f"><label>Vị trí vật lý</label><div class="in">Nhà máy An Bình 2 <em>▾</em></div></div></div></div>
             <div class="wf-f"><label>Nghiệp vụ cho phép</label><div class="in ro">Điều chuyển đến / đi <em>· theo nhóm kho tổng</em></div></div>
+            <div class="wf-f"><label>Dự án gắn kho</label><div class="in">Tìm theo mã hoặc tên dự án… <em>⌕</em></div></div>
+            <div class="wf-chips"><span class="wf-chip on">☑ Chọn tất cả</span><span class="wf-chip">Bỏ chọn tất cả</span><span class="wf-chip">Đã chọn 2</span></div>
+            <table><tbody>
+              <tr><td>☑ VHM-GD3</td><td>Vinhomes Grand Park GĐ3</td></tr>
+              <tr><td>☑ VHM-GD3-PK</td><td>Vinhomes GĐ3 — phụ kiện</td></tr>
+              <tr><td>☐ MSN-Q7</td><td>Masteri Quận 7</td></tr>
+            </tbody></table>
           </div></div>
           <div class="wf-c" style="flex:0 1 260px"><div class="wf-sec">
             <div class="wf-lg"><span class="pin">3</span> Định mức tồn tối thiểu</div>
@@ -324,7 +331,7 @@
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Lọc theo nhóm kho</td><td>Mặc định ẩn kho của dự án đã đóng, giữ danh sách gọn dù số dự án tăng.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Cấu hình kho</td><td>Nhóm kho quyết định nghiệp vụ cho phép (chỉ đọc; từ 05/11/2026 kho không còn tài khoản kho — <a href="PL-C.html#Q-195">Q-195</a>); kho tổng là nơi trích khấu hao. Vị trí vật lý tách khỏi đơn vị chủ quản.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Cấu hình kho</td><td>Nhóm kho quyết định nghiệp vụ cho phép (chỉ đọc; từ 05/11/2026 kho không còn tài khoản kho — <a href="PL-C.html#Q-195">Q-195</a>); kho tổng là nơi trích khấu hao. Vị trí vật lý tách khỏi đơn vị chủ quản. <b>Dự án gắn kho</b> là danh sách tick luôn hiện, có ô tìm theo mã hoặc tên (gõ không dấu vẫn khớp) và hai nút <b>Chọn tất cả</b> / <b>Bỏ chọn tất cả</b> ngay dưới ô tìm, chỉ tác động lên các dự án đang hiện; dự án đã đóng hoặc đã hủy không hiện (<a href="PL-C.html#Q-290">Q-290</a>).</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Đặt định mức tồn</td><td>Theo từng vật tư; dưới định mức thì tô cảnh báo và phát thông báo.</td></tr>
           <tr><td class="c">—</td><td>Đóng kho</td><td>Chỉ đóng được khi tồn bằng 0; đề xuất luồng điều chuyển hết tồn trước.</td></tr>
         </tbody>
@@ -341,7 +348,7 @@
       <li><b>Thêm nghiệp vụ “Khác” để cân bằng kiểm kê.</b> Bổ sung nghiệp vụ <code>khác</code> vào danh sách nghiệp vụ cho phép, dùng riêng để ghi nhận điều chỉnh khi kiểm kê phát hiện thừa hoặc thiếu không rõ nguyên nhân.<span class="then">Số tồn sổ sách được đối chiếu về đúng số tồn thực tế qua một phiếu nhập/xuất hợp lệ, thay vì sửa thẳng số tồn mà không để lại chứng từ.</span></li>
       <li><b>Nhãn nhóm kho cần đối chiếu lại — chưa chốt.</b> Yêu cầu hiện tại đòi ba nhãn nhóm kho là <b>Kho nhà máy</b>, <b>Kho công trình</b>, <b>Đang đi đường</b>, trong khi đặc tả này đang định nghĩa ba nhóm khác: <b>Kho tổng công ty</b>, <b>Kho dự án</b>, <b>Kho nhà máy</b> (nhóm Kho nhà máy lại chia tiếp 6 kho con, trong đó có <code>K-CT</code> — “Kho công trình tại nhà máy” — không phải một nhóm kho cấp cao nhất, và không có nhóm nào tương ứng với “Đang đi đường”).<span class="then">Chưa rõ đây là đổi tên ba nhóm hiện có, hay là thêm một trục phân loại song song theo trạng thái luân chuyển (tại nhà máy / tại công trình / đang vận chuyển) bên cạnh trục nhóm kho hiện tại — cần xác nhận với người yêu cầu trước khi đổi cấu trúc cây kho.</span></li>
       <li><b>Giao diện ẩn kho đã đóng.</b> Danh sách mặc định chỉ hiện kho của dự án đang thi công.<span class="then">Cách trả lời cho lo ngại “nhiều kho quá” trong yêu cầu gốc — xem <a href="PL-C.html">Q-03</a>.</span></li>
-      <li><b>Nhiều dự án chung một kho vật lý.</b> Với công trình nhỏ dùng chung mặt bằng, một kho gắn được nhiều mã dự án.<span class="then">Khi đó phiếu xuất bắt buộc chọn dự án, và báo cáo nhập xuất tồn vẫn tách được theo dự án.</span></li>
+      <li><b>Nhiều dự án chung một kho vật lý.</b> Với công trình nhỏ dùng chung mặt bằng, một kho gắn được nhiều mã dự án.<span class="then">Khi đó phiếu xuất bắt buộc chọn dự án, và báo cáo nhập xuất tồn vẫn tách được theo dự án. Ô <b>Dự án gắn kho</b> (chốt 12/11/2026, <a href="PL-C.html#Q-290">Q-290</a>): (1) tìm theo mã hoặc tên dự án, khớp chuỗi con không dấu — gõ “vinhomes” hay “vĩnh” đều được; Enter trong ô tìm không lưu kho; ô tìm xóa khi mở lại hộp thoại; (2) <b>Chọn tất cả</b> chỉ thêm các dự án đang hiện (khớp tìm) vào lựa chọn sẵn có; (3) <b>Bỏ chọn tất cả</b> chỉ bỏ các dự án đang hiện — dự án đã gắn mà ô tìm đang ẩn vẫn giữ; (4) dự án đã đóng hoặc đã hủy không hiện để gắn mới, trừ dự án đã gắn sẵn — vẫn hiện, đã tick, để bỏ được; (5) tìm không ra dòng nào thì ghi “Không có dự án khớp.”; luôn có bộ đếm “Đã chọn {n}”.</span></li>
       <li><b>Kho K-CT ghi nguồn dự án.</b> Đá dư từ dự án hoàn nhập về nhà máy lưu ở K-CT và giữ tham chiếu dự án nguồn.<span class="then">Nhờ vậy khi nhà máy mua lại, giá trị được ghi nhận đúng về dự án đã hoàn nhập.</span></li>
       <li><b>Đóng kho cần tồn bằng 0.</b> Kho còn tồn thì không đóng được.<span class="then">Hệ thống đề xuất luồng điều chuyển hoặc hoàn nhập để làm sạch tồn trước.</span></li>
       <li><b>Thêm, sửa, xóa kho trong danh mục</b> <em>(yêu cầu 31/10/2026)</em>. Danh mục kho có Thêm · Sửa · Xóa; với kho, <em>ngừng dùng</em> là Đóng kho. Kho bị xóa hẳn khi chưa có phiếu nhập, xuất, kiểm kê, định mức tồn hay tài sản nào tham chiếu; ngược lại bị từ chối “{mã} đã được dùng — chỉ ngừng dùng được.”<span class="then">Kho dự án sinh tự động ở <a href="BID-05.html">BID-05</a> là kho của một dự án — dự án trỏ tới nó — nên tính là đã được dùng: không xóa, chỉ đóng kho khi dự án kết thúc.</span><span class="then">Thêm, sửa, xóa kho chỉ dành cho Admin và Kế toán trưởng (<code>acc_warehouse:write</code>); Kế toán viên chỉ xem — quy tắc chung ở <a href="PF-01.html">PF-01</a>.</span></li>
