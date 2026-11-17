@@ -39,6 +39,7 @@
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
     <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
+    <a href="ORD-13.html"><i>ORD-13</i>Đề xuất mua sắm (Cung ứng)</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
@@ -80,7 +81,7 @@
     <div class="tb-id">ORD-04</div>
     <div class="tb-main">
       <h3>Phê duyệt đơn hàng &amp; phân luồng Sản xuất / Cung ứng</h3>
-      <p>“Sẽ có 02 luồng chuyển thông tin: 1. Chuyển đơn hàng cho Nhà máy sản xuất… 2. Chuyển đơn hàng cho Phòng Cung ứng”. Kèm ghi chú quan trọng: ở đây chỉ thuần đơn hàng, không đề cập đề xuất vật tư phụ — cái đó có luồng riêng (<a href="ACC-01.html">ACC-01</a>).</p>
+      <p>“Sẽ có 02 luồng chuyển thông tin: 1. Chuyển đơn hàng cho Nhà máy sản xuất… 2. Chuyển đơn hàng cho Phòng Cung ứng”. Kèm ghi chú quan trọng: ở đây chỉ thuần đơn hàng, không đề cập đề xuất vật tư phụ — cái đó có luồng riêng (<a href="ACC-01.html">ACC-01</a>; từ 17/11/2026 P. Cung ứng có thêm phiếu đề xuất mua sắm của riêng mình ở <a href="ORD-13.html">ORD-13</a>).</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>Theo luồng trình · Nhà máy · P. Cung ứng</dd></div>
         <div><dt>Phê duyệt</dt><dd>Theo luồng trình</dd></div>
@@ -269,7 +270,7 @@
       <li>Nhà máy và P. Cung ứng nhận thông báo kèm bản vẽ sản xuất và khối lượng thuộc phần của mình.</li>
       <li>Một đơn hàng tách hai lệnh thì trạng thái đơn là “hoàn thành” chỉ khi cả hai lệnh hoàn thành.</li>
       <li>Người xem đơn hàng thấy được đơn đang nằm ở Nhà máy hay Cung ứng, đã tiếp nhận chưa.</li>
-      <li>Đề xuất vật tư phụ không xuất hiện trong luồng này; thử tạo sẽ được dẫn sang <a href="ACC-01.html">ACC-01</a>.</li>
+      <li>Đề xuất vật tư phụ không xuất hiện trong luồng này; thử tạo sẽ được dẫn sang <a href="ACC-01.html">ACC-01</a>. Từ 17/11/2026 P. Cung ứng tự lập đề xuất vật tư chính, vật tư phụ ở <a href="ORD-13.html">ORD-13</a> — một chứng từ riêng, cũng không sinh lệnh nào ở màn hình này.</li>
       <li>Việc áp giá doanh thu chạy song song không làm thay đổi trạng thái hay chặn tiến trình của lệnh thực hiện.</li>
       <li>Đơn mà nhà máy chưa chấp thuận không xuất hiện trong hàng chờ phân luồng; màn hình nói rõ đang chờ phản hồi của phiếu nào.</li>
       <li>Lệnh sản xuất mang theo danh sách từng viên đá kèm bộ công đoạn gia công, không chỉ một dòng khối lượng gộp.</li>
@@ -301,7 +302,7 @@
             <div class="wf-steps"><div class="cur"><b>Chờ tiếp nhận</b>gửi 27/07</div><div><b>NCC xác nhận</b>—</div><div><b>Đang mua</b>—</div><div><b>Hoàn thành</b>—</div></div>
           </div></div>
         </div>
-        <div class="note" style="margin:10px 0 0"><b>Ngoài phạm vi luồng này</b><p style="margin:0">Vật tư phụ và vật tư khác đi theo <a href="ACC-01.html">ACC-01 — Đề xuất mua sắm</a>, không tạo lệnh cung ứng từ màn hình này.</p></div>
+        <div class="note" style="margin:10px 0 0"><b>Ngoài phạm vi luồng này</b><p style="margin:0">Vật tư phụ và vật tư khác đi theo <a href="ACC-01.html">ACC-01 — Đề xuất mua sắm</a>, hoặc theo đề xuất của P. Cung ứng ở <a href="ORD-13.html">ORD-13</a> (từ 17/11/2026); không tạo lệnh cung ứng từ màn hình này.</p></div>
       </div>
     </div>
     <div class="tw">
@@ -323,7 +324,7 @@
       <li><b>Đổi nguồn là sửa đơn, không phải điều phối.</b> Muốn đổi nguồn một dòng thì trả đơn về trạng thái soạn cho người lập sửa.<span class="then">Sửa tại màn hình phân luồng sẽ làm lịch sử đơn hàng ở <a href="ORD-07.html">ORD-07</a> không còn khớp với thứ đã được lãnh đạo duyệt.</span></li>
       <li><b>Mỗi dòng thuộc đúng một lệnh.</b> Không tách một dòng đơn hàng cho hai đơn vị thực hiện.<span class="then">Việc chia đã làm ở <a href="ORD-03.html">ORD-03</a> bằng thao tác tách dòng: một đầu việc lấy từ hai nguồn thì ở đơn hàng nó đã là hai dòng.</span></li>
       <li><b>Đá nhỏ lẻ công trình mua vẫn thuộc Nhà máy.</b> Theo ghi chú gốc, đá do công trình mua để nhà máy gia công đi theo luồng Nhà máy.<span class="then">Chỉ vật tư mua ngoài không qua gia công mới thuộc P. Cung ứng.</span></li>
-      <li><b>Vật tư phụ không đi luồng này.</b> Màn hình phân luồng không cho tạo lệnh cho vật tư phụ, vật tư khác.<span class="then">Thử thêm sẽ được dẫn sang <a href="ACC-01.html">ACC-01</a> — đúng ranh giới mà yêu cầu gốc đặt ra.</span></li>
+      <li><b>Vật tư phụ không đi luồng này.</b> Màn hình phân luồng không cho tạo lệnh cho vật tư phụ, vật tư khác.<span class="then">Thử thêm sẽ được dẫn sang <a href="ACC-01.html">ACC-01</a> — đúng ranh giới mà yêu cầu gốc đặt ra.</span><span class="then"><b>Từ 17/11/2026</b> <em>(sheet “Hôm nay” 17/11/2026 · STT 2)</em>: P. Cung ứng lập đề xuất mua sắm của mình ở <a href="ORD-13.html">ORD-13</a> — chứng từ riêng, Lập → Gửi, không duyệt (<a href="PL-C.html#Q-380">Q-380</a>, <a href="PL-C.html#Q-383">Q-383</a>). Đề xuất đó không sinh lệnh sản xuất hay lệnh cung ứng ở đây (<a href="PL-C.html#Q-385">Q-385</a>); lời dẫn của màn hình này vẫn trỏ sang ACC-01 như cũ.</span></li>
       <li><b>Đơn hoàn thành khi mọi lệnh hoàn thành.</b> Trạng thái đơn hàng là hàm của trạng thái các lệnh con.<span class="then">Một lệnh xong, một lệnh dở thì đơn ở trạng thái “cấp một phần”, không phải “hoàn thành”.</span></li>
       <li><b>Chưa tiếp nhận thì nhắc.</b> Lệnh chưa được đơn vị thực hiện xác nhận sau 2 ngày làm việc sẽ nhắc trưởng đơn vị đó.<span class="then">Lệnh chưa tiếp nhận vẫn hiện trong hàng chờ và tính vào chỉ số phản hồi của đơn vị.</span></li>
       <li><b>Áp giá không chạm luồng này.</b> Trạng thái áp giá ở <a href="BID-06.html">BID-06</a> không phải điều kiện của bất kỳ bước nào tại đây.<span class="then">Kiểm chứng được bằng cách chạy hết vòng cấp hàng cho một đơn chưa áp giá.</span></li>
@@ -385,7 +386,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-03.html">ORD-03 trình đơn hàng</a><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ORD-05.html">ORD-05 cấp hàng</a><a href="BID-06.html">BID-06 áp giá</a><a href="ACC-01.html">ACC-01 đề xuất vật tư phụ</a><a href="ACC-04.html">ACC-04 xuất kho nhà máy</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a><a href="PL-B.html">PL-B quyền fulfillment:update</a><a href="PL-C.html#Q-82">PL-C · Q-82 cổng xác nhận cho nhà cung cấp</a><a href="PL-C.html#Q-102">PL-C · Q-102 bỏ bước duyệt Đơn hàng (đã chốt)</a><a href="2026-10-08/YC-26.html">YC-26 phân hệ Cung ứng</a></p>
+    <p class="links"><a href="ORD-03.html">ORD-03 trình đơn hàng</a><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ORD-05.html">ORD-05 cấp hàng</a><a href="BID-06.html">BID-06 áp giá</a><a href="ACC-01.html">ACC-01 đề xuất vật tư phụ</a><a href="ORD-13.html">ORD-13 đề xuất mua sắm của P. Cung ứng</a><a href="ACC-04.html">ACC-04 xuất kho nhà máy</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a><a href="PL-B.html">PL-B quyền fulfillment:update</a><a href="PL-C.html#Q-82">PL-C · Q-82 cổng xác nhận cho nhà cung cấp</a><a href="PL-C.html#Q-102">PL-C · Q-102 bỏ bước duyệt Đơn hàng (đã chốt)</a><a href="2026-10-08/YC-26.html">YC-26 phân hệ Cung ứng</a></p>
   </div>
 </section>
 <div class="filefoot">
