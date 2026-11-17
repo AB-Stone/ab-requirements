@@ -81,415 +81,150 @@
     <div class="tb-id">BID-03</div>
     <div class="tb-main">
       <h3>Áp giá, gửi báo giá &amp; thương thảo</h3>
-      <p>Dựng đơn giá cho từng dòng BOQ, trình duyệt nội bộ, gửi đối tác rồi ghi nhận từng vòng đàm phán. Mỗi vòng sinh một phiên bản BOQ báo giá — đúng yêu cầu “BOQ báo giá ban đầu và các BOQ cập nhật trong quá trình đàm phán”. <em>(12/11/2026)</em> Đây là bước 3 của luồng gói thầu: phần áp giá giữ nguyên và mang tên <em>Thương thảo – áp giá (lần 0)</em>; sau đó là các lần thương thảo 1, 2, … có biên bản, rồi <em>Thông báo thương thảo hoàn thành</em> chuyển gói sang ký ở <a href="BID-05.html">BID-05</a>.</p>
+      <p>Bước 3 của luồng gói thầu. <em>(16/11/2026)</em> Áp giá, chiết tính và thương thảo làm trong Excel ngoài hệ thống; ở đây chỉ còn lưu <b>lần 0 — tệp báo giá + giá trị chào</b>, từng <b>lần thương thảo — biên bản + tóm lược + hướng xử lý</b>, rồi <b>Đã chốt giá — nhập Giá trị HĐ</b> để chuyển gói sang ký ở <a href="BID-05.html">BID-05</a>.</p>
       <dl class="tb-meta">
-        <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu · P. TQT cập nhật quy cách vật tư <em>(12/11/2026)</em></dd></div>
-        <div><dt>Phê duyệt</dt><dd>2 cấp — TP Đấu thầu → Ban lãnh đạo</dd></div>
-        <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · P. Kế toán · P. Đấu thầu — P. TQT chỉ thấy khung quy cách vật tư, đầu vào bước 2 và thông báo 3b gửi cho mình; không thấy giá vốn, giá chào, biên hay các lần thương thảo <em>(12/11/2026 · <a href="PL-C.html#Q-264">Q-264</a>)</em></dd></div>
-        <div><dt>Yêu cầu gốc</dt><dd>ĐT · dòng 3</dd></div>
+        <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu</dd></div>
+        <div><dt>Phê duyệt</dt><dd>Không <em>(16/11/2026: bỏ trình duyệt 2 cấp vòng báo giá)</em></dd></div>
+        <div><dt>Quyền truy cập</dt><dd>Ban lãnh đạo · P. Kế toán · P. Đấu thầu — P. TQT nhận thông báo 3b gửi cho mình <em>(V2: không còn phiếu bước 2)</em></dd></div>
+        <div><dt>Yêu cầu gốc</dt><dd>ĐT · dòng 3 · góp ý Zalo 12/11/2026</dd></div>
       </dl>
     </div>
   </header>
   <div class="sb">
     <h4>Mục tiêu</h4>
-    <p>Đây là nơi quyết định biên lợi nhuận của cả dự án. Màn hình áp giá phải đặt cạnh nhau <em>giá vốn ước tính</em> và <em>giá chào</em> để người duyệt thấy ngay biên lợi nhuận từng dòng, thay vì chỉ thấy tổng giá chào. Cấu phần giá vốn lấy từ định mức vật tư, giá khoán nhân công tham chiếu, và chi phí biện pháp thi công khó do <a href="BID-02.html">BID-02</a> chuyển sang.</p>
-    <p><em>(12/11/2026 · <a href="PL-C.html#Q-263">Q-263</a>, <a href="PL-C.html#Q-274">Q-274</a>)</em> Thương thảo với chủ đầu tư không chỉ là đổi giá. Mỗi buổi thương thảo kết luận về quy cách vật tư, phạm vi và bước tiếp theo, nên mỗi <b>lần thương thảo</b> phải để lại một biên bản: file thương thảo giá, tóm lược kết quả và hướng xử lý — cả ba bắt buộc, lưu xong là khóa. Ban lãnh đạo nhận thông báo từng lần và đọc được mọi lần. Người làm giá thấy ngay trên màn hình những gì bước 2 để lại — khảo sát của Dự án, tình hình thi công, ý kiến thẩm định HSMT của P. TQT — thay vì đi hỏi lại.</p>
-    <p>Hai từ không lẫn nhau trên trang này: <b>vòng báo giá</b> (v1, v2, …) là một phiên bản bảng giá đã gửi; <b>lần thương thảo</b> (lần 1, 2, …) là một biên bản làm việc với chủ đầu tư. Lần thương thảo đổi giá thì sinh vòng báo giá mới; lần không đổi giá thì không. Còn <em>lần của gói</em> theo <a href="PL-C.html#Q-201">Q-201</a> (Làm lại — lần mới) là một chuyện thứ ba, giữ nguyên ở quy tắc 9.</p>
+    <p>Yêu cầu gốc cần “BOQ báo giá ban đầu và các BOQ cập nhật trong quá trình đàm phán” — tức là <b>lưu từng phiên bản ở từng giai đoạn</b>, không phải dựng giá trên phần mềm. Góp ý 12/11/2026 của anh Tất: “phần giá trị HĐ thì khi chốt giá xong sẽ có 1 ô ở bước hoàn thiện nhập giá trị vô thôi, không có ráp đơn giá trên phần mềm (xử lý bằng file Excel)”; “không thể xử lý dữ liệu lớn và dữ liệu chiết tính giá cũng như thương thảo trên phần mềm”.</p>
+    <p><em>(16/11/2026 · <a href="PL-C.html#Q-319">Q-319</a>)</em> Bước 3 vì vậy gồm ba loại bản ghi, đều theo khuôn “tải tệp + Lưu” của <a href="BID-01.html">BID-01</a>: lần 0 (báo giá gửi chủ đầu tư), các lần thương thảo 1, 2, … (biên bản, khóa khi lưu, giữ nguyên như 12/11/2026 — <a href="PL-C.html#Q-263">Q-263</a>), và một lần <b>Đã chốt giá</b>. <em>(V2 · <a href="PL-C.html#Q-323">Q-323</a>)</em> Bước 3 không đổi cột Tiến độ — gói đang thương thảo hay đã chốt giá vẫn hiện “Đã rà soát, kiểm tra HSMT”; số lần thương thảo đọc ở trạng thái gói, tệp của từng lần mở từ ô Tiến độ.</p>
 
     <h4>Lưu đồ</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-03.1 Bước 3 thương thảo: lần 0 là áp giá và gửi báo giá như cũ, có chốt chặn biên lợi nhuận; mỗi lần thương thảo 1, 2, … lưu file, tóm lược kết quả và hướng xử lý, khóa sau khi lưu và báo Ban lãnh đạo; kết quả 3a thì P. TQT cập nhật quy cách, 3b thì báo P. TQT nắm và để thay đổi sang phụ lục HĐ Loại 02; thương thảo tiếp, hoàn thành sang BID-05, hoặc trượt thầu sang BID-04." viewBox="0 0 700 760" width="700" height="760" xmlns="http://www.w3.org/2000/svg">
-<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="150,10 510,10 510,54 150,54"/>
-<text text-anchor="middle" x="330" y="28.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Đã thẩm định — bước 2 (BID-02)</text>
-<text text-anchor="middle" x="330" y="43.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">đầu vào: khảo sát 2A/2B · tình hình 2C · thẩm định TQT</text>
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-03.1 Bước 3 rút gọn 16/11/2026: lần 0 là tải tệp báo giá và nhập giá trị chào; mỗi lần thương thảo sau là biên bản có tóm lược, hướng xử lý, kết quả 3a hoặc 3b, khóa khi lưu. Chốt giá thì nhập giá trị HĐ và Lưu, gói sang Thương thảo hoàn thành và đi ký ở BID-05; không chốt được thì hủy ở BID-04." viewBox="0 0 700 480" width="700" height="480" xmlns="http://www.w3.org/2000/svg">
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="170,10 490,10 490,39 170,39"/>
+<text text-anchor="middle" x="330" y="28.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Đã thẩm định — sau 2B hoặc 2C (BID-02)</text>
 </g>
-<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="190,84 470,84 470,128 190,128"/>
-<text text-anchor="middle" x="330" y="102.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Thương thảo – áp giá (lần 0)</text>
-<text text-anchor="middle" x="330" y="117.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">giá vốn · giá chào · biên lợi nhuận</text>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="120,60 540,60 540,104 120,104"/>
+<text text-anchor="middle" x="330" y="78.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Lần 0 · tải tệp báo giá + nhập giá trị chào → Lưu</text>
+<text text-anchor="middle" x="330" y="93.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">→ Đang thương thảo (lần 0)</text>
 </g>
-<g class="node"><polygon fill="#eef2f5" stroke="#5d6b7a" points="330,146 420,170 330,194 240,170"/>
-<text text-anchor="middle" x="330" y="174.2" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Biên dưới ngưỡng?</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M330,39 L330,60"/>
+<polygon fill="#55606b" stroke="#55606b" points="330,60 332.3,53.5 327.7,53.5"/>
 </g>
-<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="500,148 680,148 680,192 500,192"/>
-<text text-anchor="middle" x="590" y="166.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Trình Ban lãnh đạo</text>
-<text text-anchor="middle" x="590" y="181.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">PF-03 · 2 cấp</text>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="120,145 540,145 540,189 120,189"/>
+<text text-anchor="middle" x="330" y="163.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Lần n · tải biên bản + tóm lược + hướng xử lý</text>
+<text text-anchor="middle" x="330" y="178.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">kết quả 3a / 3b → Lưu (khóa) · báo Ban lãnh đạo</text>
 </g>
-<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="190,222 470,222 470,266 190,266"/>
-<text text-anchor="middle" x="330" y="240.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Gửi báo giá vòng v(k)</text>
-<text text-anchor="middle" x="330" y="255.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">đóng băng bảng giá · tệp PDF/Excel</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M330,104 L330,145"/>
+<polygon fill="#55606b" stroke="#55606b" points="330,145 332.3,138.5 327.7,138.5"/>
 </g>
-<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="150,296 510,296 510,354 150,354"/>
-<text text-anchor="middle" x="330" y="314.2" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Lưu lần thương thảo n</text>
-<text text-anchor="middle" x="330" y="329.2" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">file ✱ · tóm lược kết quả ✱ · hướng xử lý ✱</text>
-<text text-anchor="middle" x="330" y="344.2" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">khóa sau khi lưu · báo Ban lãnh đạo</text>
+<g class="node"><polygon fill="#eef2f5" stroke="#5d6b7a" points="330,235 450,270 330,305 210,270"/>
+<text text-anchor="middle" x="330" y="274.2" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Kết quả?</text>
 </g>
-<g class="node"><polygon fill="#eef2f5" stroke="#5d6b7a" points="330,370 430,396 330,422 230,396"/>
-<text text-anchor="middle" x="330" y="400.2" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Kết quả lần n</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M330,189 L330,235"/>
+<polygon fill="#55606b" stroke="#55606b" points="330,235 332.3,228.5 327.7,228.5"/>
 </g>
-<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="40,440 290,440 290,484 40,484"/>
-<text text-anchor="middle" x="165" y="458.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">3a · CĐT chấp nhận thay đổi</text>
-<text text-anchor="middle" x="165" y="473.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">P. TQT cập nhật quy cách vật tư</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M210,270 L60,270 L60,167 L120,167"/>
+<polygon fill="#55606b" stroke="#55606b" points="120,167 113.5,164.7 113.5,169.3"/>
+<text text-anchor="start" x="64" y="286" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">thương thảo tiếp</text>
 </g>
-<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="360,440 650,440 650,484 360,484"/>
-<text text-anchor="middle" x="505" y="458.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">3b · triển khai theo HSMT</text>
-<text text-anchor="middle" x="505" y="473.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Thông báo cho P.TQT nắm → PLHĐ Loại 02</text>
+<g class="node"><polygon fill="#eef2f5" stroke="#5d6b7a" points="515,250 685,250 685,294 515,294"/>
+<text text-anchor="middle" x="600" y="268.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Không chốt được</text>
+<text text-anchor="middle" x="600" y="283.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">→ BID-04 Hủy</text>
 </g>
-<g class="node"><polygon fill="#eef2f5" stroke="#5d6b7a" points="330,514 420,540 330,566 240,540"/>
-<text text-anchor="middle" x="330" y="544.2" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Kết luận?</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M450,270 L515,270"/>
+<polygon fill="#55606b" stroke="#55606b" points="515,270 508.5,267.7 508.5,272.3"/>
 </g>
-<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="190,620 470,620 470,664 190,664"/>
-<text text-anchor="middle" x="330" y="638.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Thông báo thương thảo hoàn thành</text>
-<text text-anchor="middle" x="330" y="653.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">đóng băng giá · báo DS phòng ban</text>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="110,340 550,340 550,384 110,384"/>
+<text text-anchor="middle" x="330" y="358.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Đã chốt giá — nhập Giá trị HĐ (+ ghi chú) → Lưu</text>
+<text text-anchor="middle" x="330" y="373.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">→ Thương thảo hoàn thành · thông báo DS phòng ban</text>
 </g>
-<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="520,620 680,620 680,664 520,664"/>
-<text text-anchor="middle" x="600" y="638.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Trượt thầu</text>
-<text text-anchor="middle" x="600" y="653.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">BID-04</text>
+<g class="edge"><path fill="none" stroke="#55606b" d="M330,305 L330,340"/>
+<polygon fill="#55606b" stroke="#55606b" points="330,340 332.3,333.5 327.7,333.5"/>
+<text text-anchor="start" x="340" y="326.5" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">chốt giá</text>
 </g>
-<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="190,700 470,700 470,744 190,744"/>
-<text text-anchor="middle" x="330" y="718.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Thương thảo hoàn thành</text>
-<text text-anchor="middle" x="330" y="733.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">sang ký số · BID-05</text>
+<g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="170,430 490,430 490,459 170,459"/>
+<text text-anchor="middle" x="330" y="448.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Bước 4 · Ký HĐ (BID-05)</text>
 </g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M330,54 L330,84"/>
-<polygon fill="#55606b" stroke="#55606b" points="330,84 332.3,77.5 327.7,77.5"/>
+<g class="edge"><path fill="none" stroke="#55606b" d="M330,384 L330,430"/>
+<polygon fill="#55606b" stroke="#55606b" points="330,430 332.3,423.5 327.7,423.5"/>
 </g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M330,128 L330,146"/>
-<polygon fill="#55606b" stroke="#55606b" points="330,146 332.3,139.5 327.7,139.5"/>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M420,170 L500,170"/>
-<polygon fill="#55606b" stroke="#55606b" points="500,170 493.5,167.7 493.5,172.3"/>
-<text text-anchor="middle" x="460" y="162" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Dưới ngưỡng</text>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M590,192 L590,244 L470,244"/>
-<polygon fill="#55606b" stroke="#55606b" points="470,244 476.5,246.3 476.5,241.7"/>
-<text text-anchor="start" x="604" y="222" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Duyệt</text>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M330,194 L330,222"/>
-<polygon fill="#55606b" stroke="#55606b" points="330,222 332.3,215.5 327.7,215.5"/>
-<text text-anchor="start" x="342" y="212" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Đạt</text>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M330,266 L330,296"/>
-<polygon fill="#55606b" stroke="#55606b" points="330,296 332.3,289.5 327.7,289.5"/>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M330,354 L330,370"/>
-<polygon fill="#55606b" stroke="#55606b" points="330,370 332.3,363.5 327.7,363.5"/>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M230,396 L165,396 L165,440"/>
-<polygon fill="#55606b" stroke="#55606b" points="165,440 167.3,433.5 162.7,433.5"/>
-<text text-anchor="middle" x="198" y="389" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">3a</text>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M430,396 L505,396 L505,440"/>
-<polygon fill="#55606b" stroke="#55606b" points="505,440 507.3,433.5 502.7,433.5"/>
-<text text-anchor="middle" x="468" y="389" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">3b</text>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M165,484 L165,500 L330,500 L330,514"/>
-<polygon fill="#55606b" stroke="#55606b" points="330,514 332.3,507.5 327.7,507.5"/>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M505,484 L505,500 L330,500 L330,514"/>
-<polygon fill="#55606b" stroke="#55606b" points="330,514 332.3,507.5 327.7,507.5"/>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M240,540 L16,540 L16,106 L190,106"/>
-<polygon fill="#55606b" stroke="#55606b" points="190,106 183.5,103.7 183.5,108.3"/>
-<text text-anchor="start" x="26" y="532" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Tiếp · đổi giá → vòng mới</text>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M420,540 L690,540 L690,325 L510,325"/>
-<polygon fill="#55606b" stroke="#55606b" points="510,325 516.5,327.3 516.5,322.7"/>
-<text text-anchor="end" x="680" y="532" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Tiếp · giữ giá → lần n+1</text>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M330,566 L330,620"/>
-<polygon fill="#55606b" stroke="#55606b" points="330,620 332.3,613.5 327.7,613.5"/>
-<text text-anchor="start" x="342" y="598" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Hoàn thành</text>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M375,553 L560,620"/>
-<polygon fill="#55606b" stroke="#55606b" points="560,620 554.7,615.6 553.1,619.9"/>
-<text text-anchor="start" x="480" y="578" font-family="Barlow, system-ui, sans-serif" font-size="11" fill="#3f4a54">Trượt thầu</text>
-</g>
-<g class="edge"><path fill="none" stroke="#55606b" d="M330,664 L330,700"/>
-<polygon fill="#55606b" stroke="#55606b" points="330,700 332.3,693.5 327.7,693.5"/>
-</g>
-</svg></div><figcaption><b>Hình BID-03.1</b> <em>(12/11/2026 · <a href="PL-C.html#Q-263">Q-263</a>, <a href="PL-C.html#Q-274">Q-274</a>)</em> Bước 3 bắt đầu bằng <em>Thương thảo – áp giá (lần 0)</em> — áp giá, chốt chặn biên lợi nhuận và gửi báo giá giữ nguyên như trước. Mỗi lần thương thảo 1, 2, … là một biên bản khóa sau khi lưu, có file, tóm lược kết quả và hướng xử lý, và báo riêng Ban lãnh đạo. Kết quả 3a thì P. TQT cập nhật quy cách vật tư ngay trong bước này; 3b thì bấm <em>Thông báo cho P.TQT nắm</em> và để thay đổi sang phụ lục HĐ Loại 02 (<a href="PL-C.html#Q-272">Q-272</a>). Đổi giá luôn sinh vòng báo giá mới và đi lại chốt chặn biên.</figcaption></figure>
+</svg></div><figcaption><b>Hình BID-03.1</b> <em>(16/11/2026 · <a href="PL-C.html#Q-314">Q-314</a>…<a href="PL-C.html#Q-320">Q-320</a>)</em> Không còn áp giá trên phần mềm: chiết tính, giá vốn, biên lợi nhuận, vòng báo giá làm trong Excel ngoài hệ thống, hệ thống chỉ lưu tệp và giá trị (<a href="PL-C.html#Q-319">Q-319</a>).</figcaption></figure>
 
-    <h4>Tham số</h4>
+    <h4>Tham số — lần 0 · báo giá</h4>
     <div class="tw">
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Dòng báo giá</td><td class="k">quote_lines[]</td><td>Bảng</td><td class="c req">✱</td><td>Kế thừa từ BOQ cập nhật, khóa cột khối lượng.</td></tr>
-          <tr><td>Mã liên kết thực xuất</td><td class="k">material_code</td><td>Chuỗi</td><td class="c">—</td><td>Mã thành phẩm của nhà máy, ví dụ <code>TiPC-KQC150-20</code>. Khai trên dòng BOQ ở <a href="BID-01.html">BID-01</a>, chảy xuống áp giá và hợp đồng — không nhập lại theo từng vòng.</td></tr>
-          <tr><td>Chủng loại đá / công tác gia công</td><td class="k">stone_type</td><td>Chuỗi</td><td class="c">—</td><td>Có danh sách gợi ý nhưng <b>không đóng</b>: mỏ đá mới xuất hiện liên tục, chặn danh mục sẽ chặn luôn dòng đầu tiên dùng loại đá chưa khai báo.</td></tr>
-          <tr><td>Tính chất bề mặt</td><td class="k">surface</td><td>Danh mục</td><td class="c">—</td><td>Mài bóng · Mài hone · Băm mặt · Khò nhám · Xộ mặt · Xẻ thô. Danh mục đóng, theo bảng của nhà máy.</td></tr>
-          <tr><td>Chiều dày</td><td class="k">thickness_mm</td><td>Số — mm</td><td class="c">—</td><td>Số để so sánh và nhóm được, không phải chuỗi in ra.</td></tr>
-          <tr><td>Sai số chiều dày</td><td class="k">tolerance</td><td>Danh mục</td><td class="c">—</td><td><code>±1</code> … <code>±5</code>. Giữ dạng chuỗi vì dấu ± là một phần giá trị nhà máy đọc. Người nhập chỉ gõ con số: hệ thống <b>luôn gắn dấu ±</b> khi ô có giá trị, nên <code>3</code>, <code>+3</code> và <code>±3</code> vào cùng một sai số — kể cả khi dán từ Excel. Ô để trống lưu <b>null</b>, không lưu chuỗi rỗng: “chưa khai sai số” và “sai số bằng rỗng” không được phép là hai giá trị khác nhau.</td></tr>
-          <tr><td>Xử lý chống thấm</td><td class="k">waterproof</td><td>Có / Không</td><td class="c">—</td><td>Có cấu thành giá nên nằm trên dòng, không nằm trong ghi chú.</td></tr>
-          <tr><td>Cấu phần giá vốn của gói</td><td class="k">cost_components[]</td><td>Bảng</td><td class="c req">✱</td><td>Bộ cột giá vốn của riêng gói thầu này. Mỗi cấu phần: tên cột, mã, đang bật hay tắt, nguồn gợi ý. Theo biểu mẫu <code>3.BOQ</code> (<a href="2026-09-15/YC-05.html">YC-05</a>), bộ mặc định là <b>năm</b> cấu phần — đá · vật tư phụ · nhân công · vận chuyển · chống thấm — thay cho bộ ba cũ; cấu phần <b>máy &amp; biện pháp</b> vẫn là cấu phần có sẵn và tự bật khi phiếu khảo sát <a href="BID-02.html">BID-02</a> chuyển sang một khoản chi phí. Khai thêm tối đa 8 cấu phần riêng — lắp đặt, hoàn thiện bề mặt, phụ kiện neo, bảo hành… Bộ cấu phần thuộc về phiên bản báo giá, nên vòng đã gửi trước đợt chuẩn hoá giữ nguyên bộ cũ, trong đó cấu phần gộp <code>cost_material</code> vẫn đọc được.</td></tr>
-          <tr><td>Giá vốn đá</td><td class="k">cost_stone</td><td>Số tiền / ĐVT</td><td class="c req">✱</td><td>Cấu phần có sẵn, bắt buộc khi đang bật. Gợi ý từ giá nhập kho bình quân gần nhất của vật tư đá tương ứng. Cùng với <code>cost_aux</code>, hai cấu phần này thay cho cấu phần gộp <code>cost_material</code> của bộ cũ. <b>Đầu việc có dòng đá chi tiết</b> (<em>yêu cầu thay đổi 16/10/2026 · mục 4</em>): ô này của đầu việc khóa và bằng Σ (đơn giá đá của dòng chi tiết × tỉ lệ), làm tròn đến đồng (<em>chốt 17/10/2026</em>); đơn giá đá nhập ở từng dòng chi tiết. Gói có dòng chi tiết thì không tắt được cấu phần này.</td></tr>
-          <tr><td>Giá vốn vật tư phụ</td><td class="k">cost_aux</td><td>Số tiền / ĐVT</td><td class="c req">✱</td><td>Cấu phần có sẵn, bắt buộc khi đang bật. Vữa liên kết, keo, thép, inox, phụ kiện neo.</td></tr>
-          <tr><td>Giá vốn nhân công</td><td class="k">cost_labor</td><td>Số tiền / ĐVT</td><td class="c req">✱</td><td>Cấu phần có sẵn, bắt buộc khi đang bật. Gợi ý từ <b>bảng đơn giá chuẩn đang hiệu lực của vùng</b> công trình (<a href="PF-06.html">PF-06</a>), khớp theo mã việc — thay cho gợi ý cũ lấy bảng giá khoán tổ đội đã duyệt của dự án tương tự (<a href="2026-09-15/YC-02.html">YC-02</a>). Vùng chưa có bảng chuẩn đang hiệu lực, hoặc đầu việc không có trong bảng, thì quay về gợi ý theo giá khoán đã duyệt của dự án cùng vùng (<a href="PRJ-01.html">PRJ-01</a>).</td></tr>
-          <tr><td>Giá vốn vận chuyển</td><td class="k">cost_transport</td><td>Số tiền / ĐVT</td><td class="c">—</td><td>Cấu phần có sẵn. Vận chuyển từ nhà máy tới chân công trình và trung chuyển trong công trường.</td></tr>
-          <tr><td>Giá vốn chống thấm</td><td class="k">cost_waterproof</td><td>Số tiền / ĐVT</td><td class="c">—</td><td>Cấu phần có sẵn. Thường nhập cho dòng có <code>waterproof = Có</code> — cờ này chỉ là gợi ý, không bắt buộc: dòng không đánh dấu chống thấm vẫn nhập và lưu được đơn giá chống thấm (bỏ quy tắc chặn theo yêu cầu sửa 19/10/2026).</td></tr>
-          <tr><td>Giá vốn máy &amp; biện pháp</td><td class="k">cost_method</td><td>Số tiền</td><td class="c">—</td><td>Cấu phần có sẵn. Nạp tự động từ phiếu khảo sát <a href="BID-02.html">BID-02</a>, phân bổ theo dòng đã gắn.</td></tr>
-          <tr><td>Cấu phần riêng của gói</td><td class="k">cost_extra[]</td><td>Số tiền / ĐVT</td><td class="c">—</td><td>Một giá trị cho mỗi cấu phần tự khai đang bật, nhập tay trên từng dòng. Không có gợi ý — đây đúng là những khoản mỗi hợp đồng một khác.</td></tr>
-          <tr><td>Giá vốn dòng</td><td class="k">cost_total</td><td>Số tiền / ĐVT</td><td class="c">—</td><td>Máy chủ tính: tổng các cấu phần <b>đang bật</b>, cộng chi phí chung phân bổ. Cấu phần đang tắt không cộng vào.</td></tr>
-          <tr><td>Thành tiền giá vốn</td><td class="k">cost_amount</td><td>Số tiền</td><td class="c">—</td><td>Máy chủ tính: <code>cost_total × qty</code>. Chỉ đọc; là cột 14 của biểu mẫu <code>3.BOQ</code> và là số cộng vào <code>total_before_vat</code>.</td></tr>
-          <tr><td>Chi phí chung phân bổ</td><td class="k">cost_overhead_pct</td><td>Phần trăm</td><td class="c">—</td><td>Mặc định theo tham số công ty, cho sửa theo gói.</td></tr>
-          <tr><td>Thuế suất GTGT của gói</td><td class="k">vat_rate</td><td>Phần trăm</td><td class="c req">✱</td><td>Mặc định theo tham số công ty (biểu mẫu đang dùng 8%), sửa được theo gói. Nhận giá trị từ 0% đến 20%. <b>Một BOQ một thuế suất</b> — thuế suất thuộc về gói, không thuộc về dòng.</td></tr>
-          <tr><td>Nhóm dòng</td><td class="k">line_group</td><td>Danh mục</td><td class="c">—</td><td>Kế thừa từ <a href="BID-01.html">BID-01</a>, chỉ đọc ở bước áp giá: <code>hsmt</code> hoặc <code>extra</code>. Quyết định dòng nằm dưới dải tiêu đề nào và cộng vào tổng phụ nào.</td></tr>
-          <tr><td>Loại dòng · tỉ lệ ráp giá</td><td class="k">row_kind, ratio_pct</td><td>Kế thừa</td><td class="c">—</td><td><b>Mới (<em>yêu cầu thay đổi 16/10/2026 · mục 8, 4</em>).</b> Kế thừa từ <a href="BID-01.html">BID-01</a>, chỉ đọc. <code>header</code> — dòng đầu mục: không có ô giá, hiện tiểu cộng. <code>item</code> — đầu việc: nhập mọi cấu phần như trước. <code>detail</code> — dòng đá chi tiết: chỉ mở ô <em>Đơn giá · Đá</em>, các cấu phần khác hiện “—”; tỉ lệ hiện cạnh khối lượng.</td></tr>
-          <tr><td>Ghi chú cả bảng BOQ</td><td class="k">boq_note</td><td>Chuỗi dài</td><td class="c">—</td><td>Kế thừa từ <a href="BID-01.html">BID-01</a>, tối đa 8.000 ký tự, hiển thị ngay dưới bảng áp giá. BOQ đã chốt ở <a href="BID-02.html">BID-02</a> thì ô này chỉ đọc — năm nguyên tắc đo bóc trong đó là căn cứ nghiệm thu quyết toán.</td></tr>
-          <tr><td>Đơn giá chào</td><td class="k">price_offer</td><td>Số tiền / ĐVT</td><td class="c req">✱</td><td>Nhập tay hoặc sinh từ hệ số lợi nhuận. Luôn là bội của <code>offer_rounding</code> — làm tròn ngay khi rời ô, không giữ số lẻ phía sau (<a href="2026-09-25/YC-15.html">YC-15</a>).</td></tr>
-          <tr><td>Đơn giá chào trước làm tròn</td><td class="k">price_offer_raw</td><td>Số tiền / ĐVT</td><td class="c">—</td><td>Số máy chủ tính từ hệ số lợi nhuận trước khi làm tròn. Chỉ đọc, hiện khi mở phần diễn giải — để trả lời “vì sao đơn giá là <code>1.235.000</code> chứ không phải <code>1.234.216</code>” mà không phải tính lại.</td></tr>
-          <tr><td>Mức làm tròn đơn giá chào</td><td class="k">offer_rounding</td><td>Số</td><td class="c req">✱</td><td>Mặc định theo tham số công ty (<a href="PF-01.html">PF-01</a>), <b>1.000 đ</b>; gói sửa được mức của riêng mình. Nhận 1 · 100 · 1.000 · 10.000, giá trị 1 nghĩa là không làm tròn. Mức đã dùng đóng băng cùng phiên bản báo giá.</td></tr>
-          <tr><td>Hướng làm tròn</td><td class="k">offer_rounding_mode</td><td>Chọn 1</td><td class="c req">✱</td><td>Lên · Gần nhất · Xuống, mặc định <b>Lên</b>. Là tham số công ty, không đặt theo gói — hai gói làm tròn hai chiều thì không so được biên lợi nhuận giữa chúng. Chờ <a href="PL-C.html#Q-74">Q-74</a>.</td></tr>
-          <tr><td>Biên lợi nhuận dòng</td><td class="k">margin_pct</td><td>Phần trăm</td><td class="c">—</td><td>Tính tự động; tô đỏ khi dưới ngưỡng.</td></tr>
-          <tr><td>Ngưỡng biên tối thiểu</td><td class="k">min_margin</td><td>Phần trăm</td><td class="c req">✱</td><td>Do Ban lãnh đạo đặt cho từng gói; là điều kiện kích hoạt trình duyệt lại. Bắt buộc và phải <b>lớn hơn 0</b>: để ngưỡng 0% thì điều kiện <code>margin &lt; min_margin</code> không bao giờ đúng, tức quy tắc <em>Ngưỡng biên là chốt chặn</em> mất tác dụng hoàn toàn và gói gửi được ở bất kỳ mức giá nào.</td></tr>
-          <tr><td>Vòng báo giá</td><td class="k">round_no</td><td>Số</td><td class="c req">✱</td><td>Tăng mỗi lần gửi báo giá mới. <em>(12/11/2026)</em> Là số phiên bản bảng giá đã gửi, không phải số lần thương thảo — xem bảng <em>Tham số — lần thương thảo</em> bên dưới.</td></tr>
-          <tr><td>Phản hồi đối tác</td><td class="k">feedback</td><td>Chuỗi dài</td><td class="c">—</td><td>Ghi kèm ngày và người tiếp nhận. <em>(12/11/2026)</em> Chỉ ghi được trên vòng đang mở; vòng đã có vòng sau thì phản hồi của nó khóa, không ghi đè.</td></tr>
-          <tr><td>Tiến độ thi công theo gói thầu</td><td class="k">exec_start, exec_end, exec_days</td><td>Kế thừa</td><td class="c">—</td><td><b>Mới hiển thị ở đây (<a href="2026-09-15/YC-06.html">YC-06</a>).</b> Kế thừa từ <a href="BID-01.html">BID-01</a>, <b>chỉ đọc</b> ở bước áp giá, hiện ở đầu màn hình cùng bảo hành. Tiến độ ép là căn cứ của phụ trội nhân công và ca đêm; muốn đổi thì đổi ở hồ sơ gói thầu chứ không đổi trong một vòng báo giá.</td></tr>
-          <tr><td>Thời hạn bảo hành</td><td class="k">warranty_months, warranty_from</td><td>Kế thừa</td><td class="c">—</td><td><b>Mới hiển thị ở đây (<a href="2026-09-15/YC-06.html">YC-06</a>).</b> Kế thừa từ <a href="BID-01.html">BID-01</a>, chỉ đọc. Quyết định phần giá trị giữ lại nên phải nhìn thấy khi đặt giá; nạp thẳng vào hợp đồng ở <a href="BID-05.html">BID-05</a> và <b>không</b> chép lại vào <code>terms</code>.</td></tr>
-          <tr><td>Ghi chú gói thầu</td><td class="k">tender_note</td><td>Kế thừa</td><td class="c">—</td><td>Kế thừa từ <a href="BID-01.html">BID-01</a>, chỉ đọc, hiện trong khối điều kiện thực hiện ở đầu màn hình. Không lẫn với <code>boq_note</code> hiện ngay dưới bảng áp giá: một ô là lưu ý thương mại của gói thầu, một ô là nguyên tắc đo bóc của bản BOQ.</td></tr>
-          <tr><td>Điều kiện thương mại</td><td class="k">terms</td><td>Chuỗi</td><td class="c req">✱</td><td><b>Thu hẹp phạm vi (<a href="2026-09-15/YC-06.html">YC-06</a>).</b> Chỉ còn <b>tiến độ thanh toán</b> và <b>hiệu lực báo giá</b> — chuyển thẳng vào hợp đồng. Phần bảo hành đã tách khỏi ô này: thời hạn bảo hành là <code>warranty_months</code> + <code>warranty_from</code> của gói thầu và đi thẳng xuống <a href="BID-05.html">BID-05</a>. Chép lại số tháng bảo hành vào đây thì một điều kiện có hai nguồn, và cái nguồn dạng chuỗi không tính ra được <code>warranty_end_date</code>.</td></tr>
-          <tr><td colspan="5">Cấu phần giá vốn là <b>số nội bộ</b>: chúng chỉ sống trên màn hình áp giá và trong báo cáo lãi lỗ, không có mặt ở bảng tổng hợp giá trị đơn hàng và không có trong tệp báo giá gửi đối tác. Bộ cấu phần thuộc về phiên bản báo giá — đổi bộ cấu phần chỉ ảnh hưởng bản nháp của vòng kế tiếp, vòng đã gửi giữ nguyên bộ cột và số liệu tại thời điểm gửi.</td></tr>
+          <tr><td>Tệp báo giá</td><td class="k">files[] (quote_file)</td><td>Tệp</td><td class="c req">✱</td><td>PDF hoặc Excel đã gửi chủ đầu tư, lưu nguyên. Gửi lại báo giá mới thì tải thêm tệp vào lần 0 và Lưu lại — mỗi lần lưu là một dòng nhật ký, tệp cũ giữ nguyên.</td></tr>
+          <tr><td>Giá trị chào</td><td class="k">offer_value</td><td>Số tiền</td><td class="c req">✱</td><td>Tổng giá trị trong báo giá (sau VAT), số dương. Hiện ở hồ sơ gói và Bảng tổng hợp khi chưa có Giá trị HĐ.</td></tr>
+          <tr><td>Ghi chú</td><td class="k">note</td><td>Chuỗi dài</td><td class="c">—</td><td>Ví dụ “Báo giá v2 gửi 08/11, hiệu lực 30 ngày”.</td></tr>
+          <tr><td>Người lưu · thời điểm</td><td class="k">done_by, done_at</td><td>Hệ thống</td><td class="c">—</td><td>Ghi khi Lưu; gói sang <em>Đang thương thảo (lần 0)</em> ở lần lưu đầu.</td></tr>
         </tbody>
       </table>
     </div>
-
 
     <h4>Tham số — lần thương thảo</h4>
-    <p><em>(12/11/2026 · <a href="PL-C.html#Q-263">Q-263</a>, <a href="PL-C.html#Q-264">Q-264</a>, <a href="PL-C.html#Q-274">Q-274</a>)</em> Trạng thái gói trong bước 3: <code>Thương thảo – áp giá (lần 0)</code> từ lúc mở áp giá tới khi lưu lần thương thảo đầu tiên — trừ gói đang đàm phán lúc chuyển sang luồng mới, hiện <code>Đang thương thảo (lần 1)</code> dù chưa lưu lần nào (<a href="PL-C.html#Q-279">Q-279</a>); <code>Đang thương thảo (lần n)</code> với n là lần đã lưu gần nhất; <code>Thương thảo hoàn thành</code> sau khi bấm nút cùng tên. Nhãn trạng thái ghi ở <a href="PL-A.html">PL-A</a>.</p>
+    <p><em>(12/11/2026 · <a href="PL-C.html#Q-263">Q-263</a>, giữ nguyên trừ phần ghi chú 16/11/2026)</em></p>
     <div class="tw">
       <table>
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>Số lần thương thảo</td><td class="k">neg_no</td><td>Số</td><td class="c req">✱</td><td>Hệ thống đánh 1, 2, … theo gói, không sửa được. Lần 0 là áp giá, không có biên bản.</td></tr>
-          <tr><td>File thương thảo giá</td><td class="k">neg_file</td><td>Tệp</td><td class="c req">✱</td><td>PDF hoặc XLSX, lưu thành chứng từ của gói ở <a href="PF-05.html">PF-05</a>. Thiếu file thì không lưu được lần.</td></tr>
-          <tr><td>Tóm lược kết quả</td><td class="k">neg_summary</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Chủ đầu tư đồng ý, không đồng ý điểm nào, giá chốt bao nhiêu. Không để trống (<a href="PL-C.html#Q-288">Q-288</a>).</td></tr>
-          <tr><td>Hướng xử lý</td><td class="k">neg_direction</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Bước tiếp theo sau buổi thương thảo. Không để trống (<a href="PL-C.html#Q-288">Q-288</a>).</td></tr>
-          <tr><td>Kết quả thay đổi</td><td class="k">neg_outcome</td><td>Chọn 1</td><td class="c req">✱</td><td><code>3a</code> — chủ đầu tư chấp nhận thay đổi, áp ngay trong bước 3; <code>3b</code> — triển khai theo HSMT ban đầu, thay đổi để sau và làm bằng phụ lục HĐ Loại 02 (<a href="PL-C.html#Q-272">Q-272</a>).</td></tr>
-          <tr><td>Thay đổi để sau</td><td class="k">neg_deferred</td><td>Chuỗi dài</td><td class="c">—</td><td>Chỉ hiện khi chọn <code>3b</code>: những thay đổi chưa làm. Hiện lại khi lập phụ lục HĐ Loại 02 ở <a href="BID-05.html">BID-05</a>. <em>(13/11/2026 · <a href="PL-C.html#Q-301">Q-301</a>)</em> Sau khi ký, lần 3b chưa đưa vào phụ lục nào được nhắc ở khối Phụ lục HĐ của BID-05 cho tới khi vào một phụ lục Loại 02.</td></tr>
-          <tr><td>Vòng báo giá đi kèm</td><td class="k">quote_round_id</td><td>Tham chiếu</td><td class="c">—</td><td>Vòng báo giá đang hiệu lực lúc lưu lần. Hệ thống tự gắn, chỉ đọc.</td></tr>
-          <tr><td>Người lưu · thời điểm</td><td class="k">created_by, created_at</td><td>Bản ghi</td><td class="c">—</td><td>Hệ thống ghi. Sau khi lưu, cả lần khóa — không sửa, không xóa, không thay file.</td></tr>
+          <tr><td>Số lần thương thảo</td><td class="k">neg_no</td><td>Số</td><td class="c req">✱</td><td>Hệ thống đánh 1, 2, … theo gói, không sửa được.</td></tr>
+          <tr><td>File thương thảo giá</td><td class="k">neg_file</td><td>Tệp</td><td class="c req">✱</td><td>Biên bản PDF hoặc bảng giá Excel, lưu thành chứng từ của gói (<a href="PF-05.html">PF-05</a>).</td></tr>
+          <tr><td>Tóm lược kết quả</td><td class="k">neg_summary</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Chủ đầu tư đồng ý, không đồng ý điểm nào, giá chốt bao nhiêu (<a href="PL-C.html#Q-288">Q-288</a>).</td></tr>
+          <tr><td>Hướng xử lý</td><td class="k">neg_direction</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Bước tiếp theo sau buổi thương thảo (<a href="PL-C.html#Q-288">Q-288</a>).</td></tr>
+          <tr><td>Kết quả thay đổi</td><td class="k">neg_outcome</td><td>Chọn 1</td><td class="c req">✱</td><td><code>3a</code> — chủ đầu tư chấp nhận thay đổi ngay; <em>(16/11/2026)</em> thay đổi nằm trong tệp Excel của lần đó và đi vào tệp Tạo mã VTHH theo HĐ ở bước 5, P. TQT không sửa quy cách trên phần mềm nữa. <code>3b</code> — làm theo HSMT ban đầu, thay đổi để sau và làm bằng phụ lục HĐ Loại 02 (<a href="PL-C.html#Q-272">Q-272</a>).</td></tr>
+          <tr><td>Thay đổi để sau</td><td class="k">neg_deferred</td><td>Chuỗi dài</td><td class="c">—</td><td>Chỉ khi <code>3b</code>. Sau khi ký, lần 3b chưa vào phụ lục nào được nhắc ở khối Phụ lục HĐ của <a href="BID-05.html">BID-05</a> (<a href="PL-C.html#Q-301">Q-301</a>).</td></tr>
+          <tr><td>Người lưu · thời điểm</td><td class="k">created_by, created_at</td><td>Bản ghi</td><td class="c">—</td><td>Sau khi lưu, lần khóa — số lần, tóm lược, hướng xử lý, kết quả không sửa, lần không xóa. <em>(V2 · <a href="PL-C.html#Q-322">Q-322</a>)</em> Tệp của lần xóa và tải lại được, có lịch sử (hướng mặc định <a href="PL-C.html#Q-327">Q-327</a>). Ban lãnh đạo nhận thông báo mỗi lần.</td></tr>
           <tr><td>Đã báo P. TQT</td><td class="k">tqt_notified_at</td><td>Thời điểm</td><td class="c">—</td><td>Ghi khi bấm <em>Thông báo cho P.TQT nắm</em> trên một lần <code>3b</code>.</td></tr>
-          <tr><td>Đầu vào từ bước 2</td><td class="k">step2_inputs</td><td>Kế thừa</td><td class="c">—</td><td>Chỉ đọc. Khảo sát sơ bộ 2A và tình hình thi công 2C của Dự án (nhánh A), khảo sát hiện trạng 2B (nhánh B), ý kiến thẩm định HSMT của P. TQT — kèm nhãn “Tự động xác nhận quá hạn” nếu bước đó tự xác nhận và phần bổ sung trả lời muộn (<a href="PL-C.html#Q-262">Q-262</a>). Nguồn: <a href="BID-01.html">BID-01</a>, <a href="BID-02.html">BID-02</a>.</td></tr>
-          <tr><td>Quy cách vật tư</td><td class="k">spec, stone_type, thickness_mm…</td><td>Thuộc tính dòng BOQ</td><td class="c">—</td><td>P. TQT sửa trong bước 3 (<a href="PL-C.html#Q-264">Q-264</a>): quy cách kỹ thuật, chủng loại, kích thước — chiều dày và các cột kích thước của bảng đầu việc. Không sửa khối lượng, đơn giá hay cấu phần giá vốn. Mỗi lần sửa ghi người sửa, thời điểm, giá trị cũ và mới vào lịch sử thay đổi của gói.</td></tr>
-          <tr><td>Thông báo thương thảo hoàn thành</td><td class="k">neg_done_at, neg_done_by</td><td>Bản ghi</td><td class="c">—</td><td>Ghi khi bấm nút cùng tên; gói sang <code>Thương thảo hoàn thành</code>. Người nhận lấy từ danh sách phòng ban nhận thông báo của gói, sửa được trong hộp thoại gửi; Ban lãnh đạo và Dự án liên quan luôn nhận (<a href="PL-C.html#Q-273">Q-273</a>). <b>Từ 12/11/2026</b> mỗi phòng ban trong danh sách nhận qua <b>trưởng phòng</b> của phòng; phòng chưa có trưởng phòng đang hoạt động thì cả phòng nhận, hộp thoại ghi “Chưa có trưởng phòng – gửi cả phòng ({n} người)” (<a href="PL-C.html#Q-296">Q-296</a>, <a href="PL-C.html#Q-297">Q-297</a>).</td></tr>
+          <tr><td>Tệp bước Thẩm định</td><td class="k">step2_inputs</td><td>Kế thừa</td><td class="c">—</td><td>Chỉ đọc: tệp rà soát HSMT / BOQ cập nhật và ghi chú P. Đấu thầu lưu ở bước 2 (<a href="BID-02.html">BID-02</a>). <em>(V2)</em> Không còn phiếu P. TQT / Dự án, nhãn “Tự động xác nhận quá hạn” hay gửi bổ sung.</td></tr>
         </tbody>
       </table>
     </div>
 
-
-    <h4>Bộ cột bảng áp giá theo mẫu <code>3.BOQ</code></h4>
-    <p>Bảng áp giá dựng theo biểu mẫu <code>3.BOQ</code> của công ty — bản công ty lập để tính giá, mười lăm cột (<a href="2026-09-15/YC-05.html">YC-05</a>). Bảy cột đầu kế thừa nguyên từ bảng đầu việc ở <a href="BID-01.html">BID-01</a> và <b>chỉ đọc</b> từ bước này trở đi; tám cột sau là phần công ty dựng thêm. Bảng này khác <em>bảng tổng hợp giá trị đơn hàng</em> ở mục dưới: một bên là cơ cấu giá vốn nội bộ, một bên là chứng từ phát hành.</p>
+    <h4>Tham số — Đã chốt giá</h4>
     <div class="tw">
       <table>
-        <thead><tr><th style="width:56px">Cột</th><th style="width:22%">Tiêu đề</th><th style="width:20%">Mã</th><th>Quy tắc</th></tr></thead>
+        <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
-          <tr><td>1–7</td><td colspan="2">Kế thừa từ <a href="BID-01.html">BID-01</a> — mã hạng mục phí, nội dung công việc, quy cách kỹ thuật, yêu cầu khác, ĐVT, tổng khối lượng, ghi chú</td><td>Chỉ đọc trên bảng áp giá. Cột khối lượng khóa từ bước này trở đi; muốn đổi phải quay lại <a href="BID-02.html">BID-02</a> và chốt bản BOQ mới. <em>(12/11/2026 · <a href="PL-C.html#Q-264">Q-264</a>)</em> Riêng quy cách kỹ thuật (cột 3) cùng chủng loại đá và chiều dày do P. TQT sửa ở khung <em>Quy cách vật tư</em>, có lịch sử — không sửa ở bảng này.</td></tr>
-          <tr><td>8</td><td>Đơn giá · Đá</td><td class="k">cost_stone</td><td>Cấu phần giá vốn. Gợi ý từ giá nhập kho bình quân gần nhất của vật tư đá tương ứng. Là cột <b>duy nhất</b> mở ở dòng đá chi tiết; ở đầu việc có dòng chi tiết, ô này khóa và bằng Σ (đơn giá đá con × tỉ lệ), làm tròn đến đồng (<em>chốt 17/10/2026</em>) — xem quy tắc <em>Giá đá của đầu việc ghép từ dòng đá chi tiết</em>.</td></tr>
-          <tr><td>9</td><td>Đơn giá · Vật tư phụ</td><td class="k">cost_aux</td><td>Cấu phần giá vốn. Vữa liên kết, keo, thép, inox, phụ kiện neo.</td></tr>
-          <tr><td>10</td><td>Đơn giá · Nhân công</td><td class="k">cost_labor</td><td>Cấu phần giá vốn. Gợi ý từ bảng đơn giá chuẩn đang hiệu lực của vùng (<a href="PF-06.html">PF-06</a>); vùng chưa có bảng chuẩn đang hiệu lực, hoặc đầu việc không có trong bảng, thì quay về gợi ý theo giá khoán đã duyệt của dự án cùng vùng (<a href="PRJ-01.html">PRJ-01</a>).</td></tr>
-          <tr><td>11</td><td>Đơn giá · Vận chuyển</td><td class="k">cost_transport</td><td>Cấu phần giá vốn. Vận chuyển từ nhà máy tới chân công trình và trung chuyển trong công trường.</td></tr>
-          <tr><td>12</td><td>Đơn giá · Chống thấm</td><td class="k">cost_waterproof</td><td>Cấu phần giá vốn. Cờ <code>waterproof</code> của dòng chỉ gợi ý nơi cần nhập; dòng không chống thấm vẫn nhập được nếu cần.</td></tr>
-          <tr><td>13</td><td>Đơn giá · Tổng</td><td class="k">cost_total</td><td><b>Máy chủ tính:</b> tổng các cấu phần <b>đang bật</b> — năm cấu phần mặc định, cấu phần máy &amp; biện pháp và các cấu phần tự khai — cộng chi phí chung phân bổ. Chỉ đọc.</td></tr>
-          <tr><td>14</td><td>Thành tiền</td><td class="k">cost_amount</td><td><b>Máy chủ tính:</b> <code>cost_total × qty</code>. Chỉ đọc.</td></tr>
-          <tr><td>15</td><td>Ghi chú</td><td class="k">note</td><td>Kế thừa từ <a href="BID-01.html">BID-01</a>, sửa được ở bước áp giá. Ghi chú <b>cấp dòng</b> — không lẫn với <code>boq_note</code> của cả bảng.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Bộ cột này là mặc định, không phải giới hạn: cơ chế cột tự thêm và chọn vị trí chèn của bảng đầu việc (<code>boq_extra_columns[]</code>, <code>boq_hidden_columns[]</code> ở <a href="BID-01.html">BID-01</a>) giữ nguyên, và mỗi gói vẫn bật tắt được cấu phần giá vốn.</p>
-
-    <p><b>Nhóm dòng và chân bảng.</b> Bảng giữ hai nhóm dòng chuẩn của biểu mẫu và đóng lại bằng khối tổng cộng — thuế — sau thuế. Cả hai đều là cấu trúc chính thức, không phải dòng chữ người lập tự gõ.</p>
-    <div class="tw">
-      <table>
-        <thead><tr><th style="width:28%">Thành phần</th><th style="width:22%">Mã</th><th>Quy tắc</th></tr></thead>
-        <tbody>
-          <tr><td>Nhóm “CÔNG VIỆC THEO HSMT”</td><td class="k">line_group = hsmt</td><td>Kế thừa từ <a href="BID-01.html">BID-01</a>, chỉ đọc. Hiển thị như dải tiêu đề nhưng lưu trên từng dòng.</td></tr>
-          <tr><td>Nhóm “CÔNG VIỆC NHÀ THẦU ĐỀ XUẤT BỔ SUNG (NẾU CÓ)”</td><td class="k">line_group = extra</td><td>Kế thừa từ <a href="BID-01.html">BID-01</a>. Đây là phần công ty chủ động đề xuất thêm, tách hẳn với đầu việc bỏ sót của <a href="BID-02.html">BID-02</a> — thứ vẫn thuộc nhóm HSMT.</td></tr>
-          <tr><td>Tổng phụ theo nhóm</td><td class="k">—</td><td>Máy chủ tính: tổng cột <em>Thành tiền</em> của riêng từng nhóm, hiện ở chân mỗi nhóm. Chỉ cộng đầu việc (kể cả dòng hỗ trợ %); dòng đá chi tiết không cộng.</td></tr>
-          <tr><td>Tiểu cộng dòng đầu mục</td><td class="k">row_kind = header</td><td><b>Mới (<em>yêu cầu thay đổi 16/10/2026 · mục 8</em>).</b> Dòng đầu mục hiện ở cột <em>Thành tiền</em> tổng thành tiền của các đầu việc nằm dưới nó, tới dòng đầu mục kế tiếp hoặc hết bảng. Các dòng đầu mục đứng liền nhau dùng chung một đoạn: đoạn chạy tới dòng đầu mục kế tiếp đứng sau ít nhất một dòng không phải đầu mục (<em>chốt 17/10/2026</em>). Chỉ để đọc — không cộng vào tổng phụ nhóm hay tổng cộng, vì các đầu việc đó đã được cộng.</td></tr>
-          <tr><td>Tổng cộng trước thuế</td><td class="k">total_before_vat</td><td>Máy chủ tính: tổng cột <em>Thành tiền</em> của <b>cả hai nhóm</b>, bằng đúng tổng hai dòng tổng phụ. Chỉ đọc.</td></tr>
-          <tr><td>Thuế GTGT</td><td class="k">vat_rate, vat_amount</td><td><code>vat_rate</code> mặc định theo tham số công ty (biểu mẫu đang dùng 8%), sửa được theo gói, nhận từ 0% đến 20%. <code>vat_amount = total_before_vat × vat_rate</code>, máy chủ tính.</td></tr>
-          <tr><td>Tổng cộng sau thuế</td><td class="k">total_after_vat</td><td>Máy chủ tính: <code>total_before_vat + vat_amount</code>. Chỉ đọc.</td></tr>
-          <tr><td>Ghi chú cả bảng</td><td class="k">boq_note</td><td>Kế thừa từ <a href="BID-01.html">BID-01</a>, hiển thị dưới chân bảng. Đóng băng cùng bản BOQ từ lúc chốt.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="note">
-      <b>Bảng dựng theo mẫu 3.BOQ không phát hành ra ngoài</b>
-      <p style="margin:0">Cột <em>Tổng</em> và cột <em>Thành tiền</em> của biểu mẫu này là <b>giá vốn</b> — cơ cấu chi phí nội bộ — nên khối tổng cộng, thuế GTGT và tổng sau thuế ở chân bảng cũng là số nội bộ, dùng để đối chiếu với giá chào chứ không phải để gửi đi. Mọi thứ rời khỏi công ty vẫn đi qua <em>bảng tổng hợp giá trị đơn hàng</em> ở mục dưới và tệp báo giá xuất từ nó, nơi không có cấu phần giá vốn nào. Điều này đúng kể cả khi tiêu đề biểu mẫu ghi “BẢNG TIÊN LƯỢNG MỜI THẦU (BOQ)”; chính mâu thuẫn đó là điểm còn phải chốt — xem <a href="PL-C.html#Q-38">PL-C · Q-38</a> và <a href="2026-09-15/YC-05.html">YC-05</a>.</p>
-    </div>
-
-    <h4>Bảng tổng hợp giá trị đơn hàng</h4>
-    <p>Bảng áp giá ở trên là màn hình làm việc: giá vốn cạnh giá chào, biên lợi nhuận từng dòng. <b>Bảng tổng hợp giá trị đơn hàng</b> là cùng một vòng báo giá nhưng đọc như một chứng từ — đúng mẫu công ty đang phát hành kèm phiếu yêu cầu sản xuất. Đây là bản người duyệt soát trước khi gửi và là bản in ra ngoài.</p>
-    <p>Bảng chỉ đọc. Đơn giá lấy từ <code>price_offer</code>, thành tiền lấy từ <code>price_offer × khối lượng</code> do máy chủ tính, nên dòng tổng của chứng từ luôn bằng <code>total_offer</code> của vòng — không có đường nào để chứng từ hiện một con số khác với con số hệ thống sẽ gửi đi.</p>
-    <div class="tw">
-      <table>
-        <thead><tr><th style="width:56px">Cột</th><th style="width:28%">Tiêu đề</th><th>Nguồn</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>STT</td><td>Thứ tự dòng trong bảng</td></tr>
-          <tr><td>2</td><td>Hạng mục</td><td><code>boq_line.name</code></td></tr>
-          <tr><td>3</td><td>Mã liên kết thực xuất</td><td><code>material_code</code></td></tr>
-          <tr><td>4</td><td>Chủng loại đá / công tác gia công</td><td><code>stone_type</code></td></tr>
-          <tr><td>5</td><td>Tính chất bề mặt</td><td><code>surface</code></td></tr>
-          <tr><td>6</td><td>Chiều dày</td><td><code>thickness_mm</code></td></tr>
-          <tr><td>7</td><td>Sai số</td><td><code>tolerance</code></td></tr>
-          <tr><td>8</td><td>Quy cách đá</td><td><code>boq_line.spec</code></td></tr>
-          <tr><td>9</td><td>ĐVT</td><td><code>boq_line.unit</code></td></tr>
-          <tr><td>10</td><td>Khối lượng</td><td><code>quote_line.qty</code> — khóa, kế thừa từ BOQ cập nhật</td></tr>
-          <tr><td>11</td><td>TT chống thấm</td><td><code>waterproof</code></td></tr>
-          <tr><td>12</td><td>Đơn giá</td><td><code>price_offer</code></td></tr>
-          <tr><td>13</td><td>Thành tiền</td><td><code>price_offer × qty</code>, máy chủ tính</td></tr>
-          <tr><td>14</td><td>Ghi chú</td><td><code>boq_line.note</code></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Phía trên bảng là khối định danh — dự án, HĐ số, công trình, bên mời thầu, hạng mục, ngày gửi; phía dưới là dòng <b>TỔNG GIÁ TRỊ ĐƠN HÀNG</b> và khối ký <b>Phê duyệt</b> / <b>Tổng hợp</b>. Khi chưa có hợp đồng, ô HĐ số hiện “Chưa có HĐ” thay vì bỏ trống.</p>
-    <p><b>Ba loại dòng trên chứng từ</b> (<em>yêu cầu thay đổi 16/10/2026 · mục 8, 4</em>). Dòng đầu mục in thành dải tiêu đề, kèm tiểu cộng ở cột Thành tiền — các đầu mục đứng liền nhau in cùng một tiểu cộng, theo quy tắc <em>Dòng đầu mục có tiểu cộng, không có giá</em> (<em>chốt 17/10/2026</em>). Đầu việc in như trước, đơn giá là giá đã ghép. Dòng đá chi tiết <b>không in</b> trên bảng tổng hợp và tệp báo giá gửi đối tác — bên mời thầu đối chiếu và thanh toán theo đầu việc, còn cách ráp giá theo từng loại đá là cơ cấu giá của công ty (<a href="PL-C.html#Q-148">Q-148</a>). STT của chứng từ đánh số đầu việc.</p>
-
-    <h4>Xuất bản báo giá</h4>
-    <p>Bảng tổng hợp ở trên là bản xem trên màn hình; thứ gửi ra ngoài là một tệp. Hệ thống xuất hai định dạng từ <b>cùng một vòng báo giá</b>: <b>PDF</b> để in, ký và đính kèm email, và <b>Excel</b> để đối tác soát lại từng dòng. Hai tệp cùng bộ cột, cùng số, cùng mã phiên bản.</p>
-    <p>Tệp do <b>máy chủ dựng</b>, không lắp ráp từ những gì đang hiện trên màn hình — nên con số trên tệp luôn là con số hệ thống đang giữ cho vòng đó.</p>
-    <div class="tw">
-      <table>
-        <thead><tr><th style="width:22%">Hạng mục</th><th>Quy định</th></tr></thead>
-        <tbody>
-          <tr><td>Nguồn dữ liệu</td><td>Một vòng báo giá đã chọn. Vòng đã gửi xuất ra bản đã đóng băng; bản nháp cũng xuất được, nhưng ra tệp đóng dấu bản nháp.</td></tr>
-          <tr><td>Nội dung tệp</td><td>Khối định danh · bảng tổng hợp giá trị đơn hàng theo đúng bộ cột đang bật của gói · dòng <b>TỔNG GIÁ TRỊ ĐƠN HÀNG</b> · điều kiện thương mại — tiến độ thanh toán và hiệu lực báo giá lấy từ <code>terms</code>, thời hạn bảo hành kèm mốc tính lấy từ gói thầu (<a href="2026-09-15/YC-06.html">YC-06</a>) · khối ký <b>Phê duyệt</b> / <b>Tổng hợp</b>.</td></tr>
-          <tr><td>Không có trong tệp</td><td>Giá vốn và mọi cấu phần của nó, biên lợi nhuận, ngưỡng biên tối thiểu, ghi chú nội bộ — không phụ thuộc người bấm xuất là ai.</td></tr>
-          <tr><td>Bản nháp</td><td>Vòng chưa trình duyệt xong xuất ra tệp có dấu chìm <b>BẢN NHÁP — CHƯA TRÌNH DUYỆT</b> trên mọi trang, tên tệp thêm hậu tố <code>-nhap</code>, và không lưu thành chứng từ.</td></tr>
-          <tr><td>Tên tệp</td><td><code>BG_&lt;mã gói&gt;_v&lt;vòng&gt;_&lt;yyyymmdd&gt;</code> — ví dụ <code>BG_GT-2026-018_v3_20261218.pdf</code>.</td></tr>
-          <tr><td>Chân trang PDF</td><td>Mã gói · số vòng · ngày giờ xuất · người xuất · số trang. Nhờ vậy một bản in nằm trên bàn họp vẫn truy được về đúng vòng nào.</td></tr>
-          <tr><td>Tệp Excel</td><td>Cùng bảng, nhưng ô số là <b>số thật</b> chứ không phải chuỗi đã định dạng, và dòng tổng là công thức cộng — để đối tác kiểm lại được ngay trên tệp. Công thức cộng chỉ lấy ô thành tiền của đầu việc; ô tiểu cộng của dòng đầu mục là công thức riêng của đoạn bên dưới nó — các đầu mục liền nhau trỏ cùng một đoạn — và không nằm trong phép cộng tổng.</td></tr>
-          <tr><td>Lưu trữ</td><td><b>Lần xuất đầu tiên</b> từ vòng đã trình duyệt lưu tệp thành chứng từ của gói thầu ở <a href="PF-05.html">PF-05</a>, gắn vào đúng vòng và đúng định dạng đó; <b>những lần xuất sau</b> của cùng vòng, cùng định dạng trả về đúng chứng từ ấy chứ không dựng tệp mới. Nhờ vậy bản công ty lưu và bản đối tác đang cầm luôn là một — đúng như quy tắc <em>Tệp của vòng đã gửi không dựng lại</em> đòi hỏi.</td></tr>
-          <tr><td>Nhật ký</td><td>Ghi ai xuất, lúc nào, vòng nào, định dạng gì; hiện lại trên dòng thời gian thương thảo.</td></tr>
-          <tr><td>Quyền</td><td>Theo quyền của màn hình áp giá — Ban lãnh đạo · P. Kế toán · P. Đấu thầu (<a href="PL-B.html">PL-B</a>).</td></tr>
+          <tr><td>Giá trị HĐ</td><td class="k">agreed_value</td><td>Số tiền</td><td class="c req">✱</td><td>Giá trị đã chốt với chủ đầu tư (sau VAT), số dương. Điền sẵn vào ô Giá trị HĐ ở bước 4, sửa được tới lúc Chốt HĐ (<a href="BID-05.html">BID-05</a>).</td></tr>
+          <tr><td><s>Tệp BOQ chốt</s></td><td class="k">files[] (boq_file)</td><td>Tệp</td><td class="c">—</td><td><em>(17/11/2026)</em> Hộp thoại Đã chốt giá <b>không còn ô tệp BOQ chốt</b>. BOQ đã chốt chỉ tải một lần, ở bước 5 · Tạo mã VTHH theo HĐ (<a href="BID-05.html">BID-05</a>) — đó là tệp được đọc. Tệp <code>boq_file</code> đã tải trước 17/11/2026 giữ nguyên, xem ở “Tất cả tệp (n)”. <em>Trước: Excel đã chốt, lưu nguyên, không bắt buộc.</em></td></tr>
+          <tr><td>Ghi chú</td><td class="k">note</td><td>Chuỗi dài</td><td class="c">—</td><td>—</td></tr>
+          <tr><td>Người nhận thông báo</td><td class="k">recipients</td><td>Danh sách</td><td class="c">—</td><td>Lưu xong mở hộp “Thông báo thương thảo hoàn thành”: DS phòng ban của gói (trưởng phòng — <a href="PL-C.html#Q-296">Q-296</a>, <a href="PL-C.html#Q-297">Q-297</a>), BLĐ, Dự án liên quan; sửa được cho lần gửi (<a href="PL-C.html#Q-273">Q-273</a>).</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Bảng áp giá hiển thị đồng thời giá vốn, giá chào và biên lợi nhuận từng dòng, cùng dòng tổng ở chân bảng.</li>
-      <li>Bộ cột giá vốn khai được theo từng gói thầu — bật, tắt, hoặc thêm cấu phần riêng — và giá vốn dòng luôn bằng tổng các cấu phần đang bật.</li>
-      <li>Sửa hệ số lợi nhuận ở dòng tổng cập nhật toàn bộ các dòng chi tiết chưa bị khóa tay.</li>
-      <li>Mỗi lần gửi báo giá tạo một phiên bản BOQ báo giá mới, kèm ngày gửi và người gửi.</li>
-      <li>Giảm giá làm biên lợi nhuận rơi dưới ngưỡng tối thiểu thì nút “Gửi đối tác” bị khóa cho tới khi có phê duyệt mới.</li>
-      <li>Lịch sử đàm phán hiển thị dạng dòng thời gian: gửi v1 → phản hồi → gửi v2 → thương thảo hoàn thành, kèm chênh lệch giá trị từng vòng; các lần thương thảo đã khóa hiện xen đúng thời điểm của chúng <em>(12/11/2026)</em>.</li>
-      <li>Mở được bảng tổng hợp giá trị đơn hàng theo mẫu công ty, đủ 14 cột kèm khối ký duyệt, mà không rời màn hình áp giá.</li>
-      <li>Xuất được bản báo giá thành tệp PDF và tệp Excel từ cùng một vòng, theo mẫu công ty, đủ điều kiện thương mại, có mã phiên bản ở chân trang và được lưu thành chứng từ của gói.</li>
-      <li>Mỗi vòng báo giá hiện rõ đang ở bước nào trong dải bước của nó, và ngay dưới bảng áp giá là đúng một hành động mà bước đó cho phép.</li>
-      <li>Khi vòng đã gửi, ba cách đi tiếp — <em>Thêm lần thương thảo</em>, <em>Thông báo thương thảo hoàn thành</em>, <em>Trượt thầu</em> — nằm cùng một chỗ, mỗi cách in sẵn hệ quả của nó <em>(12/11/2026 · thay “chốt giá / đàm phán tiếp / trượt thầu”)</em>.</li>
-      <li>Khi bấm <em>Thông báo thương thảo hoàn thành</em>, toàn bộ bảng giá của vòng đang hiệu lực được đóng băng và trở thành BOQ hợp đồng ở <a href="BID-05.html">BID-05</a>; gói mang trạng thái <code>Thương thảo hoàn thành</code> <em>(12/11/2026 · trước đây “Chốt giá”)</em>.</li>
-      <li>Bảng áp giá mở ra với đúng mười lăm cột của biểu mẫu <code>3.BOQ</code>: bảy cột đầu kế thừa từ <a href="BID-01.html">BID-01</a> và chỉ đọc trên bảng áp giá (quy cách do P. TQT sửa ở khung riêng), năm cột đơn giá cấu phần nhập được, cột <em>Tổng</em> và cột <em>Thành tiền</em> do máy chủ tính.</li>
-      <li>Chân bảng luôn có tổng phụ từng nhóm dòng, tổng cộng trước thuế, thuế GTGT theo thuế suất của gói và tổng cộng sau thuế; đổi thuế suất thì tổng sau thuế tính lại ngay còn tổng trước thuế không đổi.</li>
-      <li>Ô ghi chú cả bảng kế thừa từ <a href="BID-01.html">BID-01</a> hiển thị ngay dưới bảng áp giá, và chỉ đọc khi bản BOQ đã chốt.</li>
-      <li>Bảng dựng theo mẫu <code>3.BOQ</code> không có đường xuất ra ngoài: mọi tệp gửi đối tác vẫn đi qua bảng tổng hợp giá trị đơn hàng, nơi không có cấu phần giá vốn nào.</li>
-      <li>Đầu việc có dòng đá chi tiết: mỗi dòng chi tiết chỉ mở ô đơn giá đá; ô đơn giá đá của đầu việc khóa và đổi ngay khi sửa giá một dòng chi tiết; các cấu phần khác nhập ở đầu việc như mọi dòng (<em>yêu cầu thay đổi 16/10/2026 · mục 4</em>).</li>
-      <li>Dòng đầu mục hiện tiểu cộng thành tiền của các đầu việc bên dưới; tổng phụ nhóm, tổng cộng và tệp báo giá không cộng dòng đầu mục hay dòng chi tiết lần thứ hai (<em>mục 8, 4</em>).</li>
-      <li>Đầu màn hình áp giá hiện khối <b>Điều kiện thực hiện của gói thầu</b> — tiến độ thi công và thời hạn bảo hành kèm mốc tính — ở chế độ chỉ đọc, không phải mở lại hồ sơ gói.</li>
-      <li>Ô điều kiện thương mại chỉ còn tiến độ thanh toán và hiệu lực báo giá; tệp báo giá xuất ra in thời hạn bảo hành lấy từ gói thầu chứ không lấy từ chuỗi <code>terms</code>.</li>
-      <li>Gói thầu chưa khai tiến độ thì vẫn áp giá được, nhưng màn hình hiện cảnh báo nêu rõ đang thiếu một căn cứ đặt giá và dẫn về <a href="BID-01.html">BID-01</a>.</li>
-      <li>Trạng thái gói trong bước 3 đọc đúng một trong ba nhãn <code>Thương thảo – áp giá (lần 0)</code> · <code>Đang thương thảo (lần n)</code> · <code>Thương thảo hoàn thành</code> <em>(12/11/2026 · <a href="PL-C.html#Q-274">Q-274</a>)</em>.</li>
-      <li>Không lưu được một lần thương thảo thiếu file, tóm lược kết quả, hướng xử lý hoặc kết quả 3a/3b; lần đã lưu không sửa, không xóa được <em>(<a href="PL-C.html#Q-263">Q-263</a>)</em>.</li>
-      <li>Mỗi lần thương thảo vừa lưu sinh đúng một thông báo cho Ban lãnh đạo; Ban lãnh đạo mở được mọi lần của gói.</li>
-      <li>Khối <b>Đầu vào từ bước 2</b> hiện chỉ đọc khảo sát 2A/2B, tình hình thi công 2C và ý kiến thẩm định HSMT của P. TQT ngay trên màn hình thương thảo.</li>
-      <li>P. TQT sửa được quy cách, chủng loại, kích thước của dòng BOQ trong bước 3, không chạm tới khối lượng hay giá; mỗi lần sửa có trong lịch sử thay đổi <em>(<a href="PL-C.html#Q-264">Q-264</a>)</em>.</li>
-      <li>Lần thương thảo kết quả 3b có nút <em>Thông báo cho P.TQT nắm</em>; thay đổi để sau của lần đó hiện lại khi lập phụ lục HĐ Loại 02 <em>(<a href="PL-C.html#Q-272">Q-272</a>)</em>.</li>
-      <li><em>Thông báo thương thảo hoàn thành</em> chuyển gói sang <code>Thương thảo hoàn thành</code> và gửi thông báo tới trưởng phòng của các phòng ban trong danh sách phòng ban của gói — phòng chưa có trưởng phòng thì cả phòng —, qua hộp thoại chọn người nhận (<a href="PL-C.html#Q-296">Q-296</a>).</li>
+      <li>Gói <em>Đã thẩm định</em> mở được thẻ bước 3 ngay; lưu lần 0 với tệp báo giá và giá trị chào thì gói sang <em>Đang thương thảo (lần 0)</em>; tệp báo giá mở được từ ô Tiến độ của Bảng tổng hợp.</li>
+      <li>Mỗi lần thương thảo lưu đủ tệp, tóm lược, hướng xử lý, kết quả thì khóa; Ban lãnh đạo nhận đúng một thông báo; trạng thái gói hiện số lần mới nhất.</li>
+      <li>Lưu Đã chốt giá với Giá trị HĐ thì gói sang <em>Thương thảo hoàn thành</em>, cột Giá trị HĐ hiện giá trị chốt, bước 4 mở; DS phòng ban nhận thông báo.</li>
+      <li>Không có màn hình nào để nhập đơn giá, giá vốn, biên lợi nhuận hay xuất báo giá từ phần mềm.</li>
     </ol>
 
-    <h4>Mockup UI — Đấu thầu › Áp giá &amp; thương thảo</h4>
+    <h4>Mockup UI — Đấu thầu › Hồ sơ gói › thẻ bước 3</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">GT-2026-018 ›</span><b>Áp giá — BOQ báo giá v3</b><span class="sp"></span><span class="tag t-warn">Đang thương thảo (lần 2)</span><span class="wf-btn"><span class="pin">6</span> Cấu phần giá vốn</span><span class="wf-btn"><span class="pin">5</span> Xuất bản báo giá</span></div>
+      <div class="wf-bar"><span class="wf-crumb">KH_0112 › Bước 3 ›</span><b>Thương thảo</b><span class="sp"></span><span class="wf-btn"><span class="pin">2</span> Thêm lần thương thảo</span><span class="wf-btn pri"><span class="pin">4</span> Đã chốt giá</span></div>
       <div class="wf-body">
-        <div class="wf-kpi">
-          <div><dt>Tổng giá vốn</dt><dd>21,4 tỷ</dd></div>
-          <div><dt>Tổng giá chào</dt><dd>28,5 tỷ</dd></div>
-          <div><dt>Biên lợi nhuận</dt><dd>24,9%</dd></div>
-          <div><dt>Ngưỡng tối thiểu</dt><dd>18,0%</dd></div>
-          <div><dt>Chênh so với v2</dt><dd>−2,4%</dd></div>
-        </div>
         <div class="wf-sec">
-          <div class="wf-lg">Điều kiện thực hiện của gói thầu <span style="color:var(--ink-3);font-weight:400;letter-spacing:0;text-transform:none">· chỉ đọc · nguồn <a href="BID-01.html">BID-01</a></span></div>
-          <div class="wf-row"><div class="wf-c"><div class="wf-f"><label>Tiến độ thi công</label><div class="in ro">01/09/2026 → 30/08/2027 · 363 ngày</div></div></div>
-          <div class="wf-c"><div class="wf-f"><label>Thời hạn bảo hành</label><div class="in ro">12 tháng · từ ngày bàn giao đưa vào sử dụng</div></div></div></div>
-          <p style="margin:7px 0 0;font-size:11.5px;color:var(--ink-3)">Hai điều kiện này đều cấu thành giá: tiến độ ép sinh phụ trội nhân công và ca đêm, bảo hành quyết định phần giá trị giữ lại. Chứng chỉ xây dựng không còn hiện ở đây — thuộc hồ sơ pháp lý công ty (chốt <a href="PL-C.html#Q-141">Q-141</a>). Chúng nằm ở đây để người đặt giá không phải mở lại hồ sơ gói; sửa thì sửa ở <a href="BID-01.html">BID-01</a>.</p>
-        </div>
-        <div class="wf-sec">
-          <div class="wf-lg"><span class="pin">1</span> Bảng áp giá theo dòng BOQ <span class="pin">2</span></div>
-          <table><thead><tr><th>Mã HM</th><th>Đầu việc</th><th class="num">KL</th><th class="num">Đá</th><th class="num">VT phụ</th><th class="num">Nhân công</th><th class="num">V.chuyển</th><th class="num">C.thấm</th><th class="num">Máy · BP</th><th class="num">Giá vốn</th><th class="num">Giá chào</th><th class="num">Biên</th></tr></thead>
-          <tbody>
-            <tr><td colspan="12"><b>CÔNG VIỆC THEO HSMT</b> — <code>line_group = hsmt</code> · 40 dòng</td></tr>
-            <tr><td>HM-01</td><td>Ốp lát mặt đứng tháp A</td><td class="num">8.980</td><td class="num">1.020.000</td><td class="num">100.000</td><td class="num">420.000</td><td class="num">40.000</td><td class="num">20.000</td><td class="num">107.000</td><td class="num">1.707.000</td><td class="num">2.280.000</td><td class="num">25,1%</td></tr>
-            <tr><td>HM-02</td><td>Lát sàn sảnh marble</td><td class="num">1.260</td><td class="num">1.220.000</td><td class="num">160.000</td><td class="num">380.000</td><td class="num">40.000</td><td class="num">0</td><td class="num">0</td><td class="num">1.800.000</td><td class="num">2.150.000</td><td class="num">16,3%</td></tr>
-            <tr><td>HM-04</td><td>Gia công đá cong bo góc</td><td class="num">180</td><td class="num">2.330.000</td><td class="num">120.000</td><td class="num">900.000</td><td class="num">150.000</td><td class="num">0</td><td class="num">0</td><td class="num">3.500.000</td><td class="num">4.100.000</td><td class="num">14,6%</td></tr>
-            <tr><td colspan="9"><b>Tổng phụ — Công việc theo HSMT</b> · 40 dòng</td><td class="num">20,85 tỷ</td><td class="num">27,80 tỷ</td><td class="num">25,0%</td></tr>
-            <tr><td colspan="12"><b>CÔNG VIỆC NHÀ THẦU ĐỀ XUẤT BỔ SUNG (NẾU CÓ)</b> — <code>line_group = extra</code> · 2 dòng</td></tr>
-            <tr><td>HM-41</td><td>Phụ trội trung chuyển trong công trường tháp B</td><td class="num">7.980</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">68.000</td><td class="num">0</td><td class="num">0</td><td class="num">68.000</td><td class="num">86.000</td><td class="num">20,9%</td></tr>
-            <tr><td colspan="9"><b>Tổng phụ — Nhà thầu đề xuất bổ sung</b> · 2 dòng</td><td class="num">0,55 tỷ</td><td class="num">0,70 tỷ</td><td class="num">21,4%</td></tr>
-            <tr><td colspan="9"><b>TỔNG CỘNG TRƯỚC THUẾ</b></td><td class="num">21,40 tỷ</td><td class="num">28,50 tỷ</td><td class="num">24,9%</td></tr>
-            <tr><td colspan="9"><b>THUẾ GTGT 8%</b> — <code>vat_rate</code> của gói, sửa được</td><td class="num">1,71 tỷ</td><td class="num">2,28 tỷ</td><td class="num">—</td></tr>
-            <tr><td colspan="9"><b>TỔNG CỘNG SAU THUẾ</b></td><td class="num">23,11 tỷ</td><td class="num">30,78 tỷ</td><td class="num">—</td></tr>
-          </tbody></table>
-          <p style="margin:7px 0 0;font-size:11.5px;color:var(--crit)">2 dòng có biên dưới ngưỡng 18% — cần giải trình khi trình duyệt.</p>
-          <p style="margin:5px 0 0;font-size:11.5px;color:var(--ink-3)">Gói này đang bật năm cấu phần mặc định của mẫu <code>3.BOQ</code> — đá · vật tư phụ · nhân công · vận chuyển · chống thấm — cộng cấu phần máy &amp; BP khó do phiếu khảo sát <a href="BID-02.html">BID-02</a> chuyển sang. Cấu phần khai thêm “lắp đặt” đang tắt nên không hiện cột và không cộng vào giá vốn. Dòng HM-02 không chống thấm nên cột chống thấm để 0, không để trống.</p>
-          <p style="margin:5px 0 0;font-size:11.5px;color:var(--ink-3)">Hai dải nhóm và năm dòng chân bảng do hệ thống tính, không nằm trong dữ liệu dòng. Cột giá chào ở chân bảng là số đối chiếu nội bộ: khối tổng cộng — thuế — sau thuế của bảng này là <b>giá vốn</b>, không phải bảng gửi ra ngoài (<a href="PL-C.html#Q-38">PL-C · Q-38</a>).</p>
-        </div>
-        <div class="wf-sec">
-          <div class="wf-lg"><span class="pin">4</span> Đi tiếp từ vòng báo giá — vòng 3</div>
-          <div class="wf-steps">
-            <div class="done"><b>Áp giá</b>28,5 tỷ · 24,9%</div>
-            <div class="done"><b>Duyệt giá</b>16/12</div>
-            <div class="done"><b>Gửi đối tác</b>18/12</div>
-            <div class="cur"><b>Phản hồi</b>Chờ đối tác</div>
-            <div><b>Thương thảo</b>Lần 2 đã khóa</div>
+          <div class="wf-lg"><span class="pin">1</span> Lần 0 · báo giá</div>
+          <div class="wf-row">
+            <div class="wf-c"><div class="wf-f"><label>Tệp báo giá ✱</label><div class="in">BG_KH0112_v2.pdf · BG_KH0112_v2.xlsx</div></div></div>
+            <div class="wf-c"><div class="wf-f"><label>Giá trị chào ✱</label><div class="in">5.020.000.000</div></div></div>
           </div>
-          <div class="wf-chips" style="margin:9px 0 0"><span class="wf-btn pri">Thông báo thương thảo hoàn thành</span><span class="wf-btn">Thêm lần thương thảo</span><span class="wf-btn dgr">Trượt thầu</span></div>
-          <p style="margin:5px 0 0;font-size:11.5px;color:var(--ink-3)">Mỗi nút in sẵn hệ quả của nó <em>(12/11/2026)</em>: thông báo thương thảo hoàn thành đóng băng bảng, báo DS phòng ban và mở <a href="BID-05.html">BID-05</a>; thêm lần thương thảo mở biên bản lần 3 ở khung <span class="pin">7</span> — đổi giá thì sinh bản nháp vòng 4 và giữ nguyên giá vốn đã dựng; trượt thầu chuyển gói sang <a href="BID-04.html">BID-04</a>. Cả ba đều phải ghi phản hồi đối tác trước khi thực hiện.</p>
+          <span class="wf-btn pri">Lưu</span> <span class="wf-crumb">Đã lưu 05/11/2026</span>
         </div>
-        <div class="wf-row">
-          <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">3</span> Lịch sử thương thảo</div>
-            <div class="wf-steps">
-              <div class="done"><b>v1 · 10/11</b>Chào 30,2 tỷ<br>Đối tác đề nghị giảm 6%</div>
-              <div class="done"><b>v2 · 02/12</b>Chào 29,2 tỷ<br>Bổ sung hạng mục lan can</div>
-              <div class="cur"><b>v3 · 18/12</b>Chào 28,5 tỷ<br>Chờ phản hồi · đang xử lý</div>
-              <div class="done"><b>Lần 2 · 20/12</b>3a · đổi đá sảnh<br>Đã khóa · đã báo BLĐ</div>
-            </div>
-          </div></div>
-          <div class="wf-c" style="flex:0 1 250px"><div class="wf-sec">
-            <div class="wf-lg">Điều kiện thương mại</div>
-            <div class="wf-f"><label>Tiến độ thanh toán</label><div class="in">Tạm ứng 10% · nghiệm thu theo đợt</div></div>
-            <div class="wf-f"><label>Hiệu lực báo giá</label><div class="in">30 ngày</div></div>
-            <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Ô này không còn phần bảo hành: thời hạn bảo hành lấy từ khối điều kiện thực hiện ở đầu màn hình và nạp thẳng vào hợp đồng.</p>
-          </div></div>
-        </div>
-      </div>
-    </div>
-    <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">GT-2026-041 ›</span><b>Thương thảo</b><span class="sp"></span><span class="tag t-warn">Đang thương thảo (lần 2)</span></div>
-      <div class="wf-body">
-        <div class="wf-row">
-          <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">7</span> Thêm lần thương thảo 3</div>
-            <div class="wf-f"><label>File thương thảo giá ✱</label><div class="in">Kéo thả file PDF / XLSX</div></div>
-            <div class="wf-f"><label>Tóm lược kết quả ✱</label><div class="in">CĐT đồng ý / không đồng ý điểm nào, giá chốt bao nhiêu…</div></div>
-            <div class="wf-f"><label>Hướng xử lý ✱</label><div class="in">Bước tiếp theo</div></div>
-            <div class="wf-f"><label>Phản hồi của CĐT về thay đổi ✱</label><div class="in">◉ 3a · Chấp nhận thay đổi   ○ 3b · Theo HSMT ban đầu — thay đổi để sau, làm bằng phụ lục HĐ</div></div>
-            <div class="wf-chips"><span class="wf-btn pri">Lưu lần 3 · báo Ban lãnh đạo</span></div>
-            <table><thead><tr><th>Lần</th><th>Kết quả</th><th>Tóm lược · hướng xử lý</th><th>Người lưu</th></tr></thead>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">3</span> Lần thương thảo — đã khóa</div>
+          <table>
+            <thead><tr><th>Lần</th><th>Tệp</th><th>Tóm lược</th><th>Hướng xử lý</th><th>Kết quả</th></tr></thead>
             <tbody>
-              <tr><td>Lần 2 <span class="tag t-ok">Đã khóa</span></td><td>3a</td><td>CĐT đồng ý đổi đá sảnh sang Kim Sa trung, giảm 3,5% tổng giá · chờ CĐT gửi biên bản chốt. <code>TT-lan2.xlsx</code></td><td>Phạm Lan · 10/11 15:40</td></tr>
-              <tr><td>Lần 1 <span class="tag t-ok">Đã khóa</span></td><td>3b <span class="tag t-warn">Đã báo P.TQT</span></td><td>CĐT giữ quy cách HSMT, yêu cầu giảm giá · báo TQT nắm, chào lại giá. <code>TT-lan1.pdf</code></td><td>Phạm Lan · 05/11 09:10</td></tr>
-            </tbody></table>
-          </div></div>
-          <div class="wf-c"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">8</span> Đầu vào từ bước 2 · chỉ đọc</div>
-            <div class="wf-f"><label>2A · Khảo sát sơ bộ (Dự án)</label><div class="in ro">Mặt bằng hẹp, vận chuyển đá bằng vận thăng, thêm 2 ca/ngày.</div></div>
-            <div class="wf-f"><label>2C · Tình hình thi công (Dự án)</label><div class="in ro">Đã thi công 30% phần thô sảnh, chưa có khó khăn mới.</div></div>
-            <div class="wf-f"><label>Thẩm định HSMT (P. TQT)</label><div class="in ro">HSMT đúng; lưu ý độ dày mặt bậc 20 mm.</div></div>
-            <div class="wf-lg"><span class="pin">9</span> Quy cách vật tư <span class="tag t-warn">P. TQT sửa 3 dòng</span></div>
-            <div class="wf-chips"><span class="wf-btn">Xem / sửa quy cách</span><span class="wf-btn">Lịch sử thay đổi</span></div>
-            <div class="wf-lg"><span class="pin">10</span> Thông báo</div>
-            <div class="wf-chips"><span class="wf-btn">Thông báo cho P.TQT nắm</span><span class="wf-btn pri">Thông báo thương thảo hoàn thành</span></div>
-          </div></div>
+              <tr><td>2</td><td>TT-lan2.pdf</td><td>CĐT đồng ý đổi đá sảnh, giảm 3,5%</td><td>Chốt giá</td><td>3a</td></tr>
+              <tr><td>1</td><td>TT-lan1.pdf</td><td>Giữ đá thang theo HSMT</td><td>Để sau, làm PL 02</td><td>3b · Đã báo P.TQT</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="wf-sec">
+          <div class="wf-lg"><span class="pin">5</span> Tệp bước Thẩm định</div>
+          <div class="wf-f"><div class="in ro">RaSoat_HSMT_KH0112.docx · BOQ_capnhat_KH0112.xlsx · “HSMT thiếu chiều dày bậc cầu thang”</div></div>
         </div>
       </div>
     </div>
@@ -497,107 +232,59 @@
       <table>
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
-          <tr><td class="c"><span class="pin">1</span></td><td>Dựng giá vốn</td><td>Các cấu phần đang bật nhập tay hoặc lấy gợi ý; cấu phần “máy · biện pháp khó” nạp sẵn từ phiếu khảo sát.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Đặt giá chào &amp; xem biên</td><td>Nhập giá chào hoặc nhập hệ số lợi nhuận. Dòng dưới ngưỡng tự tô đỏ và đếm ở chân bảng.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Ghi nhận vòng đàm phán</td><td>Mỗi vòng lưu giá trị chào, phản hồi đối tác và người tiếp nhận; sinh phiên bản BOQ báo giá. Dòng thời gian đánh dấu riêng vòng <b>đang xử lý</b> và vòng <b>giá chốt</b> — vòng đang hiệu lực khi thương thảo hoàn thành — và hiện xen các lần thương thảo đã khóa <em>(12/11/2026)</em>. Chỉ đọc — mọi thao tác kết thúc vòng nằm ở ô <span class="pin">4</span>.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Đi tiếp từ vòng báo giá</td><td>Dải bước của vòng đang mở — áp giá → duyệt giá → gửi đối tác → phản hồi → thương thảo — kèm đúng một hành động của bước hiện tại. Trình duyệt đi qua <a href="PF-03.html">PF-03</a> hai cấp; duyệt xong mới mở nút gửi kèm tệp báo giá cho đối tác. Khi vòng đã gửi, ba cách đi tiếp hiện cạnh nhau <em>(12/11/2026)</em>: <em>Thông báo thương thảo hoàn thành</em> dẫn sang <a href="BID-05.html">BID-05</a>, <em>Thêm lần thương thảo</em> mở khung <span class="pin">7</span>, <em>Trượt thầu</em> dẫn sang <a href="BID-04.html">BID-04</a> (<a href="PL-C.html#Q-277">Q-277</a>).</td></tr>
-          <tr><td class="c"><span class="pin">5</span></td><td>Xuất bản báo giá</td><td>Chọn vòng và định dạng (PDF · Excel). Máy chủ dựng tệp theo mẫu công ty, đủ bảng giá và điều kiện thương mại, có mã phiên bản ở chân trang, rồi lưu thành chứng từ của gói ở <a href="PF-05.html">PF-05</a>.</td></tr>
-          <tr><td class="c"><span class="pin">6</span></td><td>Chọn cấu phần giá vốn</td><td>Bật/tắt năm cấu phần mặc định của mẫu <code>3.BOQ</code>, cấu phần máy &amp; biện pháp, và khai thêm cấu phần riêng cho gói. Chỉ tắt được cấu phần chưa có số liệu; cột trên bảng áp giá đổi theo ngay.</td></tr>
-          <tr><td class="c"><span class="pin">7</span></td><td>Lần thương thảo</td><td><em>(12/11/2026 · <a href="PL-C.html#Q-263">Q-263</a>)</em> P. Đấu thầu nhập file, tóm lược kết quả, hướng xử lý và chọn 3a/3b — bốn ô bắt buộc. <em>Lưu lần n</em> khóa biên bản, đưa gói sang <code>Đang thương thảo (lần n)</code> và báo Ban lãnh đạo. Danh sách bên dưới hiện mọi lần đã khóa, mới nhất trên cùng; Ban lãnh đạo mở được từng lần và tải file.</td></tr>
-          <tr><td class="c"><span class="pin">8</span></td><td>Đầu vào từ bước 2</td><td>Chỉ đọc: khảo sát sơ bộ 2A và tình hình thi công 2C của Dự án (nhánh A), khảo sát hiện trạng 2B (nhánh B), ý kiến thẩm định HSMT của P. TQT. Bước tự xác nhận quá hạn thì hiện nhãn “Tự động xác nhận quá hạn” thay cho nội dung.</td></tr>
-          <tr><td class="c"><span class="pin">9</span></td><td>Quy cách vật tư</td><td><em>(<a href="PL-C.html#Q-264">Q-264</a>)</em> P. TQT mở bảng dòng BOQ chỉ có các cột quy cách, chủng loại, kích thước, sửa ngay tại ô. Không có cột giá vốn, giá chào, biên. Mỗi ô đã sửa ghi vào lịch sử thay đổi của gói; nút <em>Lịch sử thay đổi</em> mở danh sách người sửa, thời điểm, giá trị cũ → mới.</td></tr>
-          <tr><td class="c"><span class="pin">10</span></td><td>Thông báo</td><td><em>Thông báo cho P.TQT nắm</em> chỉ mở khi lần gần nhất là 3b, gửi P. TQT kèm tóm lược và thay đổi để sau của lần đó (<a href="PL-C.html#Q-272">Q-272</a>). <em>Thông báo thương thảo hoàn thành</em> mở hộp thoại người nhận — danh sách phòng ban của gói, sửa được; Ban lãnh đạo, Dự án liên quan khóa; ô <em>Lưu vào danh sách của gói</em> mặc định không tích (<a href="PL-C.html#Q-273">Q-273</a>) — gửi xong thì gói sang <code>Thương thảo hoàn thành</code>. Kênh gửi: hộp thư trong ứng dụng và thông báo đẩy (<a href="PF-04.html">PF-04</a>, <a href="PL-C.html#Q-278">Q-278</a>).</td></tr>
+          <tr><td class="c"><span class="pin">1</span></td><td>Lần 0</td><td>Tải tệp báo giá, nhập giá trị chào, Lưu. Lưu lại được khi gửi báo giá mới.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Thêm lần thương thảo</td><td>Hộp thoại tệp + tóm lược + hướng xử lý + 3a/3b (+ thay đổi để sau). Cần đã lưu lần 0.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Danh sách lần</td><td>Mới nhất trên cùng; mở từng lần, tải tệp; lần 3b có nút Thông báo cho P.TQT nắm.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Đã chốt giá</td><td>Hộp thoại: Giá trị HĐ ✱, ghi chú, Lưu → hộp người nhận thông báo thương thảo hoàn thành. <em>(17/11/2026)</em> Không còn ô tệp BOQ chốt.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Tệp bước Thẩm định</td><td>Chỉ đọc, mở được từng tệp.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Khối lượng khóa, giá mở.</b> Bảng áp giá kế thừa khối lượng từ BOQ cập nhật và khóa cột đó.<span class="then">Muốn đổi khối lượng phải quay lại <a href="BID-02.html">BID-02</a> và chốt bản BOQ mới — tránh việc vừa đàm phán giá vừa âm thầm đổi khối lượng.</span><span class="then"><em>(12/11/2026)</em> Quy cách, chủng loại, kích thước không thuộc khóa này: P. TQT sửa được trong bước 3 theo quy tắc 34, có lịch sử.</span></li>
-      <li><b>Bộ cấu phần giá vốn khai theo gói.</b> Ba cấu phần có sẵn bật mặc định — vật tư gợi ý từ giá nhập kho bình quân gần nhất, nhân công gợi ý từ bảng đơn giá chuẩn đang hiệu lực của vùng công trình (<a href="PF-06.html">PF-06</a>), và vùng chưa có bảng chuẩn đang hiệu lực, hoặc đầu việc không có trong bảng, thì quay về gợi ý theo giá khoán đã duyệt của dự án cùng vùng (<a href="PRJ-01.html">PRJ-01</a>); máy và biện pháp khó nạp từ phiếu khảo sát — và mỗi gói khai thêm được tối đa 8 cấu phần riêng như vận chuyển, lắp đặt, hoàn thiện bề mặt.<span class="then">Mỗi hợp đồng cấu thành giá một kiểu, nên bộ cột giá vốn là thứ khai theo gói chứ không phải thứ cố định trong hệ thống. Mọi gợi ý đều sửa được, nhưng dòng bị sửa tay được đánh dấu để người duyệt biết con số không còn là số hệ thống tính.</span></li>
-      <li><b>Giá vốn chỉ cộng cấu phần đang bật.</b> Giá vốn dòng là tổng các cấu phần đang hiện trên bảng, cộng chi phí chung phân bổ — không có khoản nào nằm khuất mà vẫn ảnh hưởng tổng.<span class="then">Vì vậy chỉ tắt được cấu phần chưa có số liệu trên mọi dòng: muốn tắt một cấu phần đã nhập thì xóa số trước. Cấu phần “máy &amp; biện pháp” không tắt được khi phiếu khảo sát <a href="BID-02.html">BID-02</a> đang chuyển sang một khoản chi phí, và phải còn ít nhất một cấu phần bật — không có giá vốn thì biên lợi nhuận, tức chốt chặn duyệt giá của chính màn hình này, không còn nghĩa gì. Bỏ hẳn một cấu phần tự khai là xóa luôn số liệu của nó: có cảnh báo trước khi lưu, và khai lại cùng tên sau đó chỉ ra một cột trống.</span></li>
-      <li><b>Bộ cấu phần đi theo vòng báo giá.</b> Đổi bộ cấu phần khi đang có bản nháp thì chỉ bản nháp đó đổi; các vòng đã gửi giữ nguyên bộ cột và số liệu tại thời điểm gửi.<span class="then">Khi hai vòng khai bộ cấu phần khác nhau, phần so sánh giữa các vòng đối chiếu ở mức tổng giá vốn và tổng giá chào kèm ghi chú “bộ cấu phần đã đổi”, thay vì đặt cạnh nhau hai cột không cùng nghĩa.</span></li>
-      <li><b>Hệ số lợi nhuận hai chiều.</b> Nhập đơn giá chào thì hệ số lợi nhuận tự tính; nhập hệ số thì đơn giá tự tính.<span class="then">Sửa hệ số ở dòng tổng sẽ áp cho mọi dòng chi tiết <b>chưa bị khóa tay</b>; dòng đã sửa tay giữ nguyên.</span></li>
-      <li><b>Ngưỡng biên là chốt chặn.</b> Khi biên lợi nhuận tổng rơi dưới ngưỡng tối thiểu, nút “Gửi đối tác” bị khóa.<span class="then">Mở khóa chỉ bằng một phê duyệt mới của Ban lãnh đạo cho chính mức giá đó — không có đường vòng.</span></li>
-      <li><b>Mỗi lần gửi là một phiên bản.</b> Bấm gửi đối tác sinh BOQ báo giá phiên bản mới, đóng băng bảng giá tại thời điểm gửi.<span class="then">Sửa giá sau khi gửi sẽ tạo bản nháp của vòng kế tiếp, không sửa được bản đã gửi.</span></li>
-      <li><b>Phản hồi gắn vòng.</b> Mỗi vòng đàm phán lưu ngày gửi, giá trị chào, phản hồi đối tác và người tiếp nhận.<span class="then">Dòng thời gian đàm phán tính được chênh lệch giá trị giữa các vòng và tổng số ngày đàm phán.</span><span class="then"><em>(12/11/2026)</em> Phản hồi chỉ ghi được trên vòng đang mở. Khi đã có vòng sau, phản hồi của vòng trước khóa cùng vòng — ghi lại phản hồi cũ là sửa căn cứ của một quyết định đã xong.</span></li>
-      <li><b>Báo giá theo lần, số vòng chạy suốt gói</b> <em>(yêu cầu 08/11/2026 · <a href="PL-C.html#Q-201">Q-201</a>)</em>. Mỗi lần và mỗi phụ lục của gói (<a href="BID-01.html">BID-01</a>) có bảng áp giá và các vòng báo giá riêng, áp trên BOQ cập nhật của chính lần đó; số vòng đánh tiếp theo gói chứ không đếm lại từ 1 — lần 1 dừng ở vòng 3 thì vòng đầu của lần 2 là vòng 4. Lịch sử đàm phán hiện theo từng lần.<span class="then">Ở phụ lục, dòng gắn <em>Hạng mục HĐ</em> giữ đơn giá của hợp đồng: giá gõ cho dòng đó không được tính vào giá trị phụ lục. Chỉ dòng hạng mục mới lấy giá báo ở đây.</span><span class="then"><em>(12/11/2026 · <a href="PL-C.html#Q-271">Q-271</a>)</em> Chỉ phụ lục <b>Loại 02</b> tới màn hình này, và tới thẳng từ BOQ phụ lục — không qua thẩm định <a href="BID-02.html">BID-02</a>; phụ lục bấm <em>Bỏ qua thương thảo</em> thì không tới. Loại 01 không có bảng giá. Lần thương thảo của phụ lục đánh số riêng của phụ lục, bắt đầu từ lần 1. Xem <a href="BID-05.html">BID-05</a>.</span></li>
-      <li><b>Điều kiện thương mại chảy vào hợp đồng.</b> Tiến độ thanh toán và hiệu lực báo giá nhập ở đây được nạp sẵn vào hợp đồng ở <a href="BID-05.html">BID-05</a>; thời hạn bảo hành đi thẳng từ gói thầu ở <a href="BID-01.html">BID-01</a>, không qua ô này (<a href="2026-09-15/YC-06.html">YC-06</a>).<span class="then">Sửa ở hợp đồng thì hệ thống ghi nhận là sai khác so với báo giá đã chốt và hiện cảnh báo cho người ký.</span></li>
-      <li><b>Tệp báo giá không mang số nội bộ.</b> Bản PDF và bản Excel gửi đối tác chỉ có đơn giá, thành tiền và điều kiện thương mại.<span class="then">Giá vốn, cấu phần giá vốn, biên lợi nhuận và ngưỡng biên không nằm trong tệp, kể cả khi người bấm xuất là Ban lãnh đạo — quyền xem trên màn hình và nội dung một tệp rời khỏi công ty là hai chuyện khác nhau.</span></li>
-      <li><b>Tệp của vòng đã gửi không dựng lại.</b> Xuất lại một vòng đã gửi trả về đúng tệp đã lưu ở <a href="PF-05.html">PF-05</a>.<span class="then">Nếu dựng lại, một thay đổi ở mẫu in hay ở danh mục sẽ khiến bản công ty lưu khác bản đối tác đang cầm — mà hai bản đó là căn cứ khi thương thảo.</span></li>
-      <li><b>Kết thúc một vòng ở một chỗ.</b> Mọi vòng báo giá đi qua cùng một dải bước — áp giá → duyệt giá (chỉ khi biên rơi dưới ngưỡng) → gửi đối tác → phản hồi → thương thảo — và dải bước đó nằm ngay dưới bảng áp giá, kèm đúng một hành động của bước hiện tại.<span class="then">Một gói có thể đi năm vòng, nên “đang ở bước nào” và “giá chốt ở vòng nào” phải trả lời được bằng mắt: dòng thời gian đánh dấu riêng vòng đang xử lý và vòng giá chốt. Khi vòng đang ở phía đối tác, ba cách đi tiếp — <em>Thêm lần thương thảo</em>, <em>Thông báo thương thảo hoàn thành</em>, <em>Trượt thầu</em> <em>(12/11/2026)</em> — nằm cạnh nhau với hệ quả in sẵn, và cả ba đều phải ghi phản hồi trước khi thực hiện — kết thúc một gói thầu không được phép là hệ quả phụ của thao tác ghi chú.</span></li>
-      <li><b>Thương thảo hoàn thành là điểm đóng băng.</b> <em>(12/11/2026 · <a href="PL-C.html#Q-274">Q-274</a> — thay nút “Chốt giá”)</em> Bấm <em>Thông báo thương thảo hoàn thành</em> khóa toàn bộ bảng áp giá của vòng đang hiệu lực; vòng đó mang nhãn “Giá chốt”.<span class="then">Bảng này trở thành BOQ hợp đồng, và biên lợi nhuận tại thời điểm đó được lưu làm <em>biên dự thầu</em> để đối chiếu ở <a href="RPT-03.html">RPT-03</a>. Quy cách vật tư cũng khóa từ đây: sau thương thảo hoàn thành, P. TQT không còn sửa quy cách ở bước 3 — thay đổi đi bằng phụ lục HĐ.</span></li>
-      <li><b>Bộ cấu phần mặc định là năm, theo biểu mẫu <code>3.BOQ</code>.</b> Đá · vật tư phụ · nhân công · vận chuyển · chống thấm bật sẵn cho gói mới (<a href="2026-09-15/YC-05.html">YC-05</a>); cấu phần máy &amp; biện pháp vẫn nạp từ phiếu khảo sát <a href="BID-02.html">BID-02</a>; trần 8 cấu phần tự khai giữ nguyên.<span class="then">Đổi bộ mặc định không đổi cơ chế: gói nào không dùng vận chuyển hay chống thấm thì tắt cột đó, và <code>cost_total</code> chỉ cộng phần đang bật. Vì bộ cấu phần thuộc về phiên bản báo giá, các vòng đã gửi trước đợt chuẩn hoá giữ nguyên bộ ba cũ với cấu phần gộp <code>cost_material</code>, không bị tách ngược.</span></li>
-      <li><b>Cờ chống thấm của dòng là gợi ý, không phải điều kiện lưu.</b> Cấu phần <code>cost_waterproof</code> thường được nhập trên dòng có <code>waterproof = Có</code>, nhưng dòng không đánh dấu vẫn nhập và lưu được đơn giá chống thấm; dòng không có chi phí này để 0.<span class="then">Yêu cầu sửa 19/10/2026 bỏ quy tắc chặn trước đây (“chống thấm chỉ tính cho dòng có chống thấm”): người áp giá tự quyết dòng nào có chi phí chống thấm, hệ thống không từ chối khi lưu.</span></li>
-      <li><b>Thuế suất thuộc về gói, không thuộc về dòng.</b> Một BOQ một thuế suất: <code>vat_rate</code> lấy mặc định từ tham số công ty và sửa được theo gói, trong khoảng 0–20%.<span class="then">Biểu mẫu để 8% cố định, nhưng thuế suất thay đổi theo chính sách và theo loại hợp đồng, nên nó là tham số của gói chứ không phải hằng số in trong mẫu. Đặt thuế suất theo từng dòng thì không còn con số nào gọi là “tổng cộng sau thuế của gói”.</span></li>
-      <li><b>Dòng tổng không phải dòng dữ liệu.</b> Tổng phụ từng nhóm, tổng cộng trước thuế, thuế GTGT và tổng cộng sau thuế đều do máy chủ tính từ cột <em>Thành tiền</em>; không nằm trong dòng BOQ, không xóa và không sửa được.<span class="then">Trong tệp Excel gốc chúng chỉ là dòng có công thức. Cho sửa tay một dòng tổng là cho phép chứng từ hiện một con số khác con số hệ thống đang giữ — đúng cái mà bảng tổng hợp giá trị đơn hàng ở mục trên tồn tại để tránh.</span></li>
-      <li><b>Dòng hỗ trợ % tính từ các đầu việc.</b> Dòng khai ở <a href="BID-01.html">BID-01</a> với loại <em>Hỗ trợ %</em> không có cấu phần giá để nhập; thành tiền của nó do hệ thống tính từ các <b>đầu việc thường</b> của bảng áp giá, cập nhật ngay khi gõ (yêu cầu sửa 14/10/2026):<span class="then"><b>Hỗ trợ % tổng HĐ</b> = % × Σ thành tiền các đầu việc. <b>Hỗ trợ % nhân công</b> = % × SUMPRODUCT(khối lượng; đơn giá cấu phần nhân công) — bằng 0 khi gói tắt cấu phần nhân công. Chiều <em>Trừ đi</em> cho số âm.</span><span class="then">Cơ sở chỉ gồm đầu việc thường — không gồm dòng đầu mục và dòng đá chi tiết (<em>yêu cầu thay đổi 16/10/2026</em>), không phụ thuộc vị trí hay nhóm dòng, và không bao giờ gồm dòng hỗ trợ % khác — hai dòng 5% và 10% tính độc lập trên cùng một cơ sở, không cộng dồn lên nhau. Mỗi dòng làm tròn đến 2 chữ số thập phân; tiền của dòng vào tổng phụ của nhóm dòng chứa nó, rồi vào tổng cộng trước thuế, thuế và sau thuế như mọi dòng.</span><span class="then">Trên bảng và trên tệp báo giá, cột khối lượng in “+5% · tổng HĐ” / “−10% · nhân công”, các cột cấu phần và đơn giá in “—”, thành tiền in số đã tính. Dòng hỗ trợ % không tính là dòng chưa có đơn giá, kể cả khi bằng 0 hoặc âm.</span></li>
-      <li><b>Nhóm dòng kế thừa, không đặt lại ở bước áp giá.</b> <code>line_group</code> đến từ <a href="BID-01.html">BID-01</a> và chỉ đọc ở đây; muốn chuyển một dòng sang nhóm đề xuất bổ sung thì sửa ở bảng đầu việc rồi chốt bản BOQ mới.<span class="then">Nhóm dòng quyết định hai tổng phụ, và hai tổng phụ đó là thứ bên mời thầu đối chiếu khi làm rõ hồ sơ. Đổi nhóm ngay trong vòng báo giá sẽ làm hai vòng liền nhau có cùng tổng nhưng khác cơ cấu, mà không có bản BOQ nào ghi lại lúc nào đã đổi.</span></li>
-      <li><b>Giá đá của đầu việc ghép từ dòng đá chi tiết.</b> Đầu việc có dòng đá chi tiết ở <a href="BID-01.html">BID-01</a> thì đơn giá đá nhập ở <b>từng dòng chi tiết</b>; ô <em>Đơn giá · Đá</em> của đầu việc khóa và bằng Σ (đơn giá đá dòng chi tiết × tỉ lệ), <b>làm tròn đến đồng</b> (<em>chốt 17/10/2026</em>; trước đó làm tròn 2 chữ số thập phân), để thành tiền của đầu việc đúng bằng đơn giá đang hiện × khối lượng. Các cấu phần còn lại — vật tư phụ, nhân công, vận chuyển, chống thấm, máy &amp; biện pháp, cấu phần tự khai — nhập một lần ở đầu việc, đơn giá chào của đầu việc là tổng các cấu phần như mọi dòng (<em>yêu cầu thay đổi 16/10/2026 · mục 4</em>).<span class="then">Mỗi loại đá một giá, nhưng bên mời thầu trả tiền theo m² của đầu việc chứ không theo từng màu đá. Ghép theo tỉ lệ thiết kế cho đúng một đơn giá đá cho đầu việc đó — ví dụ Tím Phù Cát 450.000 × 68% + Đỏ Bình Định 520.000 × 7% + … — thay vì người áp giá tự bấm máy tính rồi gõ một con số không ai kiểm lại được.</span><span class="then">Làm tròn đến đồng vì người đọc bảng lấy đơn giá đang hiện nhân khối lượng để soát: giữ phần lẻ ẩn sau dấu phẩy thì giá đá 470.003,4 × 2.100 m² ra thành tiền lệch 840 đồng so với số đọc được trên màn hình. Đây là phép làm tròn riêng của ô ghép; các cấu phần nhập tay giữ đúng số đã nhập, và giá vốn vẫn không làm tròn theo <code>offer_rounding</code> như đơn giá chào.</span><span class="then">Dòng chi tiết không có thành tiền riêng và không vào tổng nào: tiền của nó đã nằm trong đơn giá đá của đầu việc. Dòng chi tiết chưa có giá đá thì tính là 0 trong phép ghép, và đầu việc được báo “còn {n} loại đá chưa có giá”. Gói có dòng chi tiết thì không tắt được cấu phần đá; vòng báo giá theo bộ cấu phần cũ (cấu phần gộp <code>cost_material</code>) thì dòng chi tiết nhập vào cấu phần gộp đó (<a href="PL-C.html#Q-149">Q-149</a>).</span></li>
-      <li><b>Dòng đầu mục có tiểu cộng, không có giá.</b> Dòng đầu mục kế thừa từ <a href="BID-01.html">BID-01</a> không có ô cấu phần nào; cột <em>Thành tiền</em> của nó hiện tiểu cộng các đầu việc bên dưới, tới dòng đầu mục kế tiếp (<em>yêu cầu thay đổi 16/10/2026 · mục 8</em>).<span class="then">Tiểu cộng chỉ để đọc. Tổng phụ nhóm và tổng cộng vẫn cộng từ đầu việc, nên một đầu mục đặt sai chỗ không bao giờ làm sai tổng của gói.</span><span class="then"><b>Đầu mục liền nhau dùng chung một đoạn</b> (<em>chốt 17/10/2026</em>). Hai hay nhiều dòng đầu mục đứng sát nhau — “CÔNG VIỆC THEO HSMT” ngay trên “I. HẠNG MỤC VỈA HÈ” — có cùng một đoạn tiểu cộng: các dòng tới dòng đầu mục kế tiếp đứng sau ít nhất một dòng không phải đầu mục. Dừng ở dòng đầu mục ngay sau thì đầu mục trên cùng của chồng có đoạn rỗng và hiện tiểu cộng 0. Bảng áp giá, bảng tổng hợp và tệp báo giá dùng chung một cách tính đoạn.</span></li>
-      <li><b>Bảng theo mẫu <code>3.BOQ</code> không phát hành ra ngoài.</b> Bảng áp giá — kể cả khối tổng cộng, thuế và sau thuế ở chân bảng — là bảng nội bộ; tệp gửi đối tác chỉ dựng từ bảng tổng hợp giá trị đơn hàng.<span class="then">Năm cấu phần là giá vốn, nên gửi nguyên bảng đi là lộ toàn bộ cơ cấu chi phí và biên lợi nhuận suy ra được bằng một phép trừ. Điểm này còn phải chốt lại với người dùng vì chính biểu mẫu công ty đặt khối tổng cộng và VAT ngay dưới bảng giá vốn và mang tiêu đề “BẢNG TIÊN LƯỢNG MỜI THẦU (BOQ)” — xem <a href="PL-C.html#Q-38">PL-C · Q-38</a>.</span></li>
-      <li><b>Điều kiện thực hiện của gói thầu hiện ở đầu màn hình áp giá, chỉ đọc.</b> Tiến độ thi công và thời hạn bảo hành kèm mốc tính kế thừa từ <a href="BID-01.html">BID-01</a> (<a href="2026-09-15/YC-06.html">YC-06</a>), nằm ngay trên bảng áp giá và không sửa được ở đây.<span class="then">Cả hai đều là tiền: tiến độ ép sinh phụ trội nhân công và ca đêm, bảo hành quyết định phần giá trị giữ lại. Người đặt giá phải thấy chúng trong cùng một tầm mắt với bảng giá, không phải mở lại hồ sơ gói ở tab khác.</span><span class="then">Để sửa được ngay đây thì một vòng báo giá sẽ âm thầm đổi điều kiện của gói thầu — đúng loại thay đổi mà bước thẩm định ở <a href="BID-02.html">BID-02</a> sinh ra để chặn. Muốn đổi thì đổi ở hồ sơ gói thầu.</span><span class="then">Yêu cầu chứng chỉ xây dựng không còn hiện ở khối này: mục chứng chỉ đã bỏ khỏi gói thầu, chứng chỉ thuộc hồ sơ pháp lý công ty (chốt <a href="PL-C.html#Q-141">Q-141</a>, 28/10/2026).</span></li>
-      <li><b>Điều kiện thương mại không còn giữ thời hạn bảo hành.</b> <code>terms</code> chỉ còn tiến độ thanh toán và hiệu lực báo giá; bảo hành là <code>warranty_months</code> + <code>warranty_from</code> của gói thầu và chảy thẳng xuống hợp đồng (<a href="2026-09-15/YC-06.html">YC-06</a>).<span class="then">Trước đây ba điều kiện gom vào một chuỗi tự do, nên thời hạn bảo hành tồn tại dưới dạng chữ và không cộng được vào ngày nào. Tách ra thì <a href="RPT-05.html">RPT-05</a> tính được <code>warranty_end_date</code> và phát nhắc lập hồ sơ thanh toán phần giá trị giữ lại.</span><span class="then">Chép lại số tháng bảo hành vào <code>terms</code> tạo ra hai nguồn cho một điều kiện; khi hai nguồn lệch nhau, hợp đồng không biết phải tin bên nào. Hệ thống phát hiện chuỗi có dạng “bảo hành … tháng” thì cảnh báo.</span></li>
-      <li><b>Gói thầu chưa khai tiến độ vẫn áp giá được, nhưng có cảnh báo.</b> Cả ba ô tiến độ rỗng thì màn hình áp giá vẫn mở, kèm cảnh báo nêu rõ đang thiếu một căn cứ đặt giá.<span class="then">Không chặn, vì hồ sơ mời thầu thật đôi khi thực sự không nêu tiến độ ở vòng đầu và phải hỏi lại. Nhưng cũng không im lặng, vì im lặng thì giá chào dựng lên mà không biết phải thi công trong bao lâu.</span></li>
-    
-      <li><b>Bộ lọc khoảng thời gian lọc theo ngày gửi báo giá.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Giá trị đã chào trong kỳ. Ngày gửi chứ không phải ngày thương thảo hoàn thành — cùng một vòng có thể gửi rồi thương thảo sang kỳ sau.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
-          <li><b>Đơn giá chào làm tròn trước khi nhân khối lượng.</b> <code>price_offer</code> luôn là bội của <code>offer_rounding</code>; thành tiền, tổng phụ từng nhóm, tổng cộng trước thuế, thuế GTGT và tổng cộng sau thuế đều tính từ đơn giá <b>đã làm tròn</b>, và không làm tròn thêm lần nữa ở chân bảng (<a href="2026-09-25/YC-15.html">YC-15</a>).<span class="then">Làm tròn ở đơn giá chứ không ở thành tiền, vì tệp gửi đi in hai cột cạnh nhau và bên nhận lấy khối lượng nhân đơn giá để soát: giữ đơn giá lẻ thì phép nhân của họ lệch số của ta ở mọi dòng. Làm tròn <b>lên</b>, khác hướng “gần nhất, nửa lên” của đơn giá khoán ở <a href="PRJ-01.html">PRJ-01</a> quy tắc 21 — khác có chủ ý: đơn giá khoán là tiền trả đi nên sai số hai chiều triệt tiêu nhau, còn đơn giá chào là tiền thu về nên lấy gần nhất nghĩa là một nửa số dòng bị hạ giá, cắt một phần biên lợi nhuận vừa tính ra — và cắt âm thầm ngay dưới ngưỡng <code>min_margin</code> mà chốt chặn của quy tắc 6 không thấy gì. <code>margin_pct</code> vì vậy tính ngược từ đơn giá đã làm tròn, đúng cách <a href="PRJ-01.html">PRJ-01</a> tính ngược <code>support_pct</code>.</span><span class="then">Giá vốn <b>không</b> làm tròn: nó là thước đo biên lợi nhuận và không bao giờ rời khỏi công ty (quy tắc 10). Phần làm tròn lên rơi vào biên, không rơi vào chi phí. Cũng cần nói rõ để không kỳ vọng nhầm — khối lượng có phần thập phân nên tổng vẫn không kết thúc bằng ba số 0; thứ mất đi là đồng lẻ sinh từ đơn giá lẻ, không phải mọi chữ số lẻ.</span></li>
-      <li><b>Bảng áp giá phóng to được như bảng đầu việc BOQ.</b> Trên thanh công cụ của bảng áp giá có nút <em>Phóng to bảng</em>, cùng cách làm với bảng đầu việc BOQ ở <a href="BID-01.html">BID-01</a> <em>(sheet 30.10.2026 · mục 1)</em>: bảng cùng các nút thao tác của nó — gợi ý nhân công, lưu bảng giá, khai cấu phần, xuất báo giá — phủ kín cửa sổ, che thanh điều hướng, chữ trong bảng nhỏ đi một cỡ để hiện được nhiều cột hơn, tiêu đề cột vẫn ghim khi cuộn.<span class="then">Thoát bằng nút <em>Thu nhỏ bảng</em> hoặc phím Esc; Esc đang dùng để đóng một danh sách chọn hay hộp thoại mở từ bảng thì chỉ đóng cái đó, bảng vẫn phóng to. Phóng to và thu nhỏ chỉ đổi cách hiển thị: số đang nhập dở <b>giữ nguyên, vẫn chưa lưu</b> cho tới khi bấm <em>Lưu bảng giá</em>, ở chế độ nào bấm cũng được. Vòng đã khóa vẫn phóng to được để xem.</span></li>
-      <li><b>Áp giá là lần 0 của thương thảo.</b> <em>(12/11/2026 · <a href="PL-C.html#Q-274">Q-274</a>)</em> Bước 3 mở bằng <code>Thương thảo – áp giá (lần 0)</code>: dựng giá vốn, đặt giá chào, chốt chặn biên, trình duyệt và gửi báo giá vòng đầu đúng như các quy tắc trên.<span class="then">Không có biên bản cho lần 0 — biên bản là của buổi làm việc với chủ đầu tư, còn lần 0 là việc nội bộ. Gói chuyển sang <code>Đang thương thảo (lần 1)</code> khi lưu lần thương thảo đầu tiên, không phải khi gửi báo giá.</span></li>
-      <li><b>Mỗi lần thương thảo là một biên bản khóa.</b> <em>(<a href="PL-C.html#Q-263">Q-263</a>)</em> Lưu một lần đòi đủ bốn thứ: file thương thảo giá, tóm lược kết quả, hướng xử lý, kết quả 3a/3b. Lưu xong là khóa — không sửa, không xóa, không thay file; số lần do hệ thống đánh tiếp theo gói.<span class="then">Lần sau không ghi đè lần trước: sai thì ghi lần mới nói rõ điều chỉnh. Một lần chỉ thêm được khi vòng báo giá gần nhất đã gửi đối tác; lần thương thảo đổi giá thì người áp giá sửa bản nháp vòng kế tiếp và đi lại chốt chặn biên của quy tắc 6 — biên bản không bao giờ tự đổi giá.</span></li>
-      <li><b>Ban lãnh đạo nhận từng lần, đọc mọi lần.</b> Mỗi lần vừa lưu gửi đúng một thông báo tới Ban lãnh đạo (vai trò <code>ord_board</code>) — chỉ Ban lãnh đạo, không gửi danh sách phòng ban.<span class="then">Thông báo nêu gói, số lần, kết quả 3a/3b và tóm lược, mở thẳng lần đó. Ban lãnh đạo và P. Đấu thầu xem được mọi lần và tải mọi file của gói, kể cả gói đã trượt thầu; P. TQT không xem các lần — file thương thảo mang giá (<a href="PL-B.html">PL-B</a>). Kênh gửi: hộp thư trong ứng dụng và thông báo đẩy (<a href="PF-04.html">PF-04</a>, <a href="PL-C.html#Q-278">Q-278</a>).</span></li>
-      <li><b>Kết quả 3a hay 3b ghi trên từng lần.</b> <code>3a</code> — chủ đầu tư chấp nhận thay đổi: thay đổi được áp ngay trong bước 3 — quy cách bởi P. TQT theo quy tắc 34, giá bằng vòng báo giá mới. <code>3b</code> — chủ đầu tư không chấp nhận, triển khai theo HSMT ban đầu: thay đổi để sau, ghi ở ô <em>Thay đổi để sau</em>, và thương thảo vẫn tiếp tục.<span class="then">Với lần <code>3b</code>, P. Đấu thầu bấm <em>Thông báo cho P.TQT nắm</em>: P. TQT nhận tóm lược và thay đổi để sau, để không triển khai theo phương án chưa được chấp nhận. Thay đổi để sau làm bằng phụ lục HĐ <b>Loại 02</b> sau khi ký (<a href="PL-C.html#Q-272">Q-272</a>); khi lập phụ lục Loại 02, các lần <code>3b</code> của gói hiện lại để chọn làm căn cứ.</span><span class="then"><em>(13/11/2026 · <a href="PL-C.html#Q-301">Q-301</a>)</em> Lần <code>3b</code> chỉ “chờ phụ lục” khi lần thương thảo đó đã ký — trong lúc còn thương thảo, nó chỉ là một lần đã lưu. Sau <em>Chốt HĐ – Đã ký</em>, mọi lần 3b chưa nằm trong phụ lục nào hiện thành lời nhắc ở khối Phụ lục HĐ của <a href="BID-05.html">BID-05</a>, kèm nút tạo phụ lục Loại 02 từ chính các lần đó; mỗi lần vào đúng một phụ lục, hủy phụ lục thì lần trở lại chờ. Lần 3b không bao giờ đi vào phụ lục Loại 01.</span></li>
-      <li><b>P. TQT sửa quy cách vật tư trong bước 3.</b> <em>(<a href="PL-C.html#Q-264">Q-264</a>)</em> Từ <code>Thương thảo – áp giá (lần 0)</code> tới trước <code>Thương thảo hoàn thành</code>, P. TQT sửa trực tiếp quy cách kỹ thuật, chủng loại và kích thước của dòng BOQ ở khung <em>Quy cách vật tư</em>.<span class="then">Không đổi khối lượng, đơn giá, cấu phần giá vốn — và P. TQT không thấy các số đó. Mỗi ô đã sửa ghi người sửa, thời điểm, giá trị cũ, giá trị mới vào lịch sử thay đổi chung của gói. Vòng báo giá đã gửi giữ quy cách tại thời điểm gửi (quy tắc 7, 12); quy cách mới đi vào vòng kế tiếp và vào BOQ hợp đồng. Quyền sửa ghi ở <a href="PL-B.html">PL-B</a>.</span></li>
-      <li><b>Đầu vào từ bước 2 hiện cạnh bàn thương thảo.</b> Khối <em>Đầu vào từ bước 2</em> hiện chỉ đọc kết quả mà bước 2 để lại: khảo sát sơ bộ 2A và tình hình thi công 2C của Dự án ở nhánh A, khảo sát hiện trạng 2B ở nhánh B, ý kiến thẩm định HSMT của P. TQT ở cả hai nhánh.<span class="then">Bước nào tự xác nhận quá hạn thì hiện nhãn “Tự động xác nhận quá hạn”; trả lời muộn sau đó hiện như phần bổ sung, có thời điểm (<a href="PL-C.html#Q-262">Q-262</a>). Sửa các nội dung này ở <a href="BID-02.html">BID-02</a>, không sửa ở đây.</span></li>
-      <li><b>Thông báo thương thảo hoàn thành mở bước ký.</b> Nút chỉ mở khi đã có ít nhất một lần thương thảo được lưu trong lần hiện tại của gói (<a href="PL-C.html#Q-279">Q-279</a>), vòng báo giá gần nhất đã gửi và đã ghi phản hồi, và không còn bản nháp vòng nào khác vòng đã gửi.<span class="then">Bấm nút mở hộp thoại người nhận: Ban lãnh đạo và Dự án liên quan luôn nhận, không bỏ được; danh sách phòng ban của gói sửa được ngay trong hộp thoại; ô <em>Lưu vào danh sách của gói</em> mặc định không tích — chỉ đổi người nhận của lần gửi này (<a href="PL-C.html#Q-273">Q-273</a>). <b>Từ 12/11/2026</b> mỗi phòng ban trong danh sách nhận qua <b>trưởng phòng</b> của phòng; phòng chưa có trưởng phòng đang hoạt động thì cả phòng nhận, hộp thoại ghi “Chưa có trưởng phòng – gửi cả phòng ({n} người)” (<a href="PL-C.html#Q-296">Q-296</a>, <a href="PL-C.html#Q-297">Q-297</a>). Gửi xong gói sang <code>Thương thảo hoàn thành</code>, giá đóng băng theo quy tắc 14, và <a href="BID-05.html">BID-05</a> mở <em>Bắt đầu ký</em>.</span><span class="then"><em>Trượt thầu</em> và hủy gói giữ như trước (<a href="BID-04.html">BID-04</a>, <a href="PL-C.html#Q-277">Q-277</a>).</span></li>
-      <li><b>Gói đang chạy chuyển sang trạng thái mới theo bảng.</b> <em>(<a href="PL-C.html#Q-275">Q-275</a>)</em> Gói đang <em>áp giá</em> thành <code>Thương thảo – áp giá (lần 0)</code>; đang <em>đàm phán</em> thành <code>Đang thương thảo (lần n)</code>; đã <em>chốt giá</em> thành <code>Thương thảo hoàn thành</code>.<span class="then"><em>(chốt khi triển khai 12/11/2026 · <a href="PL-C.html#Q-279">Q-279</a>)</em> Vòng báo giá đã gửi trước ngày chuyển giữ nguyên là vòng báo giá, <b>không</b> đổi thành lần thương thảo — lần thương thảo nào cũng phải có file, tóm lược, hướng xử lý, kết quả 3a/3b, mà vòng cũ không có. Số lần đếm theo lần thương thảo đã lưu, vòng cũ không tính: gói chuyển sang hiện <code>Đang thương thảo (lần 1)</code> và lần lưu đầu tiên sau ngày chuyển là lần 1. Vì chưa có lần nào, P. Đấu thầu phải lưu <b>ít nhất một lần thương thảo</b> đủ bốn ô trước khi bấm <em>Thông báo thương thảo hoàn thành</em>.</span></li>
-      <li><b>Mỗi lần lưu bảng áp giá ghi giá chào cũ → mới.</b> <em>(13/11/2026 · <a href="PL-C.html#Q-300">Q-300</a>)</em> Lưu bảng áp giá — ở lần 0 hay ở vòng giá mới khi thương thảo — ghi cho từng dòng có thay đổi: giá chào và các cấu phần vật tư, nhân công, biện pháp, giá trị cũ → mới, người sửa, thời điểm; nhãn là mã HM của dòng BOQ, ghi chú “Vòng báo giá n”.<span class="then">Dòng không đổi không ghi; lần lưu không đổi gì không ghi. Giá chào của dòng cha đổi theo dòng chi tiết cũng được ghi. Các dòng này hiện trong Lịch sử thay đổi của gói; Lịch sử thay đổi của bảng quy cách vật tư không hiện chúng — bảng đó không có giá — và chúng không tính vào số lần sửa quy cách của dòng.</span></li>
+      <li><b>Bước 3 mở ngay khi gói Đã thẩm định.</b> <em>(16/11/2026)</em> Không còn chốt BOQ cập nhật ở <a href="BID-02.html">BID-02</a>. <em>(V2 · <a href="PL-C.html#Q-321">Q-321</a>; 17/11/2026 · <a href="PL-C.html#Q-333">Q-333</a>)</em> Đã thẩm định là khi P. Đấu thầu lưu 2B (gói loại B) hoặc 2C Thẩm định HSMT (gói loại A, sau khảo sát sơ bộ và chờ HSMT) với file thẩm định. Từ đây hai nhánh đi chung.</li>
+      <li><b>Lần 0 = tệp báo giá + giá trị chào.</b> <em>(16/11/2026 · <a href="PL-C.html#Q-319">Q-319</a>)</em> Lưu lần đầu đưa gói sang <em>Đang thương thảo (lần 0)</em>; lưu lại khi gửi báo giá mới, giá trị chào lấy lần lưu gần nhất.<span class="then">Thay “Thương thảo – áp giá (lần 0)” — bảng áp giá, vòng báo giá, trình duyệt — của <a href="PL-C.html#Q-274">Q-274</a>.</span></li>
+      <li><b>Mỗi lần thương thảo là một biên bản khóa</b> (<a href="PL-C.html#Q-263">Q-263</a>, giữ nguyên). Cần đã lưu lần 0. Lưu xong khóa, gói hiện <em>Đang thương thảo (lần n)</em>, Ban lãnh đạo nhận thông báo.</li>
+      <li><b>Kết quả 3a hay 3b ghi trên từng lần.</b> 3a: thay đổi đi vào BOQ đã chốt — chính tệp Tạo mã VTHH theo HĐ ở bước 5. 3b: để sau, phụ lục Loại 02; bấm Thông báo cho P.TQT nắm (<a href="PL-C.html#Q-272">Q-272</a>, <a href="PL-C.html#Q-301">Q-301</a>).</li>
+      <li><b>Đã chốt giá = Giá trị HĐ + Lưu.</b> Gói sang <em>Thương thảo hoàn thành</em>, gửi thông báo thương thảo hoàn thành tới DS phòng ban, mở bước 4. Cần đã lưu lần 0; không bắt buộc có lần thương thảo nào (chủ đầu tư nhận báo giá ngay).<span class="then">Thay điều kiện “ít nhất một lần thương thảo” và “bảng giá đóng băng” của 12/11/2026 (<a href="PL-C.html#Q-279">Q-279</a>).</span></li>
+      <li><b>Ban lãnh đạo nhận từng lần, đọc mọi lần</b> (giữ nguyên).</li>
+      <li><b>Tệp bước Thẩm định hiện cạnh lần thương thảo</b>, chỉ đọc. <em>(V2)</em> Chỉ còn tệp và ghi chú của P. Đấu thầu.</li>
+      <li><b>Tệp ở bước 3 xóa và tải lại được.</b> <em>(V2 · <a href="PL-C.html#Q-322">Q-322</a>)</em> Tệp báo giá lần 0, biên bản từng lần (và tệp BOQ chốt tải trước 17/11/2026) có nút Xóa, có lịch sử. Lần thương thảo vẫn khóa nội dung (<a href="PL-C.html#Q-263">Q-263</a>); xóa tệp không đổi trạng thái gói (hướng mặc định <a href="PL-C.html#Q-327">Q-327</a>).</li>
+      <li><b>Không chốt được thì hủy ở <a href="BID-04.html">BID-04</a></b> — trượt thầu hay không theo đuổi nữa.</li>
+      <li><b>Gói đang ở bước 3 khi triển khai 16/11/2026.</b> <em>Thương thảo – áp giá (lần 0)</em> → <em>Đang thương thảo (lần 0)</em>, chưa có tệp lần 0 thì P. Đấu thầu tải bản báo giá đã gửi. Vòng báo giá, bảng áp giá cũ không còn xem được trên phần mềm; tệp báo giá đã xuất trước đó vẫn ở mục tệp của gói. Lần thương thảo đã lưu giữ nguyên.</li>
     </ol>
+    <div class="note">
+      <b>Đã bỏ — 16/11/2026 · <a href="PL-C.html#Q-319">Q-319</a> · theo góp ý khách 12/11</b>
+      <ul>
+        <li><b>Áp giá trên phần mềm</b> — bảng áp giá theo mẫu <code>3.BOQ</code> (15 cột), năm cấu phần giá vốn mặc định và cấu phần riêng (tối đa 8), giá vốn dòng, chi phí chung phân bổ, giá đá ghép từ dòng đá chi tiết, dòng hỗ trợ %, tiểu cộng đầu mục, thuế suất GTGT của gói (<a href="2026-09-15/YC-05.html">YC-05</a>, <a href="PL-C.html#Q-148">Q-148</a>, <a href="PL-C.html#Q-149">Q-149</a>).</li>
+        <li><b>Giá chào và biên</b> — hệ số lợi nhuận hai chiều, ngưỡng biên tối thiểu là chốt chặn, làm tròn đơn giá chào, cảnh báo giá chào thấp hơn giá vốn.</li>
+        <li><b>Vòng báo giá</b> — mỗi lần gửi một phiên bản, trình duyệt 2 cấp TP Đấu thầu → Ban lãnh đạo, phản hồi đối tác gắn vòng, kết thúc vòng, hiệu lực báo giá (<code>quote:*</code>).</li>
+        <li><b>Bảng tổng hợp giá trị đơn hàng và Xuất bản báo giá</b> — tệp PDF / Excel sinh từ phần mềm, dấu chìm bản nháp, tên tệp <code>BG_…</code> (<a href="PL-C.html#Q-38">Q-38</a>). Báo giá nay làm ngoài và tải lên ở lần 0.</li>
+        <li><b>Điều kiện thương mại</b> chảy vào hợp đồng, khối điều kiện thực hiện chỉ đọc.</li>
+        <li><b>P. TQT sửa quy cách vật tư trong bước 3</b> (<a href="PL-C.html#Q-264">Q-264</a>) và lịch sử giá chào cũ → mới (<a href="PL-C.html#Q-300">Q-300</a>).</li>
+      </ul>
+      <p>Kịch bản kiểm thử đã bỏ theo: UAT-BID03-1 – 5, 7 – 42, 47 – 49, 52, 53, 56, 57.</p>
+    </div>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
     <div class="tw">
       <table>
-        <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
+        <thead><tr><th>Tình huống</th><th>Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
-          <tr><td>Đơn giá nhỏ hơn mức làm tròn</td><td><code>price_offer_raw &lt; offer_rounding</code></td><td>“Dòng {mã} có đơn giá {raw} — làm tròn lên {mức} thành {kết quả}, lệch {tỷ lệ}. Hạ mức làm tròn của gói nếu con số này quan trọng.” <em>(cảnh báo, cho đi tiếp)</em></td></tr>
-          <tr><td>Đổi mức làm tròn khi đã có vòng đã gửi</td><td>Sửa <code>offer_rounding</code> của gói · <code>round_no &gt; 1</code></td><td>“Mức làm tròn mới chỉ áp cho vòng đang soạn. {n} vòng đã gửi giữ nguyên mức {mức cũ}.” <em>(thông báo)</em></td></tr>
-          <tr><td>Đơn giá chào thấp hơn giá vốn</td><td><code>price_offer &lt; cost_total</code></td><td>“Dòng {mã} đang chào dưới giá vốn ({chênh lệch}). Nhập lý do nếu đây là chủ đích.”</td></tr>
-          <tr><td>Biên tổng dưới ngưỡng</td><td><code>margin &lt; min_margin</code></td><td>“Biên lợi nhuận {x}% dưới ngưỡng tối thiểu {y}%. Cần Ban lãnh đạo duyệt mức giá này trước khi gửi đối tác.”</td></tr>
-          <tr><td>Thiếu giá vốn nhân công</td><td><code>cost_labor</code> rỗng</td><td>“Chưa có giá vốn nhân công cho dòng {mã}. Không có số này thì biên lợi nhuận không phản ánh đúng.”</td></tr>
-          <tr><td>Gửi lại khi chưa sửa gì</td><td>Bảng giá không đổi so với vòng trước</td><td>“Bảng giá không thay đổi so với vòng {n}. Xác nhận nếu chỉ gửi lại để nhắc đối tác.”</td></tr>
-          <tr><td>Tắt cấu phần đang có số liệu</td><td>Cấu phần có ít nhất một dòng khác 0</td><td>“Cấu phần {tên} đang có số ở {n} dòng. Xóa số ở các dòng đó trước khi tắt cột.”</td></tr>
-          <tr><td>Tắt cấu phần máy &amp; biện pháp</td><td>Phiếu khảo sát <a href="BID-02.html">BID-02</a> có chi phí biện pháp</td><td>“Phiếu khảo sát đang chuyển sang {số tiền} chi phí biện pháp thi công khó. Không tắt được cấu phần này.”</td></tr>
-          <tr><td>Tắt cấu phần cuối cùng</td><td>Không còn cấu phần nào bật</td><td>“Phải giữ ít nhất một cấu phần giá vốn — không có giá vốn thì không tính được biên lợi nhuận.”</td></tr>
-          <tr><td>Khai quá số cấu phần cho phép</td><td>Số cấu phần tự khai &gt; 8</td><td>“Một gói thầu khai thêm được tối đa 8 cấu phần giá vốn.”</td></tr>
-          <tr><td>Xuất báo giá khi còn dòng chưa có đơn giá</td><td>Có dòng <code>price_offer</code> rỗng</td><td>“Còn {n} dòng chưa có đơn giá chào — các dòng đó in ra dấu gạch và không cộng vào tổng. Vẫn xuất?”</td></tr>
-          <tr><td>Xuất bản nháp</td><td>Vòng chưa trình duyệt xong</td><td>“Vòng {n} chưa duyệt xong. Tệp sẽ đóng dấu ‘BẢN NHÁP — CHƯA TRÌNH DUYỆT’ và không lưu vào chứng từ gói thầu.”</td></tr>
-          <tr><td>Kết thúc vòng khi chưa ghi phản hồi</td><td><code>feedback</code> rỗng hoặc dưới 2 ký tự</td><td>“Ghi lại phản hồi của đối tác trước khi kết thúc vòng {n} — đây là căn cứ của quyết định này.”</td></tr>
-          <tr><td>Kết thúc vòng chưa gửi đối tác</td><td>Trạng thái vòng khác <code>đã gửi</code></td><td>“Chỉ kết thúc được vòng đã gửi đối tác. Vòng {n} đang ở trạng thái {trạng thái}.”</td></tr>
-          <tr><td>Hiệu lực báo giá đã qua</td><td><code>hôm nay &gt; ngày gửi + hiệu lực</code></td><td>“Báo giá vòng {n} đã hết hiệu lực từ {ngày}. Gửi vòng mới trước khi ký hợp đồng.”</td></tr>
-          <tr><td>Thuế suất ngoài khoảng</td><td><code>vat_rate</code> &lt; 0 hoặc &gt; 20%</td><td>“Thuế suất GTGT nhận giá trị từ 0% đến 20% (hiện {x}%).”</td></tr>
-          <tr><td>Sửa dòng tổng</td><td>Thao tác nhập vào dòng tổng phụ hoặc dòng chân bảng</td><td>“Dòng tổng do hệ thống tính từ cột Thành tiền. Sửa dòng đầu việc thay vì sửa kết quả.”</td></tr>
-          <tr><td>Sửa giá đá của đầu việc có dòng chi tiết</td><td>Nhập vào ô <em>Đơn giá · Đá</em> của đầu việc có <code>row_kind = detail</code> bên dưới</td><td>“Giá đá của “{tên}” ghép từ {n} loại đá theo tỉ lệ. Sửa giá ở từng dòng đá chi tiết bên dưới.”</td></tr>
-          <tr><td>Nhập cấu phần khác ở dòng chi tiết</td><td>Nhập vào cấu phần không phải đá trên dòng <code>row_kind = detail</code></td><td>“Dòng đá chi tiết chỉ có đơn giá đá. {Cấu phần} nhập ở đầu việc “{tên}”.”</td></tr>
-          <tr><td>Dòng chi tiết chưa có giá đá</td><td>Đầu việc có dòng chi tiết mà ít nhất một dòng có đơn giá đá trống hoặc 0</td><td>Cảnh báo: “{tên}: còn {n} loại đá chưa có giá — phần đó đang tính 0 trong giá đá ghép.”</td></tr>
-          <tr><td>Tắt cấu phần đá khi có dòng chi tiết</td><td>Gói có ít nhất một dòng <code>row_kind = detail</code></td><td>“Gói có {n} dòng đá chi tiết ráp giá bằng cấu phần đá. Không tắt được cấu phần này.”</td></tr>
-          <tr><td>Sửa ghi chú cả bảng sau khi chốt BOQ</td><td><code>boq_note</code> của bản BOQ đã đóng băng ở <a href="BID-02.html">BID-02</a></td><td>“Bản BOQ này đã chốt. Ghi chú là căn cứ nghiệm thu quyết toán nên khóa cùng bản — sửa thì phải chốt một bản BOQ mới.”</td></tr>
-          <tr><td>Ngưỡng biên tối thiểu bằng 0 hoặc âm</td><td><code>min_margin ≤ 0</code></td><td>“Ngưỡng biên tối thiểu phải lớn hơn 0. Để 0% là bỏ hẳn chốt chặn biên lợi nhuận của gói thầu này.”</td></tr>
-          <tr><td>Áp giá khi gói thầu chưa khai tiến độ</td><td>Cả ba ô <code>exec_start</code>, <code>exec_end</code>, <code>exec_days</code> của gói thầu đều rỗng</td><td>“Gói thầu chưa có tiến độ thi công — tiến độ ép là căn cứ tính phụ trội nhân công và ca đêm. Bổ sung ở <a href="BID-01.html">BID-01</a> trước khi thông báo thương thảo hoàn thành.” <em>(cảnh báo, cho đi tiếp · đổi chữ 12/11/2026)</em></td></tr>
-          <tr><td>Sửa điều kiện thực hiện ngay trên màn hình áp giá</td><td>Thao tác nhập vào khối tiến độ · bảo hành</td><td>“Điều kiện thực hiện thuộc về hồ sơ gói thầu. Sửa ở <a href="BID-01.html">BID-01</a> — sửa trong một vòng báo giá sẽ làm lệch điều kiện của cả gói.”</td></tr>
-          <tr><td>Điều kiện thương mại còn chép thời hạn bảo hành</td><td>Chuỗi <code>terms</code> khớp mẫu “bảo hành … tháng”</td><td>“Thời hạn bảo hành đã có trường riêng của gói thầu ({n} tháng, {mốc}). Bỏ phần bảo hành khỏi ô điều kiện thương mại để hợp đồng chỉ có một nguồn.” <em>(cảnh báo)</em></td></tr>
-          <tr><td>Lưu lần thương thảo thiếu file <em>(12/11/2026)</em></td><td><code>neg_file</code> rỗng</td><td>“Đính kèm file thương thảo giá của lần {n} — biên bản không có file thì không lưu được.”</td></tr>
-          <tr><td>Lưu lần thương thảo thiếu tóm lược</td><td><code>neg_summary</code> rỗng hoặc chỉ có khoảng trắng</td><td>“Ghi tóm lược kết quả lần {n}: chủ đầu tư đồng ý, không đồng ý điểm nào, giá chốt bao nhiêu.”</td></tr>
-          <tr><td>Lưu lần thương thảo thiếu hướng xử lý</td><td><code>neg_direction</code> rỗng hoặc chỉ có khoảng trắng</td><td>“Ghi hướng xử lý sau lần {n} — bước tiếp theo là gì.”</td></tr>
-          <tr><td>Chưa chọn kết quả 3a/3b</td><td><code>neg_outcome</code> rỗng</td><td>“Chọn kết quả của lần {n}: 3a — chủ đầu tư chấp nhận thay đổi, hoặc 3b — triển khai theo HSMT ban đầu.”</td></tr>
-          <tr><td>Sửa hoặc xóa lần đã lưu</td><td>Thao tác trên lần có <code>created_at</code></td><td>“Lần {n} đã khóa từ {thời điểm}. Ghi điều chỉnh vào một lần thương thảo mới.”</td></tr>
-          <tr><td>Thêm lần khi vòng chưa gửi</td><td>Vòng báo giá gần nhất khác <code>đã gửi</code></td><td>“Gửi báo giá vòng {k} cho đối tác trước khi ghi lần thương thảo.”</td></tr>
-          <tr><td>Ghi phản hồi vào vòng cũ</td><td>Vòng đã có vòng sau</td><td>“Vòng {k} đã có vòng {k+1}. Phản hồi của vòng {k} đã khóa — ghi vào vòng đang mở.”</td></tr>
-          <tr><td>Thông báo cho P.TQT khi lần gần nhất không phải 3b</td><td><code>neg_outcome</code> của lần gần nhất = <code>3a</code></td><td>Nút ẩn. Gọi trực tiếp thì: “Chỉ báo P. TQT cho lần có kết quả 3b.”</td></tr>
-          <tr><td>Thông báo thương thảo hoàn thành khi chưa có lần nào</td><td>Gói chưa có lần thương thảo đã lưu</td><td>“Lưu ít nhất một lần thương thảo — file, tóm lược, hướng xử lý — trước khi thông báo hoàn thành.”</td></tr>
-          <tr><td>Thông báo thương thảo hoàn thành khi còn bản nháp</td><td>Có bản nháp vòng khác vòng đã gửi gần nhất</td><td>“Vòng {k} đang là bản nháp chưa gửi. Gửi đối tác hoặc bỏ bản nháp để giá chốt là vòng {k−1}.”</td></tr>
+          <tr><td>Lưu lần 0 thiếu tệp báo giá <em>(16/11/2026)</em></td><td>Không có tệp loại báo giá</td><td>“Tải lên tệp báo giá trước khi lưu lần 0.”</td></tr>
+          <tr><td>Giá trị chào không hợp lệ</td><td><code>offer_value</code> rỗng, ≤ 0 hoặc không phải số</td><td>“Nhập giá trị chào là số tiền dương.”</td></tr>
+          <tr><td>Lưu lần 0 khi gói chưa Đã thẩm định</td><td>Gói trước S-06; máy chủ kiểm</td><td>“Gói {mã} chưa xong bước 2 — chưa lưu báo giá được.”</td></tr>
+          <tr><td>Thêm lần thương thảo khi chưa có lần 0</td><td>Chưa lưu lần 0</td><td>“Lưu lần 0 (tệp báo giá) trước khi ghi lần thương thảo.”</td></tr>
+          <tr><td>Lưu lần thương thảo thiếu file</td><td><code>neg_file</code> rỗng</td><td>“Đính kèm file thương thảo giá.”</td></tr>
+          <tr><td>Lưu lần thương thảo thiếu tóm lược</td><td><code>neg_summary</code> rỗng hoặc chỉ có khoảng trắng</td><td>“Ghi tóm lược kết quả thương thảo.”</td></tr>
+          <tr><td>Lưu lần thương thảo thiếu hướng xử lý</td><td><code>neg_direction</code> rỗng hoặc chỉ có khoảng trắng</td><td>“Ghi hướng xử lý sau lần thương thảo.”</td></tr>
+          <tr><td>Chưa chọn kết quả 3a/3b</td><td><code>neg_outcome</code> rỗng</td><td>“Chọn kết quả: 3a — áp thay đổi ngay, hoặc 3b — để sau làm phụ lục.”</td></tr>
+          <tr><td>Sửa hoặc xóa lần đã lưu <em>(viết lại V2)</em></td><td>Sửa tóm lược, hướng xử lý, kết quả, hoặc xóa lần có <code>created_at</code> — xóa / tải lại tệp của lần không bị chặn</td><td>“Lần {n} đã khóa từ {thời điểm} — không sửa, xóa được. Tệp của lần xóa và tải lại được.”</td></tr>
+          <tr><td>Thông báo cho P.TQT khi lần gần nhất không phải 3b</td><td><code>neg_outcome</code> = 3a</td><td>“Chỉ lần 3b mới có thay đổi để sau cần báo P. TQT.”</td></tr>
+          <tr><td>Đã chốt giá thiếu giá trị <em>(16/11/2026)</em></td><td><code>agreed_value</code> rỗng hoặc ≤ 0</td><td>“Nhập Giá trị HĐ đã chốt.”</td></tr>
+          <tr><td>Đã chốt giá khi chưa có lần 0</td><td>Chưa lưu lần 0</td><td>“Lưu lần 0 (tệp báo giá) trước khi chốt giá.”</td></tr>
           <tr><td>Gửi thông báo không có người nhận</td><td>Danh sách người nhận trong hộp thoại rỗng</td><td>“Chọn ít nhất một phòng ban nhận thông báo.”</td></tr>
-          <tr><td>P. TQT sửa cột giá hoặc khối lượng</td><td>Người sửa thuộc P. TQT, ô không phải quy cách · chủng loại · kích thước</td><td>“P. TQT chỉ sửa quy cách, chủng loại, kích thước ở bước thương thảo. Khối lượng và giá do P. Đấu thầu quản lý.”</td></tr>
-          <tr><td>Sửa quy cách sau thương thảo hoàn thành</td><td>Gói ở <code>Thương thảo hoàn thành</code> trở về sau</td><td>“Thương thảo đã hoàn thành, quy cách khóa cùng BOQ hợp đồng. Thay đổi làm bằng phụ lục HĐ ở BID-05.”</td></tr>
         </tbody>
       </table>
     </div>
@@ -605,71 +292,28 @@
     <h4>Kịch bản kiểm thử</h4>
     <div class="tw">
       <table class="uat">
-        <thead><tr><th style="width:82px">Mã</th><th style="width:24%">Tiền đề</th><th style="width:30%">Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
+        <thead><tr><th>Mã</th><th>Tiền đề</th><th>Thao tác</th><th>Kết quả kỳ vọng</th></tr></thead>
         <tbody>
-          <tr><td>UAT-BID03-1</td><td>BOQ cập nhật đã chốt, ngưỡng biên 18%</td><td>Nhập hệ số lợi nhuận 25% ở dòng tổng</td><td>Mọi dòng chưa khóa tay cập nhật đơn giá; biên tổng hiện 25%</td></tr>
-          <tr><td>UAT-BID03-2</td><td>Đang ở biên 19%</td><td>Giảm giá tổng để biên còn 16%</td><td>Nút “Gửi đối tác” khóa; hiện yêu cầu duyệt lại</td></tr>
-          <tr><td>UAT-BID03-3</td><td>Ban lãnh đạo duyệt mức giá biên 16%</td><td>Bấm gửi đối tác</td><td>Gửi thành công, sinh BOQ báo giá vòng mới</td></tr>
-          <tr><td>UAT-BID03-4</td><td>Đã gửi vòng 2</td><td>Mở bảng giá vòng 2 và thử sửa</td><td>Bảng vòng 2 chỉ đọc; thao tác sửa tạo bản nháp vòng 3</td></tr>
-          <tr><td>UAT-BID03-5</td><td>Dòng HM-01 đã sửa tay đơn giá</td><td>Đổi hệ số lợi nhuận ở dòng tổng</td><td>HM-01 giữ nguyên giá; các dòng khác cập nhật</td></tr>
-          <tr><td>UAT-BID03-6</td><td>Đàm phán xong ở biên 24,9%, đã lưu lần thương thảo 2</td><td>Bấm “Thông báo thương thảo hoàn thành”, gửi DS</td><td>Bảng khóa; biên dự thầu 24,9% được lưu để đối chiếu về sau; gói mang trạng thái “Thương thảo hoàn thành” <em>(12/11/2026)</em></td></tr>
-          <tr><td>UAT-BID03-8</td><td>BOQ đã khai đủ thuộc tính đá, vòng 1 đã áp giá</td><td>Mở bảng tổng hợp giá trị đơn hàng</td><td>Đủ 14 cột; dòng tổng bằng đúng tổng giá chào của vòng</td></tr>
-          <tr><td>UAT-BID03-9</td><td>Gói thầu không phải hạng mục đá, không khai thuộc tính đá</td><td>Mở bảng đầu việc và bảng tổng hợp</td><td>Sáu cột thuộc tính đá không hiện, bảng không có cột trống toàn dấu gạch</td></tr>
-          <tr><td>UAT-BID03-10</td><td>Gói thầu thuần cung cấp vật tư, không có phần nhân công</td><td>Tắt cấu phần “Nhân công”, khai thêm cấu phần “Lắp đặt” rồi nhập số cho ba dòng</td><td>Bảng áp giá bỏ cột nhân công, hiện cột lắp đặt; giá vốn từng dòng bằng tổng các cấu phần đang bật — đá + vật tư phụ + vận chuyển + chống thấm + máy &amp; BP + lắp đặt; biên lợi nhuận tính lại theo giá vốn mới</td></tr>
-          <tr><td>UAT-BID03-11</td><td>Cấu phần “Nhân công” đang có số ở 4 dòng</td><td>Tắt cấu phần “Nhân công”</td><td>Bị chặn, nêu rõ còn 4 dòng đang có số; xóa hết số rồi tắt lại thì thành công</td></tr>
-          <tr><td>UAT-BID03-12</td><td>Vòng 2 đã gửi với bộ ba cấu phần</td><td>Khai thêm cấu phần “Lắp đặt” cho bản nháp vòng 3, rồi mở lại vòng 2</td><td>Vòng 2 vẫn ba cột và số cũ; phần so sánh vòng đối chiếu ở mức tổng kèm ghi chú “bộ cấu phần đã đổi”</td></tr>
-          <tr><td>UAT-BID03-13</td><td>Vòng 3 đã trình duyệt xong</td><td>Bấm “Xuất bản báo giá”, chọn PDF</td><td>Tệp tên <code>BG_GT-2026-018_v3_20261218.pdf</code>, đủ khối định danh, bảng tổng hợp, dòng tổng khớp tổng giá chào của vòng, khối ký; chân trang có mã gói · vòng · người xuất; tệp xuất hiện trong chứng từ gói ở <a href="PF-05.html">PF-05</a></td></tr>
-          <tr><td>UAT-BID03-14</td><td>Người dùng là Ban lãnh đạo, gói đang có biên 24,9%</td><td>Xuất bản báo giá rồi mở tệp</td><td>Trong tệp không có cột giá vốn, cấu phần giá vốn hay biên lợi nhuận nào</td></tr>
-          <tr><td>UAT-BID03-15</td><td>Bản nháp vòng 4 chưa trình duyệt</td><td>Xuất bản báo giá</td><td>Có cảnh báo trước khi xuất; tệp mang dấu chìm “BẢN NHÁP — CHƯA TRÌNH DUYỆT”, tên tệp kết thúc bằng <code>-nhap</code>, không lưu vào chứng từ gói</td></tr>
-          <tr><td>UAT-BID03-16</td><td>Vòng 2 đã xuất PDF tháng trước, sau đó mẫu in của công ty được sửa</td><td>Xuất lại báo giá vòng 2</td><td>Trả về đúng tệp đã lưu, không dựng lại theo mẫu mới</td></tr>
-          <tr><td>UAT-BID03-17</td><td>Vòng 3 đã trình duyệt xong</td><td>Xuất Excel rồi mở tệp</td><td>Ô khối lượng, đơn giá, thành tiền là số thật; dòng tổng là công thức cộng và cho ra đúng tổng giá trị đơn hàng</td></tr>
-          <tr><td>UAT-BID03-18</td><td>Vòng 3 đã gửi đối tác</td><td>Mở màn hình áp giá</td><td>Dải bước của vòng 3 dừng ở “Phản hồi — chờ đối tác”; ba nút “Thông báo thương thảo hoàn thành”, “Thêm lần thương thảo”, “Trượt thầu” hiện ngay dưới bảng áp giá, mỗi nút kèm hệ quả của nó</td></tr>
-          <tr><td>UAT-BID03-19</td><td>Vòng 3 đã gửi, đối tác đồng ý mức giá</td><td>Bấm “Thông báo thương thảo hoàn thành” nhưng bỏ trống ô phản hồi</td><td>Bị chặn cho tới khi ghi phản hồi; ghi xong và gửi thì bảng giá đóng băng, vòng 3 mang nhãn “Giá chốt” trên dòng thời gian và màn hình chuyển sang <a href="BID-05.html">BID-05</a></td></tr>
-          <tr><td>UAT-BID03-20</td><td>Gói đã đi 4 vòng và thương thảo hoàn thành ở vòng 4</td><td>Mở lại dòng thời gian thương thảo</td><td>Chỉ vòng 4 mang nhãn “Giá chốt”; các vòng còn lại không — nhìn một lần thấy ngay gói chốt ở vòng nào</td></tr>
-          <tr><td>UAT-BID03-21</td><td>Vòng 2 đang ở biên 16%, ngưỡng 18%</td><td>Mở màn hình áp giá</td><td>Dải bước của vòng 2 có thêm bước “Duyệt giá”; nút gửi khóa và hành động của bước hiện tại là “Trình Ban lãnh đạo”</td></tr>
-          <tr><td>UAT-BID03-7</td><td>Người dùng là nhân viên P. TQT</td><td>Mở màn hình áp giá</td><td>Không thấy bảng áp giá, giá vốn, giá chào, biên hay các lần thương thảo — chỉ thấy khung quy cách vật tư và đầu vào bước 2 <em>(12/11/2026 · <a href="PL-C.html#Q-264">Q-264</a>)</em></td></tr>
-          <tr><td>UAT-BID03-22</td><td>BOQ đã chốt, gói mới chưa đổi cấu phần</td><td>Mở bảng áp giá</td><td>Đủ mười lăm cột của mẫu <code>3.BOQ</code>; bảy cột đầu chỉ đọc; cột Tổng bằng tổng năm cấu phần đang bật cộng chi phí chung; cột Thành tiền bằng Tổng × khối lượng</td></tr>
-          <tr><td>UAT-BID03-23</td><td>Thuế suất của gói đang để mặc định 8%</td><td>Đổi thuế suất thành 10%</td><td>Tổng cộng sau thuế tính lại ngay; tổng cộng trước thuế không đổi; nhập 25% thì bị chặn kèm thông điệp</td></tr>
-          <tr><td>UAT-BID03-24</td><td>Bảng có 40 dòng nhóm HSMT và 2 dòng nhóm đề xuất bổ sung</td><td>Mở chân bảng</td><td>Hai tổng phụ đúng theo nhóm; tổng cộng trước thuế bằng tổng hai nhóm; đảo thứ tự dòng không làm sai tổng phụ nào</td></tr>
-          <tr><td>UAT-BID03-25</td><td>Dòng HM-02 có <code>waterproof = Không</code></td><td>Nhập đơn giá vào cột Chống thấm của dòng đó</td><td>Lưu được; đơn giá chống thấm giữ đúng số đã nhập và cộng vào giá vốn của dòng (quy tắc chặn đã bỏ theo yêu cầu sửa 19/10/2026)</td></tr>
-          <tr><td>UAT-BID03-26</td><td>Gói không có công tác chống thấm</td><td>Tắt cấu phần “Chống thấm”</td><td>Cột ẩn đi; <code>cost_total</code> của mọi dòng giảm đúng phần chống thấm; chân bảng tính lại theo giá vốn mới</td></tr>
-          <tr><td>UAT-BID03-27</td><td>Bảng áp giá đã điền đủ năm cấu phần và chân bảng đã có tổng cộng sau thuế</td><td>Xuất tệp báo giá gửi đối tác</td><td>Tệp không chứa cột nào trong năm cấu phần, không chứa cột Thành tiền giá vốn và không chứa khối tổng cộng của bảng áp giá; chỉ có bảng tổng hợp giá trị đơn hàng</td></tr>
-          <tr><td>UAT-BID03-28</td><td>Gói thầu đã khai đủ ba điều kiện thực hiện ở <a href="BID-01.html">BID-01</a></td><td>Mở màn hình áp giá</td><td>Đầu màn hình hiện tiến độ 363 ngày, bảo hành 12 tháng kèm mốc tính, không có dòng chứng chỉ; mọi ô ở chế độ chỉ đọc</td></tr>
-          <tr><td>UAT-BID03-29</td><td>Tiếp UAT-28</td><td>Thử sửa ô thời hạn bảo hành ngay trên màn hình áp giá</td><td>Bị chặn kèm thông điệp dẫn về <a href="BID-01.html">BID-01</a>; bảng giá và vòng báo giá không đổi</td></tr>
-          <tr><td>UAT-BID03-30</td><td>Vòng 3 đã trình duyệt xong, ô điều kiện thương mại ghi “Tạm ứng 10% · nghiệm thu theo đợt · hiệu lực 30 ngày”</td><td>Xuất tệp báo giá gửi đối tác</td><td>Phần điều kiện thương mại trong tệp có tiến độ thanh toán và hiệu lực báo giá; dòng bảo hành in đúng 12 tháng kèm mốc tính, lấy từ gói thầu</td></tr>
-          <tr><td>UAT-BID03-31</td><td>BOQ có 2 đầu việc 10 m² × 120.000 và 5 md × 240.000 (nhân công 20.000 và 40.000), một dòng hỗ trợ 5% tổng HĐ cộng thêm và một dòng hỗ trợ 10% nhân công trừ đi</td><td>Mở bảng áp giá</td><td>Dòng 5% = 120.000; dòng 10% nhân công = −40.000; tổng trước thuế = 2.480.000; cột cấu phần của hai dòng hỗ trợ in “—”</td></tr>
-          <tr><td>UAT-BID03-32</td><td>Tiếp UAT-31</td><td>Sửa đơn giá một đầu việc, chưa lưu</td><td>Thành tiền hai dòng hỗ trợ và tổng tạm đổi ngay; sau khi Lưu khớp đúng số máy chủ</td></tr>
-          <tr><td>UAT-BID03-33</td><td>Tiếp UAT-31</td><td>Xuất tệp báo giá PDF và Excel</td><td>Hai dòng hỗ trợ in “+5% · tổng HĐ” / “−10% · nhân công”, đơn giá “—”, thành tiền đúng; không bị hỏi xác nhận dòng chưa có giá</td></tr>
-          <tr><td>UAT-BID03-34</td><td>BOQ cập nhật có đầu việc “Lát đá vỉa hè” 2.100 m² với năm dòng chi tiết 68% / 7% / 8% / 12% / 5%</td><td>Mở bảng áp giá, nhập giá đá năm dòng 450.000 / 520.000 / 500.000 / 480.000 / 600.000; nhập ở đầu việc nhân công 120.000, vận chuyển 30.000</td><td>Ô giá đá của đầu việc khóa, hiện 470.000 (= 306.000 + 36.400 + 40.000 + 57.600 + 30.000); đơn giá chào đầu việc = 470.000 + 120.000 + 30.000 = 620.000; thành tiền = 2.100 × đơn giá chào; năm dòng chi tiết không có thành tiền</td></tr>
-          <tr><td>UAT-BID03-35</td><td>Tiếp UAT-34</td><td>Xem tổng phụ nhóm và tổng cộng; xuất tệp Excel</td><td>Tổng chỉ cộng thành tiền đầu việc một lần; tệp Excel không có năm dòng chi tiết, công thức tổng chỉ trỏ vào ô đầu việc</td></tr>
-          <tr><td>UAT-BID03-36</td><td>Bảng có dòng đầu mục “I. HẠNG MỤC VỈA HÈ” trên 3 đầu việc và “II. HẠNG MỤC CẦU” trên 2 đầu việc</td><td>Mở bảng áp giá</td><td>Mỗi dòng đầu mục hiện tiểu cộng đúng 3 và 2 đầu việc của nó; tổng cộng trước thuế bằng tổng năm đầu việc, không cộng hai tiểu cộng</td></tr>
-          <tr><td>UAT-BID03-37</td><td>Tiếp UAT-34</td><td>Thử nhập vận chuyển vào một dòng chi tiết; thử tắt cấu phần “Đá”</td><td>Cả hai bị chặn kèm thông điệp đúng chỗ</td></tr>
-          <tr><td>UAT-BID03-38</td><td>Bảng có dòng hỗ trợ 5% tổng HĐ và đầu việc có dòng chi tiết</td><td>Mở bảng áp giá</td><td>Cơ sở 5% bằng tổng thành tiền các đầu việc — không cộng thêm dòng chi tiết hay dòng đầu mục</td></tr>
-          <tr><td>UAT-BID03-39</td><td>Dòng đầu mục “CÔNG VIỆC THEO HSMT” ngay trên “I. HẠNG MỤC VỈA HÈ” (3 đầu việc), sau đó “II. HẠNG MỤC CẦU” (2 đầu việc) <em>(chốt 17/10/2026)</em></td><td>Mở bảng áp giá; xuất tệp Excel</td><td>“CÔNG VIỆC THEO HSMT” và “I. HẠNG MỤC VỈA HÈ” hiện cùng một tiểu cộng của 3 đầu việc, không hiện 0; “II.” hiện tiểu cộng 2 đầu việc; tệp Excel cho hai dòng đầu mục liền nhau cùng một đoạn công thức; tổng cộng không đổi</td></tr>
-          <tr><td>UAT-BID03-40</td><td>Như UAT-34 nhưng giá đá Tím Phù Cát 450.005 <em>(chốt 17/10/2026)</em></td><td>Mở bảng áp giá</td><td>Ô giá đá của đầu việc hiện 470.003 (Σ = 470.003,4 làm tròn đến đồng); thành tiền phần đá = 470.003 × 2.100 = 987.006.300, đúng bằng đơn giá hiển thị × khối lượng</td></tr>
-          <tr><td>UAT-BID03-41</td><td>Vòng nháp đang mở, bảng áp giá có 200 dòng <em>(sheet 30.10.2026 · mục 1)</em></td><td>Bấm “Phóng to bảng”, nhập đơn giá nhân công cho 3 dòng, nhấn Esc; mở lại rồi bấm “Thu nhỏ bảng”</td><td>Bảng phủ kín cửa sổ, tiêu đề cột ghim khi cuộn; sau mỗi lần thoát, 3 đơn giá vừa nhập vẫn còn, đơn giá chào và thành tiền đã tính lại, nút Lưu vẫn bật — chưa có gì được lưu</td></tr>
-          <tr><td>UAT-BID03-42</td><td>Gói vừa qua bước 2, đang dựng giá <em>(12/11/2026)</em></td><td>Mở màn hình</td><td>Nhãn trạng thái “Thương thảo – áp giá (lần 0)”; chưa có lần thương thảo nào; mọi chức năng áp giá như trước</td></tr>
-          <tr><td>UAT-BID03-43</td><td>Vòng 1 đã gửi đối tác</td><td>Thêm lần thương thảo, đính kèm <code>TT-lan1.pdf</code>, ghi tóm lược và hướng xử lý, chọn 3b, lưu</td><td>Lần 1 khóa; gói “Đang thương thảo (lần 1)”; Ban lãnh đạo nhận đúng một thông báo; DS phòng ban không nhận gì</td></tr>
+          <tr><td>UAT-BID03-6</td><td>Đã lưu lần 0 và lần thương thảo 2 <em>(viết lại 16/11/2026)</em></td><td>Bấm “Đã chốt giá”, nhập Giá trị HĐ 4.820.000.000, Lưu, gửi DS</td><td>Gói “Thương thảo hoàn thành”; Tiến độ vẫn “Đã rà soát, kiểm tra HSMT”, cột Giá trị HĐ 4.820.000.000; BID-05 mở “Bắt đầu ký” <em>(V2)</em></td></tr>
+          <tr><td>UAT-BID03-43</td><td>Đã lưu lần 0 <em>(viết lại 16/11/2026)</em></td><td>Thêm lần thương thảo, đính kèm <code>TT-lan1.pdf</code>, ghi tóm lược và hướng xử lý, chọn 3b, lưu</td><td>Lần 1 khóa; gói “Đang thương thảo (lần 1)”; Ban lãnh đạo nhận đúng một thông báo; DS phòng ban không nhận gì; ô Tiến độ mở ra tệp lần 1 trong nhóm Thương thảo</td></tr>
           <tr><td>UAT-BID03-44</td><td>Tiếp UAT-43</td><td>Lần lượt bỏ trống file, tóm lược, hướng xử lý, kết quả rồi bấm lưu lần 2</td><td>Mỗi lần bị chặn kèm đúng thông điệp của ô còn thiếu; không lần nào được lưu</td></tr>
-          <tr><td>UAT-BID03-45</td><td>Tiếp UAT-43</td><td>Thử sửa tóm lược, thay file, xóa lần 1</td><td>Cả ba bị chặn: “Lần 1 đã khóa từ {thời điểm}…”</td></tr>
+          <tr><td>UAT-BID03-45</td><td>Tiếp UAT-43 <em>(viết lại V2 · <a href="PL-C.html#Q-327">Q-327</a>)</em></td><td>Thử sửa tóm lược, xóa lần 1; rồi xóa tệp <code>TT-lan1.pdf</code>, tải <code>TT-lan1-dau.pdf</code></td><td>Hai thao tác đầu bị chặn: “Lần 1 đã khóa từ {thời điểm}…”; tệp xóa và tải lại được, lịch sử ghi cả hai; tóm lược, hướng xử lý, kết quả giữ nguyên</td></tr>
           <tr><td>UAT-BID03-46</td><td>Tiếp UAT-43, lần 1 là 3b</td><td>Bấm “Thông báo cho P.TQT nắm”</td><td>P. TQT nhận thông báo kèm tóm lược và thay đổi để sau; lần 1 hiện nhãn “Đã báo P.TQT”</td></tr>
-          <tr><td>UAT-BID03-47</td><td>Lần 2 là 3a: CĐT đồng ý đổi đá sảnh, giảm 3,5%</td><td>P. TQT đổi chủng loại 2 dòng sảnh; P. Đấu thầu giảm giá trên bản nháp vòng 2 để biên còn 16% (ngưỡng 18%)</td><td>Quy cách mới lưu kèm lịch sử người sửa · cũ → mới; khối lượng, giá không đổi do P. TQT; vòng 2 phải qua Ban lãnh đạo duyệt mới gửi được</td></tr>
-          <tr><td>UAT-BID03-48</td><td>Người dùng P. TQT, gói ở “Đang thương thảo (lần 2)”</td><td>Thử sửa khối lượng một dòng trong khung quy cách</td><td>Bị chặn: “P. TQT chỉ sửa quy cách, chủng loại, kích thước…”</td></tr>
-          <tr><td>UAT-BID03-49</td><td>Gói nhánh A đã có khảo sát 2A, tình hình 2C; thẩm định HSMT tự xác nhận quá hạn rồi P. TQT trả lời muộn</td><td>Mở khối “Đầu vào từ bước 2”</td><td>Hiện chỉ đọc 2A, 2C; dòng thẩm định mang nhãn “Tự động xác nhận quá hạn” kèm phần bổ sung trả lời muộn có thời điểm</td></tr>
-          <tr><td>UAT-BID03-50</td><td>Gói có vòng 1 đã gửi, chưa có lần thương thảo</td><td>Bấm “Thông báo thương thảo hoàn thành”</td><td>Bị chặn: “Lưu ít nhất một lần thương thảo…”</td></tr>
-          <tr><td>UAT-BID03-51</td><td>Đã lưu lần 2, vòng 2 đã gửi và ghi phản hồi; DS gói gồm P.TQT, P.Kế toán, P.Vật tư</td><td>Bấm “Thông báo thương thảo hoàn thành”, bỏ P.Vật tư, thêm P.Thi công, để ô “Lưu vào danh sách của gói” không tích, gửi</td><td>P.TQT, P.Kế toán, P.Thi công nhận thông báo; DS của gói vẫn là ba phòng ban cũ; gói “Thương thảo hoàn thành”; quy cách khóa; BID-05 mở “Bắt đầu ký”</td></tr>
-          <tr><td>UAT-BID03-52</td><td>Vòng 3 đã có, vòng 2 cũ</td><td>Thử ghi lại phản hồi của vòng 2</td><td>Bị chặn: “Vòng 2 đã có vòng 3. Phản hồi của vòng 2 đã khóa…”</td></tr>
-          <tr><td>UAT-BID03-53</td><td>Gói trước ngày chuyển dữ liệu ở trạng thái đàm phán, đã gửi 2 vòng <em>(viết lại 12/11/2026 · <a href="PL-C.html#Q-279">Q-279</a>)</em></td><td>Mở gói sau khi chuyển; bấm Thông báo thương thảo hoàn thành; lưu một lần thương thảo đủ file, tóm lược, hướng xử lý, 3a; bấm lại</td><td>Trạng thái “Đang thương thảo (lần 1)”; hai vòng báo giá cũ vẫn là vòng 1, vòng 2, không có lần thương thảo nào; lần bấm đầu bị chặn “Lưu ít nhất một lần thương thảo…”; lần vừa lưu là lần 1; sau đó thông báo hoàn thành được (<a href="PL-C.html#Q-275">Q-275</a>)</td></tr>
+          <tr><td>UAT-BID03-50</td><td>Gói Đã thẩm định, chưa lưu lần 0 <em>(viết lại 16/11/2026)</em></td><td>Bấm “Thêm lần thương thảo”; bấm “Đã chốt giá”</td><td>Cả hai bị chặn “Lưu lần 0 (tệp báo giá) trước khi…”</td></tr>
+          <tr><td>UAT-BID03-51</td><td>Đã lưu lần 0; DS gói gồm P.TQT, P.Kế toán, P.Vật tư</td><td>Đã chốt giá, nhập giá trị, Lưu; bỏ P.Vật tư, thêm P.Thi công, không tích “Lưu vào danh sách của gói”, gửi</td><td>P.TQT, P.Kế toán, P.Thi công nhận thông báo; DS của gói vẫn ba phòng cũ; gói “Thương thảo hoàn thành” — không cần lần thương thảo nào</td></tr>
           <tr><td>UAT-BID03-54</td><td>Người dùng Ban lãnh đạo, gói đã có 3 lần thương thảo</td><td>Mở danh sách lần thương thảo</td><td>Thấy đủ 3 lần, mới nhất trên cùng, mở được từng lần và tải file</td></tr>
-          <tr><td>UAT-BID03-55</td><td>Tiếp UAT-BID03-46: lần 1 kết quả 3b; gói thương thảo hoàn thành rồi <em>Chốt HĐ – Đã ký</em> <em>(13/11/2026 · <a href="PL-C.html#Q-301">Q-301</a>)</em></td><td>Trước khi chốt mở màn hợp đồng; sau khi chốt mở lại</td><td>Trước chốt không có lời nhắc lần 3b; sau chốt khối Phụ lục HĐ nhắc “Có 1 lần thương thảo theo HSMT ban đầu (3b) chưa đưa vào phụ lục” với <em>Lần 1 · {hướng xử lý}</em> (<a href="BID-05.html">BID-05</a>)</td></tr>
-          <tr><td>UAT-BID03-56</td><td>Vòng 1 đang nháp, dòng HM-01 nhân công 300.000 <em>(<a href="PL-C.html#Q-300">Q-300</a>)</em></td><td>Sửa nhân công HM-01 thành 350.000, lưu; mở Lịch sử thay đổi</td><td>Hai dòng mới nhãn HM-01, ghi chú “Vòng báo giá 1”: Nhân công 300.000 → 350.000 và Giá chào tăng đúng 50.000</td></tr>
-          <tr><td>UAT-BID03-57</td><td>Tiếp UAT-BID03-56</td><td>Bấm Lưu lại mà không sửa gì</td><td>Không thêm dòng lịch sử nào</td></tr>
+          <tr><td>UAT-BID03-55</td><td>Tiếp UAT-46: lần 1 kết quả 3b; gói chốt giá rồi <em>Chốt HĐ – Đã ký</em> (<a href="PL-C.html#Q-301">Q-301</a>)</td><td>Sau khi chốt HĐ mở khối Phụ lục HĐ</td><td>Khối Phụ lục HĐ nhắc “Có 1 lần thương thảo theo HSMT ban đầu (3b) chưa đưa vào phụ lục” với <em>Lần 1 · {hướng xử lý}</em> (<a href="BID-05.html">BID-05</a>)</td></tr>
+          <tr><td>UAT-BID03-58</td><td>Gói <code>HCM_0034</code> Đã thẩm định (16/11/2026)</td><td>Bấm Lưu ở lần 0 khi chưa có tệp; tải <code>BG_HCM0034.pdf</code>, nhập giá trị chào 1.250.000.000, Lưu</td><td>Lần đầu bị chặn “Tải lên tệp báo giá trước khi lưu lần 0.”; lần sau gói <em>Đang thương thảo (lần 0)</em>, bấm ô Tiến độ mở được PDF trong nhóm Thương thảo lần 0</td></tr>
+          <tr><td>UAT-BID03-59</td><td>Tiếp UAT-58</td><td>Tải thêm <code>BG_HCM0034_v2.xlsx</code>, sửa giá trị chào 1.180.000.000, Lưu</td><td>Lần 0 có hai tệp; giá trị chào 1.180.000.000; nhật ký bước có hai lần lưu; tệp Excel tải về đúng nguyên bản</td></tr>
+          <tr><td>UAT-BID03-60</td><td>Gói ở <em>Thương thảo – áp giá (lần 0)</em> trước 16/11/2026</td><td>Mở gói sau triển khai</td><td>Trạng thái <em>Đang thương thảo (lần 0)</em>; không có bảng áp giá, nút xuất báo giá hay trình duyệt vòng; tệp báo giá đã xuất trước đó có trong mục tệp</td></tr>
+          <tr><td>UAT-BID03-61</td><td>Tiếp UAT-59 (16/11/2026 · V2 · <a href="PL-C.html#Q-322">Q-322</a>)</td><td>Xóa cả hai tệp báo giá của lần 0; tải lại <code>BG_HCM0034_v2.pdf</code></td><td>Xóa được, không cần tải tệp thay trước; gói vẫn <em>Đang thương thảo (lần 0)</em>, giá trị chào giữ nguyên; lịch sử ghi từng lần xóa, tải</td></tr>
+          <tr><td>UAT-BID03-62</td><td>Gói <code>KH_0112</code> <em>Đang thương thảo (lần 2)</em> (17/11/2026)</td><td>Bấm “Đã chốt giá”, nhập Giá trị HĐ 4.820.000.000, ghi chú, Lưu</td><td>Hộp thoại chỉ có Giá trị HĐ ✱ và ghi chú — không có ô tệp BOQ chốt; gói <em>Thương thảo hoàn thành</em>, hộp người nhận thông báo mở; tab 4 Ký HĐ mở</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-01.html">BID-01 bảng đầu việc BOQ</a><a href="BID-02.html">BID-02 BOQ cập nhật</a><a href="BID-04.html">BID-04 hủy gói thầu</a><a href="BID-05.html">BID-05 ký hợp đồng</a><a href="PF-05.html">PF-05 tệp báo giá đã xuất</a><a href="PF-06.html">PF-06 bảng đơn giá chuẩn</a><a href="PRJ-01.html">PRJ-01 giá khoán tham chiếu</a><a href="RPT-03.html">RPT-03 đối chiếu biên LN thực tế</a><a href="2026-09-15/YC-05.html">YC-05 mẫu bảng đầu việc BOQ</a><a href="PL-C.html#Q-38">PL-C · Q-38 phát hành mẫu 3.BOQ</a><a href="RPT-05.html">RPT-05 theo dõi tiến độ hợp đồng</a><a href="2026-09-15/YC-06.html">YC-06 thông tin chung gói thầu</a><a href="2026-09-15/YC-02.html">YC-02 đơn giá chuẩn theo vùng miền</a><a href="PL-C.html#Q-148">PL-C · Q-148 – Q-149 dòng đá chi tiết khi áp giá</a><a href="BID-02.html">BID-02 đầu vào bước 2 (khảo sát, thẩm định HSMT)</a><a href="BID-05.html">BID-05 ký số &amp; phụ lục HĐ Loại 02</a><a href="PF-04.html">PF-04 thông báo</a><a href="PL-A.html">PL-A trạng thái bước 3</a><a href="PL-B.html">PL-B quyền sửa quy cách của P. TQT</a><a href="PL-C.html#Q-263">Q-263 biên bản lần thương thảo</a><a href="PL-C.html#Q-264">Q-264 P. TQT sửa quy cách</a><a href="PL-C.html#Q-272">Q-272 thay đổi 3b làm bằng phụ lục Loại 02</a><a href="PL-C.html#Q-273">Q-273 hộp thoại người nhận</a><a href="PL-C.html#Q-274">Q-274 áp giá là lần 0</a><a href="PL-C.html#Q-275">Q-275 chuyển dữ liệu gói đang chạy</a><a href="PL-C.html#Q-301">Q-301 lần 3b đưa vào phụ lục Loại 02</a></p>
+    <p class="links"><a href="BID-01.html">BID-01 bảng tổng hợp, bước = tệp + Lưu</a><a href="BID-02.html">BID-02 tệp bước Thẩm định</a><a href="BID-04.html">BID-04 hủy gói thầu</a><a href="BID-05.html">BID-05 ký HĐ, tạo mã VTHH theo HĐ, phụ lục Loại 02</a><a href="PL-C.html#Q-322">Q-322 tệp không duyệt, xóa được</a><a href="PL-C.html#Q-327">Q-327 tệp của lần thương thảo</a><a href="PL-C.html#Q-333">Q-333 nhánh A trước Đã thẩm định</a><a href="PF-04.html">PF-04 thông báo</a><a href="PF-05.html">PF-05 tệp báo giá, biên bản</a><a href="PL-A.html">PL-A trạng thái bước 3</a><a href="PL-B.html">PL-B quyền ghi lần thương thảo</a><a href="RPT-03.html">RPT-03 lãi lỗ dự án</a><a href="PL-C.html#Q-263">Q-263 biên bản lần thương thảo</a><a href="PL-C.html#Q-272">Q-272 thay đổi 3b làm bằng phụ lục Loại 02</a><a href="PL-C.html#Q-273">Q-273 hộp thoại người nhận</a><a href="PL-C.html#Q-288">Q-288 tóm lược, hướng xử lý</a><a href="PL-C.html#Q-301">Q-301 lần 3b đưa vào phụ lục Loại 02</a><a href="PL-C.html#Q-314">Q-314 danh sách trạng thái</a><a href="PL-C.html#Q-319">Q-319 bỏ áp giá trên phần mềm</a></p>
   </div>
 </section>
 <div class="filefoot">

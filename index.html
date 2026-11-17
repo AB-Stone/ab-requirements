@@ -93,7 +93,7 @@
   <p class="intro">Mỗi đặc tả là một tệp riêng. Bấm để mở; trong mỗi trang có thanh điều hướng trước / sau và mục lục đầy đủ ở cột trái.</p>
   <div class="grpband"><em>PF</em><h3>Nền tảng</h3><span>6 đặc tả</span></div>
   <div class="cards">
-    <a href="PF-01.html"><i>PF-01</i><b>Danh mục nền &amp; mã hóa</b><span>Bộ danh mục gốc và quy tắc mã hóa mà mọi chứng từ tham chiếu</span></a>
+    <a href="PF-01.html"><i>PF-01</i><b>Danh mục nền &amp; mã hóa</b><span>Bộ danh mục gốc và quy tắc mã hóa mà mọi chứng từ tham chiếu; đổi, gộp, xóa mã gói thầu</span></a>
     <a href="PF-02.html"><i>PF-02</i><b>Vai trò &amp; phân quyền</b><span>Ba lớp quyền: chức năng, phạm vi dữ liệu, quyền phê duyệt</span></a>
     <a href="PF-03.html"><i>PF-03</i><b>Trung tâm phê duyệt</b><span>Cỗ máy quy trình dùng chung cho 8 nhóm chứng từ</span></a>
     <a href="PF-04.html"><i>PF-04</i><b>Thông báo &amp; ký duyệt</b><span>Thông báo đủ ngữ cảnh và chữ ký điện tử thay ký giấy</span></a>
@@ -102,11 +102,11 @@
   </div>
   <div class="grpband"><em>BID</em><h3>Phòng Đấu thầu</h3><span>7 đặc tả</span></div>
   <div class="cards">
-    <a href="BID-01.html"><i>BID-01</i><b>Tiếp nhận thư chào thầu</b><span>Biến thư mời thầu thành hồ sơ gói thầu có mã, có hạn</span></a>
-    <a href="BID-02.html"><i>BID-02</i><b>Thẩm định BOQ liên phòng</b><span>Hai phiếu song song, một điểm hợp nhất</span></a>
-    <a href="BID-03.html"><i>BID-03</i><b>Áp giá &amp; thương thảo</b><span>Giá vốn cạnh giá chào, chốt chặn theo biên tối thiểu</span></a>
+    <a href="BID-01.html"><i>BID-01</i><b>Tiếp nhận thư chào thầu</b><span>Hồ sơ gói có mã, tên khóa; bảng tổng hợp với cột Tiến độ tự động và Tình trạng tự gõ</span></a>
+    <a href="BID-02.html"><i>BID-02</i><b>Thẩm định BOQ liên phòng</b><span>Nhánh A: khảo sát sơ bộ → chờ CĐT phát hành HSMT → thẩm định HSMT; nhánh B: thẩm định — mỗi bước P. Đấu thầu tải tệp + Lưu</span></a>
+    <a href="BID-03.html"><i>BID-03</i><b>Áp giá &amp; thương thảo</b><span>Lưu tệp báo giá, biên bản từng lần, chốt giá bằng Giá trị HĐ</span></a>
     <a href="BID-04.html"><i>BID-04</i><b>Hủy gói thầu</b><span>Đánh dấu hủy và thông báo các bộ phận — giữ ở mức tối thiểu</span></a>
-    <a href="BID-05.html"><i>BID-05</i><b>Ký HĐ &amp; khởi tạo dự án</b><span>Ký số nhiều bước rồi sinh dự án, BOQ, nhân sự, kho</span></a>
+    <a href="BID-05.html"><i>BID-05</i><b>Ký HĐ &amp; khởi tạo dự án</b><span>Chốt HĐ đủ năm điều kiện sinh dự án; tạo mã VTHH theo HĐ bằng import BOQ đã chốt; phụ lục Loại 02 thương thảo giá hoặc bỏ qua trước ký số</span></a>
     <a href="BID-06.html"><i>BID-06</i><b>Áp giá doanh thu đơn</b><span>Luồng song song, không chặn tác nghiệp</span></a>
     <a href="BID-07.html"><i>BID-07</i><b>Biên bản phạt chủ đầu tư</b><span>Ghi nhận biên bản phạt, phân bổ về tổ đội, phần không quy được tính vào đánh giá BCH</span></a>
   </div>
@@ -478,6 +478,8 @@
         <tr><td class="k">Chung</td><td>Danh mục dự án, kho, KMCP, mã thống kê, tick chi phí không hợp lý</td><td class="k"><a href="PF-01.html">PF-01</a></td></tr>
         <tr><td class="k">05/09 · Thi công</td><td>Danh mục tổ đội — bên nhận khoán nhân công phải có màn hình khai báo riêng, ba màn hình PRJ đang dùng như danh mục có sẵn</td><td class="k"><a href="PRJ-05.html">PRJ-05</a></td></tr>
         <tr><td class="k">20/10 · Thi công</td><td>Bỏ phân công nhân sự hiện trường khỏi Hợp đồng (BID-05); GĐ dự án được gán nhận thông báo và phân công nhân sự từ phòng ban của mình</td><td class="k"><a href="PRJ-06.html">PRJ-06</a></td></tr>
+        <tr><td class="k">16/11 · Đấu thầu</td><td>Rút gọn luồng gói thầu theo góp ý 12/11: mỗi bước tải tệp + Lưu bật cột tình trạng trên bảng tổng hợp; import dữ liệu HĐ một lần sau chốt giá; mã khóa, gộp / xóa mã kiểu kế toán</td><td class="k"><a href="BID-01.html">BID-01</a>…<a href="BID-05.html">BID-05</a></td></tr>
+        <tr><td class="k">16/11 tối · Đấu thầu</td><td>Bản V2 (<em>Deploy P.ĐT_V2.xlsx</em>): thẩm định do P. Đấu thầu tự tải tệp rà soát + Lưu, bỏ phiếu và nhánh 2A / 2C; tệp không duyệt, xóa được; bảng tổng hợp có cột Tiến độ và Tình trạng; bước 5 đổi thành Tạo mã VTHH theo HĐ, Mã VTHH phải có sẵn ở danh mục; đổi mã, đổi tên, gộp, xóa mã gói thầu ở Danh mục dự án / Công trình</td><td class="k"><a href="BID-01.html">BID-01</a>…<a href="BID-05.html">BID-05</a>, <a href="PF-01.html">PF-01</a></td></tr>
         <tr><td class="k">05/09 · Kế toán</td><td>Danh mục tài khoản kế toán — hệ thống tài khoản dùng chung cho định khoản và báo cáo</td><td class="k"><a href="ACC-10.html">ACC-10</a></td></tr>
         <tr><td class="k">Theo dõi tiến độ</td><td>File Excel theo dõi thủ công từng hợp đồng — quyết toán, hoá đơn, bảo hành, công nợ</td><td class="k"><a href="RPT-05.html">RPT-05</a></td></tr>
         <tr><td class="k">15/09 · YC-02</td><td>Đơn giá chuẩn nhân công theo vùng miền &amp; kỳ hiệu lực — bổ sung đợt 15/09/2026</td><td class="k"><a href="PF-06.html">PF-06</a></td></tr>

@@ -328,7 +328,7 @@
       <li>Bốn thẻ Chờ duyệt · Đã duyệt · Từ chối · Tất cả lịch sử đọc chung một danh sách phiên duyệt; đổi thẻ không làm số đếm trên thẻ <em>Chờ duyệt</em> lệch khỏi chuông thông báo.</li>
       <li>Ba thẻ lịch sử chỉ hiện hồ sơ người xem từng duyệt một bước hoặc là người tạo; Admin thấy toàn bộ. Không thẻ nào cho xem thêm so với <a href="PL-B.html">PL-B</a>.</li>
       <li>Danh sách có sáu cột, trong đó <em>Loại yêu cầu</em> và <em>Mã chứng từ</em> là hai cột riêng lọc và sắp xếp được, còn <em>Người tạo</em> hiện tên người trình và không đổi qua các lần trình lại — theo <a href="2026-09-22/YC-12.html">YC-12</a>.</li>
-      <li>Thẻ <em>Việc được giao</em> liệt kê mọi việc đang mở có tên mình là người phụ trách — hạng mục Shopdrawing chờ nộp, phiếu thẩm định BOQ, hồ sơ thanh toán, vướng mắc — việc gần hạn nhất lên đầu; bấm một dòng là sang thẳng màn hình làm việc đó.</li>
+      <li>Thẻ <em>Việc được giao</em> liệt kê mọi việc đang mở có tên mình là người phụ trách — hạng mục Shopdrawing chờ nộp, hồ sơ thanh toán, vướng mắc (phiếu thẩm định BOQ đã bỏ <em>(16/11/2026 V2 · <a href="PL-C.html#Q-321">Q-321</a>)</em>) — việc gần hạn nhất lên đầu; bấm một dòng là sang thẳng màn hình làm việc đó.</li>
     </ol>
 
     <h4>Mockup UI — Phê duyệt › Danh sách &amp; chi tiết</h4>
@@ -417,7 +417,7 @@
         <thead><tr><th style="width:20%">Loại việc</th><th style="width:30%">Được tính là “đang mở” khi</th><th style="width:14%">Cột Hạn</th><th>Bấm dòng mở tới</th></tr></thead>
         <tbody>
           <tr><td><b>Lập bản vẽ Shopdrawing</b></td><td>Hạng mục có <em>Cán bộ phụ trách</em> là mình, tình trạng bản vẽ <em>Đã giao</em> hoặc <em>Bị trả lại</em></td><td>Hạn nộp khi giao</td><td>Hồ sơ Shopdrawing của dự án, đúng dòng hạng mục — <a href="ORD-02.html">ORD-02</a></td></tr>
-          <tr><td><b>Thẩm định BOQ</b></td><td>Phiếu thẩm định kỹ thuật hoặc khảo sát hiện trường giao cho mình, chưa nộp; gói thầu chưa hủy / chưa gộp</td><td>Hạn nộp phiếu</td><td>Tab thẩm định của gói thầu — <a href="BID-02.html">BID-02</a></td></tr>
+          <tr><td><s>Thẩm định BOQ</s></td><td colspan="3">Đã bỏ <em>(16/11/2026 V2 · <a href="PL-C.html#Q-321">Q-321</a>)</em> — không còn phiếu thẩm định giao người; bước Thẩm định do P. Đấu thầu tự tải tệp + Lưu (<a href="BID-02.html">BID-02</a>).</td></tr>
           <tr><td><b>Hồ sơ thanh toán</b></td><td>Hồ sơ tạm ứng · TT vật tư · TT khối lượng · quyết toán có người phụ trách là mình, chưa <em>Đã thanh toán / Đóng / Từ chối / Hủy</em></td><td>Ngày CĐT hẹn</td><td>Màn hình chi tiết hồ sơ — <a href="ORD-01.html">ORD-01</a>, <a href="ORD-08.html">ORD-08</a>, <a href="ORD-09.html">ORD-09</a>, <a href="ORD-10.html">ORD-10</a></td></tr>
           <tr><td><b>Vướng mắc</b></td><td>Vướng mắc hồ sơ hoặc sai lệch đợt cấp hàng giao cho mình, chưa đóng</td><td>Hạn xử lý</td><td>Hồ sơ chứa vướng mắc, hoặc tab giao hàng của đơn — <a href="ORD-05.html">ORD-05</a></td></tr>
         </tbody>
@@ -514,7 +514,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PF-02.html">PF-02 quyền duyệt &amp; hạn mức</a><a href="PF-04.html">PF-04 thông báo &amp; chữ ký</a><a href="ACC-01.html">ACC-01 đề xuất 1 cấp / 2 cấp</a><a href="PRJ-03.html">PRJ-03 luồng 5 bước</a><a href="MOB-01.html">MOB-01 duyệt trên điện thoại</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a><a href="2026-09-22/YC-12.html">YC-12 trung tâm phê duyệt theo mẫu</a><a href="ORD-02.html">ORD-02 phân công lập Shopdrawing</a><a href="BID-02.html">BID-02 phiếu thẩm định</a><a href="ORD-01.html">ORD-01 hồ sơ &amp; vướng mắc</a></p>
+    <p class="links"><a href="PF-02.html">PF-02 quyền duyệt &amp; hạn mức</a><a href="PF-04.html">PF-04 thông báo &amp; chữ ký</a><a href="ACC-01.html">ACC-01 đề xuất 1 cấp / 2 cấp</a><a href="PRJ-03.html">PRJ-03 luồng 5 bước</a><a href="MOB-01.html">MOB-01 duyệt trên điện thoại</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a><a href="2026-09-22/YC-12.html">YC-12 trung tâm phê duyệt theo mẫu</a><a href="ORD-02.html">ORD-02 phân công lập Shopdrawing</a><a href="BID-02.html">BID-02 bước thẩm định</a><a href="ORD-01.html">ORD-01 hồ sơ &amp; vướng mắc</a></p>
   </div>
 </section>
 <div class="filefoot">
