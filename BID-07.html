@@ -38,10 +38,9 @@
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
+    <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
-    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <a href="PRJ-06.html"><i>PRJ-06</i>Nhân sự dự án</a>
@@ -93,14 +92,14 @@
   <div class="sb">
 
     <h4>Mục tiêu</h4>
-    <p>Trước màn hình này, hệ thống đã nói về khoản phạt ở <b>bốn</b> chỗ và không chỗ nào giữ bản ghi gốc: <a href="PRJ-03.html">PRJ-03</a> có dòng khấu trừ <em>phạt</em> của tổ đội nhưng không biết nó đến từ biên bản nào; <a href="ACC-07.html">ACC-07</a> có quỹ phạt “chỉ nhận tiền từ các khoản khấu trừ phạt” mà không có nguồn nào bơm vào (giới hạn nguồn này bỏ từ 02/11/2026 — <a href="PL-C.html#Q-166">Q-166</a>); <a href="ORD-10.html">ORD-10</a> và <a href="RPT-05.html">RPT-05</a> mỗi nơi giữ một con số vô hướng nhập tay. BID-07 là lớp ở giữa còn thiếu — và vì vậy nó <b>nối</b> chứ không dựng song song: mọi chỗ nói trên vẫn đọc đúng thứ chúng đang đọc.</p>
+    <p>Trước màn hình này, hệ thống đã nói về khoản phạt ở <b>bốn</b> chỗ và không chỗ nào giữ bản ghi gốc: hồ sơ thanh toán nhân công tổ đội cũ (PRJ-03, thay bằng <a href="ORD-12.html">ORD-12</a> từ 17/11/2026) có dòng khấu trừ <em>phạt</em> của tổ đội nhưng không biết nó đến từ biên bản nào; <a href="ACC-07.html">ACC-07</a> có quỹ phạt “chỉ nhận tiền từ các khoản khấu trừ phạt” mà không có nguồn nào bơm vào (giới hạn nguồn này bỏ từ 02/11/2026 — <a href="PL-C.html#Q-166">Q-166</a>); <a href="ORD-10.html">ORD-10</a> và <a href="RPT-05.html">RPT-05</a> mỗi nơi giữ một con số vô hướng nhập tay. BID-07 là lớp ở giữa còn thiếu — và vì vậy nó <b>nối</b> chứ không dựng song song: mọi chỗ nói trên vẫn đọc đúng thứ chúng đang đọc.</p>
     <div class="note">
       <b>Hai chiều phạt khác nhau, đừng trộn</b>
-      <p style="margin:0">Phạt ở <a href="PRJ-03.html">PRJ-03</a> vốn là <b>công ty phạt tổ đội</b> vì vi phạm an toàn, chậm tiến độ, hư hỏng — do Ban chỉ huy lập, không cần chủ đầu tư. Trang này thêm chiều ngược lại: <b>chủ đầu tư phạt công ty</b>, rồi công ty phân bổ xuống. Hai chiều gặp nhau đúng ở bảng khấu trừ của tổ đội, nên bảng đó có một cột <em>Nguồn</em> để nói dòng này đến từ đâu — một bảng, không phải hai.</p>
+      <p style="margin:0">Phạt tổ đội vốn là <b>công ty phạt tổ đội</b> vì vi phạm an toàn, chậm tiến độ, hư hỏng — không cần chủ đầu tư. Trang này thêm chiều ngược lại: <b>chủ đầu tư phạt công ty</b>, rồi công ty phân bổ xuống. Từ 17/11/2026 hai chiều chỉ gặp nhau trên giấy: P. TQT tự trừ khoản phạt vào cột “Sản lượng + khấu trừ (VT, TI, phạt)” của bảng nhân công tổ đội ở <a href="ORD-12.html">ORD-12</a>; dòng phân bổ ở đây là căn cứ để trừ, hệ thống không tự sinh dòng khấu trừ (<a href="PL-C.html#Q-344">Q-344</a>).</p>
     </div>
 
     <h4>Lưu đồ — vòng đời một biên bản phạt</h4>
-    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:360px;margin:0 auto"><svg role="img" aria-label="Hình BID-07.1 Biên bản vào hệ thống một lần ở P. Đấu thầu rồi rẽ hai nhánh: phần phân bổ được đi xuống bảng khấu trừ tổ đội của PRJ-03, phần không phân bổ được nhân hệ số quản lý và đi vào báo cáo đánh giá hiệu quả Ban chỉ huy của RPT-02."
+    <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:360px;margin:0 auto"><svg role="img" aria-label="Hình BID-07.1 Biên bản vào hệ thống một lần ở P. Đấu thầu rồi rẽ hai nhánh: phần phân bổ được thành căn cứ trừ tổ đội trên bảng nhân công của ORD-12, phần không phân bổ được nhân hệ số quản lý và đi vào báo cáo đánh giá hiệu quả Ban chỉ huy của RPT-02."
  viewBox="0 0 360 560" xmlns="http://www.w3.org/2000/svg">
 <g>
 <rect x="40" y="8" width="280" height="44" fill="#dde3e9" stroke="#5d6b7a"/>
@@ -141,8 +140,8 @@
 <path fill="none" stroke="#55606b" d="M276,386 L276,402"/>
 <polygon fill="#55606b" stroke="#55606b" points="272.5,400 279.5,400 276,406"/>
 <rect x="8" y="406" width="152" height="44" fill="#eef2f5" stroke="#5d6b7a"/>
-<text xml:space="preserve" text-anchor="middle" x="84" y="425" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ-03 khấu trừ</text>
-<text xml:space="preserve" text-anchor="middle" x="84" y="440" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">vào kỳ giao khoán</text>
+<text xml:space="preserve" text-anchor="middle" x="84" y="425" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Căn cứ trừ tổ đội</text>
+<text xml:space="preserve" text-anchor="middle" x="84" y="440" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">trên bảng ORD-12</text>
 <rect x="200" y="406" width="152" height="44" fill="#eef2f5" stroke="#5d6b7a"/>
 <text xml:space="preserve" text-anchor="middle" x="276" y="425" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">RPT-02 hiệu quả BCH</text>
 <text xml:space="preserve" text-anchor="middle" x="276" y="440" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">kỳ 6 tháng / 1 năm</text>
@@ -191,7 +190,7 @@
           <tr><td>Hợp đồng</td><td class="k">alloc[].contract_no</td><td>Tham chiếu</td><td class="c">—</td><td>Chỉ đọc, lấy từ biên bản. Không lưu lại trên dòng: cặp khóa là (tổ đội, hợp đồng của biên bản).</td></tr>
           <tr><td>Giá trị phân bổ</td><td class="k">alloc[].amount</td><td>Số tiền</td><td class="c req">✱</td><td>Số dương. Tổng mọi dòng không vượt <code>amount</code>.</td></tr>
           <tr><td>Căn cứ</td><td class="k">alloc[].note</td><td>Chuỗi dài</td><td class="c req">✱</td><td>Vì sao quy về tổ đội này. Tổ đội đọc được khi nhận khấu trừ, nên câu này viết cho họ.</td></tr>
-          <tr><td>Kỳ khấu trừ</td><td class="k">alloc[].payroll_batch</td><td>Tham chiếu</td><td class="c">—</td><td>Kỳ giao khoán ở <a href="PRJ-03.html">PRJ-03</a> đã nhận dòng này. Hệ thống điền khi kỳ đó được lập; trước đó để trống.</td></tr>
+          <tr><td>Kỳ khấu trừ</td><td class="k">alloc[].payroll_batch</td><td>Tham chiếu</td><td class="c">—</td><td><em>Bỏ 17/11/2026 (<a href="PL-C.html#Q-344">Q-344</a>)</em> — không còn kỳ giao khoán để nhận dòng. Dòng đã có giá trị trước ngày này giữ nguyên để xem.</td></tr>
           <tr><td>Người đề xuất</td><td class="k">alloc[].proposed_by</td><td>Tham chiếu</td><td class="c req">✱</td><td>Ban chỉ huy dự án — người biết tổ đội nào gây ra vi phạm.</td></tr>
         </tbody>
       </table>
@@ -204,7 +203,7 @@
         <tbody>
           <tr><td>Chậm tiến độ</td><td class="k">schedule</td><td>Nhóm thường gặp nhất; đối chiếu được với tiến độ hợp đồng ở <a href="RPT-05.html">RPT-05</a></td></tr>
           <tr><td>Sai quy cách</td><td class="k">quality</td><td>Đá, bề mặt, dung sai không đúng hồ sơ</td></tr>
-          <tr><td>Vi phạm an toàn</td><td class="k">safety</td><td>Cùng nhóm với khoản phạt an toàn mà Ban chỉ huy tự lập ở <a href="PRJ-03.html">PRJ-03</a>, nhưng khác chiều</td></tr>
+          <tr><td>Vi phạm an toàn</td><td class="k">safety</td><td>Cùng nhóm với khoản phạt an toàn công ty trừ tổ đội trên bảng nhân công (<a href="ORD-12.html">ORD-12</a>), nhưng khác chiều</td></tr>
           <tr><td>Vệ sinh môi trường</td><td class="k">environment</td><td></td></tr>
           <tr><td>Khác</td><td class="k">other</td><td>Vi phạm không thuộc bốn nhóm trên; nội dung đọc ở tệp biên bản — form không có ô diễn giải (<a href="PL-C.html#Q-191">Q-191</a>). Danh mục đóng không được nở thêm chỉ vì một biên bản</td></tr>
         </tbody>
@@ -219,7 +218,7 @@
           <tr><td><span class="tag t-neu">Mới ghi nhận</span></td><td class="k">recorded</td><td>Đã nhập và đã phát thông báo; chưa ai đề xuất phân bổ</td></tr>
           <tr><td><span class="tag t-warn">Đang phân bổ</span></td><td class="k">allocating</td><td>Ban chỉ huy đang đề xuất; biên bản và các dòng vẫn sửa được</td></tr>
           <tr><td><span class="tag t-warn">Chờ lãnh đạo chốt</span></td><td class="k">pending_approval</td><td>Đang ở <a href="PF-03.html">PF-03</a>, khóa chỉnh sửa như mọi chứng từ có phiên duyệt mở</td></tr>
-          <tr><td><span class="tag t-ok">Đã chốt</span></td><td class="k">settled</td><td>Dòng phân bổ khóa lại và chảy sang <a href="PRJ-03.html">PRJ-03</a>; phần quy trách nhiệm BCH vào <a href="RPT-02.html">RPT-02</a></td></tr>
+          <tr><td><span class="tag t-ok">Đã chốt</span></td><td class="k">settled</td><td>Dòng phân bổ khóa lại và hiện ở danh sách khoản đã phân bổ theo tổ đội; phần quy trách nhiệm BCH vào <a href="RPT-02.html">RPT-02</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -231,14 +230,14 @@
       <li>Ban chỉ huy mở biên bản và đề xuất phân bổ theo từng tổ đội; màn hình luôn hiện còn bao nhiêu chưa phân bổ.</li>
       <li>Phần không phân bổ có ô hệ số riêng; giá trị sau khi nhân hiện ngay cạnh, kèm ô lý do bắt buộc khi hệ số lớn hơn 1,0.</li>
       <li>Lãnh đạo duyệt một lần, thấy đồng thời phần trừ tổ đội và phần quy trách nhiệm Ban chỉ huy.</li>
-      <li>Kỳ giao khoán kế tiếp của tổ đội tự có dòng khấu trừ, ghi rõ nguồn là biên bản nào, bấm vào mở được tệp gốc.</li>
-      <li>Khoản phạt đã chốt nhưng tổ đội chưa có kỳ giao khoán nào hiện trong danh sách <em>chờ khấu trừ</em>, không rơi mất.</li>
+      <li>Dòng phân bổ đã chốt là căn cứ để P. TQT trừ tổ đội trên bảng nhân công ở <a href="ORD-12.html">ORD-12</a>; hệ thống không tự sinh dòng khấu trừ <em>(17/11/2026 · <a href="PL-C.html#Q-344">Q-344</a>)</em>.</li>
+      <li>Mọi khoản phân bổ đã chốt hiện trong danh sách <em>khoản đã phân bổ theo tổ đội</em>, gom theo tổ, bấm vào mở được tệp biên bản gốc.</li>
       <li>Con số khoản phạt ở <a href="ORD-10.html">ORD-10</a> và <a href="RPT-05.html">RPT-05</a> không còn nhập tay — chúng là tổng các biên bản của hợp đồng.</li>
     </ul>
 
     <h4>Mockup UI — Đấu thầu › Biên bản phạt chủ đầu tư</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">Đấu thầu ›</span><b>BBP-KH_0114-01 · Biên bản phạt 05/BB-PHAT</b><span class="sp"></span><span class="tag t-warn">Đang phân bổ</span><span class="wf-btn"><span class="pin">5</span> Khoản chờ khấu trừ</span><span class="wf-btn pri"><span class="pin">6</span> Trình lãnh đạo</span></div>
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu ›</span><b>BBP-KH_0114-01 · Biên bản phạt 05/BB-PHAT</b><span class="sp"></span><span class="tag t-warn">Đang phân bổ</span><span class="wf-btn"><span class="pin">5</span> Khoản đã phân bổ theo tổ đội</span><span class="wf-btn pri"><span class="pin">6</span> Trình lãnh đạo</span></div>
       <div class="wf-body">
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">1</span> Biên bản chủ đầu tư gửi</div>
@@ -257,10 +256,10 @@
         </div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">3</span> Phân bổ về tổ đội — Ban chỉ huy đề xuất</div>
-          <table><thead><tr><th>Mã tổ đội</th><th>Tổ đội</th><th class="num">Giá trị phân bổ</th><th>Căn cứ</th><th>Kỳ khấu trừ</th></tr></thead>
+          <table><thead><tr><th>Mã tổ đội</th><th>Tổ đội</th><th class="num">Giá trị phân bổ</th><th>Căn cứ</th></tr></thead>
           <tbody>
-            <tr><td>TD-004</td><td>Tổ ốp lát số 4</td><td class="num">40.000.000</td><td>Trục A–B chậm 12 ngày, nhân lực dưới cam kết</td><td><span class="tag t-neu">Chờ khấu trừ</span></td></tr>
-            <tr><td>TD-007</td><td>Tổ hoàn thiện số 7</td><td class="num">35.000.000</td><td>Trục C–D dừng 6 ngày do thiếu giàn giáo của tổ</td><td><span class="tag t-neu">Chờ khấu trừ</span></td></tr>
+            <tr><td>TD-004</td><td>Tổ ốp lát số 4</td><td class="num">40.000.000</td><td>Trục A–B chậm 12 ngày, nhân lực dưới cam kết</td></tr>
+            <tr><td>TD-007</td><td>Tổ hoàn thiện số 7</td><td class="num">35.000.000</td><td>Trục C–D dừng 6 ngày do thiếu giàn giáo của tổ</td></tr>
             <tr><td colspan="2"><b>Tổng đã phân bổ</b></td><td class="num"><b>75.000.000</b></td><td colspan="2">Còn lại <b>25.000.000</b> chưa quy được cho tổ đội nào</td></tr>
           </tbody></table>
         </div>
@@ -285,10 +284,10 @@
         <thead><tr><th class="c">#</th><th>Chức năng trên màn hình</th><th>Hành vi</th></tr></thead>
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Khối biên bản</td><td>Chỉ P. Đấu thầu nhập. Chọn hợp đồng xong, hệ thống biết dự án, ban chỉ huy và các tổ đội đang nhận khoán — đó là toàn bộ chuỗi lan tỏa của màn hình này.</td></tr>
-          <tr><td class="c"><span class="pin">2</span></td><td>Tệp biên bản</td><td>Bắt buộc trước khi trình. Đây là bản mà tổ đội đối chiếu khi nhận khấu trừ ở <a href="PRJ-03.html">PRJ-03</a>.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Bảng phân bổ</td><td>Ban chỉ huy đề xuất. Mỗi tổ đội tối đa một dòng; tổng không vượt giá trị biên bản; dòng đã khấu trừ chuyển sang chỉ đọc.</td></tr>
+          <tr><td class="c"><span class="pin">2</span></td><td>Tệp biên bản</td><td>Bắt buộc trước khi trình. Đây là bản mà tổ đội đối chiếu khi bị trừ trên bảng nhân công ở <a href="ORD-12.html">ORD-12</a>.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Bảng phân bổ</td><td>Ban chỉ huy đề xuất. Mỗi tổ đội tối đa một dòng; tổng không vượt giá trị biên bản; dòng đã chốt chuyển sang chỉ đọc.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Phần không phân bổ &amp; hệ số</td><td>Hệ số chỉ nhân vào phần dư. Giá trị sau khi nhân hiện ngay bên dưới để người đặt hệ số nhìn thấy hệ quả trước khi trình.</td></tr>
-          <tr><td class="c"><span class="pin">5</span></td><td>Khoản chờ khấu trừ</td><td>Danh sách các dòng đã chốt mà tổ đội chưa có kỳ giao khoán nào để trừ. Mở từ mọi biên bản, gom theo tổ đội.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Khoản đã phân bổ theo tổ đội</td><td>Danh sách các dòng đã chốt, gom theo tổ đội, để P. TQT đối chiếu khi lập bảng nhân công ở <a href="ORD-12.html">ORD-12</a>. Chỉ đọc; mở từ mọi biên bản.</td></tr>
           <tr><td class="c"><span class="pin">6</span></td><td>Trình lãnh đạo</td><td>Gửi <b>cả</b> bảng phân bổ lẫn hệ số vào một phiên duyệt của <a href="PF-03.html">PF-03</a>. Bị khóa khi chưa có tệp biên bản hoặc hệ số &gt; 1 mà chưa nêu lý do.</td></tr>
         </tbody>
       </table>
@@ -299,13 +298,13 @@
       <li><b>Một biên bản của chủ đầu tư là một bản ghi, nhập một lần, ở P. Đấu thầu.</b> Không bộ phận nào khác tạo được.<span class="then">P. Đấu thầu là bên giữ quan hệ hợp đồng nên cũng là bên nhận văn bản. Cho dự án tự nhập thì cùng một biên bản sẽ vào hệ thống hai lần với hai số tiền.</span></li>
       <li><b>Mã hợp đồng là khóa lan tỏa, không phải một ô ghi chú.</b> Chọn hợp đồng xong, hệ thống tự biết dự án, ban chỉ huy, tổ đội và các bộ phận liên quan.<span class="then">Đúng câu của yêu cầu: “dựa theo mã HĐ để thông báo đến các bộ phận và Dự án liên quan”. Gõ tay là mất toàn bộ chuỗi lan tỏa mà vẫn trông như màn hình chạy đúng.</span></li>
       <li><b>Số biên bản giữ nguyên văn của chủ đầu tư.</b> Hệ thống sinh mã nội bộ riêng và không đụng vào số của đối tác.<span class="then">Hai số phục vụ hai việc: mã nội bộ để tra cứu, số của chủ đầu tư để hai bên đối chiếu khi họp. Chuẩn hóa số của họ là làm hỏng việc thứ hai.</span></li>
-      <li><b>Không có tệp thì không trình phân bổ được.</b><span class="then"><a href="PRJ-03.html">PRJ-03</a> đã có luật “khoản phạt cần biên bản kèm theo để tổ đội đối chiếu”. Chặn ngay từ đây thì luật đó không bao giờ bị vi phạm ở cuối luồng — và lời từ chối rơi vào đúng người đang giữ tệp.</span></li>
+      <li><b>Không có tệp thì không trình phân bổ được.</b><span class="then">Khoản phạt trừ vào tổ đội cần biên bản để tổ đội đối chiếu. Chặn ngay từ đây thì lời từ chối rơi vào đúng người đang giữ tệp.</span></li>
       <li><b>Tổng phân bổ không vượt giá trị biên bản.</b> Phần chênh là <code>unallocated_amount</code>, luôn ≥ 0.<span class="then">Không đặt ràng buộc “phải phân bổ hết”: phần lớn biên bản có một phần lỗi thuộc điều hành chung, không quy được cho tổ đội nào. Chính phần đó là dữ liệu mà báo cáo đánh giá hiệu quả cần.</span></li>
       <li><b>Hệ số chỉ nhân vào phần không phân bổ.</b> Dòng phân bổ về tổ đội giữ nguyên số tiền thật.<span class="then">Tổ đội bị trừ đúng số trên biên bản, không hơn — nếu không thì con số khấu trừ không đối chiếu được với văn bản của chủ đầu tư. Hệ số là công cụ đánh giá nội bộ với Ban chỉ huy, không phải công cụ thu tiền.</span></li>
       <li><b>Hệ số lớn hơn 1,0 phải có lý do; nhỏ hơn 1,0 thì không.</b><span class="then">Con số sau khi nhân đi thẳng vào xếp hạng Ban chỉ huy ở <a href="RPT-02.html">RPT-02</a>. Một hệ số không giải thích được sẽ bị phản đối đúng vào lúc đánh giá cuối kỳ, khi không ai còn nhớ vì sao đặt 2,0. Dưới 1,0 thì bị chặn hẳn — nó ghi nhận ít hơn số công ty thực sự phải chịu.</span></li>
       <li><b>Phân bổ là đề xuất của Ban chỉ huy, chốt là việc của lãnh đạo.</b> Biên bản đi qua <a href="PF-03.html">PF-03</a> một lần, mang theo cả dòng phân bổ lẫn hệ số.<span class="then">Hai thứ này phải được duyệt cùng nhau: duyệt riêng thì lãnh đạo thấy phần trừ tổ đội mà không thấy phần mình quy cho Ban chỉ huy, và ngược lại.</span></li>
-      <li><b>Dòng phân bổ đã chốt là chỉ đọc ở PRJ-03.</b> Nó xuất hiện trong bảng khấu trừ của kỳ giao khoán kế tiếp của đúng cặp <em>tổ đội + hợp đồng</em>, mang cột <em>Nguồn</em> trỏ về biên bản.<span class="then">Sửa số ở PRJ-03 thì hệ thống lệch với văn bản của chủ đầu tư. Muốn sửa phải quay về BID-07 và mở lại biên bản, có ghi lý do.</span></li>
-      <li><b>Tổ đội chưa có kỳ giao khoán nào thì khoản phạt nằm chờ.</b><span class="then">Không tự tạo kỳ giao khoán chỉ để trừ tiền phạt. Danh sách <em>khoản phạt chờ khấu trừ</em> hiện ngay trên màn hình để không ai quên — một khoản nợ không có chỗ hiển thị là một khoản nợ lặng lẽ biến mất.</span></li>
+      <li><b>Dòng phân bổ đã chốt không tự thành khấu trừ</b> <em>(17/11/2026 · <a href="PL-C.html#Q-344">Q-344</a>)</em>. Bản ghi phân bổ giữ nguyên ở đây; P. TQT gõ khoản trừ vào bảng nhân công tổ đội ở <a href="ORD-12.html">ORD-12</a>.<span class="then">Bảng nhân công là bảng gõ tay, không nhận dòng từ màn hình khác. Muốn sửa số phân bổ vẫn phải quay về BID-07 và mở lại biên bản, có ghi lý do.</span></li>
+      <li><b>Khoản đã phân bổ luôn có chỗ hiển thị.</b><span class="then">Danh sách <em>khoản đã phân bổ theo tổ đội</em> hiện ngay trên màn hình để P. TQT không quên trừ khi lập bảng nhân công — một khoản nợ không có chỗ hiển thị là một khoản nợ lặng lẽ biến mất.</span></li>
       <li><b>Biên bản đóng khi phần dư bằng không hoặc đã có kết luận không phân bổ.</b> Không có trạng thái “bỏ qua”.<span class="then">Mọi đồng phạt đều phải đi tới một trong hai chỗ — tổ đội hoặc báo cáo đánh giá.</span></li>
       <li><b>Kỳ báo cáo lấy theo ngày biên bản.</b><span class="then">Biên bản tháng 6 nhập muộn vào tháng 8 vẫn nằm ở kỳ 6 tháng đầu năm; nếu không, kỳ đánh giá đã công bố sẽ tự đổi số mỗi lần có người nhập chậm.</span></li>
     
@@ -329,8 +328,7 @@
           <tr><td>Hệ số vượt 2,0</td><td><code>mgmt_factor &gt; 2,0</code></td><td>“Hệ số {số} vượt mức thường dùng. Xác nhận nếu đúng chỉ đạo của lãnh đạo.” <em>(cảnh báo, cho đi tiếp)</em></td></tr>
           <tr><td>Hệ số nhỏ hơn 1</td><td><code>mgmt_factor &lt; 1,0</code></td><td>“Hệ số không nhỏ hơn 1,0 — phần không phân bổ ít nhất phải được ghi nhận đủ giá trị thật.”</td></tr>
           <tr><td>Tổ đội không thi công hợp đồng này</td><td><code>crew_id</code> không có khoán nào trên hợp đồng</td><td>“Tổ đội {tên} không nhận khoán trên hợp đồng {mã}. Xác nhận nếu vẫn muốn phân bổ.” <em>(cảnh báo)</em></td></tr>
-          <tr><td>Hợp đồng đã thanh lý</td><td>Trạng thái hợp đồng là <em>Thanh lý</em></td><td>“Hợp đồng {mã} đã thanh lý. Biên bản vẫn ghi nhận được, nhưng khoản phân bổ sẽ không còn kỳ giao khoán nào để khấu trừ.”</td></tr>
-          <tr><td>Sửa dòng phân bổ đã khấu trừ</td><td><code>alloc[].payroll_batch</code> đã có giá trị</td><td>“Dòng này đã khấu trừ ở kỳ {mã}. Mở lại biên bản kèm lý do để điều chỉnh; kỳ giao khoán sẽ được đánh dấu cần tính lại.”</td></tr>
+          <tr><td>Hợp đồng đã thanh lý</td><td>Trạng thái hợp đồng là <em>Thanh lý</em></td><td>“Hợp đồng {mã} đã thanh lý. Biên bản vẫn ghi nhận được.”</td></tr>
           <tr><td>Sửa biên bản đang chờ duyệt</td><td>Trạng thái <em>Chờ lãnh đạo chốt</em> hoặc <em>Đã chốt</em></td><td>“Biên bản này không còn mở để sửa.”</td></tr>
         </tbody>
       </table>
@@ -353,22 +351,22 @@
           <tr><td>UAT-BID07-10</td><td>Tiếp UAT-9</td><td>Nhập lý do rồi trình</td><td>Quy trách nhiệm BCH hiện 37.500.000; biên bản chuyển <em>Chờ lãnh đạo chốt</em> và xuất hiện ở <a href="PF-03.html">PF-03</a></td></tr>
           <tr><td>UAT-BID07-11</td><td>Tiếp UAT-10</td><td>Thử sửa giá trị phạt</td><td>Bị chặn: biên bản không còn mở để sửa</td></tr>
           <tr><td>UAT-BID07-12</td><td>Tiếp UAT-10</td><td>Lãnh đạo duyệt</td><td>Biên bản <em>Đã chốt</em>; hai dòng phân bổ khóa lại; hai dòng phân bổ của tổ đội <b>giữ nguyên</b> 40.000.000 và 35.000.000, không bị nhân hệ số</td></tr>
-          <tr><td>UAT-BID07-13</td><td>Tiếp UAT-12, tổ đội <code>TD-004</code> lập kỳ giao khoán mới</td><td>Mở bảng khấu trừ của kỳ đó ở <a href="PRJ-03.html">PRJ-03</a></td><td>Có dòng phạt 40.000.000, cột <em>Nguồn</em> ghi <code>BBP-KH_0114-01</code>, bấm vào mở được tệp PDF gốc; dòng ở chế độ chỉ đọc</td></tr>
-          <tr><td>UAT-BID07-14</td><td>Tiếp UAT-12, tổ đội <code>TD-007</code> chưa có kỳ giao khoán nào</td><td>Mở danh sách khoản phạt chờ khấu trừ</td><td>Dòng 35.000.000 của <code>TD-007</code> nằm trong danh sách, không rơi mất</td></tr>
+          <tr><td>UAT-BID07-13</td><td>Tiếp UAT-12, P. TQT lập bảng nhân công kỳ mới cho dự án ở <a href="ORD-12.html">ORD-12</a></td><td>Mở bảng đó</td><td>Không có dòng khấu trừ nào tự sinh; tổ <code>TD-004</code> chỉ bị trừ khi người lập gõ khoản trừ</td></tr>
+          <tr><td>UAT-BID07-14</td><td>Tiếp UAT-12</td><td>Mở danh sách khoản đã phân bổ theo tổ đội</td><td>Dòng 40.000.000 của <code>TD-004</code> và 35.000.000 của <code>TD-007</code> nằm trong danh sách, bấm vào mở được tệp PDF gốc</td></tr>
           <tr><td>UAT-BID07-15</td><td>Tiếp UAT-12</td><td>Mở <a href="ORD-10.html">ORD-10</a> của hợp đồng <code>KH_0114</code></td><td>Ô khoản phạt hiện 100.000.000 ở chế độ chỉ đọc, bấm vào mở danh sách biên bản</td></tr>
           <tr><td>UAT-BID07-16</td><td>Tiếp UAT-12</td><td>Mở <a href="RPT-02.html">RPT-02</a>, chọn kỳ 6 tháng cuối năm 2026</td><td>Dòng của Ban chỉ huy dự án có cột phạt CĐT không phân bổ bằng 37.500.000</td></tr>
           <tr><td>UAT-BID07-17</td><td>Biên bản ngày 10/09/2026 nhập vào hệ thống ngày 05/11/2026</td><td>Mở RPT-02 kỳ quý 3/2026</td><td>Biên bản nằm ở quý 3 theo ngày biên bản, không phải quý 4</td></tr>
-          <tr><td>UAT-BID07-18</td><td>Dòng phân bổ đã khấu trừ ở kỳ giao khoán</td><td>Mở lại biên bản và sửa giá trị dòng đó</td><td>Yêu cầu nhập lý do; kỳ giao khoán liên quan được đánh dấu cần tính lại</td></tr>
+          <tr><td>UAT-BID07-18</td><td>Dòng phân bổ đã chốt</td><td>Mở lại biên bản và sửa giá trị dòng đó</td><td>Yêu cầu nhập lý do; lịch sử ghi giá trị cũ và mới</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-05.html">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="PRJ-03.html">PRJ-03 thanh toán nhân công tổ đội</a><a href="PRJ-05.html">PRJ-05 danh mục tổ đội</a><a href="ACC-07.html">ACC-07 thu chi — quỹ &amp; NH</a><a href="ORD-10.html">ORD-10 bản vẽ hoàn công &amp; quyết toán</a><a href="RPT-02.html">RPT-02 báo cáo quản trị dự án</a><a href="RPT-05.html">RPT-05 theo dõi tiến độ hợp đồng</a><a href="PF-01.html">PF-01 quy ước mã</a><a href="PF-03.html">PF-03 trung tâm phê duyệt</a><a href="PF-04.html">PF-04 thông báo</a><a href="PL-A.html">PL-A sổ trạng thái chứng từ</a><a href="PL-B.html">PL-B ma trận phân quyền</a><a href="PL-C.html">PL-C vấn đề cần chốt</a><a href="2026-09-22/YC-11.html">YC-11 yêu cầu gốc</a></p>
+    <p class="links"><a href="BID-05.html">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="ORD-12.html">ORD-12 nhân công tổ đội</a><a href="PRJ-05.html">PRJ-05 danh mục tổ đội</a><a href="ACC-07.html">ACC-07 thu chi — quỹ &amp; NH</a><a href="ORD-10.html">ORD-10 bản vẽ hoàn công &amp; quyết toán</a><a href="RPT-02.html">RPT-02 báo cáo quản trị dự án</a><a href="RPT-05.html">RPT-05 theo dõi tiến độ hợp đồng</a><a href="PF-01.html">PF-01 quy ước mã</a><a href="PF-03.html">PF-03 trung tâm phê duyệt</a><a href="PF-04.html">PF-04 thông báo</a><a href="PL-A.html">PL-A sổ trạng thái chứng từ</a><a href="PL-B.html">PL-B ma trận phân quyền</a><a href="PL-C.html">PL-C vấn đề cần chốt</a><a href="2026-09-22/YC-11.html">YC-11 yêu cầu gốc</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 13 / 48</span><span><code>BID-07.html</code></span>
+  <span>Đặc tả 13 / 47</span><span><code>BID-07.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>Google Sheet 22/09/2026 · tab Tóm tắt · dòng 14</code></span>
 </div>

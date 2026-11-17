@@ -3,9 +3,9 @@
 > Nguồn: `spec/BID-07.html`. Mọi kịch bản dưới đây suy ra từ một mục cụ thể của đặc tả, ghi ở cột **Nguồn**:
 > `TS` = bảng *Tham số* · `CN-n` = dòng *Chức năng trên màn hình* · `BR-nn` = *Quy tắc nghiệp vụ* · `VAL-n` = dòng *Kiểm tra dữ liệu & thông điệp* · `KQ-n` = gạch đầu dòng *Kết quả mong đợi*.
 >
-> Màn hình này là lớp còn thiếu giữa tờ giấy chủ đầu tư gửi và khoản khấu trừ rơi xuống tổ đội. Trước nó, bốn chỗ trong hệ thống đã nói về khoản phạt mà không chỗ nào giữ bản ghi gốc — nên phần lớn kịch bản nhóm B kiểm **đường đi ra** của con số: sang bảng khấu trừ của PRJ-03, sang báo cáo đánh giá BCH của RPT-02, và hai ô tổng ở ORD-10 / RPT-05.
+> Màn hình này là lớp còn thiếu giữa tờ giấy chủ đầu tư gửi và khoản khấu trừ rơi xuống tổ đội. Trước nó, bốn chỗ trong hệ thống đã nói về khoản phạt mà không chỗ nào giữ bản ghi gốc — nên phần lớn kịch bản nhóm B kiểm **đường đi ra** của con số: sang bảng khấu trừ của PRJ-03 (từ 17/11/2026 PRJ-03 bỏ — dòng phân bổ chỉ còn là căn cứ để P. TQT trừ tay trên ORD-12, PL-C Q-344), sang báo cáo đánh giá BCH của RPT-02, và hai ô tổng ở ORD-10 / RPT-05.
 >
-> Hai chiều phạt dễ lẫn nhau: *công ty phạt tổ đội* (Ban chỉ huy tự lập, đã có từ trước ở PRJ-03) và *chủ đầu tư phạt công ty* (màn hình này). UAT-BID07-24 kiểm đúng chỗ hai chiều gặp nhau.
+> Hai chiều phạt dễ lẫn nhau: *công ty phạt tổ đội* (trước ở PRJ-03, từ 17/11/2026 P. TQT trừ trên bảng nhân công ORD-12) và *chủ đầu tư phạt công ty* (màn hình này). UAT-BID07-24 kiểm đúng chỗ hai chiều gặp nhau.
 >
 > Số liệu ví dụ lấy từ mockup *Đấu thầu › Biên bản phạt chủ đầu tư*: hợp đồng `KH_0114`, biên bản `05/BB-PHAT` ngày 10/09/2026, giá trị 100.000.000, phân bổ `TD-004` 40.000.000 và `TD-007` 35.000.000, phần dư 25.000.000 × hệ số 1,5.
 
@@ -41,8 +41,8 @@
 | UAT-BID07-21 | Phần dư 25.000.000, hệ số 1,5, lý do để trống | Bấm *Trình lãnh đạo* | "Ghi căn cứ nâng hệ số lên {số} — con số này đi vào đánh giá hiệu quả của Ban chỉ huy." | VAL-9 · BR-07 |
 | UAT-BID07-22 | Phần dư 25.000.000 | Nhập hệ số 2,5 | Cảnh báo "vượt mức thường dùng", **cho đi tiếp** sau khi xác nhận — "hoặc cao hơn" là chữ của yêu cầu gốc | VAL-10 |
 | UAT-BID07-23 | Biên bản đủ điều kiện, phân bổ `TD-004` 40.000.000 và `TD-007` 35.000.000, hệ số 1,5 có lý do | Trình, rồi Ban lãnh đạo duyệt | Một phiên duyệt duy nhất mang **cả hai nửa**; duyệt xong biên bản *Đã chốt*, hai dòng phân bổ khoá lại; hai dòng vẫn là 40.000.000 và 35.000.000 — **không** bị nhân hệ số | BR-06 · BR-08 · KQ-5 |
-| UAT-BID07-24 | Tiếp UAT-BID07-23, tổ đội `TD-004` lập kỳ giao khoán mới trên hợp đồng `KH_0114` | Mở bảng khấu trừ của kỳ đó ở PRJ-03 | Có dòng phạt 40.000.000; cột **Nguồn** ghi `BBP-KH_0114-01` và mở được tệp PDF gốc; dòng ở chế độ chỉ đọc. Dòng phạt do Ban chỉ huy tự lập trên cùng kỳ vẫn sửa được như cũ | BR-09 · KQ-6 · PRJ-03 |
-| UAT-BID07-25 | Tiếp UAT-BID07-24 | Thử sửa giá trị dòng phạt đó ngay tại PRJ-03 | Không sửa được; hướng dẫn quay về BID-07 | BR-09 · PRJ-03 |
+| UAT-BID07-24 | Tiếp UAT-BID07-23, P. TQT lập bảng nhân công kỳ mới cho dự án ở ORD-12 *(17/11/2026 — PL-C Q-344)* | Mở bảng đó | Không có dòng khấu trừ nào tự sinh từ biên bản; tổ `TD-004` chỉ bị trừ khi người lập gõ khoản trừ; dòng phân bổ 40.000.000 vẫn xem được ở danh sách khoản đã phân bổ theo tổ đội của BID-07 | BR-09 · KQ-6 · ORD-12 |
+| UAT-BID07-25 | Tiếp UAT-BID07-24 | Mở lại biên bản ở BID-07 và sửa giá trị dòng phân bổ của `TD-004` | Yêu cầu nhập lý do; lịch sử ghi giá trị cũ và mới; bảng nhân công ở ORD-12 không tự đổi | BR-09 |
 | UAT-BID07-26 | Tiếp UAT-BID07-23, `TD-007` chưa có kỳ giao khoán nào | Mở *Khoản chờ khấu trừ* | Dòng 35.000.000 của `TD-007` nằm trong danh sách; hệ thống **không** tự tạo kỳ giao khoán để trừ | BR-10 · KQ-7 |
 | UAT-BID07-27 | Tiếp UAT-BID07-23 | Mở ORD-10 và RPT-05 của hợp đồng `KH_0114` | Cả hai ô khoản phạt hiện 100.000.000 ở chế độ chỉ đọc, cùng một con số, bấm vào mở danh sách biên bản | KQ-8 · ORD-10 · RPT-05 |
 | UAT-BID07-28 | Tiếp UAT-BID07-23 | Mở RPT-02, khối *Hiệu quả điều hành BCH*, kỳ 6 tháng cuối 2026 | Dòng của Ban chỉ huy dự án có cột phạt CĐT không phân bổ bằng 37.500.000 | KQ-4 · RPT-02 |

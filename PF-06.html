@@ -38,10 +38,9 @@
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
+    <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
-    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <a href="PRJ-06.html"><i>PRJ-06</i>Nhân sự dự án</a>
@@ -92,7 +91,8 @@
   </header>
   <div class="sb">
     <h4>Mục tiêu</h4>
-    <p>Trước màn hình này, cột đối chiếu của bảng giá khoán lấy giá vốn nhân công của BOQ đã duyệt — nghĩa là mỗi dự án tự mang theo một chuẩn riêng, và không có cách nào đặt hai Ban chỉ huy cạnh nhau để so. Một bộ đơn giá chuẩn cấp công ty tạo ra mốc chung; phần chênh giữa đơn giá khoán thực tế và mốc chung đó được tách thành <b>% hỗ trợ</b> — con số đo được năng lực điều hành của từng BCH, và là thứ <a href="RPT-02.html">RPT-02</a> xếp hạng.</p>
+    <p>Trước màn hình này, cột đối chiếu của bảng giá khoán lấy giá vốn nhân công của BOQ đã duyệt — nghĩa là mỗi dự án tự mang theo một chuẩn riêng, và không có cách nào đặt hai Ban chỉ huy cạnh nhau để so. Một bộ đơn giá chuẩn cấp công ty tạo ra mốc chung; phần chênh giữa đơn giá khoán thực tế và mốc chung đó được tách thành <b>% hỗ trợ</b> — con số đo được năng lực điều hành của từng BCH, và là thứ <a href="RPT-02.html">RPT-02</a> đọc để đặt các BCH cạnh nhau.</p>
+    <p><em>17/11/2026 · <a href="PL-C.html#Q-344">Q-344</a>:</em> bảng đơn giá chuẩn là mốc tham chiếu, không phải chốt chặn. Nó nạp cột đối chiếu của <a href="PRJ-01.html">PRJ-01</a> và gợi ý giá của <a href="BID-03.html">BID-03</a>, nhưng không chặn việc lập hay gửi bảng nhân công tổ đội ở <a href="ORD-12.html">ORD-12</a> — khách yêu cầu bỏ chốt chặn đơn giá chuẩn theo vùng (TQT.xlsx sheet “TQT-dự án” STT 12).</p>
     <p>Hai chiều tra cứu quyết định cấu trúc dữ liệu của màn hình: một dòng đơn giá luôn thuộc về đúng một cặp <em>(vùng, kỳ hiệu lực)</em>. Vùng lấy từ danh mục vùng miền của <a href="PF-01.html">PF-01</a>; kỳ hiệu lực là khoảng ngày không được chồng lên bảng khác cùng vùng.</p>
 
     <h4>Lưu đồ — vòng đời một bảng đơn giá chuẩn</h4>
@@ -338,11 +338,11 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PF-01.html">PF-01 danh mục vùng miền</a><a href="PF-03.html">PF-03 trình duyệt ban hành</a><a href="PRJ-01.html">PRJ-01 giá khoán tổ đội</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="PRJ-03.html">PRJ-03 hồ sơ giao khoán</a><a href="BID-03.html">BID-03 gợi ý giá vốn nhân công</a><a href="RPT-02.html">RPT-02 hiệu quả điều hành BCH</a><a href="2026-09-15/YC-02.html">YC-02 đơn giá chuẩn theo vùng miền</a><a href="PL-C.html#Q-44">PL-C · Q-44 ghép mã đầu việc BOQ</a></p>
+    <p class="links"><a href="PF-01.html">PF-01 danh mục vùng miền</a><a href="PF-03.html">PF-03 trình duyệt ban hành</a><a href="PRJ-01.html">PRJ-01 giá khoán tổ đội</a><a href="ORD-12.html">ORD-12 nhân công tổ đội — không tra bảng chuẩn</a><a href="BID-03.html">BID-03 gợi ý giá vốn nhân công</a><a href="RPT-02.html">RPT-02 hiệu quả điều hành BCH</a><a href="2026-09-15/YC-02.html">YC-02 đơn giá chuẩn theo vùng miền</a><a href="PL-C.html#Q-44">PL-C · Q-44 ghép mã đầu việc BOQ</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 6 / 48</span><span><code>PF-06.html</code></span>
+  <span>Đặc tả 6 / 47</span><span><code>PF-06.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>Google Sheet 15/09/2026 · tab Tóm tắt · dòng 2</code></span>
 </div>

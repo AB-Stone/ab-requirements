@@ -29,10 +29,10 @@
 | UAT-ACC05-16 | Các chứng từ đã chọn có tổng dư nợ 1,5 tỷ | Nhập giá trị đề nghị 1,8 tỷ | Chặn "Đề nghị {giá trị} vượt dư nợ {giá trị} …"; muốn trả trước phải lập đề nghị tạm ứng |
 | UAT-ACC05-17 | Số tài khoản nhận khác tài khoản đã đăng ký của đối tác | Trình duyệt | Yêu cầu xác nhận "Số tài khoản khác với tài khoản đã đăng ký của {đối tác}." trước khi trình |
 | UAT-ACC05-18 | Các chứng từ đã chọn thuộc nhiều dự án | Ghi sổ đề nghị | Cảnh báo và đề nghị **tách dòng theo dự án** khi ghi sổ |
-| UAT-ACC05-19 | Hồ sơ giao khoán nhân công vừa được duyệt (PRJ-03) | Mở danh sách đề nghị thanh toán | Đã có đề nghị tạo sẵn dữ liệu với giá trị thực trả đúng; kế toán chỉ kiểm và trình |
+| UAT-ACC05-19 | P. TQT vừa gửi Kế toán bảng nhân công tổ đội (ORD-12) | Mở danh sách đề nghị thanh toán | Không có đề nghị nào tự sinh; kế toán lập đề nghị cho tổ đội bằng dòng nhập tay (PL-C Q-344) |
 
 ## Ghi chú bao phủ
 
 - BR-01…BR-08 đều có kịch bản nhóm B; "thanh toán ghi ba nơi" kiểm ở UAT-ACC05-12, hoàn tác nguyên tử ở UAT-ACC05-13.
 - 6 dòng bảng *Kiểm tra dữ liệu & thông điệp* kiểm ở UAT-ACC05-8/-10, -16, -17, -5 (thiếu TK), -15, -18.
-- Liên màn hình: **ACC-03** (phát sinh phải trả), **ORD-01 / ORD-09** (phát sinh phải thu), **PRJ-03** (thanh toán tổ đội), **ACC-07** (sổ quỹ & ngân hàng), **RPT-01** (sổ chi tiết công nợ).
+- Liên màn hình: **ACC-03** (phát sinh phải trả), **ORD-01 / ORD-09** (phát sinh phải thu), **ORD-12** (bảng nhân công tổ đội — chỉ thông báo), **ACC-07** (sổ quỹ & ngân hàng), **RPT-01** (sổ chi tiết công nợ).

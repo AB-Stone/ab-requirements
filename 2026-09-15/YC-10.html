@@ -160,14 +160,14 @@
           <tr><td colspan="4"><b>Nhóm 2 — giá trị &amp; tiến độ</b></td></tr>
           <tr><td>8</td><td>Tổng giá trị HĐ &amp; PLHĐ sau VAT</td><td class="k">contract_value_incl_vat</td><td>Rollup BID-05, gồm mọi phụ lục điều chỉnh giá trị</td></tr>
           <tr><td>9–10</td><td>Tiến độ theo HĐ — bắt đầu · kết thúc</td><td class="k">contract_start, contract_end</td><td>Rollup BID-05; nguồn gốc là <a href="YC-06.html">YC-06</a></td></tr>
-          <tr><td>11–12</td><td>Tiến độ thực tế — bắt đầu · kết thúc</td><td class="k">actual_start, actual_end</td><td>Rollup <a href="../PRJ-02.html">PRJ-02</a></td></tr>
+          <tr><td>11–12</td><td>Tiến độ thực tế — bắt đầu · kết thúc</td><td class="k">actual_start, actual_end</td><td>Rollup PRJ-02</td></tr>
           <tr><td colspan="4"><b>Nhóm 3 — hồ sơ TQT (thu của chủ đầu tư)</b></td></tr>
           <tr><td>13</td><td>Giá trị sản lượng TC thực tế</td><td class="k">tqt_value_actual</td><td><b>Cột mới.</b> Luỹ kế khối lượng đã thi công × đơn giá hợp đồng — rollup PRJ-02 và BOQ hợp đồng</td></tr>
           <tr><td>14</td><td>Giá trị sản lượng TC đã thanh toán</td><td class="k">tqt_value_paid</td><td><b>Cột mới.</b> Luỹ kế đã nhận từ chủ đầu tư — rollup <a href="../ORD-09.html">ORD-09</a> và <a href="../ORD-10.html">ORD-10</a></td></tr>
           <tr><td>15</td><td>Tình trạng hồ sơ quyết toán</td><td class="k">settlement_doc_status</td><td><em>Chưa quyết toán · Đang lập · Đã nộp · Đã quyết toán</em> — rollup ORD-10</td></tr>
           <tr><td colspan="4"><b>Nhóm 4 — hồ sơ tổ đội (trả cho tổ đội)</b></td></tr>
           <tr><td>16</td><td>Giá trị sản lượng TC thực tế</td><td class="k">crew_value_actual</td><td><b>Cột mới.</b> Luỹ kế khối lượng đã nghiệm thu × đơn giá khoán — rollup PRJ-02 và <a href="../PRJ-01.html">PRJ-01</a></td></tr>
-          <tr><td>17</td><td>Giá trị sản lượng TC đã thanh toán</td><td class="k">crew_value_paid</td><td><b>Cột mới.</b> Luỹ kế đã trả tổ đội — rollup <a href="../PRJ-03.html">PRJ-03</a></td></tr>
+          <tr><td>17</td><td>Giá trị sản lượng TC đã thanh toán</td><td class="k">crew_value_paid</td><td><b>Cột mới.</b> Luỹ kế đã trả tổ đội — rollup PRJ-03</td></tr>
           <tr><td>18</td><td>Chênh lệch bất lợi</td><td class="k">value_gap</td><td><b>Cột mới, máy chủ tính:</b> <code>crew_value_paid − tqt_value_paid</code>. Lớn hơn 0 là đang trả tổ đội nhiều hơn thu được</td></tr>
           <tr><td colspan="4"><b>Nhóm 5 — điều hành</b></td></tr>
           <tr><td>19</td><td>Cán bộ phụ trách</td><td class="k">owner_user</td><td><b>Cột mới.</b> Nhập tay. Người chịu trách nhiệm hồ sơ của hạng mục này</td></tr>
@@ -205,7 +205,7 @@
           <tr><td>Thanh toán đợt</td><td class="k">v_batch</td><td>Gắn về <a href="../ORD-09.html">ORD-09</a>; mang thêm giá trị đề nghị và đã nhận</td></tr>
           <tr><td>Quyết toán</td><td class="k">v_settlement</td><td>Gắn về <a href="../ORD-10.html">ORD-10</a>; mang thêm giá trị đề nghị và đã nhận</td></tr>
           <tr><td rowspan="2"><b>Hồ sơ tổ đội</b><br><code>dossier_crew[]</code></td><td>Hồ sơ giao khoán</td><td class="k">c_contract</td><td>Gắn về bảng giá khoán đã duyệt ở <a href="../PRJ-01.html">PRJ-01</a></td></tr>
-          <tr><td>Hồ sơ nghiệm thu &amp; thanh toán tổ đội</td><td class="k">c_payment</td><td>Gắn về <a href="../PRJ-03.html">PRJ-03</a>; mang thêm giá trị đã trả</td></tr>
+          <tr><td>Hồ sơ nghiệm thu &amp; thanh toán tổ đội</td><td class="k">c_payment</td><td>Gắn về PRJ-03; mang thêm giá trị đã trả</td></tr>
         </tbody>
       </table>
     </div>
@@ -291,7 +291,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="../RPT-05.html">RPT-05 theo dõi tiến độ hợp đồng</a><a href="../ORD-08.html">ORD-08 hồ sơ thanh toán vật tư</a><a href="../ORD-09.html">ORD-09 thanh toán khối lượng HT</a><a href="../ORD-10.html">ORD-10 bản vẽ hoàn công &amp; quyết toán</a><a href="../PRJ-01.html">PRJ-01 giá khoán tổ đội</a><a href="../PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="../PRJ-03.html">PRJ-03 thanh toán nhân công tổ đội</a><a href="../PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="../PL-B.html">PL-B ma trận phân quyền</a><a href="YC-06.html">YC-06 thông tin chung gói thầu</a><a href="../PL-C.html#Q-40">PL-C · Q-40 rail điều hướng lệch</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
+    <p class="links"><a href="../RPT-05.html">RPT-05 theo dõi tiến độ hợp đồng</a><a href="../ORD-08.html">ORD-08 hồ sơ thanh toán vật tư</a><a href="../ORD-09.html">ORD-09 thanh toán khối lượng HT</a><a href="../ORD-10.html">ORD-10 bản vẽ hoàn công &amp; quyết toán</a><a href="../PRJ-01.html">PRJ-01 giá khoán tổ đội</a>PRJ-02 sản lượng thi côngPRJ-03 thanh toán nhân công tổ đội<a href="../PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="../PL-B.html">PL-B ma trận phân quyền</a><a href="YC-06.html">YC-06 thông tin chung gói thầu</a><a href="../PL-C.html#Q-40">PL-C · Q-40 rail điều hướng lệch</a><a href="index.html">Mục lục đợt yêu cầu</a></p>
   </div>
 </section>
 <div class="filefoot">

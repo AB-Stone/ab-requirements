@@ -38,10 +38,9 @@
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
+    <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
-    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <a href="PRJ-06.html"><i>PRJ-06</i>Nhân sự dự án</a>
@@ -92,7 +91,7 @@
   </header>
   <div class="sb">
     <h4>Mục tiêu</h4>
-    <p>Đích đến của toàn bộ 42 đặc tả còn lại. Hai bài toán giá thành song song: <em>công trình</em> tập hợp chi phí theo khoản mục rồi kết chuyển theo sản lượng thi công; <em>nhà máy</em> tính giá thành sản phẩm rồi cập nhật ngược giá nhập kho thành phẩm. Bảng yêu cầu ghi rõ phần đi sâu vào giá thành khai thác của nhà máy để lại giai đoạn sau.</p>
+    <p>Đích đến của toàn bộ 42 đặc tả còn lại. Hai bài toán giá thành song song: <em>công trình</em> tập hợp chi phí theo khoản mục rồi kết chuyển theo tỷ lệ hoàn thành; <em>nhà máy</em> tính giá thành sản phẩm rồi cập nhật ngược giá nhập kho thành phẩm. Bảng yêu cầu ghi rõ phần đi sâu vào giá thành khai thác của nhà máy để lại giai đoạn sau.</p>
 
     <h4>Lưu đồ — kết chuyển giá thành công trình</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:1164px;margin:0 auto"><svg role="img" aria-label="Hình ACC-09.1 Năm nguồn chi phí, một điểm tập hợp, một phép trừ. Mỗi mũi tên vào khối “tập hợp chi phí” tương ứng đúng một đặc tả — đây là lý do các đặc tả đó bắt buộc phải có mặt ở giai đoạn 1."
@@ -119,8 +118,8 @@
 <g id="node7" class="node">
 <title>Q</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="663.17,-362 448.39,-362 448.39,-317.6 663.17,-317.6 663.17,-362"/>
-<text xml:space="preserve" text-anchor="middle" x="555.78" y="-343.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Đối chiếu với sản lượng thi công</text>
-<text xml:space="preserve" text-anchor="middle" x="555.78" y="-328.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;02</text>
+<text xml:space="preserve" text-anchor="middle" x="555.78" y="-343.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tỷ lệ hoàn thành của kỳ</text>
+<text xml:space="preserve" text-anchor="middle" x="555.78" y="-328.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">nguồn còn mở · Q&#45;344</text>
 </g>
 <g id="edge6" class="edge">
 <title>P&#45;&gt;Q</title>
@@ -131,7 +130,7 @@
 <title>A2</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="337.78,-533 175.79,-533 175.79,-488.6 337.78,-488.6 337.78,-533"/>
 <text xml:space="preserve" text-anchor="middle" x="256.78" y="-514.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhân công khoán tổ đội</text>
-<text xml:space="preserve" text-anchor="middle" x="256.78" y="-499.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;03</text>
+<text xml:space="preserve" text-anchor="middle" x="256.78" y="-499.55" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">TK 622 · ACC&#45;08</text>
 </g>
 <g id="edge2" class="edge">
 <title>A2&#45;&gt;P</title>
@@ -339,7 +338,7 @@
           <tr><td>Đối tượng tính giá thành</td><td class="k">costing_object</td><td>Chọn 1</td><td class="c req">✱</td><td><code>dự án</code> · <code>hạng mục</code> · <code>sản phẩm nhà máy</code>.</td></tr>
           <tr><td>Chi phí tập hợp theo KMCP</td><td class="k">cost_by_item[]</td><td>Bảng</td><td class="c">—</td><td>Hệ thống tổng hợp; hiển thị nguồn chứng từ của từng khoản mục.</td></tr>
           <tr><td>Chi phí dở dang đầu kỳ</td><td class="k">wip_open</td><td>Số tiền</td><td class="c">—</td><td>Lấy từ dở dang cuối kỳ trước.</td></tr>
-          <tr><td>Khối lượng hoàn thành</td><td class="k">qty_completed</td><td>Số</td><td class="c req">✱</td><td>Từ sản lượng đã chốt của <a href="PRJ-02.html">PRJ-02</a>.</td></tr>
+          <tr><td><s>Khối lượng hoàn thành</s></td><td class="k">qty_completed</td><td>Số</td><td class="c">—</td><td><b>Bỏ 17/11/2026.</b> <em>Trước đó lấy từ sản lượng đã chốt của PRJ-02; PRJ-02 bỏ (<a href="PL-C.html#Q-344">Q-344</a>), <b>nguồn của tỷ lệ này còn mở</b> — bảng nhân công tổ đội ở <a href="ORD-12.html">ORD-12</a> không mang khối lượng nên không thay được.</em></td></tr>
           <tr><td>Chi phí kết chuyển</td><td class="k">cost_transferred</td><td>Số tiền</td><td class="c">—</td><td>Tính theo tỷ lệ khối lượng hoàn thành.</td></tr>
           <tr><td>Chi phí dở dang cuối kỳ</td><td class="k">wip_close</td><td>Số tiền</td><td class="c">—</td><td>Phần còn lại, tự chuyển sang kỳ sau.</td></tr>
           <tr><td>Doanh thu ghi nhận</td><td class="k">revenue</td><td>Số tiền</td><td class="c">—</td><td>Từ hồ sơ thanh toán khối lượng đã được chủ đầu tư chấp thuận (<a href="ORD-09.html">ORD-09</a>, <a href="ORD-10.html">ORD-10</a>). Ranh giới với giá áp đơn hàng xem <a href="PL-C.html">Q-11</a>.</td></tr>
@@ -370,14 +369,14 @@
             <table><thead><tr><th>KMCP</th><th>Khoản mục</th><th>Nguồn</th><th class="num">Giá trị</th><th class="num">Tỷ trọng</th></tr></thead>
             <tbody>
               <tr><td>KM-101</td><td>Vật liệu chính</td><td>PRJ-04 xuất kho</td><td class="num">8.960.000.000</td><td class="num">58,4%</td></tr>
-              <tr><td>KM-201</td><td>Nhân công khoán</td><td>PRJ-03 giao khoán</td><td class="num">4.280.000.000</td><td class="num">27,9%</td></tr>
+              <tr><td>KM-201</td><td>Nhân công khoán</td><td>TK 622 · ACC-08</td><td class="num">4.280.000.000</td><td class="num">27,9%</td></tr>
               <tr><td>KM-301</td><td>Máy thi công &amp; khấu hao</td><td>ACC-06</td><td class="num">1.140.000.000</td><td class="num">7,4%</td></tr>
               <tr><td>KM-401</td><td>Chi phí chung phân bổ</td><td>ACC-08</td><td class="num">960.000.000</td><td class="num">6,3%</td></tr>
               <tr><td colspan="3"><b>Tổng chi phí tập hợp</b></td><td class="num"><b>15.340.000.000</b></td><td class="num">100%</td></tr>
             </tbody></table>
           </div></div>
           <div class="wf-c" style="flex:0 1 260px"><div class="wf-sec">
-            <div class="wf-lg"><span class="pin">3</span> Kết chuyển theo sản lượng</div>
+            <div class="wf-lg"><span class="pin">3</span> Kết chuyển theo tỷ lệ hoàn thành</div>
             <table><tbody>
               <tr><td>Dở dang đầu kỳ</td><td class="num">2.140.000.000</td></tr>
               <tr><td>Phát sinh trong kỳ</td><td class="num">15.340.000.000</td></tr>
@@ -403,7 +402,7 @@
         <tbody>
           <tr><td class="c"><span class="pin">1</span></td><td>Chọn chu kỳ</td><td>Tháng, quý, 6 tháng, năm, hoặc từ ngày – đến ngày, trên cùng tập dữ liệu.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Xem tập hợp chi phí</td><td>Bấm một khoản mục mở danh sách chứng từ gốc tạo nên con số đó.</td></tr>
-          <tr><td class="c"><span class="pin">3</span></td><td>Kết chuyển theo sản lượng</td><td>Tỷ lệ hoàn thành lấy từ sản lượng đã chốt; dở dang cuối kỳ tự chuyển kỳ sau.</td></tr>
+          <tr><td class="c"><span class="pin">3</span></td><td>Kết chuyển theo tỷ lệ hoàn thành</td><td>Tỷ lệ hoàn thành của kỳ — nguồn còn mở (<a href="PL-C.html#Q-344">Q-344</a>); dở dang cuối kỳ tự chuyển kỳ sau.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Chạy tính giá thành</td><td>Chạy được nhiều lần khi kỳ còn mở; mỗi lần ghi đè kết quả nháp.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Đối chiếu biên lợi nhuận</td><td>So biên thực tế với biên dự thầu — chỉ số cảnh báo sớm quan trọng nhất cho Ban lãnh đạo.</td></tr>
           <tr><td class="c">—</td><td>Chốt kỳ</td><td>Khóa kỳ, không cho ghi chứng từ lùi ngày. Mở lại cần quyền Kế toán trưởng và ghi nhật ký.</td></tr>
@@ -415,7 +414,7 @@
     <ol class="br">
       <li><b>Nhiều chu kỳ, một bộ dữ liệu.</b> Tháng, quý, 6 tháng, năm và khoảng ngày tự chọn chạy trên cùng dữ liệu gốc <em>(năm và khoảng ngày: góp ý 23/10/2026)</em>.<span class="then">Không có bảng số liệu riêng cho từng chu kỳ. Khoảng ngày tự chọn lấy số dư đầu kỳ đến hết ngày liền trước “từ ngày”; chi phí của kỳ bị cắt đôi lấy theo ngày chứng từ, bút toán ghi dời sang kỳ khác (vì kỳ gốc đã chốt) tính vào ngày đầu của kỳ đang giữ nó — nên số dư đầu và phát sinh trong khoảng cộng lại luôn khớp sổ. Tháng, quý, 6 tháng, năm vẫn ra đúng số theo kỳ như trước. Khoảng ngày không chốt kỳ và không kết chuyển được — các việc đó vẫn theo từng kỳ tháng.</span></li>
       <li><b>Năm nguồn chi phí.</b> Vật tư xuất kho, nhân công khoán, máy và khấu hao, mua không qua kho, chi phí chung đã phân bổ.<span class="then">Mỗi nguồn tương ứng đúng một đặc tả — đây là lý do các đặc tả đó bắt buộc có mặt ở giai đoạn 1.</span></li>
-      <li><b>Kết chuyển theo khối lượng hoàn thành.</b> Chi phí kết chuyển tính theo tỷ lệ khối lượng hoàn thành lấy từ sản lượng đã chốt.<span class="then">Phần còn lại thành chi phí dở dang cuối kỳ và tự chuyển sang kỳ sau làm dở dang đầu kỳ.</span></li>
+      <li><b>Kết chuyển theo khối lượng hoàn thành.</b> Chi phí kết chuyển tính theo tỷ lệ khối lượng hoàn thành của kỳ. <em>Trước 17/11/2026 tỷ lệ lấy từ sản lượng đã chốt của PRJ-02; nguồn mới còn mở ở <a href="PL-C.html#Q-344">Q-344</a>.</em><span class="then">Phần còn lại thành chi phí dở dang cuối kỳ và tự chuyển sang kỳ sau làm dở dang đầu kỳ.</span></li>
       <li><b>Khoan xuống tới chứng từ.</b> Mỗi ô số liệu trong bảng tập hợp chi phí mở được danh sách chứng từ gốc tạo nên nó.<span class="then">Không có con số nào trong báo cáo mà không truy ngược được.</span></li>
       <li><b>Chạy lại được khi kỳ còn mở.</b> Tính giá thành chạy nhiều lần, mỗi lần ghi đè kết quả nháp.<span class="then">Chốt kỳ mới sinh bút toán chính thức và khóa lại.</span></li>
       <li><b>Kỳ đã chốt khóa cứng.</b> Không ghi được chứng từ có ngày thuộc kỳ đã chốt.<span class="then">Mở lại kỳ cần quyền Kế toán trưởng và ghi nhật ký kèm lý do.</span></li>
@@ -437,7 +436,6 @@
         <thead><tr><th style="width:32%">Tình huống</th><th style="width:30%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
           <tr><td>Chưa phân bổ chi phí chung</td><td>Còn dư CHUNG trong kỳ</td><td>“Còn {giá trị} chi phí chung chưa phân bổ. Giá thành sẽ thiếu phần gián tiếp.”</td></tr>
-          <tr><td>Thiếu sản lượng đã chốt</td><td>Không có sản lượng trong kỳ</td><td>“Dự án {mã} chưa chốt sản lượng kỳ này. Không có cơ sở kết chuyển chi phí.”</td></tr>
           <tr><td>Dự án chưa áp giá</td><td>Doanh thu bằng 0, chi phí &gt; 0</td><td>“Dự án {mã} chưa có đơn hàng áp giá. Số lỗ hiển thị chưa phản ánh đúng kết quả.”</td></tr>
           <tr><td>Ghi chứng từ vào kỳ đã chốt</td><td>Ngày thuộc kỳ khóa</td><td>“Kỳ {kỳ} đã chốt ngày {ngày}. Chứng từ sẽ ghi vào kỳ hiện tại.”</td></tr>
           <tr><td>Đối chiếu lệch</td><td>Tổng dự án ≠ sổ cái</td><td>“Lệch {giá trị} giữa tổng chi phí dự án và sổ cái. Khoản mục gây lệch: {danh sách}.”</td></tr>
@@ -454,7 +452,7 @@
         <tbody>
           <tr><td>UAT-ACC09-1</td><td>Quý 3 đã có đủ chứng từ</td><td>Chạy tính giá thành theo quý</td><td>Bảng tập hợp chi phí hiện 4 khoản mục với tỷ trọng</td></tr>
           <tr><td>UAT-ACC09-2</td><td>Tiếp UAT-1</td><td>Bấm vào ô KM-101 8,96 tỷ</td><td>Mở danh sách phiếu xuất kho tạo nên con số này</td></tr>
-          <tr><td>UAT-ACC09-3</td><td>Sản lượng chốt 62%</td><td>Xem khối kết chuyển</td><td>Kết chuyển 14,18 tỷ; dở dang cuối kỳ 3,3 tỷ</td></tr>
+          <tr><td>UAT-ACC09-3</td><td>Tỷ lệ hoàn thành kỳ 62%</td><td>Xem khối kết chuyển</td><td>Kết chuyển 14,18 tỷ; dở dang cuối kỳ 3,3 tỷ</td></tr>
           <tr><td>UAT-ACC09-4</td><td>Đã chạy quý 3</td><td>Chạy lại theo tháng 9</td><td>Ra kết quả tháng 9 trên cùng dữ liệu, không xung đột</td></tr>
           <tr><td>UAT-ACC09-5</td><td>Chưa phân bổ chi phí chung kỳ 9</td><td>Chạy tính giá thành</td><td>Cảnh báo thiếu phần gián tiếp, vẫn cho chạy để xem thử</td></tr>
           <tr><td>UAT-ACC09-6</td><td>Quý 3 đã chốt</td><td>Ghi phiếu nhập ngày 20/09</td><td>Hệ thống chuyển sang kỳ hiện tại kèm thông báo</td></tr>
@@ -466,11 +464,11 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="PRJ-02.html">PRJ-02 sản lượng</a><a href="PRJ-03.html">PRJ-03 nhân công</a><a href="PRJ-04.html">PRJ-04 vật tư</a><a href="ACC-06.html">ACC-06 khấu hao</a><a href="ACC-08.html">ACC-08 phân bổ chung</a><a href="BID-06.html">BID-06 doanh thu</a><a href="ORD-09.html">ORD-09 hồ sơ khối lượng</a><a href="ACC-03.html">ACC-03 mua không qua kho</a><a href="RPT-03.html">RPT-03 báo cáo lãi lỗ theo form</a><a href="PL-C.html">PL-C Q-23, Q-25, Q-26</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a></p>
+    <p class="links"><a href="PRJ-04.html">PRJ-04 vật tư</a><a href="ACC-06.html">ACC-06 khấu hao</a><a href="ACC-08.html">ACC-08 phân bổ chung</a><a href="BID-06.html">BID-06 doanh thu</a><a href="ORD-09.html">ORD-09 hồ sơ khối lượng</a><a href="ACC-03.html">ACC-03 mua không qua kho</a><a href="RPT-03.html">RPT-03 báo cáo lãi lỗ theo form</a><a href="PL-C.html">PL-C Q-23, Q-25, Q-26</a><a href="2026-09-15/YC-01.html">YC-01 chuyển áp giá doanh thu</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 37 / 48</span><span><code>ACC-09.html</code></span>
+  <span>Đặc tả 36 / 47</span><span><code>ACC-09.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

@@ -38,10 +38,9 @@
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
+    <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
-    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <a href="PRJ-06.html"><i>PRJ-06</i>Nhân sự dự án</a>
@@ -107,12 +106,12 @@
           <tr><td>Hợp đồng theo trạng thái</td><td>—</td><td class="k"><a href="BID-05.html">BID-05</a></td></tr>
           <tr><td>Tuổi nợ phải thu</td><td>Nhóm trên 60 ngày vượt 5% tổng nợ</td><td class="k"><a href="ACC-05.html">ACC-05</a></td></tr>
           <tr><td rowspan="8">KPI</td><td>Biên lợi nhuận thực tế so với dự thầu</td><td>Âm quá 3 điểm phần trăm</td><td class="k"><a href="RPT-03.html">RPT-03</a> · chưa có nguồn, <a href="PL-C.html#Q-207">Q-207</a></td></tr>
-          <tr><td>Tiến độ thực tế so với kế hoạch</td><td>Chậm quá 10 điểm phần trăm</td><td class="k"><a href="PRJ-02.html">PRJ-02</a> · chưa có nguồn, <a href="PL-C.html#Q-240">Q-240</a></td></tr>
+          <tr><td>Tiến độ thực tế so với kế hoạch</td><td>Chậm quá 10 điểm phần trăm</td><td class="k">chưa có nguồn (PRJ-02 bỏ 17/11/2026, <a href="PL-C.html#Q-344">Q-344</a>), <a href="PL-C.html#Q-240">Q-240</a></td></tr>
           <tr><td>Hoàn thành kế hoạch theo bộ phận</td><td>Dưới 60% kế hoạch quý</td><td class="k"><a href="RPT-02.html">RPT-02</a> · chưa có nguồn, <a href="PL-C.html#Q-240">Q-240</a></td></tr>
           <tr><td>Biên lợi nhuận gộp thực tế trong kỳ</td><td>Ngưỡng nhập trên màn hình, chưa có mặc định (<a href="PL-C.html#Q-247">Q-247</a>)</td><td class="k"><a href="RPT-03.html">RPT-03</a> dòng 7</td></tr>
           <tr><td>Chi phí không hợp lý trên chi phí dự án</td><td>Ngưỡng nhập trên màn hình, chưa có mặc định</td><td class="k"><a href="RPT-03.html">RPT-03</a> dòng 10</td></tr>
           <tr><td>Thu hồi hồ sơ thanh toán (đã thu trên phải thu của hồ sơ nghiệm thu)</td><td>Ngưỡng nhập trên màn hình, chưa có mặc định</td><td class="k"><a href="ORD-01.html">ORD-01</a> · <a href="ACC-07.html">ACC-07</a></td></tr>
-          <tr><td>Tỷ lệ hỗ trợ của Ban chỉ huy</td><td>Không có ngưỡng; chỉ xếp hạng</td><td class="k"><a href="RPT-02.html">RPT-02</a> mục 7</td></tr>
+          <tr><td>Tỷ lệ hỗ trợ của Ban chỉ huy</td><td>Không có; tạm ngưng từ 17/11/2026 — tỷ lệ hỗ trợ cần khối lượng, còn mở ở <a href="PL-C.html#Q-344">Q-344</a></td><td class="k"><a href="RPT-02.html">RPT-02</a> mục 7</td></tr>
           <tr><td>Nợ phải thu quá 60 ngày từng dự án</td><td>Không có ngưỡng riêng; chỉ xếp hạng</td><td class="k"><a href="ACC-05.html">ACC-05</a></td></tr>
           <tr><td>So sánh</td><td>Chi phí theo khoản mục giữa các dự án — chi phí trên một đồng sản lượng (chuẩn hóa theo giá trị sản lượng, <a href="PL-C.html#Q-241">Q-241</a>)</td><td>Lệch quá 15% so với trung vị</td><td class="k"><a href="ACC-09.html">ACC-09</a></td></tr>
         </tbody>
@@ -174,7 +173,7 @@
           <tr><td>Lệch chi phí trên sản lượng so với trung vị</td><td>Như báo cáo So sánh chi phí: tổng và từng khoản mục 621 / 622 / máy &amp; chung, lũy kế đến hết kỳ; cần ít nhất 2 dự án có sản lượng</td><td>Mặc định 15%, tham số</td><td>—</td></tr>
           <tr><td>Chi phí không hợp lý</td><td>Chi phí gắn dự án đánh dấu không hợp lý ÷ chi phí gắn dự án phát sinh trong kỳ (cùng nguồn sổ với <a href="RPT-03.html">RPT-03</a> dòng 10); dự án không có chi phí trong kỳ hiện “—”</td><td>Tối đa, nhập trên màn hình; trống = không cảnh báo</td><td>—</td></tr>
           <tr><td>Thu hồi hồ sơ thanh toán</td><td>Tiền đã thu (báo có ghi cho hồ sơ, đến hết kỳ, không tính phiếu hủy) ÷ số phải thu sau khấu trừ tạm ứng và giữ lại bảo hành, của hồ sơ khối lượng và quyết toán nghiệm thu trong kỳ (chờ thanh toán, đã thanh toán, đã đóng — cùng ngày nghiệm thu và cùng trạng thái với doanh thu của <a href="ACC-09.html">ACC-09</a>)</td><td>Tối thiểu, nhập trên màn hình; trống = không cảnh báo</td><td>—</td></tr>
-          <tr><td>Tỷ lệ hỗ trợ Ban chỉ huy</td><td>Cột 7 của khối hiệu quả điều hành BCH ở <a href="RPT-02.html">RPT-02</a> mục 7, cùng kỳ; dự án không xếp hạng được hiện “—”, không phải 0</td><td>Không có; chỉ xếp hạng (thấp hơn là tốt hơn)</td><td><code>prj_rate_sheet:read</code></td></tr>
+          <tr><td>Tỷ lệ hỗ trợ Ban chỉ huy</td><td><em>Tạm ngưng từ 17/11/2026 (<a href="PL-C.html#Q-344">Q-344</a>): RPT-02 mục 7 không còn cột tỷ lệ hỗ trợ — hiện “—” cho tới khi chốt cách tính.</em> Trước đó: cột 7 của khối hiệu quả điều hành BCH ở <a href="RPT-02.html">RPT-02</a> mục 7, cùng kỳ; dự án không xếp hạng được hiện “—”, không phải 0</td><td>Không có; chỉ xếp hạng (thấp hơn là tốt hơn)</td><td><code>prj_rate_sheet:read</code></td></tr>
           <tr><td>Nợ phải thu quá 60 ngày</td><td>Khối tóm tắt: nhóm quá 60 ngày ÷ tổng nợ phải thu toàn công ty (<a href="ACC-05.html">ACC-05</a>), như thẻ trên dashboard. Mỗi dự án có thêm tỷ lệ riêng, chỉ để so sánh và xếp hạng. Tuổi nợ tính tại thời điểm xem, không theo kỳ</td><td>Mặc định 5% tổng nợ, tham số; chỉ cấp công ty</td><td><code>acc_debt:read</code></td></tr>
           <tr><td>Chưa có nguồn dữ liệu</td><td>Biên thực tế so với dự thầu (<a href="PL-C.html#Q-207">Q-207</a>); tiến độ thực tế so với kế hoạch và hoàn thành kế hoạch theo bộ phận (<a href="PL-C.html#Q-240">Q-240</a>)</td><td>—</td><td>—</td></tr>
         </tbody>
@@ -309,7 +308,7 @@
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 42 / 48</span><span><code>RPT-04.html</code></span>
+  <span>Đặc tả 41 / 47</span><span><code>RPT-04.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>
