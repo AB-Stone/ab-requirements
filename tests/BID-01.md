@@ -3,6 +3,8 @@
 > Nguồn: `spec/BID-01.html`. Mọi kịch bản dưới đây suy ra từ một mục cụ thể của đặc tả, ghi ở cột **Nguồn**:
 > `TS` = bảng *Tham số* · `CN-n` = dòng *Chức năng trên màn hình* · `BR-nn` = *Quy tắc nghiệp vụ* · `VAL-n` = dòng *Kiểm tra dữ liệu & thông điệp* · `KQ-n` = gạch đầu dòng *Kết quả mong đợi*.
 
+> **Phản hồi 17/11/2026 tối (Q-390 – Q-399).** Mục A – C viết trước bản V2 (16/11/2026) và các đợt 17/11/2026; chỗ nào khác `spec/BID-01.html` thì đặc tả thắng. Kịch bản của đợt này ở mục cuối, cột **Nguồn** trỏ về mã kịch bản và quy tắc của đặc tả.
+
 ## A · Luồng giao diện
 
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
@@ -126,6 +128,14 @@
 | UAT-BID01-105 | Bảng đầu việc đã lưu 3 dòng, dòng đầu khối lượng 100 (Q-300) | Sửa khối lượng dòng đầu thành 125,5, lưu; mở **Lịch sử thay đổi** | Đúng một dòng mới: người sửa · Khối lượng, `100 → 125,5`, nhãn mã HM của dòng |
 | UAT-BID01-106 | Tiếp UAT-105 | Xóa dòng thứ ba, thêm hai dòng mới, lưu | Hai sự kiện “Thêm 2 dòng: …” và “Xóa 1 dòng: {mã HM}”; không có dòng theo ô cho các dòng đó |
 | UAT-BID01-107 | Tiếp UAT-106; một gói mới bảng trống | Lưu không sửa gì; ở gói mới nhập Excel 3 dòng | Lưu không đổi không ghi gì; lần nhập đầu chỉ ghi “Thêm 3 dòng: …” |
+
+## D · Phản hồi 17/11/2026 tối — tab Hồ sơ · Khởi tạo, người nhận thông báo
+
+| Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
+|---|---|---|---|---|
+| UAT-BID01-108 | Gói loại B *Đã khởi tạo* | Mở hồ sơ gói trên máy tính | Mở thẳng tab **Hồ sơ · Khởi tạo**; không có tab Hồ sơ riêng; thông tin gói bên trái, thẻ "1 · Khởi tạo" (loại tệp, kéo thả, ghi chú, Lưu) bên phải | CN-6 · Q-390 · đặc tả UAT-BID01-125 |
+| UAT-BID01-109 | Tiếp UAT-108 | Thu cửa sổ cỡ điện thoại; mở đường dẫn cũ `?step=info` và `#tender-info` | Cỡ điện thoại: thông tin trước, thẻ tệp sau; hai đường dẫn cũ mở tab Hồ sơ · Khởi tạo | CN-6 · BR "Hồ sơ gói: một tab mỗi lần" · Q-390 · đặc tả UAT-BID01-126 |
+| UAT-BID01-110 | Người có `tender:update` và người chỉ có `contract:update` | Người thứ nhất sửa DS phòng ban trong hộp Sửa gói; người thứ hai mở bước 6 | DS của gói đổi, có lịch sử; người thứ hai sửa được DS cho lần gửi nhưng ô "Lưu vào danh sách của gói" khóa | TS `notify_departments[]` · Q-395 · đặc tả UAT-BID01-127 |
 
 ## Ghi chú bao phủ
 

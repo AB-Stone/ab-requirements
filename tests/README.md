@@ -25,7 +25,7 @@ Mỗi tệp chia làm hai nhóm:
 |---|---|---|
 | [BID-01.md](BID-01.md) | Tiếp nhận thư chào thầu | 25 + 64 |
 | [BID-02.md](BID-02.md) | Thẩm định BOQ liên phòng ban | 15 + 28 |
-| [BID-03.md](BID-03.md) | Áp giá, gửi báo giá & thương thảo | 23 + 46 |
+| [BID-03.md](BID-03.md) | Thương thảo & chốt giá | 23 + 46 |
 | [BID-04.md](BID-04.md) | Huỷ gói thầu & thông báo các bộ phận | 7 + 11 |
 | [BID-05.md](BID-05.md) | Ký hợp đồng & khởi tạo dự án | 14 + 42 |
 | [BID-06.md](BID-06.md) | Áp giá doanh thu cho đơn hàng | 12 + 15 |

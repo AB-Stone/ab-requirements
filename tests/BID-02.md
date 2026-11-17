@@ -3,6 +3,8 @@
 > Nguồn: `spec/BID-02.html`. Mọi kịch bản dưới đây suy ra từ một mục cụ thể của đặc tả, ghi ở cột **Nguồn**:
 > `TS` = bảng *Tham số* (phiếu rà soát, kiểm tra Hồ sơ mời thầu / phiếu khảo sát) · `CN-n` = dòng *Chức năng trên màn hình* · `BR-nn` = *Quy tắc nghiệp vụ* · `VAL-n` = dòng *Kiểm tra dữ liệu & thông điệp* · `KQ-n` = gạch đầu dòng *Kết quả mong đợi*.
 
+> **Phản hồi 17/11/2026 tối (Q-390 – Q-399).** Mục A – C viết trước bản V2 (16/11/2026) và các đợt 17/11/2026; chỗ nào khác `spec/BID-02.html` thì đặc tả thắng. Kịch bản của đợt này ở mục cuối, cột **Nguồn** trỏ về mã kịch bản và quy tắc của đặc tả.
+
 ## A · Luồng giao diện
 
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
@@ -83,6 +85,15 @@
 | UAT-BID02-62 | Tiếp UAT-61 (Q-295) | Gửi thẳng tới máy chủ yêu cầu khảo sát lại có lý do; người khảo sát gửi thẳng yêu cầu nộp lại phiếu | Cả hai bị từ chối; yêu cầu khảo sát lại báo "Gói … đã thông báo khảo sát sơ bộ đạt — không yêu cầu khảo sát lại được nữa."; kết quả khảo sát vẫn hiện ở bước 3, chỉ đọc | BR-19 · VAL-35 · TS-P |
 | UAT-BID02-63 | Gói nhánh B, DS chỉ P.TQT; trưởng phòng Trần Minh đã bị ngừng hoạt động; P.TQT còn 6 người đang hoạt động (Q-297) | Gửi thẩm định 2B | Chip "P.TQT · Chưa có trưởng phòng – gửi cả phòng (6 người)"; cả 6 người nhận; số trên chip bằng số người nhận thật | TS-G · `recipients` · KQ-17 · CN-12 |
 | UAT-BID02-64 | Gói nhánh A *Đã khởi tạo*, có Dự án liên quan và tài liệu; không còn ai giữ vai trò GĐ dự án để điền sẵn người khảo sát (Q-298) | Bấm **Giao khảo sát**, để trống người khảo sát, gửi | Gửi được; mọi người trong Ban dự án của Dự án liên quan nhận thông báo Giao khảo sát; BLĐ và DS không nhận | BR-19 · MTB · KQ-11 |
+
+## D · Phản hồi 17/11/2026 tối — Rà soát hiện trường, người nhận 2A
+
+| Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
+|---|---|---|---|---|
+| UAT-BID02-65 | Gói loại B *Đã khởi tạo* | Chỉ tải tệp vào ô Rà soát hiện trường, Lưu; thêm file thẩm định, Lưu | Lần đầu bị chặn "Tải lên tệp rà soát HSMT hoặc BOQ cập nhật trước khi lưu bước Thẩm định."; lần sau *Đã thẩm định*, hai tệp cùng nhóm Thẩm định | TS · BR "Rà soát hiện trường không thay file thẩm định" · Q-391 · đặc tả UAT-BID02-79 |
+| UAT-BID02-66 | Gói loại A ở *Thẩm định HSMT (2C)*, đã có báo cáo 2A | Mở tab 2C | Ô Rà soát hiện trường rỗng — báo cáo 2A không hiện ở 2C | Q-391 · đặc tả UAT-BID02-80 |
+| UAT-BID02-67 | Gói loại B đã thẩm định chỉ bằng báo cáo khảo sát trước 17/11/2026 tối | Triển khai; mở tab 2B | Gói giữ *Đã thẩm định*; tệp nằm ở ô Rà soát hiện trường | Q-391 · đặc tả UAT-BID02-81 |
+| UAT-BID02-68 | Gói loại A ở 2A, DS P.TQT · P.Kế toán | Ngay trên tab 2A bỏ P.Kế toán, thêm P.Thi công, Lưu; ở gói khác bỏ hết phòng ban, Lưu | Trưởng P.TQT, P.Thi công, Ban lãnh đạo, Dự án liên quan nhận; DS gói không đổi; Lịch sử thay đổi có dòng gửi. Gói thứ hai bị chặn "Chọn ít nhất một phòng ban nhận thông báo." | TS `recipients` · Q-395 · Q-397 · Q-399 · đặc tả UAT-BID02-82 |
 
 ## Ghi chú bao phủ
 

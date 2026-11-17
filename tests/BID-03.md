@@ -1,7 +1,9 @@
-# BID-03 · Áp giá, gửi báo giá & thương thảo — Kịch bản kiểm thử
+# BID-03 · Thương thảo & chốt giá — Kịch bản kiểm thử
 
 > Nguồn: `spec/BID-03.html`. Mọi kịch bản dưới đây suy ra từ một mục cụ thể của đặc tả, ghi ở cột **Nguồn**:
 > `TS` = bảng *Tham số* · `BTH` = mục *Bảng tổng hợp giá trị đơn hàng* · `XB` = mục *Xuất bản báo giá* · `CN-n` = dòng *Chức năng trên màn hình* · `BR-nn` = *Quy tắc nghiệp vụ* · `VAL-n` = dòng *Kiểm tra dữ liệu & thông điệp* · `KQ-n` = gạch đầu dòng *Kết quả mong đợi*.
+
+> **Phản hồi 17/11/2026 tối (Q-390 – Q-399).** Mục A – C viết trước bản V2 (16/11/2026) và các đợt 17/11/2026; chỗ nào khác `spec/BID-03.html` thì đặc tả thắng. Kịch bản của đợt này ở mục cuối, cột **Nguồn** trỏ về mã kịch bản và quy tắc của đặc tả.
 
 ## A · Luồng giao diện
 
@@ -108,6 +110,19 @@
 | UAT-BID03-89 | Vòng 1 đang nháp, HM-01 nhân công 300.000 (Q-300) | Sửa nhân công HM-01 thành 350.000, lưu; mở **Lịch sử thay đổi** | Hai dòng nhãn HM-01, ghi chú “Vòng báo giá 1”: Nhân công `300.000 → 350.000`, Giá chào tăng đúng 50.000 |
 | UAT-BID03-90 | Tiếp UAT-89 | Lưu lại không sửa gì | Không thêm dòng lịch sử |
 | UAT-BID03-91 | *(13/11/2026 · Q-301)* Lần 1 kết quả 3b đã lưu; gói đang thương thảo | Mở màn hợp đồng (BID-05); thông báo thương thảo hoàn thành, chốt HĐ – Đã ký; mở lại | Trước khi chốt không có lời nhắc lần 3b; sau khi chốt khối Phụ lục HĐ nhắc "Có 1 lần thương thảo theo HSMT ban đầu (3b) chưa đưa vào phụ lục" với *Lần 1 · {hướng xử lý}* | quy tắc *Kết quả 3a hay 3b ghi trên từng lần* · Q-301 |
+
+## D · Thương thảo & chốt giá — phản hồi 17/11/2026 tối *(thay mục C và phần lần 0 của mục A, B)*
+
+Bước 3 chỉ còn tải tệp thương thảo + nhập Giá trị HĐ + Lưu (Q-392). Mọi kịch bản của mục A – C về áp giá, lần 0, lần thương thảo, 3a / 3b, Thông báo cho P.TQT nắm không còn áp dụng; giữ mã để không dùng lại.
+
+| Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
+|---|---|---|---|---|
+| UAT-BID03-92 | Gói *Đã thẩm định* | Mở tab Thương thảo · chốt giá | Chỉ có ô tải tệp, Giá trị HĐ, ghi chú, Lưu; không có lần 0, giá trị chào, Thêm lần thương thảo | KQ-1 · KQ-4 · Q-392 |
+| UAT-BID03-93 | Tiếp UAT-92 | Lưu khi chưa có tệp; rồi có tệp mà trống Giá trị HĐ | Bị chặn lần lượt "Tải lên ít nhất một tệp thương thảo trước khi chốt giá.", "Nhập Giá trị HĐ đã chốt." | VAL-1 · VAL-2 · đặc tả UAT-BID03-63 |
+| UAT-BID03-94 | Tiếp UAT-92 | Tải tệp, nhập Giá trị HĐ, Lưu; trong hộp người nhận đổi DS, gửi | Gói *Thương thảo hoàn thành*; cột Giá trị HĐ; tab 4 mở; đúng DS đang hiện + Ban lãnh đạo + Dự án liên quan nhận; Lịch sử thay đổi có dòng gửi | KQ-2 · BR "Lưu lần đầu chốt giá" · đặc tả UAT-BID03-6 · đặc tả UAT-BID03-51 |
+| UAT-BID03-95 | Tiếp UAT-94 | Sửa / thay tệp, đổi Giá trị HĐ, Lưu; rồi Bắt đầu ký và thử lưu lại | Lần đầu lưu thẳng, không thông báo, giá trị HĐ nháp đổi theo; sau Bắt đầu ký tab chỉ đọc, máy chủ từ chối | KQ-3 · BR "Lưu lại được tới khi Bắt đầu ký" · đặc tả UAT-BID03-65 · đặc tả UAT-BID03-66 |
+| UAT-BID03-96 | Gói *Đang thương thảo (lần 2)* trước triển khai | Triển khai; mở gói | *Đã thẩm định*; tệp lần 0 và các lần ở tab, ghi chú tệp mang nội dung lần; nhập Giá trị HĐ rồi Lưu là chốt giá | BR "Gói đang ở bước 3 khi triển khai 17/11/2026" · đặc tả UAT-BID03-67 |
+| UAT-BID03-97 | Gói *Đã thẩm định*, quá hạn nộp | Mở Bảng tổng hợp, chờ lịch nhắc | Không tô quá hạn, không nhắc | BR "Nhắc hạn nộp dừng khi gói Đã thẩm định" · đặc tả UAT-BID03-68 |
 
 ## Ghi chú bao phủ
 

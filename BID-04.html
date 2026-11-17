@@ -22,7 +22,7 @@
     <div class="rail-grp">Phòng Đấu thầu</div>
     <a href="BID-01.html"><i>BID-01</i>Tiếp nhận thư chào thầu</a>
     <a href="BID-02.html"><i>BID-02</i>Thẩm định BOQ liên phòng</a>
-    <a href="BID-03.html"><i>BID-03</i>Áp giá &amp; thương thảo</a>
+    <a href="BID-03.html"><i>BID-03</i>Thương thảo &amp; chốt giá</a>
     <a class="on" href="BID-04.html"><i>BID-04</i>Hủy gói thầu</a>
     <a href="BID-05.html"><i>BID-05</i>Ký HĐ &amp; khởi tạo dự án</a>
     <a href="BID-06.html"><i>BID-06</i>Áp giá doanh thu đơn</a>
@@ -156,7 +156,7 @@
       <li>Gói thầu chuyển “Đã hủy” và biến khỏi hàng chờ việc của mọi bộ phận; trên Bảng tổng hợp các ô tình trạng đã có giữ nguyên ngày.</li>
       <li>Các bộ phận nhận đúng một thông báo, đọc là biết gói thầu nào, dự án nào, lý do gì.</li>
       <li>Gói đã ký: gói, hợp đồng và dự án cùng sang “Đã hủy”; chứng từ đã lập giữ nguyên, dự án không nhận chứng từ mới.</li>
-      <li>Tệp, lần thương thảo, dữ liệu HĐ được giữ nguyên, tra cứu được.</li>
+      <li>Tệp các bước (cả tệp thương thảo), dữ liệu HĐ được giữ nguyên, tra cứu được.</li>
       <li>Hủy nhầm gói chưa ký thì mở lại được, có ghi nhật ký người mở và thời điểm; hủy dự án là một chiều.</li>
     </ol>
 
@@ -188,7 +188,7 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Hủy là trạng thái, không phải xóa.</b> Gói thầu đã hủy vẫn tra cứu được đầy đủ.<span class="then">Tệp, lần thương thảo, dữ liệu HĐ giữ nguyên, đóng băng theo <a href="PF-05.html">PF-05</a>. Muốn bỏ hẳn một mã chưa phát sinh dữ liệu ở phòng khác và chưa có hợp đồng thì dùng Xóa ở tab Mã gói thầu của <a href="PF-01.html">PF-01</a> (<a href="PL-C.html#Q-318">Q-318</a>; V2 · <a href="PL-C.html#Q-325">Q-325</a>; 17/11/2026 · <a href="PL-C.html#Q-341">Q-341</a> — gói đã có hợp đồng không xóa được); muốn chuyển hết phát sinh sang mã khác thì Gộp mã ở cùng tab.</span></li>
+      <li><b>Hủy là trạng thái, không phải xóa.</b> Gói thầu đã hủy vẫn tra cứu được đầy đủ.<span class="then">Tệp các bước (cả tệp thương thảo — <em>17/11/2026 không còn lần thương thảo, <a href="PL-C.html#Q-392">Q-392</a></em>), dữ liệu HĐ giữ nguyên, đóng băng theo <a href="PF-05.html">PF-05</a>. Muốn bỏ hẳn một mã chưa phát sinh dữ liệu ở phòng khác và chưa có hợp đồng thì dùng Xóa ở tab Mã gói thầu của <a href="PF-01.html">PF-01</a> (<a href="PL-C.html#Q-318">Q-318</a>; V2 · <a href="PL-C.html#Q-325">Q-325</a>; 17/11/2026 · <a href="PL-C.html#Q-341">Q-341</a> — gói đã có hợp đồng không xóa được); muốn chuyển hết phát sinh sang mã khác thì Gộp mã ở cùng tab.</span></li>
       <li><b>Lý do đi thẳng vào thông báo.</b> Nút “Xác nhận hủy” khóa chừng nào ô lý do còn trống.</li>
       <li><b>Một thông báo cho mọi bộ phận liên quan.</b> Gửi một lần, không nhắc lại; gói đồng thời rời khỏi hàng chờ việc của họ.</li>
       <li><b>Gói đã ký hủy bằng Hủy dự án.</b> <em>(16/11/2026 · <a href="PL-C.html#Q-318">Q-318</a>)</em> Gói ở <em>Đã ký - HĐ chốt</em> hoặc <em>Hoàn tất</em> có nút <b>Hủy dự án</b> thay cho “Hủy gói thầu”: gói, hợp đồng và dự án cùng sang <em>Đã hủy</em> trong một giao dịch; phiếu nhập, xuất, phiếu kế toán, đề nghị thanh toán đã lập giữ nguyên, dự án không nhận chứng từ mới; mã được giải phóng để tạo lại. Không mở lại được.<span class="then">Thay quy tắc “Gói đã ký hợp đồng không hủy ở màn hình này” của bản trước; hợp đồng có thêm trạng thái <em>Đã hủy</em> (<a href="PL-A.html">PL-A</a>). Ranh giới với thanh lý hợp đồng vẫn theo <a href="PL-C.html#Q-27">Q-27</a>.</span></li>
@@ -226,7 +226,7 @@
         <tbody>
           <tr><td>UAT-BID04-1</td><td>Gói thầu đang thương thảo</td><td>Nhập lý do và xác nhận hủy</td><td>Trạng thái chuyển “Đã hủy”; gói thầu rời hàng chờ việc</td></tr>
           <tr><td>UAT-BID04-2</td><td>Tiếp UAT-1</td><td>Kiểm tra thông báo của TP TQT và Ban dự án</td><td>Mỗi người nhận đúng một thông báo nêu gói thầu, dự án và lý do</td></tr>
-          <tr><td>UAT-BID04-3</td><td>Gói thầu đã hủy <em>(viết lại 16/11/2026)</em></td><td>Mở lại hồ sơ gói thầu</td><td>Tệp các bước và lần thương thảo còn nguyên, chỉ đọc; Bảng tổng hợp giữ ngày ở các ô đã có</td></tr>
+          <tr><td>UAT-BID04-3</td><td>Gói thầu đã hủy <em>(viết lại 16/11/2026)</em></td><td>Mở lại hồ sơ gói thầu</td><td>Tệp các bước, cả tệp thương thảo, còn nguyên, chỉ đọc; Bảng tổng hợp giữ ngày ở các ô đã có</td></tr>
           <tr><td>UAT-BID04-4</td><td>Hủy nhầm gói thầu chưa ký</td><td>Bấm “Mở lại gói thầu”</td><td>Về trạng thái trước đó; nhật ký ghi người mở và thời điểm</td></tr>
           <tr><td>UAT-BID04-5</td><td>Gói <code>KH_0001</code> đã gộp vào <code>KH_0004</code> trước 16/11/2026, mang <em>Đã gộp</em></td><td>Mở hồ sơ <code>KH_0001</code>, tìm nút “Hủy gói thầu”</td><td>Nút không hiện; hồ sơ nêu gói đã gộp vào <code>KH_0004</code> kèm liên kết</td></tr>
           <tr><td>UAT-BID04-7</td><td>Gói <code>KH_0160</code> Hoàn tất, Kế toán có 3 phiếu chi theo mã công trình (16/11/2026 · <a href="PL-C.html#Q-318">Q-318</a>)</td><td>Bấm Xóa ở tab Mã gói thầu (<a href="PF-01.html">PF-01</a>) — bị từ chối; bấm Hủy dự án, nhập lý do, xác nhận</td><td>Gói, HĐ, dự án <code>KH_0160</code> cùng “Đã hủy”; 3 phiếu chi giữ nguyên; lập phiếu mới cho công trình <code>KH_0160</code> bị từ chối; Admin, TGĐ và thành phần dự án nhận thông báo; không có nút Mở lại</td></tr>

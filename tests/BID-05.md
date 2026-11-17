@@ -3,6 +3,8 @@
 > Nguồn: `spec/BID-05.html`. Mọi kịch bản dưới đây suy ra từ một mục cụ thể của đặc tả, ghi ở cột **Nguồn**:
 > `TS-HĐ` / `TS-DA` = bảng *Tham số — hợp đồng* / *— khởi tạo dự án* · `CHK` = bảng *Tham số — danh mục kiểm tra trước ký* · `CN-n` = dòng *Chức năng trên màn hình* · `BR-nn` = *Quy tắc nghiệp vụ* · `VAL-n` = dòng *Kiểm tra dữ liệu & thông điệp* · `KQ-n` = gạch đầu dòng *Kết quả mong đợi*.
 
+> **Phản hồi 17/11/2026 tối (Q-390 – Q-399).** Mục A – C viết trước bản V2 (16/11/2026) và các đợt 17/11/2026; chỗ nào khác `spec/BID-05.html` thì đặc tả thắng. Kịch bản của đợt này ở mục cuối, cột **Nguồn** trỏ về mã kịch bản và quy tắc của đặc tả.
+
 ## A · Luồng giao diện
 
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
@@ -111,6 +113,18 @@ Các kịch bản dưới đây kiểm hành vi đặc tả đã bỏ trước h
 | UAT-BID05-54 | bảng đợt thanh toán đã bỏ |
 | UAT-BID05-55 | như UAT-54 |
 | UAT-BID05-56 | như UAT-54 |
+
+## E · Phản hồi 17/11/2026 tối — file đã ký, độ rộng cột, tạo mã khi import, người nhận
+
+| Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
+|---|---|---|---|---|
+| UAT-BID05-88 | Ký HĐ, chưa có file HĐ | Kéo thả `HD.exe`, rồi `HD-daky.docx` | `.exe` bị chặn trước khi tải; DOCX nhận, điều kiện file HĐ ✓ | TS `signed_pdf` · VAL file HĐ · Q-393 · đặc tả UAT-BID05-29 |
+| UAT-BID05-89 | Phụ lục ở *Đang ký số* | Tải ảnh JPG làm file phụ lục đã ký; thử tệp 60 MB | Ảnh nhận; tệp 60 MB bị chặn "vượt giới hạn 50 MB" | Q-393 · đặc tả UAT-BID05-76 |
+| UAT-BID05-90 | Gói đã import, máy tính | Kéo độ rộng cột ở tab Dữ liệu HĐ, tải lại, mở gói khác và bản xem trước; Alt + nhấp đúp | Độ rộng giữ theo tiêu đề cột trên cùng trình duyệt; STT không kéo; Alt + nhấp đúp đặt lại; điện thoại không có tay kéo | CN-3 · CN-5 · Q-293 · đặc tả UAT-BID05-81 |
+| UAT-BID05-91 | Người import có `prj_material:write`; tệp có mã chưa có và mã đã ngừng dùng | Xem trước, Import | Xem trước liệt kê mã sẽ tạo; Import tạo vật tư thường, dòng hết cảnh báo; mã ngừng dùng giữ cảnh báo kèm lý do | TS cột 5 · BR mã vật tư · CN-8 · Q-394 · đặc tả UAT-BID05-59 |
+| UAT-BID05-92 | Như UAT-91; cùng mã khác ĐVT; mã không có ĐVT; bỏ tích; người không có quyền | Import từng trường hợp | Dòng đầu quyết định ĐVT, dòng khác cảnh báo; mã thiếu ĐVT không tạo; bỏ tích hoặc thiếu quyền thì không tạo mã nào | VAL mã vật tư · Q-394 · đặc tả UAT-BID05-77 · đặc tả UAT-BID05-78 |
+| UAT-BID05-93 | Tiếp UAT-91 | Import lại; Xóa dữ liệu HĐ; Tạo mã còn thiếu | Không tạo trùng; mã đã tạo vẫn ở danh mục sau khi xóa; nút Tạo mã điền sẵn từ dòng | CN-7 · CN-9 · Q-394 · đặc tả UAT-BID05-79 · đặc tả UAT-BID05-80 |
+| UAT-BID05-94 | Bước 6 và phụ lục chưa thông báo | Chọn lại DS ngay trên khối bước 6, gửi, gửi lại; làm tương tự ở khối thông báo phụ lục | Người nhận đúng danh sách đang hiện; mỗi lần gửi một dòng Lịch sử thay đổi; phụ lục có Gửi lại | TS `recipients` · BR bước 6 · Q-395 · Q-399 · đặc tả UAT-BID05-33 · đặc tả UAT-BID05-82 |
 
 ## Ghi chú bao phủ
 
