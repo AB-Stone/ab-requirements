@@ -258,7 +258,7 @@
       <li><b>Tên Trường 1–3 dùng chung.</b> Đổi tên một lần áp dụng cho mọi gói thầu; giá trị trong từng gói giữ nguyên.</li>
       <li><b>Khóa thắng mọi quyền</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 9)</em>. TP TQT và Admin khóa / mở khóa bản ghi của một gói; đang khóa thì không ai sửa. Khóa gói chưa có bản ghi thì hệ thống tạo bản ghi trống rồi khóa.<span class="then">Quy tắc chung ở <a href="PF-02.html">PF-02</a>, mã quyền ở <a href="PL-B.html">PL-B</a>.</span></li>
       <li><b>Quyền ghi theo mã quyền.</b> Sửa cột xanh, ba bảng và tên Trường cần <code>rpt_payment_tracking:write</code>; xem cần <code>rpt_payment_tracking:read</code>.<span class="then">Không kiểm thêm phòng ban — mã quyền là toàn bộ cổng ghi, cấp theo vai trò hoặc riêng từng người ở <a href="PF-02.html">PF-02</a>.</span></li>
-      <li><b>Gộp mã và xóa gói tính bản ghi này là dữ liệu của P. TQT.</b> Gộp gói A vào B: B chưa có bản ghi thì bản ghi của A chuyển sang B; cả hai đã có thì chặn gộp. Gói có bản ghi thì không xóa được.<span class="then">Đối chiếu và xóa dữ liệu trùng ở gói nguồn trước khi gộp; muốn xóa gói thì chuyển dữ liệu bằng Gộp mã trước (<a href="PF-01.html">PF-01</a>).</span></li>
+      <li><b>Gộp mã và xóa gói tính bản ghi có dữ liệu là dữ liệu của P. TQT.</b> Bản ghi có dữ liệu là bản ghi có ít nhất một ô đã nhập hoặc đang khóa; bản ghi đã xóa trắng (hoặc khóa rồi mở) coi như không có. Gộp gói A vào B: chỉ một bên có dữ liệu thì bên đó sang B, bản ghi trống bị bỏ; cả hai có dữ liệu thì chặn gộp. Gói có bản ghi có dữ liệu thì không xóa được.<span class="then">Đối chiếu và xóa dữ liệu trùng ở gói nguồn trước khi gộp; muốn xóa gói thì chuyển dữ liệu bằng Gộp mã trước (<a href="PF-01.html">PF-01</a>).</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -272,7 +272,7 @@
           <tr><td>Tên Trường trống hoặc quá dài</td><td>Rỗng hoặc &gt; 100 ký tự</td><td>“Tên trường {n} phải có từ 1 đến 100 ký tự.”</td></tr>
           <tr><td>Sửa bản ghi đang khóa</td><td><code>is_locked</code></td><td>“Gói thầu {mã} đang khóa bởi {người khóa} từ {lúc}. Mở khóa trước khi sửa.”</td></tr>
           <tr><td>Gói thầu không còn</td><td>Đã xóa, đã gộp hoặc không tồn tại</td><td>“Không tìm thấy gói thầu.”</td></tr>
-          <tr><td>Gộp hai gói cùng có bản ghi</td><td>Cả gói nguồn và gói đích có bản ghi</td><td>“Theo dõi hồ sơ thanh toán đã có dữ liệu ở cả hai gói — đối chiếu và xóa dữ liệu trùng ở gói nguồn trước khi gộp.”</td></tr>
+          <tr><td>Gộp hai gói cùng có dữ liệu</td><td>Cả gói nguồn và gói đích có bản ghi có dữ liệu</td><td>“Theo dõi hồ sơ thanh toán đã có dữ liệu ở cả hai gói — đối chiếu và xóa dữ liệu trùng ở gói nguồn trước khi gộp.”</td></tr>
           <tr><td>Người không có quyền ghi</td><td>Thiếu <code>rpt_payment_tracking:write</code></td><td>Ô khoá, không có nút Lưu; “Bạn đang xem ở chế độ chỉ đọc.”</td></tr>
         </tbody>
       </table>
@@ -293,8 +293,8 @@
           <tr><td>UAT-RPT05-8</td><td>Gói chưa có bản ghi</td><td>TP TQT bấm Khóa, rồi thử Lưu</td><td>Khóa được; Lưu bị chặn với thông điệp khóa; Mở khóa thì Lưu được</td></tr>
           <tr><td>UAT-RPT05-9</td><td>Tài khoản chỉ có <code>rpt_payment_tracking:read</code></td><td>Mở Chi tiết</td><td>Mọi ô khoá, không có nút Lưu và nút Đổi tên Trường</td></tr>
           <tr><td>UAT-RPT05-10</td><td>Gói đã hủy ở <a href="BID-04.html">BID-04</a></td><td>Lọc trạng thái Đã hủy</td><td>Gói vẫn hiện, mang nhãn Đã hủy</td></tr>
-          <tr><td>UAT-RPT05-11</td><td>Hai gói đều có bản ghi theo dõi</td><td>Gộp mã gói này vào gói kia</td><td>Bị chặn với thông điệp “đã có dữ liệu ở cả hai gói”</td></tr>
-          <tr><td>UAT-RPT05-12</td><td>Gói có bản ghi theo dõi, chưa có hợp đồng</td><td>Xóa gói thầu</td><td>Bị chặn, thông điệp nêu P. TQT đã có dữ liệu</td></tr>
+          <tr><td>UAT-RPT05-11</td><td>Hai gói đều đã nhập dữ liệu theo dõi</td><td>Gộp mã gói này vào gói kia</td><td>Bị chặn với thông điệp “đã có dữ liệu ở cả hai gói”; xóa trắng bản ghi ở một gói thì gộp được, dữ liệu của gói còn lại sang gói đích</td></tr>
+          <tr><td>UAT-RPT05-12</td><td>Gói đã nhập dữ liệu theo dõi, chưa có hợp đồng</td><td>Xóa gói thầu</td><td>Bị chặn, thông điệp nêu P. TQT đã có dữ liệu; xóa trắng bản ghi rồi xóa gói thì được</td></tr>
         </tbody>
       </table>
     </div>
