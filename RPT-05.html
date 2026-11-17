@@ -38,10 +38,9 @@
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
+    <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
-    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <a href="PRJ-06.html"><i>PRJ-06</i>Nhân sự dự án</a>
@@ -233,7 +232,7 @@
     <text x="230" y="289">người cập nhật · ngày cập nhật</text>
   </g>
 </g>
-</svg></div><figcaption><b>Hình RPT-05.2</b> Lớp mở rộng theo <a href="2026-09-15/YC-10.html">YC-10</a>: bốn nguồn rollup — <a href="BID-05.html">BID-05</a>, <a href="PRJ-02.html">PRJ-02</a>, <a href="ORD-09.html">ORD-09</a>/<a href="ORD-10.html">ORD-10</a>, <a href="PRJ-03.html">PRJ-03</a> — đổ vào một dòng theo dõi mỗi <em>hạng mục</em> hợp đồng. Phần thêm tay chỉ gồm hai thứ: hạng mục nằm ngoài phạm vi Phòng Đấu thầu, và trạng thái ba nhóm hồ sơ mở ra khi bấm <b>Chi tiết</b>.</figcaption></figure>
+</svg></div><figcaption><b>Hình RPT-05.2</b> Lớp mở rộng theo <a href="2026-09-15/YC-10.html">YC-10</a>: bốn nguồn rollup — <a href="BID-05.html">BID-05</a>, PRJ-02, <a href="ORD-09.html">ORD-09</a>/<a href="ORD-10.html">ORD-10</a>, PRJ-03 — đổ vào một dòng theo dõi mỗi <em>hạng mục</em> hợp đồng. Phần thêm tay chỉ gồm hai thứ: hạng mục nằm ngoài phạm vi Phòng Đấu thầu, và trạng thái ba nhóm hồ sơ mở ra khi bấm <b>Chi tiết</b>.</figcaption></figure>
 
     <h4>Tham số</h4>
     <div class="tw">
@@ -248,7 +247,7 @@
           <tr><td>Vùng</td><td class="k">region</td><td>Chọn 1</td><td class="c">—</td><td>Theo danh mục vùng miền <a href="PF-01.html">PF-01</a>.</td></tr>
           <tr><td>Ngày ký HĐ</td><td class="k">signed_date</td><td>Ngày</td><td class="c req">✱</td><td>Rollup <a href="BID-05.html">BID-05</a>, chỉ đọc.</td></tr>
           <tr><td>Ngày bắt đầu / kết thúc theo HĐ</td><td class="k">contract_start / contract_end</td><td>Ngày</td><td class="c">—</td><td>Rollup <a href="BID-05.html">BID-05</a>, chỉ đọc.</td></tr>
-          <tr><td>Ngày bắt đầu / kết thúc thi công thực tế</td><td class="k">actual_start, actual_end</td><td>Ngày</td><td class="c">—</td><td>Rollup <a href="PRJ-02.html">PRJ-02</a>, chỉ đọc. Hai cột này đặt ngay cạnh <code>contract_start</code> / <code>contract_end</code> trên bảng theo dõi để so tiến độ theo HĐ với tiến độ thực tế trong cùng một tầm mắt.</td></tr>
+          <tr><td>Ngày bắt đầu / kết thúc thi công thực tế</td><td class="k">actual_start, actual_end</td><td>Ngày</td><td class="c">—</td><td>Rollup PRJ-02, chỉ đọc. Hai cột này đặt ngay cạnh <code>contract_start</code> / <code>contract_end</code> trên bảng theo dõi để so tiến độ theo HĐ với tiến độ thực tế trong cùng một tầm mắt.</td></tr>
           <tr><td>Giá trị HĐ + phụ lục sau thuế</td><td class="k">contract_value_incl_vat</td><td>Số tiền</td><td class="c req">✱</td><td>Rollup <a href="BID-05.html">BID-05</a>, gồm mọi phụ lục điều chỉnh giá trị. Chỉ đọc.</td></tr>
           <tr><td>% VAT</td><td class="k">vat_rate</td><td>Phần trăm</td><td class="c">—</td><td>Rollup <a href="BID-05.html">BID-05</a>.</td></tr>
           <tr><td>Giá trị quyết toán sau thuế</td><td class="k">settlement_value</td><td>Số tiền</td><td class="c">—</td><td>Rollup <a href="ORD-10.html">ORD-10</a>; lấy ngay khi hồ sơ quyết toán tồn tại, không phụ thuộc đã xuất hoá đơn đủ hay chưa. Chỉ đọc.</td></tr>
@@ -273,12 +272,12 @@
           <tr><td>Hạng mục</td><td class="k">wbs_group_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Nhóm đầu việc của hợp đồng theo BOQ <a href="BID-02.html">BID-02</a>. <b>Một dòng theo dõi là một hạng mục của một hợp đồng</b>, không phải cả hợp đồng.</td></tr>
           <tr><td>Chế độ xem</td><td class="k">view_mode</td><td>Chọn 1</td><td class="c req">✱</td><td><code>Theo hạng mục</code> (mặc định) · <code>Gộp theo hợp đồng</code>. Chế độ gộp cộng các cột giá trị của mọi hạng mục cùng một hợp đồng về một dòng; cột hạng mục và cán bộ phụ trách chuyển thành số đếm.</td></tr>
           <tr><td colspan="5"><b>Mở rộng — hồ sơ TQT (thu của chủ đầu tư)</b></td></tr>
-          <tr><td>Giá trị sản lượng TC thực tế</td><td class="k">tqt_value_actual</td><td>Số tiền</td><td class="c">—</td><td>Luỹ kế khối lượng đã thi công × đơn giá hợp đồng — rollup <a href="PRJ-02.html">PRJ-02</a> và BOQ hợp đồng. Chỉ đọc.</td></tr>
+          <tr><td>Giá trị sản lượng TC thực tế</td><td class="k">tqt_value_actual</td><td>Số tiền</td><td class="c">—</td><td>Luỹ kế khối lượng đã thi công × đơn giá hợp đồng — rollup PRJ-02 và BOQ hợp đồng. Chỉ đọc.</td></tr>
           <tr><td>Giá trị sản lượng TC đã thanh toán</td><td class="k">tqt_value_paid</td><td>Số tiền</td><td class="c">—</td><td>Luỹ kế đã nhận từ chủ đầu tư — rollup <a href="ORD-09.html">ORD-09</a> và <a href="ORD-10.html">ORD-10</a>. Chỉ đọc.</td></tr>
           <tr><td>Tình trạng hồ sơ quyết toán</td><td class="k">settlement_doc_status</td><td>Chọn 1</td><td class="c">—</td><td><code>Chưa quyết toán</code> · <code>Đang lập</code> · <code>Đã nộp</code> · <code>Đã quyết toán</code>. Rollup <a href="ORD-10.html">ORD-10</a>.</td></tr>
           <tr><td colspan="5"><b>Mở rộng — hồ sơ tổ đội (trả cho tổ đội)</b></td></tr>
-          <tr><td>Giá trị sản lượng TC thực tế</td><td class="k">crew_value_actual</td><td>Số tiền</td><td class="c">—</td><td>Luỹ kế khối lượng đã nghiệm thu × đơn giá khoán — rollup <a href="PRJ-02.html">PRJ-02</a> và <a href="PRJ-01.html">PRJ-01</a>. Chỉ đọc.</td></tr>
-          <tr><td>Giá trị sản lượng TC đã thanh toán</td><td class="k">crew_value_paid</td><td>Số tiền</td><td class="c">—</td><td>Luỹ kế đã trả tổ đội — rollup <a href="PRJ-03.html">PRJ-03</a>. Chỉ đọc.</td></tr>
+          <tr><td>Giá trị sản lượng TC thực tế</td><td class="k">crew_value_actual</td><td>Số tiền</td><td class="c">—</td><td>Luỹ kế khối lượng đã nghiệm thu × đơn giá khoán — rollup PRJ-02 và <a href="PRJ-01.html">PRJ-01</a>. Chỉ đọc.</td></tr>
+          <tr><td>Giá trị sản lượng TC đã thanh toán</td><td class="k">crew_value_paid</td><td>Số tiền</td><td class="c">—</td><td>Luỹ kế đã trả tổ đội — rollup PRJ-03. Chỉ đọc.</td></tr>
           <tr><td>Chênh lệch bất lợi</td><td class="k">value_gap</td><td>Số tiền</td><td class="c">—</td><td>Máy chủ tính = <code>crew_value_paid − tqt_value_paid</code>. Lớn hơn 0 là đang trả tổ đội nhiều hơn thu được; dòng bị tô cảnh báo và <code>owner_user</code> nhận nhắc việc. Chỉ đọc.</td></tr>
           <tr><td colspan="5"><b>Mở rộng — điều hành &amp; dòng thêm tay</b></td></tr>
           <tr><td>Cán bộ phụ trách</td><td class="k">owner_user</td><td>Tham chiếu</td><td class="c">—</td><td>Nhập tay. Người chịu trách nhiệm hồ sơ của hạng mục này; chỉ gán được cho người thuộc P. TQT. Bỏ trống thì cảnh báo chênh lệch không có người nhận.</td></tr>
@@ -313,14 +312,14 @@
           <tr><td colspan="4"><b>Nhóm 2 — giá trị &amp; tiến độ</b></td></tr>
           <tr><td>8</td><td>Tổng giá trị HĐ &amp; PLHĐ sau VAT</td><td class="k">contract_value_incl_vat</td><td>Rollup <a href="BID-05.html">BID-05</a>, gồm mọi phụ lục điều chỉnh giá trị</td></tr>
           <tr><td>9–10</td><td>Tiến độ theo HĐ — bắt đầu · kết thúc</td><td class="k">contract_start, contract_end</td><td>Rollup <a href="BID-05.html">BID-05</a></td></tr>
-          <tr><td>11–12</td><td>Tiến độ thực tế — bắt đầu · kết thúc</td><td class="k">actual_start, actual_end</td><td>Rollup <a href="PRJ-02.html">PRJ-02</a></td></tr>
+          <tr><td>11–12</td><td>Tiến độ thực tế — bắt đầu · kết thúc</td><td class="k">actual_start, actual_end</td><td>Rollup PRJ-02</td></tr>
           <tr><td colspan="4"><b>Nhóm 3 — hồ sơ TQT (thu của chủ đầu tư)</b></td></tr>
-          <tr><td>13</td><td>Giá trị sản lượng TC thực tế</td><td class="k">tqt_value_actual</td><td><b>Cột mới.</b> Rollup <a href="PRJ-02.html">PRJ-02</a> × đơn giá hợp đồng</td></tr>
+          <tr><td>13</td><td>Giá trị sản lượng TC thực tế</td><td class="k">tqt_value_actual</td><td><b>Cột mới.</b> Rollup PRJ-02 × đơn giá hợp đồng</td></tr>
           <tr><td>14</td><td>Giá trị sản lượng TC đã thanh toán</td><td class="k">tqt_value_paid</td><td><b>Cột mới.</b> Rollup <a href="ORD-09.html">ORD-09</a> · <a href="ORD-10.html">ORD-10</a></td></tr>
           <tr><td>15</td><td>Tình trạng hồ sơ quyết toán</td><td class="k">settlement_doc_status</td><td>Rollup <a href="ORD-10.html">ORD-10</a></td></tr>
           <tr><td colspan="4"><b>Nhóm 4 — hồ sơ tổ đội (trả cho tổ đội)</b></td></tr>
-          <tr><td>16</td><td>Giá trị sản lượng TC thực tế</td><td class="k">crew_value_actual</td><td><b>Cột mới.</b> Rollup <a href="PRJ-02.html">PRJ-02</a> × đơn giá khoán <a href="PRJ-01.html">PRJ-01</a></td></tr>
-          <tr><td>17</td><td>Giá trị sản lượng TC đã thanh toán</td><td class="k">crew_value_paid</td><td><b>Cột mới.</b> Rollup <a href="PRJ-03.html">PRJ-03</a></td></tr>
+          <tr><td>16</td><td>Giá trị sản lượng TC thực tế</td><td class="k">crew_value_actual</td><td><b>Cột mới.</b> Rollup PRJ-02 × đơn giá khoán <a href="PRJ-01.html">PRJ-01</a></td></tr>
+          <tr><td>17</td><td>Giá trị sản lượng TC đã thanh toán</td><td class="k">crew_value_paid</td><td><b>Cột mới.</b> Rollup PRJ-03</td></tr>
           <tr><td>18</td><td>Chênh lệch bất lợi</td><td class="k">value_gap</td><td><b>Cột mới, máy chủ tính:</b> <code>crew_value_paid − tqt_value_paid</code></td></tr>
           <tr><td colspan="4"><b>Nhóm 5 — điều hành</b></td></tr>
           <tr><td>19</td><td>Cán bộ phụ trách</td><td class="k">owner_user</td><td><b>Cột mới.</b> Nhập tay</td></tr>
@@ -346,7 +345,7 @@
           <tr><td>Thanh toán đợt</td><td class="k">v_batch</td><td>Gắn về <a href="ORD-09.html">ORD-09</a>; mang thêm giá trị đề nghị và đã nhận</td></tr>
           <tr><td>Quyết toán</td><td class="k">v_settlement</td><td>Gắn về <a href="ORD-10.html">ORD-10</a>; mang thêm giá trị đề nghị và đã nhận</td></tr>
           <tr><td rowspan="2"><b>Hồ sơ tổ đội</b><br><code>dossier_crew[]</code></td><td>Hồ sơ giao khoán</td><td class="k">c_contract</td><td>Gắn về bảng giá khoán đã duyệt ở <a href="PRJ-01.html">PRJ-01</a></td></tr>
-          <tr><td>Hồ sơ nghiệm thu &amp; thanh toán tổ đội</td><td class="k">c_payment</td><td>Gắn về <a href="PRJ-03.html">PRJ-03</a>; mang thêm giá trị đã trả</td></tr>
+          <tr><td>Hồ sơ nghiệm thu &amp; thanh toán tổ đội</td><td class="k">c_payment</td><td>Gắn về PRJ-03; mang thêm giá trị đã trả</td></tr>
         </tbody>
       </table>
     </div>
@@ -419,7 +418,7 @@
             <tr><td>Thanh toán đợt · <a href="ORD-09.html">ORD-09</a></td><td><span class="tag t-warn">Đã nộp</span></td><td>4 tệp · v3</td><td>Đồng bộ từ ORD-09</td><td>11/09/2026</td></tr>
             <tr><td>Quyết toán · <a href="ORD-10.html">ORD-10</a></td><td><span class="tag t-neu">Chưa có</span></td><td>—</td><td>—</td><td>—</td></tr>
             <tr><td rowspan="2">Hồ sơ tổ đội</td><td>Giao khoán · <a href="PRJ-01.html">PRJ-01</a></td><td><span class="tag t-ok">Đã duyệt</span></td><td>1 tệp · v2</td><td>Lê T. Mai</td><td>20/02/2026</td></tr>
-            <tr><td>Nghiệm thu &amp; thanh toán tổ đội · <a href="PRJ-03.html">PRJ-03</a></td><td><span class="tag t-warn">Đã nộp</span></td><td>6 tệp · v1</td><td>Đồng bộ từ PRJ-03</td><td>09/09/2026</td></tr>
+            <tr><td>Nghiệm thu &amp; thanh toán tổ đội · PRJ-03</td><td><span class="tag t-warn">Đã nộp</span></td><td>6 tệp · v1</td><td>Đồng bộ từ PRJ-03</td><td>09/09/2026</td></tr>
           </tbody></table>
           <div class="wf-f" style="margin-top:8px"><label>Nội dung thiếu / sai — Nhật ký công trường ✱</label><div class="in">Thiếu nhật ký tuần 26 đến tuần 31; bản quét tuần 32 mờ không đọc được cột thời tiết.</div></div>
           <p style="margin:6px 0 0;font-size:11.5px;color:var(--warn)">Bản vẽ hoàn công và biên bản bàn giao để “Chưa có” là bình thường ở đợt thanh toán giữa chừng — hai thành phần này chỉ bắt buộc ở đợt quyết toán.</p>
@@ -479,7 +478,7 @@
       <li><b>Dòng thêm tay phải khai lý do và nhìn ra được.</b> Hạng mục ngoài phạm vi Phòng Đấu thầu tạo bằng tay, bắt buộc có <code>manual_reason</code>; ô nhập tay hiển thị khác ô rollup và dòng mang nhãn riêng.<span class="then">Một bảng trộn hai loại số mà không phân biệt được sẽ khiến người đọc tin mọi con số đều có nguồn. Khi đối chiếu lệch, chỗ đầu tiên cần nhìn chính là các dòng thêm tay — nên <code>created_by</code> và <code>created_at</code> ghi tự động và không sửa được.</span></li>
       <li><b>Hai khối giá trị đặt cạnh nhau là chủ ý.</b> Hồ sơ TQT nói về tiền thu của chủ đầu tư; hồ sơ tổ đội nói về tiền trả cho tổ đội; giữa hai khối là cột chênh lệch bất lợi.<span class="then">Đây là câu trả lời cho câu hỏi quan trọng nhất của một hạng mục: công ty đang ứng tiền cho đội bao nhiêu trước khi thu được. <a href="ORD-09.html">ORD-09</a> đã theo dõi việc này theo khối lượng; ở đây theo dõi theo tiền và theo luỹ kế.</span></li>
       <li><b>Chênh lệch bất lợi phải có địa chỉ.</b> <code>value_gap &gt; 0</code> thì dòng được tô cảnh báo và cán bộ phụ trách nhận nhắc việc; không chặn thao tác.<span class="then">Đúng chủ trương của <a href="ORD-10.html">ORD-10</a>: tới đợt quyết toán mà chênh lệch chưa xử lý thì nó thành thiệt hại có địa chỉ cá nhân. Màn hình này là nơi nhìn thấy nó sớm, khi còn xử lý được. Hạng mục chưa gán <code>owner_user</code> thì cảnh báo không gửi được cho ai — nên hệ thống nhắc riêng việc đó.</span></li>
-      <li><b>Trạng thái hồ sơ chảy hai chiều.</b> Cập nhật ở <a href="ORD-08.html">ORD-08</a> / <a href="ORD-09.html">ORD-09</a> / <a href="ORD-10.html">ORD-10</a> / <a href="PRJ-03.html">PRJ-03</a> thì trạng thái thành phần tương ứng ở đây đổi theo; cập nhật ở đây thì hồ sơ nguồn đổi theo.<span class="then">Đây là <em>cùng một hồ sơ</em> nhìn từ hai chỗ, không phải hai bản ghi. Nếu tách thành hai thì P. TQT phải cập nhật hai lần và hai nơi sẽ lệch nhau ngay trong tuần đầu tiên. Ánh xạ: <code>v_material</code> ↔ ORD-08, <code>v_batch</code> ↔ ORD-09, <code>v_settlement</code> và <code>q_asbuilt</code> ↔ ORD-10, <code>c_payment</code> ↔ PRJ-03.</span></li>
+      <li><b>Trạng thái hồ sơ chảy hai chiều.</b> Cập nhật ở <a href="ORD-08.html">ORD-08</a> / <a href="ORD-09.html">ORD-09</a> / <a href="ORD-10.html">ORD-10</a> / PRJ-03 thì trạng thái thành phần tương ứng ở đây đổi theo; cập nhật ở đây thì hồ sơ nguồn đổi theo.<span class="then">Đây là <em>cùng một hồ sơ</em> nhìn từ hai chỗ, không phải hai bản ghi. Nếu tách thành hai thì P. TQT phải cập nhật hai lần và hai nơi sẽ lệch nhau ngay trong tuần đầu tiên. Ánh xạ: <code>v_material</code> ↔ ORD-08, <code>v_batch</code> ↔ ORD-09, <code>v_settlement</code> và <code>q_asbuilt</code> ↔ ORD-10, <code>c_payment</code> ↔ PRJ-03.</span></li>
       <li><b>Bản vẽ hoàn công và biên bản bàn giao chỉ bắt buộc ở đợt quyết toán.</b> Ở các đợt thanh toán giữa chừng, <code>q_asbuilt</code> và <code>q_handover</code> để <em>Chưa có</em> là bình thường và không tính là thiếu.<span class="then">Giữ đúng phân biệt mà <a href="ORD-09.html">ORD-09</a> và <a href="ORD-10.html">ORD-10</a> đã đặt: đợt giữa chừng dùng bản vẽ sơ họa hoàn công, quyết toán mới cần bản vẽ hoàn công đầy đủ. Ngược lại, chuyển <code>settlement_doc_status</code> sang <em>Đã nộp</em> khi hai thành phần này còn <em>Chưa có</em> thì bị chặn.</span></li>
       <li><b>Hồ sơ chưa có thì không chặn, chỉ hiện thiếu.</b> Màn hình theo dõi không phải cổng duyệt; chọn trạng thái <em>Thiếu / sai</em> thì bắt buộc ghi thiếu gì vào <code>reject_note</code>.<span class="then">Cổng duyệt nằm ở chính ORD-09 và ORD-10, nơi có đủ ngữ cảnh của một đợt thanh toán. Ở đây giá trị nằm ở chỗ lọc ra được mười hạng mục nào đang thiếu nhật ký công trường. Trạng thái không có nội dung thì người nhận việc vẫn phải đi hỏi — và màn hình theo dõi mất đúng phần giá trị của nó.</span></li>
       <li><b>Quyền ghi phần hồ sơ thuộc P. TQT.</b> Ban lãnh đạo, P. Kế toán và Ban dự án chỉ đọc; xem <a href="PL-B.html">PL-B</a>.<span class="then">Đây là bảng điều hành hồ sơ của P. TQT; mở quyền ghi rộng hơn sẽ khiến trạng thái đổi mà không ai biết ai đổi. Cột người cập nhật và ngày cập nhật là lý do phải giữ quyền hẹp. Phần cột cũ — bảo hành, công nợ, ghi chú theo dõi — vẫn thuộc P. Kế toán như trước.</span></li>
@@ -536,11 +535,11 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-05.html">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="ORD-10.html">ORD-10 bản vẽ hoàn công &amp; quyết toán</a><a href="ACC-04.html">ACC-04 xuất kho &amp; bán hàng</a><a href="ACC-05.html">ACC-05 công nợ &amp; thanh toán</a><a href="RPT-02.html">RPT-02 báo cáo quản trị dự án</a><a href="BID-01.html">BID-01 tiếp nhận thư chào thầu</a><a href="ORD-08.html">ORD-08 hồ sơ thanh toán vật tư</a><a href="ORD-09.html">ORD-09 thanh toán khối lượng HT</a><a href="PRJ-01.html">PRJ-01 giá khoán tổ đội</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="PRJ-03.html">PRJ-03 thanh toán nhân công tổ đội</a><a href="PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="PL-A.html">PL-A sổ trạng thái chứng từ</a><a href="PL-B.html">PL-B ma trận phân quyền</a><a href="2026-09-15/YC-10.html">YC-10 theo dõi hồ sơ thanh toán</a></p>
+    <p class="links"><a href="BID-05.html">BID-05 ký HĐ &amp; khởi tạo dự án</a><a href="ORD-10.html">ORD-10 bản vẽ hoàn công &amp; quyết toán</a><a href="ACC-04.html">ACC-04 xuất kho &amp; bán hàng</a><a href="ACC-05.html">ACC-05 công nợ &amp; thanh toán</a><a href="RPT-02.html">RPT-02 báo cáo quản trị dự án</a><a href="BID-01.html">BID-01 tiếp nhận thư chào thầu</a><a href="ORD-08.html">ORD-08 hồ sơ thanh toán vật tư</a><a href="ORD-09.html">ORD-09 thanh toán khối lượng HT</a><a href="PRJ-01.html">PRJ-01 giá khoán tổ đội</a><a href="PF-05.html">PF-05 chứng từ &amp; phiên bản</a><a href="PL-A.html">PL-A sổ trạng thái chứng từ</a><a href="PL-B.html">PL-B ma trận phân quyền</a><a href="2026-09-15/YC-10.html">YC-10 theo dõi hồ sơ thanh toán</a><a href="ORD-12.html">ORD-12 nhân công tổ đội</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 43 / 48</span><span><code>RPT-05.html</code></span>
+  <span>Đặc tả 42 / 47</span><span><code>RPT-05.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>Van de can sua_05.09.26.xlsx (sheet "Theo dõi tiến độ")</code></span>
 </div>

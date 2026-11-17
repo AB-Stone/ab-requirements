@@ -38,10 +38,9 @@
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
+    <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
-    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <a href="PRJ-06.html"><i>PRJ-06</i>Nhân sự dự án</a>
@@ -170,18 +169,6 @@
 <polygon fill="#55606b" stroke="#55606b" points="329.52,-431 323.42,-427.81 326.2,-434.11 329.52,-431"/>
 <text xml:space="preserve" text-anchor="middle" x="406.31" y="-446.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Theo chi phí trực tiếp</text>
 </g>
-<g id="node8" class="node">
-<title>H</title>
-<polygon fill="#dde3e9" stroke="#5d6b7a" points="604.83,-426.4 413.67,-426.4 413.67,-382 604.83,-382 604.83,-426.4"/>
-<text xml:space="preserve" text-anchor="middle" x="509.25" y="-407.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Tỷ trọng khối lượng thi công</text>
-<text xml:space="preserve" text-anchor="middle" x="509.25" y="-392.95" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;02</text>
-</g>
-<g id="edge7" class="edge">
-<title>E&#45;&gt;H</title>
-<path fill="none" stroke="#55606b" d="M409.83,-480.86C432.3,-470.85 464.25,-456.6 464.25,-456.6 464.25,-456.6 474.48,-444.92 485.18,-432.7"/>
-<polygon fill="#55606b" stroke="#55606b" points="486.86,-434.23 489.43,-427.84 483.44,-431.23 486.86,-434.23"/>
-<text xml:space="preserve" text-anchor="middle" x="516.09" y="-446.7" font-family="Barlow, system-ui, sans-serif" font-size="11.00" fill="#3f4a54">Theo sản lượng</text>
-</g>
 <g id="node9" class="node">
 <title>I</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="839.58,-418.9 628.93,-418.9 628.93,-389.5 839.58,-389.5 839.58,-418.9"/>
@@ -208,11 +195,6 @@
 <title>G&#45;&gt;J</title>
 <path fill="none" stroke="#55606b" d="M330.95,-381.64C343.22,-372.41 357.67,-361.56 370.54,-351.89"/>
 <polygon fill="#55606b" stroke="#55606b" points="371.68,-353.88 375.51,-348.15 368.94,-350.24 371.68,-353.88"/>
-</g>
-<g id="edge11" class="edge">
-<title>H&#45;&gt;J</title>
-<path fill="none" stroke="#55606b" d="M480.28,-381.64C467.89,-372.41 453.3,-361.56 440.31,-351.89"/>
-<polygon fill="#55606b" stroke="#55606b" points="441.86,-350.2 435.28,-348.15 439.14,-353.85 441.86,-350.2"/>
 </g>
 <g id="edge12" class="edge">
 <title>I&#45;&gt;J</title>
@@ -293,7 +275,7 @@
         <tbody>
           <tr><td>Kỳ phân bổ</td><td class="k">period</td><td>Tháng · quý</td><td class="c req">✱</td><td>Một kỳ chỉ phân bổ một lần cho mỗi nhóm chi phí.</td></tr>
           <tr><td>Nhóm chi phí phân bổ</td><td class="k">pool_cost_items[]</td><td>Danh sách</td><td class="c req">✱</td><td>Chọn các khoản mục thuộc khối chung cần phân bổ.</td></tr>
-          <tr><td>Tiêu chí phân bổ</td><td class="k">alloc_basis</td><td>Chọn 1</td><td class="c req">✱</td><td><code>doanh thu</code> · <code>chi phí trực tiếp</code> · <code>sản lượng</code> · <code>tỷ lệ ấn định</code>.</td></tr>
+          <tr><td>Tiêu chí phân bổ</td><td class="k">alloc_basis</td><td>Chọn 1</td><td class="c req">✱</td><td><code>doanh thu</code> · <code>chi phí trực tiếp</code> · <code>tỷ lệ ấn định</code>. <em>Bỏ <code>sản lượng</code> từ 17/11/2026 — nguồn PRJ-02 không còn (<a href="PL-C.html#Q-344">Q-344</a>).</em></td></tr>
           <tr><td>Bảng tỷ lệ</td><td class="k">alloc_rates[]</td><td>Bảng</td><td class="c">—</td><td>Bắt buộc với tiêu chí “tỷ lệ ấn định”; tổng phải bằng 100%.</td></tr>
           <tr><td>Phân bổ tới cấp</td><td class="k">alloc_level</td><td>Chọn 1</td><td class="c req">✱</td><td><code>dự án</code> hoặc <code>hạng mục</code>.</td></tr>
           <tr><td>Trạng thái</td><td class="k">status</td><td>Chọn 1</td><td class="c req">✱</td><td><code>nháp</code> · <code>chờ duyệt</code> · <code>đã ghi sổ</code>. Chỉ trạng thái cuối mới sinh bút toán.</td></tr>
@@ -373,10 +355,10 @@
       <li><b>Phân bổ sinh bản nháp trước.</b> Bảng phân bổ luôn tạo ở trạng thái nháp để đối chiếu, chỉ sinh bút toán sau khi Kế toán trưởng duyệt.<span class="then">Đổi tiêu chí thì bảng tính lại ngay, không phải lập phiếu mới — so sánh được các phương án trước khi chọn.</span></li>
       <li><b>Một kỳ, một lần phân bổ mỗi nhóm.</b> Không phân bổ trùng cùng một nhóm chi phí trong cùng kỳ.<span class="then">Muốn làm lại phải hủy bảng phân bổ cũ, thao tác này ghi nhật ký.</span></li>
       <li><b>Sau phân bổ khối CHUNG về 0.</b> Kết thúc phân bổ, chi phí chung của kỳ phải bằng 0.<span class="then">Có báo cáo đối chiếu kiểm tra điều này; số dư khác 0 nghĩa là còn nhóm chi phí chưa được phân bổ.</span></li>
-      <li><b>Tỷ lệ ấn định phải đủ 100%.</b> Tiêu chí “tỷ lệ ấn định” yêu cầu tổng bảng tỷ lệ bằng đúng 100%.<span class="then">Ba tiêu chí còn lại tính tỷ trọng tự động từ số liệu thực tế của kỳ.</span></li>
+      <li><b>Tỷ lệ ấn định phải đủ 100%.</b> Tiêu chí “tỷ lệ ấn định” yêu cầu tổng bảng tỷ lệ bằng đúng 100%.<span class="then">Hai tiêu chí còn lại tính tỷ trọng tự động từ số liệu thực tế của kỳ.</span></li>
       <li><b>Chi phí không hợp lý vẫn phân bổ.</b> Chi phí đánh dấu không hợp lý vẫn về dự án nhưng tách riêng trong báo cáo.<span class="then">Nhờ vậy lợi nhuận quản trị và lợi nhuận tính thuế đều ra được từ cùng bộ số liệu.</span></li>
       <li><b>Lưới phiếu kế toán: thứ tự cột, gõ tìm, tạo mã</b> <em>(yêu cầu thay đổi 28/10/2026 mục 10, 11 · chốt <a href="PL-C.html#Q-144">Q-144</a>)</em>. Diễn giải dòng đứng đầu, số tiền ngay sau TK Có — người nhập đọc nội dung rồi tới cặp tài khoản và số tiền trên một mạch. TK Nợ, TK Có, dự án, khoản mục, mã thống kê đều gõ tìm theo mã hoặc tên thay cho cuộn danh sách. Khoản mục, mã thống kê và tài khoản chưa có thì “Tạo mã” ngay tại ô, mở biểu mẫu danh mục đã điền sẵn mã vừa gõ, với quyền danh mục kế toán; dự án không tạo từ phiếu kế toán — dự án sinh từ hợp đồng hoặc đơn hàng.<span class="then">Ô tích CP không hợp lý trên phiếu kế toán không kèm lý do; báo cáo chi phí không hợp lý (RPT-01) vẫn lấy đúng các dòng đã tích.</span></li>
-      <li><b>Phân bổ tới cấp hạng mục là tùy chọn.</b> Chọn phân bổ tới dự án hoặc tới hạng mục.<span class="then">Tới hạng mục cho ra sổ chi phí công trình chi tiết hơn nhưng cần dữ liệu sản lượng theo hạng mục đầy đủ.</span></li>
+      <li><b>Phân bổ tới cấp hạng mục là tùy chọn.</b> Chọn phân bổ tới dự án hoặc tới hạng mục.<span class="then">Tới hạng mục cho ra sổ chi phí công trình chi tiết hơn nhưng cần doanh thu hoặc chi phí trực tiếp đã gắn hạng mục đầy đủ.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo kỳ kế toán.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Phân bổ chi phí chung. Giữ kỳ kế toán chứ không đổi sang khoảng ngày tự do — phân bổ là việc của một kỳ đã đóng, không phải của một quãng bất kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
       <li><b>Kỳ là kỳ của Danh mục Kỳ kế toán</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 6 · chốt 11/10/2026)</em>. Kỳ kế toán là kỳ khai ở Danh mục Kỳ kế toán (<a href="PF-01.html">PF-01</a>): tạo kỳ cho năm, chốt, mở lại có lý do; từ 01/11/2026 kỳ dài 1–12 tháng, bảng phân bổ tập hợp chi phí trên đúng khoảng ngày của kỳ. Bảng phân bổ không lập được cho kỳ đã chốt.<span class="then">Đặc tả theo bản dựng, chốt ở <a href="PL-C.html#Q-106">Q-106</a>.</span></li>
@@ -458,7 +440,7 @@
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 36 / 48</span><span><code>ACC-08.html</code></span>
+  <span>Đặc tả 35 / 47</span><span><code>ACC-08.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

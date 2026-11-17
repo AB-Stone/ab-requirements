@@ -7,7 +7,7 @@
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng |
 |---|---|---|---|
 | UAT-ACC09-1 | Menu **Tài chính → Giá thành & lãi lỗ**, đã có đủ chứng từ quý 3 | Chọn **Kỳ = "Quý"**, rồi đổi sang "Tháng" / "6 tháng" | Bảng chạy trên cùng tập dữ liệu gốc, không cần nạp lại số liệu |
-| UAT-ACC09-2 | Bảng **Tập hợp chi phí theo khoản mục** cho `DA-2026-014` | Xem cột **Nguồn** | Mỗi KMCP ghi rõ nguồn: PRJ-04 xuất kho / PRJ-03 giao khoán / ACC-06 / ACC-08 |
+| UAT-ACC09-2 | Bảng **Tập hợp chi phí theo khoản mục** cho `DA-2026-014` | Xem cột **Nguồn** | Mỗi KMCP ghi rõ nguồn: PRJ-04 xuất kho / TK 622 · ACC-08 / ACC-06 / ACC-08 |
 | UAT-ACC09-3 | Bảng tập hợp chi phí đang hiển thị | Bấm vào ô **KM-101 · 8,96 tỷ** | Mở danh sách phiếu xuất kho tạo nên con số đó (khoan xuống chứng từ gốc) |
 | UAT-ACC09-4 | Khối **Kết chuyển theo sản lượng** | Xem các dòng | Dở dang đầu kỳ / phát sinh trong kỳ / % khối lượng hoàn thành / kết chuyển giá vốn / dở dang cuối kỳ là ô chỉ đọc, hệ thống tính |
 | UAT-ACC09-5 | Bảng **Lãi lỗ dự án — đối chiếu với dự thầu** | Xem cấu trúc bảng | Có 2 mức: **Lợi nhuận gộp** (sau giá vốn) và **Lợi nhuận thuần** (sau chi phí chung phân bổ); cột "Chênh" so **biên thuần** với biên dự thầu |
@@ -21,7 +21,7 @@
 |---|---|---|---|
 | UAT-ACC09-9 | Quý 3 đã có đủ chứng từ | Chạy tính giá thành theo quý | Bảng tập hợp chi phí hiện 4 khoản mục với tỷ trọng |
 | UAT-ACC09-10 | Tiếp UAT-ACC09-9 | Bấm vào ô `KM-101` 8,96 tỷ | Mở danh sách phiếu xuất kho tạo nên con số này — không có số nào không truy ngược được |
-| UAT-ACC09-11 | Sản lượng đã chốt 62% (PRJ-02) | Xem khối kết chuyển | Kết chuyển giá vốn 14,18 tỷ; dở dang cuối kỳ 3,3 tỷ; phần chưa hoàn thành tự thành dở dang, chuyển kỳ sau |
+| UAT-ACC09-11 | Tỷ lệ hoàn thành kỳ 62% (nguồn còn mở — PL-C Q-344) | Xem khối kết chuyển | Kết chuyển giá vốn 14,18 tỷ; dở dang cuối kỳ 3,3 tỷ; phần chưa hoàn thành tự thành dở dang, chuyển kỳ sau |
 | UAT-ACC09-12 | Đã chạy quý 3 | Chạy lại theo tháng 9 | Ra kết quả tháng 9 trên cùng dữ liệu, không xung đột với kết quả quý |
 | UAT-ACC09-13 | Chưa phân bổ chi phí chung kỳ 9 (ACC-08) | Chạy tính giá thành | Cảnh báo "Còn {giá trị} chi phí chung chưa phân bổ. Giá thành sẽ thiếu phần gián tiếp."; vẫn cho chạy để xem thử |
 | UAT-ACC09-14 | Quý 3 đã chốt | Ghi phiếu nhập ngày 20/09 | Hệ thống chuyển chứng từ sang kỳ hiện tại kèm thông báo |
@@ -39,4 +39,4 @@
 
 - BR-01…BR-13 đều có kịch bản nhóm B; bút toán 154 và ranh giới chi phí chung (Q-23) kiểm ở UAT-ACC09-17, -19.
 - 7 dòng bảng *Kiểm tra dữ liệu & thông điệp* kiểm ở UAT-ACC09-13, -23, -8, -14, -22, -7 (chốt kỳ vượt thứ tự), và -21 (kỳ đã kết chuyển).
-- Liên màn hình đầu vào: **PRJ-02** (sản lượng), **PRJ-03** (nhân công), **PRJ-04** (vật tư), **ACC-06** (khấu hao), **ACC-08** (phân bổ chung), **ACC-03** (mua không qua kho), **BID-06 / ORD-09** (doanh thu). Đầu ra: **RPT-03** (báo cáo lãi lỗ), **BID-03** (đối chiếu biên dự thầu).
+- Liên màn hình đầu vào: **PRJ-04** (vật tư), **ACC-06** (khấu hao), **ACC-08** (phân bổ chung), **ACC-03** (mua không qua kho), **BID-06 / ORD-09** (doanh thu). Đầu ra: **RPT-03** (báo cáo lãi lỗ), **BID-03** (đối chiếu biên dự thầu).

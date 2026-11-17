@@ -22,7 +22,7 @@
 | UAT-ACC07-9 | Đề nghị `DNTT-2026-0271` được duyệt 1,84 tỷ | Lập ủy nhiệm chi 1,84 tỷ | Ghi sổ ngân hàng, giảm công nợ, cập nhật sổ chi tiết đối tác |
 | UAT-ACC07-10 | Báo có 3,2 tỷ nội dung "COTECCONS TT DOT 4 HD 2026-008" | Mở tab đối chiếu | Gợi ý đúng `HSTU-2026-011`; xác nhận thì hồ sơ tự đóng, công nợ phải thu giảm — không nhập tay hai lần |
 | UAT-ACC07-11 | Tệp sao kê 60 giao dịch | Tải lên | Khớp tự động phần rõ ràng; phần còn lại vào tab chờ đối chiếu, không tự đoán bừa |
-| UAT-ACC07-12 | Khấu trừ phạt 8 triệu từ hồ sơ giao khoán (PRJ-03); một khoản thu khác 2 triệu | Lập phiếu thu cả hai khoản trên 1113 Tiền mặt - Quỹ phạt | Cả hai ghi nhận thành công — giới hạn nguồn thu, mục đích chi của quỹ phạt bỏ từ 02/11/2026 (PL-C Q-166) |
+| UAT-ACC07-12 | Khấu trừ phạt 8 triệu trừ tổ đội trên bảng nhân công (ORD-12); một khoản thu khác 2 triệu | Lập phiếu thu cả hai khoản trên 1113 Tiền mặt - Quỹ phạt | Cả hai ghi nhận thành công — giới hạn nguồn thu, mục đích chi của quỹ phạt bỏ từ 02/11/2026 (PL-C Q-166) |
 | UAT-ACC07-13 | Có 1121A01 TCB và 1121A02 VCB, cùng có báo có, báo nợ | Mở sổ tiền gửi 1121A02, lọc TK hạch toán 131 | Chỉ có dòng của 1121A02 đối ứng 131 |
 | UAT-ACC07-14 | Lập phiếu chi không gắn đề nghị | Ghi sổ | Ghi sổ được — phiếu chi không còn bắt buộc đề nghị (từ 03/11/2026 — Q-175) |
 | UAT-ACC07-15 | Đề nghị được duyệt 1,84 tỷ | Lập phiếu chi 1,9 tỷ | Chặn "Đề nghị {mã} được duyệt {giá trị}. Chi vượt phải trình duyệt lại." |
@@ -37,4 +37,4 @@
 
 - BR-01…BR-08 đều có kịch bản nhóm B; "mỗi tài khoản quỹ một sổ" kiểm ở UAT-ACC07-1, -16, -21; "quỹ phạt có nguồn riêng" (BR-03) và hạn mức thấu chi bỏ từ 02/11/2026 — UAT-ACC07-12, -18 kiểm rằng không còn chặn / không còn cho âm; sổ quỹ đọc từ sổ cái kiểm ở UAT-ACC07-19, -20.
 - Dòng bảng *Kiểm tra dữ liệu & thông điệp* kiểm ở UAT-ACC07-6/-8/-20 (chi vượt số dư), -14, -15, -11; dòng "thu vào quỹ phạt sai nguồn" đã bỏ 02/11/2026.
-- Liên màn hình: **ACC-05** (đề nghị thanh toán), **ORD-01** (hồ sơ chờ thanh toán), **PRJ-03** (khấu trừ phạt), **ACC-06** (chi phí bảo trì), **RPT-04** (dòng tiền), **ACC-10** (tài khoản quỹ 111 / 112), **ACC-08** · **RPT-01** (phiếu kế toán, số dư ban đầu trên sổ quỹ).
+- Liên màn hình: **ACC-05** (đề nghị thanh toán), **ORD-01** (hồ sơ chờ thanh toán), **ORD-12** (khấu trừ trên bảng nhân công), **ACC-06** (chi phí bảo trì), **RPT-04** (dòng tiền), **ACC-10** (tài khoản quỹ 111 / 112), **ACC-08** · **RPT-01** (phiếu kế toán, số dư ban đầu trên sổ quỹ).

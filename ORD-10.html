@@ -38,10 +38,9 @@
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a class="on" href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
+    <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
-    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <a href="PRJ-06.html"><i>PRJ-06</i>Nhân sự dự án</a>
@@ -265,9 +264,9 @@
           <tr><td>Bản vẽ hoàn công</td><td class="k">asbuilt_files[]</td><td>Tệp</td><td class="c">—</td><td>Không bắt buộc (yêu cầu sửa 14/10/2026); có thì nên kèm cả DWG và PDF. Dựng từ các <b>đợt trình shopdrawing đã được CĐT chấp thuận</b> của từng hạng mục (<a href="ORD-02.html">ORD-02</a> cấp 3, <a href="2026-09-15/YC-08.html">YC-08</a>) cộng với điều chỉnh thực tế thi công — không dựng từ bản vẽ đơn hàng.</td></tr>
           <tr><td>Đợt trình nguồn của bản vẽ hoàn công</td><td class="k">asbuilt_src_batches[]</td><td>Tham chiếu</td><td class="c">—</td><td>Danh sách đợt trình đã chấp thuận mà bộ bản vẽ hoàn công dựa trên, gom theo hạng mục. Hệ thống đối chiếu với hồ sơ Shopdrawing của dự án và nêu hạng mục nào chưa có đợt trình nào được chấp thuận — đó là phần bản vẽ hoàn công đang thiếu căn cứ.</td></tr>
           <tr><td>Biên bản nghiệm thu và bàn giao</td><td class="k">handover_files[]</td><td>Tệp</td><td class="c req">✱</td><td>Biên bản nghiệm thu hoàn thành và bàn giao đưa vào sử dụng — thiếu thì không trình duyệt được. Biên bản báo cáo tiến độ là ô tải riêng, không bắt buộc.</td></tr>
-          <tr><td>Khối lượng quyết toán</td><td class="k">settle_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Theo từng đầu việc BOQ: cột <em>Đã thi công</em> chỉ đọc — lũy kế mọi sản lượng đã xác nhận của dự án ở <a href="PRJ-02.html">PRJ-02</a>, kể cả đợt đã đóng; cột <em>Quyết toán</em> nhập tay, ≤ đã thi công <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.</td></tr>
+          <tr><td>Khối lượng quyết toán</td><td class="k">settle_qty[]</td><td>Bảng</td><td class="c req">✱</td><td>Theo từng đầu việc BOQ: cột <em>Đã thi công</em> chỉ đọc — lũy kế mọi sản lượng đã xác nhận của dự án ở PRJ-02, kể cả đợt đã đóng; cột <em>Quyết toán</em> nhập tay, ≤ đã thi công <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.</td></tr>
           <tr><td>Lũy kế thu từ CĐT</td><td class="k">total_claimed</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn các hồ sơ <a href="ORD-09.html">ORD-09</a> đã thanh toán cộng hồ sơ quyết toán này. Chỉ đọc.</td></tr>
-          <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ thanh toán nhân công tổ đội đã duyệt (<a href="PRJ-03.html">PRJ-03</a>). Chỉ đọc.</td></tr>
+          <tr><td>Lũy kế trả tổ đội</td><td class="k">total_paid_crew</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn hồ sơ thanh toán nhân công tổ đội đã duyệt (PRJ-03). Chỉ đọc.</td></tr>
           <tr><td>Tạm ứng còn phải thu hồi</td><td class="k">advance_outstanding</td><td>Số tiền</td><td class="c">—</td><td>Tạm ứng đã nhận ở <a href="ORD-01.html">ORD-01</a> trừ lũy kế đã thu hồi qua các đợt <a href="ORD-09.html">ORD-09</a>. Chỉ đọc.</td></tr>
           <tr><td>Lũy kế giữ lại bảo hành</td><td class="k">retention_total</td><td>Số tiền</td><td class="c">—</td><td>Cộng dồn <code>retention_withheld</code> của mọi đợt <a href="ORD-09.html">ORD-09</a> cộng phần giữ lại của chính hồ sơ quyết toán. Chỉ đọc.</td></tr>
           <tr><td>Ngày hết hạn bảo hành</td><td class="k">warranty_due_at</td><td>Ngày</td><td class="c">—</td><td>Tính từ <code>warranty_from</code> và <code>warranty_months</code> của hợp đồng (<a href="BID-05.html">BID-05</a>). Sinh nhắc lập hồ sơ thu hồi trước hạn 15 ngày.</td></tr>
@@ -355,14 +354,14 @@
       <li><b>Quyết toán thu hết tạm ứng còn lại.</b> Phần tạm ứng chưa thu hồi qua các đợt <a href="ORD-09.html">ORD-09</a> được trừ toàn bộ vào hồ sơ quyết toán.<span class="then">Không còn đợt nào phía sau để thu dần, nên đây là chỗ cuối cùng khoản tạm ứng có thể quay về. Phần thu hồi lớn hơn giá trị quyết toán thì hiện thành khoản phải thu của chủ đầu tư, không âm hóa hồ sơ.</span></li>
       <li><b>Đóng hợp đồng không đóng khoản giữ lại.</b> Quyết toán xong thì phần thi công đóng, còn <code>retention_total</code> vẫn mở tới khi hết hạn bảo hành và chỉ ra khỏi sổ bằng hồ sơ thu hồi <code>HSBH-…</code>.<span class="then">Gộp khoản giữ lại vào quyết toán là ghi nhận đã thu một số tiền chưa hề về tài khoản. Tách ra thì công nợ phải thu đọc đúng, và hệ thống có một hồ sơ thật để nhắc khi tới hạn — đúng điều <a href="BID-05.html">BID-05</a> hứa khi bắt khai mốc tính bảo hành.</span></li>
       <li><b>Tỷ lệ giữ lại lấy từ hợp đồng.</b> <em>(19/10/2026)</em> Phần giữ lại của hồ sơ quyết toán tính theo “% giữ lại bảo hành” (<code>retention_rate</code>) khai trên hợp đồng ở <a href="BID-05.html">BID-05</a> — cùng tỷ lệ <a href="ORD-09.html">ORD-09</a> đã dùng cho mọi đợt. Hợp đồng không còn bảng bảo lãnh, nên hồ sơ <code>HSBH-…</code> chỉ theo dõi tiền giữ lại.<span class="then">Một tỷ lệ cho mọi đợt và quyết toán thì lũy kế giữ lại cộng được thẳng, không phải đối chiếu.</span></li>
-      <li><b>Hồ sơ thu hồi bảo hành dùng chung khung ORD-01.</b> Chuỗi trạng thái, thành phần hồ sơ theo mẫu chủ đầu tư, sổ vướng mắc và đối chiếu ngân hàng không định nghĩa lại.<span class="then">Đây là hồ sơ thứ tư của cùng một khung, sau tạm ứng, vật tư và khối lượng hoàn thành. Khoản giữ lại của <em>tổ đội</em> ở <a href="PRJ-03.html">PRJ-03</a> là một dòng tiền khác và điều kiện chi trả của nó còn chờ chốt — xem <a href="PL-C.html#Q-68">PL-C · Q-68</a>.</span></li>
+      <li><b>Hồ sơ thu hồi bảo hành dùng chung khung ORD-01.</b> Chuỗi trạng thái, thành phần hồ sơ theo mẫu chủ đầu tư, sổ vướng mắc và đối chiếu ngân hàng không định nghĩa lại.<span class="then">Đây là hồ sơ thứ tư của cùng một khung, sau tạm ứng, vật tư và khối lượng hoàn thành. Khoản giữ lại của <em>tổ đội</em> ở PRJ-03 là một dòng tiền khác và điều kiện chi trả của nó còn chờ chốt — xem <a href="PL-C.html#Q-68">PL-C · Q-68</a>.</span></li>
       <li><b>Đóng hợp đồng kéo theo dọn tồn.</b> Quyết toán thanh toán xong thì hợp đồng đóng và sinh việc xử lý vật tư tồn cuối dự án.<span class="then">Vật tư tồn đi theo <a href="ORD-08.html">ORD-08</a>; kho dự án chỉ đóng khi tồn bằng 0.</span></li>
       <li><b>Kế thừa khung ORD-01.</b> Chuỗi trạng thái, vướng mắc, đối chiếu ngân hàng dùng chung như mọi hồ sơ khác.<span class="then">Chỉ phần chứng từ bắt buộc và nhánh thiệt hại là riêng.</span></li>
     
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày quyết toán.</b> Nhãn bộ lọc ghi rõ mốc đó chứ không ghi trống “Thời gian”; mọi dòng tổng, số đếm và biểu đồ trên màn hình đọc theo đúng khoảng đang chọn (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Hợp đồng quyết toán trong kỳ.</span><span class="then">Quy ước chung của bộ điều khiển — hai đầu tính cả ngày biên, bỏ trống một đầu là mở về phía đó, khoảng nằm trong địa chỉ trang, xuất tệp mang theo khoảng — viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
       <li><b>Lập hồ sơ là báo P. Kế toán</b> <em>(yêu cầu thay đổi 10/10/2026 · mục 10)</em>. Hồ sơ quyết toán <code>HSQT</code> và hồ sơ thu hồi bảo hành <code>HSBH</code> mới đều phát <code>dossier_created</code> tới cả phòng <code>KT</code> theo quy tắc chung của <a href="ORD-01.html">ORD-01</a> và <a href="PF-04.html">PF-04</a>; từ 11/10/2026 phòng còn được báo khi chủ đầu tư chấp thuận, trả lại, hủy hồ sơ và được nhắc hạn thu tiền (<em>chốt <a href="PL-C.html#Q-105">Q-105</a></em>).</li>
       <li><b>Luồng duyệt rút gọn</b> <em>(thay đổi 19/10/2026 · mục 1b)</em>. Hồ sơ quyết toán đi theo luồng chung của <a href="ORD-01.html">ORD-01</a>: form lập hỏi Loại hồ sơ, Dự án, Số tiền, Tiêu đề, cộng lý do thiệt hại (chỉ khi có thiệt hại); đính kèm ít nhất một tệp ở dòng “Tệp hồ sơ” rồi “Gửi hồ sơ”; <b>chỉ Trưởng phòng TQT duyệt</b>.<span class="then">Duyệt xong hồ sơ sang thẳng “Chờ thanh toán”, ghi công nợ phải thu và doanh thu, báo P. Kế toán “Hồ sơ thanh toán {mã} đã được gửi — theo dõi nhận tiền”; gửi chủ đầu tư làm ngoài hệ thống. Kế toán nhập tiền nhận nhiều lần, đủ tiền thì hồ sơ tự sang “Đã thanh toán”.</span></li>
-      <li><b>Quyết toán theo sản lượng thi công.</b> Dự án có sản lượng đã xác nhận ở <a href="PRJ-02.html">PRJ-02</a> thì lập được hồ sơ quyết toán; khối lượng quyết toán của từng đầu việc ≤ lũy kế đã thi công <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.<span class="then">Lũy kế tính mọi đợt, kể cả đợt đã đóng. Quyết toán là tổng của hợp đồng nên so với toàn bộ phần đã thi công, không trừ phần đã đề nghị ở các hồ sơ khối lượng.</span></li>
+      <li><b>Quyết toán theo sản lượng thi công.</b> Dự án có sản lượng đã xác nhận ở PRJ-02 thì lập được hồ sơ quyết toán; khối lượng quyết toán của từng đầu việc ≤ lũy kế đã thi công <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.<span class="then">Lũy kế tính mọi đợt, kể cả đợt đã đóng. Quyết toán là tổng của hợp đồng nên so với toàn bộ phần đã thi công, không trừ phần đã đề nghị ở các hồ sơ khối lượng.</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -410,11 +409,11 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-09.html">ORD-09 thanh toán đợt</a><a href="ORD-01.html">ORD-01 khung theo dõi hồ sơ</a><a href="ORD-08.html">ORD-08 vật tư tồn cuối dự án</a><a href="PRJ-03.html">PRJ-03 lũy kế trả tổ đội</a><a href="PF-04.html">PF-04 cảnh báo đa bên</a><a href="ORD-02.html">ORD-02 hồ sơ Shopdrawing ba cấp</a><a href="RPT-02.html">RPT-02 báo cáo quyết toán &amp; đánh giá</a><a href="2026-09-15/YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a></p>
+    <p class="links"><a href="ORD-09.html">ORD-09 thanh toán đợt</a><a href="ORD-01.html">ORD-01 khung theo dõi hồ sơ</a><a href="ORD-08.html">ORD-08 vật tư tồn cuối dự án</a><a href="PF-04.html">PF-04 cảnh báo đa bên</a><a href="ORD-02.html">ORD-02 hồ sơ Shopdrawing ba cấp</a><a href="RPT-02.html">RPT-02 báo cáo quyết toán &amp; đánh giá</a><a href="2026-09-15/YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a><a href="ORD-12.html">ORD-12 nhân công tổ đội</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 22 / 48</span><span><code>ORD-10.html</code></span>
+  <span>Đặc tả 22 / 47</span><span><code>ORD-10.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

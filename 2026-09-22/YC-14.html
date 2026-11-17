@@ -57,7 +57,7 @@
         <tbody>
           <tr><td>Đường truy cập</td><td colspan="2">Toàn hệ thống</td></tr>
           <tr><td>Nguyên văn yêu cầu</td><td colspan="2">Tất cả các phân hệ nào có tính thực theo thời gian đều để nút lọc thời gian để lọc sản lượng, tiền, số hợp đồng đang thực hiện, … tại một khoảng thời gian</td></tr>
-          <tr><td>Đặc tả</td><td>Một số trang đã có bộ lọc kỳ riêng, mỗi trang một kiểu: <a href="../RPT-02.html">RPT-02</a> chọn quý, <a href="../PRJ-03.html">PRJ-03</a> chọn đợt, <a href="../ACC-09.html">ACC-09</a> chọn kỳ kế toán</td><td>Một bộ điều khiển chung, cùng hình dạng và cùng cách ghi vào địa chỉ trang; mỗi màn hình khai báo mốc lọc của mình</td></tr>
+          <tr><td>Đặc tả</td><td>Một số trang đã có bộ lọc kỳ riêng, mỗi trang một kiểu: <a href="../RPT-02.html">RPT-02</a> chọn quý, PRJ-03 chọn đợt, <a href="../ACC-09.html">ACC-09</a> chọn kỳ kế toán</td><td>Một bộ điều khiển chung, cùng hình dạng và cùng cách ghi vào địa chỉ trang; mỗi màn hình khai báo mốc lọc của mình</td></tr>
         </tbody>
       </table>
     </div>
@@ -111,8 +111,8 @@
           <tr><td><a href="../ORD-10.html">ORD-10</a></td><td>Ngày quyết toán — <b>chưa chốt cột nào</b>, xem <a href="../PL-C.html#Q-61">Q-61</a>: bảng hồ sơ không có cột nào mang tên đó, và ba cột có thể hiểu là nó cách nhau hàng tháng.</td><td>Hợp đồng quyết toán trong kỳ</td></tr>
           <tr><td colspan="3"><b>Dự án — Thi công</b></td></tr>
           <tr><td><a href="../PRJ-01.html">PRJ-01</a></td><td>Kỳ hiệu lực của bảng giá</td><td>Bảng giá khoán đang áp dụng tại một thời điểm</td></tr>
-          <tr><td><a href="../PRJ-02.html">PRJ-02</a></td><td>Ngày chốt sản lượng</td><td><b>Sản lượng thi công</b> trong kỳ</td></tr>
-          <tr><td><a href="../PRJ-03.html">PRJ-03</a></td><td>Ngày kết thúc đợt giao khoán</td><td>Giá trị giao khoán, khấu trừ, thực trả trong kỳ</td></tr>
+          <tr><td>PRJ-02</td><td>Ngày chốt sản lượng</td><td><b>Sản lượng thi công</b> trong kỳ</td></tr>
+          <tr><td>PRJ-03</td><td>Ngày kết thúc đợt giao khoán</td><td>Giá trị giao khoán, khấu trừ, thực trả trong kỳ</td></tr>
           <tr><td><a href="../PRJ-04.html">PRJ-04</a></td><td>Ngày phiếu — <b>chưa chốt</b> là ngày trên phiếu hay ngày ghi sổ, xem <a href="../PL-C.html#Q-63">Q-63</a>. Lọc theo ngày ghi sổ thì phiếu nháp biến mất khỏi mọi khoảng.</td><td>Xuất nhập kho dự án trong kỳ</td></tr>
           <tr><td colspan="3"><b>Phòng Kế toán</b></td></tr>
           <tr><td><a href="../ACC-03.html">ACC-03</a> · <a href="../ACC-04.html">ACC-04</a> · <a href="../ACC-07.html">ACC-07</a></td><td>Ngày chứng từ</td><td>Mua hàng, xuất bán, thu chi trong kỳ</td></tr>
@@ -193,7 +193,7 @@
           <tr><td>UAT-YC14-2</td><td>Tiếp UAT-1</td><td>Đọc nhãn bộ lọc</td><td>Ghi rõ “Lọc theo ngày ký hợp đồng”</td></tr>
           <tr><td>UAT-YC14-3</td><td>Tiếp UAT-1</td><td>Sao chép địa chỉ trang, mở ở cửa sổ khác</td><td>Mở ra đúng khoảng tháng 9</td></tr>
           <tr><td>UAT-YC14-4</td><td>Màn hình bất kỳ trong bảng</td><td>Mở lần đầu</td><td>Bộ lọc rỗng, danh sách hiện tất cả — trừ các báo cáo có kỳ bắt buộc</td></tr>
-          <tr><td>UAT-YC14-5</td><td>Sản lượng chốt các ngày 01/09 và 30/09</td><td>Mở <a href="../PRJ-02.html">PRJ-02</a>, chọn từ 01/09 đến 30/09</td><td>Cả hai bản ghi đều nằm trong kết quả</td></tr>
+          <tr><td>UAT-YC14-5</td><td>Sản lượng chốt các ngày 01/09 và 30/09</td><td>Mở PRJ-02, chọn từ 01/09 đến 30/09</td><td>Cả hai bản ghi đều nằm trong kết quả</td></tr>
           <tr><td>UAT-YC14-6</td><td>Công nợ có hóa đơn lập tháng 8, đến hạn tháng 10</td><td>Mở <a href="../ACC-05.html">ACC-05</a>, chọn tháng 10, mốc <em>ngày đến hạn</em></td><td>Hóa đơn xuất hiện; đổi mốc sang <em>ngày chứng từ</em> thì biến mất</td></tr>
           <tr><td>UAT-YC14-7</td><td>Chứng từ ngày 20/06 nhập vào hệ thống ngày 15/08</td><td>Lọc tháng 6</td><td>Chứng từ nằm trong kết quả</td></tr>
           <tr><td>UAT-YC14-8</td><td>Đang lọc một khoảng có dữ liệu</td><td>Xuất tệp</td><td>Tệp chứa đúng số dòng đang nhìn thấy và ghi khoảng lọc ở đầu tệp</td></tr>

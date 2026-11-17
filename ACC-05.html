@@ -38,10 +38,9 @@
     <a href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
+    <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
-    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <a href="PRJ-06.html"><i>PRJ-06</i>Nhân sự dự án</a>
@@ -263,8 +262,8 @@
 <g id="node15" class="node">
 <title>D</title>
 <polygon fill="#dde3e9" stroke="#5d6b7a" points="505.82,-461.6 320.18,-461.6 320.18,-417.2 505.82,-417.2 505.82,-461.6"/>
-<text xml:space="preserve" text-anchor="middle" x="413" y="-443.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Hồ sơ thanh toán nhân công tổ đội</text>
-<text xml:space="preserve" text-anchor="middle" x="413" y="-428.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">PRJ&#45;03</text>
+<text xml:space="preserve" text-anchor="middle" x="413" y="-443.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">Nhân công tổ đội — dòng nhập tay</text>
+<text xml:space="preserve" text-anchor="middle" x="413" y="-428.15" font-family="Barlow, system-ui, sans-serif" font-size="12.50" fill="#16202a">ORD&#45;12 chỉ báo, không sinh đề nghị</text>
 </g>
 <g id="edge15" class="edge">
 <title>D&#45;&gt;A3</title>
@@ -317,7 +316,7 @@
       <li>Bảng tuổi nợ chia đúng bốn nhóm như dashboard mockup và lọc được theo công trình.</li>
       <li>Sổ chi tiết công nợ hiển thị tên hàng, đơn giá và số lượng, không chỉ số tiền.</li>
       <li>Khách hàng vượt hạn mức công nợ thì cảnh báo hiện ngay trên màn hình duyệt đơn bán hàng.</li>
-      <li>Hồ sơ thanh toán nhân công tổ đội đã duyệt tạo đề nghị thanh toán sẵn dữ liệu, kế toán chỉ kiểm và trình.</li>
+      <li>Không còn đề nghị tự sinh từ lương tổ đội: P. TQT gửi bảng nhân công tổ đội ở <a href="ORD-12.html">ORD-12</a> (P. Kế toán nhận thông báo), kế toán lập đề nghị cho tổ đội bằng dòng nhập tay <em>(17/11/2026 · <a href="PL-C.html#Q-344">Q-344</a>)</em>.</li>
     </ol>
 
     <h4>Mockup UI — Công nợ › Tuổi nợ &amp; đề nghị thanh toán</h4>
@@ -421,7 +420,7 @@
           <tr><td>UAT-ACC05-5</td><td>Coteccons dư nợ quá hạn 800 triệu &gt; 60 ngày</td><td>Mở bảng tuổi nợ</td><td>Nằm ở nhóm “&gt; 60 ngày”, nhãn “Quá hạn nặng”</td></tr>
           <tr><td>UAT-ACC05-6</td><td>Coteccons vượt hạn mức công nợ</td><td>Duyệt đơn hàng mới của Coteccons</td><td>Cảnh báo hiện trên màn hình duyệt, vẫn cho duyệt</td></tr>
           <tr><td>UAT-ACC05-7</td><td>Có phát sinh nhiều mặt hàng</td><td>Xuất sổ chi tiết công nợ</td><td>Có cột tên hàng, đơn giá, số lượng</td></tr>
-          <tr><td>UAT-ACC05-8</td><td>Hồ sơ giao khoán vừa được duyệt</td><td>Mở danh sách đề nghị thanh toán</td><td>Đã có đề nghị tạo sẵn với giá trị thực trả đúng</td></tr>
+          <tr><td>UAT-ACC05-8</td><td>P. TQT vừa gửi Kế toán bảng nhân công tổ đội kỳ 1 tháng 12 ở <a href="ORD-12.html">ORD-12</a></td><td>Mở danh sách đề nghị thanh toán</td><td>Không có đề nghị nào tự sinh; kế toán lập đề nghị cho tổ đội bằng dòng nhập tay theo số trên bảng</td></tr>
           <tr><td>UAT-ACC05-9</td><td>Chi phí nhập hàng về kho xử lý, không thuộc dự án</td><td>Lập đề nghị, chọn đối tượng nhận “Khác”, ghi tên người nhận, nhập hai dòng nội dung + số tiền</td><td>Lưu được không cần chứng từ gốc; tổng bằng hai dòng; cấp duyệt hiện theo tổng; dòng không có dự án</td></tr>
           <tr><td>UAT-ACC05-10</td><td>Nhà cung cấp chưa có phiếu nhập nào chờ thanh toán</td><td>Lập đề nghị cho nhà cung cấp đó, nhập dòng “Ứng trước tiền đá” 50.000.000</td><td>Form không có bảng chứng từ gốc; lưu được; tổng 50.000.000; cấp duyệt theo tổng</td></tr>
           <tr><td>UAT-ACC05-11</td><td>Nhân viên xin tạm ứng đi công trình</td><td>Lập đề nghị, chọn “Cá nhân (tạm ứng)”, chọn nhân viên, nhập dòng nội dung + số tiền</td><td>Lưu và trình được; không có bảng chứng từ gốc</td></tr>
@@ -431,11 +430,11 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ACC-03.html">ACC-03 phát sinh phải trả</a><a href="ORD-01.html">ORD-01 phát sinh phải thu</a><a href="PRJ-03.html">PRJ-03 thanh toán tổ đội</a><a href="ACC-07.html">ACC-07 sổ quỹ &amp; ngân hàng</a><a href="RPT-01.html">RPT-01 sổ chi tiết công nợ</a><a href="PF-01.html">PF-01 dự án theo khách hàng</a><a href="PL-C.html#Q-161">Q-161 bao thanh toán của dự án chung</a></p>
+    <p class="links"><a href="ACC-03.html">ACC-03 phát sinh phải trả</a><a href="ORD-01.html">ORD-01 phát sinh phải thu</a><a href="ORD-12.html">ORD-12 bảng nhân công tổ đội (thông báo)</a><a href="ACC-07.html">ACC-07 sổ quỹ &amp; ngân hàng</a><a href="RPT-01.html">RPT-01 sổ chi tiết công nợ</a><a href="PF-01.html">PF-01 dự án theo khách hàng</a><a href="PL-C.html#Q-161">Q-161 bao thanh toán của dự án chung</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 33 / 48</span><span><code>ACC-05.html</code></span>
+  <span>Đặc tả 32 / 47</span><span><code>ACC-05.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>

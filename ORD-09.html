@@ -38,10 +38,9 @@
     <a class="on" href="ORD-09.html"><i>ORD-09</i>Thanh toán khối lượng HT</a>
     <a href="ORD-10.html"><i>ORD-10</i>Bản vẽ hoàn công &amp; quyết toán</a>
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
+    <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
-    <a href="PRJ-02.html"><i>PRJ-02</i>Sản lượng thi công</a>
-    <a href="PRJ-03.html"><i>PRJ-03</i>Thanh toán nhân công tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
     <a href="PRJ-05.html"><i>PRJ-05</i>Danh mục tổ đội</a>
     <a href="PRJ-06.html"><i>PRJ-06</i>Nhân sự dự án</a>
@@ -282,8 +281,8 @@
         <tbody>
           <tr><td>Mã hồ sơ</td><td class="k">vol_dossier_id</td><td>Chuỗi</td><td class="c req">✱</td><td><code>HSKL-&lt;project&gt;-NN</code>.</td></tr>
           <tr><td>Đợt thanh toán</td><td class="k">batch_no</td><td>Số</td><td class="c req">✱</td><td>Số thứ tự đợt trong dự án. <em>(19/10/2026)</em> Hợp đồng ở <a href="BID-05.html">BID-05</a> không còn bảng đợt thanh toán để gắn vào.</td></tr>
-          <tr><td>Khối lượng đã thi công</td><td class="k">qty_done</td><td>Bảng</td><td class="c req">✱</td><td>Nạp từ sản lượng <b>đã xác nhận</b> của <a href="PRJ-02.html">PRJ-02</a> — gồm cả sản lượng của đợt đã đóng — theo từng đầu việc BOQ: lũy kế từ đợt đầu tới hết đợt của hồ sơ, trừ phần đã đề nghị ở các hồ sơ khối lượng khác của dự án (bỏ hồ sơ đã hủy, bị từ chối). Đó là phần còn được đề nghị <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.</td></tr>
-          <tr><td>Khối lượng đã trả tổ đội</td><td class="k">qty_paid_crew</td><td>Bảng</td><td class="c">—</td><td>Nạp từ hồ sơ thanh toán nhân công tổ đội đã duyệt (<a href="PRJ-03.html">PRJ-03</a>), lũy kế theo đầu việc. Chỉ đọc.</td></tr>
+          <tr><td>Khối lượng đã thi công</td><td class="k">qty_done</td><td>Bảng</td><td class="c req">✱</td><td>Nạp từ sản lượng <b>đã xác nhận</b> của PRJ-02 — gồm cả sản lượng của đợt đã đóng — theo từng đầu việc BOQ: lũy kế từ đợt đầu tới hết đợt của hồ sơ, trừ phần đã đề nghị ở các hồ sơ khối lượng khác của dự án (bỏ hồ sơ đã hủy, bị từ chối). Đó là phần còn được đề nghị <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.</td></tr>
+          <tr><td>Khối lượng đã trả tổ đội</td><td class="k">qty_paid_crew</td><td>Bảng</td><td class="c">—</td><td>Nạp từ hồ sơ thanh toán nhân công tổ đội đã duyệt (PRJ-03), lũy kế theo đầu việc. Chỉ đọc.</td></tr>
           <tr><td>Khối lượng đề nghị CĐT</td><td class="k">qty_claim</td><td>Bảng</td><td class="c req">✱</td><td>Mặc định bằng khối lượng đã thi công; sửa được khi chủ đầu tư chỉ chấp nhận một phần.</td></tr>
           <tr><td>Chênh lệch bất lợi</td><td class="k">qty_gap</td><td>Số</td><td class="c">—</td><td>Tính tự động: <code>qty_paid_crew − qty_claim</code>. Lớn hơn 0 là công ty đang trả cho đội nhiều hơn thu được.</td></tr>
           <tr><td>Giải trình chênh lệch</td><td class="k">gap_note</td><td>Chuỗi dài</td><td class="c">—</td><td>Bắt buộc khi <code>qty_gap &gt; 0</code>; hiển thị trên màn hình duyệt nội bộ.</td></tr>
@@ -368,14 +367,14 @@
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Hai cột khối lượng đầu là số hệ thống.</b> Khối lượng đã thi công lấy từ <a href="PRJ-02.html">PRJ-02</a>, khối lượng đã trả tổ đội lấy từ <a href="PRJ-03.html">PRJ-03</a>, cả hai chỉ đọc.<span class="then">Người lập chỉ nhập cột khối lượng đề nghị chủ đầu tư — nhờ vậy phép đối chiếu luôn dựa trên số liệu gốc, không phải số gõ lại.</span></li>
+      <li><b>Hai cột khối lượng đầu là số hệ thống.</b> Khối lượng đã thi công lấy từ PRJ-02, khối lượng đã trả tổ đội lấy từ PRJ-03, cả hai chỉ đọc.<span class="then">Người lập chỉ nhập cột khối lượng đề nghị chủ đầu tư — nhờ vậy phép đối chiếu luôn dựa trên số liệu gốc, không phải số gõ lại.</span></li>
       <li><b>Chênh lệch bất lợi cảnh báo nhưng không chặn.</b> Khối lượng đề nghị nhỏ hơn khối lượng đã trả tổ đội thì hiện cảnh báo mức nhẹ; giải trình không bắt buộc (thay đổi 19/10/2026).<span class="then">Hồ sơ vẫn lập và nộp được — chặn ở đây sẽ làm chậm thanh toán với chủ đầu tư, tức là hại thêm.</span></li>
       <li><b>Chênh lệch được treo, không bị quên.</b> Phần chênh tự vào danh sách chờ xử lý của đợt quyết toán.<span class="then">Tới <a href="ORD-10.html">ORD-10</a> nếu vẫn chưa thu được thì nó thành thiệt hại có địa chỉ.</span></li>
       <li><b>Chỉ bắt buộc bảng khối lượng hoàn thành.</b> Danh mục thành phần mặc định của hồ sơ khối lượng có bốn dòng: <em>Bảng khối lượng hoàn thành</em> (bắt buộc), <em>Biên bản nghiệm thu khối lượng</em>, <em>Bản vẽ sơ họa hoàn công</em>, <em>Hóa đơn</em> (không bắt buộc) (yêu cầu sửa 14/10/2026).<span class="then">Hồ sơ không cần hồ sơ tạm ứng hợp đồng hay tạm ứng vật tư đi trước: tạm ứng chỉ là khoản thu hồi trừ vào đợt nếu có. Mỗi hợp đồng dùng một, hai, ba hay cả bốn loại hồ sơ (tạm ứng HĐ, vật tư, khối lượng, quyết toán) tùy điều khoản — không loại nào bắt buộc loại khác.</span><span class="then">Điều kiện lập giữ nguyên: dự án đã có sản lượng thi công được xác nhận, và khối lượng hồ sơ không vượt sản lượng thi công lũy kế trừ phần đã đề nghị ở hồ sơ khác.</span></li>
       <li><b>Hai tuyến tình trạng độc lập, để theo dõi.</b> Bản vẽ sơ họa hoàn công và hồ sơ giá trị có trạng thái riêng; không tuyến nào chặn nộp chủ đầu tư (yêu cầu sửa 14/10/2026).<span class="then">Danh sách hồ sơ hiện cả hai để biết đang mắc ở bản vẽ hay ở phần giá trị.</span></li>
       <li><b>Chưa cần bản vẽ hoàn công.</b> Ở đợt thanh toán chỉ cần chỉnh nhẹ bản vẽ của đợt trình shopdrawing đã duyệt theo yêu cầu Ban quản lý xây dựng.<span class="then">Bản vẽ hoàn công đầy đủ là việc của <a href="ORD-10.html">ORD-10</a>; ràng buộc sớm sẽ làm nghẽn thanh toán từng đợt.</span></li>
       <li><b>Bản vẽ sơ họa dẫn xuất từ đợt trình đã được chấp thuận.</b> Mỗi bản sơ họa ghi rõ nó chỉnh từ (các) đợt trình nào ở <a href="ORD-02.html">ORD-02</a>; chỉ chọn được đợt CĐT đã chấp thuận.<span class="then">Từ khi hồ sơ shopdrawing tách ba cấp, “Shopdrawing đã duyệt” không còn là một chứng từ đơn lẻ mà là một <em>đợt trình</em> cụ thể của một hạng mục — ghi đúng mã đợt thì người duyệt hồ sơ thanh toán tra ngược được sang bảng khối lượng và vòng duyệt đã sinh ra bản vẽ đó. Đợt bị từ chối hoặc còn đang chờ CĐT không phải là căn cứ hoàn công.</span></li>
-      <li><b>Có sản lượng thi công là lập được hồ sơ.</b> Đợt nào có sản lượng đã xác nhận ở <a href="PRJ-02.html">PRJ-02</a> thì chọn được để lập hồ sơ khối lượng — không phải đóng đợt trước <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.<span class="then">Đóng đợt, nghiệm thu đợt vẫn làm ở PRJ-02 như cũ nhưng không còn là điều kiện lập hồ sơ. Sản lượng của đợt đã đóng vẫn được tính — trước đây đóng đợt làm hồ sơ không còn thấy số.</span></li>
+      <li><b>Có sản lượng thi công là lập được hồ sơ.</b> Đợt nào có sản lượng đã xác nhận ở PRJ-02 thì chọn được để lập hồ sơ khối lượng — không phải đóng đợt trước <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.<span class="then">Đóng đợt, nghiệm thu đợt vẫn làm ở PRJ-02 như cũ nhưng không còn là điều kiện lập hồ sơ. Sản lượng của đợt đã đóng vẫn được tính — trước đây đóng đợt làm hồ sơ không còn thấy số.</span></li>
       <li><b>Đề nghị vượt khối lượng đã thi công thì chặn.</b> Không đề nghị chủ đầu tư thanh toán phần chưa làm. Khối lượng đề nghị của từng đầu việc ≤ lũy kế đã thi công trừ phần đã đề nghị ở hồ sơ khác <em>(yêu cầu thay đổi 12/10/2026 — <a href="PL-C.html#Q-113">Q-113</a>)</em>.<span class="then">Thi công 100 m² mà chỉ nghiệm thu được 90 m² với chủ đầu tư thì đề nghị 90; 10 m² còn lại vẫn đề nghị được ở hồ sơ sau. Hai hồ sơ cùng một đợt không đề nghị chồng lên nhau.</span><span class="then">Khác với chiều ngược lại — đề nghị ít hơn chỉ là cảnh báo.</span></li>
       <li><b>Mỗi đợt thu hồi một phần tạm ứng.</b> Tỷ lệ thu hồi khai ở hợp đồng (<a href="BID-05.html">BID-05</a>); hệ thống tính trên giá trị khối lượng của đợt và trừ thẳng vào số tiền đề nghị chuyển.<span class="then">Lũy kế thu hồi không vượt quá số tạm ứng đã nhận ở <a href="ORD-01.html">ORD-01</a>, và đợt cuối tự thu hết phần còn lại — tạm ứng là tiền đã chi, không có đường nào để nó tự biến mất khỏi sổ. Hợp đồng chưa khai tỷ lệ thì ô thu hồi để trống kèm nhắc, chứ không lặng lẽ mặc định bằng 0.</span></li>
       <li><b>Giữ lại phần bảo hành ngay từ mỗi đợt.</b> Tỷ lệ giữ lại đọc từ ô “% giữ lại bảo hành” của hợp đồng (<a href="BID-05.html">BID-05</a>, mặc định 5%) <em>(19/10/2026)</em>; phần giữ cộng dồn qua các đợt và chỉ ra khỏi sổ bằng hồ sơ thu hồi ở <a href="ORD-10.html">ORD-10</a>.<span class="then">Dồn hết vào đợt cuối thì đợt cuối phải gánh phần bảo hành của cả hợp đồng, và khi giá trị đợt cuối nhỏ hơn phần phải giữ thì không còn gì để giữ. Đây cũng chính là số tiền mà <a href="BID-05.html">BID-05</a> hứa sẽ nhắc lập hồ sơ thu hồi khi hết hạn bảo hành.</span></li>
@@ -430,11 +429,11 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-01.html">ORD-01 khung theo dõi hồ sơ</a><a href="ORD-02.html">ORD-02 hồ sơ Shopdrawing ba cấp</a><a href="ORD-10.html">ORD-10 quyết toán hợp đồng</a><a href="PRJ-02.html">PRJ-02 sản lượng thi công</a><a href="PRJ-03.html">PRJ-03 khối lượng đã trả tổ đội</a><a href="ACC-05.html">ACC-05 công nợ phải thu</a><a href="RPT-03.html">RPT-03 lãi lỗ dự án</a><a href="2026-09-15/YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a></p>
+    <p class="links"><a href="ORD-01.html">ORD-01 khung theo dõi hồ sơ</a><a href="ORD-02.html">ORD-02 hồ sơ Shopdrawing ba cấp</a><a href="ORD-10.html">ORD-10 quyết toán hợp đồng</a><a href="ACC-05.html">ACC-05 công nợ phải thu</a><a href="RPT-03.html">RPT-03 lãi lỗ dự án</a><a href="2026-09-15/YC-08.html">YC-08 cấu trúc hồ sơ Shopdrawing</a><a href="ORD-12.html">ORD-12 nhân công tổ đội</a></p>
   </div>
 </section>
 <div class="filefoot">
-  <span>Đặc tả 21 / 48</span><span><code>ORD-09.html</code></span>
+  <span>Đặc tả 21 / 47</span><span><code>ORD-09.html</code></span>
   <span>ABSMS — Đặc tả chức năng Giai đoạn 1</span>
   <span>Nguồn yêu cầu: <code>260718_AB_sumary.csv</code></span>
 </div>
