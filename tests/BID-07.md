@@ -3,9 +3,9 @@
 > Nguồn: `spec/BID-07.html`. Mọi kịch bản dưới đây suy ra từ một mục cụ thể của đặc tả, ghi ở cột **Nguồn**:
 > `TS` = bảng *Tham số* · `CN-n` = dòng *Chức năng trên màn hình* · `BR-nn` = *Quy tắc nghiệp vụ* · `VAL-n` = dòng *Kiểm tra dữ liệu & thông điệp* · `KQ-n` = gạch đầu dòng *Kết quả mong đợi*.
 >
-> Màn hình này là lớp còn thiếu giữa tờ giấy chủ đầu tư gửi và khoản khấu trừ rơi xuống tổ đội. Trước nó, bốn chỗ trong hệ thống đã nói về khoản phạt mà không chỗ nào giữ bản ghi gốc — nên phần lớn kịch bản nhóm B kiểm **đường đi ra** của con số: sang bảng khấu trừ của PRJ-03, sang báo cáo đánh giá BCH của RPT-02, và hai ô tổng ở ORD-10 / RPT-05.
+> Màn hình này là lớp còn thiếu giữa tờ giấy chủ đầu tư gửi và khoản khấu trừ rơi xuống tổ đội. Trước nó, bốn chỗ trong hệ thống đã nói về khoản phạt mà không chỗ nào giữ bản ghi gốc — nên phần lớn kịch bản nhóm B kiểm **đường đi ra** của con số: sang bảng khấu trừ của PRJ-03 (từ 17/11/2026 PRJ-03 bỏ — dòng phân bổ chỉ còn là căn cứ để P. TQT trừ tay trên ORD-12, PL-C Q-344), sang báo cáo đánh giá BCH của RPT-02, và hai ô tổng ở ORD-10 / RPT-05.
 >
-> Hai chiều phạt dễ lẫn nhau: *công ty phạt tổ đội* (Ban chỉ huy tự lập, đã có từ trước ở PRJ-03) và *chủ đầu tư phạt công ty* (màn hình này). UAT-BID07-24 kiểm đúng chỗ hai chiều gặp nhau.
+> Hai chiều phạt dễ lẫn nhau: *công ty phạt tổ đội* (trước ở PRJ-03, từ 17/11/2026 P. TQT trừ trên bảng nhân công ORD-12) và *chủ đầu tư phạt công ty* (màn hình này). UAT-BID07-24 kiểm đúng chỗ hai chiều gặp nhau.
 >
 > Số liệu ví dụ lấy từ mockup *Đấu thầu › Biên bản phạt chủ đầu tư*: hợp đồng `KH_0114`, biên bản `05/BB-PHAT` ngày 10/09/2026, giá trị 100.000.000, phân bổ `TD-004` 40.000.000 và `TD-007` 35.000.000, phần dư 25.000.000 × hệ số 1,5.
 

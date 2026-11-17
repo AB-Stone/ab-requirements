@@ -172,7 +172,7 @@
           <tr><td>Người lập</td><td class="k">prepared_by</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chọn trong danh sách nhân sự thuộc P. TQT (<a href="PF-02.html">PF-02</a>); mặc định là người đang đăng nhập nếu người đó thuộc P. TQT.</td></tr>
           <tr><td>Ngày lập</td><td class="k">prepared_on</td><td>Ngày</td><td class="c req">✱</td><td>Mặc định hôm nay, sửa được.</td></tr>
           <tr><td>Kỳ</td><td class="k">period</td><td>Chọn 1</td><td class="c req">✱</td><td><code>1</code> · <code>2</code> · <code>3</code> · <code>công nhật</code> · <code>khác</code>.</td></tr>
-          <tr><td>Nhãn kỳ khác</td><td class="k">period_label</td><td>Chuỗi</td><td class="c">—</td><td>Bắt buộc khi kỳ là <code>khác</code>, tối đa 100 ký tự, in nguyên văn thay cho “Kỳ n”. Ẩn với các kỳ còn lại.</td></tr>
+          <tr><td>Nhãn kỳ khác</td><td class="k">period_label</td><td>Chuỗi</td><td class="c">—</td><td>Dùng khi kỳ là <code>khác</code>, tối đa 100 ký tự, in nguyên văn thay cho “Kỳ n”; để trống thì in “Kỳ khác” và có cảnh báo. Ẩn với các kỳ còn lại.</td></tr>
           <tr><td>Tháng · Năm</td><td class="k">month, year</td><td>Số</td><td class="c req">✱</td><td>Tháng 1–12, năm bốn chữ số; mặc định tháng và năm của ngày lập. Đầu bảng in “Kỳ thanh toán: Kỳ 1 tháng 12”.</td></tr>
           <tr><td>Ghi chú</td><td class="k">note</td><td>Chuỗi dài</td><td class="c">—</td><td>Ghi chú chung của bảng.</td></tr>
           <tr><td>Đã gửi Kế toán</td><td class="k">sent_at, sent_by</td><td>Hệ thống</td><td class="c">—</td><td>Ghi khi bấm “Gửi Kế toán”; mỗi lần gửi lại ghi đè bằng lần mới, lịch sử các lần gửi giữ ở nhật ký bản ghi.</td></tr>
@@ -181,18 +181,18 @@
     </div>
 
     <h4>Tham số — dòng tổ đội <code>prj_crew_labor_line</code></h4>
-    <p>Đầu cột hai tầng như sheet “nhancong”: cột D và E đứng chung dưới nhóm <b>CÔNG NHẬT SẢN LƯỢNG</b>. Mọi cột tiền là số nguyên đồng, không âm, để trống hiểu là 0.</p>
+    <p>Đầu cột hai tầng như sheet “nhancong”: cột D và E đứng chung dưới nhóm <b>CÔNG NHẬT SẢN LƯỢNG</b>. Mọi cột tiền là số nguyên đồng, để trống hiểu là 0; nhận cả số âm (ví dụ cột C khi khấu trừ lớn hơn sản lượng).</p>
     <div class="tw">
       <table>
         <thead><tr><th style="width:58px">Cột</th><th style="width:26%">Tiêu đề</th><th style="width:18%">Mã</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>A</td><td>STT</td><td class="k">seq</td><td>Hệ thống đánh lại 1, 2, 3… theo thứ tự dòng trên bảng; kéo đổi thứ tự được.</td></tr>
-          <tr><td>B</td><td>TÊN TỔ ĐỘI</td><td class="k">crew_id, crew_name</td><td>Ô chọn có tìm kiếm trên Danh mục tổ đội (<a href="PRJ-05.html">PRJ-05</a>), <b>nhận cả tên gõ tay</b>. Chọn từ danh mục thì ghi <code>crew_id</code> và chép tên; gõ tên không có trong danh mục thì <code>crew_id</code> để trống, chỉ lưu <code>crew_name</code>. Tên gõ tay không được thêm vào danh mục. Bắt buộc.</td></tr>
+          <tr><td>B</td><td>TÊN TỔ ĐỘI</td><td class="k">crew_id, crew_name</td><td>Ô chọn có tìm kiếm trên Danh mục tổ đội (<a href="PRJ-05.html">PRJ-05</a>), <b>nhận cả tên gõ tay</b>. Chọn từ danh mục thì ghi <code>crew_id</code> và chép tên; gõ tên không có trong danh mục thì <code>crew_id</code> để trống, chỉ lưu <code>crew_name</code>. Tên gõ tay không được thêm vào danh mục. Để trống thì cảnh báo, dòng vẫn lưu.</td></tr>
           <tr><td>C</td><td>SẢN LƯỢNG + KHẤU TRỪ (VT, TI, PHẠT)</td><td class="k">output_amount</td><td>Số tiền gõ tay — giá trị sản lượng của tổ đã trừ sẵn vật tư, tiện ích, phạt theo cách P. TQT đang tính ngoài hệ thống.</td></tr>
-          <tr><td>D</td><td>CÔNG NHẬT SẢN LƯỢNG — KHẤU TRỪ CÔNG TY</td><td class="k">daywork_company</td><td>Số tiền gõ tay — công nhật sản lượng của tổ mà công ty chịu.</td></tr>
-          <tr><td>E</td><td>CÔNG NHẬT SẢN LƯỢNG — KHẤU TRỪ CHÉO TỔ ĐỘI</td><td class="k">daywork_cross_crew</td><td>Số tiền gõ tay — công nhật sản lượng của tổ được khấu trừ sang tổ đội khác.</td></tr>
+          <tr><td>D</td><td>CÔNG NHẬT SẢN LƯỢNG — KHẤU TRỪ CÔNG TY</td><td class="k">daywork_company</td><td>Số tiền gõ tay, cộng vào H.</td></tr>
+          <tr><td>E</td><td>CÔNG NHẬT SẢN LƯỢNG — KHẤU TRỪ CHÉO TỔ ĐỘI</td><td class="k">daywork_cross_crew</td><td>Số tiền gõ tay, cộng vào H.</td></tr>
           <tr><td>F</td><td>CÔNG NHẬT KHÁC</td><td class="k">daywork_other</td><td>Số tiền gõ tay.</td></tr>
-          <tr><td>G</td><td>KHẤU TRỪ CÔNG NHẬT</td><td class="k">daywork_deduction</td><td>Số tiền gõ tay — khoản trừ vào tổ.</td></tr>
+          <tr><td>G</td><td>KHẤU TRỪ CÔNG NHẬT</td><td class="k">daywork_deduction</td><td>Số tiền gõ tay — cột duy nhất trừ khỏi H.</td></tr>
           <tr><td>H</td><td>SỐ TIỀN THANH TOÁN</td><td class="k">payable_amount</td><td><b>Hệ thống tính:</b> <code>C + D + E + F − G</code>. Chỉ đọc; được phép âm (hiện màu cảnh báo, xem quy tắc 4).</td></tr>
           <tr><td>—</td><td>SỐ TK NGÂN HÀNG</td><td class="k">bank_account_no</td><td>Điền sẵn từ danh mục khi chọn tổ đội; sửa được trên dòng mà không đổi danh mục. Tên gõ tay thì để trống cho người lập nhập.</td></tr>
           <tr><td>—</td><td>NGÂN HÀNG</td><td class="k">bank_name</td><td>Như trên.</td></tr>
@@ -206,8 +206,8 @@
     <ol class="br">
       <li><b>Một chức năng thay hai màn hình cũ.</b> “Nhân công tổ đội” nằm trong nhóm P. TQT — Shopdrawing, thay PRJ-02 “Sản lượng thi công” và PRJ-03 “Thanh toán nhân công tổ đội”.<span class="then">Đúng yêu cầu khách hàng ở TQT.xlsx sheet “TQT-dự án” STT 1 và 12. Hai màn hình cũ và dữ liệu của chúng bỏ hẳn — migration <code>00196</code> xóa các bảng cũ; không có đường chuyển số liệu cũ sang bảng mới (<a href="PL-C.html#Q-344">Q-344</a>).</span></li>
       <li><b>Danh sách dự án là mọi dự án của P. Đấu thầu.</b> Không có bước khai báo dự án riêng cho màn hình này.<span class="then">Dự án sinh ở <a href="BID-05.html">BID-05</a> hay ở <a href="PF-01.html">PF-01</a> đều hiện ngay. Màn hình không lọc theo dự án mà người xem được phân công — ai có quyền đọc là thấy mọi dự án.</span></li>
-      <li><b>Năm khoản tiền gõ tay, một cột tính.</b> C, D, E, F, G là số tiền người lập gõ, được để 0. <code>H = C + D + E + F − G</code>: chỉ G trừ, D và E cộng.<span class="then">Khớp số mẫu của sheet “nhancong”: tổ LÊ KIM TÀI có khấu trừ chéo tổ đội 335.000 và công nhật khác 12.790.000, số tiền thanh toán 13.125.000. D và E là công nhật sản lượng tổ được hưởng, ghi theo nơi chịu khoản đó (công ty, hoặc tổ đội khác bị khấu trừ chéo) — tên cột có chữ “khấu trừ” nhưng với tổ trên dòng thì đó là tiền được nhận.</span></li>
-      <li><b>Không có điều kiện chặn lưu.</b> Bảng lưu được khi chỉ có tên tổ đội; không đối chiếu bảng giá khoán (<a href="PRJ-01.html">PRJ-01</a>), đơn giá chuẩn (<a href="PF-06.html">PF-06</a>), sản lượng hay hạn nộp. H âm vẫn lưu được, chỉ hiện cảnh báo.<span class="then">Khách yêu cầu bỏ chốt chặn và làm đơn giản. Các con số do P. TQT chịu trách nhiệm như trên tờ Excel hiện nay; hệ thống chỉ cộng đúng.</span></li>
+      <li><b>Năm khoản tiền gõ tay, một cột tính.</b> C, D, E, F, G là số tiền người lập gõ, được để 0. <code>H = C + D + E + F − G</code>: chỉ G trừ, D và E cộng.<span class="then">Khớp số mẫu của sheet “nhancong”: tổ LÊ KIM TÀI có khấu trừ chéo tổ đội 335.000 và công nhật khác 12.790.000, số tiền thanh toán 13.125.000 — E cộng chứ không trừ. Tên cột D, E có chữ “khấu trừ”; nghĩa nghiệp vụ của hai cột chưa được khách giải thích, nên công thức theo dòng mẫu và điểm này còn mở ở <a href="PL-C.html#Q-344">Q-344</a>.</span></li>
+      <li><b>Không có điều kiện chặn lưu.</b> Bảng lưu được ở mọi tình huống — mọi kiểm tra ở bảng dưới chỉ là cảnh báo; không đối chiếu bảng giá khoán (<a href="PRJ-01.html">PRJ-01</a>), đơn giá chuẩn (<a href="PF-06.html">PF-06</a>), sản lượng hay hạn nộp. H âm vẫn lưu được, chỉ hiện cảnh báo.<span class="then">Khách yêu cầu bỏ chốt chặn và làm đơn giản. Các con số do P. TQT chịu trách nhiệm như trên tờ Excel hiện nay; hệ thống chỉ cộng đúng.</span></li>
       <li><b>Tổ đội chọn từ danh mục hoặc gõ tay.</b> Chọn từ <a href="PRJ-05.html">PRJ-05</a> thì dòng giữ <code>crew_id</code>, chép tên, số TK, ngân hàng; gõ tên không có trong danh mục thì chỉ lưu tên. Tên gõ tay <b>không</b> được thêm vào danh mục.<span class="then">Tổ nhỏ, tổ thời vụ vẫn được trả tiền mà không phải qua người giữ danh mục. Số TK và ngân hàng trên dòng là bản chép: sửa trên dòng không đổi danh mục, sửa danh mục không đổi bảng đã lập.</span></li>
       <li><b>Dòng thêm, xóa tự do.</b> Bảng có bao nhiêu dòng cũng được; một tổ đội xuất hiện hai lần trên cùng bảng thì cảnh báo, không chặn.<span class="then">Một tổ có thể nhận hai khoản tách dòng để ghi chú riêng — đúng cách sheet đang làm.</span></li>
       <li><b>Trùng kỳ được phép, có cảnh báo.</b> Hai bảng cùng dự án, cùng kỳ, tháng, năm (và cùng nhãn nếu là kỳ <code>khác</code>) vẫn lưu được; màn hình hiện cảnh báo và liên kết sang bảng kia.<span class="then">Bảng bổ sung cho cùng một kỳ là chuyện có thật; cấm trùng thì người lập phải đặt kỳ <code>khác</code> giả để lách.</span></li>
@@ -223,9 +223,9 @@
       <table>
         <thead><tr><th style="width:30%">Tình huống</th><th style="width:28%">Điều kiện kiểm tra</th><th>Thông điệp hiển thị</th></tr></thead>
         <tbody>
-          <tr><td>Thiếu tên tổ đội</td><td>Dòng có số tiền nhưng ô B trống</td><td>“Dòng {stt} chưa có tên tổ đội.” <em>(chặn lưu dòng đó)</em></td></tr>
-          <tr><td>Kỳ khác thiếu nhãn</td><td><code>period = khác</code>, <code>period_label</code> rỗng</td><td>“Nhập tên kỳ cho kỳ khác.” <em>(chặn lưu)</em></td></tr>
-          <tr><td>Số tiền âm hoặc không phải số</td><td>Ô C–G nhỏ hơn 0 hoặc có chữ</td><td>“Cột {cột} dòng {stt} nhận số tiền không âm.” <em>(chặn lưu ô đó)</em></td></tr>
+          <tr><td>Thiếu tên tổ đội</td><td>Dòng có số tiền nhưng ô B trống</td><td>“Dòng {stt} chưa có tên tổ đội.” <em>(cảnh báo, vẫn lưu)</em></td></tr>
+          <tr><td>Kỳ khác thiếu nhãn</td><td><code>period = khác</code>, <code>period_label</code> rỗng</td><td>“Kỳ khác chưa có tên — đầu bảng sẽ in “Kỳ khác”.” <em>(cảnh báo, vẫn lưu)</em></td></tr>
+          <tr><td>Gõ chữ vào ô tiền</td><td>Ký tự không phải số ở ô C–G</td><td><em>Không báo lỗi</em> — ô không nhận ký tự đó, giữ giá trị đang có.</td></tr>
           <tr><td>Trùng kỳ</td><td>Dự án đã có bảng khác cùng kỳ, tháng, năm (cùng nhãn với kỳ khác)</td><td>“Dự án đã có bảng {kỳ} tháng {tháng}/{năm} lập ngày {ngày} — vẫn lưu được.” <em>(cảnh báo)</em></td></tr>
           <tr><td>Tổ đội lặp trên bảng</td><td>Hai dòng cùng <code>crew_id</code> hoặc cùng tên</td><td>“{tên tổ} có {n} dòng trên bảng này.” <em>(cảnh báo)</em></td></tr>
           <tr><td>Số tiền thanh toán âm</td><td><code>H &lt; 0</code></td><td>“Dòng {stt}: khấu trừ công nhật lớn hơn số được nhận — số tiền thanh toán âm.” <em>(cảnh báo)</em></td></tr>
@@ -306,7 +306,7 @@
           <tr><td>UAT-ORD12-6</td><td>“Tổ Đức Linh” không có trong danh mục</td><td>Gõ tên đó, nhập C, lưu</td><td>Dòng lưu với tên gõ tay, <code>crew_id</code> trống; danh mục tổ đội không có thêm bản ghi</td></tr>
           <tr><td>UAT-ORD12-7</td><td>Dự án đã có bảng Kỳ 1 tháng 12/2026</td><td>Lập bảng mới Kỳ 1 tháng 12/2026, lưu</td><td>Cảnh báo trùng kỳ kèm liên kết bảng cũ; bảng mới vẫn lưu</td></tr>
           <tr><td>UAT-ORD12-8</td><td>Dự án chưa có bảng giá khoán, chưa có đơn giá chuẩn vùng</td><td>Lập và lưu bảng</td><td>Lưu thành công, không có thông điệp nào về bảng giá hay đơn giá chuẩn</td></tr>
-          <tr><td>UAT-ORD12-9</td><td>Chọn kỳ <code>khác</code>, để trống nhãn</td><td>Lưu</td><td>Bị chặn “Nhập tên kỳ cho kỳ khác.”; nhập “Bổ sung tết” thì lưu, đầu bảng in “Bổ sung tết tháng 12”</td></tr>
+          <tr><td>UAT-ORD12-9</td><td>Chọn kỳ <code>khác</code>, để trống nhãn</td><td>Lưu</td><td>Cảnh báo “Kỳ khác chưa có tên…”, vẫn lưu; nhập “Bổ sung tết” thì đầu bảng in “Bổ sung tết tháng 12”</td></tr>
           <tr><td>UAT-ORD12-10</td><td>Bảng có 3 dòng, chưa gửi</td><td>Bấm Gửi Kế toán</td><td>Cột “Đã gửi KT lúc” có thời điểm và người gửi; mọi tài khoản thuộc P. Kế toán nhận thông báo <code>crew_labor_sent</code></td></tr>
           <tr><td>UAT-ORD12-11</td><td>Tiếp UAT-10</td><td>Sửa một số tiền, lưu, gửi lại</td><td>Sửa được; lớp ② hiện “đã sửa sau khi gửi” cho tới lần gửi lại; P. Kế toán nhận thông báo thứ hai</td></tr>
           <tr><td>UAT-ORD12-12</td><td>Bảng ở UAT-4</td><td>Xuất .xlsx</td><td>Tệp có đầu bảng, tiêu đề, đầu cột hai tầng với hàng A–H, dòng TỔNG CỘNG; cột H là công thức và ra đúng số trên màn hình</td></tr>

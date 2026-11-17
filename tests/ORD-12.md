@@ -30,8 +30,8 @@
 | UAT-ORD12-14 | Tiếp UAT-6 | Lưu bảng, mở Danh mục tổ đội (PRJ-05) | Dòng lưu với `crew_id` trống; danh mục không có thêm bản ghi “Tổ Đức Linh” | BR-05 |
 | UAT-ORD12-15 | Tiếp UAT-5, đã sửa số TK trên dòng | Lưu, mở Danh mục tổ đội | Danh mục giữ số TK cũ; bảng giữ số đã sửa | BR-05 |
 | UAT-ORD12-16 | Tiếp UAT-7 | Lưu | Bảng mới lưu được; dự án có hai bảng cùng Kỳ 1 tháng 12/2026 | BR-07 · KQ-7 |
-| UAT-ORD12-17 | Kỳ `khác`, nhãn trống | Lưu | Bị chặn “Nhập tên kỳ cho kỳ khác.” | VAL-2 |
-| UAT-ORD12-18 | Dòng có số tiền, ô tên tổ đội trống | Lưu | Bị chặn ở dòng đó “Dòng {stt} chưa có tên tổ đội.” | VAL-1 |
+| UAT-ORD12-17 | Kỳ `khác`, nhãn trống | Lưu | Cảnh báo “Kỳ khác chưa có tên…”; bảng vẫn lưu, đầu bảng in “Kỳ khác” | VAL-2 · BR-04 |
+| UAT-ORD12-18 | Dòng có số tiền, ô tên tổ đội trống; dòng khác có C = −2.000.000 | Lưu | Cảnh báo “Dòng {stt} chưa có tên tổ đội.”; bảng vẫn lưu, số âm ở C được nhận | VAL-1 · BR-04 · TS dòng |
 | UAT-ORD12-19 | Bảng ở UAT-12, chưa gửi | Bấm Gửi Kế toán | Cột “Đã gửi KT lúc” có thời điểm và người gửi; mọi tài khoản thuộc P. Kế toán nhận `crew_labor_sent` | BR-09 · KQ-8 · PF-04 |
 | UAT-ORD12-20 | Tiếp UAT-19 | Sửa một số tiền, lưu, gửi lại | Sửa được; lớp ② hiện “đã sửa sau khi gửi” tới lần gửi lại; P. Kế toán nhận thông báo thứ hai có “(gửi lại)” | BR-09 · CN-6 |
 | UAT-ORD12-21 | Tiếp UAT-19 | Kế toán mở danh sách đề nghị thanh toán (ACC-05) | Không có đề nghị nào tự sinh từ bảng | BR-09 · BR-10 |
