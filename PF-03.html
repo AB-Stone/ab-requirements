@@ -110,6 +110,7 @@
         </tbody>
       </table>
     </div>
+    <p><b>Hồ sơ thanh toán không vào trung tâm phê duyệt</b> <em>(TQT-dự án STT 8 · 17/11/2026 · <a href="PL-C.html#Q-348">Q-348</a>)</em>. Quy trình mẫu <code>ord_dossier</code> — một bước TP TQT từ 19/10/2026 — bỏ: hồ sơ tạm ứng, vật tư, khối lượng, quyết toán (nay là loại hồ sơ của <a href="ORD-01.html">ORD-01</a>) không sinh phiên duyệt, không hiện ở thẻ <em>Chờ duyệt</em>. P. TQT bấm “Gửi thông báo” là hồ sơ sang thẳng <em>Chờ thanh toán</em>. Phiên <code>ord_dossier</code> còn mở lúc triển khai được hủy cùng lần chuyển đổi hồ sơ, không phát thông báo.</p>
 
     <h4>Lưu đồ — vòng đời một phiên duyệt</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller" style="max-width:843px;margin:0 auto"><svg role="img" aria-label="Hình PF-03.1 Ba lối ra của một bước duyệt. “Yêu cầu bổ sung” khác “Từ chối”: nó trả chứng từ về người lập để sửa rồi trình lại, giữ nguyên số hiệu và toàn bộ lịch sử — đây chính là tình huống 7.2 trong bảng yêu cầu."
@@ -418,7 +419,7 @@
         <tbody>
           <tr><td><b>Lập bản vẽ Shopdrawing</b></td><td>Hạng mục có <em>Cán bộ phụ trách</em> là mình, tình trạng bản vẽ <em>Đã giao</em> hoặc <em>Bị trả lại</em></td><td>Hạn nộp khi giao</td><td>Hồ sơ Shopdrawing của dự án, đúng dòng hạng mục — <a href="ORD-02.html">ORD-02</a></td></tr>
           <tr><td><s>Thẩm định BOQ</s></td><td colspan="3">Đã bỏ <em>(16/11/2026 V2 · <a href="PL-C.html#Q-321">Q-321</a>)</em> — không còn phiếu thẩm định giao người; bước Thẩm định do P. Đấu thầu tự tải tệp + Lưu (<a href="BID-02.html">BID-02</a>).</td></tr>
-          <tr><td><b>Hồ sơ thanh toán</b></td><td>Hồ sơ tạm ứng · TT vật tư · TT khối lượng · quyết toán có người phụ trách là mình, chưa <em>Đã thanh toán / Đóng / Từ chối / Hủy</em></td><td>Ngày CĐT hẹn</td><td>Màn hình chi tiết hồ sơ — <a href="ORD-01.html">ORD-01</a>, <a href="ORD-08.html">ORD-08</a>, <a href="ORD-09.html">ORD-09</a>, <a href="ORD-10.html">ORD-10</a></td></tr>
+          <tr><td><b>Hồ sơ thanh toán</b></td><td>Hồ sơ thanh toán mọi loại có người phụ trách là mình, đang <em>Đang lập</em> hoặc <em>Chờ thanh toán</em> <em>(17/11/2026 · <a href="PL-C.html#Q-348">Q-348</a>)</em></td><td>Ngày CĐT hẹn</td><td>Màn hình chi tiết hồ sơ — <a href="ORD-01.html">ORD-01</a></td></tr>
           <tr><td><b>Vướng mắc</b></td><td>Vướng mắc hồ sơ hoặc sai lệch đợt cấp hàng giao cho mình, chưa đóng</td><td>Hạn xử lý</td><td>Hồ sơ chứa vướng mắc, hoặc tab giao hàng của đơn — <a href="ORD-05.html">ORD-05</a></td></tr>
         </tbody>
       </table>
