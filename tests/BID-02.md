@@ -5,6 +5,8 @@
 
 > **Phản hồi 17/11/2026 tối (Q-390 – Q-399).** Mục A – C viết trước bản V2 (16/11/2026) và các đợt 17/11/2026; chỗ nào khác `spec/BID-02.html` thì đặc tả thắng. Kịch bản của đợt này ở mục cuối, cột **Nguồn** trỏ về mã kịch bản và quy tắc của đặc tả.
 
+> **Sheet “Today” 18/11/2026 (Q-402 – Q-427).** Mục cuối phủ đợt này; kịch bản cũ nói về 2A, Chờ HSMT, 2B, 2C, tab Hồ sơ · Khởi tạo, Thêm phụ lục, Bỏ qua thương thảo hay chặn sửa phiếu nhập khi có chứng từ sau đã bị đặc tả thay — chỗ nào khác `spec/BID-02.html` thì đặc tả thắng.
+
 ## A · Luồng giao diện
 
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
@@ -94,6 +96,22 @@
 | UAT-BID02-66 | Gói loại A ở *Thẩm định HSMT (2C)*, đã có báo cáo 2A | Mở tab 2C | Ô Rà soát hiện trường rỗng — báo cáo 2A không hiện ở 2C | Q-391 · đặc tả UAT-BID02-80 |
 | UAT-BID02-67 | Gói loại B đã thẩm định chỉ bằng báo cáo khảo sát trước 17/11/2026 tối | Triển khai; mở tab 2B | Gói giữ *Đã thẩm định*; tệp nằm ở ô Rà soát hiện trường | Q-391 · đặc tả UAT-BID02-81 |
 | UAT-BID02-68 | Gói loại A ở 2A, DS P.TQT · P.Kế toán | Ngay trên tab 2A bỏ P.Kế toán, thêm P.Thi công, Lưu; ở gói khác bỏ hết phòng ban, Lưu | Trưởng P.TQT, P.Thi công, Ban lãnh đạo, Dự án liên quan nhận; DS gói không đổi; Lịch sử thay đổi có dòng gửi. Gói thứ hai bị chặn "Chọn ít nhất một phòng ban nhận thông báo." | TS `recipients` · Q-395 · Q-397 · Q-399 · đặc tả UAT-BID02-82 |
+
+## E · Sheet “Today” 18/11/2026 — Chuyển Thẩm định, hai phiếu *(thay mục D)*
+
+> Mục D (UAT-65 – 68: ô Rà soát hiện trường rời, người nhận 2A) đã bị thay — không chạy nữa (Q-404, Q-408).
+
+| Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
+|---|---|---|---|---|
+| UAT-BID02-69 | Gói Có HSMT *Đã khởi tạo* | Chuyển Thẩm định thiếu một trưởng phòng; rồi đủ hai người và hạn | Lần đầu bị chặn “Chọn trưởng phòng ban cho cả hai phiếu thẩm định.”; lần sau *Đang thẩm định*, hai phiếu, hai trưởng phòng nhận thông báo | BR-1 · VAL-1 · Q-404 · đặc tả UAT-BID02-83 |
+| UAT-BID02-70 | Gói Không có HSMT, phiếu Kiểm tra hiện trường trễ hạn chưa nộp | Chuyển Thẩm định, nhập Hạn nộp hồ sơ dự thầu | Chuyển được; phiếu thứ hai “Cập nhật điều kiện thi công”; hạn nộp vào gói, nhắc chạy | BR-1 · BR-6 · Q-407 · đặc tả UAT-BID02-84 |
+| UAT-BID02-71 | Tiếp UAT-69 | TP giao lại nhân viên phòng mình; người khác gọi lệnh giao lại; giao ra phòng khác; nhân viên tải thư mục, Nộp | Giao lại đúng quy tắc, hai lần sai bị chặn; phiếu rà soát *Đã nộp*, tệp nhóm theo thư mục; chưa có Chuyển Thương thảo | BR-2 · BR-3 · VAL Giao lại · đặc tả UAT-BID02-85 |
+| UAT-BID02-72 | Tiếp UAT-71, phiếu khảo sát quá hạn | Chờ qua hạn; Nộp không ảnh; tải PDF; tải ảnh, Nộp | Trễ hạn + một thông báo, không chặn; hai lần nộp sai bị chặn; lần sau “Nộp trễ”; Chuyển Thương thảo hiện | BR-4 · Q-406 · đặc tả UAT-BID02-86 |
+| UAT-BID02-73 | Tiếp UAT-72 | Bấm Chuyển Thương thảo | *Đã thẩm định*, Tiến độ “Đã rà soát, kiểm tra HSMT”, tab Thương thảo có tệp hai phiếu | BR-5 · Q-405 · đặc tả UAT-BID02-87 |
+| UAT-BID02-74 | Gói *Đang thẩm định*, một phiếu chưa nộp | Bấm tab Thương thảo; gọi thẳng Chuyển Thương thảo | Tab mờ “Chưa nộp đủ 2 phiếu thẩm định”; máy chủ từ chối | BR-5 · VAL Chuyển Thương thảo · đặc tả UAT-BID02-88 |
+| UAT-BID02-75 | Người ngoài phiếu; người được phân công | Mở gói; xóa tệp phiếu khác; xóa tệp phiếu mình | Người ngoài bị từ chối; xóa tệp phiếu khác bị chặn; tệp phiếu mình xóa được | BR-2 · đặc tả UAT-BID02-89 |
+| UAT-BID02-76 | Phiếu chưa nộp / đã nộp | Đổi người, hạn bằng màn phân công | Phiếu chưa nộp đổi được; đã nộp bị chặn “… đã nộp — không đổi người được.” | BR-2 · đặc tả UAT-BID02-90 |
+| UAT-BID02-77 | Gói ở Chờ HSMT, 2C, Đã thẩm định trước triển khai 18/11/2026 | Triển khai; mở ba gói | Chờ HSMT → *Đã khởi tạo* + phiếu Kiểm tra hiện trường đã nộp; 2C → *Đang thẩm định* chưa có phiếu; Đã thẩm định giữ | BR-9 · Q-408 · đặc tả UAT-BID02-91 |
 
 ## Ghi chú bao phủ
 

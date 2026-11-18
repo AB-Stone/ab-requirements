@@ -5,6 +5,8 @@
 
 > **Phản hồi 17/11/2026 tối (Q-390 – Q-399).** Mục A – C viết trước bản V2 (16/11/2026) và các đợt 17/11/2026; chỗ nào khác `spec/BID-01.html` thì đặc tả thắng. Kịch bản của đợt này ở mục cuối, cột **Nguồn** trỏ về mã kịch bản và quy tắc của đặc tả.
 
+> **Sheet “Today” 18/11/2026 (Q-402 – Q-427).** Mục cuối phủ đợt này; kịch bản cũ nói về 2A, Chờ HSMT, 2B, 2C, tab Hồ sơ · Khởi tạo, Thêm phụ lục, Bỏ qua thương thảo hay chặn sửa phiếu nhập khi có chứng từ sau đã bị đặc tả thay — chỗ nào khác `spec/BID-01.html` thì đặc tả thắng.
+
 ## A · Luồng giao diện
 
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
@@ -136,6 +138,18 @@
 | UAT-BID01-108 | Gói loại B *Đã khởi tạo* | Mở hồ sơ gói trên máy tính | Mở thẳng tab **Hồ sơ · Khởi tạo**; không có tab Hồ sơ riêng; thông tin gói bên trái, thẻ "1 · Khởi tạo" (loại tệp, kéo thả, ghi chú, Lưu) bên phải | CN-6 · Q-390 · đặc tả UAT-BID01-125 |
 | UAT-BID01-109 | Tiếp UAT-108 | Thu cửa sổ cỡ điện thoại; mở đường dẫn cũ `?step=info` và `#tender-info` | Cỡ điện thoại: thông tin trước, thẻ tệp sau; hai đường dẫn cũ mở tab Hồ sơ · Khởi tạo | CN-6 · BR "Hồ sơ gói: một tab mỗi lần" · Q-390 · đặc tả UAT-BID01-126 |
 | UAT-BID01-110 | Người có `tender:update` và người chỉ có `contract:update` | Người thứ nhất sửa DS phòng ban trong hộp Sửa gói; người thứ hai mở bước 6 | DS của gói đổi, có lịch sử; người thứ hai sửa được DS cho lần gửi nhưng ô "Lưu vào danh sách của gói" khóa | TS `notify_departments[]` · Q-395 · đặc tả UAT-BID01-127 |
+
+## E · Sheet “Today” 18/11/2026 — Khởi tạo gói thầu, Thông tin gói thầu, nút Chuyển, Tạo PL
+
+| Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
+|---|---|---|---|---|
+| UAT-BID01-111 | Người dùng P. Đấu thầu | Bấm Khởi tạo gói thầu; chọn Không có HSMT, bấm Đổi, chọn Có HSMT, lưu | Bước chọn hai thẻ hiện trước form; Đổi quay lại; gói *Đã khởi tạo*, chip “Có HSMT”, sáu tab Thông tin gói thầu · Thẩm định · Thương thảo · Ký HĐ · Tạo mã VTHH · Thông báo | TS `doc_kind` · Q-402 · đặc tả UAT-BID01-90, 128 |
+| UAT-BID01-112 | Gói Không có HSMT *Đã khởi tạo* | Ở Hồ sơ đính kèm tải một thư mục có thư mục con; mở “Tất cả tệp (n)” | Tệp lưu ngay, nhóm theo thư mục, không có nút Lưu; nhóm “Thông tin gói thầu” | TS Hồ sơ đính kèm · CN-8 · Q-402 · đặc tả UAT-BID01-129 |
+| UAT-BID01-113 | Tiếp UAT-112; GĐ dự án C, KS E cùng phòng | Giao việc Kiểm tra hiện trường cho C, hạn đã qua; C giao lại E; chờ báo trễ; bấm Chuyển Thẩm định | Phiếu Trễ hạn, một thông báo tới C, E, NV phụ trách; Chuyển Thẩm định vẫn chạy | BR Giao việc Kiểm tra hiện trường · Q-403 · Q-406 · đặc tả UAT-BID01-130 |
+| UAT-BID01-114 | Tiếp UAT-113 | E Nộp không ảnh; tải ảnh, Nộp | Lần đầu bị chặn “Tải lên ít nhất một ảnh hiện trường trước khi nộp.”; lần sau *Đã nộp*, ghi “Nộp trễ” | VAL Giao việc · đặc tả UAT-BID01-131 |
+| UAT-BID01-115 | Gói Có HSMT | Mở tab Thông tin gói thầu; gọi thẳng lệnh Giao việc | Không có khung; máy chủ từ chối “Phiếu Kiểm tra hiện trường chỉ có ở gói Không có HSMT.” | Q-403 (1) · đặc tả UAT-BID01-132 |
+| UAT-BID01-116 | Gói Thương thảo hoàn thành | Mở không có `?step=`; Lưu ở tab Thương thảo; bấm Chuyển ký Hợp đồng; rê chuột tab chưa tới | Mở vào bước đang làm; sau Lưu ở lại tab; nút chuyển tab; tab chưa tới mờ có chú thích | BR Nút Chuyển và bấm tab · Q-410 · Q-411 · đặc tả UAT-BID01-133 |
+| UAT-BID01-117 | Ba gói: Hoàn tất có HĐ, chưa ký, đang có phụ lục mở; TP có `tender:appendix`, NV không | TP và NV mở Bảng tổng hợp; TP mở hồ sơ gói đã ký | Tạo PL chỉ ở gói đã ký không có phụ lục mở, chỉ với TP; đầu hồ sơ không còn Thêm phụ lục | CN-11 · Q-412 · đặc tả UAT-BID01-134 |
 
 ## Ghi chú bao phủ
 

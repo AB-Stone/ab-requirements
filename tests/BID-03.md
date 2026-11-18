@@ -5,6 +5,8 @@
 
 > **Phản hồi 17/11/2026 tối (Q-390 – Q-399).** Mục A – C viết trước bản V2 (16/11/2026) và các đợt 17/11/2026; chỗ nào khác `spec/BID-03.html` thì đặc tả thắng. Kịch bản của đợt này ở mục cuối, cột **Nguồn** trỏ về mã kịch bản và quy tắc của đặc tả.
 
+> **Sheet “Today” 18/11/2026 (Q-402 – Q-427).** Mục cuối phủ đợt này; kịch bản cũ nói về 2A, Chờ HSMT, 2B, 2C, tab Hồ sơ · Khởi tạo, Thêm phụ lục, Bỏ qua thương thảo hay chặn sửa phiếu nhập khi có chứng từ sau đã bị đặc tả thay — chỗ nào khác `spec/BID-03.html` thì đặc tả thắng.
+
 ## A · Luồng giao diện
 
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
@@ -123,6 +125,13 @@ Bước 3 chỉ còn tải tệp thương thảo + nhập Giá trị HĐ + Lưu 
 | UAT-BID03-95 | Tiếp UAT-94 | Sửa / thay tệp, đổi Giá trị HĐ, Lưu; rồi Bắt đầu ký và thử lưu lại | Lần đầu lưu thẳng, không thông báo, giá trị HĐ nháp đổi theo; sau Bắt đầu ký tab chỉ đọc, máy chủ từ chối | KQ-3 · BR "Lưu lại được tới khi Bắt đầu ký" · đặc tả UAT-BID03-65 · đặc tả UAT-BID03-66 |
 | UAT-BID03-96 | Gói *Đang thương thảo (lần 2)* trước triển khai | Triển khai; mở gói | *Đã thẩm định*; tệp lần 0 và các lần ở tab, ghi chú tệp mang nội dung lần; nhập Giá trị HĐ rồi Lưu là chốt giá | BR "Gói đang ở bước 3 khi triển khai 17/11/2026" · đặc tả UAT-BID03-67 |
 | UAT-BID03-97 | Gói *Đã thẩm định*, quá hạn nộp | Mở Bảng tổng hợp, chờ lịch nhắc | Không tô quá hạn, không nhắc | BR "Nhắc hạn nộp dừng khi gói Đã thẩm định" · đặc tả UAT-BID03-68 |
+
+## E · Sheet “Today” 18/11/2026 — nút Chuyển ký Hợp đồng
+
+| Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
+|---|---|---|---|---|
+| UAT-BID03-98 | Gói Đã thẩm định có tệp thương thảo | Mở không có `?step=`; Lưu, gửi; bấm Chuyển ký Hợp đồng; bấm tab Thương thảo | Sau Lưu ở lại tab, nút Chuyển ký Hợp đồng hiện; bấm sang Ký HĐ không đổi trạng thái; quay lại được | BR “Lưu xong ở lại tab” · Q-410 · đặc tả UAT-BID03-69 |
+| UAT-BID03-99 | Gói Đang thẩm định, phiếu khảo sát chưa nộp | Rê chuột tab Thương thảo; gọi thẳng lệnh lưu thương thảo | Tab mờ “Chưa nộp đủ 2 phiếu thẩm định”; máy chủ từ chối “… chưa xong bước 2 — chưa chốt giá được.” | KQ-1 · Q-405 · đặc tả UAT-BID03-70 |
 
 ## Ghi chú bao phủ
 

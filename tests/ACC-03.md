@@ -2,6 +2,8 @@
 
 > Nguồn: `spec/ACC-03.html`. Bao phủ 3 hình thức mua, hai hệ đơn vị tính, VAT tách khỏi giá vốn, chi phí vận chuyển hai đường, giảm giá hàng mua, nhập chưa có hóa đơn, phiếu không có đề xuất.
 
+> **Sheet “Today” 18/11/2026 (Q-402 – Q-427).** Mục cuối phủ đợt này; kịch bản cũ nói về 2A, Chờ HSMT, 2B, 2C, tab Hồ sơ · Khởi tạo, Thêm phụ lục, Bỏ qua thương thảo hay chặn sửa phiếu nhập khi có chứng từ sau đã bị đặc tả thay — chỗ nào khác `spec/ACC-03.html` thì đặc tả thắng.
+
 ## A · Luồng giao diện
 
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng |
@@ -30,6 +32,16 @@
 | UAT-ACC03-17 | Đơn giá nhập lệch > 20% so với lần nhập gần nhất | Nhập đơn giá, rời ô | Cảnh báo "Đơn giá {giá} lệch {x}% … Kiểm tra lại đơn vị tính và quy cách."; cho tiếp tục sau xác nhận |
 | UAT-ACC03-18 | Chứng từ giảm giá lớn hơn giá trị lô hàng | Nhập giá trị giảm giá | Chặn "Giá trị giảm giá vượt giá trị lô hàng. Kiểm tra lại chứng từ giảm giá." |
 | UAT-ACC03-19 | Tệp Excel thành phẩm thiếu cột quy cách | Tải lên | Báo lỗi nêu tên cột thiếu; không ghi sổ dòng nào |
+
+## C · Sheet “Today” 18/11/2026 — sửa phiếu nhập đã có chứng từ sau
+
+| Mã | Tiền đề | Thao tác | Kết quả kỳ vọng |
+|---|---|---|---|
+| UAT-ACC03-20 | PN-A 100 m² × 100.000 ghi sổ, PN-B cùng mã ghi sổ sau, chưa xuất | Sửa đơn giá PN-A | Lưu thẳng, không cảnh báo — phiếu nhập sau không chặn (Q-420) |
+| UAT-ACC03-21 | Tiếp; PX-1 xuất 60 m² đã ghi sổ | Sửa đơn giá PN-A, lý do trống; Vẫn sửa; nhập lý do, Vẫn sửa | Hộp “Phiếu đã có vật tư xuất kho” nêu 60 m², PX-1, tồn sau sửa; Vẫn sửa khóa tới khi có lý do; giá xuất PX-1 không đổi (Q-420, Q-421, Q-424) |
+| UAT-ACC03-22 | Tiếp (tồn 90 m²); PX-2 xuất thêm 80 m² — tồn 10 m² | Sửa số lượng PN-A 100 → 20 m², Vẫn sửa; lập phiếu xuất 5 m²; nhập PN-C 100 m² rồi xuất 5 m² | Cảnh báo “Đã xuất kho 100 m² … tồn sau sửa −70 m² — nếu sửa sẽ dẫn đến âm kho”; tồn −70; xuất bị chặn tới khi nhập bù, sau PN-C xuất được (Q-420 (4)) |
+| UAT-ACC03-23 | Tồn đang giữ chỗ 30 m² cho dự án | Sửa xuống dưới lượng giữ chỗ, Vẫn sửa | Từ chối `ACC_RECEIPT_EDIT_RESERVED`, không ghi gì (Q-422) |
+| UAT-ACC03-24 | Sau lần sửa đã xác nhận | Sửa phiếu xuất ghi sổ trước đó; xóa phiếu nhập; sửa đầu phiếu PN-A | Hai lệnh đầu bị từ chối; sửa đầu phiếu lưu thẳng (Q-423) |
 
 ## Ghi chú bao phủ
 

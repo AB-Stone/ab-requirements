@@ -5,6 +5,8 @@
 
 > **Phản hồi 17/11/2026 tối (Q-390 – Q-399).** Mục A – C viết trước bản V2 (16/11/2026) và các đợt 17/11/2026; chỗ nào khác `spec/BID-05.html` thì đặc tả thắng. Kịch bản của đợt này ở mục cuối, cột **Nguồn** trỏ về mã kịch bản và quy tắc của đặc tả.
 
+> **Sheet “Today” 18/11/2026 (Q-402 – Q-427).** Mục cuối phủ đợt này; kịch bản cũ nói về 2A, Chờ HSMT, 2B, 2C, tab Hồ sơ · Khởi tạo, Thêm phụ lục, Bỏ qua thương thảo hay chặn sửa phiếu nhập khi có chứng từ sau đã bị đặc tả thay — chỗ nào khác `spec/BID-05.html` thì đặc tả thắng.
+
 ## A · Luồng giao diện
 
 | Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
@@ -125,6 +127,20 @@ Các kịch bản dưới đây kiểm hành vi đặc tả đã bỏ trước h
 | UAT-BID05-92 | Như UAT-91; cùng mã khác ĐVT; mã không có ĐVT; bỏ tích; người không có quyền | Import từng trường hợp | Dòng đầu quyết định ĐVT, dòng khác cảnh báo; mã thiếu ĐVT không tạo; bỏ tích hoặc thiếu quyền thì không tạo mã nào | VAL mã vật tư · Q-394 · đặc tả UAT-BID05-77 · đặc tả UAT-BID05-78 |
 | UAT-BID05-93 | Tiếp UAT-91 | Import lại; Xóa dữ liệu HĐ; Tạo mã còn thiếu | Không tạo trùng; mã đã tạo vẫn ở danh mục sau khi xóa; nút Tạo mã điền sẵn từ dòng | CN-7 · CN-9 · Q-394 · đặc tả UAT-BID05-79 · đặc tả UAT-BID05-80 |
 | UAT-BID05-94 | Bước 6 và phụ lục chưa thông báo | Chọn lại DS ngay trên khối bước 6, gửi, gửi lại; làm tương tự ở khối thông báo phụ lục | Người nhận đúng danh sách đang hiện; mỗi lần gửi một dòng Lịch sử thay đổi; phụ lục có Gửi lại | TS `recipients` · BR bước 6 · Q-395 · Q-399 · đặc tả UAT-BID05-33 · đặc tả UAT-BID05-82 |
+
+## F · Sheet “Today” 18/11/2026 — nút Chuyển sau Ký HĐ, Tạo PL hai loại
+
+> Kịch bản phụ lục ở mục C, E nói về Thêm phụ lục, Lý do, Bỏ qua thương thảo đã bị thay (Q-412 – Q-415).
+
+| Mã | Tiền đề | Thao tác | Kết quả kỳ vọng | Nguồn |
+|---|---|---|---|---|
+| UAT-BID05-95 | Gói vừa Khởi tạo dự án | Nhìn tab Ký HĐ; Chuyển Thông báo, gửi; quay lại; Chuyển tạo mã VTHH theo HĐ | Hai nút độc lập, chỉ chuyển tab; tab Tạo mã VTHH / Thông báo không có nút sang nhau | Q-410 · đặc tả UAT-BID05-83, 84 |
+| UAT-BID05-96 | Gói Hoàn tất có HĐ | Tạo PL đổi giá trị: Gói thầu → Thẩm định hai phiếu → Thương thảo (−50.000.000) → Ký Phụ lục → import → Thông báo | Trạng thái phụ lục đi đủ sáu bước, không có Bỏ qua; gói thầu giữ Hoàn tất; Tạo PL hiện lại khi Hoàn tất | Q-415 · Q-416 · Q-417 · đặc tả UAT-BID05-61, 62 |
+| UAT-BID05-97 | Gói Hoàn tất | Tạo PL đổi thông tin, đổi bên mời thầu và ngày kết thúc; Lưu thiếu số PL; Lưu đủ | Lần đầu bị chặn; lần sau Hoàn tất, khối Thông tin đã thay đổi hiện giá trị cũ gạch đỏ → mới; gói, HĐ, dự án đổi theo | Q-413 · Q-414 · đặc tả UAT-BID05-63 |
+| UAT-BID05-101 | Phụ lục đổi giá trị mới | Ở tab Gói thầu đổi chủ đầu tư A → B, Lưu; B → C, Lưu | Khối Thông tin đã thay đổi chỉ một dòng: A gạch đỏ → C | Q-413 (3) · đặc tả UAT-BID05-85 |
+| UAT-BID05-98 | Phụ lục đổi giá trị đang ở Thẩm định | Tải tệp phiếu của phụ lục; chọn Hợp đồng chính trên dải | Tệp phụ lục không lẫn sang hợp đồng chính; thanh tab chính không bị chiếm | Q-412 (3), (4) · đặc tả UAT-BID05-86 |
+| UAT-BID05-99 | Tab Thương thảo của phụ lục | Giá trị 0; giá trị âm không tệp | Hai lần bị chặn đúng thông điệp | Q-417 · đặc tả UAT-BID05-87 |
+| UAT-BID05-100 | NV không có `tender:appendix`; lệnh Bỏ qua cũ; phụ lục đã Lưu Gói thầu rồi Hủy | Gọi các lệnh; Hủy phụ lục | NV bị từ chối; Bỏ qua bị từ chối; Hủy không hoàn lại thông tin đã lưu | Q-412 · Q-413 (5) · đặc tả UAT-BID05-67, 88 |
 
 ## Ghi chú bao phủ
 

@@ -81,7 +81,7 @@
     <div class="tb-id">BID-03</div>
     <div class="tb-main">
       <h3>Thương thảo &amp; chốt giá</h3>
-      <p>Bước 3 của luồng gói thầu. <em>(17/11/2026 · <a href="PL-C.html#Q-392">Q-392</a>)</em> Áp giá, chiết tính và thương thảo làm trong Excel ngoài hệ thống; ở đây chỉ còn <b>tải tệp thương thảo + nhập Giá trị HĐ + Lưu</b> để chốt giá và chuyển gói sang ký ở <a href="BID-05.html">BID-05</a>. Không còn lần 0, giá trị chào hay các lần thương thảo.</p>
+      <p>Bước 3 của luồng gói thầu. <em>(17/11/2026 · <a href="PL-C.html#Q-392">Q-392</a>)</em> Áp giá, chiết tính và thương thảo làm trong Excel ngoài hệ thống; ở đây chỉ còn <b>tải tệp thương thảo + nhập Giá trị HĐ + Lưu</b> để chốt giá và chuyển gói sang ký ở <a href="BID-05.html">BID-05</a>. Không còn lần 0, giá trị chào hay các lần thương thảo. <em>(18/11/2026 · <a href="PL-C.html#Q-410">Q-410</a>)</em> Lưu xong có nút <b>Chuyển ký Hợp đồng</b>; tab mở khi P. Đấu thầu bấm Chuyển Thương thảo ở <a href="BID-02.html">BID-02</a>.</p>
       <dl class="tb-meta">
         <div><dt>Thực hiện</dt><dd>Phòng Đấu thầu</dd></div>
         <div><dt>Phê duyệt</dt><dd>Không <em>(16/11/2026: bỏ trình duyệt 2 cấp vòng báo giá)</em></dd></div>
@@ -98,7 +98,7 @@
     <h4>Lưu đồ</h4>
     <figure class="plate"><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div><div class="scroller"><svg role="img" aria-label="Hình BID-03.1 Bước 3 bản 17/11/2026: gói Đã thẩm định mở tab Thương thảo · chốt giá; P. Đấu thầu tải tệp thương thảo, nhập Giá trị HĐ và Lưu, gói sang Thương thảo hoàn thành, thông báo DS phòng ban và đi ký ở BID-05; lưu lại được tới khi Bắt đầu ký. Không chốt được thì hủy ở BID-04." viewBox="0 0 700 330" width="700" height="330" xmlns="http://www.w3.org/2000/svg">
 <g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="170,10 490,10 490,39 170,39"/>
-<text text-anchor="middle" x="330" y="28.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Đã thẩm định — sau 2B hoặc 2C (BID-02)</text>
+<text text-anchor="middle" x="330" y="28.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Đã thẩm định — sau Chuyển Thương thảo (BID-02)</text>
 </g>
 <g class="node"><polygon fill="#dde3e9" stroke="#5d6b7a" points="110,80 550,80 550,124 110,124"/>
 <text text-anchor="middle" x="330" y="98.7" font-family="Barlow, system-ui, sans-serif" font-size="12.5" fill="#16202a">Thương thảo · chốt giá — tải tệp thương thảo (≥ 1)</text>
@@ -140,7 +140,8 @@
           <tr><td>Ghi chú</td><td class="k">note</td><td>Chuỗi dài</td><td class="c">—</td><td>Ví dụ “CĐT đồng ý đổi đá sảnh, giảm 3,5%”.</td></tr>
           <tr><td>Người lưu · thời điểm</td><td class="k">done_by, done_at</td><td>Hệ thống</td><td class="c">—</td><td>Ghi khi Lưu; mỗi lần lưu là một dòng nhật ký bước. Lưu lần đầu đưa gói sang <em>Thương thảo hoàn thành</em>.</td></tr>
           <tr><td>Người nhận thông báo</td><td class="k">recipients</td><td>Danh sách</td><td class="c">—</td><td>Lưu lần đầu mở hộp “Thông báo thương thảo hoàn thành”: DS phòng ban của gói (trưởng phòng — <a href="PL-C.html#Q-296">Q-296</a>, <a href="PL-C.html#Q-297">Q-297</a>) sửa được cho lần gửi, thêm được người cụ thể (<a href="PL-C.html#Q-396">Q-396</a>); BLĐ, Dự án liên quan luôn nhận (<a href="PL-C.html#Q-273">Q-273</a>, <a href="PL-C.html#Q-395">Q-395</a>). Lưu lại không gửi lại.</td></tr>
-          <tr><td>Tệp bước Thẩm định</td><td class="k">step2_inputs</td><td>Kế thừa</td><td class="c">—</td><td>Chỉ đọc: file thẩm định, tệp rà soát hiện trường (<a href="PL-C.html#Q-391">Q-391</a>) và ghi chú P. Đấu thầu lưu ở bước 2 (<a href="BID-02.html">BID-02</a>).</td></tr>
+          <tr><td>Tệp bước Thẩm định</td><td class="k">step2_inputs</td><td>Kế thừa</td><td class="c">—</td><td>Chỉ đọc. <em>(18/11/2026 · <a href="PL-C.html#Q-404">Q-404</a>)</em> Tệp, ảnh và ghi chú của hai phiếu thẩm định — Rà soát, kiểm tra HSMT; Khảo sát hiện trạng / Cập nhật điều kiện thi công — kèm người nộp (<a href="BID-02.html">BID-02</a>). Gói thẩm định trước 18/11/2026 hiện file thẩm định, tệp rà soát hiện trường (<a href="PL-C.html#Q-391">Q-391</a>) và ghi chú bước như cũ.</td></tr>
+          <tr><td>Chuyển ký Hợp đồng <em>(18/11/2026)</em></td><td class="k">—</td><td>Nút</td><td class="c">—</td><td>Hiện trên tab từ khi gói <em>Thương thảo hoàn thành</em>; bấm chỉ chuyển sang tab Ký HĐ, không đổi trạng thái (<a href="PL-C.html#Q-410">Q-410</a>). Bấm tab Ký HĐ trên thanh cũng vậy (<a href="PL-C.html#Q-411">Q-411</a>).</td></tr>
           <tr><td><s>Tệp BOQ chốt</s></td><td class="k">files[] (boq_file)</td><td>Tệp</td><td class="c">—</td><td><em>(17/11/2026)</em> Không còn ô tệp BOQ chốt. BOQ đã chốt chỉ tải một lần, ở bước 5 · Tạo mã VTHH theo HĐ (<a href="BID-05.html">BID-05</a>). Tệp <code>boq_file</code> đã tải trước 17/11/2026 giữ nguyên, xem ở “Tất cả tệp (n)”.</td></tr>
         </tbody>
       </table>
@@ -148,7 +149,8 @@
 
     <h4>Kết quả mong đợi</h4>
     <ol class="exp">
-      <li>Gói <em>Đã thẩm định</em> mở được tab Thương thảo · chốt giá ngay; tab chỉ có ô tải tệp, Giá trị HĐ, ghi chú và nút Lưu.</li>
+      <li>Gói <em>Đã thẩm định</em> mở được tab Thương thảo · chốt giá ngay; tab chỉ có ô tải tệp, Giá trị HĐ, ghi chú và nút Lưu. <em>(18/11/2026 · <a href="PL-C.html#Q-405">Q-405</a>)</em> Trước đó — gói <em>Đang thẩm định</em>, chưa nộp đủ hai phiếu — tab mờ, chú thích “Chưa nộp đủ 2 phiếu thẩm định”.</li>
+      <li><em>(18/11/2026 · <a href="PL-C.html#Q-410">Q-410</a>)</em> Lưu xong trang ở lại tab Thương thảo và có nút Chuyển ký Hợp đồng; bấm nút hoặc tab Ký HĐ đều sang tab Ký HĐ.</li>
       <li>Lưu với ít nhất một tệp và Giá trị HĐ thì gói sang <em>Thương thảo hoàn thành</em>, cột Giá trị HĐ hiện giá trị chốt, bước 4 mở; DS phòng ban nhận thông báo theo hộp người nhận.</li>
       <li>Lưu lại trước Bắt đầu ký đổi được tệp và Giá trị HĐ, không gửi lại thông báo, không đổi trạng thái.</li>
       <li>Không có lần 0, giá trị chào, lần thương thảo, kết quả 3a / 3b hay nút Thông báo cho P.TQT nắm; không màn hình nào nhập đơn giá, giá vốn, biên lợi nhuận hay xuất báo giá.</li>
@@ -156,7 +158,7 @@
 
     <h4>Mockup UI — Đấu thầu › Hồ sơ gói › tab Thương thảo · chốt giá</h4>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">KH_0112 ›</span><b>3 Thương thảo · chốt giá</b><span class="sp"></span><span class="wf-crumb">Đã thẩm định</span></div>
+      <div class="wf-bar"><span class="wf-crumb">KH_0112 ›</span><b>3 Thương thảo · chốt giá</b><span class="sp"></span><span class="wf-crumb">Thương thảo hoàn thành</span><span class="wf-btn pri"><span class="pin">5</span> Chuyển ký Hợp đồng</span></div>
       <div class="wf-body">
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">1</span> Tệp thương thảo ✱</div>
@@ -171,7 +173,7 @@
         </div>
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">4</span> Tệp bước Thẩm định</div>
-          <div class="wf-f"><div class="in ro">ThamDinh_HSMT_KH0112.docx · BOQ_capnhat_KH0112.xlsx · RaSoatHienTruong_KH0112.pdf · “HSMT thiếu chiều dày bậc cầu thang”</div></div>
+          <div class="wf-f"><div class="in ro">Phiếu Rà soát, kiểm tra HSMT (Phạm D, 20/11): HSMT_ra_soat/ThamDinh_HSMT_KH0112.docx · BOQ_capnhat_KH0112.xlsx · “HSMT thiếu chiều dày bậc cầu thang” · Phiếu Khảo sát hiện trạng (Lê Văn C, nộp trễ 21/11): 3 ảnh</div></div>
         </div>
       </div>
     </div>
@@ -182,19 +184,21 @@
           <tr><td class="c"><span class="pin">1</span></td><td>Tệp thương thảo</td><td>Kéo thả hoặc chọn nhiều tệp (khung đính kèm <a href="PF-05.html">PF-05</a>), mới nhất trên cùng; mỗi tệp có xem, xóa. Gói chuyển từ bản 16/11/2026 hiện cả tệp báo giá lần 0 và biên bản các lần, ghi chú tệp mang nội dung lần đó.</td></tr>
           <tr><td class="c"><span class="pin">2</span></td><td>Giá trị HĐ</td><td>Số tiền dương; lưu lại thì nạp giá trị đã lưu.</td></tr>
           <tr><td class="c"><span class="pin">3</span></td><td>Lưu</td><td>Lưu lần đầu: mở hộp người nhận “Thông báo thương thảo hoàn thành” (<a href="PL-C.html#Q-395">Q-395</a>), gửi xong gói <em>Thương thảo hoàn thành</em>, tab 4 Ký HĐ mở. Lưu lại (trước Bắt đầu ký): lưu thẳng, không mở hộp người nhận. Đã lưu thì tab thu gọn thành danh sách tệp + Giá trị HĐ + Sửa / thay tệp.</td></tr>
-          <tr><td class="c"><span class="pin">4</span></td><td>Tệp bước Thẩm định</td><td>Chỉ đọc, mở được từng tệp.</td></tr>
+          <tr><td class="c"><span class="pin">4</span></td><td>Tệp bước Thẩm định</td><td>Chỉ đọc, mở được từng tệp; <em>18/11/2026</em> nhóm theo phiếu.</td></tr>
+          <tr><td class="c"><span class="pin">5</span></td><td>Chuyển ký Hợp đồng <em>(18/11/2026 · <a href="PL-C.html#Q-410">Q-410</a>)</em></td><td>Ở trên nội dung tab, căn phải; hiện từ khi gói Thương thảo hoàn thành, kể cả khi quay lại tab sau này. Chỉ chuyển tab.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Quy tắc nghiệp vụ</h4>
     <ol class="br">
-      <li><b>Bước 3 mở ngay khi gói Đã thẩm định.</b> <em>(16/11/2026)</em> Không còn chốt BOQ cập nhật ở <a href="BID-02.html">BID-02</a>. <em>(V2 · <a href="PL-C.html#Q-321">Q-321</a>; 17/11/2026 · <a href="PL-C.html#Q-333">Q-333</a>)</em> Đã thẩm định là khi P. Đấu thầu lưu 2B (gói loại B) hoặc 2C Thẩm định HSMT (gói loại A, sau khảo sát sơ bộ và chờ HSMT) với file thẩm định. Từ đây hai nhánh đi chung.</li>
+      <li><b>Bước 3 mở ngay khi gói Đã thẩm định.</b> <em>(16/11/2026)</em> Không còn chốt BOQ cập nhật ở <a href="BID-02.html">BID-02</a>. <em>(V2 · <a href="PL-C.html#Q-321">Q-321</a>; 17/11/2026 · <a href="PL-C.html#Q-333">Q-333</a>)</em> Đã thẩm định là khi P. Đấu thầu lưu 2B (gói loại B) hoặc 2C Thẩm định HSMT (gói loại A, sau khảo sát sơ bộ và chờ HSMT) với file thẩm định. Từ đây hai nhánh đi chung. <em>(18/11/2026 · <a href="PL-C.html#Q-405">Q-405</a>, thay câu trước)</em> Đã thẩm định là khi P. Đấu thầu bấm Chuyển Thương thảo sau khi cả hai phiếu thẩm định đã nộp (<a href="BID-02.html">BID-02</a>); hai nhánh vốn đã chung một luồng.</li>
       <li><b>Thương thảo · chốt giá = tệp + Giá trị HĐ + Lưu.</b> <em>(17/11/2026 · <a href="PL-C.html#Q-392">Q-392</a>)</em> Lưu cần ít nhất một tệp thương thảo và Giá trị HĐ dương; ghi chú tùy chọn.<span class="then">Thay lần 0 (tệp báo giá + giá trị chào), các lần thương thảo khóa khi lưu và hộp Đã chốt giá riêng của 16/11/2026 (<a href="PL-C.html#Q-319">Q-319</a>, <a href="PL-C.html#Q-263">Q-263</a>, <a href="PL-C.html#Q-288">Q-288</a>).</span></li>
       <li><b>Lưu lần đầu chốt giá.</b> Gói <em>Đã thẩm định</em> → <em>Thương thảo hoàn thành</em>; Giá trị HĐ điền sẵn vào hợp đồng nháp; mở bước 4; gửi thông báo thương thảo hoàn thành tới DS phòng ban, Ban lãnh đạo, Dự án liên quan — DS chọn lại được cho lần gửi (<a href="PL-C.html#Q-273">Q-273</a>, <a href="PL-C.html#Q-395">Q-395</a>), mỗi lần gửi ghi một dòng Lịch sử thay đổi (<a href="PL-C.html#Q-399">Q-399</a>).</li>
       <li><b>Lưu lại được tới khi Bắt đầu ký.</b> Gói <em>Thương thảo hoàn thành</em>: thêm, xóa tệp, sửa Giá trị HĐ, ghi chú rồi Lưu — ghi thêm một dòng nhật ký, cập nhật giá trị của hợp đồng nháp, không gửi lại thông báo, không đổi trạng thái. Từ Bắt đầu ký (<a href="BID-05.html">BID-05</a>) tab chỉ đọc; giá trị sửa ở hợp đồng.</li>
+      <li><b>Lưu xong ở lại tab, có nút Chuyển ký Hợp đồng.</b> <em>(18/11/2026 · <a href="PL-C.html#Q-410">Q-410</a>, <a href="PL-C.html#Q-411">Q-411</a>)</em> Trang không tự nhảy sang Ký HĐ; nút chỉ chuyển tab — trạng thái đã sang <em>Thương thảo hoàn thành</em> lúc Lưu. Tab Ký HĐ trên thanh bấm được cùng lúc với nút.</li>
       <li><b>Tệp ở bước 3 xóa và tải lại được.</b> <em>(V2 · <a href="PL-C.html#Q-322">Q-322</a>)</em> Mọi tệp thương thảo có nút Xóa, có lịch sử; xóa tệp không đổi trạng thái gói (hướng mặc định <a href="PL-C.html#Q-327">Q-327</a>).</li>
-      <li><b>Tệp bước Thẩm định hiện ở tab</b>, chỉ đọc — file thẩm định, rà soát hiện trường (<a href="PL-C.html#Q-391">Q-391</a>) và ghi chú của P. Đấu thầu.</li>
+      <li><b>Tệp bước Thẩm định hiện ở tab</b>, chỉ đọc — <em>18/11/2026 (<a href="PL-C.html#Q-404">Q-404</a>):</em> tệp, ảnh, ghi chú của hai phiếu thẩm định; gói cũ: file thẩm định, rà soát hiện trường (<a href="PL-C.html#Q-391">Q-391</a>) và ghi chú của P. Đấu thầu.</li>
       <li><b>Nhắc hạn nộp dừng khi gói Đã thẩm định.</b> <em>(17/11/2026 · <a href="PL-C.html#Q-392">Q-392</a>, hướng mặc định)</em> Không còn mốc “đã gửi báo giá” của lần 0, nên gói <em>Đã thẩm định</em> trở đi không còn bị nhắc hạn nộp hay tô quá hạn.</li>
       <li><b>Không chốt được thì hủy ở <a href="BID-04.html">BID-04</a></b> — trượt thầu hay không theo đuổi nữa.</li>
       <li><b>Gói đang ở bước 3 khi triển khai 17/11/2026.</b> <em>(<a href="PL-C.html#Q-392">Q-392</a>)</em> Gói <em>Đang thương thảo (lần n)</em> — kể cả gói còn nhãn cũ <em>Thương thảo – áp giá (lần 0)</em> — về <em>Đã thẩm định</em>. Tệp báo giá lần 0 và biên bản từng lần ở lại tab, ghi chú tệp mang “Lần n · 3a / 3b: tóm lược · Hướng xử lý: …”; P. Đấu thầu chỉ cần nhập Giá trị HĐ rồi Lưu. Giá trị chào cũ đọc ở Lịch sử thay đổi. Gói đã <em>Thương thảo hoàn thành</em> trở đi giữ nguyên.</li>
@@ -249,12 +253,14 @@
           <tr><td>UAT-BID03-66</td><td>Tiếp UAT-65, bấm Bắt đầu ký ở <a href="BID-05.html">BID-05</a></td><td>Mở tab Thương thảo · chốt giá; gọi thẳng lệnh lưu bước với giá trị mới</td><td>Tab chỉ đọc, không có Sửa / thay tệp; máy chủ từ chối “Gói {mã} đã bắt đầu ký — sửa Giá trị HĐ ở hợp đồng.”</td></tr>
           <tr><td>UAT-BID03-67</td><td>Trước triển khai 17/11/2026: gói <code>KH_0150</code> <em>Đang thương thảo (lần 2)</em> có tệp báo giá lần 0, lần 1 (3b) và lần 2 (3a); gói <code>KH_0144</code> <em>Thương thảo hoàn thành</em></td><td>Mở hai gói sau triển khai</td><td><code>KH_0150</code> ở <em>Đã thẩm định</em>; tab Thương thảo hiện ba tệp, ghi chú tệp lần 1 mang “Lần 1 · 3b: … · Hướng xử lý: …”; chỉ nhập Giá trị HĐ rồi Lưu là sang Thương thảo hoàn thành. <code>KH_0144</code> giữ nguyên trạng thái và Giá trị HĐ</td></tr>
           <tr><td>UAT-BID03-68</td><td>Gói Đã thẩm định, hạn nộp đã qua 2 ngày (17/11/2026 · hướng mặc định <a href="PL-C.html#Q-392">Q-392</a>)</td><td>Mở Bảng tổng hợp; chờ tới lượt chạy nhắc hạn nộp</td><td>Dòng gói không tô quá hạn; người phụ trách không nhận nhắc hạn nộp</td></tr>
+          <tr><td>UAT-BID03-69</td><td>Gói <code>KH_0112</code> Đã thẩm định, đã có tệp thương thảo (18/11/2026 · <a href="PL-C.html#Q-410">Q-410</a>, <a href="PL-C.html#Q-411">Q-411</a>)</td><td>Mở gói không có <code>?step=</code>; nhập Giá trị HĐ, Lưu, gửi thông báo; bấm Chuyển ký Hợp đồng; bấm tab Thương thảo trên thanh</td><td>Mở vào tab Thương thảo; sau gửi trang ở lại tab, địa chỉ mang <code>?step=</code> của tab, gói <em>Thương thảo hoàn thành</em>, nút Chuyển ký Hợp đồng hiện ở trên; bấm thì sang tab Ký HĐ, trạng thái không đổi thêm; bấm tab Thương thảo quay lại được, nút vẫn còn</td></tr>
+          <tr><td>UAT-BID03-70</td><td>Gói <code>KH_0133</code> Đang thẩm định, phiếu khảo sát chưa nộp (18/11/2026 · <a href="PL-C.html#Q-405">Q-405</a>)</td><td>Rê chuột tab Thương thảo; gọi thẳng lệnh lưu bước thương thảo</td><td>Tab mờ, chú thích “Chưa nộp đủ 2 phiếu thẩm định”; máy chủ từ chối “Gói KH_0133 chưa xong bước 2 — chưa chốt giá được.”</td></tr>
         </tbody>
       </table>
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="BID-01.html">BID-01 bảng tổng hợp, bước = tệp + Lưu</a><a href="BID-02.html">BID-02 tệp bước Thẩm định</a><a href="BID-04.html">BID-04 hủy gói thầu</a><a href="BID-05.html">BID-05 ký HĐ, tạo mã VTHH theo HĐ, phụ lục Loại 02</a><a href="PL-C.html#Q-392">Q-392 thương thảo chỉ tải tệp + chốt giá</a><a href="PL-C.html#Q-395">Q-395 chọn lại người nhận lúc gửi</a><a href="PL-C.html#Q-396">Q-396 thêm người nhận đích danh</a><a href="PL-C.html#Q-399">Q-399 lịch sử gửi thông báo</a><a href="PL-C.html#Q-322">Q-322 tệp không duyệt, xóa được</a><a href="PL-C.html#Q-327">Q-327 xóa tệp sau khi lưu</a><a href="PL-C.html#Q-333">Q-333 nhánh A trước Đã thẩm định</a><a href="PF-04.html">PF-04 thông báo</a><a href="PF-05.html">PF-05 tệp thương thảo</a><a href="PL-A.html">PL-A trạng thái bước 3</a><a href="PL-B.html">PL-B quyền lưu thương thảo · chốt giá</a><a href="RPT-03.html">RPT-03 lãi lỗ dự án</a><a href="PL-C.html#Q-273">Q-273 hộp thoại người nhận</a><a href="PL-C.html#Q-314">Q-314 danh sách trạng thái</a><a href="PL-C.html#Q-319">Q-319 bỏ áp giá trên phần mềm</a><a href="PL-C.html#Q-263">Q-263 lần thương thảo (đã bỏ)</a><a href="PL-C.html#Q-301">Q-301 lần 3b vào phụ lục (đã bỏ)</a></p>
+    <p class="links"><a href="BID-01.html">BID-01 bảng tổng hợp, bước = tệp + Lưu</a><a href="BID-02.html">BID-02 tệp bước Thẩm định</a><a href="BID-04.html">BID-04 hủy gói thầu</a><a href="BID-05.html">BID-05 ký HĐ, tạo mã VTHH theo HĐ, phụ lục Loại 02</a><a href="PL-C.html#Q-392">Q-392 thương thảo chỉ tải tệp + chốt giá</a><a href="PL-C.html#Q-395">Q-395 chọn lại người nhận lúc gửi</a><a href="PL-C.html#Q-396">Q-396 thêm người nhận đích danh</a><a href="PL-C.html#Q-399">Q-399 lịch sử gửi thông báo</a><a href="PL-C.html#Q-322">Q-322 tệp không duyệt, xóa được</a><a href="PL-C.html#Q-327">Q-327 xóa tệp sau khi lưu</a><a href="PL-C.html#Q-333">Q-333 nhánh A trước Đã thẩm định</a><a href="PF-04.html">PF-04 thông báo</a><a href="PF-05.html">PF-05 tệp thương thảo</a><a href="PL-A.html">PL-A trạng thái bước 3</a><a href="PL-B.html">PL-B quyền lưu thương thảo · chốt giá</a><a href="RPT-03.html">RPT-03 lãi lỗ dự án</a><a href="PL-C.html#Q-273">Q-273 hộp thoại người nhận</a><a href="PL-C.html#Q-314">Q-314 danh sách trạng thái</a><a href="PL-C.html#Q-319">Q-319 bỏ áp giá trên phần mềm</a><a href="PL-C.html#Q-263">Q-263 lần thương thảo (đã bỏ)</a><a href="PL-C.html#Q-301">Q-301 lần 3b vào phụ lục (đã bỏ)</a><a href="PL-C.html#Q-404">Q-404 hai phiếu thẩm định</a><a href="PL-C.html#Q-405">Q-405 Chuyển Thương thảo</a><a href="PL-C.html#Q-410">Q-410 nút Chuyển ký Hợp đồng</a><a href="PL-C.html#Q-411">Q-411 bấm tab</a><a href="PL-C.html#Q-415">Q-415 Thương thảo của phụ lục đổi giá trị</a></p>
   </div>
 </section>
 <div class="filefoot">
