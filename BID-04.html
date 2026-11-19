@@ -195,6 +195,7 @@
       <li><b>Mở lại được, chỉ khi chưa ký.</b> Gói hủy khi chưa ký mở lại về trạng thái trước đó; nhật ký ghi người mở và thời điểm; hệ thống không tự gửi lại thông báo cũ.</li>
       <li><b>Gói đang có phụ lục chưa hoàn tất</b> hủy được; phụ lục đó cùng hủy.</li>
       <li><b>Gói “Đã gộp” cũ không hủy được ở màn hình này.</b> Nhãn chỉ còn ở gói gộp trước 16/11/2026; gói đó chỉ đọc, hủy gói đích nếu cần. Gộp mới (<a href="PL-C.html#Q-317">Q-317</a>) xóa gói A nên không còn gói nào mang nhãn này nữa.</li>
+      <li><b>Hủy gói kéo theo công trình trong Danh mục</b> <em>(sheet “Hôm nay” 19/11/2026 STT 1 · <a href="PL-C.html#Q-436">Q-436</a>)</em>. Công trình của gói chưa có dữ liệu ở phòng nào thì xóa (mã trống lại, như Q9.4); đã có thì chuyển <em>Đã đóng</em>, giữ mã để chứng từ cũ vẫn đúng.<span class="then">Mở lại gói: công trình chạy lại, hoặc được tạo lại nếu đã xóa.</span></li>
     </ol>
     <div class="note">
       <b>Đã bỏ — 16/11/2026 · <a href="PL-C.html#Q-319">Q-319</a>, <a href="PL-C.html#Q-320">Q-320</a></b>
@@ -231,6 +232,7 @@
           <tr><td>UAT-BID04-5</td><td>Gói <code>KH_0001</code> đã gộp vào <code>KH_0004</code> trước 16/11/2026, mang <em>Đã gộp</em></td><td>Mở hồ sơ <code>KH_0001</code>, tìm nút “Hủy gói thầu”</td><td>Nút không hiện; hồ sơ nêu gói đã gộp vào <code>KH_0004</code> kèm liên kết</td></tr>
           <tr><td>UAT-BID04-7</td><td>Gói <code>KH_0160</code> Hoàn tất, Kế toán có 3 phiếu chi theo mã công trình (16/11/2026 · <a href="PL-C.html#Q-318">Q-318</a>)</td><td>Bấm Xóa ở tab Mã gói thầu (<a href="PF-01.html">PF-01</a>) — bị từ chối; bấm Hủy dự án, nhập lý do, xác nhận</td><td>Gói, HĐ, dự án <code>KH_0160</code> cùng “Đã hủy”; 3 phiếu chi giữ nguyên; lập phiếu mới cho công trình <code>KH_0160</code> bị từ chối; Admin, TGĐ và thành phần dự án nhận thông báo; không có nút Mở lại</td></tr>
           <tr><td>UAT-BID04-8</td><td>Gói đã ký đang có phụ lục chưa hoàn tất</td><td>Hủy dự án</td><td>Hủy được; phụ lục cùng sang Đã hủy</td></tr>
+          <tr><td>UAT-BID04-9</td><td>Gói Nháp <code>KH_0155</code>, công trình cùng mã chưa có chứng từ; gói <code>KH_0156</code> có công trình đã có phiếu nhập (19/11/2026 · <a href="PL-C.html#Q-436">Q-436</a>)</td><td>Hủy hai gói</td><td><code>KH_0155</code> không còn trong Danh mục dự án; <code>KH_0156</code> còn, trạng thái Đã đóng</td></tr>
         </tbody>
       </table>
     </div>

@@ -146,7 +146,6 @@
         <thead><tr><th>Trường</th><th>Mã</th><th>Kiểu</th><th class="c">✱</th><th>Quy tắc</th></tr></thead>
         <tbody>
           <tr><td>Gói thầu</td><td class="k">tender_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Khoá của dòng và của bản ghi nhập tay — mỗi gói thầu tối đa một bản ghi. Lấy mọi gói chưa xóa, trừ gói <em>Đã gộp</em>; gói <em>Đã hủy</em> vẫn hiện và lọc được theo trạng thái.</td></tr>
-          <tr><td>Hạng mục</td><td class="k">scope_label</td><td>Chuỗi</td><td class="c">—</td><td>Nhập tay, tự do.</td></tr>
           <tr><td>Tiến độ thực tế — bắt đầu · kết thúc</td><td class="k">actual_start, actual_end</td><td>Ngày</td><td class="c">—</td><td>Nhập tay. Ngày kết thúc không được trước ngày bắt đầu.</td></tr>
           <tr><td>Hồ sơ TQT — giá trị sản lượng TC thực tế · đã thanh toán</td><td class="k">tqt_value_actual, tqt_value_paid</td><td>Số tiền</td><td class="c">—</td><td>Nhập tay, không âm.</td></tr>
           <tr><td>Tình trạng hồ sơ quyết toán</td><td class="k">settlement_status</td><td>Chọn 1</td><td class="c">—</td><td><em>Chưa quyết toán</em> (<code>unsettled</code>) · <em>Quyết toán</em> (<code>settled</code>) · để trống.</td></tr>
@@ -154,6 +153,8 @@
           <tr><td>Cán bộ phụ trách</td><td class="k">owner_name</td><td>Chuỗi</td><td class="c">—</td><td>Gõ tự do như trên sheet (“ANH A”), tối đa 255 ký tự; không chọn từ danh sách người dùng.</td></tr>
           <tr><td>Hồ sơ chất lượng — năm ô</td><td class="k">q_material, q_quality, q_logbook, q_asbuilt, q_handover</td><td>Chọn 1</td><td class="c">—</td><td><em>Đã có</em> · <em>Chưa có</em> · để trống.</td></tr>
           <tr><td>Hồ sơ giá trị — ba ô</td><td class="k">v_material, v_batch, v_settlement</td><td>Số tiền</td><td class="c">—</td><td>Nhập tay, không âm.</td></tr>
+          <tr><td>Tệp hồ sơ chất lượng</td><td class="k">rpt_payment_tracking_quality</td><td>Tệp / thư mục</td><td class="c">—</td><td>Nhiều tệp hoặc cả thư mục, giữ cây thư mục; tối đa 50 MB mỗi tệp (<a href="PL-C.html#Q-431">Q-431</a>).</td></tr>
+          <tr><td>Tệp hồ sơ giá trị</td><td class="k">rpt_payment_tracking_value</td><td>Tệp / thư mục</td><td class="c">—</td><td>Như trên.</td></tr>
           <tr><td>Hồ sơ tổ đội — Trường 1 · 2 · 3</td><td class="k">crew_field_1, crew_field_2, crew_field_3</td><td>Chuỗi</td><td class="c">—</td><td>Nhập tay, tự do.</td></tr>
           <tr><td>Tên Trường 1 · 2 · 3</td><td class="k">rpt_payment_tracking_label</td><td>Chuỗi</td><td class="c req">✱</td><td>Dùng chung cho mọi gói thầu; mặc định “Trường 1/2/3”; P. TQT đổi tên được, 1–100 ký tự.</td></tr>
         </tbody>
@@ -172,15 +173,14 @@
           <tr><td>4</td><td>Mã gói thầu</td><td>Xám</td><td>Mã gói thầu</td></tr>
           <tr><td>5</td><td>Mã HĐ</td><td>Xám</td><td>Mã HĐ của dự án (sổ hợp đồng, <a href="PL-C.html#Q-174">Q-174</a>)</td></tr>
           <tr><td>6</td><td>Hợp đồng</td><td>Xám</td><td>Số hợp đồng đang hiệu lực, không có thì tên hợp đồng (<a href="BID-05.html">BID-05</a>)</td></tr>
-          <tr><td>7</td><td>Hạng mục</td><td>Xám <em>(theo mẫu)</em></td><td><b>Nhập tay</b> — hệ thống không có nguồn cho ô này</td></tr>
-          <tr><td>8</td><td>Địa điểm</td><td>Xám</td><td>Địa điểm của gói thầu; trống thì địa điểm của dự án</td></tr>
-          <tr><td>9</td><td>Tổng GT HĐ &amp; PLHĐ (sau VAT)</td><td>Xám</td><td>Giá trị sau VAT của hợp đồng đang hiệu lực cộng các phụ lục đã ký; chưa có hợp đồng thì giá trị dự kiến của dự án</td></tr>
-          <tr><td>10–11</td><td>Tiến độ theo HĐ — Bắt đầu · Kết thúc</td><td>Xám</td><td>Ngày bắt đầu / kết thúc của hợp đồng; chưa có thì thời gian thực hiện của gói thầu</td></tr>
-          <tr><td>12–13</td><td>Tiến độ thực tế — Bắt đầu · Kết thúc</td><td>Xanh</td><td>Nhập tay</td></tr>
-          <tr><td>14–16</td><td>HỒ SƠ TQT — Giá trị sản lượng TC thực tế · Giá trị sản lượng TC đã thanh toán · Tình trạng hồ sơ quyết toán</td><td>Xanh</td><td>Nhập tay</td></tr>
-          <tr><td>17–18</td><td>HỒ SƠ TỔ ĐỘI — Giá trị sản lượng TC thực tế · Giá trị sản lượng TC đã thanh toán</td><td>Xanh</td><td>Nhập tay</td></tr>
-          <tr><td>19</td><td>CÁN BỘ PHỤ TRÁCH</td><td>Xanh</td><td>Nhập tay, chữ tự do</td></tr>
-          <tr><td>20</td><td>THAO TÁC</td><td>Xám</td><td>Nút <b>Chi tiết</b></td></tr>
+          <tr><td>7</td><td>Địa điểm</td><td>Xám</td><td>Địa điểm của gói thầu; trống thì địa điểm của dự án</td></tr>
+          <tr><td>8</td><td>Tổng GT HĐ &amp; PLHĐ (sau VAT)</td><td>Xám</td><td>Giá trị sau VAT của hợp đồng đang hiệu lực cộng các phụ lục đã ký; chưa có hợp đồng thì giá trị dự kiến của dự án</td></tr>
+          <tr><td>9–10</td><td>Tiến độ theo HĐ — Bắt đầu · Kết thúc</td><td>Xám</td><td>Ngày bắt đầu / kết thúc của hợp đồng; chưa có thì thời gian thực hiện của gói thầu</td></tr>
+          <tr><td>11–12</td><td>Tiến độ thực tế — Bắt đầu · Kết thúc</td><td>Xanh</td><td>Nhập tay</td></tr>
+          <tr><td>13–15</td><td>HỒ SƠ TQT — Giá trị sản lượng TC thực tế · Giá trị sản lượng TC đã thanh toán · Tình trạng hồ sơ quyết toán</td><td>Xanh</td><td>Nhập tay</td></tr>
+          <tr><td>16–17</td><td>HỒ SƠ TỔ ĐỘI — Giá trị sản lượng TC thực tế · Giá trị sản lượng TC đã thanh toán</td><td>Xanh</td><td>Nhập tay</td></tr>
+          <tr><td>18</td><td>CÁN BỘ PHỤ TRÁCH</td><td>Xanh</td><td>Nhập tay, chữ tự do</td></tr>
+          <tr><td>19</td><td>THAO TÁC</td><td>Xám</td><td>Nút <b>Chi tiết</b></td></tr>
         </tbody>
       </table>
     </div>
@@ -214,12 +214,12 @@
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">2</span> Bảng theo dõi — tiêu đề hai tầng theo mẫu</div>
           <table><thead>
-            <tr><th rowspan="2">STT</th><th rowspan="2">Dự án/Công trình</th><th rowspan="2">Chủ đầu tư</th><th rowspan="2">Mã gói thầu</th><th rowspan="2">Mã HĐ</th><th rowspan="2">Hợp đồng</th><th rowspan="2">Hạng mục</th><th rowspan="2">Địa điểm</th><th rowspan="2" class="num">Tổng GT HĐ &amp; PLHĐ (sau VAT)</th><th colspan="2">Tiến độ theo HĐ</th><th colspan="2"><span class="pin">3</span> Tiến độ thực tế</th><th colspan="3">HỒ SƠ TQT</th><th colspan="2">HỒ SƠ TỔ ĐỘI</th><th rowspan="2">CÁN BỘ PHỤ TRÁCH</th><th rowspan="2">THAO TÁC</th></tr>
+            <tr><th rowspan="2">STT</th><th rowspan="2">Dự án/Công trình</th><th rowspan="2">Chủ đầu tư</th><th rowspan="2">Mã gói thầu</th><th rowspan="2">Mã HĐ</th><th rowspan="2">Hợp đồng</th><th rowspan="2">Địa điểm</th><th rowspan="2" class="num">Tổng GT HĐ &amp; PLHĐ (sau VAT)</th><th colspan="2">Tiến độ theo HĐ</th><th colspan="2"><span class="pin">3</span> Tiến độ thực tế</th><th colspan="3">HỒ SƠ TQT</th><th colspan="2">HỒ SƠ TỔ ĐỘI</th><th rowspan="2">CÁN BỘ PHỤ TRÁCH</th><th rowspan="2">THAO TÁC</th></tr>
             <tr><th>Bắt đầu</th><th>Kết thúc</th><th>Bắt đầu</th><th>Kết thúc</th><th class="num">GT SL TC thực tế</th><th class="num">GT SL TC đã TT</th><th>Tình trạng HS QT</th><th class="num">GT SL TC thực tế</th><th class="num">GT SL TC đã TT</th></tr>
           </thead>
           <tbody>
-            <tr><td>1</td><td>Tháp B — ốp đá mặt tiền</td><td>Cty XD Hoàng Long</td><td>HN_0021</td><td>HĐ-24-018</td><td>18/2024/HĐXD</td><td>Ốp đá mặt đứng</td><td>Hà Nội</td><td class="num">12.480.000.000</td><td>01/03/2026</td><td>30/11/2026</td><td>25/10/2026</td><td>27/10/2026</td><td class="num">11.966.353.471</td><td class="num">11.966.353.471</td><td><span class="tag t-warn">Chưa quyết toán</span></td><td class="num">11.966.353.471</td><td class="num">11.966.353.471</td><td>ANH A</td><td><span class="pin">4</span> Chi tiết</td></tr>
-            <tr><td>2</td><td>Gói vừa tạo</td><td>Cty TNHH ABC</td><td>KH_0114</td><td></td><td></td><td></td><td>Nha Trang</td><td class="num"></td><td></td><td></td><td></td><td></td><td class="num"></td><td class="num"></td><td></td><td class="num"></td><td class="num"></td><td></td><td>Chi tiết</td></tr>
+            <tr><td>1</td><td>Tháp B — ốp đá mặt tiền</td><td>Cty XD Hoàng Long</td><td>HN_0021</td><td>HĐ-24-018</td><td>18/2024/HĐXD</td><td>Hà Nội</td><td class="num">12.480.000.000</td><td>01/03/2026</td><td>30/11/2026</td><td>25/10/2026</td><td>27/10/2026</td><td class="num">11.966.353.471</td><td class="num">11.966.353.471</td><td><span class="tag t-warn">Chưa quyết toán</span></td><td class="num">11.966.353.471</td><td class="num">11.966.353.471</td><td>ANH A</td><td><span class="pin">4</span> Chi tiết</td></tr>
+            <tr><td>2</td><td>Gói vừa tạo</td><td>Cty TNHH ABC</td><td>KH_0114</td><td></td><td></td><td>Nha Trang</td><td class="num"></td><td></td><td></td><td></td><td></td><td class="num"></td><td class="num"></td><td></td><td class="num"></td><td class="num"></td><td></td><td>Chi tiết</td></tr>
           </tbody></table>
           <p style="margin:6px 0 0;font-size:11.5px;color:var(--ink-3)">Dòng 2 là gói Đấu thầu vừa tạo: chưa có hợp đồng, chưa có dữ liệu TQT — vẫn hiện, ô để trống.</p>
         </div>
@@ -252,7 +252,8 @@
     <ol class="br">
       <li><b>Mọi gói thầu bên Đấu thầu hiện ngay.</b> Danh sách đọc thẳng từ gói thầu, không có bước sinh dòng; gói chưa có hợp đồng, chưa có dự án, chưa có WBS vẫn là một dòng.<span class="then">Trừ gói đã xóa và gói <em>Đã gộp</em> (dữ liệu đã sang gói đích). Gói <em>Đã hủy</em> vẫn hiện để giữ hồ sơ đã nhập, lọc ra được bằng bộ lọc trạng thái. Theo yêu cầu STT 10 (<a href="PL-C.html#Q-350">Q-350</a>).</span></li>
       <li><b>Một dòng là một gói thầu.</b> Bản ghi nhập tay gắn với gói thầu, tối đa một bản ghi mỗi gói, tạo ở lần Lưu đầu tiên.<span class="then">Dự án của gói lấy theo hợp đồng đang hiệu lực; gói nạp từ sổ hợp đồng không có liên kết thì lấy dự án cùng mã — cùng quy tắc đổi mã ở <a href="PF-01.html">PF-01</a>. Ký lại hợp đồng không làm dòng đổi chỗ.</span></li>
-      <li><b>Cột xám chỉ đọc, cột xanh và ba bảng chi tiết nhập tay toàn bộ.</b> Không cột nào tổng hợp từ <a href="ORD-12.html">ORD-12</a> (thay PRJ-02/PRJ-03), <a href="ORD-08.html">ORD-08</a>–<a href="ORD-10.html">ORD-10</a> hay bảng nhân công tổ đội.<span class="then">“Bảng này cho nhập tay vô hết, không cần link.” Hạng mục cũng nhập tay dù nằm trong nhóm nền xám của mẫu, vì hệ thống không có nguồn cho nó.</span></li>
+      <li><b>Cột xám chỉ đọc, cột xanh và ba bảng chi tiết nhập tay toàn bộ.</b> Không cột nào tổng hợp từ <a href="ORD-12.html">ORD-12</a> (thay PRJ-02/PRJ-03), <a href="ORD-08.html">ORD-08</a>–<a href="ORD-10.html">ORD-10</a> hay bảng nhân công tổ đội.<span class="then">“Bảng này cho nhập tay vô hết, không cần link.” Cột Hạng mục đã bỏ hẳn — cả cột danh sách lẫn ô nhập trong Chi tiết (<a href="PL-C.html#Q-430">Q-430</a>).</span></li>
+      <li><b>Mỗi bảng Hồ sơ chất lượng / Hồ sơ giá trị có một ô tải tệp.</b> Ô nằm ngay dưới bảng, nhận nhiều tệp hoặc cả thư mục (giữ đường dẫn trong thư mục), mọi định dạng, tối đa 50 MB mỗi tệp. Tệp gắn với gói thầu: tải được cả khi gói chưa có bản ghi.<span class="then">Tải lên là lưu ngay, gỡ là xóa ngay — không đi theo Lưu / Hủy của khung Chi tiết. Không thay ô Đã có / Chưa có hay số tiền; không ô nào suy ra từ tệp. Tải / gỡ cần <code>rpt_payment_tracking:write</code> và bản ghi không khóa; người chỉ xem tải xuống từng tệp. Gộp mã: tệp của cả hai gói sang gói đích, không chặn gộp. Sheet “Hôm nay” 19/11/2026 STT 7 (<a href="PL-C.html#Q-431">Q-431</a>), lưu trữ tệp theo <a href="PF-05.html">PF-05</a>.</span></li>
       <li><b>Lưu ghi cả bộ.</b> Bấm Lưu gửi toàn bộ cột xanh và ba bảng của gói; ô để trống là xóa giá trị đã lưu.<span class="then">Không còn ô nào bị chặn vì “có nguồn”, nên một lần lưu đủ thay cho từng ô.</span></li>
       <li><b>Cán bộ phụ trách là chữ tự do.</b> Ghi như trên sheet, không chọn từ danh sách người dùng, không giới hạn phòng ban.<span class="then">Không gửi nhắc việc nào theo cán bộ phụ trách.</span></li>
       <li><b>Tên Trường 1–3 dùng chung.</b> Đổi tên một lần áp dụng cho mọi gói thầu; giá trị trong từng gói giữ nguyên.</li>
@@ -270,6 +271,8 @@
           <tr><td>Số tiền âm</td><td>Một ô tiền &lt; 0</td><td>“{tên cột} không được âm.”</td></tr>
           <tr><td>Tình trạng quyết toán ngoài danh mục</td><td><code>settlement_status</code> khác <code>unsettled</code>/<code>settled</code></td><td>“Tình trạng hồ sơ quyết toán chỉ nhận Chưa quyết toán hoặc Quyết toán.”</td></tr>
           <tr><td>Tên Trường trống hoặc quá dài</td><td>Rỗng hoặc &gt; 100 ký tự</td><td>“Tên trường {n} phải có từ 1 đến 100 ký tự.”</td></tr>
+          <tr><td>Tải / gỡ tệp khi bản ghi đang khóa</td><td><code>is_locked</code></td><td>“Gói thầu {mã} đang khóa bởi {người khóa} từ {lúc}. Mở khóa trước khi sửa.”</td></tr>
+          <tr><td>Tệp quá lớn</td><td>Một tệp &gt; 50 MB</td><td>“Tệp “{tên tệp}” vượt quá 50 MB.”</td></tr>
           <tr><td>Sửa bản ghi đang khóa</td><td><code>is_locked</code></td><td>“Gói thầu {mã} đang khóa bởi {người khóa} từ {lúc}. Mở khóa trước khi sửa.”</td></tr>
           <tr><td>Gói thầu không còn</td><td>Đã xóa, đã gộp hoặc không tồn tại</td><td>“Không tìm thấy gói thầu.”</td></tr>
           <tr><td>Gộp hai gói cùng có dữ liệu</td><td>Cả gói nguồn và gói đích có bản ghi có dữ liệu</td><td>“Theo dõi hồ sơ thanh toán đã có dữ liệu ở cả hai gói — đối chiếu và xóa dữ liệu trùng ở gói nguồn trước khi gộp.”</td></tr>
@@ -295,6 +298,10 @@
           <tr><td>UAT-RPT05-10</td><td>Gói đã hủy ở <a href="BID-04.html">BID-04</a></td><td>Lọc trạng thái Đã hủy</td><td>Gói vẫn hiện, mang nhãn Đã hủy</td></tr>
           <tr><td>UAT-RPT05-11</td><td>Hai gói đều đã nhập dữ liệu theo dõi</td><td>Gộp mã gói này vào gói kia</td><td>Bị chặn với thông điệp “đã có dữ liệu ở cả hai gói”; xóa trắng bản ghi ở một gói thì gộp được, dữ liệu của gói còn lại sang gói đích</td></tr>
           <tr><td>UAT-RPT05-12</td><td>Gói đã nhập dữ liệu theo dõi, chưa có hợp đồng</td><td>Xóa gói thầu</td><td>Bị chặn, thông điệp nêu P. TQT đã có dữ liệu; xóa trắng bản ghi rồi xóa gói thì được</td></tr>
+          <tr><td>UAT-RPT05-13</td><td>Gói chưa có bản ghi, người có quyền ghi</td><td>Mở Chi tiết, kéo một thư mục 3 tệp vào ô Tệp hồ sơ chất lượng</td><td>Ba tệp lưu ngay, hiện theo thư mục; ô Tệp hồ sơ giá trị vẫn trống; đóng mở lại vẫn còn</td></tr>
+          <tr><td>UAT-RPT05-14</td><td>Bản ghi đang khóa</td><td>Thử tải hoặc gỡ tệp</td><td>Ô tải ẩn với người có quyền ghi; gọi thẳng API bị chặn bằng thông điệp khóa</td></tr>
+          <tr><td>UAT-RPT05-15</td><td>Người chỉ có <code>rpt_payment_tracking:read</code></td><td>Mở Chi tiết</td><td>Thấy và tải xuống tệp, không có nút tải lên / gỡ</td></tr>
+          <tr><td>UAT-RPT05-16</td><td>Gói A có tệp hồ sơ giá trị, gói B có tệp hồ sơ chất lượng</td><td>Gộp A vào B</td><td>Gộp được; B giữ cả hai nhóm tệp</td></tr>
         </tbody>
       </table>
     </div>
