@@ -40,6 +40,7 @@
     <a href="ORD-11.html"><i>ORD-11</i>Danh sách cắt đá</a>
     <a href="ORD-12.html"><i>ORD-12</i>Nhân công tổ đội</a>
     <a href="ORD-13.html"><i>ORD-13</i>Đề xuất mua sắm (Cung ứng)</a>
+    <a href="ORD-14.html"><i>ORD-14</i>Tổng hợp đơn hàng (Cung ứng)</a>
     <div class="rail-grp">Dự án — Thi công</div>
     <a href="PRJ-01.html"><i>PRJ-01</i>Giá khoán tổ đội</a>
     <a href="PRJ-04.html"><i>PRJ-04</i>Xuất nhập kho dự án</a>
@@ -378,6 +379,7 @@
       <li><b>Tuyến giao thuộc về dòng, mặc định giao thẳng.</b> Mỗi dòng đơn mang <code>delivery_route</code>: <em>Giao thẳng công trình</em> (mặc định) hoặc <em>Về nhà máy</em> kèm kho nhà máy đích. Chỉ dòng có nguồn là nhà cung cấp hoặc kho mới chọn được <em>Về nhà máy</em> — dòng nhà máy sản xuất vốn đã xuất phát từ nhà máy.<span class="then">Giao thẳng không đổi gì so với trước: một chặng <code>direct</code>, thủ kho dự án nhận, cộng vào hoàn thành.</span></li>
       <li><b>Về nhà máy là hai chặng.</b> Chặng 1 (<code>to_factory</code>) đưa hàng từ nhà cung cấp vào kho nhà máy đích: nhân viên kho nhà máy nhận (<code>batch:receive_factory</code>), hàng nhập vào tồn kho nhà máy, và <b>không tính vào hoàn thành</b> của dòng hay của đơn. Chặng 2 (<code>factory_to_site</code>) đưa hàng từ kho nhà máy ra công trình: phiếu xuất <b>làm giảm tồn kho nhà máy</b> (<a href="ACC-04.html">ACC-04</a>), thủ kho dự án nhận vào kho công trình (<a href="PRJ-04.html">PRJ-04</a>), và chỉ chặng này cộng vào đã cấp / đã nhận của dòng.<span class="then">Hàng nằm ở nhà máy vẫn chưa tới nơi thi công; tính nó là hoàn thành thì đơn đóng trong khi công trường còn chờ hàng.</span><span class="then">Mỗi chặng là một đợt riêng với phiếu, người nhận và sai lệch riêng — vỡ ở chặng 1 được ghi và xử lý với nhà cung cấp trước khi hàng lên xe chặng 2.</span></li>
       <li><b>Chặng 2 chỉ trên phần đã về nhà máy.</b> Khối lượng một đợt chặng 2 không vượt <code>qty_at_factory_available</code> — đã về nhà máy trừ phần đã xuất chặng 2, kể cả phiếu đang chờ duyệt.<span class="then">Kế hoạch chặng 2 lập trước được như mọi kế hoạch; chỉ phiếu xuất mới bị giới hạn bởi hàng thật đang nằm trong kho nhà máy.</span></li>
+      <li><b>Lần giao của đợt Cung ứng không phải đợt cấp ở trang này</b> <em>(sheet 24.11.2026 “Traloi” · chị Ly, P. Cung ứng — <a href="PL-C.html#Q-519">Q-519</a>)</em>. Từ 24/11/2026 đợt Nhà máy / Cung ứng của P. Cung ứng (<a href="ORD-04.html">ORD-04</a>) có khối Theo dõi cấp hàng và Giao hàng: mỗi lần giao ghi ngày, NCC, SL viên / ĐVT theo dõi, phiếu giao hàng, rồi chuyển kế toán để phiếu nhập <a href="ACC-03.html">ACC-03</a> lấy; tổng hợp theo mẫu THDON ở <a href="ORD-14.html">ORD-14</a>.<span class="then">Lần giao đó không sinh phiếu xuất, không vào kế hoạch cấp, đã cấp, đã nhận hay vòng kiểm nhận ở trang này, và không thay phiếu nhận hàng tại công trình của <a href="PRJ-04.html">PRJ-04</a> — quan hệ giữa hai bên còn hoãn (<a href="PL-C.html#Q-519">Q-519</a>).</span></li>
     </ol>
 
     <h4>Kiểm tra dữ liệu &amp; thông điệp</h4>
@@ -429,7 +431,7 @@
     </div>
 
     <h4>Liên kết</h4>
-    <p class="links"><a href="ORD-04.html">ORD-04 lệnh thực hiện</a><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ACC-04.html">ACC-04 phiếu xuất kho</a><a href="PRJ-04.html">PRJ-04 nhập kho dự án</a><a href="ORD-07.html">ORD-07 xử lý hàng đã sản xuất khi giảm đơn</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a><a href="ORD-03.html">ORD-03 tuyến giao của dòng</a><a href="ACC-02.html">ACC-02 kho nhà máy</a><a href="PL-A.html">PL-A chặng giao</a><a href="PL-B.html">PL-B batch:receive_factory</a></p>
+    <p class="links"><a href="ORD-04.html">ORD-04 lệnh thực hiện</a><a href="ORD-11.html">ORD-11 danh sách cắt đá</a><a href="ACC-04.html">ACC-04 phiếu xuất kho</a><a href="PRJ-04.html">PRJ-04 nhập kho dự án</a><a href="ORD-07.html">ORD-07 xử lý hàng đã sản xuất khi giảm đơn</a><a href="2026-09-15/YC-09.html">YC-09 PYCSX &amp; Danh sách cắt đá</a><a href="ORD-03.html">ORD-03 tuyến giao của dòng</a><a href="ACC-02.html">ACC-02 kho nhà máy</a><a href="PL-A.html">PL-A chặng giao</a><a href="PL-B.html">PL-B batch:receive_factory</a><a href="ORD-14.html">ORD-14 tổng hợp đơn hàng — lần giao của đợt Cung ứng</a></p>
   </div>
 </section>
 <div class="filefoot">
