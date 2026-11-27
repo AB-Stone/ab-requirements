@@ -164,7 +164,7 @@
           <tr><td>Mã biên bản</td><td class="k">code</td><td>Chuỗi ≤ 64</td><td class="c req">✱</td><td><b>Gõ tay</b>, thường là số chủ đầu tư ghi trên biên bản. Không trùng trong cùng một dự án (không phân biệt hoa thường, bỏ khoảng trắng hai đầu); hai dự án khác nhau được trùng. Là mã hiện ở danh sách, chi tiết, thông báo và phiếu bù trừ (<a href="PL-C.html#Q-564">Q-564</a>).</td></tr>
           <tr><td>Ngày biên bản phạt</td><td class="k">issued_at</td><td>Ngày</td><td class="c req">✱</td><td>Ngày ghi trên biên bản, không phải ngày nhập. Là mốc xếp biên bản vào kỳ báo cáo và mốc bộ lọc khoảng ngày.</td></tr>
           <tr><td>Dự án</td><td class="k">project_id</td><td>Tham chiếu</td><td class="c req">✱</td><td>Chọn từ danh mục dự án, tìm theo mã, tên, số hợp đồng. Là khóa thông báo, phân bổ mặc định và RPT-02. Dự án nhanh (chưa có hợp đồng) chọn được.</td></tr>
-          <tr><td>Hợp đồng</td><td class="k">contract_id</td><td>Tham chiếu</td><td class="c">—</td><td>Tùy chọn. Chỉ chọn được hợp đồng <b>của dự án đã chọn</b> (hoặc cùng gói thầu); chọn dự án có hợp đồng thì ô tự điền, xóa được.</td></tr>
+          <tr><td>Hợp đồng</td><td class="k">project.contract_no</td><td>Chỉ đọc</td><td class="c">—</td><td><b>Không chọn.</b> Là <b>Mã hợp đồng của dự án</b> — đúng cột <em>Mã hợp đồng</em> của Danh mục dự án / danh sách gói thầu (VD <code>DN_0001</code> → <code>0208/2025/HĐXD/CPVP - AB</code>), đọc lại mỗi lần mở nên đổi theo dự án. Dự án chưa có Mã hợp đồng: hiện “Chưa có mã” (27/11/2026, sheet 27.11 STT 8, <a href="PL-C.html#Q-586">Q-586</a>).</td></tr>
           <tr><td>Ngày vi phạm</td><td class="k">violation_date</td><td>Ngày</td><td class="c">—</td><td>Ngày xảy ra vi phạm theo biên bản.</td></tr>
           <tr><td>Lý do phạt</td><td class="k">reason</td><td>Chọn 1</td><td class="c req">✱</td><td>Danh mục đóng năm giá trị ở bảng dưới.</td></tr>
           <tr><td>Diễn giải</td><td class="k">description</td><td>Chuỗi dài</td><td class="c">—</td><td>Chỉ hiện khi lý do là <em>Khác</em>, và khi đó <b>bắt buộc</b> (<a href="PL-C.html#Q-568">Q-568</a>). Lý do khác thì bỏ trống — nội dung đã gõ không được lưu.</td></tr>
@@ -222,16 +222,16 @@
       <div class="wf-bar"><span class="wf-crumb">Đấu thầu › Biên bản phạt CĐT</span><span class="sp"></span><span class="wf-btn"><span class="pin">1</span> Lọc: Dự án · Trạng thái · Ngày biên bản</span><span class="wf-btn pri"><span class="pin">2</span> Lập biên bản</span></div>
       <div class="wf-body">
         <div class="wf-sec">
-          <table><thead><tr><th>Mã biên bản</th><th>Ngày biên bản phạt</th><th>Dự án</th><th>Hợp đồng</th><th>Ngày vi phạm</th><th>Lý do phạt</th><th class="num">Mức phạt</th><th>Chỉ huy trưởng</th><th>Trạng thái</th></tr></thead>
+          <table><thead><tr><th>Mã biên bản</th><th>Ngày biên bản phạt</th><th>Dự án</th><th>Hợp đồng</th><th>Ngày vi phạm</th><th>Lý do phạt</th><th class="num">Mức phạt</th><th>Chỉ huy trưởng</th><th>Trạng thái</th><th><span class="pin">6</span></th></tr></thead>
           <tbody>
-            <tr><td>05/BB-PHAT</td><td>10/09/2026</td><td>KH_0114 — Ốp lát khối đế Nha Trang</td><td>KH_0114</td><td>02/09/2026</td><td>Chậm tiến độ</td><td class="num">100.000.000</td><td>Trần Văn Hải</td><td><span class="tag t-neu">Đã bù trừ công nợ</span> <span class="tag t-neu">PKT-2026-0412 · nháp</span></td></tr>
-            <tr><td>BB-07/2026</td><td>18/10/2026</td><td>NHANH-03 — Sảnh khách sạn Vũng Tàu</td><td>—</td><td>—</td><td>Khác: Không dọn vệ sinh mặt bằng</td><td class="num">5.000.000</td><td>—</td><td><span class="tag t-warn">Chưa xử lý</span></td></tr>
+            <tr><td>05/BB-PHAT</td><td>10/09/2026</td><td>KH_0114 — Ốp lát khối đế Nha Trang</td><td>1110/2025/HĐ/CPVP - AB</td><td>02/09/2026</td><td>Chậm tiến độ</td><td class="num">100.000.000</td><td>Trần Văn Hải</td><td><span class="tag t-neu">Đã bù trừ công nợ</span> <span class="tag t-neu">PKT-2026-0412 · nháp</span></td><td>Sửa · Xóa</td></tr>
+            <tr><td>BB-07/2026</td><td>18/10/2026</td><td>NHANH-03 — Sảnh khách sạn Vũng Tàu</td><td>Chưa có mã</td><td>—</td><td>Khác: Không dọn vệ sinh mặt bằng</td><td class="num">5.000.000</td><td>—</td><td><span class="tag t-warn">Chưa xử lý</span></td><td>Sửa · Xóa</td></tr>
           </tbody></table>
         </div>
       </div>
     </div>
     <div class="wf">
-      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › Biên bản phạt CĐT ›</span><b>Biên bản phạt 05/BB-PHAT</b><span class="sp"></span><span class="tag t-neu">Đã bù trừ công nợ</span><span class="tag t-neu">PKT-2026-0412 · nháp</span><span class="wf-btn pri"><span class="pin">3</span> Lưu biên bản</span></div>
+      <div class="wf-bar"><span class="wf-crumb">Đấu thầu › Biên bản phạt CĐT ›</span><b>Biên bản phạt 05/BB-PHAT</b><span class="sp"></span><span class="tag t-neu">Đã bù trừ công nợ</span><span class="tag t-neu">PKT-2026-0412 · nháp</span><span class="wf-btn"><span class="pin">6</span> Xóa</span><span class="wf-btn pri"><span class="pin">3</span> Lưu biên bản</span></div>
       <div class="wf-body">
         <div class="wf-sec">
           <div class="wf-lg"><span class="pin">3</span> Biên bản phạt</div>
@@ -239,7 +239,7 @@
             <div class="wf-c"><div class="wf-f"><label>Mã biên bản ✱</label><div class="in">05/BB-PHAT</div></div></div>
             <div class="wf-c"><div class="wf-f"><label>Ngày biên bản phạt ✱</label><div class="in">10/09/2026</div></div></div>
             <div class="wf-c"><div class="wf-f"><label>Dự án ✱</label><div class="in">KH_0114 — Ốp lát khối đế Nha Trang <em>▾</em></div></div></div>
-            <div class="wf-c"><div class="wf-f"><label>Hợp đồng</label><div class="in">KH_0114 <em>▾</em></div></div></div>
+            <div class="wf-c"><div class="wf-f"><label>Hợp đồng</label><div class="in">1110/2025/HĐ/CPVP - AB</div></div></div>
           </div>
           <div class="wf-row">
             <div class="wf-c"><div class="wf-f"><label>Ngày vi phạm</label><div class="in">02/09/2026</div></div></div>
@@ -271,6 +271,7 @@
           <tr><td class="c"><span class="pin">3</span></td><td>Sửa biên bản</td><td>Người có <code>owner_penalty:write</code> hoặc <code>owner_penalty:allocate</code> sửa mọi ô ở mọi trạng thái rồi bấm <em>Lưu biên bản</em>; ô để trống thì xóa giá trị cũ.</td></tr>
           <tr><td class="c"><span class="pin">4</span></td><td>Trạng thái</td><td>Chọn tay. Chọn <em>Đã bù trừ công nợ</em> có dòng nhắc hệ thống sẽ lập phiếu kế toán nháp. Khi phiếu đã ghi sổ, ô Trạng thái, Mức phạt, Dự án chuyển chỉ đọc kèm thông điệp.</td></tr>
           <tr><td class="c"><span class="pin">5</span></td><td>Bảng phân bổ</td><td>Thêm / xóa dòng, chọn nhân viên hoặc gõ tên (“Dùng tên …”), lưu bằng <em>Lưu phân bổ</em>. Dưới bảng hiện tổng đã phân bổ và phần còn lại.</td></tr>
+          <tr><td class="c"><span class="pin">6</span></td><td>Sửa / Xóa trên dòng</td><td>Mỗi dòng danh sách có nút chữ <em>Sửa</em> và <em>Xóa</em>, ghim mép phải khi bảng cuộn ngang (như BID-01). <em>Sửa</em> mở trang chi tiết để sửa — cho người có <code>owner_penalty:write</code> hoặc <code>owner_penalty:allocate</code>. <em>Xóa</em> chỉ cho <code>owner_penalty:write</code>, hỏi xác nhận trước (nêu mã, dự án, mức phạt và phiếu bù trừ nháp sẽ mất theo); trang chi tiết cũng có nút <em>Xóa</em> — đường xóa trên điện thoại, nơi danh sách là thẻ. Người chỉ xem thấy nút <em>Mở</em> (27/11/2026, sheet 27.11 STT 6, <a href="PL-C.html#Q-585">Q-585</a>).</td></tr>
         </tbody>
       </table>
     </div>
@@ -279,7 +280,7 @@
     <ol class="br">
       <li><b>Một biên bản là một bản ghi, lập ở P. Đấu thầu.</b> Sửa được bởi P. Đấu thầu và Ban chỉ huy ở mọi trạng thái.<span class="then">Khách chốt luồng 26/11/2026: không có bước duyệt, nên không có trạng thái nào khóa biên bản — trừ phiếu bù trừ đã ghi sổ (quy tắc 7).</span></li>
       <li><b>Mã biên bản gõ tay, duy nhất trong dự án.</b><span class="then">Mã là số hai bên đối chiếu; hai dự án khác nhau có thể nhận cùng một số từ hai chủ đầu tư. Biên bản cũ lấy số của chủ đầu tư làm mã khi số đó không trùng trong dự án, ngược lại giữ mã BBP cũ (<a href="PL-C.html#Q-564">Q-564</a>).</span></li>
-      <li><b>Dự án bắt buộc; hợp đồng tùy chọn nhưng phải thuộc dự án.</b><span class="then">Dự án nhanh chưa ký hợp đồng vẫn bị phạt được. Một hợp đồng của dự án khác bị chặn — sai hợp đồng thì thông báo, phiếu bù trừ và báo cáo đều đi nhầm chỗ.</span></li>
+      <li><b>Dự án bắt buộc; Hợp đồng là Mã hợp đồng của dự án, không chọn</b> (27/11/2026, sheet 27.11 STT 8, <a href="PL-C.html#Q-586">Q-586</a>).<span class="then">Cột và ô Hợp đồng hiện Mã hợp đồng của dự án — cột <em>Mã hợp đồng</em> ở Danh mục dự án / danh sách gói thầu, do <a href="BID-05.html">BID-05</a> ghi khi ký hoặc nhập ở danh mục. Đọc lại mỗi lần mở: dự án được nhập Mã hợp đồng sau thì biên bản cũ hiện theo, không phải sửa biên bản. Dự án chưa có Mã hợp đồng hiện “Chưa có mã”.</span><span class="then">Dự án nhanh chưa ký hợp đồng vẫn bị phạt được. Liên kết hợp đồng bên trong (<code>contract_id</code>, dùng cho RPT-02, Ký lại, gộp gói thầu) tự theo hợp đồng BID-05 của dự án mỗi lần lưu — không còn ô chọn, nên không còn trường hợp hợp đồng lệch dự án.</span></li>
       <li><b>Lý do Khác cần diễn giải.</b> Các lý do khác không có ô diễn giải (<a href="PL-C.html#Q-568">Q-568</a>).</li>
       <li><b>Lưu biên bản là thông báo.</b> Thành viên dự án, quản lý và kế toán nhận thông báo kèm mã biên bản, dự án, ngày, mức phạt; bấm vào mở biên bản.</li>
       <li><b>Bảng phân bổ không bắt buộc; tổng không vượt mức phạt.</b> Mức phạt không hạ xuống dưới tổng đã phân bổ — sửa bảng trước.<span class="then">Phần chưa phân bổ là con số RPT-02 đọc, nên không đặt ràng buộc “phải phân bổ hết”.</span></li>
@@ -291,6 +292,7 @@
         <span class="then">Phiếu đã ghi sổ: không đổi được mức phạt, dự án, trạng thái — kế toán xóa hoặc đảo phiếu ở ACC-08 trước. Phiếu bị xóa hoặc đảo ở ACC-08 thì biên bản bỏ liên kết; đặt lại trạng thái sẽ lập phiếu mới.</span></li>
       <li><b>RPT-02 cột 9 = mức phạt − đã phân bổ, theo dự án, mọi trạng thái.</b> Không nhân hệ số; xếp kỳ theo ngày biên bản.<span class="then">Biên bản tháng 6 nhập muộn vào tháng 8 vẫn nằm ở kỳ 6 tháng đầu năm.</span></li>
       <li><b>Bộ lọc khoảng thời gian lọc theo ngày biên bản.</b> Nhãn bộ lọc ghi rõ mốc đó (<a href="2026-09-22/YC-14.html">YC-14</a>).<span class="then">Quy ước chung của bộ điều khiển viết một lần ở <a href="PF-01.html">PF-01</a>.</span></li>
+      <li><b>Xóa biên bản</b> (27/11/2026, sheet 27.11 STT 6, <a href="PL-C.html#Q-585">Q-585</a>). Chỉ P. Đấu thầu (<code>owner_penalty:write</code>); Ban chỉ huy sửa được nhưng không xóa.<span class="then">Xóa hẳn biên bản cùng bảng phân bổ — không vào thùng rác, không khôi phục; mã biên bản dùng lại được ngay trong dự án. Biên bản mất khỏi RPT-02 cột 9.</span><span class="then">Phiếu bù trừ còn <em>nháp</em>: bị xóa cùng biên bản (như khi rời trạng thái <em>Đã bù trừ công nợ</em>). Phiếu <em>đã ghi sổ</em>: <b>chặn</b> — sổ sẽ còn bút toán Nợ 8111 / Có 1312 không có biên bản đứng sau; kế toán xóa hoặc đảo phiếu ở <a href="ACC-08.html">ACC-08</a> trước. Phiếu đã bị xóa / đảo ở ACC-08 thì không còn gì chặn.</span><span class="then">Đã phân bổ (một phần hay hết) vẫn xóa được: bảng phân bổ chỉ là đề xuất trên biên bản, chưa sinh chứng từ nào.</span></li>
       <li><b>Đã bỏ</b> (26/11/2026, <a href="PL-C.html#Q-565">Q-565</a>): mã tự sinh <code>BBP-&lt;HĐ&gt;-NN</code>, Số biên bản của CĐT, Ngày nhận, tệp biên bản bắt buộc, hệ số quản lý và lý do hệ số, trình lãnh đạo chốt ở <a href="PF-03.html">PF-03</a>, danh sách khoản đã phân bổ theo tổ đội, phân bổ theo mã tổ đội. Nhập biên bản từ PDF của khách (STT 9) để sau.</li>
       <li><b>Đã bỏ</b> (27/11/2026, sheet 27.11 STT 4 “Bỏ cột Hạn nộp”, <a href="PL-C.html#Q-579">Q-579</a>): trường <b>Hạn nộp</b> (<code>due_date</code>) — cột ở danh sách, ô trên hộp thoại và chi tiết, dữ liệu đã nhập. Trường chỉ để hiện (ô nhập và cột, sheet 26.11.2026 STT 7–8): không có nhắc hạn, quá hạn, thông báo, bộ lọc hay báo cáo nào đọc nó.</li>
     </ol>
@@ -306,7 +308,7 @@
           <tr><td>Thiếu mức phạt</td><td><code>amount ≤ 0</code></td><td>“Nhập mức phạt lớn hơn 0.”</td></tr>
           <tr><td>Lý do Khác không có diễn giải</td><td><code>reason = other</code> và <code>description</code> rỗng</td><td>“Lý do phạt là Khác — nhập diễn giải.”</td></tr>
           <tr><td>Trùng mã trong dự án</td><td>Dự án đã có biên bản cùng mã</td><td>“Dự án đã có biên bản mã {mã} ngày {ngày}. Đổi mã biên bản khác.”</td></tr>
-          <tr><td>Hợp đồng không thuộc dự án</td><td><code>contract_id</code> không phải hợp đồng của dự án / gói thầu</td><td>“Hợp đồng đã chọn không thuộc dự án này.”</td></tr>
+          <tr><td>Xóa biên bản có phiếu bù trừ đã ghi sổ</td><td>Xóa khi phiếu bù trừ <em>đã ghi sổ</em> (<a href="PL-C.html#Q-585">Q-585</a>)</td><td>“Phiếu bù trừ {mã phiếu} đã ghi sổ — không xóa được biên bản {mã}. Kế toán xóa hoặc đảo phiếu ở ACC-08 trước.”</td></tr>
           <tr><td>Phân bổ vượt mức phạt</td><td>Tổng <code>alloc[].amount &gt; amount</code></td><td>“Tổng phân bổ {số} vượt mức phạt {số}.”</td></tr>
           <tr><td>Hạ mức phạt dưới phần đã phân bổ</td><td><code>amount</code> mới &lt; tổng đã phân bổ</td><td>“Bảng phân bổ đang cộng {số} — lớn hơn mức phạt mới. Sửa bảng phân bổ trước.”</td></tr>
           <tr><td>Dòng phân bổ thiếu tên</td><td><code>alloc[].full_name</code> rỗng</td><td>“Nhập họ và tên cho từng dòng phân bổ.”</td></tr>
@@ -335,9 +337,9 @@
         <tbody>
           <tr><td>UAT-BID07-17</td><td>Biên bản ngày 10/09/2026 nhập vào hệ thống ngày 05/11/2026</td><td>Mở <a href="RPT-02.html">RPT-02</a> kỳ quý 3/2026</td><td>Biên bản nằm ở quý 3 theo ngày biên bản, không phải quý 4</td></tr>
           <tr><td>UAT-BID07-19</td><td>Đăng nhập P. Đấu thầu</td><td>Lập biên bản chỉ điền Mã <code>05/BB-PHAT</code>, Ngày 10/09/2026, Dự án <code>KH_0114</code>, Lý do Chậm tiến độ, Mức phạt 100.000.000</td><td>Lưu được; trạng thái <em>Chưa xử lý</em>; hợp đồng tự điền <code>KH_0114</code>; chỉ huy trưởng tự điền người được phân công Chỉ huy trưởng của dự án</td></tr>
-          <tr><td>UAT-BID07-20</td><td>Hộp thoại lập biên bản</td><td>Lần lượt bỏ trống Mã, Ngày, Dự án, Mức phạt rồi lưu</td><td>Mỗi lần bị chặn với thông điệp tương ứng; Hợp đồng, Ngày vi phạm, CHT trống vẫn lưu được; hộp thoại không có ô Hạn nộp</td></tr>
+          <tr><td>UAT-BID07-20</td><td>Hộp thoại lập biên bản</td><td>Lần lượt bỏ trống Mã, Ngày, Dự án, Mức phạt rồi lưu</td><td>Mỗi lần bị chặn với thông điệp tương ứng; Ngày vi phạm, CHT trống vẫn lưu được; Hợp đồng chỉ đọc; hộp thoại không có ô Hạn nộp</td></tr>
           <tr><td>UAT-BID07-21</td><td>Hộp thoại lập biên bản</td><td>Chọn lý do Khác, bỏ trống Diễn giải, lưu; rồi nhập “Không dọn vệ sinh mặt bằng”, lưu</td><td>Lần đầu bị chặn “Lý do phạt là Khác — nhập diễn giải.”; lần sau lưu được, danh sách hiện “Khác: Không dọn vệ sinh mặt bằng”</td></tr>
-          <tr><td>UAT-BID07-22</td><td>Hai dự án <code>KH_0114</code> và <code>KH_0120</code></td><td>Gửi biên bản dự án <code>KH_0114</code> với hợp đồng của <code>KH_0120</code> (qua API)</td><td>Bị chặn “Hợp đồng đã chọn không thuộc dự án này.”; giao diện chỉ cho chọn hợp đồng của dự án</td></tr>
+          <tr><td>UAT-BID07-22</td><td>Dự án <code>DN_0001</code> có Mã hợp đồng <code>0208/2025/HĐXD/CPVP - AB</code>; <code>DN_0014</code> chưa có</td><td>Lập biên bản cho <code>DN_0001</code>; mở danh sách</td><td>Ô Hợp đồng tự hiện <code>0208/2025/HĐXD/CPVP - AB</code>, không chọn được; mọi biên bản của <code>DN_0001</code> có cột Hợp đồng đó, của <code>DN_0014</code> hiện “Chưa có mã” (sửa 27/11/2026, <a href="PL-C.html#Q-586">Q-586</a> — thay ca chặn hợp đồng lệch dự án)</td></tr>
           <tr><td>UAT-BID07-23</td><td>Tiếp UAT-19</td><td>Lập biên bản thứ hai cùng dự án, mã <code>05/bb-phat</code>; rồi lập ở dự án <code>KH_0120</code> cùng mã</td><td>Lần đầu bị chặn, thông điệp nêu mã và ngày biên bản đã có; lần sau lưu được</td></tr>
           <tr><td>UAT-BID07-24</td><td>Tiếp UAT-19, bảng phân bổ trống</td><td>Mở chi tiết, thêm dòng chọn nhân viên NV-0021 40.000.000 và dòng gõ tên “Tổ ốp lát anh Ba” 35.000.000, để trống Ghi chú, lưu phân bổ</td><td>Lưu được; dự án mỗi dòng mặc định <code>KH_0114</code>; tổng 75.000.000, còn lại 25.000.000</td></tr>
           <tr><td>UAT-BID07-25</td><td>Tiếp UAT-24</td><td>Sửa dòng thứ hai lên 70.000.000; rồi hạ mức phạt xuống 60.000.000</td><td>Cả hai bị chặn: tổng vượt mức phạt / bảng phân bổ lớn hơn mức phạt mới</td></tr>
@@ -349,6 +351,11 @@
           <tr><td>UAT-BID07-31</td><td>Dự án nhanh không có khách hàng</td><td>Lập biên bản trạng thái <em>Đã bù trừ công nợ</em>; kế toán mở phiếu và bấm Ghi sổ</td><td>Phiếu nháp lưu với dòng 1312 trống đối tượng, diễn giải ghi “chưa xác định chủ đầu tư”; Ghi sổ bị chặn đến khi chọn đối tượng</td></tr>
           <tr><td>UAT-BID07-32</td><td>Danh sách có biên bản ba trạng thái, hai dự án</td><td>Lọc theo dự án, theo trạng thái, theo khoảng ngày biên bản</td><td>Cột đúng thứ tự Mã biên bản … Trạng thái, không có cột Hạn nộp; Đã phân bổ ẩn sẵn; mỗi bộ lọc chỉ còn dòng đúng điều kiện và địa chỉ giữ bộ lọc</td></tr>
           <tr><td>UAT-BID07-33</td><td>Dự án có biên bản 100.000.000 (đã phân bổ 75.000.000, Chưa xử lý) và 40.000.000 (Đã nộp phạt) cùng kỳ</td><td>Mở <a href="RPT-02.html">RPT-02</a></td><td>Cột phạt CĐT không phân bổ của dự án = 65.000.000, số biên bản 2</td></tr>
+          <tr><td>UAT-BID07-34</td><td>Tiếp UAT-22; ở Danh mục dự án nhập Mã hợp đồng cho <code>DN_0014</code></td><td>Mở lại danh sách biên bản phạt</td><td>Các biên bản của <code>DN_0014</code> hiện Mã hợp đồng mới, không phải sửa biên bản</td></tr>
+          <tr><td>UAT-BID07-35</td><td>Đăng nhập P. Đấu thầu; biên bản <em>Chưa xử lý</em> có bảng phân bổ</td><td>Bấm <em>Xóa</em> trên dòng, xác nhận; rồi lập biên bản mới cùng dự án, cùng mã</td><td>Hộp xác nhận nêu mã, dự án, mức phạt; biên bản và bảng phân bổ mất khỏi danh sách; lập lại cùng mã được</td></tr>
+          <tr><td>UAT-BID07-36</td><td>Biên bản <em>Đã bù trừ công nợ</em>, phiếu bù trừ còn nháp</td><td>Bấm <em>Xóa</em>, xác nhận</td><td>Hộp xác nhận báo phiếu nháp {mã} mất theo; biên bản mất, phiếu nháp không còn ở <a href="ACC-08.html">ACC-08</a></td></tr>
+          <tr><td>UAT-BID07-37</td><td>Biên bản có phiếu bù trừ đã ghi sổ</td><td>Bấm <em>Xóa</em>, xác nhận</td><td>Bị chặn “Phiếu bù trừ {mã phiếu} đã ghi sổ — không xóa được biên bản {mã} …”; biên bản và phiếu còn nguyên</td></tr>
+          <tr><td>UAT-BID07-38</td><td>Đăng nhập Ban chỉ huy (<code>owner_penalty:allocate</code>), rồi người chỉ có <code>owner_penalty:read</code></td><td>Mở danh sách và chi tiết; gọi <code>DELETE</code> qua API</td><td>Ban chỉ huy thấy <em>Sửa</em>, không có <em>Xóa</em>; người chỉ xem thấy <em>Mở</em>; API trả 403 cho cả hai</td></tr>
         </tbody>
       </table>
     </div>
